@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-26",
-  "current_generation": "GEN-004",
+  "current_generation": "GEN-005",
   "failing_bdds": [],
   "not_executed_required_bdds": [],
   "deferred_bdds": [
@@ -34,5 +34,5 @@
       "revisit_when": "Before client-facing use of any claim about UCLA commercial importance beyond discovery behavior."
     }
   ],
-  "note": "Generation 4 has no failing required BDDs for the full public-retail/public-wholesale normalization and browse-routing draft scope. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, and unverified UCLA commercial context remain explicit deferrals or limitations."
+  "note": "Generation 5 has no failing required BDDs for repository initialization and GitHub submission. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, and unverified UCLA commercial context remain explicit deferrals or limitations for client-delivery readiness."
 }

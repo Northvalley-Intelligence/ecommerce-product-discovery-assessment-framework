@@ -1,7 +1,7 @@
 {
   "risk_register_id": "RISK-REG-001",
   "created_on": "2026-06-24",
-  "current_generation": "GEN-004",
+  "current_generation": "GEN-005",
   "risks": [
     {
       "id": "RISK-001",
@@ -144,9 +144,10 @@
       "impact": "The GitHub submission gate cannot be satisfied after code changes or two clean Validation Gate passes, reducing traceability and recoverability.",
       "mitigation": "Initialize this project as a Git repository and connect a GitHub remote, or keep an explicit project-local blocker until that decision is made.",
       "related_bdds": [],
-      "status": "deferred_blocked_by_missing_git_repository",
+      "status": "resolved",
       "generation_3_update": "git status --short --branch returns fatal: not a git repository. The blocker is recorded in findings, release checks, generation summary, validation runs, and Generation 3 evidence.",
-      "generation_4_update": "git status --short --branch still returns fatal: not a git repository. The blocker remains recorded after Generation 4 meaningful changes and Validation Gate passes."
+      "generation_4_update": "git status --short --branch still returns fatal: not a git repository. The blocker remains recorded after Generation 4 meaningful changes and Validation Gate passes.",
+      "generation_5_update": "Resolved: repository initialized on main, private GitHub remote created at https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework, and code submitted to origin/main."
     },
     {
       "id": "RISK-010",

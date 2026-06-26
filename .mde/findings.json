@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-26",
-  "current_generation": "GEN-004",
+  "current_generation": "GEN-005",
   "findings": [
     {
       "finding_id": "FND-GEN001-001",
@@ -70,9 +70,9 @@
       "summary": "GitHub submission is blocked because the project directory is not currently a Git repository.",
       "affected_workflow_or_component": "GitHub submission gate after meaningful code changes or two clean Validation Gate passes",
       "first_seen_generation": "GEN-003",
-      "last_seen_generation": "GEN-004",
-      "status": "deferred",
-      "resolution_notes": "git status --short --branch returns fatal: not a git repository. Initialize this project as a Git repository and add a GitHub remote before code can be committed, pushed, or opened as a PR. Blocker reconfirmed after GEN-004 meaningful code/report changes and Validation Gate passes."
+      "last_seen_generation": "GEN-005",
+      "status": "resolved",
+      "resolution_notes": "Repository initialized on main, private GitHub remote origin added at https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git, and initial validated project commit 3e62879cea8a548f5ed13c00c2e696589e90d1a8 pushed to origin/main. Follow-up governance metadata commit records the resolved state."
     },
     {
       "finding_id": "FND-GEN004-001",

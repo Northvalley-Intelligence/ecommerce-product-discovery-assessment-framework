@@ -1,6 +1,6 @@
 {
   "strategy_id": "VALSTRAT-001",
-  "strategy_status": "active_for_generation_4",
+  "strategy_status": "active_for_generation_5",
   "created_on": "2026-06-24",
   "updated_on": "2026-06-26",
   "project_type": "consulting assessment framework and report generation system for ecommerce product discovery and information retrieval evaluation",
@@ -13,7 +13,7 @@
     "prompt_generation",
     "pdf_generation"
   ],
-  "mission_phase": "Generation 4 - Full Boxercraft Normalization And Browse Routing Evaluation",
+  "mission_phase": "Generation 5 - Repository Initialization And GitHub Submission",
   "mission_critical_workflows": [
     {
       "workflow": "Create reusable assessment rubric",
@@ -94,11 +94,12 @@
       "priority": "High",
       "tools_or_methods": [
         "git status --short --branch",
-        "GitHub remote check",
+        "git remote -v",
+        "gh repo view Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
         "deploy/release-checks.json production parity fields",
-        "project-local MDE blocker record when submission cannot be completed"
+        "project-local MDE submission record"
       ],
-      "reason": "After meaningful code changes or two clean Validation Gate passes, project work must be submitted to GitHub or an explicit blocker must be recorded. Production-deployed projects must keep main traceable to deployed production code or record an approved exception/blocker."
+      "reason": "After meaningful code changes or two clean Validation Gate passes, project work must be submitted to GitHub and production parity must be recorded when applicable."
     },
     {
       "category": "Usability Validation",

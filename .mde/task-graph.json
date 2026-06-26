@@ -1,7 +1,7 @@
 {
   "task_graph_id": "TASKGRAPH-001",
   "created_on": "2026-06-24",
-  "current_generation": "GEN-004",
+  "current_generation": "GEN-005",
   "tasks": [
     {
       "id": "T-001",
@@ -218,14 +218,15 @@
     {
       "id": "T-017",
       "title": "Enforce repository governance for local project session",
-      "status": "complete_with_blocker",
+      "status": "complete",
       "priority": "High",
       "depends_on": [
         "T-015"
       ],
       "related_bdds": [],
       "scope": "Apply project-local GitHub submission and production parity rules without modifying sibling repos.",
-      "generation_3_update": "Governance rules are recorded in validation strategy, release checks, generation summary, findings, and outbox. GitHub submission is blocked because this directory is not a Git repository."
+      "generation_3_update": "Governance rules are recorded in validation strategy, release checks, generation summary, findings, and outbox. GitHub submission is blocked because this directory is not a Git repository.",
+      "generation_5_update": "Repository initialized on main, private GitHub remote created at https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework, and validated code pushed to origin/main."
     },
     {
       "id": "T-018",
@@ -246,6 +247,18 @@
       ],
       "scope": "Retail search, rendered autocomplete, visible collection/page browse paths, UCLA/Bruins stakeholder-priority terms, team aliases, color-plus-product terms, and public wholesale SKU variants.",
       "generation_4_update": "Completed with GEN-004 normalization-evaluation JSON, 60 screenshots, updated assessment JSON, report/deck updates, and two Validation Gate passes."
+    },
+    {
+      "id": "T-019",
+      "title": "Initialize repository and submit validated project to GitHub",
+      "status": "complete",
+      "priority": "High",
+      "depends_on": [
+        "T-017"
+      ],
+      "related_bdds": [],
+      "scope": "Create local Git repository, create private GitHub remote, push main, and update repository governance records.",
+      "generation_5_update": "Completed with private GitHub repository https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework."
     }
   ]
 }

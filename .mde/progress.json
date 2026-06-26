@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-26",
-  "current_generation": "GEN-004",
+  "current_generation": "GEN-005",
   "completed": [
     "Mission captured",
     "MDE project identity created",
@@ -34,13 +34,17 @@
     "UCLA/Bruins stakeholder-priority discovery evaluated without public client-size claim",
     "Public wholesale SKU variant normalization evaluated",
     "Northvalley report/deck updated with GEN-004 normalization evidence",
-    "Generation 4 Validation Gate passed twice"
+    "Generation 4 Validation Gate passed twice",
+    "Project Git repository initialized on main",
+    "Private GitHub repository created under Northvalley-Intelligence",
+    "Initial validated project snapshot pushed to origin/main",
+    "Repository governance blocker resolved",
+    "Generation 5 Validation Gate passed twice"
   ],
   "in_progress": [],
   "next": [
     "Confirm authorized wholesale access or keep wholesale as an explicit limitation",
     "Broaden recommendation/filter persistence samples before final external delivery",
-    "Resolve or accept GitHub submission blocker",
     "Independent evaluator calibration worksheet",
     "Protect UCLA/Bruins and other priority team aliases as relevance sets if commercial context is confirmed"
   ]

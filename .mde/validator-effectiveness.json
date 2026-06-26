@@ -1,11 +1,11 @@
 {
   "updated_on": "2026-06-26",
-  "current_generation": "GEN-004",
+  "current_generation": "GEN-005",
   "validators": [
     {
       "validator": "scripts/validate-framework.mjs",
       "category": "Functional / Technical / Mission Coverage / Repository Governance",
-      "total_runs": 11,
+      "total_runs": 13,
       "total_findings": 9,
       "critical_findings_found": 0,
       "high_findings_found": 6,
@@ -14,9 +14,9 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-004",
+      "last_useful_finding_generation": "GEN-005",
       "recommendation": "keep",
-      "notes": "Validator confirms required framework artifacts, Boxercraft assessment structure, GEN-003 browser evidence, GEN-004 normalization evidence and screenshots, report/deck source text, expected deferrals, and governance blocker records. Runs include Generation 1-4 gate checks."
+      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission."
     },
     {
       "validator": "scripts/validate-boxercraft-browser.mjs",
@@ -37,7 +37,7 @@
     {
       "validator": "npm audit --audit-level=moderate",
       "category": "Security Validation",
-      "total_runs": 3,
+      "total_runs": 5,
       "total_findings": 0,
       "critical_findings_found": 0,
       "high_findings_found": 0,
@@ -53,7 +53,7 @@
     {
       "validator": "latexmk",
       "category": "Technical / UI Standards Validation",
-      "total_runs": 8,
+      "total_runs": 10,
       "total_findings": 1,
       "critical_findings_found": 0,
       "high_findings_found": 0,

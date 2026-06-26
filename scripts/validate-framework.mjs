@@ -127,10 +127,13 @@ const requiredFiles = [
   'deploy/release-checks.json',
   '.mde/generations/GEN-003.json',
   '.mde/generations/GEN-004.json',
+  '.mde/generations/GEN-005.json',
   '.mde/validation-runs/VAL-005.json',
   '.mde/validation-runs/VAL-006.json',
   '.mde/validation-runs/VAL-007.json',
-  '.mde/validation-runs/VAL-008.json'
+  '.mde/validation-runs/VAL-008.json',
+  '.mde/validation-runs/VAL-009.json',
+  '.mde/validation-runs/VAL-010.json'
 ];
 
 for (const file of requiredFiles) {
@@ -319,8 +322,10 @@ for (const group of normalizationValidation.groups || []) {
 }
 
 const releaseChecks = readJson('deploy/release-checks.json');
-assert(releaseChecks.repositoryGovernance?.git_repository_present === false, 'release checks must record missing Git repository blocker');
-assert(releaseChecks.repositoryGovernance?.code_submitted_to_github === false, 'release checks must record GitHub submission blocker');
+assert(releaseChecks.repositoryGovernance?.git_repository_present === true, 'release checks must record initialized Git repository');
+assert(releaseChecks.repositoryGovernance?.github_remote_present === true, 'release checks must record GitHub remote');
+assert(releaseChecks.repositoryGovernance?.code_submitted_to_github === true, 'release checks must record successful GitHub submission');
+assert(typeof releaseChecks.repositoryGovernance?.remote_url === 'string' && releaseChecks.repositoryGovernance.remote_url.includes('Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework'), 'release checks must record GitHub remote URL');
 assert(releaseChecks.productionParity?.production_deployed === false, 'release checks must record non-deployed production status');
 
 const gen3Evidence = readJson('.mde/generations/GEN-003.json');
@@ -333,6 +338,12 @@ assert(gen4Evidence.validation_gate?.result === 'pass', 'GEN-004 evidence must r
 assert(gen4Evidence.validation_gate?.pass_count === '2/2', 'GEN-004 evidence must record two Validation Gate passes');
 assert(gen4Evidence.repository_governance?.github_remote_present === false, 'GEN-004 evidence must record missing GitHub remote');
 assert(gen4Evidence.evidence_quality_notes?.some((note) => note.includes('UCLA commercial importance is stakeholder context')), 'GEN-004 evidence must keep UCLA client-size claim as stakeholder context');
+
+const gen5Evidence = readJson('.mde/generations/GEN-005.json');
+assert(gen5Evidence.validation_gate?.result === 'pass', 'GEN-005 evidence must record passing Validation Gate');
+assert(gen5Evidence.validation_gate?.pass_count === '2/2', 'GEN-005 evidence must record two Validation Gate passes');
+assert(gen5Evidence.repository_governance?.github_remote_present === true, 'GEN-005 evidence must record GitHub remote');
+assert(gen5Evidence.repository_governance?.code_submitted_to_github === true, 'GEN-005 evidence must record successful GitHub submission');
 
 const coverage = readJson('framework/coverage-matrix.json');
 const coveredBdds = new Set((coverage.mission_coverage || []).flatMap((item) => item.bdd_refs || []));
