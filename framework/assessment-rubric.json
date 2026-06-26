@@ -1,0 +1,423 @@
+{
+  "rubric_id": "EPD-RUBRIC-001",
+  "version": "0.1.0",
+  "created_on": "2026-06-24",
+  "purpose": "Provide a reusable, evidence-backed rubric for evaluating ecommerce product discovery across search, autocomplete, browse navigation, filters, recommendations, mobile experience, and realistic customer journeys.",
+  "score_scale": {
+    "min": 0,
+    "max": 100,
+    "anchors": [
+      {
+        "range": "0-19",
+        "label": "Broken",
+        "meaning": "Customers regularly cannot complete the discovery task or are pushed into dead ends."
+      },
+      {
+        "range": "20-39",
+        "label": "Weak",
+        "meaning": "The experience works only for narrow or exact cases and creates avoidable friction."
+      },
+      {
+        "range": "40-59",
+        "label": "Mixed",
+        "meaning": "Core paths work, but relevance, recovery, coverage, or mobile usability gaps materially limit discovery."
+      },
+      {
+        "range": "60-79",
+        "label": "Strong",
+        "meaning": "Most customer intents are supported with evidence-backed gaps that are specific and actionable."
+      },
+      {
+        "range": "80-100",
+        "label": "Excellent",
+        "meaning": "The experience supports broad intents, low effort, strong recovery, and clear product exploration across devices."
+      }
+    ]
+  },
+  "evidence_requirements": {
+    "every_finding_requires": [
+      "observation",
+      "evidence",
+      "severity",
+      "customer_impact",
+      "business_impact",
+      "recommendation"
+    ],
+    "accepted_evidence_types": [
+      "url",
+      "screenshot",
+      "screen_recording",
+      "query_result_set",
+      "autocomplete_suggestion_set",
+      "navigation_path",
+      "facet_state",
+      "mobile_viewport_observation",
+      "access_limitation_note",
+      "client_supplied_context"
+    ],
+    "access_contexts": [
+      "public_consumer",
+      "authenticated_wholesale",
+      "client_supplied",
+      "unknown_or_not_available"
+    ],
+    "rules": [
+      "Distinguish observed behavior from assumptions.",
+      "Record capture date and access context for every evidence item.",
+      "Do not claim revenue impact without observable customer experience evidence and a plausible business mechanism.",
+      "Mark unavailable authenticated or wholesale evidence as an access limitation, not a finding about the site."
+    ]
+  },
+  "severity_levels": [
+    {
+      "id": "Critical",
+      "meaning": "Mission failure, trust failure, severe customer dead end, or release-blocking evidence gap."
+    },
+    {
+      "id": "High",
+      "meaning": "Important discovery, conversion, explainability, consistency, or executive report issue."
+    },
+    {
+      "id": "Medium",
+      "meaning": "Meaningful improvement that should be addressed but does not block the current phase."
+    },
+    {
+      "id": "Low",
+      "meaning": "Useful refinement with limited mission or business risk."
+    }
+  ],
+  "opportunity_classes": [
+    {
+      "id": "Quick Win",
+      "effort": "low",
+      "impact": "high",
+      "definition": "Low effort change with plausible customer experience or conversion impact."
+    },
+    {
+      "id": "Strategic Improvement",
+      "effort": "moderate",
+      "impact": "high",
+      "definition": "Meaningful product discovery improvement that requires coordination or technical change."
+    },
+    {
+      "id": "Transformational Opportunity",
+      "effort": "high",
+      "impact": "potentially_significant",
+      "definition": "Foundational change that could materially improve discovery but needs larger investment."
+    }
+  ],
+  "score_dimensions": [
+    {
+      "id": "precision",
+      "question": "How often are retrieved or suggested products relevant to the customer's intent?"
+    },
+    {
+      "id": "recall",
+      "question": "Are relevant products, categories, or alternatives missing from the experience?"
+    },
+    {
+      "id": "ranking_quality",
+      "question": "Are the best or most likely products and paths presented first?"
+    },
+    {
+      "id": "diversity",
+      "question": "Are results and recommendations varied enough to support exploration rather than repetition?"
+    },
+    {
+      "id": "query_understanding",
+      "question": "Does the system understand exact, partial, multi-word, attribute, category, brand, identifier, and long-tail intent?"
+    },
+    {
+      "id": "robustness",
+      "question": "Does the experience handle typos, synonyms, abbreviations, alternate terminology, and reformulations?"
+    },
+    {
+      "id": "coverage",
+      "question": "Can customers discover the available catalog across search and non-search paths?"
+    },
+    {
+      "id": "recovery",
+      "question": "Can customers recover from zero results, weak suggestions, unavailable products, or dead-end navigation?"
+    },
+    {
+      "id": "user_effort",
+      "question": "How many actions, decisions, reloads, or corrections are required to reach the desired product or alternative?"
+    }
+  ],
+  "assessment_areas": [
+    {
+      "id": "search",
+      "label": "Search",
+      "required_dimensions": [
+        "query_understanding",
+        "precision",
+        "recall",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "robustness",
+        "recovery",
+        "user_effort"
+      ],
+      "required_query_types": [
+        "exact_match",
+        "partial_match",
+        "multi_word_query",
+        "attribute_query",
+        "category_query",
+        "brand_query",
+        "product_identifier_query",
+        "long_tail_query"
+      ],
+      "evidence_required": [
+        "query text",
+        "result count or zero-result state",
+        "top results observed",
+        "ranking/relevance note",
+        "recovery path if results are weak or missing"
+      ]
+    },
+    {
+      "id": "autocomplete",
+      "label": "Autocomplete",
+      "required_dimensions": [
+        "precision",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "user_effort"
+      ],
+      "required_suggestion_types": [
+        "query_suggestions",
+        "product_suggestions",
+        "category_suggestions",
+        "brand_suggestions"
+      ],
+      "evidence_required": [
+        "typed prefix",
+        "suggestions shown",
+        "suggestion ordering",
+        "mobile responsiveness note",
+        "discovery support note"
+      ]
+    },
+    {
+      "id": "browse_navigation",
+      "label": "Browse Navigation",
+      "required_dimensions": [
+        "coverage",
+        "user_effort",
+        "recovery",
+        "diversity"
+      ],
+      "required_checks": [
+        "category_hierarchy",
+        "naming_clarity",
+        "navigation_depth",
+        "organizational_consistency",
+        "product_grouping",
+        "mobile_navigation"
+      ],
+      "evidence_required": [
+        "starting page",
+        "navigation path",
+        "steps required",
+        "dead ends or successful destination",
+        "mobile friction note"
+      ]
+    },
+    {
+      "id": "filters_facets",
+      "label": "Filters And Faceted Navigation",
+      "required_dimensions": [
+        "precision",
+        "coverage",
+        "recovery",
+        "user_effort"
+      ],
+      "required_checks": [
+        "facet_relevance",
+        "facet_completeness",
+        "facet_organization",
+        "multi_select_support",
+        "filter_persistence",
+        "dead_end_navigation"
+      ],
+      "evidence_required": [
+        "result set before filtering",
+        "facets available",
+        "selected filters",
+        "result set after filtering",
+        "persistence or reset behavior"
+      ]
+    },
+    {
+      "id": "recommendations_related_discovery",
+      "label": "Recommendations And Related Discovery",
+      "required_dimensions": [
+        "precision",
+        "diversity",
+        "coverage",
+        "recovery"
+      ],
+      "required_checks": [
+        "related_products",
+        "similar_products",
+        "complementary_products",
+        "seasonal_products",
+        "featured_products",
+        "cross_sell_opportunities"
+      ],
+      "evidence_required": [
+        "source page",
+        "recommendation module name",
+        "products or collections shown",
+        "relevance/diversity note",
+        "customer next-step value"
+      ]
+    },
+    {
+      "id": "mobile_experience",
+      "label": "Mobile Experience",
+      "required_dimensions": [
+        "user_effort",
+        "recovery",
+        "coverage"
+      ],
+      "required_checks": [
+        "search_input_visibility",
+        "autocomplete_usability",
+        "navigation_friction",
+        "filter_usability",
+        "tap_target_clarity",
+        "first_useful_viewport"
+      ],
+      "evidence_required": [
+        "viewport size",
+        "task attempted",
+        "friction observed",
+        "successful or failed outcome",
+        "recovery path"
+      ]
+    },
+    {
+      "id": "journey_analysis",
+      "label": "Product Discovery Journey Analysis",
+      "required_dimensions": [
+        "coverage",
+        "recovery",
+        "user_effort",
+        "ranking_quality"
+      ],
+      "required_journey_types": [
+        "known_item",
+        "attribute_discovery",
+        "category_discovery",
+        "brand_or_affiliation",
+        "budget_or_constraint",
+        "sku_lookup",
+        "unavailable_item_alternatives",
+        "comparison",
+        "large_catalog_navigation"
+      ],
+      "evidence_required": [
+        "customer intent",
+        "starting point",
+        "steps attempted",
+        "destination reached",
+        "decision quality and effort"
+      ]
+    }
+  ],
+  "scorecard_categories": [
+    {
+      "id": "search",
+      "label": "Search",
+      "source_area": "search"
+    },
+    {
+      "id": "autocomplete",
+      "label": "Autocomplete",
+      "source_area": "autocomplete"
+    },
+    {
+      "id": "browse",
+      "label": "Browse",
+      "source_area": "browse_navigation"
+    },
+    {
+      "id": "filters",
+      "label": "Filters",
+      "source_area": "filters_facets"
+    },
+    {
+      "id": "recommendations",
+      "label": "Recommendations",
+      "source_area": "recommendations_related_discovery"
+    },
+    {
+      "id": "mobile_experience",
+      "label": "Mobile Experience",
+      "source_area": "mobile_experience"
+    },
+    {
+      "id": "product_discovery_overall",
+      "label": "Product Discovery Overall",
+      "source_area": "all"
+    }
+  ],
+  "vertical_profiles": [
+    {
+      "id": "apparel",
+      "journey_examples": [
+        "find a maroon quarter zip",
+        "find women's fleece",
+        "find Georgia Bulldogs apparel",
+        "find a gift item under a budget"
+      ]
+    },
+    {
+      "id": "wholesale",
+      "journey_examples": [
+        "locate a product by SKU",
+        "locate inventory by category",
+        "find alternatives to an unavailable item"
+      ]
+    },
+    {
+      "id": "general_retail",
+      "journey_examples": [
+        "discover products without knowing exact names",
+        "compare multiple alternatives",
+        "navigate large catalogs efficiently"
+      ]
+    },
+    {
+      "id": "industrial_supplier",
+      "journey_examples": [
+        "find a part by attribute",
+        "find compatible alternatives",
+        "narrow a large catalog by spec"
+      ]
+    },
+    {
+      "id": "auto_parts",
+      "journey_examples": [
+        "find parts by identifier",
+        "confirm fitment",
+        "find substitutes when the desired item is unavailable"
+      ]
+    }
+  ],
+  "calibration_rules": [
+    "Two evaluators should classify the same high-impact finding within one severity level unless a documented ambiguity exists.",
+    "Rubric changes learned from Boxercraft must identify whether they are apparel-specific, wholesale-specific, or reusable across verticals.",
+    "Scores require supporting evidence; do not use a score as a substitute for the finding narrative."
+  ],
+  "boxercraft_pilot_guardrails": [
+    "Use Boxercraft to validate the framework, not to narrow the framework to one apparel site.",
+    "Separate public consumer evidence from authenticated wholesale evidence.",
+    "Record unavailable access as a limitation rather than a negative site finding.",
+    "Every reusable framework change from the pilot must explain why it applies beyond Boxercraft."
+  ]
+}

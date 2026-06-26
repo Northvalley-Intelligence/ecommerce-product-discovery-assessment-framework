@@ -1,0 +1,82 @@
+{
+  "requiredChecks": [
+    "npm_run_validate",
+    "mission_coverage_review",
+    "bdd_critical_high_review",
+    "validation_strategy_current",
+    "repository_governance_review",
+    "finding_traceability_review",
+    "report_readability_review",
+    "self_qa"
+  ],
+  "conditionalChecks": [
+    {
+      "name": "json_schema_validation",
+      "required_when": "structured assessment data contract exists"
+    },
+    {
+      "name": "unit_tests",
+      "required_when": "code exists"
+    },
+    {
+      "name": "build",
+      "required_when": "buildable implementation exists"
+    },
+    {
+      "name": "pdf_margin_safety",
+      "required_when": "PDF or print-ready output is selected"
+    },
+    {
+      "name": "pdf_text_and_render_validation",
+      "required_when": "PDF or print-ready output is selected"
+    },
+    {
+      "name": "browser_journey_validation",
+      "required_when": "automated ecommerce evidence capture or web UI exists"
+    },
+    {
+      "name": "security_scan",
+      "required_when": "dependencies, backend, storage, authentication, or secrets are introduced"
+    }
+  ],
+  "phaseGate": {
+    "twoPassValidationGate": true,
+    "selfQaRequired": true,
+    "noUnresolvedCritical": true,
+    "noUnresolvedRequiredHigh": true,
+    "criticalMissionCoverage": "100%",
+    "highPriorityMissionCoverage": "90%+"
+  },
+  "repositoryGovernance": {
+    "updated_on": "2026-06-26",
+    "git_status_command": "git status --short --branch",
+    "git_repository_present": false,
+    "current_branch": null,
+    "github_remote_present": false,
+    "code_submitted_to_github": false,
+    "last_submission_check_after_generation": "GEN-004",
+    "last_submission_check_after_validation_run": "VAL-008",
+    "submission_required_after_meaningful_code_changes": true,
+    "submission_blocker": "This project directory is not currently a Git repository; .git is absent, so branch, commit, remote, push, and PR checks cannot be completed from this workspace.",
+    "sibling_repos_modified": false
+  },
+  "productionParity": {
+    "updated_on": "2026-06-26",
+    "production_deployed": false,
+    "deployment_platform": "not_selected",
+    "deploy_source_branch": null,
+    "deployed_commit_sha": null,
+    "origin_main_traceable_to_production": null,
+    "prod_branch_exists": null,
+    "prod_branch_matches_origin_main": null,
+    "parity_blocker_or_exception": "No production deployment or deploy source exists yet. Revisit when a hosted report renderer, publishing workflow, or deploy target is selected."
+  },
+  "knownWarnings": [
+    "Independent evaluator calibration is deferred until a completed pilot and second evaluator exist.",
+    "Authenticated wholesale access has not been confirmed; account, pricing, order, and inventory workflows must remain limitations unless access is approved.",
+    "Broader recommendation samples and filter persistence/multi-select behavior should be validated before final external client delivery.",
+    "UCLA commercial importance is stakeholder context, not independently verified public proof of client size.",
+    "GitHub submission is blocked until this project is initialized as a Git repository with a GitHub remote.",
+    "Deployment validation is skipped until a deploy target exists."
+  ]
+}

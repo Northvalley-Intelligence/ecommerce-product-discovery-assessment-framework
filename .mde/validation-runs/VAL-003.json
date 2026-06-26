@@ -1,0 +1,91 @@
+{
+  "validation_run_id": "VAL-003",
+  "generation": "GEN-002",
+  "phase": "Generation 2 - Boxercraft Public Retail Evidence And Northvalley Report Package",
+  "started_at": "2026-06-25T21:15:00-0400",
+  "completed_at": "2026-06-25T21:15:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "reconstructed_from_existing_artifacts_after_session_resume",
+  "command": "npm run validate; latexmk report/deck; pdftotext report/deck; pdftoppm representative pages",
+  "validations_executed": [
+    {
+      "category": "Functional Validation",
+      "tool": "scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Validator confirmed required framework artifacts, Boxercraft public-retail assessment structure, evidence-backed findings, report source text, deck source text, and coverage matrix references."
+    },
+    {
+      "category": "Technical Validation",
+      "tool": "JSON parser via scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Structured Boxercraft public-retail assessment JSON parsed successfully and satisfied the project validator's required assessment fields."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk",
+      "result": "pass",
+      "evidence": "Northvalley report and Beamer deck PDFs were already up to date with their LaTeX sources."
+    },
+    {
+      "category": "Usability / UI Standards Validation",
+      "tool": "pdftotext and pdftoppm",
+      "result": "pass",
+      "evidence": "Extracted PDF text contained expected headings and findings. Representative first pages rendered to non-empty PNG images for visual spot check."
+    },
+    {
+      "category": "Mission Coverage Validation",
+      "tool": "MDE artifact review",
+      "result": "pass",
+      "evidence": "Assessment covers public search, autocomplete, browse, filters/facets source evidence, recommendations source evidence, mobile limitation, and journey analysis with explicit access limitations."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Rendered browser ecommerce validation",
+      "reason": "No local browser harness exists in the project. Rendered mobile, filters, recommendations, and zero-result UX remain a Generation 3 or pre-delivery validation item.",
+      "revisit_when": "Before external client delivery."
+    },
+    {
+      "category": "Authenticated wholesale assessment",
+      "reason": "Authorized Boxercraft wholesale access has not been confirmed.",
+      "revisit_when": "When approved access or client-supplied evidence is available."
+    },
+    {
+      "category": "Independent evaluator calibration",
+      "reason": "Requires a second evaluator and completed pilot package.",
+      "revisit_when": "Before declaring the framework reusable for client engagements."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    {
+      "finding_id": "FND-GEN001-001",
+      "status": "deferred",
+      "summary": "Independent evaluator calibration is not yet executable."
+    },
+    {
+      "finding_id": "FND-GEN002-001",
+      "status": "deferred",
+      "summary": "Rendered browser validation is still required before client delivery."
+    },
+    {
+      "finding_id": "FND-GEN002-002",
+      "status": "deferred",
+      "summary": "Wholesale product discovery was not assessed because authorized access is not confirmed."
+    }
+  ],
+  "coverage": {
+    "critical_bdds_passed": 5,
+    "high_bdds_passed": 7,
+    "high_bdds_deferred": 1,
+    "medium_bdds_passed": 2,
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals",
+    "output_artifacts": "assessment_json_report_pdf_deck_pdf_present"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": false,
+  "evidence_quality": "strong_for_public_retail_draft_scope",
+  "reason": "All required Generation 2 public-retail package validations passed. Browser and wholesale gaps are documented deferrals, not hidden defects."
+}

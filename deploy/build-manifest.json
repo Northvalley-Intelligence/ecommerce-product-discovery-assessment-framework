@@ -1,0 +1,13 @@
+{
+  "app": "ecommerce-product-discovery-assessment-framework",
+  "platform": "not_selected",
+  "commands": {
+    "build": "",
+    "deployStaging": "",
+    "deployProduction": ""
+  },
+  "notes": [
+    "No deployable implementation exists in Generation 0.",
+    "Update this manifest when the project selects a software stack, report renderer, or publishing target."
+  ]
+}

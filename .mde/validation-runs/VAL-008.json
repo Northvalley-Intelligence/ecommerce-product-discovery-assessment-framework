@@ -1,0 +1,114 @@
+{
+  "validation_run_id": "VAL-008",
+  "generation": "GEN-004",
+  "phase": "Generation 4 - Full Boxercraft Normalization And Browse Routing Evaluation",
+  "started_at": "2026-06-26T17:43:00-0400",
+  "completed_at": "2026-06-26T17:45:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_from_full_generation_4_validation",
+  "command": "Second Generation 4 Validation Gate pass with no implementation changes after VAL-007",
+  "validations_executed": [
+    {
+      "category": "Functional Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Second pass repeated framework, assessment, normalization evidence, report/deck source, coverage, and governance checks."
+    },
+    {
+      "category": "Project-Specific External Validation",
+      "tool": "GEN-004 normalization evidence review",
+      "result": "pass",
+      "evidence": "Second pass reused the freshly passing GEN-004 normalization JSON and confirmed it had no failures, six groups, five findings, and screenshots present. External page recrawl was not repeated because no evaluator code or evidence inputs changed."
+    },
+    {
+      "category": "Technical Validation",
+      "tool": "JSON parser checks",
+      "result": "pass",
+      "evidence": "Assessment, browser evidence, normalization evidence, MDE state, validation strategy, findings, validator effectiveness, validation-run records, generation evidence, and release checks parsed as JSON."
+    },
+    {
+      "category": "Security Validation",
+      "tool": "npm audit --audit-level=moderate",
+      "result": "pass",
+      "evidence": "npm audit reported 0 vulnerabilities."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk",
+      "result": "pass",
+      "evidence": "Report and deck PDF targets compiled or were confirmed up to date after GEN-004 normalization updates."
+    },
+    {
+      "category": "Usability / UI Standards Validation",
+      "tool": "pdftotext and pdftoppm",
+      "result": "pass",
+      "evidence": "PDF text extraction showed updated normalization, UCLA/Bruins, and browse-routing narrative; representative page rendering produced non-empty images."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "tool": "git status --short --branch plus deploy/release-checks.json review",
+      "result": "pass_with_recorded_blocker",
+      "evidence": "git status reports this directory is not a Git repository; GitHub submission blocker and production non-deployed status are recorded locally."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Authenticated wholesale assessment",
+      "reason": "Authorized Boxercraft wholesale account/order/pricing/inventory access has not been confirmed; unchanged since VAL-007.",
+      "revisit_when": "When approved access or client-supplied evidence is available."
+    },
+    {
+      "category": "Independent evaluator calibration",
+      "reason": "Requires a second evaluator and completed pilot package; unchanged since VAL-007.",
+      "revisit_when": "Before declaring the framework reusable for client engagements."
+    },
+    {
+      "category": "Deployment validation",
+      "reason": "No deployment target exists; deploy/build-manifest.json records platform as not_selected; unchanged since VAL-007.",
+      "revisit_when": "A hosted report renderer, publishing workflow, or deploy target exists."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    {
+      "finding_id": "FND-GEN001-001",
+      "status": "deferred",
+      "summary": "Independent evaluator calibration is not yet executable."
+    },
+    {
+      "finding_id": "FND-GEN002-002",
+      "status": "deferred",
+      "summary": "Authenticated wholesale account, pricing, order, and inventory workflows were not assessed because authorized access is not confirmed."
+    },
+    {
+      "finding_id": "FND-GEN004-001",
+      "status": "new",
+      "summary": "Full normalization evidence shows uneven search and autocomplete recovery across common apparel variants."
+    },
+    {
+      "finding_id": "FND-GEN004-002",
+      "status": "new",
+      "summary": "Search/autocomplete-to-browse routing is inconsistent for normalized terms."
+    },
+    {
+      "finding_id": "FND-GOV-001",
+      "status": "deferred",
+      "summary": "GitHub submission is blocked because the project directory is not currently a Git repository."
+    }
+  ],
+  "coverage": {
+    "critical_bdds_passed": 5,
+    "high_bdds_passed": 7,
+    "high_bdds_deferred": 1,
+    "medium_bdds_passed": 2,
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals",
+    "assessment_areas": "all represented with rendered browser evidence and GEN-004 normalization/browse-routing evidence for public retail and public wholesale search",
+    "output_artifacts": "assessment_json_browser_evidence_normalization_evidence_report_pdf_deck_pdf_present"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "pass_count_reset": false,
+  "evidence_quality": "strong_for_full_public_retail_public_wholesale_normalization_and_browse_routing_draft_scope",
+  "reason": "Second independent Validation Gate pass completed with no implementation changes between clean passes. GitHub submission remains blocked and recorded because the directory is not a Git repository."
+}

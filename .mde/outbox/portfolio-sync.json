@@ -1,0 +1,28 @@
+{
+  "project_id": "ecommerce-product-discovery-assessment-framework",
+  "project_name": "Ecommerce Product Discovery Assessment Framework",
+  "mde_status": "active",
+  "artifact_profiles": [
+    "report_generation",
+    "client_facing_document",
+    "data_contract",
+    "website_assessment",
+    "search_ir_evaluation",
+    "prompt_generation",
+    "pdf_generation_if_selected"
+  ],
+  "context_packs": [
+    "context-packs/pdf-generation.md",
+    "context-packs/printable-artifacts.md",
+    "context-packs/website-assessment-to-build.md"
+  ],
+  "validation_strategy_status": "active_for_generation_1",
+  "latest_generation": "GEN-001",
+  "latest_validation_gate_result": "pass",
+  "upstream_dependencies": [
+    "central-mde-context-packs",
+    "central-mde-issue-signatures"
+  ],
+  "downstream_dependencies": [],
+  "last_sync_note": "Generation 1 completed on 2026-06-24 with two passing Validation Gate runs. No cross-repo impact yet."
+}

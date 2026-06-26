@@ -1,0 +1,123 @@
+{
+  "updated_on": "2026-06-26",
+  "current_generation": "GEN-004",
+  "findings": [
+    {
+      "finding_id": "FND-GEN001-001",
+      "source_validator": "scripts/validate-framework.mjs",
+      "severity": "High",
+      "category": "Mission Coverage Validation",
+      "summary": "Independent evaluator calibration is not yet executable.",
+      "affected_workflow_or_component": "Reusable framework calibration",
+      "first_seen_generation": "GEN-001",
+      "last_seen_generation": "GEN-004",
+      "status": "deferred",
+      "resolution_notes": "Still requires a second evaluator. Not blocking Generation 3 because the Boxercraft draft records evidence and limitations, but calibration remains required before declaring the framework reusable for client engagements."
+    },
+    {
+      "finding_id": "FND-GEN001-002",
+      "source_validator": "scripts/validate-framework.mjs",
+      "severity": "Medium",
+      "category": "UI Standards Validation",
+      "summary": "PDF and print layout validation was not applicable until an output format was selected.",
+      "affected_workflow_or_component": "Client-facing PDF or print-ready report",
+      "first_seen_generation": "GEN-001",
+      "last_seen_generation": "GEN-002",
+      "status": "resolved",
+      "resolution_notes": "Generation 2 selected Northvalley LaTeX report/deck output and validated compilation, extracted text, rendered page images, and spot-checked pages."
+    },
+    {
+      "finding_id": "FND-GEN002-001",
+      "source_validator": "Boxercraft public-retail evidence review",
+      "severity": "High",
+      "category": "Project-Specific External Validation",
+      "summary": "Rendered browser validation is still required before client delivery.",
+      "affected_workflow_or_component": "Mobile search, autocomplete UI, zero-result recovery, filters, and product-page recommendations",
+      "first_seen_generation": "GEN-002",
+      "last_seen_generation": "GEN-003",
+      "status": "resolved",
+      "resolution_notes": "Generation 3 added a Playwright browser validator, rendered desktop/mobile evidence, 18 screenshots, report/deck updates, and a passing browser-validation JSON artifact for search, autocomplete, zero-result pages, filters, recommendations, mobile first viewport, and public wholesale search."
+    },
+    {
+      "finding_id": "FND-GEN002-002",
+      "source_validator": "Boxercraft access review",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "summary": "Authenticated wholesale account, pricing, order, and inventory workflows were not assessed because authorized access is not confirmed.",
+      "affected_workflow_or_component": "Boxercraft authenticated wholesale discovery workflow",
+      "first_seen_generation": "GEN-002",
+      "last_seen_generation": "GEN-004",
+      "status": "deferred",
+      "resolution_notes": "Generation 3 validated public wholesale search for fleece and BM5205, but account/order/pricing/inventory workflows remain out of scope without approved access. Do not classify authenticated wholesale behavior as a defect without authorized access."
+    },
+    {
+      "finding_id": "FND-GEN003-001",
+      "source_validator": "scripts/validate-boxercraft-browser.mjs",
+      "severity": "Medium",
+      "category": "Evidence Quality",
+      "summary": "Broader recommendation and filter persistence samples remain useful before final external delivery.",
+      "affected_workflow_or_component": "Boxercraft recommendation and faceted navigation evidence",
+      "first_seen_generation": "GEN-003",
+      "last_seen_generation": "GEN-004",
+      "status": "deferred",
+      "resolution_notes": "Generation 4 broadened search/autocomplete normalization and browse-routing evidence, but final delivery should still broaden recommendation samples and verify filter persistence or multi-select behavior."
+    },
+    {
+      "finding_id": "FND-GOV-001",
+      "source_validator": "Repository governance sync",
+      "severity": "High",
+      "category": "Repository Governance",
+      "summary": "GitHub submission is blocked because the project directory is not currently a Git repository.",
+      "affected_workflow_or_component": "GitHub submission gate after meaningful code changes or two clean Validation Gate passes",
+      "first_seen_generation": "GEN-003",
+      "last_seen_generation": "GEN-004",
+      "status": "deferred",
+      "resolution_notes": "git status --short --branch returns fatal: not a git repository. Initialize this project as a Git repository and add a GitHub remote before code can be committed, pushed, or opened as a PR. Blocker reconfirmed after GEN-004 meaningful code/report changes and Validation Gate passes."
+    },
+    {
+      "finding_id": "FND-GEN004-001",
+      "source_validator": "scripts/evaluate-boxercraft-normalization.mjs",
+      "severity": "High",
+      "category": "Project-Specific External Validation",
+      "summary": "Full normalization evidence shows uneven search and autocomplete recovery across common apparel variants.",
+      "affected_workflow_or_component": "Boxercraft public retail search and autocomplete normalization",
+      "first_seen_generation": "GEN-004",
+      "last_seen_generation": "GEN-004",
+      "status": "new",
+      "resolution_notes": "GEN-004 matrix found quarter-zip variants at 2/6 relevant search and 3/6 autocomplete, women fleece variants at 3/5, and color-plus-product variants at 4/5 search but 0/5 autocomplete. This is a valid draft finding for the Boxercraft assessment."
+    },
+    {
+      "finding_id": "FND-GEN004-002",
+      "source_validator": "scripts/evaluate-boxercraft-normalization.mjs",
+      "severity": "High",
+      "category": "Project-Specific External Validation",
+      "summary": "Search/autocomplete-to-browse routing is inconsistent for normalized terms.",
+      "affected_workflow_or_component": "Boxercraft search, autocomplete, collection/page recovery, and fan-shop browse routing",
+      "first_seen_generation": "GEN-004",
+      "last_seen_generation": "GEN-004",
+      "status": "new",
+      "resolution_notes": "GEN-004 matrix found useful browse paths for UCLA and broad fan-shop terms, but browse-path gaps for quarter-zip and color-product variants. This is a valid draft finding for the Boxercraft assessment."
+    },
+    {
+      "finding_id": "FND-GEN004-003",
+      "source_validator": "scripts/evaluate-boxercraft-normalization.mjs",
+      "severity": "Medium",
+      "category": "Stakeholder Context",
+      "summary": "UCLA/Bruins discovery was tested as a stakeholder-priority set, but the client-size claim is not independently verified.",
+      "affected_workflow_or_component": "Boxercraft UCLA/Bruins priority discovery narrative",
+      "first_seen_generation": "GEN-004",
+      "last_seen_generation": "GEN-004",
+      "status": "accepted",
+      "resolution_notes": "Report/deck language treats UCLA commercial importance as stakeholder context and validates only observed UCLA/Bruins discovery behavior: 7/8 search, 6/8 autocomplete, 8/8 search-to-browse, and 5/8 autocomplete-to-browse in the GEN-004 run."
+    }
+  ],
+  "lifecycle_states": [
+    "new",
+    "repeated",
+    "resolved",
+    "accepted",
+    "deferred",
+    "false_positive"
+  ],
+  "note": "Boxercraft product-discovery findings are recorded in assessments/boxercraft/public-retail-evaluation.json. This file tracks validation lifecycle findings."
+}

@@ -1,0 +1,128 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\RequirePackage{array}
+\RequirePackage{graphicx}
+\RequirePackage{tabularx}
+\RequirePackage{tikz}
+\RequirePackage[table]{xcolor}
+
+\definecolor{NVIInk}{HTML}{10292D}
+\definecolor{NVIMuted}{HTML}{52656A}
+\definecolor{NVIAccent}{HTML}{1D7A6B}
+\definecolor{NVIAccentDark}{HTML}{173A3F}
+\definecolor{NVIAccentSoft}{HTML}{E2F1ED}
+\definecolor{NVIPanel}{HTML}{F6FAF8}
+\definecolor{NVIRule}{HTML}{AFC7BF}
+\definecolor{NVIWarning}{HTML}{B86B00}
+
+\providecommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\providecommand{\NorthvalleyBusinessName}{Northvalley Intelligence LLC}
+\providecommand{\NorthvalleyWebsite}{northvalleyintel.com}
+\providecommand{\NorthvalleyEmail}{ferosh@northvalleyintel.com}
+\providecommand{\NorthvalleyPhone}{+1 (404) 345 0592}
+\providecommand{\NorthvalleyContactLine}{\NorthvalleyEmail{} / \NorthvalleyPhone{} / \NorthvalleyWebsite{}}
+
+\newcommand{\NorthvalleyLogoColorPath}{\NorthvalleyAssetPath/northvalley-logo.png}
+\newcommand{\NorthvalleyLogoGrayPath}{\NorthvalleyAssetPath/northvalley-logo-gray.png}
+
+\newcommand{\NorthvalleyLogo}[1][0.64in]{%
+  \IfFileExists{\NorthvalleyLogoColorPath}{%
+    \includegraphics[width=#1]{\NorthvalleyLogoColorPath}%
+  }{%
+    \IfFileExists{\NorthvalleyLogoGrayPath}{%
+      \includegraphics[width=#1]{\NorthvalleyLogoGrayPath}%
+    }{%
+      \begin{tikzpicture}[baseline=-0.5ex]
+        \fill[NVIAccentDark] (0,0) rectangle (#1,#1);
+      \end{tikzpicture}%
+    }%
+  }%
+}
+
+\newcolumntype{N}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\newcommand{\NVIKicker}[1]{%
+  {\fontsize{7.8}{9}\selectfont\bfseries\color{NVIMuted}\MakeUppercase{#1}}%
+}
+
+\newcommand{\NVIHeading}[1]{%
+  {\fontsize{16}{19}\selectfont\bfseries\color{NVIInk}#1}%
+}
+
+\newcommand{\NVIBody}[1]{%
+  {\fontsize{9.4}{11.6}\selectfont\color{NVIInk}#1}%
+}
+
+\newcommand{\NVIFine}[1]{%
+  {\fontsize{7.8}{9.3}\selectfont\color{NVIMuted}#1}%
+}
+
+\newcommand{\NVIRuleLine}{%
+  \textcolor{NVIRule}{\rule{\linewidth}{0.45pt}}%
+}
+
+\newcommand{\NVIDot}{%
+  \raisebox{0.12ex}{\tikz{\fill[NVIAccent] (0,0) circle (1.2pt);}}%
+}
+
+\newcommand{\NVIItem}[1]{%
+  \NVIDot\hspace{0.34em}#1%
+}
+
+\newcommand{\NVIBadge}[1]{%
+  \tikz[baseline=(badge.base)] \node[
+    fill=NVIAccentSoft,
+    draw=NVIRule,
+    rounded corners=1pt,
+    inner xsep=6pt,
+    inner ysep=3pt
+  ] (badge) {\fontsize{7.7}{8.8}\selectfont\bfseries\color{NVIAccentDark}#1};%
+}
+
+\newcommand{\NVIDocHeader}[1]{%
+  \NorthvalleyLogo[0.58in]\hfill
+  \begin{minipage}[b]{0.72\linewidth}
+    \raggedleft
+    {\fontsize{8.3}{9.3}\selectfont\bfseries\color{NVIMuted}\MakeUppercase{\NorthvalleyBusinessName}}\\
+    {\fontsize{7.5}{8.5}\selectfont\color{NVIMuted}#1}
+  \end{minipage}
+  \vspace{0.14in}
+}
+
+\newcommand{\NVISection}[1]{%
+  \vspace{0.2in}
+  {\fontsize{11.2}{13}\selectfont\bfseries\color{NVIInk}#1}\\[-0.03in]
+  \NVIRuleLine
+  \vspace{0.07in}
+}
+
+\newcommand{\NVIPanel}[1]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIRule,
+      fill=NVIPanel,
+      rounded corners=1pt,
+      inner xsep=12pt,
+      inner ysep=10pt,
+      text width=\dimexpr\linewidth-26pt\relax,
+      align=left
+    ] {#1};
+  \end{tikzpicture}%
+}
+
+\newcommand{\NVICTA}[1]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIAccentDark,
+      fill=NVIAccentDark,
+      rounded corners=1pt,
+      inner xsep=13pt,
+      inner ysep=10pt,
+      text width=\dimexpr\linewidth-28pt\relax,
+      align=center
+    ] {{\fontsize{10}{12}\selectfont\bfseries\color{white}#1}\\[0.04in]
+       {\fontsize{8}{9.4}\selectfont\color{white}\NorthvalleyContactLine}};
+  \end{tikzpicture}%
+}

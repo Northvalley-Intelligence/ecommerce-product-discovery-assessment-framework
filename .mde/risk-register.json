@@ -1,0 +1,167 @@
+{
+  "risk_register_id": "RISK-REG-001",
+  "created_on": "2026-06-24",
+  "current_generation": "GEN-004",
+  "risks": [
+    {
+      "id": "RISK-001",
+      "severity": "Critical",
+      "category": "Mission Coverage",
+      "summary": "Framework becomes subjective and cannot be applied consistently.",
+      "impact": "Independent evaluators produce different findings or severity ratings, weakening consulting credibility.",
+      "mitigation": "Create explicit rubrics, scoring anchors, examples, and independent evaluator calibration before reusable release.",
+      "related_bdds": [
+        "BDD-006",
+        "BDD-012"
+      ],
+      "status": "mitigated_partial",
+      "generation_1_update": "Rubric scoring anchors, required score dimensions, coverage matrix, and validator checks now reduce subjectivity. Full independent calibration remains pending.",
+      "generation_2_update": "Boxercraft draft findings include confidence, severity, evidence, and limitation notes, but independent evaluator calibration is still required before reusable client-release.",
+      "generation_3_update": "Rendered evidence improved confidence for the Boxercraft case study, but independent evaluator calibration is still required before reusable client-release.",
+      "generation_4_update": "Full normalization matrix improves repeatable scoring for search/autocomplete parity and browse routing, but independent evaluator calibration remains pending before reusable client-release."
+    },
+    {
+      "id": "RISK-002",
+      "severity": "High",
+      "category": "Mission Drift",
+      "summary": "Boxercraft pilot overfits the framework to one apparel retailer.",
+      "impact": "The final framework may not work for industrial suppliers, auto parts, wholesalers, or specialty catalogs.",
+      "mitigation": "Record pilot-specific findings separately from reusable rubric changes and validate scenario coverage across multiple verticals.",
+      "related_bdds": [
+        "BDD-004",
+        "BDD-011"
+      ],
+      "status": "mitigated_partial",
+      "generation_1_update": "Boxercraft pilot protocol and guardrails require reusable framework changes to distinguish apparel-specific, wholesale-specific, reusable, and Boxercraft-only lessons.",
+      "generation_2_update": "Public-retail Boxercraft findings are stored as assessment data rather than rubric changes, preserving the broader framework.",
+      "generation_3_update": "Rendered Boxercraft findings remain in the assessment and report/deck artifacts, not in reusable rubric changes, preserving framework portability.",
+      "generation_4_update": "UCLA/Bruins, team-alias, and apparel-variant findings remain in the Boxercraft assessment artifacts rather than changing the reusable rubric, preserving framework portability."
+    },
+    {
+      "id": "RISK-003",
+      "severity": "High",
+      "category": "Trust",
+      "summary": "Report overclaims revenue impact from product discovery findings.",
+      "impact": "Leadership readers may distrust the assessment or make decisions from unsupported claims.",
+      "mitigation": "Tie every business-impact claim to observable customer experience evidence, plausible mechanism, and uncertainty notes.",
+      "related_bdds": [
+        "BDD-002",
+        "BDD-005"
+      ],
+      "status": "mitigated_partial",
+      "generation_1_update": "Finding schema and report template require observation, evidence, customer impact, business impact, recommendation, confidence, and limitations.",
+      "generation_2_update": "Report language uses plausible customer/business impact mechanisms and avoids unsupported revenue quantification.",
+      "generation_3_update": "Rendered report/deck updates continue to use observed customer-experience mechanisms instead of unsupported revenue quantification.",
+      "generation_4_update": "Report/deck explicitly avoid claiming UCLA is the largest client; UCLA commercial importance is stakeholder context and only observed discovery behavior is scored."
+    },
+    {
+      "id": "RISK-004",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "summary": "Wholesale or authenticated ecommerce experiences may not be publicly accessible.",
+      "impact": "The Boxercraft wholesale assessment could be incomplete or misleading if access limits are hidden.",
+      "mitigation": "Record access context, mark unavailable evidence clearly, and separate public observations from authenticated findings.",
+      "related_bdds": [
+        "BDD-004",
+        "BDD-013"
+      ],
+      "status": "deferred_pending_access",
+      "generation_1_update": "Assessment seed and pilot protocol explicitly separate public consumer evidence from authenticated wholesale evidence, but access remains unresolved.",
+      "generation_2_update": "Wholesale is recorded as an access limitation, not as a defect. Assessment remains public-retail only until approved wholesale access or client-supplied evidence exists.",
+      "generation_3_update": "Public wholesale search and SKU lookup were validated, but authenticated account/order/pricing/inventory workflows remain access-limited and are still not classified as defects.",
+      "generation_4_update": "Public wholesale SKU variants were validated, but authenticated account/order/pricing/inventory workflows remain access-limited and are still not classified as defects."
+    },
+    {
+      "id": "RISK-005",
+      "severity": "High",
+      "category": "Client-Facing Artifact Quality",
+      "summary": "Generated report layout may clip, overflow, or break awkwardly if PDF output is selected.",
+      "impact": "Executive-ready output would look unprofessional or hide evidence.",
+      "mitigation": "Apply PDF/print context pack checks and margin/page-break validation when PDF output is introduced.",
+      "related_bdds": [
+        "BDD-014"
+      ],
+      "status": "mitigated_for_current_pdf_draft",
+      "generation_1_update": "PDF output was not selected in Generation 1. PDF/print validation remained conditional before any PDF client delivery.",
+      "generation_2_update": "Northvalley LaTeX report and Beamer deck compile, extract expected text, and render representative non-empty pages. Full visual QA should rerun after screenshots and browser evidence are added.",
+      "generation_3_update": "Report and deck were updated for browser evidence and revalidated through LaTeX compilation, text extraction, and rendered-page spot checks.",
+      "generation_4_update": "Report and deck were updated for normalization evidence and revalidated through LaTeX compilation, text extraction, and rendered-page spot checks."
+    },
+    {
+      "id": "RISK-006",
+      "severity": "Medium",
+      "category": "Data Freshness",
+      "summary": "Assessment evidence can become stale as ecommerce sites change.",
+      "impact": "Reports may cite behavior that no longer exists.",
+      "mitigation": "Capture assessment date, evidence source, screenshots or URLs where appropriate, and verify before client delivery.",
+      "related_bdds": [
+        "BDD-013"
+      ],
+      "status": "mitigated_partial",
+      "generation_1_update": "Schema and protocol require source, capture date, access context, locator, summary, and freshness status for evidence.",
+      "generation_2_update": "Boxercraft evidence records include captured_at, source_type, locator, access_context, summary, and freshness_status; report says evidence should be revalidated before external delivery.",
+      "generation_3_update": "Browser evidence now includes screenshots and a validation JSON completed on 2026-06-26T03:41:00Z; report still says to revalidate before external delivery.",
+      "generation_4_update": "GEN-004 normalization evidence was captured on 2026-06-26, and report/deck state that evidence should be revalidated before external delivery."
+    },
+    {
+      "id": "RISK-007",
+      "severity": "Medium",
+      "category": "Tooling",
+      "summary": "Premature tool choice could constrain the assessment workflow.",
+      "impact": "The project might optimize for a crawler, app stack, or report generator before the rubric is stable.",
+      "mitigation": "Keep Generation 1 narrow and validate the data contract before committing to heavier automation.",
+      "related_bdds": [
+        "BDD-001",
+        "BDD-002"
+      ],
+      "status": "mitigated",
+      "generation_1_update": "Generation 1 selected a narrow dependency-free framework validator and avoided premature crawler/app/report-renderer commitments."
+    },
+    {
+      "id": "RISK-008",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "summary": "Rendered ecommerce behavior may differ from HTML/source evidence.",
+      "impact": "Mobile UX, autocomplete UI, filters, recommendations, and zero-result recovery could be mischaracterized if only source/text endpoints are reviewed.",
+      "mitigation": "Run browser-enabled desktop/mobile validation and attach screenshots before external client delivery.",
+      "related_bdds": [
+        "BDD-003",
+        "BDD-008",
+        "BDD-009",
+        "BDD-010",
+        "BDD-013"
+      ],
+      "status": "mitigated_for_rendered_draft",
+      "generation_2_update": "Recorded as the primary Generation 3 validation scope.",
+      "generation_3_update": "Rendered browser validation completed for desktop/mobile search, autocomplete, zero-result pages, filters, recommendations, mobile first viewport, and public wholesale search. Broader recommendation/filter persistence samples remain a final-delivery follow-up.",
+      "generation_4_update": "GEN-004 added broader rendered browser normalization evidence across 36 queries and 60 screenshots, extending the Generation 3 browser validation."
+    },
+    {
+      "id": "RISK-009",
+      "severity": "High",
+      "category": "Repository Governance",
+      "summary": "Meaningful project work cannot currently be submitted to GitHub from this directory.",
+      "impact": "The GitHub submission gate cannot be satisfied after code changes or two clean Validation Gate passes, reducing traceability and recoverability.",
+      "mitigation": "Initialize this project as a Git repository and connect a GitHub remote, or keep an explicit project-local blocker until that decision is made.",
+      "related_bdds": [],
+      "status": "deferred_blocked_by_missing_git_repository",
+      "generation_3_update": "git status --short --branch returns fatal: not a git repository. The blocker is recorded in findings, release checks, generation summary, validation runs, and Generation 3 evidence.",
+      "generation_4_update": "git status --short --branch still returns fatal: not a git repository. The blocker remains recorded after Generation 4 meaningful changes and Validation Gate passes."
+    },
+    {
+      "id": "RISK-010",
+      "severity": "Medium",
+      "category": "Stakeholder Context",
+      "summary": "Stakeholder-supplied UCLA commercial importance could be mistaken for independently verified public fact.",
+      "impact": "The assessment could overclaim client priority or client-size facts if the report repeats unverified context as evidence.",
+      "mitigation": "Treat UCLA/Bruins as a protected test set for discovery behavior while explicitly avoiding public claims about client size unless supplied and approved by the client.",
+      "related_bdds": [
+        "BDD-002",
+        "BDD-004",
+        "BDD-013"
+      ],
+      "status": "mitigated_for_current_draft",
+      "generation_4_update": "Report/deck and access limitations state that UCLA commercial importance is stakeholder context, not independently verified public proof of client size."
+    }
+  ]
+}

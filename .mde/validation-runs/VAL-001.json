@@ -1,0 +1,68 @@
+{
+  "validation_run_id": "VAL-001",
+  "generation": "GEN-001",
+  "phase": "Generation 1 - Assessment Rubric, Data Contract, And Boxercraft Pilot Protocol",
+  "started_at": "2026-06-24T12:45:52-0400",
+  "completed_at": "2026-06-24T12:45:52-0400",
+  "strategy_version": "VALSTRAT-001",
+  "command": "npm run validate",
+  "validations_executed": [
+    {
+      "category": "Functional Validation",
+      "tool": "scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Rubric covers required areas, finding fields, score dimensions, scorecard categories, and Boxercraft protocol requirements."
+    },
+    {
+      "category": "Technical Validation",
+      "tool": "scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Required JSON artifacts parsed and structured assessment templates met project validator expectations."
+    },
+    {
+      "category": "Usability Validation",
+      "tool": "scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Executive report template includes leadership-facing sections and finding requirements."
+    },
+    {
+      "category": "Mission Coverage Validation",
+      "tool": "scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Coverage matrix links required Generation 1 BDDs to framework artifacts."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Independent evaluator calibration",
+      "reason": "Requires completed pilot evidence and a second evaluator.",
+      "revisit_when": "Before reusable client-engagement release."
+    },
+    {
+      "category": "PDF layout validation",
+      "reason": "PDF or print-ready output has not been selected.",
+      "revisit_when": "When PDF or print output is implemented."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    {
+      "finding_id": "FND-GEN001-001",
+      "status": "deferred",
+      "summary": "Independent evaluator calibration is not yet executable."
+    }
+  ],
+  "coverage": {
+    "critical_bdds_passed": 5,
+    "high_bdds_passed": 6,
+    "high_bdds_deferred": 1,
+    "medium_bdds_passed": 1,
+    "medium_bdds_deferred": 1,
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferral"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": false,
+  "reason": "All Generation 1 required Critical validations passed. The remaining High calibration item is explicitly deferred because its prerequisites are outside this generation."
+}

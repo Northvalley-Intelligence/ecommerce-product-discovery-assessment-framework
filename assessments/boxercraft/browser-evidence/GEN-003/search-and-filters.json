@@ -1,0 +1,155 @@
+{
+  "search_pages": [
+    {
+      "query": "maroon quarter zip",
+      "url": "https://boxercraft.com/search?q=maroon%20quarter%20zip",
+      "title": "Search: 33 results found for \"maroon quarter zip\" – Boxercraft",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-maroon-quarter-zip.png",
+      "result_count": 33,
+      "zero_result_message": false,
+      "recovery_text": "",
+      "filter_labels": [
+        "AVAILABILITY",
+        "PRICE",
+        "SORT",
+        "Sort Relevance Price, low to high Price, high to low"
+      ],
+      "product_titles": [
+        "Women's Sherpa Quarter-Zip Pullover",
+        "Men's Alumni Quarter-Zip Pullover",
+        "Men's Clemson University Sullivan Quarter-Zip Pullover",
+        "Men's Quarter-Zip Fleece Pullover",
+        "Men's Sullivan Quarter-Zip Pullover",
+        "Women's Stretch Woven Quarter-Zip Pullover",
+        "Women's Manchester Quarter Zip Pullover",
+        "Women's Flex Quarter Zip Pullover",
+        "Men's Flex Quarter-Zip Pullover",
+        "Women's Fleece Colorblocked Quarter-Zip Pullover",
+        "Men's Alpine Quarter-Zip Pullover",
+        "Men's Stretch Woven Quarter Zip Pullover",
+        "Men's Kansas State University Sullivan Quarter-Zip Pullover",
+        "Men's Ohio State University Stretch Woven Quarter Zip Pullover",
+        "Lambert Soccer Men's Flex Quarter Zip Pullover",
+        "Lambert Longhorns Men's Sullivan Quarter-Zip Pullover",
+        "Men's Ohio State University Sullivan Quarter-Zip Pullover"
+      ]
+    },
+    {
+      "query": "quarterzip",
+      "url": "https://boxercraft.com/search?q=quarterzip",
+      "title": "Search: 39 results found for \"quarterzip\" – Boxercraft",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-quarterzip.png",
+      "result_count": 39,
+      "zero_result_message": false,
+      "recovery_text": "",
+      "filter_labels": [
+        "AVAILABILITY",
+        "PRICE",
+        "SORT",
+        "Sort Relevance Price, low to high Price, high to low"
+      ],
+      "product_titles": [
+        "Women's Sherpa Quarter-Zip Pullover",
+        "Women's Flex Quarter Zip Pullover",
+        "Women's Manchester Quarter Zip Pullover",
+        "Women's Stretch Woven Quarter-Zip Pullover",
+        "Women's Fleece Colorblocked Quarter-Zip Pullover",
+        "Men's Alumni Quarter-Zip Pullover",
+        "Lambert Soccer Women's Flex Quarter Zip Pullover",
+        "Men's Sullivan Quarter-Zip Pullover",
+        "Men's Stretch Woven Quarter Zip Pullover",
+        "Men's Quarter-Zip Fleece Pullover",
+        "Men's Flex Quarter-Zip Pullover",
+        "Men's Alpine Quarter-Zip Pullover",
+        "Lambert Longhorns Men's Alpine Fleece Quarter-Zip",
+        "Men's Everest Fleece Quarter-Zip Pullover",
+        "Lambert Soccer Women's Dream Fleece Quarter-Zip",
+        "Lambert Soccer Men's Alumni Quarter-Zip Pullover"
+      ]
+    },
+    {
+      "query": "Georgia Bulldogs",
+      "url": "https://boxercraft.com/search?q=Georgia%20Bulldogs",
+      "title": "Search: 0 results found for \"Georgia Bulldogs\" – Boxercraft",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-georgia-bulldogs.png",
+      "result_count": 0,
+      "zero_result_message": true,
+      "recovery_text": "did not yield any results.",
+      "filter_labels": [],
+      "product_titles": []
+    },
+    {
+      "query": "zzzznotaproduct",
+      "url": "https://boxercraft.com/search?q=zzzznotaproduct",
+      "title": "Search: 0 results found for \"zzzznotaproduct\" – Boxercraft",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-zzzznotaproduct.png",
+      "result_count": 0,
+      "zero_result_message": true,
+      "recovery_text": "did not yield any results.",
+      "filter_labels": [],
+      "product_titles": []
+    }
+  ],
+  "fleece_collection": [
+    {
+      "viewport": "desktop",
+      "url": "https://boxercraft.com/collections/fleece",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-fleece-filters.png",
+      "result_count": null,
+      "has_filter_button": true,
+      "sort_labels": [
+        "Best selling Manual Title ascending Title descending Price ascending Price descending Created ascending Created descending"
+      ],
+      "drawer_text": "Skip to content Pause slideshow FREE SHIPPINGWhen You Spend $85 Or More! 404-480-8115 Email Us Boxercraft Wholesale Instagram Facebook SEARCH LOG IN CART WOMENMENYOUTHFLANNELCOLLECTIONSTHE FAN SHOPREALTREE®OUR SPIRIT FLEECE COLLECTION From chilly mornings to weekend lounging, this fleece collection is all about soft layers and easy comfort that fits right into your rotation. FILTER Close menu TYPE Layers (8) Outerwear (2) Pants (2) Shirts (1) Shorts (1) SIZE XXS XS S M L XL 2XL 3XL COLOR Filter 17 products SORTING Best selling Manual Title ascending Title descending Price ascending Price descending Created ascending Created descending Women's Cropped Fleece Hoodie $42.85 Women's Fleece Short $28.85 Women's Fleece Out Crew $44.85 1 Review Women's Solid Fleece Out Short $29.85 Men's Fleece Jogger $42.85 Women's Dream Fleece Pant $44.85 1 Review Women's Everest Fleece Half-Zip $68.85 Women's Dream Fleece Pullover Hoodie $58.85 Men's Everest Fleece Quarter-Zip Pullover $68.85 Men's Fleece Crew $42.85 Mystic True Red Mandarin Women's Dream Fleece Full-Zip Hoodie $64.85 1 Review Men's Fleece Hoodie $48.85 True Red Olive Mandarin Black Men's Quarter-Zip Fleece Pullover $54.85 Women's Drea",
+      "product_titles": [
+        "Women's Cropped Fleece Hoodie",
+        "Women's Fleece Short",
+        "Women's Fleece Out Crew",
+        "Women's Solid Fleece Out Short",
+        "Men's Fleece Jogger",
+        "Women's Dream Fleece Pant",
+        "Women's Everest Fleece Half-Zip",
+        "Women's Dream Fleece Pullover Hoodie",
+        "Men's Everest Fleece Quarter-Zip Pullover",
+        "Men's Fleece Crew",
+        "Women's Dream Fleece Full-Zip Hoodie",
+        "Men's Fleece Hoodie",
+        "Men's Quarter-Zip Fleece Pullover",
+        "Women's Dream Fleece Quarter-Zip Pullover",
+        "Men's Recrafted 100% Sustainable Fleece Hoodie",
+        "Men's Recrafted 100% Sustainable Fleece Crew Pullover",
+        "Women's Fleece Colorblocked Quarter-Zip Pullover"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "url": "https://boxercraft.com/collections/fleece",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-fleece-filters.png",
+      "result_count": null,
+      "has_filter_button": true,
+      "sort_labels": [
+        "Best selling Manual Title ascending Title descending Price ascending Price descending Created ascending Created descending"
+      ],
+      "drawer_text": "Skip to content Pause slideshow FREE SHIPPING When You Spend $85 Or More! SITE NAVIGATION SEARCH CART FLEECE COLLECTION From chilly mornings to weekend lounging, this fleece collection is all about soft layers and easy comfort that fits right into your rotation. FILTER Close menu Close REFINE BY TYPE SIZE COLOR TAG Show results (17) Filter SORTING Best selling Manual Title ascending Title descending Price ascending Price descending Created ascending Created descending 17 products Women's Cropped Fleece Hoodie $42.85 Women's Fleece Short $28.85 Women's Fleece Out Crew $44.85 1 Review Women's Solid Fleece Out Short $29.85 Men's Fleece Jogger $42.85 Women's Dream Fleece Pant $44.85 1 Review Women's Everest Fleece Half-Zip $68.85 Women's Dream Fleece Pullover Hoodie $58.85 Men's Everest Fleece Quarter-Zip Pullover $68.85 Men's Fleece Crew $42.85 Mystic True Red Mandarin Women's Dream Fleece Full-Zip Hoodie $64.85 1 Review Men's Fleece Hoodie $48.85 True Red Olive Mandarin Black Men's Quarter-Zip Fleece Pullover $54.85 Women's Dream Fleece Quarter-Zip Pullover $54.85 Men's Recrafted 100% Sustainable Fleece Hoodie $59.85 Men's Recrafted 100% Sustainable Fleece Crew Pullover $52.85 Women'",
+      "product_titles": [
+        "Women's Cropped Fleece Hoodie",
+        "Women's Fleece Short",
+        "Women's Fleece Out Crew",
+        "Women's Solid Fleece Out Short",
+        "Men's Fleece Jogger",
+        "Women's Dream Fleece Pant",
+        "Women's Everest Fleece Half-Zip",
+        "Women's Dream Fleece Pullover Hoodie",
+        "Men's Everest Fleece Quarter-Zip Pullover",
+        "Men's Fleece Crew",
+        "Women's Dream Fleece Full-Zip Hoodie",
+        "Men's Fleece Hoodie",
+        "Men's Quarter-Zip Fleece Pullover",
+        "Women's Dream Fleece Quarter-Zip Pullover",
+        "Men's Recrafted 100% Sustainable Fleece Hoodie",
+        "Men's Recrafted 100% Sustainable Fleece Crew Pullover",
+        "Women's Fleece Colorblocked Quarter-Zip Pullover"
+      ]
+    }
+  ]
+}

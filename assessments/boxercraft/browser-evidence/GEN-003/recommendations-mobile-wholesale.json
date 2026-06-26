@@ -1,0 +1,118 @@
+{
+  "product_recommendations": {
+    "url": "https://boxercraft.com/products/q10-sherpa-quarter-zip-pullover-1",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-product-recommendations.png",
+    "product_title": "WOMEN'S SHERPA QUARTER-ZIP PULLOVER",
+    "section_present": true,
+    "recommendation_titles": [
+      "Women's Sherpa Quarter-Zip Pullover"
+    ],
+    "unique_recommendation_count": 1,
+    "self_recommendation_only": true
+  },
+  "mobile_home": {
+    "viewport": "mobile",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-home-first-viewport.png",
+    "first_viewport_text": "Skip to content Pause slideshow FREE SHIPPING When You Spend $85 Or More! SITE NAVIGATION BOXERCRAFT SEARCH CART Pause slideshow WHEREVER SUMMER TAKES YOU SHOP DRESSES KEEP IT COOL THIS SUMMER SHOP MEN'S SHIRTS Find the freedom to show your relaxed and fun side. Trendy or basic. Bright or neutral. BOXERCRAFT is your (clothes) friend for life. SHOP LAYERS SHOP DRESSES SHOP MEN'S Pause slideshow BOXERCRAFT fan shop Show your team spirit! SHOP BY TEAM CUDDLE COLLECTION Super-soft shirts, sweaters, pants, hoodies and more. SHOP COLLECTION LOUNGEWEAR FROM BOXERCRAFT VIEW ALL Men's Essential Crewneck Tee $19.85 True Red Purple Paradise Maroon Brick Red Mandarin Burnt Orange Women's Fleece Colorblocked Quarter-Zip Pullover $42.85 Women's Stretch Woven Quarter-Zip Pullover $48.85 Women's Rib Knit Corded Boxy Crew $38.85 View all 62 products CUSTOMER SERVICE ABOUT POLICIES SIGN UP AND SAVE Subscr",
+    "controls": [
+      "Pause slideshow",
+      "SITE NAVIGATION",
+      "SEARCH",
+      "CUSTOMER SERVICE",
+      "ABOUT",
+      "POLICIES",
+      "Subscribe",
+      "Close dialog",
+      "sign up"
+    ],
+    "exposes_search": true,
+    "exposes_site_navigation": true
+  },
+  "wholesale_public": {
+    "home_url": "https://wholesale.boxercraft.com/",
+    "home_screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-home.png",
+    "home_has_search": false,
+    "home_has_sign_in": true,
+    "home_has_account_signup": true,
+    "home_controls": [
+      "Close",
+      "Shop",
+      "Sale",
+      "Resource",
+      "Marketing",
+      "Click here",
+      "Boxercraft",
+      "Email Required",
+      "Password Required",
+      "New Customer Signup",
+      "Forgot Password?",
+      "SIGN IN",
+      "Account Reactivation",
+      "Search"
+    ],
+    "searches": [
+      {
+        "query": "fleece",
+        "url": "https://wholesale.boxercraft.com/search.html?query=fleece&page=1",
+        "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-search-fleece.png",
+        "result_count": 87,
+        "product_titles": [
+          "Click here",
+          "Boxercraft",
+          "New Customer Signup",
+          "Forgot Password?",
+          "Account Reactivation",
+          "Shop",
+          "Sale",
+          "Resource",
+          "Marketing",
+          "Products Per Page : 24 36 48 View All",
+          "Sort By Position",
+          "Position",
+          "SALE",
+          "FLEECE OUT CREW",
+          "BOXERCRAFT XXS-2XL",
+          "PREMIUM FLANNEL BLANKET",
+          "BOXERCRAFT OSFA",
+          "MEN'S STRETCH WOVEN PANT"
+        ],
+        "filter_text": "Filters Gender Women's Men's & Unisex Youth Accessories New Yes No Brand Boxercraft Headsweats Realtree Recover Russell Category Color Size Fabric Fit Sale Outlet Products Per Page"
+      },
+      {
+        "query": "BM5205",
+        "url": "https://wholesale.boxercraft.com/search.html?query=BM5205&page=1",
+        "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-search-bm5205.png",
+        "result_count": 1,
+        "product_titles": [
+          "Click here",
+          "Boxercraft",
+          "New Customer Signup",
+          "Forgot Password?",
+          "Account Reactivation",
+          "Shop",
+          "Sale",
+          "Resource",
+          "Marketing",
+          "Products Per Page : 24 36 48 View All",
+          "Sort By Position",
+          "Position",
+          "OUTLET",
+          "MEN'S ALUMNI QTR ZIP PULLOVER",
+          "BOXERCRAFT XXS-3XL",
+          "Manage Account",
+          "View Open/Pending Orders",
+          "Order History & Tracking",
+          "Manage Shipping Addresses",
+          "Change Password"
+        ],
+        "filter_text": "Filters New No Brand Boxercraft Headsweats Realtree Recover Russell Category Activewear Collections Fleece Color Gender Size Fabric Fit Sale Outlet Products Per Page"
+      }
+    ],
+    "category": {
+      "url": "https://wholesale.boxercraft.com/shop/fleece-sweatshirts?page=1&brand%5Bfilter%5D=BOXERCRAFT%2C1366",
+      "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-fleece-category.png",
+      "result_count": 67,
+      "first_text": "Shop Sale Resource Marketing Welcome to our NEW website! Click here to get started. New Customer Signup Forgot Password? SIGN IN Account Reactivation Shop Sale Resource Marketing Home Shop FLEECE/SWEATSHIRTS Product Type 1/2 Zip (9) 1/4 Zip (10) Blends (45) Crewneck (18) Full Zip (9) Hoodie (16) SHOW MORE Filters Boxercraft Clear all Gender Women's Men's & Unisex Youth New Yes No Brand Boxercraft Headsweats Realtree Recover Russell Category Color Size Fabric Fit Sale Outlet FLEECE/SWEATSHIRTS Products Per Page : 24 36 48 View All 67 Results Sort By Position BW7101 NEW LADIES BOXY FLANNEL SHIRT BOXERCRAFT XS-2XL BU5101 UNISEX FLANNEL PULLOVER CREW BOXERCRAFT XXS-3XL BU5301 UNISEX FLANNEL HOODIE BOXERCRAFT XXS-3XL BM6201 MEN'S STRETCH WOVEN PANT BOXERCRAFT XXS-2XL BM5202 MEN'S QUARTER ZIP FLEECE PULLOVER BOXERCRAFT XXS-3XL BM1501 NEW MEN'S CUDDLE HOODIE BOXERCRAFT XXS-3XL BU5302 UNISEX CORDED PULLOVER HOOD BOXERCRAFT XS-3XL D02 RALLY CORDUROY CREW BOXERCRAFT XS-3XL BW5102 NEW RIB KNIT CORDED BOXY CREW BOXERCRAFT XS-2XL BW6506 NEW RIB KNIT CORDED SHORT BOXERCRAFT XS-2XL K01S SALE REVERSE FLEECE OUT CREW BOXERCRAFT XXS-2XL K02S REVERSE FLEECE OUT SHORT BOXERCRAFT XXS-2XL BW5206 NEW FLE"
+    }
+  }
+}

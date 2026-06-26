@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/ecommerce-product-discovery-assessment.schema.json",
+  "title": "Ecommerce Product Discovery Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assessment_id",
+    "framework_version",
+    "assessment_status",
+    "target",
+    "assessment_areas",
+    "scorecard",
+    "findings",
+    "opportunity_matrix",
+    "access_limitations"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string"
+    },
+    "framework_version": {
+      "type": "string"
+    },
+    "assessment_status": {
+      "type": "string",
+      "enum": [
+        "template",
+        "planned",
+        "in_progress",
+        "evidence_collected",
+        "draft_report",
+        "final"
+      ]
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "assessment_areas": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "$ref": "#/$defs/assessment_area"
+      }
+    },
+    "scorecard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "search",
+        "autocomplete",
+        "browse",
+        "filters",
+        "recommendations",
+        "mobile_experience",
+        "product_discovery_overall"
+      ],
+      "properties": {
+        "search": {
+          "$ref": "#/$defs/score"
+        },
+        "autocomplete": {
+          "$ref": "#/$defs/score"
+        },
+        "browse": {
+          "$ref": "#/$defs/score"
+        },
+        "filters": {
+          "$ref": "#/$defs/score"
+        },
+        "recommendations": {
+          "$ref": "#/$defs/score"
+        },
+        "mobile_experience": {
+          "$ref": "#/$defs/score"
+        },
+        "product_discovery_overall": {
+          "$ref": "#/$defs/score"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "opportunity_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quick_wins",
+        "strategic_improvements",
+        "transformational_opportunities"
+      ],
+      "properties": {
+        "quick_wins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "strategic_improvements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transformational_opportunities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "access_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company_name",
+        "domain",
+        "vertical",
+        "assessment_date",
+        "access_contexts"
+      ],
+      "properties": {
+        "company_name": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "vertical": {
+          "type": "string"
+        },
+        "assessment_date": {
+          "type": "string"
+        },
+        "access_contexts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "public_consumer",
+              "public_wholesale",
+              "authenticated_wholesale",
+              "client_supplied",
+              "unknown_or_not_available"
+            ]
+          }
+        }
+      }
+    },
+    "assessment_area": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "area_id",
+        "status",
+        "dimensions",
+        "journeys_or_checks",
+        "evidence",
+        "notes"
+      ],
+      "properties": {
+        "area_id": {
+          "type": "string",
+          "enum": [
+            "search",
+            "autocomplete",
+            "browse_navigation",
+            "filters_facets",
+            "recommendations_related_discovery",
+            "mobile_experience",
+            "journey_analysis"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_assessed",
+            "in_progress",
+            "assessed",
+            "blocked_by_access",
+            "not_applicable"
+          ]
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "precision",
+              "recall",
+              "ranking_quality",
+              "diversity",
+              "query_understanding",
+              "robustness",
+              "coverage",
+              "recovery",
+              "user_effort"
+            ]
+          }
+        },
+        "journeys_or_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_item"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "rationale",
+        "evidence_refs"
+      ],
+      "properties": {
+        "score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_type",
+        "captured_at",
+        "access_context",
+        "locator",
+        "summary",
+        "freshness_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "captured_at": {
+          "type": "string"
+        },
+        "access_context": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "freshness_status": {
+          "type": "string",
+          "enum": [
+            "current",
+            "verify_before_delivery",
+            "stale",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "assessment_area",
+        "severity",
+        "observation",
+        "evidence",
+        "customer_impact",
+        "business_impact",
+        "recommendation",
+        "opportunity_class",
+        "confidence",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "assessment_area": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        "observation": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_item"
+          }
+        },
+        "customer_impact": {
+          "type": "string"
+        },
+        "business_impact": {
+          "type": "string"
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "opportunity_class": {
+          "type": "string",
+          "enum": [
+            "Quick Win",
+            "Strategic Improvement",
+            "Transformational Opportunity"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "validated",
+            "accepted",
+            "deferred",
+            "removed"
+          ]
+        }
+      }
+    }
+  }
+}

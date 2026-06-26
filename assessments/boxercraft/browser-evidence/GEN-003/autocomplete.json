@@ -1,0 +1,50 @@
+[
+  {
+    "query": "maroon quarter zip",
+    "viewport": "desktop",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-maroon-quarter-zip.png",
+    "nothing_found": true,
+    "visible_text": "Sorry, nothing found for \"maroon quarter zip\" View more",
+    "product_titles": []
+  },
+  {
+    "query": "quarterzip",
+    "viewport": "desktop",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-quarterzip.png",
+    "nothing_found": false,
+    "visible_text": "PRODUCTS Men's Alpine Quarter-Zip Pullover SKU: BM5207 401 XXS Boxercraft1985 $64.85 Men's Flex Quarter-Zip Pullover SKU: BM5203 973 XXS Boxercraft1985 $54.85 Men's Alumni Quarter-Zip Pullover SKU: BM5205 660 XXS Boxercraft1985 $48.85 Men's Quarter-Zip Fleece Pullover SKU: BM5202 400 XXS Boxercraft1985 $54.85 Men's Sullivan Quarter-Zip Pullover SKU: BM5201 IND XXS Boxercraft1985 $69.85 Women's Sherpa Quarter-Zip Pullover SKU: Q10 FCH XS Boxercraft1985 $34.85 View all results View more",
+    "product_titles": []
+  },
+  {
+    "query": "quarter zip",
+    "viewport": "desktop",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-quarter-zip.png",
+    "nothing_found": false,
+    "visible_text": "COLLECTIONS Quarter-Zip Pullovers PRODUCTS Women's Flex Quarter Zip Pullover SKU: BW5208 673 XS Boxercraft1985 $49.85 Women's Manchester Quarter Zip Pullover SKU: BW5203 085 XXS Boxercraft1985 $98.85 Women's Flex Quarter Zip Pullover SKU: BW5202 400 XXS Boxercraft1985 $49.85 Men's Alpine Quarter-Zip Pullover SKU: BM5207 401 XXS Boxercraft1985 $64.85 Men's Flex Quarter-Zip Pullover SKU: BM5203 973 XXS Boxercraft1985 $54.85 Men's Alumni Quarter-Zip Pullover SKU: BM5205 660 XXS Boxercraft1985 $48.85 View all results Women's Stretch Woven Quarter-Zip Pullover Women's Flex Quarter Zip Pullover Women's Manchester Quarter Zip Pullover Men's Alumni Quarter-Zip Pullover VIEW MORE",
+    "product_titles": []
+  },
+  {
+    "query": "womens fleece",
+    "viewport": "desktop",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-womens-fleece.png",
+    "nothing_found": false,
+    "visible_text": "COLLECTIONS Women's Outerwear PRODUCTS Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85 Women's Cropped Fleece Hoodie SKU: BW5404 425 XXS Boxercraft1985 $42.85 Women's Dream Fleece Pant SKU: BW6601 BLA XXS Boxercraft1985 $44.85 Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85 Lambert Soccer Women's Fleece Short SKU: LW650224001 078 XXS Boxercraft1985 $34.85 Women's UCLA Fleece Out Crew SKU: ZK01SUC2201 XXS Boxercraft1985 $64.85 View all results Women's Dream Fleece Pullover Hoodie Women's Fleece Short Women's Dream Fleece Full-Zip Hoodie Women's Solid Fleece Out Short VIEW MORE",
+    "product_titles": []
+  },
+  {
+    "query": "Georgia Bulldogs",
+    "viewport": "desktop",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-georgia-bulldogs.png",
+    "nothing_found": true,
+    "visible_text": "Sorry, nothing found for \"Georgia Bulldogs\" View more",
+    "product_titles": []
+  },
+  {
+    "query": "maroon quarter zip",
+    "viewport": "mobile",
+    "screenshot": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-autocomplete-maroon-quarter-zip.png",
+    "nothing_found": true,
+    "visible_text": "Sorry, nothing found for \"maroon quarter zip\" View more",
+    "product_titles": []
+  }
+]

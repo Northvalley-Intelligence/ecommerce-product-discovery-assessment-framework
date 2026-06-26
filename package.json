@@ -1,0 +1,14 @@
+{
+  "name": "ecommerce-product-discovery-assessment-framework",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-framework.mjs",
+    "validate:boxercraft:browser": "node scripts/validate-boxercraft-browser.mjs",
+    "evaluate:boxercraft:normalization": "node scripts/evaluate-boxercraft-normalization.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "project_id": "ecommerce-product-discovery-assessment-framework",
+  "project_name": "Ecommerce Product Discovery Assessment Framework",
+  "created_on": "2026-06-24",
+  "mde_status": "active",
+  "mission_version": "MISSION-2026-06-24",
+  "current_generation": "GEN-000",
+  "current_phase": "Generation 0 - Mission and Validation Foundation",
+  "project_type": "consulting assessment framework and report generation system for ecommerce product discovery",
+  "primary_validation_target": "Boxercraft",
+  "intended_owner": "North Valley Intelligence",
+  "source_mission": {
+    "type": "clipboard",
+    "captured_on": "2026-06-24"
+  },
+  "artifact_profiles": [
+    "report_generation",
+    "client_facing_document",
+    "data_contract",
+    "website_assessment",
+    "search_ir_evaluation",
+    "prompt_generation",
+    "pdf_generation_if_selected"
+  ],
+  "context_packs": [
+    "context-packs/pdf-generation.md",
+    "context-packs/printable-artifacts.md",
+    "context-packs/website-assessment-to-build.md"
+  ],
+  "central_mde_reference": "../mde",
+  "prompts_used": [
+    "../mde/prompts/session-router.prompt.md#case-f",
+    "../mde/prompts/new-project-generation0-bootstrap.prompt.md",
+    "../mde/prompts/project-validation-strategy-generation0.prompt.md",
+    "../mde/prompts/applicable-learning-check.prompt.md"
+  ],
+  "downstream_dependencies": [],
+  "upstream_dependencies": [
+    "central-mde-context-packs",
+    "central-mde-issue-signatures"
+  ],
+  "confidentiality_notes": [
+    "Do not store client-private credentials or authenticated wholesale data in MDE artifacts.",
+    "Assessment evidence should distinguish public observations from authenticated or client-supplied data."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "required": {
+    "local": [],
+    "staging": [],
+    "production": []
+  },
+  "conditional": [
+    {
+      "name": "BOXERCRAFT_WHOLESALE_ACCESS",
+      "required_when": "authenticated wholesale assessment is explicitly approved and authorized",
+      "secret": true
+    },
+    {
+      "name": "REPORT_PUBLISH_TARGET",
+      "required_when": "hosted report publishing is selected",
+      "secret": false
+    }
+  ],
+  "notes": [
+    "Do not commit secret values.",
+    "Do not store client-private credentials or authenticated wholesale evidence in MDE state files."
+  ]
+}

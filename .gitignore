@@ -1,0 +1,11 @@
+node_modules/
+
+# LaTeX build intermediates; PDFs are project outputs.
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.toc

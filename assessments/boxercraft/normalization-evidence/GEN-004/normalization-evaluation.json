@@ -1,0 +1,3474 @@
+{
+  "evaluation_id": "BOXERCRAFT-NORMALIZATION-GEN-004",
+  "generation_id": "GEN-004",
+  "started_at": "2026-06-26T21:10:25.112Z",
+  "completed_at": "2026-06-26T21:16:40.766Z",
+  "browser": {
+    "engine": "chromium",
+    "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "channel": null,
+    "desktop_viewport": {
+      "width": 1366,
+      "height": 900
+    }
+  },
+  "matrix": [
+    {
+      "id": "quarter_zip_spacing_abbreviation",
+      "label": "Quarter-zip spacing, punctuation, and abbreviation",
+      "expected_terms": [
+        "quarter",
+        "zip",
+        "qtr",
+        "1/4"
+      ],
+      "expected_browse_terms": [
+        "quarter",
+        "zip",
+        "pullovers"
+      ],
+      "queries": [
+        "quarter zip",
+        "quarter-zip",
+        "quarterzip",
+        "qtr zip",
+        "qtr-zip",
+        "1/4 zip"
+      ]
+    },
+    {
+      "id": "womens_fleece_possessive",
+      "label": "Women's fleece plurality and alternate terms",
+      "expected_terms": [
+        "women",
+        "womens",
+        "women's",
+        "ladies",
+        "fleece"
+      ],
+      "expected_browse_terms": [
+        "women",
+        "outerwear",
+        "fleece"
+      ],
+      "queries": [
+        "womens fleece",
+        "women's fleece",
+        "women fleece",
+        "ladies fleece",
+        "female fleece"
+      ]
+    },
+    {
+      "id": "ucla_bruins_priority",
+      "label": "UCLA / Bruins priority-account terms",
+      "stakeholder_context": "User reported that UCLA may be Boxercraft priority-account demand. Treat as unverified stakeholder context, not a public factual claim.",
+      "expected_terms": [
+        "ucla",
+        "bruins",
+        "university of california",
+        "los angeles"
+      ],
+      "expected_browse_terms": [
+        "ucla",
+        "bruins",
+        "fan shop"
+      ],
+      "queries": [
+        "UCLA",
+        "UCLA Bruins",
+        "Bruins apparel",
+        "University of California Los Angeles",
+        "UC Los Angeles",
+        "UCLA fleece",
+        "UCLA sweatshirt",
+        "UCLA quarter zip"
+      ]
+    },
+    {
+      "id": "team_fan_shop_aliases",
+      "label": "Team and fan-shop alias recovery",
+      "expected_terms": [
+        "team",
+        "fan",
+        "college",
+        "bulldogs",
+        "bruins",
+        "ucla"
+      ],
+      "expected_browse_terms": [
+        "team",
+        "fan shop",
+        "college",
+        "ucla",
+        "bruins"
+      ],
+      "queries": [
+        "college teams",
+        "fan shop",
+        "team apparel",
+        "Bulldogs",
+        "Georgia Bulldogs",
+        "Bruins"
+      ]
+    },
+    {
+      "id": "color_product_terms",
+      "label": "Color-plus-product normalization",
+      "expected_terms": [
+        "quarter",
+        "zip",
+        "maroon",
+        "red",
+        "burgundy",
+        "cardinal"
+      ],
+      "expected_browse_terms": [
+        "quarter",
+        "zip",
+        "pullovers"
+      ],
+      "queries": [
+        "maroon quarter zip",
+        "burgundy quarter zip",
+        "cardinal quarter zip",
+        "red quarter zip",
+        "maroon qtr zip"
+      ]
+    },
+    {
+      "id": "public_wholesale_sku_variants",
+      "label": "Public wholesale SKU and product-code variants",
+      "context": "Public wholesale search only; authenticated account, pricing, order, and inventory workflows remain out of scope.",
+      "expected_terms": [
+        "bm5205",
+        "alumni",
+        "qtr",
+        "quarter",
+        "zip"
+      ],
+      "surface": "public_wholesale",
+      "queries": [
+        "BM5205",
+        "bm5205",
+        "BM 5205",
+        "BM-5205",
+        "alumni qtr zip",
+        "alumni quarter zip"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "group_id": "quarter_zip_spacing_abbreviation",
+      "label": "Quarter-zip spacing, punctuation, and abbreviation",
+      "stakeholder_context": null,
+      "surface": "public_consumer",
+      "expected_terms": [
+        "quarter",
+        "zip",
+        "qtr",
+        "1/4"
+      ],
+      "expected_browse_terms": [
+        "quarter",
+        "zip",
+        "pullovers"
+      ],
+      "evaluations": [
+        {
+          "query": "quarter zip",
+          "search": {
+            "query": "quarter zip",
+            "url": "https://boxercraft.com/search?q=quarter%20zip",
+            "title": "Search: 33 results found for \"quarter zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-quarter-zip.png",
+            "result_count": 33,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Men's Everest Fleece Quarter-Zip Pullover",
+              "Men's Quarter-Zip Fleece Pullover",
+              "Women's Sherpa Quarter-Zip Pullover",
+              "Men's Stretch Woven Quarter Zip Pullover",
+              "Men's Sullivan Quarter-Zip Pullover",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Men's Purdue University Sullivan Quarter-Zip Pullover",
+              "Lambert Soccer Men's Alumni Quarter-Zip Pullover",
+              "Men's Alpine Quarter-Zip Pullover",
+              "REALTREE Performance Colorblock Quarter-Zip Pullover",
+              "Men's Flex Quarter-Zip Pullover",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Men's Clemson University Sullivan Quarter-Zip Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-quarter-zip.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "Quarter-Zip Pullovers",
+                  "href": "https://boxercraft.com/collections/quarter-zip-pullovers"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "Quarter-Zip Pullovers",
+                  "href": "https://boxercraft.com/collections/quarter-zip-pullovers"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS Quarter-Zip Pullovers PRODUCTS Women's Flex Quarter Zip Pullover SKU: BW5208 673 XS Boxercraft1985 $49.85 Women's Manchester Quarter Zip Pullover SKU: BW5203 085 XXS Boxercraft1985 $98.85 Women's Flex Quarter Zip Pullover SKU: BW5202 400 XXS Boxercraft1985 $49.85 Men's Alpine Quarter-Zip Pullover SKU: BM5207 401 XXS Boxercraft1985 $64.85 Men's Flex Quarter-Zip Pullover SKU: BM5203 973 XXS Boxercraft1985 $54.85 Men's Alumni Quarter-Zip Pullover SKU: BM5205 660 XXS Boxercraft1985 $48.85 View all results Women's Stretch Woven Quarter-Zip Pullover Women's Flex Quarter Zip Pullover Men's Alumni Quarter-Zip Pullover Women's Manchester Quarter Zip Pullover VIEW MORE",
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Quarter-Zip Pullovers",
+              "Women's Flex Quarter Zip Pullover SKU: BW5208 673 XS Boxercraft1985 $49.85",
+              "Women's Manchester Quarter Zip Pullover SKU: BW5203 085 XXS Boxercraft1985 $98.85",
+              "Women's Flex Quarter Zip Pullover SKU: BW5202 400 XXS Boxercraft1985 $49.85",
+              "Men's Alpine Quarter-Zip Pullover SKU: BM5207 401 XXS Boxercraft1985 $64.85"
+            ]
+          }
+        },
+        {
+          "query": "quarter-zip",
+          "search": {
+            "query": "quarter-zip",
+            "url": "https://boxercraft.com/search?q=quarter-zip",
+            "title": "Search: 33 results found for \"quarter-zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-quarter-zip.png",
+            "result_count": 33,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Men's Everest Fleece Quarter-Zip Pullover",
+              "Men's Quarter-Zip Fleece Pullover",
+              "Women's Sherpa Quarter-Zip Pullover",
+              "Men's Stretch Woven Quarter Zip Pullover",
+              "Men's Sullivan Quarter-Zip Pullover",
+              "Men's Purdue University Sullivan Quarter-Zip Pullover",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Lambert Soccer Men's Alumni Quarter-Zip Pullover",
+              "Men's Alpine Quarter-Zip Pullover",
+              "REALTREE Performance Colorblock Quarter-Zip Pullover",
+              "Men's Flex Quarter-Zip Pullover",
+              "Men's Clemson University Sullivan Quarter-Zip Pullover",
+              "Lambert Soccer Women's Flex Quarter Zip Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "quarter-zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-quarter-zip.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Women's Stretch Woven Quarter-Zip Pullover Women's Flex Quarter Zip Pullover Women's Manchester Quarter Zip Pullover Men's Alumni Quarter-Zip Pullover VIEW MORE",
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover"
+            ]
+          }
+        },
+        {
+          "query": "quarterzip",
+          "search": {
+            "query": "quarterzip",
+            "url": "https://boxercraft.com/search?q=quarterzip",
+            "title": "Search: 0 results found for \"quarterzip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-quarterzip.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "quarterzip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-quarterzip.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "PRODUCTS Men's Alpine Quarter-Zip Pullover SKU: BM5207 401 XXS Boxercraft1985 $64.85 Men's Flex Quarter-Zip Pullover SKU: BM5203 973 XXS Boxercraft1985 $54.85 Men's Alumni Quarter-Zip Pullover SKU: BM5205 660 XXS Boxercraft1985 $48.85 Men's Quarter-Zip Fleece Pullover SKU: BM5202 400 XXS Boxercraft1985 $54.85 Men's Sullivan Quarter-Zip Pullover SKU: BM5201 IND XXS Boxercraft1985 $69.85 Women's Sherpa Quarter-Zip Pullover SKU: Q10 FCH XS Boxercraft1985 $34.85 View all results View more",
+            "product_titles": [
+              "Men's Alpine Quarter-Zip Pullover SKU: BM5207 401 XXS Boxercraft1985 $64.85",
+              "Men's Alpine Quarter-Zip Pullover",
+              "Men's Flex Quarter-Zip Pullover SKU: BM5203 973 XXS Boxercraft1985 $54.85",
+              "Men's Flex Quarter-Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover SKU: BM5205 660 XXS Boxercraft1985 $48.85",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Men's Quarter-Zip Fleece Pullover SKU: BM5202 400 XXS Boxercraft1985 $54.85",
+              "Men's Quarter-Zip Fleece Pullover",
+              "Men's Sullivan Quarter-Zip Pullover SKU: BM5201 IND XXS Boxercraft1985 $69.85",
+              "Men's Sullivan Quarter-Zip Pullover",
+              "Women's Sherpa Quarter-Zip Pullover SKU: Q10 FCH XS Boxercraft1985 $34.85",
+              "Women's Sherpa Quarter-Zip Pullover"
+            ]
+          }
+        },
+        {
+          "query": "qtr zip",
+          "search": {
+            "query": "qtr zip",
+            "url": "https://boxercraft.com/search?q=qtr%20zip",
+            "title": "Search: 0 results found for \"qtr zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-qtr-zip.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "qtr zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-qtr-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"qtr zip\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "qtr-zip",
+          "search": {
+            "query": "qtr-zip",
+            "url": "https://boxercraft.com/search?q=qtr-zip",
+            "title": "Search: 0 results found for \"qtr-zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-qtr-zip.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "qtr-zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-qtr-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"qtr-zip\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "1/4 zip",
+          "search": {
+            "query": "1/4 zip",
+            "url": "https://boxercraft.com/search?q=1%2F4%20zip",
+            "title": "Search: 0 results found for \"1/4 zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-1-4-zip.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "1/4 zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-1-4-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"1/4 zip\" View more",
+            "product_titles": []
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "womens_fleece_possessive",
+      "label": "Women's fleece plurality and alternate terms",
+      "stakeholder_context": null,
+      "surface": "public_consumer",
+      "expected_terms": [
+        "women",
+        "womens",
+        "women's",
+        "ladies",
+        "fleece"
+      ],
+      "expected_browse_terms": [
+        "women",
+        "outerwear",
+        "fleece"
+      ],
+      "evaluations": [
+        {
+          "query": "womens fleece",
+          "search": {
+            "query": "womens fleece",
+            "url": "https://boxercraft.com/search?q=womens%20fleece",
+            "title": "Search: 53 results found for \"womens fleece\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-womens-fleece.png",
+            "result_count": 53,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 15,
+              "relevant_links": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Dream Fleece Pullover Hoodie",
+              "Women's Fleece Short",
+              "Women's Solid Fleece Out Short",
+              "Women's Dream Fleece Full-Zip Hoodie",
+              "Women's Cropped Fleece Hoodie",
+              "Women's Fleece Out Crew",
+              "Women's Dream Fleece Pant",
+              "Women's Everest Fleece Half-Zip",
+              "Lambert Soccer Women's Fleece Cropped Hoodie",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Women's UCLA Fleece Out Crew",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Lambert Longhorns Women's Alpine Fleece Full Zip",
+              "Lambert Soccer Women's Dream Fleece Pullover Hoodie",
+              "Women's Penn State Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Lambert Soccer Women's Fleece Short",
+              "Women's Purdue University Fleece Out Crew"
+            ]
+          },
+          "autocomplete": {
+            "query": "womens fleece",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-womens-fleece.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "Women's Outerwear",
+                  "href": "https://boxercraft.com/collections/womens-outerwear"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "Women's Outerwear",
+                  "href": "https://boxercraft.com/collections/womens-outerwear"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS Women's Outerwear PRODUCTS Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85 Women's Cropped Fleece Hoodie SKU: BW5404 425 XXS Boxercraft1985 $42.85 Women's Dream Fleece Pant SKU: BW6601 BLA XXS Boxercraft1985 $44.85 Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85 Lambert Soccer Women's Fleece Short SKU: LW650224001 078 XXS Boxercraft1985 $34.85 Women's UCLA Fleece Out Crew SKU: ZK01SUC2201 XXS Boxercraft1985 $64.85 View all results Women's Dream Fleece Pullover Hoodie Women's Fleece Short Women's Dream Fleece Full-Zip Hoodie Women's Solid Fleece Out Short VIEW MORE",
+            "product_titles": [
+              "Women's Dream Fleece Pullover Hoodie",
+              "Women's Fleece Short",
+              "Women's Dream Fleece Full-Zip Hoodie",
+              "Women's Solid Fleece Out Short",
+              "Women's Outerwear",
+              "Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85",
+              "Women's Cropped Fleece Hoodie SKU: BW5404 425 XXS Boxercraft1985 $42.85",
+              "Women's Cropped Fleece Hoodie",
+              "Women's Dream Fleece Pant SKU: BW6601 BLA XXS Boxercraft1985 $44.85",
+              "Women's Dream Fleece Pant",
+              "Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85"
+            ]
+          }
+        },
+        {
+          "query": "women's fleece",
+          "search": {
+            "query": "women's fleece",
+            "url": "https://boxercraft.com/search?q=women's%20fleece",
+            "title": "Search: 53 results found for \"women's fleece\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-women-s-fleece.png",
+            "result_count": 53,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 15,
+              "relevant_links": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Dream Fleece Pullover Hoodie",
+              "Women's Fleece Short",
+              "Women's Solid Fleece Out Short",
+              "Women's Dream Fleece Full-Zip Hoodie",
+              "Women's Cropped Fleece Hoodie",
+              "Women's Fleece Out Crew",
+              "Women's Dream Fleece Pant",
+              "Women's Everest Fleece Half-Zip",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Lambert Soccer Women's Fleece Cropped Hoodie",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Women's UCLA Fleece Out Crew",
+              "Lambert Longhorns Women's Alpine Fleece Full Zip",
+              "Women's Rally Short",
+              "Lambert Soccer Women's Dream Fleece Pullover Hoodie",
+              "Women's Penn State Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Lambert Soccer Women's Fleece Short"
+            ]
+          },
+          "autocomplete": {
+            "query": "women's fleece",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-women-s-fleece.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "Women's Outerwear",
+                  "href": "https://boxercraft.com/collections/womens-outerwear"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "Women's Outerwear",
+                  "href": "https://boxercraft.com/collections/womens-outerwear"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS Women's Outerwear PRODUCTS Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85 Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85 Women's Fleece Colorblocked Quarter-Zip Pullover SKU: BW5206 673 XXS Boxercraft1985 $42.85 Lambert Soccer Women's Fleece Short SKU: LW650224001 078 XXS Boxercraft1985 $34.85 Lambert Soccer Women's Fleece Cropped Hoodie SKU: LW540424002 965 XXS Boxercraft1985 $48.85 Lambert Soccer Women's Fleece Cropped Hoodie SKU: LW540424001 078 XXS Boxercraft1985 $48.85 View all results Women's Dream Fleece Pullover Hoodie Women's Fleece Short Women's Dream Fleece Full-Zip Hoodie Women's Solid Fleece Out Short VIEW MORE",
+            "product_titles": [
+              "Women's Dream Fleece Pullover Hoodie",
+              "Women's Fleece Short",
+              "Women's Dream Fleece Full-Zip Hoodie",
+              "Women's Solid Fleece Out Short",
+              "Women's Outerwear",
+              "Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85",
+              "Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85",
+              "Women's Fleece Out Crew",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover SKU: BW5206 673 XXS Boxercraft1985 $42.85",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Lambert Soccer Women's Fleece Short SKU: LW650224001 078 XXS Boxercraft1985 $34.85"
+            ]
+          }
+        },
+        {
+          "query": "women fleece",
+          "search": {
+            "query": "women fleece",
+            "url": "https://boxercraft.com/search?q=women%20fleece",
+            "title": "Search: 65 results found for \"women fleece\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-women-fleece.png",
+            "result_count": 65,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 15,
+              "relevant_links": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Dream Fleece Pullover Hoodie",
+              "Women's Fleece Short",
+              "Women's Solid Fleece Out Short",
+              "Women's Dream Fleece Full-Zip Hoodie",
+              "Women's Cropped Fleece Hoodie",
+              "Women's Fleece Out Crew",
+              "Women's Dream Fleece Pant",
+              "Women's Everest Fleece Half-Zip",
+              "Lambert Soccer Women's Fleece Cropped Hoodie",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Women's UCLA Fleece Out Crew",
+              "Lambert Longhorns Women's Alpine Fleece Full Zip",
+              "Lambert Soccer Women's Dream Fleece Pullover Hoodie",
+              "Women's Penn State Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Women's Clemson University Fleece Out Crew",
+              "Lambert Soccer Women's Fleece Short"
+            ]
+          },
+          "autocomplete": {
+            "query": "women fleece",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-women-fleece.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "Women's Outerwear",
+                  "href": "https://boxercraft.com/collections/womens-outerwear"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "Women's Outerwear",
+                  "href": "https://boxercraft.com/collections/womens-outerwear"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS Women's Outerwear PRODUCTS Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85 Women's Cropped Fleece Hoodie SKU: BW5404 425 XXS Boxercraft1985 $42.85 Women's Dream Fleece Pant SKU: BW6601 BLA XXS Boxercraft1985 $44.85 Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85 Lambert Soccer Women's Fleece Short SKU: LW650224001 078 XXS Boxercraft1985 $34.85 Women's UCLA Fleece Out Crew SKU: ZK01SUC2201 XXS Boxercraft1985 $64.85 View all results Women's Dream Fleece Pullover Hoodie Women's Fleece Short Women's Dream Fleece Full-Zip Hoodie Women's Solid Fleece Out Short VIEW MORE",
+            "product_titles": [
+              "Women's Dream Fleece Pullover Hoodie",
+              "Women's Fleece Short",
+              "Women's Dream Fleece Full-Zip Hoodie",
+              "Women's Solid Fleece Out Short",
+              "Women's Outerwear",
+              "Women's Fleece Short SKU: BW6502 091 XXS Boxercraft1985 $28.85",
+              "Women's Cropped Fleece Hoodie SKU: BW5404 425 XXS Boxercraft1985 $42.85",
+              "Women's Cropped Fleece Hoodie",
+              "Women's Dream Fleece Pant SKU: BW6601 BLA XXS Boxercraft1985 $44.85",
+              "Women's Dream Fleece Pant",
+              "Women's Fleece Out Crew SKU: K01S OLV XXS Boxercraft1985 $44.85"
+            ]
+          }
+        },
+        {
+          "query": "ladies fleece",
+          "search": {
+            "query": "ladies fleece",
+            "url": "https://boxercraft.com/search?q=ladies%20fleece",
+            "title": "Search: 0 results found for \"ladies fleece\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ladies-fleece.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 15,
+              "relevant_links": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "ladies fleece",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ladies-fleece.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"ladies fleece\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "female fleece",
+          "search": {
+            "query": "female fleece",
+            "url": "https://boxercraft.com/search?q=female%20fleece",
+            "title": "Search: 0 results found for \"female fleece\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-female-fleece.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 15,
+              "relevant_links": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "female fleece",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-female-fleece.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"female fleece\" View more",
+            "product_titles": []
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "ucla_bruins_priority",
+      "label": "UCLA / Bruins priority-account terms",
+      "stakeholder_context": "User reported that UCLA may be Boxercraft priority-account demand. Treat as unverified stakeholder context, not a public factual claim.",
+      "surface": "public_consumer",
+      "expected_terms": [
+        "ucla",
+        "bruins",
+        "university of california",
+        "los angeles"
+      ],
+      "expected_browse_terms": [
+        "ucla",
+        "bruins",
+        "fan shop"
+      ],
+      "evaluations": [
+        {
+          "query": "UCLA",
+          "search": {
+            "query": "UCLA",
+            "url": "https://boxercraft.com/search?q=UCLA",
+            "title": "Search: 6 results found for \"UCLA\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla.png",
+            "result_count": 6,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Men's UCLA Pique Polo",
+              "Women's UCLA Quilted Crew",
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Men's UCLA Everest Fleece Pullover",
+              "Women's UCLA Essential Racerback Tank"
+            ]
+          },
+          "autocomplete": {
+            "query": "UCLA",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS UCLA Bruins Fan Shop PRODUCTS Women's UCLA Quilted Crew SKU: ZR08UC2201 XXS Boxercraft1985 $69.85 Men's UCLA Pique Polo SKU: ZM2301UC2201 XXS Boxercraft1985 $64.85 Women's UCLA Essential Racerback Tank SKU: ZW2502UC2201 XS Boxercraft1985 $29.85 Men's UCLA Everest Fleece Pullover SKU: ZM8510UC2201 XXS Boxercraft1985 $79.85 Women's UCLA Fleece Out Crew SKU: ZK01SUC2201 XXS Boxercraft1985 $64.85 Women's UCLA Dream Fleece Pullover Hoodie SKU: ZW5301UC2201 XXS Boxercraft1985 $69.85 Men's UCLA Pique Polo Women's UCLA Quilted Crew Women's UCLA Fleece Out Crew Women's UCLA Dream Fleece Pullover Hoodie VIEW MORE",
+            "product_titles": [
+              "Men's UCLA Pique Polo",
+              "Women's UCLA Quilted Crew",
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "UCLA Bruins Fan Shop",
+              "Women's UCLA Quilted Crew SKU: ZR08UC2201 XXS Boxercraft1985 $69.85",
+              "Men's UCLA Pique Polo SKU: ZM2301UC2201 XXS Boxercraft1985 $64.85",
+              "Women's UCLA Essential Racerback Tank SKU: ZW2502UC2201 XS Boxercraft1985 $29.85",
+              "Women's UCLA Essential Racerback Tank",
+              "Men's UCLA Everest Fleece Pullover SKU: ZM8510UC2201 XXS Boxercraft1985 $79.85"
+            ]
+          }
+        },
+        {
+          "query": "UCLA Bruins",
+          "search": {
+            "query": "UCLA Bruins",
+            "url": "https://boxercraft.com/search?q=UCLA%20Bruins",
+            "title": "Search: 6 results found for \"UCLA Bruins\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla-bruins.png",
+            "result_count": 6,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Men's UCLA Pique Polo",
+              "Women's UCLA Quilted Crew",
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Men's UCLA Everest Fleece Pullover",
+              "Women's UCLA Essential Racerback Tank"
+            ]
+          },
+          "autocomplete": {
+            "query": "UCLA Bruins",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla-bruins.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS UCLA Bruins Fan Shop View more",
+            "product_titles": [
+              "UCLA Bruins Fan Shop"
+            ]
+          }
+        },
+        {
+          "query": "Bruins apparel",
+          "search": {
+            "query": "Bruins apparel",
+            "url": "https://boxercraft.com/search?q=Bruins%20apparel",
+            "title": "Search: 0 results found for \"Bruins apparel\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-bruins-apparel.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "Bruins apparel",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-bruins-apparel.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"Bruins apparel\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "University of California Los Angeles",
+          "search": {
+            "query": "University of California Los Angeles",
+            "url": "https://boxercraft.com/search?q=University%20of%20California%20Los%20Angeles",
+            "title": "Search: 6 results found for \"University of California Los Angeles\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-university-of-california-los-angeles.png",
+            "result_count": 6,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Men's UCLA Pique Polo",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Quilted Crew",
+              "Men's UCLA Everest Fleece Pullover",
+              "Women's UCLA Essential Racerback Tank"
+            ]
+          },
+          "autocomplete": {
+            "query": "University of California Los Angeles",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-university-of-california-los-angeles.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS UCLA Bruins Fan Shop View more",
+            "product_titles": [
+              "UCLA Bruins Fan Shop"
+            ]
+          }
+        },
+        {
+          "query": "UC Los Angeles",
+          "search": {
+            "query": "UC Los Angeles",
+            "url": "https://boxercraft.com/search?q=UC%20Los%20Angeles",
+            "title": "Search: 6 results found for \"UC Los Angeles\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-uc-los-angeles.png",
+            "result_count": 6,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Men's UCLA Pique Polo",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Quilted Crew",
+              "Men's UCLA Everest Fleece Pullover",
+              "Women's UCLA Essential Racerback Tank"
+            ]
+          },
+          "autocomplete": {
+            "query": "UC Los Angeles",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-uc-los-angeles.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS UCLA Bruins Fan Shop View more",
+            "product_titles": [
+              "UCLA Bruins Fan Shop"
+            ]
+          }
+        },
+        {
+          "query": "UCLA fleece",
+          "search": {
+            "query": "UCLA fleece",
+            "url": "https://boxercraft.com/search?q=UCLA%20fleece",
+            "title": "Search: 3 results found for \"UCLA fleece\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla-fleece.png",
+            "result_count": 3,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Men's UCLA Everest Fleece Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "UCLA fleece",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla-fleece.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "PRODUCTS Women's UCLA Fleece Out Crew SKU: ZK01SUC2201 XXS Boxercraft1985 $64.85 Men's UCLA Everest Fleece Pullover SKU: ZM8510UC2201 XXS Boxercraft1985 $79.85 Women's UCLA Dream Fleece Pullover Hoodie SKU: ZW5301UC2201 XXS Boxercraft1985 $69.85 Women's UCLA Fleece Out Crew Women's UCLA Dream Fleece Pullover Hoodie Men's UCLA Everest Fleece Pullover VIEW MORE",
+            "product_titles": [
+              "Women's UCLA Fleece Out Crew",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Men's UCLA Everest Fleece Pullover",
+              "Women's UCLA Fleece Out Crew SKU: ZK01SUC2201 XXS Boxercraft1985 $64.85",
+              "Men's UCLA Everest Fleece Pullover SKU: ZM8510UC2201 XXS Boxercraft1985 $79.85",
+              "Women's UCLA Dream Fleece Pullover Hoodie SKU: ZW5301UC2201 XXS Boxercraft1985 $69.85"
+            ]
+          }
+        },
+        {
+          "query": "UCLA sweatshirt",
+          "search": {
+            "query": "UCLA sweatshirt",
+            "url": "https://boxercraft.com/search?q=UCLA%20sweatshirt",
+            "title": "Search: 1 result found for \"UCLA sweatshirt\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla-sweatshirt.png",
+            "result_count": 1,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's UCLA Quilted Crew"
+            ]
+          },
+          "autocomplete": {
+            "query": "UCLA sweatshirt",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla-sweatshirt.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS UCLA Bruins Fan Shop View more",
+            "product_titles": [
+              "UCLA Bruins Fan Shop"
+            ]
+          }
+        },
+        {
+          "query": "UCLA quarter zip",
+          "search": {
+            "query": "UCLA quarter zip",
+            "url": "https://boxercraft.com/search?q=UCLA%20quarter%20zip",
+            "title": "Search: 1 result found for \"UCLA quarter zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla-quarter-zip.png",
+            "result_count": 1,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Men's UCLA Everest Fleece Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "UCLA quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla-quarter-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"UCLA quarter zip\" View more",
+            "product_titles": []
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "team_fan_shop_aliases",
+      "label": "Team and fan-shop alias recovery",
+      "stakeholder_context": null,
+      "surface": "public_consumer",
+      "expected_terms": [
+        "team",
+        "fan",
+        "college",
+        "bulldogs",
+        "bruins",
+        "ucla"
+      ],
+      "expected_browse_terms": [
+        "team",
+        "fan shop",
+        "college",
+        "ucla",
+        "bruins"
+      ],
+      "evaluations": [
+        {
+          "query": "college teams",
+          "search": {
+            "query": "college teams",
+            "url": "https://boxercraft.com/search?q=college%20teams",
+            "title": "Search: 2 results found for \"college teams\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-college-teams.png",
+            "result_count": 2,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 3,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                },
+                {
+                  "text": "COLLEGE TEAM FAN SHOP",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop?_pos=1&_sid=8e3ce709d&_ss=r"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "college teams",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-college-teams.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "College Team Fan Shop",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "College Team Fan Shop",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                },
+                {
+                  "text": "About Us",
+                  "href": "https://boxercraft.com/pages/about-us"
+                }
+              ]
+            },
+            "visible_text": "PAGES College Team Fan Shop About Us View more",
+            "product_titles": [
+              "College Team Fan Shop",
+              "About Us"
+            ]
+          }
+        },
+        {
+          "query": "fan shop",
+          "search": {
+            "query": "fan shop",
+            "url": "https://boxercraft.com/search?q=fan%20shop",
+            "title": "Search: 294 results found for \"fan shop\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-fan-shop.png",
+            "result_count": 294,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 5,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                },
+                {
+                  "text": "FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop?_pos=1&_sid=e61f4974f&_ss=r"
+                },
+                {
+                  "text": "COLLEGE TEAM FAN SHOP",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop?_pos=2&_sid=e61f4974f&_ss=r"
+                },
+                {
+                  "text": "LAMBERT SOCCER FAN SHOP",
+                  "href": "https://boxercraft.com/pages/lambert-soccer-fan-shop?_pos=3&_sid=e61f4974f&_ss=r"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Youth Ohio State University Polyester Flannel Pant",
+              "Women's Baylor University Cuddle Cardigan",
+              "Women's Penn State Haley Flannel Pant",
+              "Women's Louisiana State University Cuddle Cardigan",
+              "Women's Ohio State University Caydn Tank Dress",
+              "Men's Louisiana State University Everest Fleece Pullover",
+              "Women's Ohio State University Dream Fleece Pullover Hoodie",
+              "Class of 2026 Women's Haley Flannel Pant",
+              "REALTREE Performance Full-Zip Fleece Hoodie",
+              "REALTREE Performance Colorblock Long-Sleeve Tee",
+              "Women's Ohio State University Everest Half Zip",
+              "Women's Clemson University Cuddle Cardigan",
+              "Class of 2026 Women's Luna Legging",
+              "All Star Moms Football Crewneck Fleece",
+              "All Star Moms Football Tri-Blend Tee",
+              "Class of 2026 Men's Essential Crewneck Tee",
+              "Women's Ohio State University Cropped Retro Jersey"
+            ]
+          },
+          "autocomplete": {
+            "query": "fan shop",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-fan-shop.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 4,
+              "relevant_links": [
+                {
+                  "text": "Clemson Tigers Fan Shop",
+                  "href": "https://boxercraft.com/collections/clemson-university"
+                },
+                {
+                  "text": "LSU Tigers Fan Shop",
+                  "href": "https://boxercraft.com/collections/louisiana-state-university"
+                },
+                {
+                  "text": "Fan Shop",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "Lambert Soccer Fan Shop",
+                  "href": "https://boxercraft.com/pages/lambert-soccer-fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "Clemson Tigers Fan Shop",
+                  "href": "https://boxercraft.com/collections/clemson-university"
+                },
+                {
+                  "text": "LSU Tigers Fan Shop",
+                  "href": "https://boxercraft.com/collections/louisiana-state-university"
+                },
+                {
+                  "text": "Fan Shop",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "Lambert Soccer Fan Shop",
+                  "href": "https://boxercraft.com/pages/lambert-soccer-fan-shop"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS Clemson Tigers Fan Shop LSU Tigers Fan Shop PAGES Fan Shop Lambert Soccer Fan Shop View more",
+            "product_titles": [
+              "Clemson Tigers Fan Shop",
+              "LSU Tigers Fan Shop",
+              "Fan Shop",
+              "Lambert Soccer Fan Shop"
+            ]
+          }
+        },
+        {
+          "query": "team apparel",
+          "search": {
+            "query": "team apparel",
+            "url": "https://boxercraft.com/search?q=team%20apparel",
+            "title": "Search: 0 results found for \"team apparel\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-team-apparel.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 2,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "team apparel",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-team-apparel.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"team apparel\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "Bulldogs",
+          "search": {
+            "query": "Bulldogs",
+            "url": "https://boxercraft.com/search?q=Bulldogs",
+            "title": "Search: 0 results found for \"Bulldogs\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-bulldogs.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 2,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "Bulldogs",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-bulldogs.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"Bulldogs\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "Georgia Bulldogs",
+          "search": {
+            "query": "Georgia Bulldogs",
+            "url": "https://boxercraft.com/search?q=Georgia%20Bulldogs",
+            "title": "Search: 0 results found for \"Georgia Bulldogs\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-georgia-bulldogs.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 2,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "Georgia Bulldogs",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-georgia-bulldogs.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"Georgia Bulldogs\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "Bruins",
+          "search": {
+            "query": "Bruins",
+            "url": "https://boxercraft.com/search?q=Bruins",
+            "title": "Search: 6 results found for \"Bruins\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-bruins.png",
+            "result_count": 6,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 2,
+              "relevant_links": [
+                {
+                  "text": "THE FAN SHOP",
+                  "href": "https://boxercraft.com/pages/fan-shop"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/pages/college-team-fan-shop"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's UCLA Fleece Out Crew",
+              "Men's UCLA Pique Polo",
+              "Women's UCLA Dream Fleece Pullover Hoodie",
+              "Women's UCLA Quilted Crew",
+              "Men's UCLA Everest Fleece Pullover",
+              "Women's UCLA Essential Racerback Tank"
+            ]
+          },
+          "autocomplete": {
+            "query": "Bruins",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-bruins.png",
+            "nothing_found": false,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": true,
+              "relevant_count": 1,
+              "relevant_links": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ],
+              "all_browse_links_sample": [
+                {
+                  "text": "UCLA Bruins Fan Shop",
+                  "href": "https://boxercraft.com/collections/ucla-bruins-fan-shop-apparel"
+                }
+              ]
+            },
+            "visible_text": "COLLECTIONS UCLA Bruins Fan Shop View more",
+            "product_titles": [
+              "UCLA Bruins Fan Shop"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "color_product_terms",
+      "label": "Color-plus-product normalization",
+      "stakeholder_context": null,
+      "surface": "public_consumer",
+      "expected_terms": [
+        "quarter",
+        "zip",
+        "maroon",
+        "red",
+        "burgundy",
+        "cardinal"
+      ],
+      "expected_browse_terms": [
+        "quarter",
+        "zip",
+        "pullovers"
+      ],
+      "evaluations": [
+        {
+          "query": "maroon quarter zip",
+          "search": {
+            "query": "maroon quarter zip",
+            "url": "https://boxercraft.com/search?q=maroon%20quarter%20zip",
+            "title": "Search: 33 results found for \"maroon quarter zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-maroon-quarter-zip.png",
+            "result_count": 33,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Men's Everest Fleece Quarter-Zip Pullover",
+              "Men's Quarter-Zip Fleece Pullover",
+              "Women's Sherpa Quarter-Zip Pullover",
+              "Men's Stretch Woven Quarter Zip Pullover",
+              "Men's Sullivan Quarter-Zip Pullover",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Men's Purdue University Sullivan Quarter-Zip Pullover",
+              "Lambert Soccer Men's Alumni Quarter-Zip Pullover",
+              "REALTREE Performance Colorblock Quarter-Zip Pullover",
+              "Men's Alpine Quarter-Zip Pullover",
+              "Men's Flex Quarter-Zip Pullover",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Men's Clemson University Sullivan Quarter-Zip Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "maroon quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-maroon-quarter-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"maroon quarter zip\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "burgundy quarter zip",
+          "search": {
+            "query": "burgundy quarter zip",
+            "url": "https://boxercraft.com/search?q=burgundy%20quarter%20zip",
+            "title": "Search: 33 results found for \"burgundy quarter zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-burgundy-quarter-zip.png",
+            "result_count": 33,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Men's Everest Fleece Quarter-Zip Pullover",
+              "Women's Sherpa Quarter-Zip Pullover",
+              "Men's Stretch Woven Quarter Zip Pullover",
+              "Men's Quarter-Zip Fleece Pullover",
+              "Men's Sullivan Quarter-Zip Pullover",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Lambert Soccer Men's Alumni Quarter-Zip Pullover",
+              "Men's Purdue University Sullivan Quarter-Zip Pullover",
+              "Men's Alpine Quarter-Zip Pullover",
+              "Men's Flex Quarter-Zip Pullover",
+              "REALTREE Performance Colorblock Quarter-Zip Pullover",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Men's Clemson University Sullivan Quarter-Zip Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "burgundy quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-burgundy-quarter-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"burgundy quarter zip\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "cardinal quarter zip",
+          "search": {
+            "query": "cardinal quarter zip",
+            "url": "https://boxercraft.com/search?q=cardinal%20quarter%20zip",
+            "title": "Search: 33 results found for \"cardinal quarter zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-cardinal-quarter-zip.png",
+            "result_count": 33,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Women's Stretch Woven Quarter-Zip Pullover",
+              "Women's Flex Quarter Zip Pullover",
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Manchester Quarter Zip Pullover",
+              "Men's Everest Fleece Quarter-Zip Pullover",
+              "Men's Quarter-Zip Fleece Pullover",
+              "Women's Sherpa Quarter-Zip Pullover",
+              "Men's Stretch Woven Quarter Zip Pullover",
+              "Men's Sullivan Quarter-Zip Pullover",
+              "Women's Fleece Colorblocked Quarter-Zip Pullover",
+              "Men's Purdue University Sullivan Quarter-Zip Pullover",
+              "Lambert Soccer Men's Alumni Quarter-Zip Pullover",
+              "REALTREE Performance Colorblock Quarter-Zip Pullover",
+              "Men's Alpine Quarter-Zip Pullover",
+              "Men's Flex Quarter-Zip Pullover",
+              "Women's Dream Fleece Quarter-Zip Pullover",
+              "Men's Clemson University Sullivan Quarter-Zip Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "cardinal quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-cardinal-quarter-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"cardinal quarter zip\" View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "red quarter zip",
+          "search": {
+            "query": "red quarter zip",
+            "url": "https://boxercraft.com/search?q=red%20quarter%20zip",
+            "title": "Search: 2 results found for \"red quarter zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-red-quarter-zip.png",
+            "result_count": 2,
+            "has_results": true,
+            "has_relevant_text": true,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": [
+              "Men's Alumni Quarter-Zip Pullover",
+              "Women's Sherpa Quarter-Zip Pullover"
+            ]
+          },
+          "autocomplete": {
+            "query": "red quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-red-quarter-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "View more",
+            "product_titles": []
+          }
+        },
+        {
+          "query": "maroon qtr zip",
+          "search": {
+            "query": "maroon qtr zip",
+            "url": "https://boxercraft.com/search?q=maroon%20qtr%20zip",
+            "title": "Search: 0 results found for \"maroon qtr zip\" – Boxercraft",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-maroon-qtr-zip.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": [
+                {
+                  "text": "WOMEN",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-clothing"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tees-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-short-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-long-sleeve-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-tank-tops"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-sports-bras"
+                },
+                {
+                  "text": "",
+                  "href": "https://boxercraft.com/collections/womens-bottoms"
+                }
+              ]
+            },
+            "product_titles": []
+          },
+          "autocomplete": {
+            "query": "maroon qtr zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-maroon-qtr-zip.png",
+            "nothing_found": true,
+            "has_relevant_text": false,
+            "browse_path": {
+              "has_browse_path": false,
+              "relevant_count": 0,
+              "relevant_links": [],
+              "all_browse_links_sample": []
+            },
+            "visible_text": "Sorry, nothing found for \"maroon qtr zip\" View more",
+            "product_titles": []
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "public_wholesale_sku_variants",
+      "label": "Public wholesale SKU and product-code variants",
+      "stakeholder_context": null,
+      "surface": "public_wholesale",
+      "expected_terms": [
+        "bm5205",
+        "alumni",
+        "qtr",
+        "quarter",
+        "zip"
+      ],
+      "expected_browse_terms": [],
+      "evaluations": [
+        {
+          "query": "BM5205",
+          "search": {
+            "query": "BM5205",
+            "url": "https://wholesale.boxercraft.com/search.html?query=BM5205&page=1",
+            "title": "Default Store View's Search Result for term BM5205",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm5205.png",
+            "result_count": null,
+            "has_results": false,
+            "has_relevant_text": false,
+            "product_titles": [
+              "Click here",
+              "Boxercraft",
+              "New Customer Signup",
+              "Forgot Password?",
+              "Account Reactivation",
+              "Shop",
+              "Sale",
+              "Resource",
+              "Marketing",
+              "Home",
+              "Privacy Policy",
+              "Terms and Services"
+            ]
+          },
+          "autocomplete": null
+        },
+        {
+          "query": "bm5205",
+          "search": {
+            "query": "bm5205",
+            "url": "https://wholesale.boxercraft.com/search.html?query=bm5205&page=1",
+            "title": "Default Store View's Search Result for term bm5205",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm5205.png",
+            "result_count": 1,
+            "has_results": true,
+            "has_relevant_text": true,
+            "product_titles": [
+              "Click here",
+              "Boxercraft",
+              "New Customer Signup",
+              "Forgot Password?",
+              "Account Reactivation",
+              "Shop",
+              "Sale",
+              "Resource",
+              "Marketing",
+              "Products Per Page : 24 36 48 View All",
+              "Sort By Position",
+              "Position",
+              "OUTLET",
+              "MEN'S ALUMNI QTR ZIP PULLOVER",
+              "BOXERCRAFT XXS-3XL",
+              "Manage Account",
+              "View Open/Pending Orders",
+              "Order History & Tracking",
+              "Manage Shipping Addresses",
+              "Change Password"
+            ]
+          },
+          "autocomplete": null
+        },
+        {
+          "query": "BM 5205",
+          "search": {
+            "query": "BM 5205",
+            "url": "https://wholesale.boxercraft.com/search.html?query=BM%205205&page=1",
+            "title": "Default Store View's Search Result for term BM 5205",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm-5205.png",
+            "result_count": 1,
+            "has_results": true,
+            "has_relevant_text": true,
+            "product_titles": [
+              "Click here",
+              "Boxercraft",
+              "New Customer Signup",
+              "Forgot Password?",
+              "Account Reactivation",
+              "Shop",
+              "Sale",
+              "Resource",
+              "Marketing",
+              "Products Per Page : 24 36 48 View All",
+              "Sort By Position",
+              "Position",
+              "OUTLET",
+              "MEN'S ALUMNI QTR ZIP PULLOVER",
+              "BOXERCRAFT XXS-3XL",
+              "Manage Account",
+              "View Open/Pending Orders",
+              "Order History & Tracking",
+              "Manage Shipping Addresses",
+              "Change Password"
+            ]
+          },
+          "autocomplete": null
+        },
+        {
+          "query": "BM-5205",
+          "search": {
+            "query": "BM-5205",
+            "url": "https://wholesale.boxercraft.com/search.html?query=BM-5205&page=1",
+            "title": "Default Store View's Search Result for term BM-5205",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm-5205.png",
+            "result_count": 0,
+            "has_results": false,
+            "has_relevant_text": false,
+            "product_titles": [
+              "Click here",
+              "Boxercraft",
+              "New Customer Signup",
+              "Forgot Password?",
+              "Account Reactivation",
+              "Shop",
+              "Sale",
+              "Resource",
+              "Marketing",
+              "Manage Account",
+              "View Open/Pending Orders",
+              "Order History & Tracking",
+              "Manage Shipping Addresses",
+              "Change Password",
+              "Catalogs",
+              "Digital Swatch Cards",
+              "Samples",
+              "Size Guides",
+              "Tradeshows",
+              "Our Brands",
+              "Sustainability",
+              "Careers"
+            ]
+          },
+          "autocomplete": null
+        },
+        {
+          "query": "alumni qtr zip",
+          "search": {
+            "query": "alumni qtr zip",
+            "url": "https://wholesale.boxercraft.com/search.html?query=alumni%20qtr%20zip&page=1",
+            "title": "Default Store View's Search Result for term alumni qtr zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-alumni-qtr-zip.png",
+            "result_count": 1,
+            "has_results": true,
+            "has_relevant_text": true,
+            "product_titles": [
+              "Click here",
+              "Boxercraft",
+              "New Customer Signup",
+              "Forgot Password?",
+              "Account Reactivation",
+              "Shop",
+              "Sale",
+              "Resource",
+              "Marketing",
+              "Products Per Page : 24 36 48 View All",
+              "Sort By Position",
+              "Position",
+              "OUTLET",
+              "MEN'S ALUMNI QTR ZIP PULLOVER",
+              "BOXERCRAFT XXS-3XL",
+              "Manage Account",
+              "View Open/Pending Orders",
+              "Order History & Tracking",
+              "Manage Shipping Addresses",
+              "Change Password"
+            ]
+          },
+          "autocomplete": null
+        },
+        {
+          "query": "alumni quarter zip",
+          "search": {
+            "query": "alumni quarter zip",
+            "url": "https://wholesale.boxercraft.com/search.html?query=alumni%20quarter%20zip&page=1",
+            "title": "Default Store View's Search Result for term alumni quarter zip",
+            "screenshot": "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-alumni-quarter-zip.png",
+            "result_count": 1,
+            "has_results": true,
+            "has_relevant_text": true,
+            "product_titles": [
+              "Click here",
+              "Boxercraft",
+              "New Customer Signup",
+              "Forgot Password?",
+              "Account Reactivation",
+              "Shop",
+              "Sale",
+              "Resource",
+              "Marketing",
+              "Products Per Page : 24 36 48 View All",
+              "Sort By Position",
+              "Position",
+              "OUTLET",
+              "MEN'S ALUMNI QTR ZIP PULLOVER",
+              "BOXERCRAFT XXS-3XL",
+              "Manage Account",
+              "View Open/Pending Orders",
+              "Order History & Tracking",
+              "Manage Shipping Addresses",
+              "Change Password"
+            ]
+          },
+          "autocomplete": null
+        }
+      ]
+    }
+  ],
+  "summaries": [
+    {
+      "group_id": "quarter_zip_spacing_abbreviation",
+      "label": "Quarter-zip spacing, punctuation, and abbreviation",
+      "query_count": 6,
+      "search_relevant_count": 2,
+      "autocomplete_relevant_count": 3,
+      "search_browse_path_count": 0,
+      "autocomplete_browse_path_count": 1,
+      "search_relevant_rate": 0.33,
+      "autocomplete_relevant_rate": 0.5,
+      "search_browse_path_rate": 0,
+      "autocomplete_browse_path_rate": 0.17,
+      "parity_gap_queries": [],
+      "zero_search_queries": [
+        "quarterzip",
+        "qtr zip",
+        "qtr-zip",
+        "1/4 zip"
+      ],
+      "browse_path_gap_queries": [
+        "quarter-zip",
+        "quarterzip",
+        "qtr zip",
+        "qtr-zip",
+        "1/4 zip"
+      ],
+      "min_nonzero_result_count": 33,
+      "max_result_count": 33,
+      "result_count_spread": 0,
+      "interpretation": "Normalization is uneven across tested variants."
+    },
+    {
+      "group_id": "womens_fleece_possessive",
+      "label": "Women's fleece plurality and alternate terms",
+      "query_count": 5,
+      "search_relevant_count": 3,
+      "autocomplete_relevant_count": 3,
+      "search_browse_path_count": 5,
+      "autocomplete_browse_path_count": 3,
+      "search_relevant_rate": 0.6,
+      "autocomplete_relevant_rate": 0.6,
+      "search_browse_path_rate": 1,
+      "autocomplete_browse_path_rate": 0.6,
+      "parity_gap_queries": [],
+      "zero_search_queries": [
+        "ladies fleece",
+        "female fleece"
+      ],
+      "browse_path_gap_queries": [],
+      "min_nonzero_result_count": 53,
+      "max_result_count": 65,
+      "result_count_spread": 12,
+      "interpretation": "Normalization is uneven across tested variants."
+    },
+    {
+      "group_id": "ucla_bruins_priority",
+      "label": "UCLA / Bruins priority-account terms",
+      "query_count": 8,
+      "search_relevant_count": 7,
+      "autocomplete_relevant_count": 6,
+      "search_browse_path_count": 8,
+      "autocomplete_browse_path_count": 5,
+      "search_relevant_rate": 0.88,
+      "autocomplete_relevant_rate": 0.75,
+      "search_browse_path_rate": 1,
+      "autocomplete_browse_path_rate": 0.63,
+      "parity_gap_queries": [
+        "UCLA quarter zip"
+      ],
+      "zero_search_queries": [
+        "Bruins apparel"
+      ],
+      "browse_path_gap_queries": [],
+      "min_nonzero_result_count": 1,
+      "max_result_count": 6,
+      "result_count_spread": 5,
+      "interpretation": "UCLA acronym and Bruins variants deserve explicit monitoring because the user identified this as priority-account demand; the client-size claim remains stakeholder context, not independently verified public evidence."
+    },
+    {
+      "group_id": "team_fan_shop_aliases",
+      "label": "Team and fan-shop alias recovery",
+      "query_count": 6,
+      "search_relevant_count": 3,
+      "autocomplete_relevant_count": 3,
+      "search_browse_path_count": 6,
+      "autocomplete_browse_path_count": 3,
+      "search_relevant_rate": 0.5,
+      "autocomplete_relevant_rate": 0.5,
+      "search_browse_path_rate": 1,
+      "autocomplete_browse_path_rate": 0.5,
+      "parity_gap_queries": [],
+      "zero_search_queries": [
+        "team apparel",
+        "Bulldogs",
+        "Georgia Bulldogs"
+      ],
+      "browse_path_gap_queries": [],
+      "min_nonzero_result_count": 2,
+      "max_result_count": 294,
+      "result_count_spread": 292,
+      "interpretation": "Normalization is uneven across tested variants."
+    },
+    {
+      "group_id": "color_product_terms",
+      "label": "Color-plus-product normalization",
+      "query_count": 5,
+      "search_relevant_count": 4,
+      "autocomplete_relevant_count": 0,
+      "search_browse_path_count": 0,
+      "autocomplete_browse_path_count": 0,
+      "search_relevant_rate": 0.8,
+      "autocomplete_relevant_rate": 0,
+      "search_browse_path_rate": 0,
+      "autocomplete_browse_path_rate": 0,
+      "parity_gap_queries": [
+        "maroon quarter zip",
+        "burgundy quarter zip",
+        "cardinal quarter zip",
+        "red quarter zip"
+      ],
+      "zero_search_queries": [
+        "maroon qtr zip"
+      ],
+      "browse_path_gap_queries": [
+        "maroon quarter zip",
+        "burgundy quarter zip",
+        "cardinal quarter zip",
+        "red quarter zip",
+        "maroon qtr zip"
+      ],
+      "min_nonzero_result_count": 2,
+      "max_result_count": 33,
+      "result_count_spread": 31,
+      "interpretation": "Search can recover some variants that autocomplete drops, creating pre-search abandonment risk."
+    },
+    {
+      "group_id": "public_wholesale_sku_variants",
+      "label": "Public wholesale SKU and product-code variants",
+      "query_count": 6,
+      "search_relevant_count": 4,
+      "autocomplete_relevant_count": 0,
+      "search_browse_path_count": 0,
+      "autocomplete_browse_path_count": 0,
+      "search_relevant_rate": 0.67,
+      "autocomplete_relevant_rate": null,
+      "search_browse_path_rate": 0,
+      "autocomplete_browse_path_rate": null,
+      "parity_gap_queries": [],
+      "zero_search_queries": [
+        "BM5205",
+        "BM-5205"
+      ],
+      "browse_path_gap_queries": [
+        "BM5205",
+        "bm5205",
+        "BM 5205",
+        "BM-5205",
+        "alumni qtr zip",
+        "alumni quarter zip"
+      ],
+      "min_nonzero_result_count": 1,
+      "max_result_count": 1,
+      "result_count_spread": 0,
+      "interpretation": "Normalization is uneven across tested variants."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "High",
+      "category": "Priority Account Normalization",
+      "summary": "UCLA/Bruins demand is partially recoverable in search, but autocomplete coverage is weaker than search for priority-account variants.",
+      "evidence": [
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-ucla-bruins.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-ucla-bruins.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-bruins-apparel.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-bruins-apparel.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-university-of-california-los-angeles.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-university-of-california-los-angeles.png"
+      ],
+      "queries": [
+        "UCLA quarter zip"
+      ]
+    },
+    {
+      "severity": "High",
+      "category": "Autocomplete Normalization",
+      "summary": "Color-plus-product queries produce search results but are dropped by autocomplete for multiple tested variants.",
+      "evidence": [
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-maroon-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-maroon-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-burgundy-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-burgundy-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-cardinal-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-cardinal-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-red-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-red-quarter-zip.png"
+      ],
+      "queries": [
+        "maroon quarter zip",
+        "burgundy quarter zip",
+        "cardinal quarter zip",
+        "red quarter zip"
+      ]
+    },
+    {
+      "severity": "High",
+      "category": "Team Intent Recovery",
+      "summary": "Team and fan-shop aliases remain uneven: some broad terms recover, while direct unsupported team names still dead-end.",
+      "evidence": [
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-college-teams.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-college-teams.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-fan-shop.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-fan-shop.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-team-apparel.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-team-apparel.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-bulldogs.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-bulldogs.png"
+      ],
+      "queries": [
+        "team apparel",
+        "Bulldogs",
+        "Georgia Bulldogs"
+      ]
+    },
+    {
+      "severity": "High",
+      "category": "Search And Autocomplete To Browse",
+      "summary": "Search and autocomplete do not consistently route normalized terms to useful collection, page, or fan-shop browse destinations.",
+      "evidence": [
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-quarter-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-quarterzip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-quarterzip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-qtr-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-qtr-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-qtr-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-qtr-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/search-1-4-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/autocomplete-1-4-zip.png"
+      ],
+      "queries": [
+        "quarter-zip",
+        "quarterzip",
+        "qtr zip",
+        "qtr-zip",
+        "1/4 zip",
+        "maroon quarter zip",
+        "burgundy quarter zip",
+        "cardinal quarter zip",
+        "red quarter zip",
+        "maroon qtr zip"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "category": "Public Wholesale SKU Normalization",
+      "summary": "Public wholesale search handles exact SKU lookup better than spaced or hyphenated SKU variants.",
+      "evidence": [
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm5205.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm5205.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm-5205.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-bm-5205.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-alumni-qtr-zip.png",
+        "assessments/boxercraft/normalization-evidence/GEN-004/screenshots/wholesale-search-alumni-quarter-zip.png"
+      ],
+      "queries": [
+        "BM5205",
+        "BM-5205"
+      ]
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,211 @@
+{
+  "assessment_id": "replace-with-target-assessment-id",
+  "framework_version": "0.1.0",
+  "assessment_status": "template",
+  "target": {
+    "company_name": "TBD",
+    "domain": "TBD",
+    "vertical": "TBD",
+    "assessment_date": "TBD",
+    "access_contexts": [
+      "public_consumer"
+    ]
+  },
+  "assessment_areas": [
+    {
+      "area_id": "search",
+      "status": "not_assessed",
+      "dimensions": [
+        "query_understanding",
+        "precision",
+        "recall",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "robustness",
+        "recovery",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "exact match",
+        "partial match",
+        "multi-word query",
+        "attribute query",
+        "category query",
+        "brand query",
+        "product identifier query",
+        "long-tail query"
+      ],
+      "evidence": [],
+      "notes": "Collect query, result count, top results, ranking/relevance note, and recovery path."
+    },
+    {
+      "area_id": "autocomplete",
+      "status": "not_assessed",
+      "dimensions": [
+        "precision",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "query suggestions",
+        "product suggestions",
+        "category suggestions",
+        "brand suggestions",
+        "mobile responsiveness"
+      ],
+      "evidence": [],
+      "notes": "Collect typed prefixes, suggestions shown, ordering, clarity, and discovery value."
+    },
+    {
+      "area_id": "browse_navigation",
+      "status": "not_assessed",
+      "dimensions": [
+        "coverage",
+        "user_effort",
+        "recovery",
+        "diversity"
+      ],
+      "journeys_or_checks": [
+        "category hierarchy",
+        "naming clarity",
+        "navigation depth",
+        "organizational consistency",
+        "product grouping",
+        "mobile navigation"
+      ],
+      "evidence": [],
+      "notes": "Collect starting page, path, steps, destination, dead ends, and mobile friction."
+    },
+    {
+      "area_id": "filters_facets",
+      "status": "not_assessed",
+      "dimensions": [
+        "precision",
+        "coverage",
+        "recovery",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "facet relevance",
+        "facet completeness",
+        "facet organization",
+        "multi-select support",
+        "filter persistence",
+        "dead-end navigation"
+      ],
+      "evidence": [],
+      "notes": "Collect result sets before/after filters, available facets, selected filters, and persistence behavior."
+    },
+    {
+      "area_id": "recommendations_related_discovery",
+      "status": "not_assessed",
+      "dimensions": [
+        "precision",
+        "diversity",
+        "coverage",
+        "recovery"
+      ],
+      "journeys_or_checks": [
+        "related products",
+        "similar products",
+        "complementary products",
+        "seasonal products",
+        "featured products",
+        "cross-sell opportunities"
+      ],
+      "evidence": [],
+      "notes": "Collect source page, module name, products/collections shown, relevance, diversity, and next-step value."
+    },
+    {
+      "area_id": "mobile_experience",
+      "status": "not_assessed",
+      "dimensions": [
+        "user_effort",
+        "recovery",
+        "coverage"
+      ],
+      "journeys_or_checks": [
+        "search input visibility",
+        "autocomplete usability",
+        "navigation friction",
+        "filter usability",
+        "tap target clarity",
+        "first useful viewport"
+      ],
+      "evidence": [],
+      "notes": "Collect viewport, task attempted, friction, outcome, and recovery path."
+    },
+    {
+      "area_id": "journey_analysis",
+      "status": "not_assessed",
+      "dimensions": [
+        "coverage",
+        "recovery",
+        "user_effort",
+        "ranking_quality"
+      ],
+      "journeys_or_checks": [
+        "known item",
+        "attribute discovery",
+        "category discovery",
+        "brand or affiliation",
+        "budget or constraint",
+        "SKU lookup",
+        "unavailable item alternatives",
+        "comparison",
+        "large catalog navigation"
+      ],
+      "evidence": [],
+      "notes": "Collect customer intent, starting point, steps attempted, destination, decision quality, and effort."
+    }
+  ],
+  "scorecard": {
+    "search": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    },
+    "autocomplete": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    },
+    "browse": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    },
+    "filters": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    },
+    "recommendations": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    },
+    "mobile_experience": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    },
+    "product_discovery_overall": {
+      "score": null,
+      "rationale": "Not scored until evidence is collected.",
+      "evidence_refs": []
+    }
+  },
+  "findings": [],
+  "opportunity_matrix": {
+    "quick_wins": [],
+    "strategic_improvements": [],
+    "transformational_opportunities": []
+  },
+  "access_limitations": [
+    "Replace this item with target-specific access limitations or remove it if none are known."
+  ]
+}

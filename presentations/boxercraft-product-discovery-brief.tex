@@ -1,0 +1,208 @@
+\documentclass[aspectratio=169]{beamer}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\input{northvalley-template-assets/northvalley-brand.sty}
+\usepackage{booktabs}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setbeamersize{text margin left=0.42in,text margin right=0.42in}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=0.08in
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\small\raise0.45pt\hbox{\textcolor{NVIAccent}{$\blacktriangleright$}}}
+\setbeamercolor{normal text}{fg=NVIInk,bg=white}
+\setbeamercolor{frametitle}{fg=white,bg=NVIAccentDark}
+\setbeamercolor{structure}{fg=NVIAccent}
+
+\definecolor{NVIRed}{HTML}{B42318}
+\definecolor{NVIRedSoft}{HTML}{FDE7E7}
+\definecolor{NVIAmberSoft}{HTML}{FFF4D8}
+\newcommand{\Good}[1]{\textcolor{NVIAccentDark}{\textbf{#1}}}
+\newcommand{\Bad}[1]{\textcolor{NVIRed}{\textbf{#1}}}
+\newcommand{\Warn}[1]{\textcolor{NVIWarning}{\textbf{#1}}}
+\newcommand{\Code}[1]{\texttt{\fontsize{7.7}{8.8}\selectfont #1}}
+
+\newcommand{\PresentationTitle}{Boxercraft Product Discovery Brief}
+\newcommand{\PresentationClient}{Boxercraft Leadership Team}
+\newcommand{\PresentationDate}{June 26, 2026}
+\newcommand{\PresentationSubtitle}{Rendered public-retail, public-wholesale, and search/autocomplete normalization evidence.}
+
+\setbeamertemplate{frametitle}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+    \fill[NVIAccentSoft] ([xshift=-1.12in,yshift=-0.79in]current page.north east) -- ([xshift=0.00in,yshift=-0.79in]current page.north east) -- ([xshift=0.00in,yshift=-1.86in]current page.north east) -- cycle;
+    \fill[NVIAccentSoft] ([xshift=-1.58in]current page.north east) rectangle ([yshift=-0.76in]current page.north east);
+    \fill[NVIAccentDark] (current page.north west) -- ([xshift=-1.58in]current page.north east) -- ([xshift=-1.25in,yshift=-0.38in]current page.north east) -- ([xshift=-1.58in,yshift=-0.76in]current page.north east) -- ([yshift=-0.76in]current page.north west) -- cycle;
+    \fill[NVIAccent] ([yshift=-0.76in]current page.north west) rectangle ([yshift=-0.79in]current page.north east);
+    \node[anchor=west,text=white,font=\fontsize{12.5}{14.5}\selectfont\bfseries] at ([xshift=0.42in,yshift=-0.38in]current page.north west) {\insertframetitle};
+    \node[anchor=center] at ([xshift=-0.61in,yshift=-0.38in]current page.north east) {\NorthvalleyLogo[0.42in]};
+  \end{tikzpicture}
+  \vspace{0.54in}
+}
+
+\setbeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.28in]current page.south east);
+    \fill[NVIAccent] ([yshift=0.28in]current page.south west) rectangle ([yshift=0.305in]current page.south east);
+    \node[anchor=west,text=white,font=\fontsize{6.8}{7.8}\selectfont] at ([xshift=0.42in,yshift=0.14in]current page.south west) {\NorthvalleyBusinessName{} / \PresentationClient};
+    \node[anchor=east,text=white,font=\fontsize{6.8}{7.8}\selectfont] at ([xshift=-0.42in,yshift=0.14in]current page.south east) {\insertframenumber};
+  \end{tikzpicture}
+  \vspace{0.24in}
+}
+
+\newcommand{\SlideKicker}[1]{{\fontsize{7.8}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+\newcommand{\SlideTitle}[1]{{\fontsize{22}{25.5}\selectfont\bfseries\color{NVIInk}#1}}
+\newcommand{\SlideBody}[1]{{\fontsize{9.0}{10.8}\selectfont\color{NVIInk}#1}}
+\newcommand{\SlideFine}[1]{{\fontsize{7.0}{8.3}\selectfont\color{NVIMuted}#1}}
+\newcommand{\MetricValue}[1]{{\fontsize{19}{21}\selectfont\bfseries\color{NVIAccentDark}#1}}
+\newcommand{\MetricLabel}[1]{{\fontsize{6.7}{7.8}\selectfont\bfseries\color{NVIMuted}\MakeUppercase{#1}}}
+\newcommand{\MetricCard}[2]{%
+  \begin{tikzpicture}
+    \node[draw=NVIRule,fill=NVIPanel,rounded corners=1pt,minimum height=0.56in,text width=\dimexpr\linewidth-18pt\relax,inner xsep=8pt,inner ysep=4pt,align=left] {\MetricValue{#1}\\[0.01in]\MetricLabel{#2}};
+  \end{tikzpicture}
+}
+\newcommand{\SlideBox}[4]{%
+  \begin{tikzpicture}
+    \node[draw=#1,fill=#2,rounded corners=1pt,minimum height=0.78in,text width=\dimexpr\linewidth-18pt\relax,inner xsep=8pt,inner ysep=5pt,align=left] {{\fontsize{7.1}{8.1}\selectfont\bfseries\color{NVIMuted}\MakeUppercase{#3}}\\[0.03in]{\fontsize{7.1}{8.25}\selectfont\color{NVIInk}#4}};
+  \end{tikzpicture}
+}
+\newcommand{\GoodBox}[2]{\SlideBox{NVIAccent}{NVIAccentSoft}{#1}{#2}}
+\newcommand{\RiskBox}[2]{\SlideBox{NVIRed}{NVIRedSoft}{#1}{#2}}
+\newcommand{\NeutralBox}[2]{\SlideBox{NVIRule}{white}{#1}{#2}}
+\newcommand{\SlideDarkCard}[2]{%
+  \begin{tikzpicture}
+    \node[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt,inner xsep=11pt,inner ysep=8pt,text width=\dimexpr\linewidth-24pt\relax,align=left] {{\fontsize{7.5}{8.7}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.04in]{\fontsize{9.4}{11.3}\selectfont\color{white}#2}};
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+  \fill[NVIAccentSoft] ([xshift=-1.50in,yshift=-1.12in]current page.north east) -- (current page.north east) -- ([yshift=-2.70in]current page.north east) -- cycle;
+  \fill[NVIAccent!12] ([xshift=-1.05in]current page.south west) -- ([xshift=1.34in]current page.south west) -- ([xshift=0.22in,yshift=1.20in]current page.south west) -- cycle;
+  \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.08in]current page.north east);
+  \fill[NVIAccent] ([yshift=-1.08in]current page.north west) rectangle ([yshift=-1.12in]current page.north east);
+  \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.38in]current page.south east);
+  \node[anchor=west,text=white,font=\fontsize{9}{10.5}\selectfont\bfseries] at ([xshift=0.42in,yshift=-0.54in]current page.north west) {\NorthvalleyBusinessName};
+  \node[anchor=center] at ([xshift=-0.80in,yshift=-0.54in]current page.north east) {\NorthvalleyLogo[0.62in]};
+  \node[anchor=west,text=white,font=\fontsize{7.4}{8.4}\selectfont] at ([xshift=0.42in,yshift=0.19in]current page.south west) {\NorthvalleyContactLine};
+\end{tikzpicture}
+\vspace*{1.04in}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.62\linewidth}
+\SlideKicker{Client Presentation Draft}\\[0.07in]
+\SlideTitle{\PresentationTitle}\\[0.12in]
+\SlideBody{\PresentationSubtitle}\\[0.10in]
+\SlideFine{Prepared for \textbf{\PresentationClient} / \PresentationDate}
+\end{column}
+\begin{column}{0.30\linewidth}
+\SlideDarkCard{Bottom Line}{Exact search and UCLA/Bruins mostly work, but the 36-query Normalization Matrix shows inconsistent recovery.}
+\vspace{0.08in}
+\MetricCard{36}{Variants tested}
+\end{column}
+\end{columns}
+\end{frame}
+}
+
+\begin{frame}{1. Bottom Line}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.52\linewidth}
+\SlideTitle{Product discovery depends too much on exact wording.}\\[0.08in]
+\SlideBody{Rendered evidence shows useful exact-search coverage and mostly recoverable UCLA/Bruins discovery. The broader normalization pass exposed uneven handling for quarter-zip abbreviations, gender terms, color-product phrases, team aliases, public wholesale SKU variants, and browse routing.}
+\end{column}
+\begin{column}{0.44\linewidth}
+\MetricCard{7/8}{UCLA/Bruins search variants}
+\vspace{0.06in}
+\MetricCard{0/5}{Color-product autocomplete variants}
+\vspace{0.06in}
+\MetricCard{10}{Quarter/color browse gaps}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{2. Evidence Scope}
+\SlideBody{This is a rendered browser draft, not final client delivery. It uses screenshots, public retail search/autocomplete evidence, a 36-query Normalization Matrix, search/autocomplete-to-browse checks, filter validation, product-page recommendation validation, and public wholesale search checks.}
+\vspace{0.07in}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.32\linewidth}
+\GoodBox{Validated}{Search, autocomplete, browse routing, UCLA/Bruins terms, fleece filters, mobile viewport, recommendations, and public wholesale search.}
+\end{column}
+\begin{column}{0.32\linewidth}
+\RiskBox{Incomplete}{Authenticated wholesale workflows, broader recommendation samples, and full filter persistence.}
+\end{column}
+\begin{column}{0.32\linewidth}
+\RiskBox{Context}{UCLA commercial importance is stakeholder context, not verified public proof of client size.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{3. Normalization Matrix}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.48\linewidth}
+\RiskBox{Quarter-Zip Variants}{6 variants tested. Search was relevant for 2/6 and autocomplete for 3/6; zero-search terms included \Code{quarterzip}, \Code{qtr zip}, \Code{qtr-zip}, and \Code{1/4 zip}.}
+\vspace{0.05in}
+\NeutralBox{Women's Fleece Variants}{5 variants tested. Search and autocomplete were each relevant for 3/5; \Code{ladies fleece} and \Code{female fleece} returned 0 search results.}
+\end{column}
+\begin{column}{0.48\linewidth}
+\RiskBox{Color-Product Terms}{5 variants tested. Search was relevant for 4/5, but autocomplete was relevant for 0/5, including \Code{maroon quarter zip}, \Code{burgundy quarter zip}, \Code{cardinal quarter zip}, and \Code{red quarter zip}.}
+\vspace{0.05in}
+\NeutralBox{Wholesale SKU Variants}{Public wholesale SKU/product-name variants were relevant for 4/6; punctuation and case behavior was uneven in this run.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{4. UCLA / Team Discovery}
+\SlideBody{The UCLA/Bruins priority set is mostly recoverable, but it should be protected because variants still fail. Client-size context remains stakeholder input, not a public factual claim.}
+\vspace{0.08in}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.32\linewidth}
+\MetricCard{7/8}{UCLA/Bruins search}
+\end{column}
+\begin{column}{0.32\linewidth}
+\MetricCard{6/8}{UCLA/Bruins autocomplete}
+\end{column}
+\begin{column}{0.32\linewidth}
+\MetricCard{3/6}{Team alias search}
+\end{column}
+\end{columns}
+\vspace{0.04in}
+\RiskBox{Gaps}{\Code{UCLA quarter zip} dropped in autocomplete. \Code{Bruins apparel}, \Code{team apparel}, \Code{Bulldogs}, and \Code{Georgia Bulldogs} had 0 search results.}
+\end{frame}
+
+\begin{frame}{5. Search And Autocomplete To Browse}
+\SlideBody{Useful browse destinations exist, but recovery routing is uneven when product matching is imperfect. This is where search, autocomplete, and browse should reinforce each other.}
+\vspace{0.08in}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.32\linewidth}
+\GoodBox{Works Better}{UCLA and broad fan-shop terms usually exposed browse paths in submitted search.}
+\end{column}
+\begin{column}{0.32\linewidth}
+\RiskBox{Browse Gaps}{Quarter-zip and color-product variants had 10 browse-path gaps across search and autocomplete.}
+\end{column}
+\begin{column}{0.32\linewidth}
+\NeutralBox{Fix Pattern}{Route unsupported or ambiguous terms to relevant collections, pages, fan-shop destinations, and close alternatives.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{6. Next Validation Pass}
+\begin{columns}[T,totalwidth=\linewidth]
+\begin{column}{0.48\linewidth}
+\RiskBox{Before External Delivery}{Use captured screenshots and GEN-004 normalization evidence as current evidence, then validate authenticated wholesale workflows and broaden recommendation/filter sampling.}
+\vspace{0.05in}
+\RiskBox{Wholesale}{Public wholesale search and SKU variants were tested, but authenticated account, pricing, order, and inventory flows still need authorization.}
+\end{column}
+\begin{column}{0.48\linewidth}
+\GoodBox{Report Packaging}{The Northvalley LaTeX report and Beamer deck now reflect browser evidence, full normalization evidence, screenshots, and revised draft scores.}
+\vspace{0.05in}
+\NeutralBox{Decision}{Approve a focused discovery cleanup around shared normalization, priority fan-shop intent routing, browse recovery, and distinct related-product recommendations.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}

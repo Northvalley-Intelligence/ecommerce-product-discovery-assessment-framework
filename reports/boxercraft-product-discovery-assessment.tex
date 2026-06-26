@@ -1,0 +1,282 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\input{northvalley-template-assets/northvalley-brand.sty}
+\usepackage[letterpaper,margin=0.62in,top=0.62in,bottom=0.72in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\renewcommand{\labelitemi}{\textcolor{NVIAccent}{\(\triangleright\)}}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=0.10in
+
+\newcommand{\ReportTitle}{Boxercraft Product Discovery Assessment}
+\newcommand{\ReportClient}{Boxercraft Leadership Team}
+\newcommand{\ReportDate}{June 26, 2026}
+\newcommand{\ReportSummary}{Rendered public-retail, public-wholesale, and 36-query search/autocomplete normalization review of Boxercraft product discovery, including browse-path recovery, priority UCLA/Bruins terms, filters, recommendations, mobile, and public wholesale SKU variants. Authenticated wholesale workflows require approved access before final delivery.}
+\newcommand{\ReportPreparedBy}{Northvalley Intelligence LLC}
+
+\definecolor{NVIRed}{HTML}{B42318}
+\definecolor{NVIRedSoft}{HTML}{FDE7E7}
+\definecolor{NVIGreenSoft}{HTML}{E2F1ED}
+\definecolor{NVIAmberSoft}{HTML}{FFF4D8}
+
+\newcommand{\Good}[1]{\textcolor{NVIAccentDark}{\textbf{#1}}}
+\newcommand{\Bad}[1]{\textcolor{NVIRed}{\textbf{#1}}}
+\newcommand{\Warn}[1]{\textcolor{NVIWarning}{\textbf{#1}}}
+\newcommand{\Code}[1]{\texttt{\fontsize{8.3}{9.4}\selectfont #1}}
+\newcommand{\Evidence}[1]{{\fontsize{7.7}{9.1}\selectfont\color{NVIMuted}#1}}
+
+\newcommand{\ReportPageHeader}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-0.46in]current page.north east);
+    \fill[NVIAccent] ([yshift=-0.46in]current page.north west) rectangle ([yshift=-0.49in]current page.north east);
+    \node[anchor=west,text=white,font=\fontsize{8.4}{9.8}\selectfont\bfseries]
+      at ([xshift=0.62in,yshift=-0.23in]current page.north west) {#1};
+    \node[anchor=east,text=white,font=\fontsize{7.4}{8.6}\selectfont]
+      at ([xshift=-0.62in,yshift=-0.23in]current page.north east) {\ReportClient};
+  \end{tikzpicture}
+  \vspace*{0.22in}
+}
+
+\newcommand{\ReportFooter}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.34in]current page.south east);
+    \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=0.62in,yshift=0.17in]current page.south west) {\NorthvalleyContactLine};
+    \node[anchor=east,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=-0.62in,yshift=0.17in]current page.south east) {\thepage};
+  \end{tikzpicture}
+}
+
+\newcommand{\ReportSection}[1]{%
+  \vspace{0.12in}
+  {\fontsize{15}{18}\selectfont\bfseries\color{NVIInk}#1}\\[-0.02in]
+  {\color{NVIAccent}\rule{\linewidth}{0.8pt}}
+  \vspace{0.07in}
+}
+
+\newcommand{\ReportKicker}[1]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+\newcommand{\ReportBody}[1]{{\fontsize{9.25}{11.3}\selectfont\color{NVIInk}#1}}
+\newcommand{\ReportFine}[1]{{\fontsize{7.45}{8.9}\selectfont\color{NVIMuted}#1}}
+
+\newcommand{\ReportCard}[2]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIRule,
+      fill=white,
+      rounded corners=2pt,
+      inner xsep=11pt,
+      inner ysep=9pt,
+      text width=\dimexpr\linewidth-24pt\relax,
+      align=left
+    ] {\ReportKicker{#1}\\[0.05in]\ReportBody{#2}};
+  \end{tikzpicture}
+}
+
+\newcommand{\ReportDarkCard}[2]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIAccentDark,
+      fill=NVIAccentDark,
+      rounded corners=2pt,
+      inner xsep=12pt,
+      inner ysep=10pt,
+      text width=\dimexpr\linewidth-26pt\relax,
+      align=left
+    ] {{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.06in]{\fontsize{10.2}{12.4}\selectfont\color{white}#2}};
+  \end{tikzpicture}
+}
+
+\newcommand{\MetricCard}[3]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIRule,
+      fill=NVIPanel,
+      rounded corners=2pt,
+      inner xsep=9pt,
+      inner ysep=8pt,
+      text width=\dimexpr\linewidth-20pt\relax,
+      minimum height=0.92in,
+      align=left
+    ] {\ReportKicker{#1}\\[0.04in]{\fontsize{18}{21}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]\ReportFine{#3}};
+  \end{tikzpicture}
+}
+
+\newcommand{\FindingBlock}[3]{%
+  \ReportCard{#1}{{\bfseries #2}\\[0.03in]#3}
+}
+
+\newcommand{\PhaseRow}[4]{%
+  \textbf{\color{NVIAccentDark}#1} & \textbf{#2} & #3 & #4\\[0.04in]
+}
+
+\begin{document}
+\color{NVIInk}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+  \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.05in]current page.north east);
+  \fill[NVIAccent] ([yshift=-1.05in]current page.north west) rectangle ([yshift=-1.10in]current page.north east);
+  \fill[NVIAccentSoft] ([xshift=-1.60in,yshift=-1.10in]current page.north east) -- (current page.north east) -- ([yshift=-2.45in]current page.north east) -- cycle;
+  \fill[NVIAccent!12] ([xshift=-1.2in]current page.south west) -- ([xshift=1.55in]current page.south west) -- ([xshift=0.25in,yshift=1.34in]current page.south west) -- cycle;
+  \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.45in]current page.south east);
+  \node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries]
+    at ([xshift=0.62in,yshift=-0.52in]current page.north west) {\NorthvalleyBusinessName};
+  \node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont]
+    at ([xshift=-0.62in,yshift=-0.52in]current page.north east) {\ReportDate};
+  \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+    at ([xshift=0.62in,yshift=0.22in]current page.south west) {\NorthvalleyContactLine};
+\end{tikzpicture}
+
+\vspace*{1.08in}
+\begin{minipage}[t]{0.58\linewidth}
+\raggedright
+\ReportKicker{Client Report Draft}\\[0.12in]
+{\fontsize{31}{36}\selectfont\bfseries\color{NVIInk}\ReportTitle}\par
+\vspace{0.20in}
+{\fontsize{12.2}{14.8}\selectfont\color{NVIInk}\ReportSummary}\par
+\vspace{0.30in}
+{\color{NVIAccent}\rule{2.6in}{0.9pt}}\par
+\vspace{0.18in}
+{\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]
+{\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}\ReportClient}\par
+\vspace{0.08in}
+{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \ReportPreparedBy}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.31\linewidth}
+\centering
+\vspace{0.10in}
+\NorthvalleyLogo[0.88in]\par
+\vspace{0.24in}
+\ReportDarkCard{Primary Readout}{The full normalization matrix shows useful exact-search coverage, but search, autocomplete, and browse do not consistently recover the same customer intent. UCLA/Bruins demand is mostly recoverable, while quarter-zip variants, color-plus-product phrases, team aliases, and public wholesale SKU variants still expose gaps.}
+\vspace{0.12in}
+\MetricCard{Scope}{36 variants}{Search, autocomplete, browse routing, priority team terms, and public wholesale SKU checks.}
+\end{minipage}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\ReportPageHeader{Executive Summary}
+\ReportFooter
+\ReportSection{Executive Summary}
+\begin{minipage}[t]{0.64\linewidth}
+\ReportDarkCard{Leadership Decision}{Prioritize a shared intent map so search, autocomplete, and browse recovery handle customer language consistently. Boxercraft already recovers several exact apparel and UCLA/Bruins terms, but the full matrix shows avoidable dead ends before and after query submission.}
+\vspace{0.12in}
+\ReportBody{This draft now includes rendered desktop/mobile browser evidence, screenshot artifacts, public retail search/autocomplete evidence, search/autocomplete-to-browse routing, collection filter validation, product-page recommendation validation, public wholesale search checks, and a 36-query Normalization Matrix. It should still not be treated as final external delivery until authenticated wholesale workflows and broader recommendation/filter samples are validated. The user-reported UCLA commercial importance is treated as stakeholder context, not independently verified public proof of client size.}\par
+\vspace{0.12in}
+\ReportSection{Key Findings}
+\begin{itemize}
+\item \Bad{Search/autocomplete normalization is uneven.} Quarter-zip variants were 2/6 relevant in search and 3/6 in autocomplete; color-plus-product variants were 4/5 relevant in search but 0/5 in autocomplete.
+\item \Bad{Priority team discovery is not protected.} UCLA/Bruins terms were mostly recoverable at 7/8 search and 6/8 autocomplete, but \Code{UCLA quarter zip} dropped in autocomplete and \Code{Bruins apparel} returned 0 search results.
+\item \Bad{Search And Autocomplete To Browse routing is inconsistent.} UCLA and broad fan-shop terms usually expose browse paths, while quarter-zip and color-product variants rarely route to collection or page destinations.
+\item \Warn{Related discovery is present but weak.} A rendered product page exposed \Code{You May Also Like}, but the captured recommendation repeated the current product.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+\MetricCard{Search}{58/100}{Useful exact and UCLA/Bruins search coverage, but weaker abbreviation, alternate terminology, and team recovery.}
+\vspace{0.09in}
+\MetricCard{Autocomplete}{42/100}{Some exact and UCLA/Bruins suggestions work; color-plus-product terms and some priority variants drop before search submission.}
+\vspace{0.09in}
+\MetricCard{Overall}{55/100}{Full normalization score; authenticated wholesale and broader recommendation/filter sampling remain open.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Evidence Snapshot}
+\ReportFooter
+\ReportSection{Evidence Snapshot}
+\begin{tabularx}{\linewidth}{@{}L{0.20\linewidth}L{0.22\linewidth}N@{}}
+\toprule
+\textbf{Workflow} & \textbf{Evidence} & \textbf{Observed behavior}\\
+\midrule
+Normalization Matrix & Quarter-zip variants & 6 variants tested. Search was relevant for 2/6 and autocomplete for 3/6; zero-search variants included \Code{quarterzip}, \Code{qtr zip}, \Code{qtr-zip}, and \Code{1/4 zip}.\\
+Normalization Matrix & Women's fleece variants & 5 variants tested. Search and autocomplete were each relevant for 3/5; \Code{ladies fleece} and \Code{female fleece} returned 0 search results in this run.\\
+UCLA/Bruins & Priority-account terms & 8 variants tested. Search was relevant for 7/8, autocomplete for 6/8, search-to-browse for 8/8, and autocomplete-to-browse for 5/8. \Code{UCLA quarter zip} dropped in autocomplete; \Code{Bruins apparel} returned 0 search results.\\
+Search And Autocomplete To Browse & Recovery routing & UCLA and broad fan-shop terms usually exposed browse paths, but quarter-zip and color-product variants had browse-path gaps across 10 tested terms.\\
+Search & Team aliases & Broad \Code{college teams} and \Code{fan shop} terms recovered, but \Code{team apparel}, \Code{Bulldogs}, and \Code{Georgia Bulldogs} returned 0 search results.\\
+Autocomplete & Color-plus-product & 5 variants tested. Search was relevant for 4/5, but autocomplete was relevant for 0/5, including \Code{maroon quarter zip}, \Code{burgundy quarter zip}, \Code{cardinal quarter zip}, and \Code{red quarter zip}.\\
+Filters & Fleece Collection & Rendered desktop and mobile fleece pages exposed filter/refine drawers, Type, Size, Color, sorting, and 17 visible products.\\
+Recommendations & Product page & \Code{You May Also Like} rendered, but the captured recommendation repeated the current product.\\
+Wholesale & Public SKU variants & 6 public wholesale variants tested. 4/6 were relevant; \Code{BM-5205} and uppercase \Code{BM5205} did not return a parsed relevant result in this run, while lowercase/spaced/product-name variants did.\\
+\bottomrule
+\end{tabularx}
+\vspace{0.12in}
+\ReportFine{Rendered browser evidence was captured June 25, 2026. The full GEN-004 normalization matrix was captured June 26, 2026 from public Boxercraft pages, Shopify/Boost search behavior, collection/page links, and public wholesale pages. Revalidate before external delivery.}
+
+\newpage
+\ReportPageHeader{Detailed Findings}
+\ReportFooter
+\ReportSection{Detailed Findings}
+\begin{minipage}[t]{0.48\linewidth}
+\FindingBlock{Finding 01 / High}{Search and autocomplete normalization are materially uneven}{\textbf{Observation:} The 36-query Normalization Matrix shows quarter-zip variants at 2/6 relevant in search and 3/6 in autocomplete, women's fleece variants at 3/5 on both surfaces, and color-plus-product variants at 4/5 in search but 0/5 in autocomplete.\\[0.04in]\textbf{Customer impact:} Customers using common spacing, abbreviation, gender, or color phrasing can receive a false dead-end signal.\\[0.04in]\textbf{Recommendation:} Create a shared normalization map for spacing, punctuation, abbreviations, gender synonyms, and color-plus-product phrasing, then apply it consistently to search and autocomplete.}
+\vspace{0.12in}
+\FindingBlock{Finding 02 / High}{Priority fan-shop and team discovery is not protected}{\textbf{Observation:} UCLA/Bruins terms were mostly recoverable, but \Code{UCLA quarter zip} dropped in autocomplete and \Code{Bruins apparel} returned 0 search results. Team aliases also remained uneven: \Code{team apparel}, \Code{Bulldogs}, and \Code{Georgia Bulldogs} returned 0 search results.\\[0.04in]\textbf{Customer impact:} A fan-shop shopper can find some UCLA paths but still hit dead ends for likely team, mascot, or product-specific language.\\[0.04in]\textbf{Recommendation:} Treat UCLA/Bruins and other priority team/mascot/university aliases as protected relevance sets with search, autocomplete, and zero-result recovery checks.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\FindingBlock{Finding 03 / High}{Search And Autocomplete To Browse routing is inconsistent}{\textbf{Observation:} UCLA and broad fan-shop terms usually exposed browse paths, but quarter-zip and color-product variants did not consistently route to useful collection, page, or fan-shop browse destinations.\\[0.04in]\textbf{Customer impact:} Customers who do not get a perfect product result may not be guided to a useful browse path, even when relevant collections or pages exist.\\[0.04in]\textbf{Recommendation:} Map search and autocomplete fallbacks to relevant collections, pages, fan-shop destinations, and close alternatives when exact product results are missing or uncertain.}
+\vspace{0.12in}
+\FindingBlock{Finding 04 / Medium}{Product-page recommendations are weakly related}{\textbf{Observation:} \Code{You May Also Like} rendered on a quarter-zip product page, but the captured recommendation repeated the same product.\\[0.04in]\textbf{Customer impact:} Shoppers receive little help discovering alternatives or complements.\\[0.04in]\textbf{Recommendation:} Tune recommendations toward distinct similar products, complements, or collection alternatives.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Roadmap}
+\ReportFooter
+\ReportSection{Recommended Improvements}
+\begin{tabularx}{\linewidth}{@{}L{0.16\linewidth}L{0.25\linewidth}N L{0.18\linewidth}@{}}
+\toprule
+\textbf{Phase} & \textbf{Focus} & \textbf{Recommended work} & \textbf{Outcome}\\
+\midrule
+\PhaseRow{Now}{Normalization map}{Normalize spacing, punctuation, \Code{qtr}/\Code{1/4}, gender synonyms, and color-plus-product phrases across search and autocomplete.}{Fewer false dead ends before and after search submission}
+\PhaseRow{Next}{Priority fan-shop routing}{Protect UCLA/Bruins and other team, mascot, university, and fan-shop vocabulary with search, autocomplete, browse, and zero-result checks.}{More reliable high-intent licensed-product discovery}
+\PhaseRow{Then}{Browse recovery}{Use Search And Autocomplete To Browse rules so unsupported terms route to collections, pages, fan-shop destinations, and close alternatives.}{Better recovery from imperfect product matches}
+\PhaseRow{Validate}{Final evidence}{Validate authenticated wholesale account/order workflows and broaden filter/recommendation samples.}{Client-ready evidence quality}
+\bottomrule
+\end{tabularx}
+\vspace{0.18in}
+\begin{minipage}[t]{0.48\linewidth}
+\ReportCard{Quick Win}{Add shared search/autocomplete normalization for quarter-zip abbreviations and color-plus-product phrases that current search can often recover but autocomplete drops.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\ReportCard{Strategic Improvement}{Create a shared intent map across search, autocomplete, browse, zero-result recovery, recommendations, and public/wholesale catalog discovery so customer language lands on useful product, collection, or alternative paths consistently.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Next Steps}
+\ReportFooter
+\ReportSection{Next Steps And Validation}
+\begin{minipage}[t]{0.48\linewidth}
+\ReportCard{Before Client Delivery}{Use the captured browser screenshots and GEN-004 normalization matrix as current evidence, then validate authenticated wholesale account/order workflows and expand recommendation/filter sampling before final external delivery.}
+\vspace{0.12in}
+\ReportCard{Report Packaging}{The Northvalley LaTeX report and Beamer sources now reflect rendered browser evidence, full normalization evidence, revised scores, and confirmed findings.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\ReportSection{Evidence URLs}
+\ReportFine{\url{https://boxercraft.com/search?q=maroon+quarter+zip}\\
+\url{https://boxercraft.com/search?q=womens+fleece}\\
+\url{https://boxercraft.com/search?q=quarterzip}\\
+\url{https://boxercraft.com/search?q=UCLA+quarter+zip}\\
+\url{https://boxercraft.com/search?q=Bruins+apparel}\\
+\url{https://boxercraft.com/search?q=Georgia+Bulldogs}\\
+\url{https://boxercraft.com/collections/fleece}\\
+\url{https://boxercraft.com/pages/college-team-fan-shop}\\
+\url{https://wholesale.boxercraft.com/search.html?query=BM5205\&page=1}\\
+\url{https://wholesale.boxercraft.com/}}
+\vspace{0.12in}
+\ReportCard{Status}{Rendered browser draft assessment with full GEN-004 normalization evidence. Evidence is current as of June 26, 2026 and should be revalidated before external delivery. GitHub submission is currently blocked because this directory is not a Git repository.}
+\end{minipage}
+
+\end{document}

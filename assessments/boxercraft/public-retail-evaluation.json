@@ -1,0 +1,899 @@
+{
+  "assessment_id": "boxercraft-public-retail-2026-06-26",
+  "framework_version": "0.1.0",
+  "assessment_status": "draft_report",
+  "target": {
+    "company_name": "Boxercraft",
+    "domain": "boxercraft.com",
+    "vertical": "apparel",
+    "assessment_date": "2026-06-26",
+    "access_contexts": [
+      "public_consumer",
+      "unknown_or_not_available",
+      "public_wholesale"
+    ]
+  },
+  "assessment_areas": [
+    {
+      "area_id": "search",
+      "status": "assessed",
+      "dimensions": [
+        "query_understanding",
+        "precision",
+        "recall",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "robustness",
+        "recovery",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "maroon quarter zip",
+        "quarterzip",
+        "quarter zip",
+        "fleece quarter zip",
+        "womens fleece",
+        "women fleece",
+        "mens fleece",
+        "Georgia Bulldogs",
+        "Bulldogs",
+        "college teams",
+        "zzzznotaproduct",
+        "full quarter-zip normalization matrix",
+        "women's fleece normalization matrix",
+        "UCLA/Bruins priority-account normalization matrix",
+        "team and fan-shop alias normalization matrix",
+        "color-plus-product normalization matrix"
+      ],
+      "evidence": [
+        {
+          "id": "E-SEARCH-001",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=maroon%20quarter%20zip",
+          "summary": "Search returned 33 results. Top products included Women's Sherpa Quarter-Zip Pullover, Men's Alumni Quarter-Zip Pullover, Men's Clemson University Sullivan Quarter-Zip Pullover, and Men's Quarter-Zip Fleece Pullover.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-SEARCH-002",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=womens%20fleece",
+          "summary": "Search returned 91 results. Top products included Women's Sherpa Full-Zip Jacket, Women's Sherpa Quarter-Zip Pullover, Women's Fleece Out Crew, and Women's Everest Fleece Half-Zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-SEARCH-003",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=quarterzip and https://boxercraft.com/search?q=quarter%20zip",
+          "summary": "Earlier June 25 source capture suggested quarterzip and quarter zip overlapped. The later GEN-004 rendered normalization matrix supersedes this for current scoring and found quarterzip was a zero-search variant in that run.",
+          "freshness_status": "superseded_by_GEN-004_verify_before_delivery"
+        },
+        {
+          "id": "E-SEARCH-004",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=Georgia%20Bulldogs",
+          "summary": "Search returned 0 results for Georgia Bulldogs and 0 results for Bulldogs, while the site has a College Team Fan Shop page and college team products appear for a broad college teams query.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-SEARCH-005",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=zzzznotaproduct",
+          "summary": "Nonsense query returned a 0-result page. Text capture confirms a zero-result state but does not validate rendered recovery UX.",
+          "freshness_status": "verify_before_delivery"
+        },
+        {
+          "id": "E-BROWSER-SEARCH-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-maroon-quarter-zip.png",
+          "summary": "Rendered desktop search returned 33 results for maroon quarter zip, including quarter-zip products near the top.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-SEARCH-002",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-quarterzip.png",
+          "summary": "Earlier June 25 rendered browser capture returned results for quarterzip. The later GEN-004 normalization matrix supersedes this for current scoring and found quarterzip was a zero-search variant in that run.",
+          "freshness_status": "superseded_by_GEN-004_verify_before_delivery"
+        },
+        {
+          "id": "E-BROWSER-SEARCH-003",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-georgia-bulldogs.png",
+          "summary": "Rendered desktop search returned 0 results for Georgia Bulldogs with a plain zero-result message and no visible fan-shop recovery route in the captured viewport.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-SEARCH-004",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-zzzznotaproduct.png",
+          "summary": "Rendered nonsense search produced a zero-result page with no validated alternative suggestions or category recovery path.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-SEARCH-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Full normalization matrix covered 36 queries. Quarter-zip variants were uneven: 2/6 search variants and 3/6 autocomplete variants were relevant; zero-search variants included quarterzip, qtr zip, qtr-zip, 1/4 zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-SEARCH-002",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Women's fleece variants were partially normalized: 3/5 search variants and 3/5 autocomplete variants were relevant; ladies fleece and female fleece returned zero search results in this run.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-UCLA-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "UCLA/Bruins priority terms were mostly recoverable but not complete: 7/8 search variants, 6/8 autocomplete variants, 8/8 search-to-browse paths, and 5/8 autocomplete-to-browse paths. UCLA quarter zip dropped in autocomplete and Bruins apparel returned zero search results.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-TEAM-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Team/fan-shop aliases remained uneven: 3/6 search variants and 3/6 autocomplete variants were relevant. Zero-search variants included team apparel, Bulldogs, Georgia Bulldogs.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Public HTML, rendered desktop browser pages, Shopify/Boost behavior, and the Generation 4 normalization matrix were used. Search handles many exact apparel and UCLA/Bruins terms, but abbreviation, alternate-terminology, color-plus-product, and unsupported team-name recovery remain uneven."
+    },
+    {
+      "area_id": "autocomplete",
+      "status": "assessed",
+      "dimensions": [
+        "precision",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "maroon quarter zip suggestions",
+        "womens fleece suggestions",
+        "Georgia Bulldogs suggestions",
+        "quarterzip suggestions",
+        "quarter zip suggestions",
+        "full quarter-zip autocomplete normalization matrix",
+        "women's fleece autocomplete normalization matrix",
+        "UCLA/Bruins autocomplete normalization matrix",
+        "color-plus-product autocomplete normalization matrix",
+        "autocomplete-to-browse routing"
+      ],
+      "evidence": [
+        {
+          "id": "E-AUTO-001",
+          "source_type": "shopify_predictive_search_json",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search/suggest.json?q=maroon%20quarter%20zip",
+          "summary": "Predictive search returned no product, collection, or query suggestions for maroon quarter zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-AUTO-002",
+          "source_type": "shopify_predictive_search_json",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search/suggest.json?q=womens%20fleece",
+          "summary": "Predictive search returned relevant women's fleece products and query suggestions including womens fleece and lambert soccer womens fleece.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-AUTO-003",
+          "source_type": "shopify_predictive_search_json",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search/suggest.json?q=quarterzip and https://boxercraft.com/search/suggest.json?q=quarter%20zip",
+          "summary": "Earlier June 25 predictive-search endpoint capture showed no suggestions for quarterzip and suggestions for quarter zip. The later GEN-004 rendered normalization matrix is the current scoring source for quarter-zip variants.",
+          "freshness_status": "superseded_by_GEN-004_verify_before_delivery"
+        },
+        {
+          "id": "E-AUTO-004",
+          "source_type": "shopify_predictive_search_json",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search/suggest.json?q=Georgia%20Bulldogs",
+          "summary": "Predictive search returned no product, collection, or query suggestions for Georgia Bulldogs.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-AUTO-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-maroon-quarter-zip.png",
+          "summary": "Rendered desktop autocomplete showed Sorry, nothing found for maroon quarter zip while submitted search returned 33 results.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-AUTO-002",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-quarterzip.png",
+          "summary": "Earlier June 25 rendered autocomplete returned product suggestions for quarterzip. The later GEN-004 normalization matrix is the current scoring source for quarter-zip variants and should be revalidated before delivery.",
+          "freshness_status": "superseded_by_GEN-004_verify_before_delivery"
+        },
+        {
+          "id": "E-BROWSER-AUTO-003",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-autocomplete-georgia-bulldogs.png",
+          "summary": "Rendered desktop autocomplete showed Sorry, nothing found for Georgia Bulldogs.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-AUTO-004",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-autocomplete-maroon-quarter-zip.png",
+          "summary": "Rendered mobile autocomplete also showed no useful suggestions for maroon quarter zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-SEARCH-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Full normalization matrix covered 36 queries. Quarter-zip variants were uneven: 2/6 search variants and 3/6 autocomplete variants were relevant; zero-search variants included quarterzip, qtr zip, qtr-zip, 1/4 zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-SEARCH-002",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Women's fleece variants were partially normalized: 3/5 search variants and 3/5 autocomplete variants were relevant; ladies fleece and female fleece returned zero search results in this run.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-UCLA-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "UCLA/Bruins priority terms were mostly recoverable but not complete: 7/8 search variants, 6/8 autocomplete variants, 8/8 search-to-browse paths, and 5/8 autocomplete-to-browse paths. UCLA quarter zip dropped in autocomplete and Bruins apparel returned zero search results.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-AUTO-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Color-plus-product variants had a major autocomplete parity gap: 4/5 search variants were relevant, but 0/5 autocomplete variants were relevant. Parity gaps included maroon quarter zip, burgundy quarter zip, cardinal quarter zip, red quarter zip.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Rendered Boost autocomplete works for some exact and UCLA/Bruins terms, but the full normalization matrix shows uneven coverage: color-plus-product variants scored 0/5 in autocomplete and UCLA quarter zip still dropped before search execution."
+    },
+    {
+      "area_id": "browse_navigation",
+      "status": "assessed",
+      "dimensions": [
+        "coverage",
+        "user_effort",
+        "recovery",
+        "diversity"
+      ],
+      "journeys_or_checks": [
+        "fleece collection",
+        "college team fan shop",
+        "public collection discovery",
+        "search-to-browse routing",
+        "autocomplete-to-browse routing",
+        "UCLA/Bruins fan-shop browse routing",
+        "quarter-zip collection routing",
+        "color-plus-product collection routing"
+      ],
+      "evidence": [
+        {
+          "id": "E-BROWSE-001",
+          "source_type": "public_collection_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/collections/fleece",
+          "summary": "Fleece Collection page returned visible fleece products and text capture indicated 19 products.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSE-002",
+          "source_type": "public_page_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/pages/college-team-fan-shop",
+          "summary": "College Team Fan Shop page exists, but direct team search for Georgia Bulldogs and Bulldogs returned 0 results.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-FACET-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-fleece-filters.png",
+          "summary": "Rendered fleece collection exposed a filter drawer with Type, Size, and Color controls plus sorting; 17 fleece products were visible in the captured evidence.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-FACET-002",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-fleece-filters.png",
+          "summary": "Rendered mobile fleece collection exposed Search, Filter, Sort, and a refine drawer with Type, Size, Color, and Tag controls plus a Show results action.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-BROWSE-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Search/autocomplete-to-browse routing was uneven. UCLA and broad team terms usually exposed browse paths, while quarter-zip/color-product variants had browse path gaps for quarter-zip, quarterzip, qtr zip, qtr-zip, 1/4 zip, maroon quarter zip, burgundy quarter zip, cardinal quarter zip, red quarter zip, maroon qtr zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-UCLA-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "UCLA/Bruins priority terms were mostly recoverable but not complete: 7/8 search variants, 6/8 autocomplete variants, 8/8 search-to-browse paths, and 5/8 autocomplete-to-browse paths. UCLA quarter zip dropped in autocomplete and Bruins apparel returned zero search results.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Rendered evidence now includes search/autocomplete-to-browse routing. UCLA and broad team queries usually expose browse paths, but quarter-zip and color-plus-product terms rarely route to collection browse destinations."
+    },
+    {
+      "area_id": "filters_facets",
+      "status": "assessed",
+      "dimensions": [
+        "precision",
+        "coverage",
+        "recovery",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "desktop fleece filter drawer",
+        "mobile fleece refine drawer",
+        "fleece sorting controls",
+        "filter category visibility"
+      ],
+      "evidence": [
+        {
+          "id": "E-FACET-001",
+          "source_type": "public_html_source",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/collections/fleece",
+          "summary": "Source includes Boost Product Filter/Search configuration, Refine By labels, sort options, swatches, and recommendation labels. Facet names and interaction behavior were not reliably extractable without rendered browser execution.",
+          "freshness_status": "verify_before_delivery"
+        },
+        {
+          "id": "E-BROWSER-FACET-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-fleece-filters.png",
+          "summary": "Rendered fleece collection exposed a filter drawer with Type, Size, and Color controls plus sorting; 17 fleece products were visible in the captured evidence.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-FACET-002",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-fleece-filters.png",
+          "summary": "Rendered mobile fleece collection exposed Search, Filter, Sort, and a refine drawer with Type, Size, Color, and Tag controls plus a Show results action.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Rendered browser validation confirms visible filter/refine controls for fleece on desktop and mobile. Multi-select behavior and persistence across broader catalog journeys still require deeper interaction testing."
+    },
+    {
+      "area_id": "recommendations_related_discovery",
+      "status": "assessed",
+      "dimensions": [
+        "precision",
+        "diversity",
+        "coverage",
+        "recovery"
+      ],
+      "journeys_or_checks": [
+        "product page You May Also Like module",
+        "recommendation uniqueness and relatedness"
+      ],
+      "evidence": [
+        {
+          "id": "E-REC-001",
+          "source_type": "public_html_source",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=maroon%20quarter%20zip",
+          "summary": "Boost configuration includes recommendation labels such as Just dropped, Best Sellers, Most Popular Products, Recently viewed, Frequently Bought Together, Similar Products, and Still interested in this.",
+          "freshness_status": "verify_before_delivery"
+        },
+        {
+          "id": "E-BROWSER-REC-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-product-recommendations.png",
+          "summary": "Rendered product page included a You May Also Like module, but the only captured recommendation was the same Women's Sherpa Quarter-Zip Pullover product.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Rendered product-page recommendations are present, but the captured module recommended only the same product, so related-discovery value remains weak."
+    },
+    {
+      "area_id": "mobile_experience",
+      "status": "assessed",
+      "dimensions": [
+        "user_effort",
+        "recovery",
+        "coverage"
+      ],
+      "journeys_or_checks": [
+        "mobile viewport",
+        "search input access",
+        "autocomplete usability",
+        "filter usability",
+        "mobile menu path"
+      ],
+      "evidence": [
+        {
+          "id": "E-BROWSER-MOBILE-001",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-home-first-viewport.png",
+          "summary": "Mobile first viewport exposes site navigation, search, cart, and primary merchandising links.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-AUTO-004",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-autocomplete-maroon-quarter-zip.png",
+          "summary": "Rendered mobile autocomplete also showed no useful suggestions for maroon quarter zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-FACET-002",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-fleece-filters.png",
+          "summary": "Rendered mobile fleece collection exposed Search, Filter, Sort, and a refine drawer with Type, Size, Color, and Tag controls plus a Show results action.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Rendered mobile evidence confirms search, navigation, cart, merchandising, autocomplete, and fleece filter entry points. Mobile autocomplete still fails for maroon quarter zip."
+    },
+    {
+      "area_id": "journey_analysis",
+      "status": "assessed",
+      "dimensions": [
+        "coverage",
+        "recovery",
+        "user_effort",
+        "ranking_quality"
+      ],
+      "journeys_or_checks": [
+        "find a maroon quarter zip",
+        "find women's fleece",
+        "find Georgia Bulldogs apparel",
+        "find a gift item under a budget",
+        "locate a product by SKU if public or authorized",
+        "find alternatives to an unavailable item",
+        "compare multiple apparel alternatives",
+        "public wholesale fleece search",
+        "public wholesale SKU lookup BM5205",
+        "mobile find/search entry point",
+        "full normalization journey matrix",
+        "UCLA/Bruins priority journey",
+        "search/autocomplete-to-browse journey",
+        "public wholesale SKU normalization journey"
+      ],
+      "evidence": [
+        {
+          "id": "E-JOURNEY-001",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=maroon%20quarter%20zip",
+          "summary": "Known attribute/product journey is viable after search execution: 33 results with quarter-zip products surfaced.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-JOURNEY-002",
+          "source_type": "public_search_html",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "https://boxercraft.com/search?q=Georgia%20Bulldogs",
+          "summary": "Team-specific journey fails through direct search: Georgia Bulldogs and Bulldogs returned 0 results despite College Team Fan Shop existence.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-SEARCH-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-maroon-quarter-zip.png",
+          "summary": "Rendered desktop search returned 33 results for maroon quarter zip, including quarter-zip products near the top.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-SEARCH-003",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-search-georgia-bulldogs.png",
+          "summary": "Rendered desktop search returned 0 results for Georgia Bulldogs with a plain zero-result message and no visible fan-shop recovery route in the captured viewport.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-MOBILE-001",
+          "source_type": "rendered_browser_mobile",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/mobile-home-first-viewport.png",
+          "summary": "Mobile first viewport exposes site navigation, search, cart, and primary merchandising links.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-WHOLESALE-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_wholesale",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-search-fleece.png",
+          "summary": "Public wholesale search returned 87 items for fleece and exposed filter categories including gender, brand, category, color, size, fabric, fit, sale, and outlet.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-WHOLESALE-002",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_wholesale",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-search-bm5205.png",
+          "summary": "Public wholesale search returned 1 result for BM5205: Men's Alumni Qtr Zip Pullover.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-SEARCH-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Full normalization matrix covered 36 queries. Quarter-zip variants were uneven: 2/6 search variants and 3/6 autocomplete variants were relevant; zero-search variants included quarterzip, qtr zip, qtr-zip, 1/4 zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-UCLA-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "UCLA/Bruins priority terms were mostly recoverable but not complete: 7/8 search variants, 6/8 autocomplete variants, 8/8 search-to-browse paths, and 5/8 autocomplete-to-browse paths. UCLA quarter zip dropped in autocomplete and Bruins apparel returned zero search results.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-BROWSE-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Search/autocomplete-to-browse routing was uneven. UCLA and broad team terms usually exposed browse paths, while quarter-zip/color-product variants had browse path gaps for quarter-zip, quarterzip, qtr zip, qtr-zip, 1/4 zip, maroon quarter zip, burgundy quarter zip, cardinal quarter zip, red quarter zip, maroon qtr zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-WHOLESALE-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_wholesale",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Public wholesale SKU/product-code variants were partially normalized: 4/6 variants were relevant. BM-5205 and the uppercase BM5205 request did not return a parsed relevant result in this run, while bm5205, BM 5205, alumni qtr zip, and alumni quarter zip did.",
+          "freshness_status": "current"
+        }
+      ],
+      "notes": "Journey analysis now includes the Generation 4 36-query normalization matrix for public retail, search/autocomplete-to-browse routing, and public wholesale SKU variants. The user-reported UCLA priority is treated as stakeholder context, not an independently verified public client-size claim."
+    }
+  ],
+  "scorecard": {
+    "search": {
+      "score": 58,
+      "rationale": "Full normalization evidence shows useful exact search coverage, especially for UCLA/Bruins, but weak abbreviation, alternate terminology, and team recovery: quarter-zip variants were 2/6 relevant, women's fleece variants 3/5, and team aliases 3/6.",
+      "evidence_refs": [
+        "E-NORM-SEARCH-001",
+        "E-NORM-SEARCH-002",
+        "E-NORM-UCLA-001",
+        "E-NORM-TEAM-001"
+      ]
+    },
+    "autocomplete": {
+      "score": 42,
+      "rationale": "Autocomplete supports some exact and UCLA/Bruins terms, but the normalization matrix exposed major gaps: color-plus-product variants were 0/5, quarter-zip variants 3/6, and UCLA quarter zip dropped before search execution.",
+      "evidence_refs": [
+        "E-NORM-AUTO-001",
+        "E-NORM-UCLA-001",
+        "E-NORM-SEARCH-001"
+      ]
+    },
+    "browse": {
+      "score": 60,
+      "rationale": "UCLA and broad fan-shop terms usually expose browse paths, but search/autocomplete-to-browse routing is inconsistent for quarter-zip and color-plus-product terms.",
+      "evidence_refs": [
+        "E-NORM-BROWSE-001",
+        "E-NORM-UCLA-001"
+      ]
+    },
+    "filters": {
+      "score": 64,
+      "rationale": "Rendered fleece collection exposes desktop and mobile filter/refine drawers with useful categories, but multi-select and persistence were not deeply validated.",
+      "evidence_refs": [
+        "E-BROWSER-FACET-001",
+        "E-BROWSER-FACET-002"
+      ]
+    },
+    "recommendations": {
+      "score": 35,
+      "rationale": "Product-page recommendation module is present, but captured related discovery recommended only the same product.",
+      "evidence_refs": [
+        "E-BROWSER-REC-001"
+      ]
+    },
+    "mobile_experience": {
+      "score": 58,
+      "rationale": "Mobile first viewport exposes search and navigation and the fleece refine drawer works, but mobile autocomplete still drops a recoverable apparel query.",
+      "evidence_refs": [
+        "E-BROWSER-MOBILE-001",
+        "E-BROWSER-AUTO-004",
+        "E-BROWSER-FACET-002"
+      ]
+    },
+    "product_discovery_overall": {
+      "score": 55,
+      "rationale": "The full normalization matrix lowers confidence from the rendered browser draft: UCLA/Bruins discovery is mostly recoverable, but search/autocomplete parity, browse routing, color-plus-product terms, abbreviations, and public wholesale SKU punctuation are uneven.",
+      "evidence_refs": [
+        "E-NORM-SEARCH-001",
+        "E-NORM-AUTO-001",
+        "E-NORM-BROWSE-001",
+        "E-NORM-UCLA-001",
+        "E-NORM-WHOLESALE-001"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "F-001",
+      "assessment_area": "autocomplete",
+      "severity": "High",
+      "observation": "Search and autocomplete normalization are materially uneven across common apparel variants.",
+      "evidence": [
+        {
+          "id": "E-NORM-SEARCH-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Full normalization matrix covered 36 queries. Quarter-zip variants were uneven: 2/6 search variants and 3/6 autocomplete variants were relevant; zero-search variants included quarterzip, qtr zip, qtr-zip, 1/4 zip.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-SEARCH-002",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Women's fleece variants were partially normalized: 3/5 search variants and 3/5 autocomplete variants were relevant; ladies fleece and female fleece returned zero search results in this run.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-AUTO-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Color-plus-product variants had a major autocomplete parity gap: 4/5 search variants were relevant, but 0/5 autocomplete variants were relevant. Parity gaps included maroon quarter zip, burgundy quarter zip, cardinal quarter zip, red quarter zip.",
+          "freshness_status": "current"
+        }
+      ],
+      "customer_impact": "Customers using abbreviations, punctuation variants, gender synonyms, or color-plus-product phrases can receive no products or no autocomplete guidance even when related products exist.",
+      "business_impact": "Qualified demand can be lost before customers reach product results, especially for common apparel language such as qtr zip, 1/4 zip, ladies fleece, and color-plus-quarter-zip phrases.",
+      "recommendation": "Create a normalization map for spacing, punctuation, abbreviations, gender synonyms, and color-plus-product phrasing, then apply it consistently to both search and autocomplete.",
+      "opportunity_class": "Quick Win",
+      "confidence": "high",
+      "status": "validated"
+    },
+    {
+      "id": "F-002",
+      "assessment_area": "search",
+      "severity": "High",
+      "observation": "Priority fan-shop and team discovery is uneven: UCLA/Bruins terms are mostly recoverable, but important variants still fail.",
+      "evidence": [
+        {
+          "id": "E-NORM-UCLA-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "UCLA/Bruins priority terms were mostly recoverable but not complete: 7/8 search variants, 6/8 autocomplete variants, 8/8 search-to-browse paths, and 5/8 autocomplete-to-browse paths. UCLA quarter zip dropped in autocomplete and Bruins apparel returned zero search results.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-NORM-TEAM-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Team/fan-shop aliases remained uneven: 3/6 search variants and 3/6 autocomplete variants were relevant. Zero-search variants included team apparel, Bulldogs, Georgia Bulldogs.",
+          "freshness_status": "current"
+        }
+      ],
+      "customer_impact": "A fan-shop shopper may find UCLA through several terms, but can still hit dead ends for Bruins apparel, UCLA quarter zip autocomplete, Bulldogs, or Georgia Bulldogs.",
+      "business_impact": "If UCLA or other institutional/fan-shop demand is commercially important, these gaps create avoidable risk in high-intent licensed-product discovery.",
+      "recommendation": "Treat UCLA/Bruins and team/mascot/university aliases as a protected relevance set, then add zero-result and autocomplete routing to the relevant fan-shop collection or close alternatives.",
+      "opportunity_class": "Strategic Improvement",
+      "confidence": "high",
+      "status": "validated"
+    },
+    {
+      "id": "F-003",
+      "assessment_area": "browse_navigation",
+      "severity": "High",
+      "observation": "Search and autocomplete do not consistently route normalized terms to useful browse destinations.",
+      "evidence": [
+        {
+          "id": "E-NORM-BROWSE-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Search/autocomplete-to-browse routing was uneven. UCLA and broad team terms usually exposed browse paths, while quarter-zip/color-product variants had browse path gaps for quarter-zip, quarterzip, qtr zip, qtr-zip, 1/4 zip, maroon quarter zip, burgundy quarter zip, cardinal quarter zip, red quarter zip, maroon qtr zip.",
+          "freshness_status": "current"
+        }
+      ],
+      "customer_impact": "Customers who use search may not be guided to relevant collections or fan-shop pages when product-level matching is weak or ambiguous.",
+      "business_impact": "Existing browse destinations may not capture recoverable search demand, limiting merchandising value from collections and fan-shop pages.",
+      "recommendation": "Use collection/page suggestions as recovery paths in both search and autocomplete for quarter-zip variants, color-plus-product phrases, and team/fan-shop terms.",
+      "opportunity_class": "Strategic Improvement",
+      "confidence": "high",
+      "status": "validated"
+    },
+    {
+      "id": "F-004",
+      "assessment_area": "recommendations_related_discovery",
+      "severity": "Medium",
+      "observation": "Rendered product-page recommendations are present but weakly related in the captured path.",
+      "evidence": [
+        {
+          "id": "E-BROWSER-REC-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-product-recommendations.png",
+          "summary": "Rendered product page included a You May Also Like module, but the only captured recommendation was the same Women's Sherpa Quarter-Zip Pullover product.",
+          "freshness_status": "current"
+        }
+      ],
+      "customer_impact": "Customers on a product page receive little help discovering alternatives or complements when the module repeats the same item.",
+      "business_impact": "Related-discovery and cross-sell value may be underused on product detail pages.",
+      "recommendation": "Tune product recommendation rules to prioritize distinct similar products, complementary items, or collection alternatives instead of repeating the current product.",
+      "opportunity_class": "Quick Win",
+      "confidence": "medium",
+      "status": "validated"
+    },
+    {
+      "id": "F-005",
+      "assessment_area": "journey_analysis",
+      "severity": "Low",
+      "observation": "Public wholesale discovery supports broad product search and SKU lookup, but authenticated account/order workflows remain outside the public evidence scope.",
+      "evidence": [
+        {
+          "id": "E-BROWSER-WHOLESALE-001",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_wholesale",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-search-fleece.png",
+          "summary": "Public wholesale search returned 87 items for fleece and exposed filter categories including gender, brand, category, color, size, fabric, fit, sale, and outlet.",
+          "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSER-WHOLESALE-002",
+          "source_type": "rendered_browser_desktop",
+          "captured_at": "2026-06-25",
+          "access_context": "public_wholesale",
+          "locator": "assessments/boxercraft/browser-evidence/GEN-003/screenshots/desktop-wholesale-search-bm5205.png",
+          "summary": "Public wholesale search returned 1 result for BM5205: Men's Alumni Qtr Zip Pullover.",
+          "freshness_status": "current"
+        }
+      ],
+      "customer_impact": "Wholesale buyers can begin public product discovery before sign-in, but account-specific purchasing and order history require authorized access.",
+      "business_impact": "Public wholesale search appears useful for early discovery; the remaining delivery risk is authenticated workflow coverage, not public catalog findability.",
+      "recommendation": "Keep public wholesale evidence separate from authenticated workflow assessment and request authorized access before evaluating account, pricing, order, and inventory workflows.",
+      "opportunity_class": "Strategic Improvement",
+      "confidence": "medium",
+      "status": "validated"
+    },
+    {
+      "id": "F-006",
+      "assessment_area": "journey_analysis",
+      "severity": "Medium",
+      "observation": "Public wholesale SKU and product-code normalization is partially case/punctuation sensitive.",
+      "evidence": [
+        {
+          "id": "E-NORM-WHOLESALE-001",
+          "source_type": "rendered_normalization_matrix",
+          "captured_at": "2026-06-26",
+          "access_context": "public_wholesale",
+          "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+          "summary": "Public wholesale SKU/product-code variants were partially normalized: 4/6 variants were relevant. BM-5205 and the uppercase BM5205 request did not return a parsed relevant result in this run, while bm5205, BM 5205, alumni qtr zip, and alumni quarter zip did.",
+          "freshness_status": "current"
+        }
+      ],
+      "customer_impact": "Wholesale buyers can find products through some SKU and product-name variants but may fail with hyphenated or uppercase SKU formatting in the public search surface.",
+      "business_impact": "SKU-driven wholesale discovery may be less reliable than expected for buyers who copy product codes from spreadsheets, catalogs, or purchase history with varied formatting.",
+      "recommendation": "Normalize public wholesale SKU searches by stripping spaces/hyphens and case-folding product codes before matching.",
+      "opportunity_class": "Quick Win",
+      "confidence": "medium",
+      "status": "validated"
+    }
+  ],
+  "opportunity_matrix": {
+    "quick_wins": [
+      "Normalize quarter-zip spacing, hyphenation, qtr/1/4 abbreviations, gender synonyms, and color-plus-product phrases across search and autocomplete.",
+      "Normalize public wholesale SKU searches by stripping spaces/hyphens and case-folding product codes.",
+      "Tune product-page recommendations so You May Also Like returns distinct related products rather than repeating the current product."
+    ],
+    "strategic_improvements": [
+      "Treat UCLA/Bruins and other priority team/fan-shop aliases as protected relevance sets with search, autocomplete, and browse recovery checks.",
+      "Use relevant collection and fan-shop pages as explicit search/autocomplete recovery paths.",
+      "Validate authenticated wholesale account, pricing, order, and inventory workflows with approved access."
+    ],
+    "transformational_opportunities": [
+      "Create a unified product-discovery intent layer that normalizes search, autocomplete, browse, filters, recommendations, and public/wholesale catalog discovery against the same apparel and licensed-team taxonomy."
+    ]
+  },
+  "access_limitations": [
+    "Authenticated wholesale account, pricing, order, and inventory workflows were not assessed; public wholesale catalog/search pages were validated separately.",
+    "Filter visibility and mobile filter entry points were validated on the fleece collection, but multi-select behavior and filter persistence were not exhaustively tested across the catalog.",
+    "Recommendation relevance was validated on one product page and should be sampled across more product families before final delivery.",
+    "Generation 4 normalization evidence was captured on 2026-06-26 and should be revalidated before external delivery because search/autocomplete results can change.",
+    "User-reported UCLA commercial importance is treated as stakeholder context; the assessment validates UCLA/Bruins discovery behavior but does not claim public proof that UCLA is Boxercraft's largest client."
+  ]
+}

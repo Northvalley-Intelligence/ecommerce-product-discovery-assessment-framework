@@ -1,0 +1,209 @@
+{
+  "assessment_id": "boxercraft-pilot-001",
+  "framework_version": "0.1.0",
+  "assessment_status": "planned",
+  "target": {
+    "company_name": "Boxercraft",
+    "domain": "TBD - verify current public and wholesale domains before evidence collection",
+    "vertical": "apparel",
+    "assessment_date": "TBD",
+    "access_contexts": [
+      "public_consumer",
+      "authenticated_wholesale",
+      "unknown_or_not_available"
+    ]
+  },
+  "assessment_areas": [
+    {
+      "area_id": "search",
+      "status": "not_assessed",
+      "dimensions": [
+        "query_understanding",
+        "precision",
+        "recall",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "robustness",
+        "recovery",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "maroon quarter zip",
+        "women's fleece",
+        "Georgia Bulldogs apparel",
+        "gift under budget",
+        "SKU lookup if public or authorized",
+        "typo and synonym recovery"
+      ],
+      "evidence": [],
+      "notes": "No current Boxercraft behavior has been assessed in this seed file."
+    },
+    {
+      "area_id": "autocomplete",
+      "status": "not_assessed",
+      "dimensions": [
+        "precision",
+        "ranking_quality",
+        "diversity",
+        "coverage",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "short prefixes for apparel terms",
+        "brand or affiliation terms",
+        "category suggestions",
+        "product suggestions",
+        "mobile suggestion clarity"
+      ],
+      "evidence": [],
+      "notes": "Capture suggestions before executing full search."
+    },
+    {
+      "area_id": "browse_navigation",
+      "status": "not_assessed",
+      "dimensions": [
+        "coverage",
+        "user_effort",
+        "recovery",
+        "diversity"
+      ],
+      "journeys_or_checks": [
+        "consumer apparel category path",
+        "women's fleece path",
+        "team or affiliation path if present",
+        "wholesale catalog path if authorized",
+        "mobile menu path"
+      ],
+      "evidence": [],
+      "notes": "Record whether public and wholesale navigation differ."
+    },
+    {
+      "area_id": "filters_facets",
+      "status": "not_assessed",
+      "dimensions": [
+        "precision",
+        "coverage",
+        "recovery",
+        "user_effort"
+      ],
+      "journeys_or_checks": [
+        "size",
+        "color",
+        "gender or fit",
+        "category",
+        "price or budget",
+        "availability if visible",
+        "filter persistence"
+      ],
+      "evidence": [],
+      "notes": "Record filter state before and after navigation or back-button use."
+    },
+    {
+      "area_id": "recommendations_related_discovery",
+      "status": "not_assessed",
+      "dimensions": [
+        "precision",
+        "diversity",
+        "coverage",
+        "recovery"
+      ],
+      "journeys_or_checks": [
+        "related products on product page",
+        "similar products",
+        "complementary products",
+        "featured collections",
+        "alternatives for unavailable item"
+      ],
+      "evidence": [],
+      "notes": "Separate true recommendations from static merchandising."
+    },
+    {
+      "area_id": "mobile_experience",
+      "status": "not_assessed",
+      "dimensions": [
+        "user_effort",
+        "recovery",
+        "coverage"
+      ],
+      "journeys_or_checks": [
+        "first useful viewport",
+        "search input access",
+        "autocomplete usability",
+        "filter usability",
+        "mobile category navigation",
+        "recovery from zero-result search"
+      ],
+      "evidence": [],
+      "notes": "Use a real mobile viewport or device-sized browser capture during evidence collection."
+    },
+    {
+      "area_id": "journey_analysis",
+      "status": "not_assessed",
+      "dimensions": [
+        "coverage",
+        "recovery",
+        "user_effort",
+        "ranking_quality"
+      ],
+      "journeys_or_checks": [
+        "find a maroon quarter zip",
+        "find women's fleece",
+        "find Georgia Bulldogs apparel",
+        "find a gift item under a budget",
+        "locate a product by SKU if public or authorized",
+        "find alternatives to an unavailable item",
+        "compare multiple apparel alternatives"
+      ],
+      "evidence": [],
+      "notes": "Use this pilot to validate reusable journey patterns, not to overfit the rubric to Boxercraft."
+    }
+  ],
+  "scorecard": {
+    "search": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    },
+    "autocomplete": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    },
+    "browse": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    },
+    "filters": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    },
+    "recommendations": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    },
+    "mobile_experience": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    },
+    "product_discovery_overall": {
+      "score": null,
+      "rationale": "Not scored until Boxercraft evidence is collected.",
+      "evidence_refs": []
+    }
+  },
+  "findings": [],
+  "opportunity_matrix": {
+    "quick_wins": [],
+    "strategic_improvements": [],
+    "transformational_opportunities": []
+  },
+  "access_limitations": [
+    "Wholesale or authenticated experiences require explicit authorization before evidence collection.",
+    "Current public and wholesale URLs must be verified at collection time."
+  ]
+}

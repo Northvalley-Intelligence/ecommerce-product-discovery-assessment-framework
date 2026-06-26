@@ -1,0 +1,271 @@
+{
+  "strategy_id": "VALSTRAT-001",
+  "strategy_status": "active_for_generation_4",
+  "created_on": "2026-06-24",
+  "updated_on": "2026-06-26",
+  "project_type": "consulting assessment framework and report generation system for ecommerce product discovery and information retrieval evaluation",
+  "artifact_profiles": [
+    "report_generation",
+    "client_facing_document",
+    "data_contract",
+    "website_assessment",
+    "search_ir_evaluation",
+    "prompt_generation",
+    "pdf_generation"
+  ],
+  "mission_phase": "Generation 4 - Full Boxercraft Normalization And Browse Routing Evaluation",
+  "mission_critical_workflows": [
+    {
+      "workflow": "Create reusable assessment rubric",
+      "users": [
+        "Northvalley Intelligence evaluator",
+        "future evaluator"
+      ],
+      "required_outcome": "Evaluator can assess product discovery experiences consistently across search, autocomplete, browse, filters, recommendations, mobile, and realistic journeys."
+    },
+    {
+      "workflow": "Capture evidence-backed finding",
+      "users": [
+        "Evaluator",
+        "ecommerce leadership reader"
+      ],
+      "required_outcome": "Each finding includes observation, evidence, severity, customer impact, business impact, and recommendation."
+    },
+    {
+      "workflow": "Run Boxercraft validation target",
+      "users": [
+        "Evaluator",
+        "Northvalley Intelligence reviewer"
+      ],
+      "required_outcome": "The Boxercraft assessment identifies Boxercraft-specific opportunities from rendered public retail and public wholesale evidence while recording access limits and avoiding overfit to one retailer."
+    },
+    {
+      "workflow": "Produce executive-ready report",
+      "users": [
+        "Ecommerce leadership",
+        "marketing leadership",
+        "operations leadership",
+        "technology leadership"
+      ],
+      "required_outcome": "Report and deck present key findings, strengths, weaknesses, revenue-impacting opportunities, recommended next steps, scorecard, and opportunity matrix in business language."
+    },
+    {
+      "workflow": "Validate PDF output",
+      "users": [
+        "Northvalley Intelligence reviewer",
+        "client-facing report reader"
+      ],
+      "required_outcome": "Generated PDFs compile, contain expected text, render nonblank pages, and show no obvious overlap in spot-checked pages."
+    }
+  ],
+  "selected_validations": [
+    {
+      "category": "Functional Validation",
+      "required": true,
+      "priority": "Critical",
+      "tools_or_methods": [
+        "BDD inventory",
+        "scripts/validate-framework.mjs",
+        "structured Boxercraft public-retail/public-wholesale assessment checks",
+        "rendered browser evidence review",
+        "scripts/evaluate-boxercraft-normalization.mjs",
+        "finding-to-evidence traceability review"
+      ],
+      "reason": "Validates that the framework produces evidence-backed product discovery findings and that the Boxercraft case includes full normalization, parity, and browse-routing evidence."
+    },
+    {
+      "category": "Technical Validation",
+      "required": true,
+      "priority": "High",
+      "tools_or_methods": [
+        "JSON parse checks for Boxercraft assessment, browser evidence, and GEN-004 normalization evidence",
+        "npm run validate",
+        "npm audit --audit-level=moderate",
+        "npm run validate:boxercraft:browser evidence review",
+        "npm run evaluate:boxercraft:normalization evidence review",
+        "latexmk report compilation",
+        "latexmk presentation compilation"
+      ],
+      "reason": "The assessment data and generated Northvalley PDF sources must be reproducible and structurally sound."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "required": true,
+      "priority": "High",
+      "tools_or_methods": [
+        "git status --short --branch",
+        "GitHub remote check",
+        "deploy/release-checks.json production parity fields",
+        "project-local MDE blocker record when submission cannot be completed"
+      ],
+      "reason": "After meaningful code changes or two clean Validation Gate passes, project work must be submitted to GitHub or an explicit blocker must be recorded. Production-deployed projects must keep main traceable to deployed production code or record an approved exception/blocker."
+    },
+    {
+      "category": "Usability Validation",
+      "required": true,
+      "priority": "High",
+      "tools_or_methods": [
+        "executive report readability review",
+        "presentation deck section review",
+        "rendered browser screenshot review",
+        "normalization and browse-routing scorecard review",
+        "pdftotext heading checks"
+      ],
+      "reason": "Business leaders must be able to understand the assessment without technical search implementation knowledge."
+    },
+    {
+      "category": "UI Standards Validation",
+      "required": true,
+      "priority": "Medium",
+      "tools_or_methods": [
+        "latexmk",
+        "pdftotext",
+        "pdftoppm",
+        "rendered PNG spot checks"
+      ],
+      "reason": "PDF output is now selected, so client-facing layout quality must be validated for the draft report and deck."
+    },
+    {
+      "category": "Mission Coverage Validation",
+      "required": true,
+      "priority": "Critical",
+      "tools_or_methods": [
+        "coverage matrix across assessment areas",
+        "output artifact checklist",
+        "risk-to-BDD traceability",
+        "access limitation review"
+      ],
+      "reason": "The mission requires broad coverage across discovery mechanisms and explicit separation of public evidence from unavailable or unvalidated surfaces."
+    },
+    {
+      "category": "Project-Specific External Validation",
+      "required": true,
+      "priority": "High",
+      "tools_or_methods": [
+        "public Boxercraft search pages",
+        "Shopify/Boost autocomplete UI",
+        "rendered Playwright desktop/mobile browser validation",
+        "GEN-004 search/autocomplete normalization matrix",
+        "visible collection/page browse-path extraction",
+        "public wholesale search pages",
+        "authenticated wholesale access limitation record"
+      ],
+      "reason": "The framework's value depends on observed ecommerce behavior, not only internal data structures."
+    }
+  ],
+  "coverage_targets": {
+    "critical_mission_objectives": "100%",
+    "high_priority_mission_objectives": "90%+ with explicit deferral for independent evaluator calibration",
+    "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; authenticated wholesale remains access-limited",
+    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, and GEN-004 normalization evidence",
+    "finding_traceability": "100% of report findings must trace to evidence, stakeholder-context assumption, or explicit unavailable-data note"
+  },
+  "external_validators": [
+    {
+      "name": "Boxercraft public-retail assessment",
+      "status": "executed_rendered_public_retail_and_public_wholesale_draft",
+      "category": "Project-Specific External Validation",
+      "run_policy": "Generation 2",
+      "evidence": "assessments/boxercraft/public-retail-evaluation.json"
+    },
+    {
+      "name": "Northvalley PDF report and deck validation",
+      "status": "executed",
+      "category": "UI Standards Validation",
+      "run_policy": "on report or deck changes",
+      "evidence": "latexmk, pdftotext, pdftoppm, and rendered PNG spot checks"
+    },
+    {
+      "name": "Rendered browser ecommerce validation",
+      "status": "executed_generation_3_reused_for_generation_4",
+      "category": "Usability / UI Standards / External Validation",
+      "run_policy": "on Boxercraft evidence changes or before external client delivery",
+      "evidence": "assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json plus GEN-004 normalization evidence for expanded query coverage."
+    },
+    {
+      "name": "Independent evaluator calibration",
+      "status": "deferred",
+      "category": "Mission Coverage Validation",
+      "run_policy": "before reusable release",
+      "evidence": "Two evaluators apply the framework to the same target and compare finding/severity consistency."
+    },
+    {
+      "name": "Full Boxercraft normalization and browse-routing evaluation",
+      "status": "executed_generation_4",
+      "category": "Project-Specific External / Functional Validation",
+      "run_policy": "Generation 4 and before external client delivery when search/autocomplete evidence changes",
+      "evidence": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json and 60 rendered screenshots across retail search, autocomplete, and public wholesale search."
+    }
+  ],
+  "mde_native_validators": [
+    {
+      "name": "BDD severity review",
+      "category": "Functional Validation",
+      "required": true
+    },
+    {
+      "name": "mission coverage review",
+      "category": "Mission Coverage Validation",
+      "required": true
+    },
+    {
+      "name": "goal drift review",
+      "category": "Mission Coverage Validation",
+      "required": true
+    },
+    {
+      "name": "generation evidence report",
+      "category": "Technical Validation",
+      "required": true
+    }
+  ],
+  "skipped_validations": [
+    {
+      "category": "Deployment validation",
+      "reason": "No deployable hosted artifact exists in Generation 4 and deploy/build-manifest.json has platform set to not_selected.",
+      "revisit_when": "A deploy target, report publishing workflow, or hosted assessment tool exists."
+    },
+    {
+      "category": "Automated performance benchmarking",
+      "reason": "Browser automation exists for evidence capture, but this phase is not benchmarking site speed or throughput.",
+      "revisit_when": "The project implements automated assessment collection, report rendering, or a user-facing interface."
+    },
+    {
+      "category": "Authenticated wholesale assessment",
+      "reason": "Public wholesale search and SKU variants were validated, but authorized account, pricing, order, and inventory workflows have not been approved for assessment.",
+      "revisit_when": "The user confirms access or supplies approved evidence."
+    }
+  ],
+  "expensive_validations": [
+    {
+      "name": "Full multi-vertical calibration",
+      "run_policy": "before_phase_exit_to_reusable_client_asset",
+      "reason": "Requires multiple ecommerce targets and evaluator time."
+    },
+    {
+      "name": "Authenticated wholesale assessment",
+      "run_policy": "manual",
+      "reason": "Requires authorized access and careful handling of private evidence."
+    },
+    {
+      "name": "Full browser screenshot QA",
+      "run_policy": "before_external_client_delivery",
+      "reason": "Requires rendered browser execution across desktop and mobile."
+    }
+  ],
+  "second_run_policy": {
+    "description": "Two independent Validation Gate passes are required for phase exit. The second pass must run with no implementation changes after the first clean pass.",
+    "rerun_required": [
+      "all Critical validations",
+      "validations that failed in the first run",
+      "validations affected by code, rubric, scoring, report, or artifact changes",
+      "validations related to unresolved High risks",
+      "PDF validation when report or deck output changes"
+    ],
+    "may_skip_with_reason": [
+      "validations clearly unaffected by changes",
+      "expensive validations with stable prior results",
+      "validations not relevant to the current phase"
+    ]
+  }
+}

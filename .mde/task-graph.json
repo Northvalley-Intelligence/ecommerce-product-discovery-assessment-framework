@@ -1,0 +1,251 @@
+{
+  "task_graph_id": "TASKGRAPH-001",
+  "created_on": "2026-06-24",
+  "current_generation": "GEN-004",
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Capture mission in MISSION.md",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": []
+    },
+    {
+      "id": "T-002",
+      "title": "Create project identity and MDE state",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-001"
+      ]
+    },
+    {
+      "id": "T-003",
+      "title": "Create Generation 0 validation strategy",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-001",
+        "T-002"
+      ]
+    },
+    {
+      "id": "T-004",
+      "title": "Create initial BDD inventory",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-003"
+      ]
+    },
+    {
+      "id": "T-005",
+      "title": "Create initial risk register",
+      "status": "complete",
+      "priority": "High",
+      "depends_on": [
+        "T-003"
+      ]
+    },
+    {
+      "id": "T-006",
+      "title": "Review Generation 0 assumptions with founder",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-001",
+        "T-002",
+        "T-003",
+        "T-004",
+        "T-005"
+      ]
+    },
+    {
+      "id": "T-007",
+      "title": "Select first Generation 1 implementation artifact",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-006"
+      ],
+      "options": [
+        "assessment rubric/schema",
+        "Boxercraft pilot protocol",
+        "executive report template",
+        "combined manual workbook"
+      ],
+      "selected": "assessment rubric/schema plus Boxercraft pilot protocol and executive report template"
+    },
+    {
+      "id": "T-008",
+      "title": "Implement structured finding and scoring data contract",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-007"
+      ],
+      "related_bdds": [
+        "BDD-001",
+        "BDD-002",
+        "BDD-006",
+        "BDD-007"
+      ]
+    },
+    {
+      "id": "T-009",
+      "title": "Build Boxercraft pilot assessment protocol",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-007"
+      ],
+      "related_bdds": [
+        "BDD-003",
+        "BDD-004",
+        "BDD-008",
+        "BDD-009",
+        "BDD-010",
+        "BDD-011"
+      ]
+    },
+    {
+      "id": "T-010",
+      "title": "Build executive-ready report and scorecard template",
+      "status": "complete",
+      "priority": "High",
+      "depends_on": [
+        "T-007"
+      ],
+      "related_bdds": [
+        "BDD-005",
+        "BDD-006",
+        "BDD-007",
+        "BDD-014"
+      ]
+    },
+    {
+      "id": "T-011",
+      "title": "Run first Validation Gate after Generation 1 implementation",
+      "status": "complete",
+      "priority": "Critical",
+      "depends_on": [
+        "T-008",
+        "T-009"
+      ]
+    },
+    {
+      "id": "T-012",
+      "title": "Run Boxercraft pilot evidence collection",
+      "status": "complete_for_rendered_public_retail_and_public_wholesale_draft",
+      "priority": "Critical",
+      "depends_on": [
+        "T-009",
+        "T-011"
+      ],
+      "related_bdds": [
+        "BDD-003",
+        "BDD-004",
+        "BDD-008",
+        "BDD-009",
+        "BDD-010",
+        "BDD-011",
+        "BDD-013"
+      ],
+      "generation_2_update": "Public-retail evidence collected from search HTML, Shopify predictive-search JSON, collection/page source, and explicit wholesale-access limitation. At Generation 2 close, rendered browser validation was the next follow-up task.",
+      "generation_3_update": "Rendered browser validation added public retail search/autocomplete/zero-result/filter/recommendation/mobile evidence plus public wholesale search and SKU lookup evidence. Authenticated wholesale account/order/pricing/inventory remains access-limited.",
+      "generation_4_update": "Full normalization and browse-routing matrix added 36 queries across quarter-zip variants, women fleece terms, UCLA/Bruins priority terms, team aliases, color-plus-product terms, and public wholesale SKU variants. Authenticated wholesale account/order/pricing/inventory remains access-limited."
+    },
+    {
+      "id": "T-013",
+      "title": "Add independent evaluator calibration worksheet",
+      "status": "complete_for_rendered_draft",
+      "priority": "High",
+      "depends_on": [
+        "T-012"
+      ],
+      "related_bdds": [
+        "BDD-012"
+      ]
+    },
+    {
+      "id": "T-014",
+      "title": "Select report output format and add layout validation if needed",
+      "status": "complete_for_public_retail_draft",
+      "priority": "Medium",
+      "depends_on": [
+        "T-010"
+      ],
+      "related_bdds": [
+        "BDD-014"
+      ],
+      "generation_2_update": "Northvalley LaTeX report and Beamer deck were selected and validated with latexmk, pdftotext, pdftoppm, and visual spot checks."
+    },
+    {
+      "id": "T-015",
+      "title": "Run rendered desktop/mobile Boxercraft validation",
+      "status": "complete_for_rendered_and_normalization_draft",
+      "priority": "High",
+      "depends_on": [
+        "T-012",
+        "T-014"
+      ],
+      "related_bdds": [
+        "BDD-003",
+        "BDD-004",
+        "BDD-008",
+        "BDD-009",
+        "BDD-010",
+        "BDD-013"
+      ],
+      "scope": "Search results, autocomplete UI, zero-result recovery, filters/facets, product-page recommendations, first useful viewport, and mobile usability.",
+      "generation_3_update": "Completed with Playwright browser evidence, 18 screenshots, browser-validation JSON, and updated report/deck scoring. Broader recommendation samples and filter persistence/multi-select behavior remain final-delivery follow-ups."
+    },
+    {
+      "id": "T-016",
+      "title": "Confirm Boxercraft wholesale access",
+      "status": "planned",
+      "priority": "High",
+      "depends_on": [
+        "T-012"
+      ],
+      "related_bdds": [
+        "BDD-004",
+        "BDD-011",
+        "BDD-013"
+      ],
+      "scope": "If authorized access exists, assess wholesale discovery separately. If not, preserve it as an explicit access limitation."
+    },
+    {
+      "id": "T-017",
+      "title": "Enforce repository governance for local project session",
+      "status": "complete_with_blocker",
+      "priority": "High",
+      "depends_on": [
+        "T-015"
+      ],
+      "related_bdds": [],
+      "scope": "Apply project-local GitHub submission and production parity rules without modifying sibling repos.",
+      "generation_3_update": "Governance rules are recorded in validation strategy, release checks, generation summary, findings, and outbox. GitHub submission is blocked because this directory is not a Git repository."
+    },
+    {
+      "id": "T-018",
+      "title": "Run full Boxercraft normalization and search/autocomplete-to-browse evaluation",
+      "status": "complete",
+      "priority": "High",
+      "depends_on": [
+        "T-012",
+        "T-015"
+      ],
+      "related_bdds": [
+        "BDD-003",
+        "BDD-004",
+        "BDD-008",
+        "BDD-009",
+        "BDD-011",
+        "BDD-013"
+      ],
+      "scope": "Retail search, rendered autocomplete, visible collection/page browse paths, UCLA/Bruins stakeholder-priority terms, team aliases, color-plus-product terms, and public wholesale SKU variants.",
+      "generation_4_update": "Completed with GEN-004 normalization-evaluation JSON, 60 screenshots, updated assessment JSON, report/deck updates, and two Validation Gate passes."
+    }
+  ]
+}

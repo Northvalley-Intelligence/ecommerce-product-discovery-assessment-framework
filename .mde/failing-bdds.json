@@ -1,0 +1,38 @@
+{
+  "updated_on": "2026-06-26",
+  "current_generation": "GEN-004",
+  "failing_bdds": [],
+  "not_executed_required_bdds": [],
+  "deferred_bdds": [
+    {
+      "id": "BDD-012",
+      "severity": "High",
+      "reason": "Independent evaluator calibration requires a completed assessment package and a second evaluator.",
+      "revisit_when": "Before declaring the framework reusable for client engagements."
+    }
+  ],
+  "deferred_validation_items": [
+    {
+      "id": "VAL-DEFER-004-001",
+      "severity": "High",
+      "category": "Project-Specific External Validation",
+      "reason": "Public wholesale search and SKU variants were validated, but authorized wholesale account, pricing, order, and inventory workflows have not been approved or assessed.",
+      "revisit_when": "When approved wholesale access or client-supplied evidence is available."
+    },
+    {
+      "id": "VAL-DEFER-004-002",
+      "severity": "Medium",
+      "category": "Evidence Quality",
+      "reason": "Rendered browser validation covered representative recommendation and filter cases, but broader recommendation samples and filter persistence/multi-select behavior remain useful before final external delivery.",
+      "revisit_when": "Before converting the Boxercraft package from draft to final external delivery."
+    },
+    {
+      "id": "VAL-DEFER-004-003",
+      "severity": "Medium",
+      "category": "Stakeholder Context",
+      "reason": "UCLA commercial importance was supplied by the user as stakeholder context and was not independently verified as a public client-size claim.",
+      "revisit_when": "Before client-facing use of any claim about UCLA commercial importance beyond discovery behavior."
+    }
+  ],
+  "note": "Generation 4 has no failing required BDDs for the full public-retail/public-wholesale normalization and browse-routing draft scope. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, and unverified UCLA commercial context remain explicit deferrals or limitations."
+}

@@ -1,0 +1,211 @@
+{
+  "inventory_id": "BDD-INV-002",
+  "created_on": "2026-06-24",
+  "mission_version": "MISSION-2026-06-24",
+  "status": "generation_3_validated_rendered_public_retail_and_public_wholesale",
+  "summary": {
+    "total": 14,
+    "critical": 5,
+    "high": 7,
+    "medium": 2,
+    "low": 0,
+    "passing": 13,
+    "failing": 0,
+    "not_executed": 0,
+    "deferred": 1
+  },
+  "bdds": [
+    {
+      "id": "BDD-001",
+      "title": "Reusable assessment rubric covers all mission assessment areas",
+      "severity": "Critical",
+      "category": "Mission Coverage Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "a new ecommerce target is selected for assessment",
+      "when": "an evaluator initializes the assessment rubric",
+      "then": "the rubric requires evidence for search, autocomplete, browse navigation, filters/facets, recommendations/related discovery, mobile experience, and realistic product discovery journeys",
+      "mission_links": [
+        "Assessment Areas",
+        "Success Criteria"
+      ]
+    },
+    {
+      "id": "BDD-002",
+      "title": "Every finding is evidence-backed and business-readable",
+      "severity": "Critical",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "an evaluator records an assessment finding",
+      "when": "the finding is saved or included in a report",
+      "then": "it must include observation, evidence, severity, customer impact, business impact, and recommendation",
+      "mission_links": [
+        "Detailed Assessment Report",
+        "Business Goal"
+      ]
+    },
+    {
+      "id": "BDD-003",
+      "title": "Search evaluation tests query understanding, relevance, robustness, recovery, and effort",
+      "severity": "Critical",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "an ecommerce site search experience is assessed",
+      "when": "the evaluator runs the search evaluation",
+      "then": "the evaluation covers exact, partial, multi-word, attribute, category, brand, identifier, and long-tail queries along with precision, recall, ranking, diversity, coverage, typo tolerance, synonyms, abbreviations, zero-result recovery, latency, mobile usability, and interaction friction",
+      "mission_links": [
+        "Search Evaluation",
+        "Information Retrieval Evaluation Model"
+      ]
+    },
+    {
+      "id": "BDD-004",
+      "title": "Boxercraft pilot validates the framework without overfitting it",
+      "severity": "Critical",
+      "category": "Project-Specific External Validation",
+      "status": "passed_gen_003_rendered_draft_with_authenticated_wholesale_access_limits",
+      "given": "Boxercraft is used as the initial validation target",
+      "when": "the pilot assessment is completed",
+      "then": "the output identifies Boxercraft-specific opportunities and records which rubric changes improve reuse for future ecommerce targets",
+      "mission_links": [
+        "Boxercraft Validation Target",
+        "Success Criteria"
+      ]
+    },
+    {
+      "id": "BDD-005",
+      "title": "Executive report answers leadership questions",
+      "severity": "Critical",
+      "category": "Usability Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "an assessment report is generated",
+      "when": "an ecommerce, marketing, operations, or technology leader reads it",
+      "then": "the report clearly states key findings, major strengths, major weaknesses, revenue-impacting opportunities, and recommended next steps without requiring technical search implementation knowledge",
+      "mission_links": [
+        "Executive Summary",
+        "Business Goal"
+      ]
+    },
+    {
+      "id": "BDD-006",
+      "title": "Scorecard produces explainable 0-100 product discovery scores",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "assessment evidence has been collected",
+      "when": "the Product Discovery Scorecard is produced",
+      "then": "it scores Search, Autocomplete, Browse, Filters, Recommendations, Mobile Experience, and Product Discovery Overall from 0-100 with traceable rationale",
+      "mission_links": [
+        "Product Discovery Scorecard"
+      ]
+    },
+    {
+      "id": "BDD-007",
+      "title": "Opportunity matrix classifies actionability and impact",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "findings have been scored and prioritized",
+      "when": "the opportunity matrix is generated",
+      "then": "each recommendation is classified as Quick Win, Strategic Improvement, or Transformational Opportunity with impact and effort rationale",
+      "mission_links": [
+        "Opportunity Matrix"
+      ]
+    },
+    {
+      "id": "BDD-008",
+      "title": "Autocomplete evaluation measures suggestion quality and discovery support",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "an ecommerce autocomplete experience is assessed",
+      "when": "the evaluator types representative customer queries",
+      "then": "the evaluation captures query, product, category, and brand suggestions along with ranking, diversity, coverage, popularity bias, responsiveness, mobile usability, clarity, and discovery support",
+      "mission_links": [
+        "Autocomplete Evaluation"
+      ]
+    },
+    {
+      "id": "BDD-009",
+      "title": "Browse and facet evaluation measures non-search findability",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "a customer journey does not use search",
+      "when": "the evaluator navigates categories and filters",
+      "then": "the evaluation captures hierarchy, naming clarity, navigation depth, grouping, completeness, mobile friction, facet relevance, facet organization, multi-select support, dead ends, persistence, and steps to locate products",
+      "mission_links": [
+        "Browse Navigation Evaluation",
+        "Filtering And Faceted Navigation"
+      ]
+    },
+    {
+      "id": "BDD-010",
+      "title": "Recommendation evaluation identifies related discovery opportunities",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "a product, category, or collection page exposes related discovery modules",
+      "when": "the evaluator assesses recommendations",
+      "then": "the evaluation captures relevance, diversity, cross-sell opportunities, similar products, complementary products, seasonal products, and featured products",
+      "mission_links": [
+        "Recommendation And Related Discovery"
+      ]
+    },
+    {
+      "id": "BDD-011",
+      "title": "Journey analysis supports apparel, wholesale, and general retail scenarios",
+      "severity": "High",
+      "category": "Mission Coverage Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "an evaluator prepares realistic customer journeys",
+      "when": "the target vertical is apparel, wholesale, or general retail",
+      "then": "the framework provides scenario templates for known-item search, attribute discovery, category browsing, SKU lookup, unavailable-item alternatives, comparison, and large-catalog navigation",
+      "mission_links": [
+        "Product Discovery Journey Analysis"
+      ]
+    },
+    {
+      "id": "BDD-012",
+      "title": "Independent evaluator calibration produces similar findings",
+      "severity": "High",
+      "category": "Mission Coverage Validation",
+      "status": "deferred",
+      "given": "two evaluators assess the same ecommerce target using the framework",
+      "when": "their findings and severities are compared",
+      "then": "major findings, evidence requirements, and severity classifications are similar enough to support repeatable consulting use or the rubric records the calibration gap",
+      "defer_reason": "Requires a completed pilot assessment and a second evaluator before reusable release.",
+      "mission_links": [
+        "Success Criteria"
+      ]
+    },
+    {
+      "id": "BDD-013",
+      "title": "Assessment records data freshness and access limits",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "assessment evidence is captured from public, authenticated, or client-supplied sources",
+      "when": "evidence is attached to findings",
+      "then": "the assessment records source, date, access context, known limitations, and whether the observation should be verified before client delivery",
+      "mission_links": [
+        "Detailed Assessment Report",
+        "Boxercraft Validation Target"
+      ]
+    },
+    {
+      "id": "BDD-014",
+      "title": "Client-facing report layout remains readable if PDF output is selected",
+      "severity": "Medium",
+      "category": "UI Standards Validation",
+      "status": "passed_gen_003_rendered_draft",
+      "given": "the project generates a PDF or print-ready report",
+      "when": "the report contains long finding text, tables, screenshots, and recommendations",
+      "then": "text stays within safe margins, tables fit page width, headers and footers do not overlap content, and page breaks preserve readability",
+      "validation_notes": "Northvalley LaTeX report and Beamer deck compiled successfully after rendered browser evidence updates. PDF text extraction found expected headings, page rendering produced non-empty PNG pages, and spot-checked pages were readable with no obvious overlap.",
+      "mission_links": [
+        "Output Artifacts",
+        "Central context pack: PDF Generation"
+      ]
+    }
+  ]
+}
