@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-06-26",
-  "current_generation": "GEN-005",
+  "updated_on": "2026-06-27",
+  "current_generation": "GEN-006",
   "completed": [
     "Mission captured",
     "MDE project identity created",
@@ -39,12 +39,17 @@
     "Private GitHub repository created under Northvalley-Intelligence",
     "Initial validated project snapshot pushed to origin/main",
     "Repository governance blocker resolved",
-    "Generation 5 Validation Gate passed twice"
+    "Generation 5 Validation Gate passed twice",
+    "Competitor pricing and discovery benchmark created for Boxercraft, L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics",
+    "Public catalog price ranges captured for Boxercraft, L2 Brands, and Colosseum Athletics",
+    "Rendered search/autocomplete/browse samples captured for direct competitor sites",
+    "Generation 6 Validation Gate passed twice"
   ],
   "in_progress": [],
   "next": [
     "Confirm authorized wholesale access or keep wholesale as an explicit limitation",
     "Broaden recommendation/filter persistence samples before final external delivery",
+    "Decide whether to incorporate GEN-006 competitor benchmark into the client-facing report/deck",
     "Independent evaluator calibration worksheet",
     "Protect UCLA/Bruins and other priority team aliases as relevance sets if commercial context is confirmed"
   ]

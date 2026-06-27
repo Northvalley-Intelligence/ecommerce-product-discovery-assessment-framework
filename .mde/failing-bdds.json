@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-06-26",
-  "current_generation": "GEN-005",
+  "updated_on": "2026-06-27",
+  "current_generation": "GEN-006",
   "failing_bdds": [],
   "not_executed_required_bdds": [],
   "deferred_bdds": [
@@ -32,7 +32,21 @@
       "category": "Stakeholder Context",
       "reason": "UCLA commercial importance was supplied by the user as stakeholder context and was not independently verified as a public client-size claim.",
       "revisit_when": "Before client-facing use of any claim about UCLA commercial importance beyond discovery behavior."
+    },
+    {
+      "id": "VAL-DEFER-006-001",
+      "severity": "Medium",
+      "category": "Comparable Evidence Limitation",
+      "reason": "Concepts Sport is relevant as a licensed lounge/sleepwear competitor, but the public Wix catalog did not expose comparable prices or product-grid titles through the automated GEN-006 run.",
+      "revisit_when": "If the competitor benchmark is used in a client-facing report, validate Concepts Sport manually or through an approved alternate data source."
+    },
+    {
+      "id": "VAL-DEFER-006-002",
+      "severity": "Medium",
+      "category": "Comparable Evidence Limitation",
+      "reason": "Fanatics was treated as a marketplace benchmark, not a direct brand-owned catalog, because the GEN-006 scope did not include a comparable public product-feed source for that marketplace.",
+      "revisit_when": "When approved manual/browser evidence or a comparable marketplace data source is selected."
     }
   ],
-  "note": "Generation 5 has no failing required BDDs for repository initialization and GitHub submission. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, and unverified UCLA commercial context remain explicit deferrals or limitations for client-delivery readiness."
+  "note": "Generation 6 has no failing required BDDs for the competitor pricing/discovery benchmark. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, unverified UCLA commercial context, Concepts Sport comparable pricing, and Fanatics marketplace comparability remain explicit deferrals or limitations for client-delivery readiness."
 }

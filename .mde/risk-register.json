@@ -1,7 +1,7 @@
 {
   "risk_register_id": "RISK-REG-001",
   "created_on": "2026-06-24",
-  "current_generation": "GEN-005",
+  "current_generation": "GEN-006",
   "risks": [
     {
       "id": "RISK-001",
@@ -35,7 +35,8 @@
       "generation_1_update": "Boxercraft pilot protocol and guardrails require reusable framework changes to distinguish apparel-specific, wholesale-specific, reusable, and Boxercraft-only lessons.",
       "generation_2_update": "Public-retail Boxercraft findings are stored as assessment data rather than rubric changes, preserving the broader framework.",
       "generation_3_update": "Rendered Boxercraft findings remain in the assessment and report/deck artifacts, not in reusable rubric changes, preserving framework portability.",
-      "generation_4_update": "UCLA/Bruins, team-alias, and apparel-variant findings remain in the Boxercraft assessment artifacts rather than changing the reusable rubric, preserving framework portability."
+      "generation_4_update": "UCLA/Bruins, team-alias, and apparel-variant findings remain in the Boxercraft assessment artifacts rather than changing the reusable rubric, preserving framework portability.",
+      "generation_6_update": "Competitor findings are stored as Boxercraft case-study evidence and a reusable benchmark harness, not as changes to the core rubric."
     },
     {
       "id": "RISK-003",
@@ -52,7 +53,8 @@
       "generation_1_update": "Finding schema and report template require observation, evidence, customer impact, business impact, recommendation, confidence, and limitations.",
       "generation_2_update": "Report language uses plausible customer/business impact mechanisms and avoids unsupported revenue quantification.",
       "generation_3_update": "Rendered report/deck updates continue to use observed customer-experience mechanisms instead of unsupported revenue quantification.",
-      "generation_4_update": "Report/deck explicitly avoid claiming UCLA is the largest client; UCLA commercial importance is stakeholder context and only observed discovery behavior is scored."
+      "generation_4_update": "Report/deck explicitly avoid claiming UCLA is the largest client; UCLA commercial importance is stakeholder context and only observed discovery behavior is scored.",
+      "generation_6_update": "Competitor benchmark reports UCLA/Bruins public catalog visibility only and does not claim client-size or commercial-priority proof."
     },
     {
       "id": "RISK-004",
@@ -101,7 +103,8 @@
       "generation_1_update": "Schema and protocol require source, capture date, access context, locator, summary, and freshness status for evidence.",
       "generation_2_update": "Boxercraft evidence records include captured_at, source_type, locator, access_context, summary, and freshness_status; report says evidence should be revalidated before external delivery.",
       "generation_3_update": "Browser evidence now includes screenshots and a validation JSON completed on 2026-06-26T03:41:00Z; report still says to revalidate before external delivery.",
-      "generation_4_update": "GEN-004 normalization evidence was captured on 2026-06-26, and report/deck state that evidence should be revalidated before external delivery."
+      "generation_4_update": "GEN-004 normalization evidence was captured on 2026-06-26, and report/deck state that evidence should be revalidated before external delivery.",
+      "generation_6_update": "GEN-006 competitor pricing and discovery evidence was captured on 2026-06-27 UTC with current public catalog feeds and rendered screenshots."
     },
     {
       "id": "RISK-007",
@@ -134,7 +137,8 @@
       "status": "mitigated_for_rendered_draft",
       "generation_2_update": "Recorded as the primary Generation 3 validation scope.",
       "generation_3_update": "Rendered browser validation completed for desktop/mobile search, autocomplete, zero-result pages, filters, recommendations, mobile first viewport, and public wholesale search. Broader recommendation/filter persistence samples remain a final-delivery follow-up.",
-      "generation_4_update": "GEN-004 added broader rendered browser normalization evidence across 36 queries and 60 screenshots, extending the Generation 3 browser validation."
+      "generation_4_update": "GEN-004 added broader rendered browser normalization evidence across 36 queries and 60 screenshots, extending the Generation 3 browser validation.",
+      "generation_6_update": "GEN-006 adds rendered competitor samples for search, autocomplete, and browse while using catalog evidence for full query coverage on Shopify competitor sites."
     },
     {
       "id": "RISK-009",
@@ -162,7 +166,23 @@
         "BDD-013"
       ],
       "status": "mitigated_for_current_draft",
-      "generation_4_update": "Report/deck and access limitations state that UCLA commercial importance is stakeholder context, not independently verified public proof of client size."
+      "generation_4_update": "Report/deck and access limitations state that UCLA commercial importance is stakeholder context, not independently verified public proof of client size.",
+      "generation_6_update": "Competitor benchmark continues to treat UCLA/Bruins as a discovery visibility test set and records Colosseum-vs-Boxercraft public catalog counts without making client-size claims."
+    },
+    {
+      "id": "RISK-011",
+      "severity": "Medium",
+      "category": "Comparable Evidence Limitation",
+      "summary": "Competitor benchmark could conflate direct-brand public catalogs, marketplace channels, and sites that do not expose comparable automated pricing data.",
+      "impact": "Leadership readers could misinterpret missing automated data as missing assortment or weak discovery.",
+      "mitigation": "Separate direct-brand Shopify catalog evidence, rendered-only Wix evidence, and marketplace benchmarks; mark inaccessible or non-comparable surfaces explicitly.",
+      "related_bdds": [
+        "BDD-002",
+        "BDD-004",
+        "BDD-013"
+      ],
+      "status": "mitigated_partial",
+      "generation_6_update": "GEN-006 separates Boxercraft/L2/Colosseum public product feeds from Concepts Sport rendered-only evidence and Fanatics marketplace-scope limitations."
     }
   ]
 }

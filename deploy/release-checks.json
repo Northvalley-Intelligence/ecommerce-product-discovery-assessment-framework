@@ -48,7 +48,7 @@
     "highPriorityMissionCoverage": "90%+"
   },
   "repositoryGovernance": {
-    "updated_on": "2026-06-26",
+    "updated_on": "2026-06-27",
     "git_status_command": "git status --short --branch",
     "git_repository_present": true,
     "current_branch": "main",
@@ -57,8 +57,8 @@
     "remote_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git",
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
-    "last_submission_check_after_generation": "GEN-005",
-    "last_submission_check_after_validation_run": "VAL-010",
+    "last_submission_check_after_generation": "GEN-006",
+    "last_submission_check_after_validation_run": "VAL-012",
     "submitted_branch": "main",
     "initial_submitted_commit_sha": "3e62879cea8a548f5ed13c00c2e696589e90d1a8",
     "submission_required_after_meaningful_code_changes": true,
@@ -66,7 +66,7 @@
     "sibling_repos_modified": false
   },
   "productionParity": {
-    "updated_on": "2026-06-26",
+    "updated_on": "2026-06-27",
     "production_deployed": false,
     "deployment_platform": "not_selected",
     "deploy_source_branch": null,
@@ -81,6 +81,7 @@
     "Authenticated wholesale access has not been confirmed; account, pricing, order, and inventory workflows must remain limitations unless access is approved.",
     "Broader recommendation samples and filter persistence/multi-select behavior should be validated before final external client delivery.",
     "UCLA commercial importance is stakeholder context, not independently verified public proof of client size.",
+    "Concepts Sport and Fanatics competitor comparisons need manual or alternate-source validation before strong client-facing claims.",
     "Deployment validation is skipped until a deploy target exists."
   ]
 }

@@ -124,16 +124,21 @@ const requiredFiles = [
   'presentations/boxercraft-product-discovery-brief.tex',
   'assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json',
   'assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json',
+  'assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json',
+  'assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.md',
   'deploy/release-checks.json',
   '.mde/generations/GEN-003.json',
   '.mde/generations/GEN-004.json',
   '.mde/generations/GEN-005.json',
+  '.mde/generations/GEN-006.json',
   '.mde/validation-runs/VAL-005.json',
   '.mde/validation-runs/VAL-006.json',
   '.mde/validation-runs/VAL-007.json',
   '.mde/validation-runs/VAL-008.json',
   '.mde/validation-runs/VAL-009.json',
-  '.mde/validation-runs/VAL-010.json'
+  '.mde/validation-runs/VAL-010.json',
+  '.mde/validation-runs/VAL-011.json',
+  '.mde/validation-runs/VAL-012.json'
 ];
 
 for (const file of requiredFiles) {
@@ -321,6 +326,52 @@ for (const group of normalizationValidation.groups || []) {
   }
 }
 
+const competitorValidation = readJson('assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json');
+assert(competitorValidation.generation_id === 'GEN-006', 'competitor validation must be recorded for GEN-006');
+assert(Array.isArray(competitorValidation.failures) && competitorValidation.failures.length === 0, 'competitor validation must have no failures');
+assert(Array.isArray(competitorValidation.sites) && competitorValidation.sites.length >= 5, 'competitor validation must include Boxercraft plus competitor sites');
+assert(Array.isArray(competitorValidation.discovery_queries) && competitorValidation.discovery_queries.length >= 8, 'competitor validation must include the common discovery query set');
+assert(Array.isArray(competitorValidation.findings) && competitorValidation.findings.length >= 3, 'competitor validation must include pricing and discovery findings');
+const competitorSites = new Map((competitorValidation.sites || []).map((site) => [site.id, site]));
+for (const requiredSite of ['boxercraft', 'l2brands', 'colosseum', 'concepts_sport', 'fanatics']) {
+  assert(competitorSites.has(requiredSite), `competitor validation missing site: ${requiredSite}`);
+}
+assert((competitorSites.get('boxercraft')?.catalog?.product_count || 0) >= 100, 'Boxercraft competitor benchmark must capture the public product catalog');
+assert((competitorSites.get('l2brands')?.catalog?.product_count || 0) >= 100, 'L2 Brands competitor benchmark must capture the public product catalog');
+assert((competitorSites.get('colosseum')?.catalog?.product_count || 0) >= 100, 'Colosseum competitor benchmark must capture the public product catalog');
+const boxercraftFlannel = (competitorSites.get('boxercraft')?.price_benchmark?.categories || []).find((item) => item.category_id === 'flannel_pants') || {};
+const l2Flannel = (competitorSites.get('l2brands')?.price_benchmark?.categories || []).find((item) => item.category_id === 'flannel_pants') || {};
+const colosseumFlannel = (competitorSites.get('colosseum')?.price_benchmark?.categories || []).find((item) => item.category_id === 'flannel_pants') || {};
+assert(boxercraftFlannel.product_count >= 5, 'competitor benchmark must capture Boxercraft flannel-pant assortment');
+assert(Number.isFinite(boxercraftFlannel.min_price) && Number.isFinite(boxercraftFlannel.max_price), 'Boxercraft flannel-pant price range must be priced');
+assert(l2Flannel.product_count === 0, 'competitor benchmark must explicitly capture that L2 public catalog has no flannel-pant matches');
+assert(colosseumFlannel.product_count === 0, 'competitor benchmark must explicitly capture that Colosseum public catalog has no flannel-pant matches');
+assert((competitorSites.get('boxercraft')?.discovery_tests || []).length >= 8, 'Boxercraft competitor benchmark must include discovery tests');
+assert((competitorSites.get('l2brands')?.discovery_tests || []).length >= 8, 'L2 competitor benchmark must include discovery tests');
+assert((competitorSites.get('colosseum')?.discovery_tests || []).length >= 8, 'Colosseum competitor benchmark must include discovery tests');
+assert((competitorValidation.findings || []).some((item) => item.category === 'Assortment And Price Benchmark'), 'competitor validation must include flannel-pants assortment/price finding');
+const competitorSummary = readText('assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.md');
+textIncludesAll(competitorSummary, [
+  'Boxercraft Competitor Pricing And Discovery Benchmark',
+  'Price Ranges',
+  'Discovery Performance',
+  'Flannel pants',
+  'UCLA/Bruins commercial importance remains stakeholder context',
+  'Fanatics was treated as a marketplace benchmark'
+], 'competitor benchmark summary');
+for (const site of competitorValidation.sites || []) {
+  const screenshots = [
+    site.browse_validation?.screenshot,
+    ...(site.discovery_tests || []).flatMap((test) => [
+      test.search?.screenshot,
+      test.autocomplete?.screenshot
+    ])
+  ].filter(Boolean);
+  for (const evidencePath of screenshots) {
+    assert(fs.existsSync(evidencePath), `Competitor screenshot missing: ${evidencePath}`);
+  }
+}
+
 const releaseChecks = readJson('deploy/release-checks.json');
 assert(releaseChecks.repositoryGovernance?.git_repository_present === true, 'release checks must record initialized Git repository');
 assert(releaseChecks.repositoryGovernance?.github_remote_present === true, 'release checks must record GitHub remote');
@@ -344,6 +395,17 @@ assert(gen5Evidence.validation_gate?.result === 'pass', 'GEN-005 evidence must r
 assert(gen5Evidence.validation_gate?.pass_count === '2/2', 'GEN-005 evidence must record two Validation Gate passes');
 assert(gen5Evidence.repository_governance?.github_remote_present === true, 'GEN-005 evidence must record GitHub remote');
 assert(gen5Evidence.repository_governance?.code_submitted_to_github === true, 'GEN-005 evidence must record successful GitHub submission');
+
+const gen6Evidence = readJson('.mde/generations/GEN-006.json');
+assert(gen6Evidence.validation_gate?.result === 'pass', 'GEN-006 evidence must record passing Validation Gate');
+assert(gen6Evidence.validation_gate?.pass_count === '2/2', 'GEN-006 evidence must record two Validation Gate passes');
+assert(gen6Evidence.repository_governance?.github_remote_present === true, 'GEN-006 evidence must record GitHub remote');
+assert(gen6Evidence.evidence_quality_notes?.some((note) => note.includes('Concepts Sport')), 'GEN-006 evidence must keep Concepts Sport limitation explicit');
+assert(gen6Evidence.evidence_quality_notes?.some((note) => note.includes('Fanatics')), 'GEN-006 evidence must keep Fanatics limitation explicit');
+const val11 = readJson('.mde/validation-runs/VAL-011.json');
+const val12 = readJson('.mde/validation-runs/VAL-012.json');
+assert(val11.gate_result === 'pass' && val11.pass_count_after_run === '1/2', 'VAL-011 must record first GEN-006 Validation Gate pass');
+assert(val12.gate_result === 'pass' && val12.pass_count_after_run === '2/2', 'VAL-012 must record second GEN-006 Validation Gate pass');
 
 const coverage = readJson('framework/coverage-matrix.json');
 const coveredBdds = new Set((coverage.mission_coverage || []).flatMap((item) => item.bdd_refs || []));

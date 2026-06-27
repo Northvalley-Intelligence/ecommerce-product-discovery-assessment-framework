@@ -38,3 +38,10 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: User asked to initialize the repository and push the code.
 - Discovered through: Local Git initialization, private GitHub repository creation, `origin/main` push, GitHub repo verification, and repository governance validation.
 - Impact: The previous GitHub submission blocker is resolved. The project now tracks `main` against `origin/main` at `Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework`.
+
+## 2026-06-27
+
+- Mission update: Added a competitor pricing and discovery benchmark for the Boxercraft case study.
+- Reason: User asked to identify Boxercraft competitors, compare public price ranges for common items such as flannel pants, and run similar search/autocomplete/browse checks on competitor sites.
+- Discovered through: Public Shopify catalog feeds for Boxercraft, L2 Brands, and Colosseum Athletics; rendered browser samples for search, autocomplete, and browse; Concepts Sport public Wix catalog checks; Fanatics marketplace-scope limitation review; and GEN-006 screenshot evidence.
+- Impact: The project now has a reusable competitor benchmark harness and evidence package. Boxercraft is the only tested direct-brand site with public flannel-pant catalog matches, Colosseum exposes more UCLA/Bruins catalog matches than Boxercraft in the public direct-site feeds, and L2/Colosseum provide useful quarter-zip and fleece price comparables. Concepts Sport and Fanatics remain limited benchmarks for this automated public-evidence pass.

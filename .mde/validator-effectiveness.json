@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-06-26",
-  "current_generation": "GEN-005",
+  "updated_on": "2026-06-27",
+  "current_generation": "GEN-006",
   "validators": [
     {
       "validator": "scripts/validate-framework.mjs",
@@ -97,7 +97,23 @@
       "last_useful_finding_generation": "GEN-004",
       "recommendation": "keep",
       "notes": "Generated the 36-query Boxercraft normalization matrix across retail search, rendered autocomplete, public wholesale search, and visible browse paths. Produced 60 screenshots and five accepted findings/signals."
+    },
+    {
+      "validator": "scripts/evaluate-competitor-pricing-discovery.mjs",
+      "category": "Project-Specific External / Functional / Usability Validation",
+      "total_runs": 4,
+      "total_findings": 5,
+      "critical_findings_found": 0,
+      "high_findings_found": 2,
+      "findings_accepted_as_valid": 5,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "about_4_to_7_minutes_when_rendered_competitor_pages_load",
+      "average_cost": "external_site_access_and_local_browser",
+      "last_useful_finding_generation": "GEN-006",
+      "recommendation": "keep",
+      "notes": "Generated the GEN-006 competitor benchmark across public Shopify catalog feeds, rendered search/autocomplete/browse samples, and explicit Concepts Sport/Fanatics limitation records. One interrupted exploratory run led to a tighter catalog-plus-rendered-sample strategy."
     }
   ],
-  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 4 added the full Boxercraft normalization and browse-routing evaluator."
+  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 6 added the competitor pricing and discovery benchmark evaluator."
 }

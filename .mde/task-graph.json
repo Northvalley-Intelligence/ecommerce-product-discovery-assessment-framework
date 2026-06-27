@@ -1,7 +1,7 @@
 {
   "task_graph_id": "TASKGRAPH-001",
   "created_on": "2026-06-24",
-  "current_generation": "GEN-005",
+  "current_generation": "GEN-006",
   "tasks": [
     {
       "id": "T-001",
@@ -259,6 +259,26 @@
       "related_bdds": [],
       "scope": "Create local Git repository, create private GitHub remote, push main, and update repository governance records.",
       "generation_5_update": "Completed with private GitHub repository https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework."
+    },
+    {
+      "id": "T-020",
+      "title": "Run competitor pricing and discovery benchmark",
+      "status": "complete",
+      "priority": "High",
+      "depends_on": [
+        "T-012",
+        "T-018"
+      ],
+      "related_bdds": [
+        "BDD-002",
+        "BDD-003",
+        "BDD-004",
+        "BDD-008",
+        "BDD-009",
+        "BDD-013"
+      ],
+      "scope": "Identify relevant Boxercraft competitors, compare public direct-site price ranges for common apparel categories, and run comparable public search/autocomplete/browse checks where automation can collect evidence.",
+      "generation_6_update": "Completed with GEN-006 competitor-pricing-discovery JSON/markdown, 70 screenshots, public catalog price ranges for Boxercraft/L2/Colosseum, rendered direct-site samples, and explicit Concepts Sport/Fanatics limitations."
     }
   ]
 }

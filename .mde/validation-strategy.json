@@ -1,8 +1,8 @@
 {
   "strategy_id": "VALSTRAT-001",
-  "strategy_status": "active_for_generation_5",
+  "strategy_status": "active_for_generation_6",
   "created_on": "2026-06-24",
-  "updated_on": "2026-06-26",
+  "updated_on": "2026-06-27",
   "project_type": "consulting assessment framework and report generation system for ecommerce product discovery and information retrieval evaluation",
   "artifact_profiles": [
     "report_generation",
@@ -13,7 +13,7 @@
     "prompt_generation",
     "pdf_generation"
   ],
-  "mission_phase": "Generation 5 - Repository Initialization And GitHub Submission",
+  "mission_phase": "Generation 6 - Competitor Pricing And Discovery Benchmark",
   "mission_critical_workflows": [
     {
       "workflow": "Create reusable assessment rubric",
@@ -69,9 +69,10 @@
         "structured Boxercraft public-retail/public-wholesale assessment checks",
         "rendered browser evidence review",
         "scripts/evaluate-boxercraft-normalization.mjs",
+        "scripts/evaluate-competitor-pricing-discovery.mjs",
         "finding-to-evidence traceability review"
       ],
-      "reason": "Validates that the framework produces evidence-backed product discovery findings and that the Boxercraft case includes full normalization, parity, and browse-routing evidence."
+      "reason": "Validates that the framework produces evidence-backed product discovery findings and that the Boxercraft case includes normalization, parity, browse-routing, and competitor pricing/discovery evidence."
     },
     {
       "category": "Technical Validation",
@@ -83,6 +84,7 @@
         "npm audit --audit-level=moderate",
         "npm run validate:boxercraft:browser evidence review",
         "npm run evaluate:boxercraft:normalization evidence review",
+        "npm run evaluate:competitors:pricing-discovery evidence review",
         "latexmk report compilation",
         "latexmk presentation compilation"
       ],
@@ -110,6 +112,7 @@
         "presentation deck section review",
         "rendered browser screenshot review",
         "normalization and browse-routing scorecard review",
+        "competitor benchmark summary review",
         "pdftotext heading checks"
       ],
       "reason": "Business leaders must be able to understand the assessment without technical search implementation knowledge."
@@ -134,7 +137,8 @@
         "coverage matrix across assessment areas",
         "output artifact checklist",
         "risk-to-BDD traceability",
-        "access limitation review"
+        "access limitation review",
+        "competitor-evidence limitation review"
       ],
       "reason": "The mission requires broad coverage across discovery mechanisms and explicit separation of public evidence from unavailable or unvalidated surfaces."
     },
@@ -147,6 +151,7 @@
         "Shopify/Boost autocomplete UI",
         "rendered Playwright desktop/mobile browser validation",
         "GEN-004 search/autocomplete normalization matrix",
+        "GEN-006 competitor pricing/discovery benchmark",
         "visible collection/page browse-path extraction",
         "public wholesale search pages",
         "authenticated wholesale access limitation record"
@@ -157,8 +162,8 @@
   "coverage_targets": {
     "critical_mission_objectives": "100%",
     "high_priority_mission_objectives": "90%+ with explicit deferral for independent evaluator calibration",
-    "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; authenticated wholesale remains access-limited",
-    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, and GEN-004 normalization evidence",
+    "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; GEN-006 competitor benchmark completed for public pricing, catalog search, rendered search/autocomplete samples, and browse evidence; authenticated wholesale remains access-limited",
+    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, GEN-004 normalization evidence, and GEN-006 competitor benchmark evidence",
     "finding_traceability": "100% of report findings must trace to evidence, stakeholder-context assumption, or explicit unavailable-data note"
   },
   "external_validators": [
@@ -196,6 +201,13 @@
       "category": "Project-Specific External / Functional Validation",
       "run_policy": "Generation 4 and before external client delivery when search/autocomplete evidence changes",
       "evidence": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json and 60 rendered screenshots across retail search, autocomplete, and public wholesale search."
+    },
+    {
+      "name": "Competitor pricing and discovery benchmark",
+      "status": "executed_generation_6",
+      "category": "Project-Specific External / Functional / Usability Validation",
+      "run_policy": "Generation 6 and before client-facing competitor claims when pricing or competitor assortment evidence changes",
+      "evidence": "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json, competitor-pricing-discovery.md, and rendered screenshots across direct competitor sites."
     }
   ],
   "mde_native_validators": [
@@ -235,6 +247,11 @@
       "category": "Authenticated wholesale assessment",
       "reason": "Public wholesale search and SKU variants were validated, but authorized account, pricing, order, and inventory workflows have not been approved for assessment.",
       "revisit_when": "The user confirms access or supplies approved evidence."
+    },
+    {
+      "category": "Full marketplace competitor benchmarking",
+      "reason": "GEN-006 treats Fanatics as a marketplace benchmark but does not compare it as a direct brand-owned catalog because it does not expose a comparable public product-feed source in this scope.",
+      "revisit_when": "Approved manual/browser evidence or a comparable marketplace data source is selected."
     }
   ],
   "expensive_validations": [

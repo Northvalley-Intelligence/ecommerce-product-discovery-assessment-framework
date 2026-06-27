@@ -1,7 +1,7 @@
 {
   "matrix_id": "COV-001",
   "created_on": "2026-06-24",
-  "generation": "GEN-005",
+  "generation": "GEN-006",
   "mission_coverage": [
     {
       "mission_area": "Search Evaluation",
@@ -13,7 +13,8 @@
         "assessments/boxercraft/public-retail-evaluation.json",
         "assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json",
         "reports/boxercraft-product-discovery-assessment.tex",
-        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json"
+        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json"
       ],
       "bdd_refs": [
         "BDD-001",
@@ -29,7 +30,8 @@
         "assessments/boxercraft/public-retail-evaluation.json",
         "assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json",
         "presentations/boxercraft-product-discovery-brief.tex",
-        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json"
+        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json"
       ],
       "bdd_refs": [
         "BDD-001",
@@ -44,7 +46,8 @@
         "assessments/boxercraft/pilot-protocol.md",
         "assessments/boxercraft/public-retail-evaluation.json",
         "assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json",
-        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json"
+        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json"
       ],
       "bdd_refs": [
         "BDD-001",
@@ -88,7 +91,8 @@
         "assessments/boxercraft/pilot-protocol.md",
         "assessments/boxercraft/public-retail-evaluation.json",
         "assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json",
-        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json"
+        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json"
       ],
       "bdd_refs": [
         "BDD-011"
@@ -105,7 +109,8 @@
         "presentations/boxercraft-product-discovery-brief.tex",
         "boxercraft-product-discovery-assessment.pdf",
         "boxercraft-product-discovery-brief.pdf",
-        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json"
+        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.md"
       ],
       "bdd_refs": [
         "BDD-002",
@@ -123,10 +128,27 @@
         "assessments/boxercraft/public-retail-evaluation.json",
         "assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json",
         "reports/boxercraft-product-discovery-assessment.tex",
-        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json"
+        "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json"
       ],
       "bdd_refs": [
         "BDD-004",
+        "BDD-013"
+      ]
+    },
+    {
+      "mission_area": "Competitor Pricing And Discovery Benchmark",
+      "artifact_refs": [
+        "scripts/evaluate-competitor-pricing-discovery.mjs",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json",
+        "assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.md"
+      ],
+      "bdd_refs": [
+        "BDD-002",
+        "BDD-003",
+        "BDD-004",
+        "BDD-008",
+        "BDD-009",
         "BDD-013"
       ]
     }
@@ -151,6 +173,16 @@
       "bdd_ref": "VAL-DEFER-004-003",
       "reason": "UCLA commercial importance is stakeholder context, not independently verified public proof of client size.",
       "revisit_when": "Before client-facing use of any claim about UCLA commercial importance beyond discovery behavior."
+    },
+    {
+      "bdd_ref": "VAL-DEFER-006-001",
+      "reason": "Concepts Sport public Wix catalog did not expose comparable automated prices or product-grid titles in GEN-006.",
+      "revisit_when": "If Concepts Sport competitor claims are used in client-facing output."
+    },
+    {
+      "bdd_ref": "VAL-DEFER-006-002",
+      "reason": "Fanatics is a marketplace benchmark, not a comparable direct brand-owned catalog source in GEN-006.",
+      "revisit_when": "When approved manual/browser evidence or a marketplace data source is selected."
     }
   ]
 }

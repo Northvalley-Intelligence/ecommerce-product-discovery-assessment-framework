@@ -187,11 +187,11 @@ The framework is successful when:
 
 ## Current Phase
 
-Generation 5: Repository Initialization And GitHub Submission.
+Generation 6: Competitor Pricing And Discovery Benchmark.
 
 ## Current Phase Goal
 
-Initialize this project as a Git repository, submit validated code to GitHub, and keep repository governance enforceable inside this project.
+Benchmark Boxercraft against relevant licensed-apparel competitors using public pricing, catalog, search, autocomplete, and browse evidence while keeping direct-brand sites, marketplace benchmarks, and access-limited surfaces clearly separated.
 
 ## What Matters Most Now
 
@@ -210,9 +210,10 @@ Initialize this project as a Git repository, submit validated code to GitHub, an
 - Authenticated wholesale account, pricing, order, and inventory workflows may change wholesale conclusions if approved access becomes available.
 - Broader recommendation and filter persistence samples may change final client-delivery scoring.
 - UCLA/Bruins commercial importance is stakeholder context unless client-supplied evidence approves stronger public claims.
+- Competitor pricing and assortment evidence can be incomplete when a relevant site does not expose comparable public product feeds or rendered product grids.
 - Report artifacts may fail client-facing quality checks if print/PDF output changes without repeat layout validation.
 - GitHub submission is now active for this project; future meaningful code changes should be committed and pushed to the configured GitHub remote after validation.
 
 ## Next
 
-Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, and confirm any UCLA/Bruins commercial context that should be client-facing.
+Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark in the client-facing report/deck, and confirm any UCLA/Bruins commercial context that should be client-facing.

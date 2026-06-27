@@ -1,20 +1,20 @@
 {
   "state_version": 1,
-  "updated_on": "2026-06-26",
+  "updated_on": "2026-06-27",
   "project_id": "ecommerce-product-discovery-assessment-framework",
-  "current_generation": "GEN-005",
-  "current_phase": "Generation 5 - Repository Initialization And GitHub Submission",
-  "phase_goal": "Initialize this project as a Git repository, submit validated code to GitHub, and record repository governance resolution locally.",
-  "status": "generation_5_validation_gate_passed_and_github_submitted",
+  "current_generation": "GEN-006",
+  "current_phase": "Generation 6 - Competitor Pricing And Discovery Benchmark",
+  "phase_goal": "Benchmark Boxercraft against relevant licensed-apparel competitors using public pricing, catalog, search, autocomplete, and browse evidence while separating direct-brand sites, marketplace benchmarks, and access-limited surfaces.",
+  "status": "generation_6_validation_gate_passed_pending_github_submission",
   "mission_version": "MISSION-2026-06-24",
   "validation_strategy_id": "VALSTRAT-001",
-  "validation_strategy_status": "active_for_generation_5",
+  "validation_strategy_status": "active_for_generation_6",
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "pass",
-    "latest_run_id": "VAL-010",
-    "reason": "The framework validator, JSON checks, npm audit, LaTeX compilation, and repository governance checks passed twice after repository initialization. The project now has a private GitHub remote and main is pushed."
+    "latest_run_id": "VAL-012",
+    "reason": "The framework validator, competitor benchmark evidence checks, npm audit, and repository governance checks passed twice after GEN-006 competitor pricing/discovery evidence was added. GitHub submission is required after commit and push."
   },
   "critical_bdds": 5,
   "high_bdds": 7,
@@ -24,9 +24,10 @@
   "open_clarifications": [
     "Confirm whether Boxercraft wholesale assessment has authenticated access or public-only evidence.",
     "Confirm whether the next client-facing draft should embed selected rendered screenshots inside the report and deck instead of linking to screenshot artifacts.",
-    "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery."
+    "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery.",
+    "Confirm whether the GEN-006 competitor benchmark should be incorporated into the client-facing report and deck."
   ],
-  "next_recommended_action": "Before external client delivery, validate authenticated wholesale workflows if approved access exists, broaden recommendation/filter persistence samples, and confirm any UCLA/Bruins commercial context intended for client-facing use.",
+  "next_recommended_action": "Commit and push GEN-006 after validation, then decide whether to fold the competitor benchmark into the client-facing report/deck or keep it as supporting evidence.",
   "session_router_case": "Case F - Brand-New Non-Client Project",
   "last_prompt_used": "mission-driven-engineering generation workflow plus project repository governance sync"
 }

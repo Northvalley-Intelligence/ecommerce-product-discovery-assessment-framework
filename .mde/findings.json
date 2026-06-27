@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-06-26",
-  "current_generation": "GEN-005",
+  "updated_on": "2026-06-27",
+  "current_generation": "GEN-006",
   "findings": [
     {
       "finding_id": "FND-GEN001-001",
@@ -109,6 +109,54 @@
       "last_seen_generation": "GEN-004",
       "status": "accepted",
       "resolution_notes": "Report/deck language treats UCLA commercial importance as stakeholder context and validates only observed UCLA/Bruins discovery behavior: 7/8 search, 6/8 autocomplete, 8/8 search-to-browse, and 5/8 autocomplete-to-browse in the GEN-004 run."
+    },
+    {
+      "finding_id": "FND-GEN006-001",
+      "source_validator": "scripts/evaluate-competitor-pricing-discovery.mjs",
+      "severity": "Medium",
+      "category": "Assortment And Price Benchmark",
+      "summary": "Boxercraft is the only tested direct-brand site with public flannel-pant catalog matches.",
+      "affected_workflow_or_component": "Boxercraft competitor pricing benchmark",
+      "first_seen_generation": "GEN-006",
+      "last_seen_generation": "GEN-006",
+      "status": "new",
+      "resolution_notes": "GEN-006 public catalog evidence found 37 Boxercraft flannel-pant products priced from $26.85 to $42.85, while L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics had no comparable public flannel-pant matches in the automated run."
+    },
+    {
+      "finding_id": "FND-GEN006-002",
+      "source_validator": "scripts/evaluate-competitor-pricing-discovery.mjs",
+      "severity": "High",
+      "category": "UCLA / Bruins Competitive Visibility",
+      "summary": "Colosseum exposes more UCLA/Bruins public catalog matches than Boxercraft in the tested direct-site feeds.",
+      "affected_workflow_or_component": "UCLA/Bruins public catalog discovery benchmark",
+      "first_seen_generation": "GEN-006",
+      "last_seen_generation": "GEN-006",
+      "status": "new",
+      "resolution_notes": "GEN-006 found 20 Colosseum UCLA/Bruins public catalog matches versus 6 Boxercraft UCLA public catalog matches. This supports a competitive visibility finding, while UCLA commercial importance remains stakeholder context rather than independently verified public proof."
+    },
+    {
+      "finding_id": "FND-GEN006-003",
+      "source_validator": "scripts/evaluate-competitor-pricing-discovery.mjs",
+      "severity": "High",
+      "category": "Search And Autocomplete Parity",
+      "summary": "L2 Brands has a search/autocomplete parity gap in the GEN-006 competitor query set.",
+      "affected_workflow_or_component": "L2 Brands rendered autocomplete and public catalog search benchmark",
+      "first_seen_generation": "GEN-006",
+      "last_seen_generation": "GEN-006",
+      "status": "new",
+      "resolution_notes": "GEN-006 found 3/8 relevant search/catalog matches for the tested queries but 0/8 relevant autocomplete matches. This is useful as a competitive reference point, not a Boxercraft defect."
+    },
+    {
+      "finding_id": "FND-GEN006-004",
+      "source_validator": "scripts/evaluate-competitor-pricing-discovery.mjs",
+      "severity": "Medium",
+      "category": "Comparable Evidence Limitation",
+      "summary": "Concepts Sport and Fanatics need manual or alternate-source validation before client-facing competitor claims.",
+      "affected_workflow_or_component": "Competitor benchmark evidence quality",
+      "first_seen_generation": "GEN-006",
+      "last_seen_generation": "GEN-006",
+      "status": "deferred",
+      "resolution_notes": "Concepts Sport is relevant as a licensed lounge/sleepwear competitor, but the public Wix catalog did not expose comparable automated price/product-grid data. Fanatics is a marketplace benchmark, not a direct brand-owned catalog comparison in this run."
     }
   ],
   "lifecycle_states": [
