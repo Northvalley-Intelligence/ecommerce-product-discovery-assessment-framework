@@ -10,7 +10,7 @@
 
 ## Readiness Assessment
 
-Generation 6 is ready for handoff after the validation commit is pushed. The project is a Git repository on `main`, with `origin` set to `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
+Generation 6 is ready for handoff. The project is a Git repository on `main`, with `origin` set to `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`. The GEN-006 benchmark commit is `e9988ff2ec5791875b013069b98fd560f1c805cb`; verify the latest relocation-handoff commit with `git rev-parse HEAD` after restart.
 
 The Boxercraft package should not be treated as final client delivery until authenticated wholesale workflows are validated if approved access exists, recommendation/filter sampling is broadened, any UCLA/Bruins commercial-priority claim is supported by approved client context, and the team decides whether the GEN-006 competitor benchmark belongs in the client-facing report/deck. Current report/deck language treats UCLA commercial importance as stakeholder context, not independently verified public proof.
 

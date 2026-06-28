@@ -5,7 +5,7 @@
   "current_generation": "GEN-006",
   "current_phase": "Generation 6 - Competitor Pricing And Discovery Benchmark",
   "phase_goal": "Benchmark Boxercraft against relevant licensed-apparel competitors using public pricing, catalog, search, autocomplete, and browse evidence while separating direct-brand sites, marketplace benchmarks, and access-limited surfaces.",
-  "status": "generation_6_validation_gate_passed_pending_github_submission",
+  "status": "generation_6_validation_gate_passed_and_github_submitted",
   "mission_version": "MISSION-2026-06-24",
   "validation_strategy_id": "VALSTRAT-001",
   "validation_strategy_status": "active_for_generation_6",
@@ -14,7 +14,7 @@
     "current_pass_count": 2,
     "latest_result": "pass",
     "latest_run_id": "VAL-012",
-    "reason": "The framework validator, competitor benchmark evidence checks, npm audit, and repository governance checks passed twice after GEN-006 competitor pricing/discovery evidence was added. GitHub submission is required after commit and push."
+    "reason": "The framework validator, competitor benchmark evidence checks, npm audit, and repository governance checks passed twice after GEN-006 competitor pricing/discovery evidence was added. The GEN-006 benchmark commit e9988ff2ec5791875b013069b98fd560f1c805cb was pushed to origin/main; verify the latest relocation-handoff commit with git after restart."
   },
   "critical_bdds": 5,
   "high_bdds": 7,
@@ -27,7 +27,7 @@
     "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery.",
     "Confirm whether the GEN-006 competitor benchmark should be incorporated into the client-facing report and deck."
   ],
-  "next_recommended_action": "Commit and push GEN-006 after validation, then decide whether to fold the competitor benchmark into the client-facing report/deck or keep it as supporting evidence.",
+  "next_recommended_action": "After relocating the repo out of iCloud Drive, verify the working tree in the new path, then decide whether to fold the GEN-006 competitor benchmark into the client-facing report/deck or keep it as supporting evidence.",
   "session_router_case": "Case F - Brand-New Non-Client Project",
   "last_prompt_used": "mission-driven-engineering generation workflow plus project repository governance sync"
 }

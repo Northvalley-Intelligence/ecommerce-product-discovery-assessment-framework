@@ -38,8 +38,8 @@ Noisy / Low-Signal Validators:
 Repository Governance:
 - Current branch: `main`, tracking `origin/main`.
 - GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
-- GitHub submission: required after the GEN-006 validation commit and push.
+- GitHub submission: GEN-006 benchmark commit `e9988ff2ec5791875b013069b98fd560f1c805cb` is on `origin/main`; verify the latest relocation-handoff commit with `git rev-parse HEAD` after restart.
 - Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
 
 Recommendation:
-- Commit and push GEN-006, then decide whether the competitor benchmark should be incorporated into the client-facing report/deck or remain supporting evidence.
+- After relocating the repo out of iCloud Drive, verify the working tree in the new path, then decide whether the competitor benchmark should be incorporated into the client-facing report/deck or remain supporting evidence.

@@ -8,7 +8,7 @@
   "record_status": "recorded_from_competitor_pricing_and_discovery_benchmark",
   "focus": "Identify relevant Boxercraft competitors, compare public direct-site price ranges for common apparel categories, and run comparable public search/autocomplete/browse checks where automation can collect evidence.",
   "reason_generation_started": "User asked to find Boxercraft competitors, compare price ranges for common items such as flannel pants, and run similar search/autocomplete/browse tests on competitor sites.",
-  "reason_generation_ended": "GEN-006 competitor pricing/discovery JSON and markdown evidence, 70 rendered screenshots, a reusable competitor evaluator, framework validation checks, MDE records, and two Validation Gate records are present. GitHub submission is required after commit and push.",
+  "reason_generation_ended": "GEN-006 competitor pricing/discovery JSON and markdown evidence, 70 rendered screenshots, a reusable competitor evaluator, framework validation checks, MDE records, two Validation Gate records, and GitHub submission for benchmark commit e9988ff2ec5791875b013069b98fd560f1c805cb are present. A later relocation-handoff commit may exist after this record.",
   "files_changed": [
     "scripts/evaluate-competitor-pricing-discovery.mjs",
     "scripts/validate-framework.mjs",
@@ -108,7 +108,7 @@
       "tool": "repository governance review",
       "category": "Repository Governance Validation",
       "executed": true,
-      "result": "pass_pending_post_validation_push",
+      "result": "pass",
       "findings": {
         "critical": 0,
         "high": 0,
@@ -155,7 +155,8 @@
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
     "submitted_branch": "main",
-    "submitted_commit_sha": "reported_in_final_handoff_after_push",
+    "submitted_commit_sha": "e9988ff2ec5791875b013069b98fd560f1c805cb",
+    "submitted_commit_note": "GEN-006 benchmark commit; verify latest relocation-handoff commit with git after restart.",
     "production_deployed": false,
     "production_parity_status": "not_applicable_no_deploy_target",
     "sibling_repos_modified": false
@@ -168,5 +169,5 @@
     "Fanatics is recorded as a marketplace benchmark and not compared as a direct brand-owned catalog source in this automated scope.",
     "UCLA/Bruins commercial importance remains stakeholder context; GEN-006 compares only observed public catalog visibility."
   ],
-  "next_recommended_action": "Commit and push GEN-006, then decide whether to incorporate the competitor benchmark into the client-facing report/deck."
+  "next_recommended_action": "After relocating the repo out of iCloud Drive, verify the working tree in the new path, then decide whether to incorporate the competitor benchmark into the client-facing report/deck."
 }
