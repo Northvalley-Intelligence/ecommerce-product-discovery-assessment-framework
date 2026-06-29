@@ -62,3 +62,8 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: User asked to combine the ecommerce discovery assessment with a clipboard website benchmark to answer why nearby school PTA members may not use Boxercraft for school T-shirts.
 - Discovered through: User-provided clipboard website benchmark, GEN-004 search/autocomplete evidence, GEN-006 competitor evidence, GEN-007 browse-node parity evidence, local school browse-node extraction, PDF text extraction, and rendered PDF page checks.
 - Impact: The new two-page Northvalley report frames the opportunity around local-school buyer pain points: no observed elementary-school browse category, Lambert-only school-specific browse signals, school labels returning 0 search/autocomplete products, weak local visibility/trust/message clarity, and stronger existing mobile/lead-conversion signals.
+
+- Mission update: Revised the local-school PTA report into a problem-only diagnosis.
+- Reason: User clarified that the report should not make proposals or show scores, and should instead focus on site problems and how they contribute to the PTA buyer problem.
+- Discovered through: User feedback, report source review, PDF text extraction, disallowed score/proposal text scan, and rendered PDF page checks.
+- Impact: The two-page report now starts with the school T-shirt need that brought the evaluator to the site, then shows how the missing elementary-school path led into broader search, autocomplete, browse, and local-trust problems.

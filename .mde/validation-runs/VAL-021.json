@@ -1,0 +1,66 @@
+{
+  "validation_run_id": "VAL-021",
+  "generation": "GEN-009",
+  "phase": "Generation 9 - Problem-Only Local School PTA Report Revision",
+  "started_at": "2026-06-29T16:25:00-0400",
+  "completed_at": "2026-06-29T16:30:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_from_problem_only_report_revision",
+  "command": "First Validation Gate pass after revising the local school PTA report to remove visible scores/proposals and focus only on site problems",
+  "validations_executed": [
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk",
+      "result": "pass",
+      "evidence": "The revised problem-only local school PTA report compiled to a two-page PDF."
+    },
+    {
+      "category": "UI Standards / Content Integrity Validation",
+      "tool": "pdftotext / pdfinfo / pdftoppm / rendered page review",
+      "result": "pass",
+      "evidence": "Extracted PDF text includes the trigger framing, problem chain, working-but-not-solving context, buyer interpretation, and diagnosis; pdfinfo reports 2 pages; rendered pages were readable."
+    },
+    {
+      "category": "Usability / Content Integrity Validation",
+      "tool": "disallowed score/proposal text scan",
+      "result": "pass",
+      "evidence": "Report source and extracted PDF text contain no visible score strings, proposal framing, recommendation section, roadmap section, or positioning line."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator requires problem-only report text and rejects visible score/proposal text."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "tool": "git status and remote review",
+      "result": "pass_pending_post_validation_push",
+      "evidence": "main tracks origin/main; GEN-009 changes must be committed and pushed after two clean Validation Gate passes."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "External Site Recrawl",
+      "reason": "GEN-009 changes report framing only and reuses existing GEN-004/GEN-007 evidence.",
+      "revisit_when": "Public collection membership, search indexing, autocomplete suggestions, or evidence claims change."
+    },
+    {
+      "category": "Security Validation",
+      "reason": "No dependencies, secrets, backend code, authentication, storage, or deployment configuration changed.",
+      "revisit_when": "Dependencies, backend code, authentication, storage, secrets, or deployment configuration change."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "problem_only_report_revision": "visible_pdf_excludes_scores_proposals_recommendations_roadmap_and_focuses_on_site_problem_contribution",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "strong_for_visible_problem_only_report_revision",
+  "reason": "First clean validation pass completed after revising report source/PDF and validator requirements."
+}

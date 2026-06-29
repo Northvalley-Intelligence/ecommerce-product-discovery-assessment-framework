@@ -129,3 +129,38 @@ Repository Governance:
 
 Recommendation:
 - Review the opened GEN-008 PDF and decide whether to adapt the same local-school PTA storyline into a presentation slide.
+
+## Generation 9 - Problem-Only Local School PTA Report Revision
+
+Goal:
+- Revise the local school PTA report so the visible PDF contains no scores, no proposal language, no roadmap, and no recommendation section, focusing only on the site problems and how those problems contribute to the nearby PTA buyer not choosing Boxercraft.
+
+What changed:
+- Rewrote `reports/boxercraft-local-school-pta-opportunity-report.tex` around the review trigger, site problem chain, observed search/browse issues, and likely buyer interpretation.
+- Regenerated `boxercraft-local-school-pta-opportunity-report.pdf`.
+- Updated `scripts/validate-framework.mjs` to require the problem-only framing and reject visible score/proposal text in the local-school report.
+- Updated MDE records for the report-framing revision.
+
+Validation Result:
+- Gate: pass
+- Blocking findings: none
+- Pass count: 2/2 (`VAL-021`, `VAL-022`)
+
+Useful Signals:
+- The report now says the school T-shirt need is what brought the evaluator to Boxercraft, and that the missing elementary-school path led to follow-up search, autocomplete, and browse checks.
+- Visible report text no longer includes scorecards, numeric benchmark scores, proposed actions, roadmap sections, or positioning copy.
+- The report keeps what works only as context: broad catalog, search/autocomplete controls, mobile/contact paths, and some school pages exist, but they do not solve the PTA buyer problem.
+- The diagnosis now centers on the site not carrying school intent consistently across navigation, browse, search, autocomplete, and trust-building content.
+
+Noisy / Low-Signal Validators:
+- The score/proposal exclusion scan is text-based and validates report copy, not the underlying structured evidence file, which still preserves the original benchmark scores for traceability.
+- Visual review remains a spot check of rendered pages, not automated PDF geometry analysis.
+
+Repository Governance:
+- Current branch: `main`, tracking `origin/main`.
+- GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
+- GitHub submission: pending post-validation commit and push for GEN-009.
+- Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
+
+Recommendation:
+- Commit and push the GEN-009 problem-only report revision, then open the revised PDF for review.

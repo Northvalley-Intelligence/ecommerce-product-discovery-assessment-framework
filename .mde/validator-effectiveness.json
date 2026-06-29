@@ -1,12 +1,12 @@
 {
   "updated_on": "2026-06-29",
-  "current_generation": "GEN-008",
+  "current_generation": "GEN-009",
   "validators": [
     {
       "validator": "scripts/validate-framework.mjs",
       "category": "Functional / Technical / Mission Coverage / Repository Governance",
-      "total_runs": 22,
-      "total_findings": 13,
+      "total_runs": 25,
+      "total_findings": 14,
       "critical_findings_found": 0,
       "high_findings_found": 8,
       "findings_accepted_as_valid": 13,
@@ -14,9 +14,9 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-008",
+      "last_useful_finding_generation": "GEN-009",
       "recommendation": "keep",
-      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction, twice after the competitor benchmark report update, twice after the GEN-007 browse-node parity report update, and twice after the GEN-008 local school PTA brief. It now requires the GEN-008 evidence summary, report source, PDF artifact, and validation records."
+      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction, twice after the competitor benchmark report update, twice after the GEN-007 browse-node parity report update, twice after the GEN-008 local school PTA brief, and twice after the GEN-009 problem-only report revision. It now rejects visible score/proposal text in the local school PTA report."
     },
     {
       "validator": "scripts/validate-boxercraft-browser.mjs",
@@ -53,7 +53,7 @@
     {
       "validator": "latexmk",
       "category": "Technical / UI Standards Validation",
-      "total_runs": 13,
+      "total_runs": 15,
       "total_findings": 1,
       "critical_findings_found": 0,
       "high_findings_found": 0,
@@ -62,15 +62,15 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_when_targets_up_to_date",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-008",
+      "last_useful_finding_generation": "GEN-009",
       "recommendation": "keep",
-      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction and competitor benchmark report update both regenerated the assessment PDF successfully. Generation 8 compiled the two-page local school PTA opportunity brief successfully."
+      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction and competitor benchmark report update both regenerated the assessment PDF successfully. Generation 8 compiled the two-page local school PTA opportunity brief successfully. Generation 9 recompiled the problem-only revision successfully."
     },
     {
       "validator": "pdftotext / pdftoppm / visual spot check",
       "category": "Usability / UI Standards Validation",
-      "total_runs": 13,
-      "total_findings": 3,
+      "total_runs": 15,
+      "total_findings": 4,
       "critical_findings_found": 0,
       "high_findings_found": 0,
       "findings_accepted_as_valid": 3,
@@ -78,9 +78,9 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_for_text_extraction_and_page_rendering",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-008",
+      "last_useful_finding_generation": "GEN-009",
       "recommendation": "keep",
-      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly. The competitor benchmark report update verified the new comparison text and rendered the competitor/final pages cleanly. Generation 8 verified the local school PTA report text, two-page count, and rendered page layout."
+      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly. The competitor benchmark report update verified the new comparison text and rendered the competitor/final pages cleanly. Generation 8 verified the local school PTA report text, two-page count, and rendered page layout. Generation 9 verified the score/proposal text was removed and both rendered pages remained readable."
     },
     {
       "validator": "scripts/evaluate-boxercraft-normalization.mjs",
@@ -131,5 +131,5 @@
       "notes": "Generated all-node browse/search/autocomplete parity evidence across public Boxercraft collections. An early run exposed methodology cleanup needs for merchandising-node classification and broad handle queries; a later run exposed 429 rate-limit handling needs. The final rate-limit-aware run completed with 96 collections discovered, 93 non-empty nodes evaluated, and no warnings or node errors."
     }
   ],
-  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 6 added the competitor pricing and discovery benchmark evaluator. Generation 7 added the all-node browse/search/autocomplete parity evaluator. Generation 8 added the local school PTA executive report validation checks."
+  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 6 added the competitor pricing and discovery benchmark evaluator. Generation 7 added the all-node browse/search/autocomplete parity evaluator. Generation 8 added the local school PTA executive report validation checks. Generation 9 added problem-only report framing and score/proposal exclusion checks."
 }

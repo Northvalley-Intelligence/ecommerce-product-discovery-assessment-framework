@@ -1,6 +1,6 @@
 {
   "strategy_id": "VALSTRAT-001",
-  "strategy_status": "active_for_generation_8",
+  "strategy_status": "active_for_generation_9",
   "created_on": "2026-06-24",
   "updated_on": "2026-06-29",
   "project_type": "consulting assessment framework and report generation system for ecommerce product discovery and information retrieval evaluation",
@@ -13,7 +13,7 @@
     "prompt_generation",
     "pdf_generation"
   ],
-  "mission_phase": "Generation 8 - Local School PTA Opportunity Executive Brief",
+  "mission_phase": "Generation 9 - Problem-Only Local School PTA Report Revision",
   "mission_critical_workflows": [
     {
       "workflow": "Create reusable assessment rubric",
@@ -128,6 +128,7 @@
         "competitor benchmark summary review",
         "browse-node parity summary review",
         "local school PTA report readability review",
+        "visible score/proposal exclusion check",
         "pdftotext heading checks"
       ],
       "reason": "Business leaders must be able to understand the assessment without technical search implementation knowledge."
@@ -180,7 +181,7 @@
     "critical_mission_objectives": "100%",
     "high_priority_mission_objectives": "90%+ with explicit deferral for independent evaluator calibration",
     "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; GEN-006 competitor benchmark completed for public pricing, catalog search, rendered search/autocomplete samples, and browse evidence; GEN-007 all-node browse/search/autocomplete parity completed for public collection nodes; GEN-008 local school PTA brief completed from ecommerce evidence plus user-provided website benchmark; authenticated wholesale remains access-limited",
-    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, GEN-004 normalization evidence, GEN-006 competitor benchmark evidence, GEN-007 browse-node parity evidence, and GEN-008 local school PTA opportunity PDF/evidence summary",
+    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, GEN-004 normalization evidence, GEN-006 competitor benchmark evidence, GEN-007 browse-node parity evidence, GEN-008 local school PTA opportunity PDF/evidence summary, and GEN-009 problem-only local school PTA report revision",
     "finding_traceability": "100% of report findings must trace to evidence, stakeholder-context assumption, or explicit unavailable-data note"
   },
   "external_validators": [
@@ -235,10 +236,10 @@
     },
     {
       "name": "Local school PTA opportunity executive brief",
-      "status": "executed_generation_8",
+      "status": "executed_generation_9_problem_only_revision",
       "category": "Functional / Usability / UI Standards Validation",
-      "run_policy": "Generation 8 and before external use of local-school buyer claims when website benchmark, local-service details, school examples, or discovery evidence changes",
-      "evidence": "assessments/boxercraft/local-school-opportunity/GEN-008/evidence-summary.json, reports/boxercraft-local-school-pta-opportunity-report.tex, latexmk, pdftotext, pdfinfo, pdftoppm, and rendered page spot checks."
+      "run_policy": "Generation 9 and before external use of local-school buyer claims when report framing, website benchmark, local-service details, school examples, or discovery evidence changes",
+      "evidence": "reports/boxercraft-local-school-pta-opportunity-report.tex, boxercraft-local-school-pta-opportunity-report.pdf, latexmk, pdftotext, pdfinfo, pdftoppm, rendered page spot checks, and disallowed visible score/proposal text scan."
     }
   ],
   "mde_native_validators": [

@@ -2,19 +2,19 @@
   "state_version": 1,
   "updated_on": "2026-06-29",
   "project_id": "ecommerce-product-discovery-assessment-framework",
-  "current_generation": "GEN-008",
-  "current_phase": "Generation 8 - Local School PTA Opportunity Executive Brief",
-  "phase_goal": "Combine Boxercraft ecommerce discovery evidence with local website benchmark evidence into a concise executive brief explaining why nearby school PTA buyers may not choose Boxercraft for school T-shirts.",
-  "status": "generation_8_local_school_pta_brief_validation_gate_passed",
+  "current_generation": "GEN-009",
+  "current_phase": "Generation 9 - Problem-Only Local School PTA Report Revision",
+  "phase_goal": "Revise the local-school PTA report so it avoids visible scores, proposals, recommendations, and roadmap language, and focuses only on site problems and how those problems contribute to nearby PTA buyers not choosing Boxercraft.",
+  "status": "generation_9_problem_only_report_revision_validation_gate_passed",
   "mission_version": "MISSION-2026-06-24",
   "validation_strategy_id": "VALSTRAT-001",
-  "validation_strategy_status": "active_for_generation_8",
+  "validation_strategy_status": "active_for_generation_9",
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "pass",
-    "latest_run_id": "VAL-020",
-    "reason": "GEN-008 created a focused two-page Northvalley executive brief, traceable evidence summary, PDF text/render validation evidence, and framework validator requirements; the report passed the validation gate twice."
+    "latest_run_id": "VAL-022",
+    "reason": "GEN-009 revised the local school PTA report into a problem-only diagnosis, removed visible scores/proposal/roadmap/recommendation language, regenerated the PDF, added validator exclusions, and passed the validation gate twice."
   },
   "critical_bdds": 5,
   "high_bdds": 7,
@@ -27,7 +27,7 @@
     "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery.",
     "Confirm actual local service radius, approved school examples, turnaround, minimum-order, and fulfillment details before external use of the local-school PTA brief."
   ],
-  "next_recommended_action": "Review the opened GEN-008 PDF and decide whether to adapt the same local-school PTA storyline into a presentation slide.",
+  "next_recommended_action": "Open and review the revised problem-only local-school PTA PDF; if accepted, use this version for executive discussion instead of the earlier score/proposal-oriented version.",
   "session_router_case": "Case F - Brand-New Non-Client Project",
-  "last_prompt_used": "mission-driven-engineering generation workflow plus Northvalley PDF report validation"
+  "last_prompt_used": "problem-only local school PTA report revision with Northvalley PDF validation"
 }

@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-29",
-  "current_generation": "GEN-008",
+  "current_generation": "GEN-009",
   "findings": [
     {
       "finding_id": "FND-GEN001-001",
@@ -253,6 +253,18 @@
       "last_seen_generation": "GEN-008",
       "status": "accepted",
       "resolution_notes": "GEN-008 report explicitly labels the clipboard benchmark as partial, medium confidence and records that the 20-mile PTA context is stakeholder-provided. Verify service radius, school examples, turnaround, minimum-order, and fulfillment details before external use."
+    },
+    {
+      "finding_id": "FND-GEN009-001",
+      "source_validator": "User feedback and PDF text review",
+      "severity": "Medium",
+      "category": "Client-Facing Report Framing",
+      "summary": "The local school PTA report overemphasized scores and proposed actions instead of focusing only on site problems and their contribution to buyer loss.",
+      "affected_workflow_or_component": "Boxercraft local school PTA opportunity PDF",
+      "first_seen_generation": "GEN-009",
+      "last_seen_generation": "GEN-009",
+      "status": "resolved",
+      "resolution_notes": "Revised the two-page report into a problem-only diagnosis, removed visible scores, proposal language, roadmap/recommendation sections, and positioning copy, then added validator checks to prevent those elements from returning."
     }
   ],
   "lifecycle_states": [

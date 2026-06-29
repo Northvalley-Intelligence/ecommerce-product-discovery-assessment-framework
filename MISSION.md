@@ -187,11 +187,11 @@ The framework is successful when:
 
 ## Current Phase
 
-Generation 8: Local School PTA Opportunity Executive Brief.
+Generation 9: Problem-Only Local School PTA Report Revision.
 
 ## Current Phase Goal
 
-Combine Boxercraft ecommerce discovery evidence with local website benchmark evidence into a concise executive brief explaining why nearby school PTA buyers may not choose Boxercraft for school T-shirts.
+Revise the local-school PTA report so it avoids visible scores, proposals, recommendations, and roadmap language, and focuses only on the site problems and how those problems contribute to nearby PTA buyers not choosing Boxercraft.
 
 ## What Matters Most Now
 

@@ -139,6 +139,7 @@ const requiredFiles = [
   '.mde/generations/GEN-006.json',
   '.mde/generations/GEN-007.json',
   '.mde/generations/GEN-008.json',
+  '.mde/generations/GEN-009.json',
   '.mde/validation-runs/VAL-005.json',
   '.mde/validation-runs/VAL-006.json',
   '.mde/validation-runs/VAL-007.json',
@@ -150,7 +151,9 @@ const requiredFiles = [
   '.mde/validation-runs/VAL-017.json',
   '.mde/validation-runs/VAL-018.json',
   '.mde/validation-runs/VAL-019.json',
-  '.mde/validation-runs/VAL-020.json'
+  '.mde/validation-runs/VAL-020.json',
+  '.mde/validation-runs/VAL-021.json',
+  '.mde/validation-runs/VAL-022.json'
 ];
 
 for (const file of requiredFiles) {
@@ -301,20 +304,39 @@ textIncludesAll(boxercraftDeck, [
 const localSchoolReport = readText('reports/boxercraft-local-school-pta-opportunity-report.tex');
 textIncludesAll(localSchoolReport, [
   'Why Nearby School Buyers May Not Choose Boxercraft',
-  'Local School Opportunity Brief',
-  'A PTA can be close to Boxercraft and still not choose Boxercraft',
+  'Local School Buyer Diagnosis',
+  'A nearby school T-shirt need brought the evaluator to Boxercraft',
+  'That was not the conclusion; it was the entry point',
+  'Follow-up checks in search, autocomplete, and browse',
   'elementary-school browse category',
   'Lambert-related',
-  '0 search and 0 autocomplete products',
-  'Lead Conversion}{100/100',
-  'Mobile Experience}{100/100',
-  'Message Clarity}{0/100',
-  'Local Visibility 20/100',
-  'only 5/60',
-  'Priority Moves',
-  'Local school spiritwear, made easy',
+  'did not return matching products through search or autocomplete',
+  'Problem Chain',
+  'What Is Working But Not Solving This',
+  'Problems Found After The Initial Hook',
+  'Likely Buyer Interpretation',
+  'The site does not fail because a single page is missing',
   'Clipboard benchmark was partial, medium confidence'
 ], 'local school PTA opportunity report source');
+for (const disallowedText of [
+  '100/100',
+  '75/100',
+  '67/100',
+  '58/100',
+  '48/100',
+  '42/100',
+  '25/100',
+  '20/100',
+  '14/100',
+  '5/60',
+  'Priority Moves',
+  '90-Day Roadmap',
+  'Positioning To Test',
+  'Recommended Executive Actions',
+  'Local school spiritwear, made easy'
+]) {
+  assert(!localSchoolReport.includes(disallowedText), `local school PTA report must omit score/proposal text: ${disallowedText}`);
+}
 
 const browserValidation = readJson('assessments/boxercraft/browser-evidence/GEN-003/browser-validation.json');
 assert(browserValidation.generation_id === 'GEN-003', 'browser validation must be recorded for GEN-003');
@@ -492,6 +514,11 @@ assert(gen8Evidence.validation_gate?.result === 'pass', 'GEN-008 evidence must r
 assert(gen8Evidence.validation_gate?.pass_count === '2/2', 'GEN-008 evidence must record two Validation Gate passes');
 assert(gen8Evidence.repository_governance?.github_remote_present === true, 'GEN-008 evidence must record GitHub remote');
 assert(gen8Evidence.evidence_quality_notes?.some((note) => note.includes('20-mile PTA context is stakeholder-provided')), 'GEN-008 evidence must preserve stakeholder-context limitation');
+const gen9Evidence = readJson('.mde/generations/GEN-009.json');
+assert(gen9Evidence.validation_gate?.result === 'pass', 'GEN-009 evidence must record passing Validation Gate');
+assert(gen9Evidence.validation_gate?.pass_count === '2/2', 'GEN-009 evidence must record two Validation Gate passes');
+assert(gen9Evidence.repository_governance?.github_remote_present === true, 'GEN-009 evidence must record GitHub remote');
+assert(gen9Evidence.evidence_quality_notes?.some((note) => note.includes('problem-only diagnosis')), 'GEN-009 evidence must preserve problem-only report revision note');
 const val11 = readJson('.mde/validation-runs/VAL-011.json');
 const val12 = readJson('.mde/validation-runs/VAL-012.json');
 assert(val11.gate_result === 'pass' && val11.pass_count_after_run === '1/2', 'VAL-011 must record first GEN-006 Validation Gate pass');
@@ -504,6 +531,10 @@ const val19 = readJson('.mde/validation-runs/VAL-019.json');
 const val20 = readJson('.mde/validation-runs/VAL-020.json');
 assert(val19.gate_result === 'pass' && val19.pass_count_after_run === '1/2', 'VAL-019 must record first GEN-008 Validation Gate pass');
 assert(val20.gate_result === 'pass' && val20.pass_count_after_run === '2/2', 'VAL-020 must record second GEN-008 Validation Gate pass');
+const val21 = readJson('.mde/validation-runs/VAL-021.json');
+const val22 = readJson('.mde/validation-runs/VAL-022.json');
+assert(val21.gate_result === 'pass' && val21.pass_count_after_run === '1/2', 'VAL-021 must record first GEN-009 Validation Gate pass');
+assert(val22.gate_result === 'pass' && val22.pass_count_after_run === '2/2', 'VAL-022 must record second GEN-009 Validation Gate pass');
 
 const coverage = readJson('framework/coverage-matrix.json');
 const coveredBdds = new Set((coverage.mission_coverage || []).flatMap((item) => item.bdd_refs || []));
