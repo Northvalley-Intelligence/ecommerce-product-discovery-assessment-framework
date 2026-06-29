@@ -84,7 +84,7 @@
       "VAL-021",
       "VAL-022"
     ],
-    "latest_generation_9_problem_only_report_commit_sha": "pending_post_validation_commit",
+    "latest_generation_9_problem_only_report_commit_sha": "4be6b458e7e224402f44dad86eb6c933277c7014",
     "submission_required_after_meaningful_code_changes": true,
     "submission_blocker": null,
     "sibling_repos_modified": false

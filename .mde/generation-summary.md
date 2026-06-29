@@ -159,8 +159,8 @@ Noisy / Low-Signal Validators:
 Repository Governance:
 - Current branch: `main`, tracking `origin/main`.
 - GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
-- GitHub submission: pending post-validation commit and push for GEN-009.
+- GitHub submission: GEN-009 problem-only report revision pushed in commit `4be6b458e7e224402f44dad86eb6c933277c7014`.
 - Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
 
 Recommendation:
-- Commit and push the GEN-009 problem-only report revision, then open the revised PDF for review.
+- Open the revised problem-only PDF for review.

@@ -27,7 +27,7 @@
     "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery.",
     "Confirm actual local service radius, approved school examples, turnaround, minimum-order, and fulfillment details before external use of the local-school PTA brief."
   ],
-  "next_recommended_action": "Open and review the revised problem-only local-school PTA PDF; if accepted, use this version for executive discussion instead of the earlier score/proposal-oriented version.",
+  "next_recommended_action": "Open and review the revised problem-only local-school PTA PDF; use this version for executive discussion instead of the earlier score/proposal-oriented version.",
   "session_router_case": "Case F - Brand-New Non-Client Project",
   "last_prompt_used": "problem-only local school PTA report revision with Northvalley PDF validation"
 }

@@ -149,7 +149,7 @@
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
     "submitted_branch": "main",
-    "submitted_commit_sha": "pending_post_validation_commit",
+    "submitted_commit_sha": "4be6b458e7e224402f44dad86eb6c933277c7014",
     "production_deployed": false,
     "production_parity_status": "not_applicable_no_deploy_target",
     "sibling_repos_modified": false
@@ -161,5 +161,5 @@
     "20-mile PTA context is stakeholder-provided and should be verified before external use.",
     "No authenticated wholesale, order, pricing, inventory, local-service-radius, minimum-order, turnaround, or fulfillment workflows were validated in GEN-009."
   ],
-  "next_recommended_action": "Commit and push the GEN-009 problem-only report revision, then open the revised PDF for review."
+  "next_recommended_action": "Open the revised problem-only PDF for review."
 }
