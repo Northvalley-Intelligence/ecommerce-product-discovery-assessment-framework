@@ -45,3 +45,10 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: User asked to identify Boxercraft competitors, compare public price ranges for common items such as flannel pants, and run similar search/autocomplete/browse checks on competitor sites.
 - Discovered through: Public Shopify catalog feeds for Boxercraft, L2 Brands, and Colosseum Athletics; rendered browser samples for search, autocomplete, and browse; Concepts Sport public Wix catalog checks; Fanatics marketplace-scope limitation review; and GEN-006 screenshot evidence.
 - Impact: The project now has a reusable competitor benchmark harness and evidence package. Boxercraft is the only tested direct-brand site with public flannel-pant catalog matches, Colosseum exposes more UCLA/Bruins catalog matches than Boxercraft in the public direct-site feeds, and L2/Colosseum provide useful quarter-zip and fleece price comparables. Concepts Sport and Fanatics remain limited benchmarks for this automated public-evidence pass.
+
+## 2026-06-29
+
+- Mission update: Incorporated the GEN-006 competitor discovery benchmark into the client-facing Boxercraft assessment report.
+- Reason: User clarified that the report should answer how Boxercraft search, autocomplete, and browse compare against competitors, not merely list competitors.
+- Discovered through: Existing GEN-006 competitor benchmark evidence for Boxercraft, L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics; report PDF text extraction; and rendered PDF page checks.
+- Impact: The assessment PDF now includes a Competitor Benchmark page showing Boxercraft leads the tested public direct-brand discovery benchmark overall, while Colosseum pressures UCLA/Bruins public catalog visibility and Boxercraft autocomplete still trails its own search recovery.

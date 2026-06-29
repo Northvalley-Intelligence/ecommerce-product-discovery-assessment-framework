@@ -1,5 +1,5 @@
 {
-  "updated_on": "2026-06-28",
+  "updated_on": "2026-06-29",
   "current_generation": "GEN-006",
   "findings": [
     {
@@ -169,6 +169,18 @@
       "last_seen_generation": "GEN-006",
       "status": "resolved",
       "resolution_notes": "Corrected reports/boxercraft-product-discovery-assessment.tex, regenerated boxercraft-product-discovery-assessment.pdf, verified extracted PDF text contains the completed GitHub status, and rendered page 6 without visible layout issues in VAL-013 and VAL-014."
+    },
+    {
+      "finding_id": "FND-REPORT-COMP-001",
+      "source_validator": "Report content review",
+      "severity": "High",
+      "category": "Mission Coverage / Client-Facing Report Validation",
+      "summary": "Client-facing report did not yet answer how Boxercraft search, autocomplete, and browse compare against competitors.",
+      "affected_workflow_or_component": "Boxercraft product discovery assessment PDF",
+      "first_seen_generation": "GEN-006",
+      "last_seen_generation": "GEN-006",
+      "status": "resolved",
+      "resolution_notes": "Added a dedicated Competitor Benchmark page to the report using existing GEN-006 evidence. The page compares Boxercraft, L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics across relevant search, autocomplete, browse evidence, weighted score/readout, and explicit evidence limits. Regenerated the PDF and validated text/layout in VAL-015 and VAL-016."
     }
   ],
   "lifecycle_states": [

@@ -48,7 +48,7 @@
     "highPriorityMissionCoverage": "90%+"
   },
   "repositoryGovernance": {
-    "updated_on": "2026-06-28",
+    "updated_on": "2026-06-29",
     "git_status_command": "git status --short --branch",
     "git_repository_present": true,
     "current_branch": "main",
@@ -58,13 +58,17 @@
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
     "last_submission_check_after_generation": "GEN-006",
-    "last_submission_check_after_validation_run": "VAL-014",
+    "last_submission_check_after_validation_run": "VAL-016",
     "submitted_branch": "main",
     "initial_submitted_commit_sha": "3e62879cea8a548f5ed13c00c2e696589e90d1a8",
     "latest_generation_6_benchmark_commit_sha": "e9988ff2ec5791875b013069b98fd560f1c805cb",
     "latest_report_status_correction_validation_runs": [
       "VAL-013",
       "VAL-014"
+    ],
+    "latest_competitor_report_update_validation_runs": [
+      "VAL-015",
+      "VAL-016"
     ],
     "submission_required_after_meaningful_code_changes": true,
     "submission_blocker": null,

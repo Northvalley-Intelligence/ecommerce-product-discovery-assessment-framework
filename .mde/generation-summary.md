@@ -7,9 +7,15 @@ Post-handoff report status correction:
 - Updated the client-facing report source and regenerated `boxercraft-product-discovery-assessment.pdf` to remove stale copy saying GitHub submission was blocked.
 - The report now states that GitHub submission is complete and `main` tracks `origin/main`.
 
+Competitor benchmark report update:
+- Added a dedicated Competitor Benchmark page to `boxercraft-product-discovery-assessment.pdf`.
+- The report now compares Boxercraft against L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics across search, autocomplete, browse evidence, and benchmark readout.
+- The report states that Boxercraft leads the tested public direct-brand discovery benchmark overall, while Colosseum pressures UCLA/Bruins public catalog visibility and Boxercraft autocomplete still trails its own search recovery.
+- `scripts/validate-framework.mjs` now requires the competitor benchmark report text so future report regressions are caught.
+
 Codebase Change:
 - Files changed: competitor evaluator, framework validator, package script, GEN-006 evidence, and project-local MDE status records
-- Production/report files: 0 report/deck changes
+- Production/report files: assessment report source/PDF updated after GEN-006 to include competitor benchmark comparison
 - Test/validator files: 2
 - Config/state/docs files: MDE state, strategy, findings, generation summary, validation runs, progress/task/risk/coverage, and release-check records
 - LOC added: measured at commit time
@@ -19,7 +25,7 @@ Codebase Change:
 Validation Result:
 - Gate: pass
 - Blocking findings: none
-- Pass count: 2/2 after report-status correction (`VAL-013`, `VAL-014`)
+- Pass count: 2/2 after competitor benchmark report update (`VAL-015`, `VAL-016`)
 
 Validator Findings:
 - Functional: pass; `scripts/evaluate-competitor-pricing-discovery.mjs` generated GEN-006 competitor pricing/search/autocomplete/browse evidence
@@ -27,6 +33,7 @@ Validator Findings:
 - Usability: adequate for supporting evidence; generated markdown summary is readable but not yet folded into the client-facing report/deck
 - UI Standards: not materially changed by the original GEN-006 competitor benchmark; the later report-status correction regenerated the assessment PDF only
 - UI Standards status correction: pass; regenerated report PDF text was checked with `pdftotext`, and page 6 was rendered with `pdftoppm` for layout review
+- Competitor report update: pass; report PDF now includes a 7-page version with a competitor comparison page, verified by `pdftotext`, `pdftoppm`, `pdfinfo`, and `npm run validate`
 - External: public catalog feeds captured Boxercraft, L2 Brands, and Colosseum Athletics; Concepts Sport and Fanatics remain limited or non-comparable in this automated pass
 
 Useful Signals:
@@ -47,4 +54,4 @@ Repository Governance:
 - Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
 
 Recommendation:
-- After relocating the repo out of iCloud Drive, verify the working tree in the new path, then decide whether the competitor benchmark should be incorporated into the client-facing report/deck or remain supporting evidence.
+- Submit the updated report. The competitor benchmark is now incorporated into the client-facing assessment PDF; decide separately whether the presentation deck should receive the same comparison page.

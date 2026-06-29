@@ -16,6 +16,7 @@
       "files_changed": [
         "reports/boxercraft-product-discovery-assessment.tex",
         "boxercraft-product-discovery-assessment.pdf",
+        "scripts/validate-framework.mjs",
         ".mde/state.json",
         ".mde/generation-summary.md",
         ".mde/findings.json",
@@ -31,6 +32,30 @@
       ],
       "validation_result": "pass",
       "report_scope_note": "No ecommerce evidence, score, benchmark claim, or report finding changed."
+    },
+    {
+      "date": "2026-06-29",
+      "summary": "Incorporated the existing GEN-006 competitor search/autocomplete/browse benchmark into the client-facing assessment report.",
+      "files_changed": [
+        "reports/boxercraft-product-discovery-assessment.tex",
+        "boxercraft-product-discovery-assessment.pdf",
+        ".mde/state.json",
+        ".mde/generation-summary.md",
+        ".mde/findings.json",
+        ".mde/validator-effectiveness.json",
+        ".mde/validation-runs/VAL-015.json",
+        ".mde/validation-runs/VAL-016.json",
+        ".mde/generations/GEN-006.json",
+        "MISSION.md",
+        "MISSION_UPDATES.md",
+        "deploy/release-checks.json"
+      ],
+      "validation_runs": [
+        "VAL-015",
+        "VAL-016"
+      ],
+      "validation_result": "pass",
+      "report_scope_note": "Uses existing GEN-006 competitor evidence; no ecommerce evidence, score, benchmark JSON, or data collection logic changed."
     }
   ],
   "files_changed": [
@@ -165,10 +190,10 @@
   "validation_gate": {
     "result": "pass",
     "pass_count": "2/2",
-    "latest_run_id": "VAL-012",
+    "latest_run_id": "VAL-016",
     "failed_categories": [],
     "blocking_findings": [],
-    "evidence_quality": "strong_for_public_direct_site_competitor_pricing_and_discovery_benchmark_scope"
+    "evidence_quality": "strong_for_public_direct_site_competitor_pricing_and_discovery_benchmark_scope; competitor benchmark report-packaging update validated in VAL-015 and VAL-016"
   },
   "repository_governance": {
     "git_repository_present": true,

@@ -1,22 +1,22 @@
 {
-  "updated_on": "2026-06-28",
+  "updated_on": "2026-06-29",
   "current_generation": "GEN-006",
   "validators": [
     {
       "validator": "scripts/validate-framework.mjs",
       "category": "Functional / Technical / Mission Coverage / Repository Governance",
-      "total_runs": 15,
-      "total_findings": 9,
+      "total_runs": 18,
+      "total_findings": 10,
       "critical_findings_found": 0,
       "high_findings_found": 6,
-      "findings_accepted_as_valid": 9,
+      "findings_accepted_as_valid": 10,
       "findings_dismissed_as_false_positive": 0,
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-005",
+      "last_useful_finding_generation": "GEN-006",
       "recommendation": "keep",
-      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction."
+      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction and twice after the competitor benchmark report update. One failed run correctly exposed stale report text expectations, which were updated to require the new competitor comparison."
     },
     {
       "validator": "scripts/validate-boxercraft-browser.mjs",
@@ -53,7 +53,7 @@
     {
       "validator": "latexmk",
       "category": "Technical / UI Standards Validation",
-      "total_runs": 11,
+      "total_runs": 12,
       "total_findings": 1,
       "critical_findings_found": 0,
       "high_findings_found": 0,
@@ -64,23 +64,23 @@
       "average_cost": "local_only",
       "last_useful_finding_generation": "GEN-006",
       "recommendation": "keep",
-      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction regenerated the assessment PDF successfully."
+      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction and competitor benchmark report update both regenerated the assessment PDF successfully."
     },
     {
       "validator": "pdftotext / pdftoppm / visual spot check",
       "category": "Usability / UI Standards Validation",
-      "total_runs": 9,
-      "total_findings": 2,
+      "total_runs": 12,
+      "total_findings": 3,
       "critical_findings_found": 0,
       "high_findings_found": 0,
-      "findings_accepted_as_valid": 2,
+      "findings_accepted_as_valid": 3,
       "findings_dismissed_as_false_positive": 0,
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_for_text_extraction_and_page_rendering",
       "average_cost": "local_only",
       "last_useful_finding_generation": "GEN-006",
       "recommendation": "keep",
-      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly."
+      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly. The competitor benchmark report update verified the new comparison text and rendered the competitor/final pages cleanly."
     },
     {
       "validator": "scripts/evaluate-boxercraft-normalization.mjs",

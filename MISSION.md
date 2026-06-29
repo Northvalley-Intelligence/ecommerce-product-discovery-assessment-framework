@@ -216,4 +216,4 @@ Benchmark Boxercraft against relevant licensed-apparel competitors using public 
 
 ## Next
 
-Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark in the client-facing report/deck, and confirm any UCLA/Bruins commercial context that should be client-facing.
+Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark in the client-facing deck, manually validate Concepts Sport and Fanatics before strong competitor claims, and confirm any UCLA/Bruins commercial context that should be client-facing.
