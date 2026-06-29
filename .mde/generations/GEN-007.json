@@ -154,7 +154,7 @@
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
     "submitted_branch": "main",
-    "submitted_commit_sha": "pending_post_validation_commit",
+    "submitted_commit_sha": "87950faa274254e9a415d395c11f366f66781310",
     "production_deployed": false,
     "production_parity_status": "not_applicable_no_deploy_target",
     "sibling_repos_modified": false

@@ -89,7 +89,7 @@ Noisy / Low-Signal Validators:
 Repository Governance:
 - Current branch: `main`, tracking `origin/main`.
 - GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
-- GitHub submission: required after validation for the GEN-007 code, evidence, report, and MDE records.
+- GitHub submission: GEN-007 code, evidence, report, and MDE records pushed in commit `87950faa274254e9a415d395c11f366f66781310`.
 
 Recommendation:
 - Commit and push the GEN-007 update. Decide separately whether the presentation deck should receive the same Browse Node Parity page.

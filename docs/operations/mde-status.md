@@ -27,7 +27,7 @@ The Boxercraft package should not be treated as final client delivery until auth
 
 ## Recommended Next Step
 
-Submit the GEN-007 parity evaluator, evidence, report update, and MDE records to GitHub, then choose one of these scopes:
+The GEN-007 parity evaluator, evidence, report update, and MDE records were pushed to GitHub in commit `87950faa274254e9a415d395c11f366f66781310`. Choose one of these scopes next:
 
 - Add the GEN-007 Browse Node Parity page to the presentation deck.
 - Confirm whether authorized wholesale access exists and assess authenticated wholesale separately from public retail/public wholesale search.
@@ -39,7 +39,7 @@ Submit the GEN-007 parity evaluator, evidence, report update, and MDE records to
 
 - Ownership boundary: write only inside this project directory; do not modify sibling repos from this session.
 - Current branch and working tree: `main`, tracking `origin/main`.
-- GitHub remote/submission: submitted to private repo `Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework`; GEN-007 changes require post-validation commit and push.
+- GitHub remote/submission: submitted to private repo `Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework`; GEN-007 artifact commit is `87950faa274254e9a415d395c11f366f66781310`.
 - Production parity: not applicable yet. `deploy/build-manifest.json` records `platform` as `not_selected`, with no deploy commands or production deployment source.
 - Ongoing rule: after meaningful code changes or two clean Validation Gate passes, submit this project to GitHub or record the blocker locally.
 

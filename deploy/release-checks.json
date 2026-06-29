@@ -74,7 +74,7 @@
       "VAL-017",
       "VAL-018"
     ],
-    "latest_generation_7_parity_commit_sha": "pending_post_validation_commit",
+    "latest_generation_7_parity_commit_sha": "87950faa274254e9a415d395c11f366f66781310",
     "submission_required_after_meaningful_code_changes": true,
     "submission_blocker": null,
     "sibling_repos_modified": false
