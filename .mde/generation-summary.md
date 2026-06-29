@@ -124,8 +124,8 @@ Noisy / Low-Signal Validators:
 Repository Governance:
 - Current branch: `main`, tracking `origin/main`.
 - GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
-- GitHub submission: pending post-validation commit and push for GEN-008.
+- GitHub submission: GEN-008 report, evidence, validator update, and MDE records pushed in commit `50b672ebb86df4f34b8d3089afa3dc48b59ec59d`.
 - Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
 
 Recommendation:
-- Commit and push the GEN-008 local-school PTA executive brief, then review the opened PDF and decide whether to adapt the same storyline into a presentation slide.
+- Review the opened GEN-008 PDF and decide whether to adapt the same local-school PTA storyline into a presentation slide.

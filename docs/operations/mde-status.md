@@ -10,7 +10,7 @@
 
 ## Readiness Assessment
 
-Generation 8 is ready for handoff after the post-validation commit and push. The project is a Git repository on `main`, with `origin` set to `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
+Generation 8 is ready for handoff. The project is a Git repository on `main`, with `origin` set to `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
 
 The Boxercraft package should not be treated as final client delivery until authenticated wholesale workflows are validated if approved access exists, recommendation/filter sampling is broadened, any UCLA/Bruins commercial-priority claim is supported by approved client context, and the GEN-008 local school PTA context is verified for service radius, approved school examples, turnaround, minimum-order, and fulfillment details. Current report language treats UCLA commercial importance and the 20-mile PTA proximity as stakeholder context, not independently verified public proof.
 
@@ -37,7 +37,7 @@ The Boxercraft package should not be treated as final client delivery until auth
 
 ## Recommended Next Step
 
-Commit and push the GEN-008 local school PTA opportunity brief, evidence, report source/PDF, validator update, and MDE records. Choose one of these scopes next:
+The GEN-008 local school PTA opportunity brief, evidence, report source/PDF, validator update, and MDE records were pushed in commit `50b672ebb86df4f34b8d3089afa3dc48b59ec59d`. Choose one of these scopes next:
 
 - Adapt the GEN-008 local school PTA storyline into a presentation slide.
 - Add the GEN-007 Browse Node Parity page to the presentation deck.
@@ -50,7 +50,7 @@ Commit and push the GEN-008 local school PTA opportunity brief, evidence, report
 
 - Ownership boundary: write only inside this project directory; do not modify sibling repos from this session.
 - Current branch and working tree: `main`, tracking `origin/main`.
-- GitHub remote/submission: submitted to private repo `Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework`; GEN-007 artifact commit is `87950faa274254e9a415d395c11f366f66781310`; GEN-008 is pending post-validation push.
+- GitHub remote/submission: submitted to private repo `Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework`; GEN-007 artifact commit is `87950faa274254e9a415d395c11f366f66781310`; GEN-008 artifact commit is `50b672ebb86df4f34b8d3089afa3dc48b59ec59d`.
 - Production parity: not applicable yet. `deploy/build-manifest.json` records `platform` as `not_selected`, with no deploy commands or production deployment source.
 - Ongoing rule: after meaningful code changes or two clean Validation Gate passes, submit this project to GitHub or record the blocker locally.
 

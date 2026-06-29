@@ -27,7 +27,7 @@
     "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery.",
     "Confirm actual local service radius, approved school examples, turnaround, minimum-order, and fulfillment details before external use of the local-school PTA brief."
   ],
-  "next_recommended_action": "Commit and push the GEN-008 local-school PTA executive brief, evidence summary, validator update, and MDE records; then decide whether to open the PDF for review or adapt it into a deck slide.",
+  "next_recommended_action": "Review the opened GEN-008 PDF and decide whether to adapt the same local-school PTA storyline into a presentation slide.",
   "session_router_case": "Case F - Brand-New Non-Client Project",
   "last_prompt_used": "mission-driven-engineering generation workflow plus Northvalley PDF report validation"
 }

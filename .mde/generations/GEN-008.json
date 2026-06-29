@@ -150,7 +150,7 @@
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
     "submitted_branch": "main",
-    "submitted_commit_sha": "pending_post_validation_commit",
+    "submitted_commit_sha": "50b672ebb86df4f34b8d3089afa3dc48b59ec59d",
     "production_deployed": false,
     "production_parity_status": "not_applicable_no_deploy_target",
     "sibling_repos_modified": false
@@ -162,5 +162,5 @@
     "No authenticated wholesale, order, pricing, inventory, local-service-radius, minimum-order, turnaround, or fulfillment workflows were validated in GEN-008.",
     "The report intentionally uses executive buyer-journey language and keeps technical implementation detail minimal."
   ],
-  "next_recommended_action": "Commit and push the GEN-008 local school PTA executive brief, evidence summary, validator update, and MDE records to GitHub, then review the opened PDF."
+  "next_recommended_action": "Review the opened GEN-008 PDF and decide whether to adapt the same local-school PTA storyline into a presentation slide."
 }

@@ -79,7 +79,7 @@
       "VAL-019",
       "VAL-020"
     ],
-    "latest_generation_8_local_school_report_commit_sha": "pending_post_validation_commit",
+    "latest_generation_8_local_school_report_commit_sha": "50b672ebb86df4f34b8d3089afa3dc48b59ec59d",
     "submission_required_after_meaningful_code_changes": true,
     "submission_blocker": null,
     "sibling_repos_modified": false
