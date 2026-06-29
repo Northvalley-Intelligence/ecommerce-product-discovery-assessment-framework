@@ -1,0 +1,138 @@
+{
+  "generation_id": "GEN-008",
+  "report_id": "boxercraft-local-school-pta-opportunity",
+  "created_on": "2026-06-29",
+  "question": "Why might nearby school PTA members not leverage Boxercraft for school T-shirt and spiritwear needs?",
+  "stakeholder_context": {
+    "nearby_pta_distance": "about 20 miles, user-provided context",
+    "specific_observation": "The user observed no elementary-school browse category, and the public school-specific browse evidence is limited to Lambert-related nodes."
+  },
+  "website_benchmark_from_clipboard": {
+    "source_type": "user_clipboard_website_benchmark_json",
+    "status": "partial",
+    "confidence": "medium",
+    "scores": [
+      {
+        "category": "Local Visibility",
+        "subject_score": 20,
+        "local_competitor_average": 67,
+        "position": "behind_local"
+      },
+      {
+        "category": "Lead Conversion",
+        "subject_score": 100,
+        "local_competitor_average": 73,
+        "position": "ahead_of_local"
+      },
+      {
+        "category": "Trust Signals",
+        "subject_score": 14,
+        "local_competitor_average": 43,
+        "position": "behind_local"
+      },
+      {
+        "category": "Message Clarity",
+        "subject_score": 0,
+        "local_competitor_average": 75,
+        "position": "behind_local"
+      },
+      {
+        "category": "Mobile Experience",
+        "subject_score": 100,
+        "local_competitor_average": 67,
+        "position": "ahead_of_local"
+      },
+      {
+        "category": "AI Discoverability",
+        "subject_score": 25,
+        "local_competitor_average": 67,
+        "position": "behind_local"
+      },
+      {
+        "category": "Performance",
+        "subject_score": 51,
+        "local_competitor_average": null,
+        "position": "insufficient_competitor_data"
+      },
+      {
+        "category": "Security & Reliability",
+        "subject_score": 67,
+        "local_competitor_average": 67,
+        "position": "near_local"
+      }
+    ],
+    "local_competitor_signal": "Northwest Custom Apparel scored 87 overall in the clipboard benchmark with 100/100 Local Visibility, Message Clarity, and AI Discoverability.",
+    "limitations": [
+      "The clipboard benchmark was marked partial and medium confidence.",
+      "It uses crawlable public website evidence only and does not prove actual ranking, ad spend, reviews, revenue, or true local purchasing behavior.",
+      "The assessment reached the website but reported limited extractable public page text."
+    ]
+  },
+  "ecommerce_discovery_evidence": {
+    "scorecard": {
+      "search": 58,
+      "autocomplete": 42,
+      "browse": 48,
+      "filters": 64,
+      "recommendations": 35,
+      "mobile_experience": 58,
+      "product_discovery_overall": 52
+    },
+    "school_browse_evidence": [
+      {
+        "handle": "back-to-school-cozy",
+        "title": "Back to School Cozy",
+        "node_type": "campaign_or_merchandising",
+        "browse_product_count": 18,
+        "search_total_product": 0,
+        "autocomplete_total_product": 0
+      },
+      {
+        "handle": "lambert-hs-spiritwear",
+        "title": "Lambert High School Spiritwear",
+        "node_type": "fan_shop",
+        "browse_product_count": 54,
+        "search_total_product": 0,
+        "autocomplete_total_product": 0
+      },
+      {
+        "handle": "lambert-longhorns-spiritwear",
+        "title": "Lambert Longhorns Spiritwear",
+        "node_type": "fan_shop",
+        "browse_product_count": 13,
+        "search_total_product": 0,
+        "autocomplete_total_product": 0
+      },
+      {
+        "handle": "lambert-soccer-spiritwear",
+        "title": "Lambert Soccer Spiritwear",
+        "node_type": "fan_shop",
+        "browse_product_count": 41,
+        "search_total_product": 0,
+        "autocomplete_total_product": 0
+      }
+    ],
+    "browse_parity": {
+      "public_collections_discovered": 96,
+      "non_empty_nodes_evaluated": 93,
+      "core_nodes_scored": 60,
+      "exact_search_browse_parity": "5/60",
+      "search_only_core_nodes": "13/60",
+      "browse_only_core_nodes": "51/60",
+      "autocomplete_no_browse_product_hit": "47/60"
+    },
+    "notable_discovery_findings": [
+      "Search and autocomplete normalization are uneven across common apparel variants.",
+      "Browse-node, search, and autocomplete parity is not reliable across public category and fan-shop nodes.",
+      "Team and fan-shop discovery is uneven; school-specific labels can have browse inventory but zero search/autocomplete results.",
+      "Rendered product-page recommendations are present but weakly related in the captured path."
+    ],
+    "what_works": [
+      "Lead conversion and mobile signals from the clipboard website benchmark are strong.",
+      "The ecommerce assessment shows a broad apparel catalog, public wholesale search, and useful filters on some collections.",
+      "Boxercraft led the tested public direct-brand competitor discovery benchmark overall in GEN-006.",
+      "Exact search works for several known apparel and UCLA/Bruins terms."
+    ]
+  },
+  "executive_readout": "A nearby PTA buyer can be lost before evaluating Boxercraft as a supplier because the site does not clearly present a local school apparel offer, does not expose an elementary-school browse path, and does not keep school, search, autocomplete, and browse discovery aligned. The issue is not that Boxercraft lacks capability; the issue is that the site does not package that capability around the local school buyer's job."
+}

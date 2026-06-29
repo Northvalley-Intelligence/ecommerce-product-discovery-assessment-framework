@@ -187,11 +187,11 @@ The framework is successful when:
 
 ## Current Phase
 
-Generation 7: Browse Node Search And Autocomplete Parity.
+Generation 8: Local School PTA Opportunity Executive Brief.
 
 ## Current Phase Goal
 
-Run all public Boxercraft browse nodes and compare each non-empty node with corresponding search and autocomplete evidence before reporting search, autocomplete, and browse parity.
+Combine Boxercraft ecommerce discovery evidence with local website benchmark evidence into a concise executive brief explaining why nearby school PTA buyers may not choose Boxercraft for school T-shirts.
 
 ## What Matters Most Now
 
@@ -212,9 +212,10 @@ Run all public Boxercraft browse nodes and compare each non-empty node with corr
 - UCLA/Bruins commercial importance is stakeholder context unless client-supplied evidence approves stronger public claims.
 - Competitor pricing and assortment evidence can be incomplete when a relevant site does not expose comparable public product feeds or rendered product grids.
 - Search, autocomplete, and browse parity can be overstated if conclusions are based on sampled nodes instead of all public browse nodes.
+- Local-school opportunity claims can be overstated if stakeholder-supplied distance, service radius, school examples, turnaround, or minimum-order details are not verified before external use.
 - Report artifacts may fail client-facing quality checks if print/PDF output changes without repeat layout validation.
 - GitHub submission is now active for this project; future meaningful code changes should be committed and pushed to the configured GitHub remote after validation.
 
 ## Next
 
-Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark and browse-node parity page in the client-facing deck, manually validate Concepts Sport and Fanatics before strong competitor claims, and confirm any UCLA/Bruins commercial context that should be client-facing.
+Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark, browse-node parity page, or local school PTA brief in the client-facing deck, manually validate Concepts Sport and Fanatics before strong competitor claims, and confirm any UCLA/Bruins or local-school commercial context that should be client-facing.

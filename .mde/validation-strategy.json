@@ -1,6 +1,6 @@
 {
   "strategy_id": "VALSTRAT-001",
-  "strategy_status": "active_for_generation_7",
+  "strategy_status": "active_for_generation_8",
   "created_on": "2026-06-24",
   "updated_on": "2026-06-29",
   "project_type": "consulting assessment framework and report generation system for ecommerce product discovery and information retrieval evaluation",
@@ -13,7 +13,7 @@
     "prompt_generation",
     "pdf_generation"
   ],
-  "mission_phase": "Generation 7 - Browse Node Search And Autocomplete Parity",
+  "mission_phase": "Generation 8 - Local School PTA Opportunity Executive Brief",
   "mission_critical_workflows": [
     {
       "workflow": "Create reusable assessment rubric",
@@ -50,6 +50,15 @@
       "required_outcome": "Report and deck present key findings, strengths, weaknesses, revenue-impacting opportunities, recommended next steps, scorecard, and opportunity matrix in business language."
     },
     {
+      "workflow": "Produce local school buyer opportunity brief",
+      "users": [
+        "Ecommerce leadership",
+        "local sales leadership",
+        "marketing leadership"
+      ],
+      "required_outcome": "A concise Northvalley PDF explains why nearby PTA buyers may not choose Boxercraft, using evidence-backed local visibility, search, autocomplete, browse, and customer-journey pain points while preserving source limitations."
+    },
+    {
       "workflow": "Validate PDF output",
       "users": [
         "Northvalley Intelligence reviewer",
@@ -71,9 +80,10 @@
         "scripts/evaluate-boxercraft-normalization.mjs",
         "scripts/evaluate-competitor-pricing-discovery.mjs",
         "scripts/evaluate-boxercraft-browse-node-parity.mjs",
+        "GEN-008 local school opportunity evidence summary",
         "finding-to-evidence traceability review"
       ],
-      "reason": "Validates that the framework produces evidence-backed product discovery findings and that the Boxercraft case includes normalization, all-node browse/search/autocomplete parity, browse-routing, and competitor pricing/discovery evidence."
+      "reason": "Validates that the framework produces evidence-backed product discovery findings and that the Boxercraft case includes normalization, all-node browse/search/autocomplete parity, browse-routing, competitor pricing/discovery evidence, and the focused local school PTA executive brief."
     },
     {
       "category": "Technical Validation",
@@ -88,7 +98,8 @@
         "npm run evaluate:competitors:pricing-discovery evidence review",
         "npm run evaluate:boxercraft:browse-node-parity evidence review",
         "latexmk report compilation",
-        "latexmk presentation compilation"
+        "latexmk presentation compilation",
+        "GEN-008 local-school report PDF compilation"
       ],
       "reason": "The assessment data and generated Northvalley PDF sources must be reproducible and structurally sound."
     },
@@ -116,6 +127,7 @@
         "normalization and browse-routing scorecard review",
         "competitor benchmark summary review",
         "browse-node parity summary review",
+        "local school PTA report readability review",
         "pdftotext heading checks"
       ],
       "reason": "Business leaders must be able to understand the assessment without technical search implementation knowledge."
@@ -156,6 +168,7 @@
         "GEN-004 search/autocomplete normalization matrix",
         "GEN-006 competitor pricing/discovery benchmark",
         "GEN-007 all-node browse/search/autocomplete parity evidence",
+        "GEN-008 local school opportunity brief evidence",
         "visible collection/page browse-path extraction",
         "public wholesale search pages",
         "authenticated wholesale access limitation record"
@@ -166,8 +179,8 @@
   "coverage_targets": {
     "critical_mission_objectives": "100%",
     "high_priority_mission_objectives": "90%+ with explicit deferral for independent evaluator calibration",
-    "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; GEN-006 competitor benchmark completed for public pricing, catalog search, rendered search/autocomplete samples, and browse evidence; GEN-007 all-node browse/search/autocomplete parity completed for public collection nodes; authenticated wholesale remains access-limited",
-    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, GEN-004 normalization evidence, GEN-006 competitor benchmark evidence, and GEN-007 browse-node parity evidence",
+    "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; GEN-006 competitor benchmark completed for public pricing, catalog search, rendered search/autocomplete samples, and browse evidence; GEN-007 all-node browse/search/autocomplete parity completed for public collection nodes; GEN-008 local school PTA brief completed from ecommerce evidence plus user-provided website benchmark; authenticated wholesale remains access-limited",
+    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, GEN-004 normalization evidence, GEN-006 competitor benchmark evidence, GEN-007 browse-node parity evidence, and GEN-008 local school PTA opportunity PDF/evidence summary",
     "finding_traceability": "100% of report findings must trace to evidence, stakeholder-context assumption, or explicit unavailable-data note"
   },
   "external_validators": [
@@ -219,6 +232,13 @@
       "category": "Project-Specific External / Functional / Usability Validation",
       "run_policy": "Generation 7 and before client-facing parity claims when public collection membership, search indexing, autocomplete suggestions, or parity methodology changes",
       "evidence": "assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.json and browse-node-parity.md."
+    },
+    {
+      "name": "Local school PTA opportunity executive brief",
+      "status": "executed_generation_8",
+      "category": "Functional / Usability / UI Standards Validation",
+      "run_policy": "Generation 8 and before external use of local-school buyer claims when website benchmark, local-service details, school examples, or discovery evidence changes",
+      "evidence": "assessments/boxercraft/local-school-opportunity/GEN-008/evidence-summary.json, reports/boxercraft-local-school-pta-opportunity-report.tex, latexmk, pdftotext, pdfinfo, pdftoppm, and rendered page spot checks."
     }
   ],
   "mde_native_validators": [
@@ -246,7 +266,7 @@
   "skipped_validations": [
     {
       "category": "Deployment validation",
-      "reason": "No deployable hosted artifact exists in Generation 4 and deploy/build-manifest.json has platform set to not_selected.",
+      "reason": "No deployable hosted artifact exists in Generation 8 and deploy/build-manifest.json has platform set to not_selected.",
       "revisit_when": "A deploy target, report publishing workflow, or hosted assessment tool exists."
     },
     {

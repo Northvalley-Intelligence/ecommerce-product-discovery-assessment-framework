@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-29",
-  "current_generation": "GEN-007",
+  "current_generation": "GEN-008",
   "findings": [
     {
       "finding_id": "FND-GEN001-001",
@@ -217,6 +217,42 @@
       "last_seen_generation": "GEN-007",
       "status": "new",
       "resolution_notes": "GEN-007 found 47/60 category or fan-shop nodes returned no autocomplete product that matched the corresponding browse-node feed. This is suggestion coverage rather than full recall because the Boost suggestion payload is smaller than full search."
+    },
+    {
+      "finding_id": "FND-GEN008-001",
+      "source_validator": "GEN-008 local school opportunity evidence review",
+      "severity": "High",
+      "category": "Local School Buyer Journey",
+      "summary": "Nearby school buyers do not get a clear elementary-school or PTA buying path.",
+      "affected_workflow_or_component": "Boxercraft public site navigation, school browse, and local-school positioning",
+      "first_seen_generation": "GEN-008",
+      "last_seen_generation": "GEN-008",
+      "status": "new",
+      "resolution_notes": "GEN-008 report uses stakeholder-provided local PTA context and observed public collection evidence: no elementary-school browse category was observed, while school-specific public browse nodes were Lambert-related."
+    },
+    {
+      "finding_id": "FND-GEN008-002",
+      "source_validator": "GEN-008 local school opportunity evidence review",
+      "severity": "High",
+      "category": "Search Autocomplete Browse Alignment",
+      "summary": "School browse labels are not recoverable through corresponding search and autocomplete paths.",
+      "affected_workflow_or_component": "Boxercraft school browse, search, and autocomplete discovery",
+      "first_seen_generation": "GEN-008",
+      "last_seen_generation": "GEN-008",
+      "status": "new",
+      "resolution_notes": "GEN-007 evidence reused in GEN-008 found Lambert High School Spiritwear, Lambert Longhorns Spiritwear, Lambert Soccer Spiritwear, and Back to School Cozy browse nodes with public browse inventory but 0 search and 0 autocomplete products for the corresponding labels."
+    },
+    {
+      "finding_id": "FND-GEN008-003",
+      "source_validator": "Clipboard website benchmark review",
+      "severity": "Medium",
+      "category": "Evidence Quality",
+      "summary": "Local-school opportunity claims rely partly on a partial, medium-confidence clipboard benchmark and stakeholder-provided proximity context.",
+      "affected_workflow_or_component": "External-use readiness for the local school PTA executive brief",
+      "first_seen_generation": "GEN-008",
+      "last_seen_generation": "GEN-008",
+      "status": "accepted",
+      "resolution_notes": "GEN-008 report explicitly labels the clipboard benchmark as partial, medium confidence and records that the 20-mile PTA context is stakeholder-provided. Verify service radius, school examples, turnaround, minimum-order, and fulfillment details before external use."
     }
   ],
   "lifecycle_states": [

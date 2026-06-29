@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-29",
-  "current_generation": "GEN-007",
+  "current_generation": "GEN-008",
   "failing_bdds": [],
   "not_executed_required_bdds": [],
   "deferred_bdds": [
@@ -46,7 +46,14 @@
       "category": "Comparable Evidence Limitation",
       "reason": "Fanatics was treated as a marketplace benchmark, not a direct brand-owned catalog, because the GEN-006 scope did not include a comparable public product-feed source for that marketplace.",
       "revisit_when": "When approved manual/browser evidence or a comparable marketplace data source is selected."
+    },
+    {
+      "id": "VAL-DEFER-008-001",
+      "severity": "Medium",
+      "category": "Stakeholder Context",
+      "reason": "The 20-mile PTA proximity, actual local service radius, approved school examples, turnaround, minimum-order, and fulfillment details were not independently verified in GEN-008.",
+      "revisit_when": "Before external use of the local-school PTA opportunity brief beyond internal executive review."
     }
   ],
-  "note": "Generation 7 has no failing required BDDs for the all-node browse/search/autocomplete parity pass. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, unverified UCLA commercial context, Concepts Sport comparable pricing, and Fanatics marketplace comparability remain explicit deferrals or limitations for client-delivery readiness."
+  "note": "Generation 8 has no failing required BDDs for the local school PTA opportunity brief. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, unverified UCLA commercial context, Concepts Sport comparable pricing, Fanatics marketplace comparability, and stakeholder-provided local school context remain explicit deferrals or limitations for client-delivery readiness."
 }

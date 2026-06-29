@@ -57,8 +57,8 @@
     "remote_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git",
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
-    "last_submission_check_after_generation": "GEN-007",
-    "last_submission_check_after_validation_run": "VAL-018",
+    "last_submission_check_after_generation": "GEN-008",
+    "last_submission_check_after_validation_run": "VAL-020",
     "submitted_branch": "main",
     "initial_submitted_commit_sha": "3e62879cea8a548f5ed13c00c2e696589e90d1a8",
     "latest_generation_6_benchmark_commit_sha": "e9988ff2ec5791875b013069b98fd560f1c805cb",
@@ -75,6 +75,11 @@
       "VAL-018"
     ],
     "latest_generation_7_parity_commit_sha": "87950faa274254e9a415d395c11f366f66781310",
+    "latest_local_school_pta_report_validation_runs": [
+      "VAL-019",
+      "VAL-020"
+    ],
+    "latest_generation_8_local_school_report_commit_sha": "pending_post_validation_commit",
     "submission_required_after_meaningful_code_changes": true,
     "submission_blocker": null,
     "sibling_repos_modified": false
@@ -96,6 +101,7 @@
     "Broader recommendation samples and filter persistence/multi-select behavior should be validated before final external client delivery.",
     "UCLA commercial importance is stakeholder context, not independently verified public proof of client size.",
     "Concepts Sport and Fanatics competitor comparisons need manual or alternate-source validation before strong client-facing claims.",
+    "The GEN-008 local school PTA report uses stakeholder-provided 20-mile proximity context and a partial, medium-confidence clipboard website benchmark; verify service radius, school examples, turnaround, minimum-order, and fulfillment details before external use.",
     "Deployment validation is skipped until a deploy target exists."
   ]
 }

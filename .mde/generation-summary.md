@@ -93,3 +93,39 @@ Repository Governance:
 
 Recommendation:
 - Commit and push the GEN-007 update. Decide separately whether the presentation deck should receive the same Browse Node Parity page.
+
+## Generation 8 - Local School PTA Opportunity Executive Brief
+
+Goal:
+- Combine Boxercraft ecommerce discovery evidence with the user-provided website benchmark from clipboard into a concise Northvalley executive report answering why nearby school PTA buyers may not choose Boxercraft for school T-shirts.
+
+What changed:
+- Added `assessments/boxercraft/local-school-opportunity/GEN-008/evidence-summary.json`.
+- Added `reports/boxercraft-local-school-pta-opportunity-report.tex`.
+- Generated `boxercraft-local-school-pta-opportunity-report.pdf` as a two-page Northvalley report.
+- Updated the framework validator and MDE records so the GEN-008 report, evidence summary, PDF artifact, and validation runs are required.
+
+Validation Result:
+- Gate: pass
+- Blocking findings: none
+- Pass count: 2/2 (`VAL-019`, `VAL-020`)
+
+Useful Signals:
+- The report frames the PTA issue as a buyer-journey problem, not a capability problem.
+- No observed elementary-school browse category was found in the captured public collection evidence.
+- School-specific browse nodes in the GEN-007 evidence were Lambert-related and returned 0 search/autocomplete products for those labels.
+- Existing discovery evidence shows search 58/100, autocomplete 42/100, browse 48/100, and exact search/browse parity on only 5/60 core nodes.
+- Clipboard website benchmark signals strong Lead Conversion and Mobile Experience at 100/100, but weak Local Visibility 20/100, Trust Signals 14/100, Message Clarity 0/100, and AI Discoverability 25/100.
+
+Noisy / Low-Signal Validators:
+- The clipboard benchmark was partial and medium confidence. It is useful directional context, not proof of ranking, ad spend, reviews, revenue, or actual local buying behavior.
+- The 20-mile PTA context is stakeholder-provided and must be verified before external use.
+
+Repository Governance:
+- Current branch: `main`, tracking `origin/main`.
+- GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
+- GitHub submission: pending post-validation commit and push for GEN-008.
+- Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
+
+Recommendation:
+- Commit and push the GEN-008 local-school PTA executive brief, then review the opened PDF and decide whether to adapt the same storyline into a presentation slide.

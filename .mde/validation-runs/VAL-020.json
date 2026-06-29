@@ -1,0 +1,70 @@
+{
+  "validation_run_id": "VAL-020",
+  "generation": "GEN-008",
+  "phase": "Generation 8 - Local School PTA Opportunity Executive Brief",
+  "started_at": "2026-06-29T16:00:00-0400",
+  "completed_at": "2026-06-29T16:10:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_from_local_school_pta_report_update",
+  "command": "Second Validation Gate pass after adding the local school PTA opportunity report with no implementation or report changes after VAL-019",
+  "validations_executed": [
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed a second time with no implementation, report source, or validator behavior changes after VAL-019."
+    },
+    {
+      "category": "UI Standards / Content Integrity Validation",
+      "tool": "pdftotext / pdfinfo",
+      "result": "pass",
+      "evidence": "Extracted PDF text and 2-page count remained stable after the first clean pass."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "tool": "git status and remote review",
+      "result": "pass_pending_post_validation_push",
+      "evidence": "main tracks origin/main; the GEN-008 update must be committed and pushed after validation."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "PDF Recompile",
+      "reason": "Second pass reused the compiled PDF from VAL-019 because no report source or template changes were made between clean passes.",
+      "revisit_when": "Report source, template assets, or PDF build settings change."
+    },
+    {
+      "category": "External Local Service Validation",
+      "reason": "The second pass intentionally did not verify service radius, school examples, minimum orders, turnaround, or fulfillment details because no approved external source was introduced between passes.",
+      "revisit_when": "Before external use of local school opportunity claims."
+    },
+    {
+      "category": "Security Validation",
+      "reason": "No dependencies, secrets, backend code, authentication, storage, or deployment configuration changed.",
+      "revisit_when": "Dependencies, backend code, authentication, storage, secrets, or deployment configuration change."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    {
+      "finding_id": "FND-GEN008-001",
+      "status": "accepted",
+      "summary": "Nearby school buyers do not get a clear elementary-school or PTA buying path."
+    },
+    {
+      "finding_id": "FND-GEN008-002",
+      "status": "accepted",
+      "summary": "School browse labels are not recoverable through corresponding search and autocomplete paths."
+    }
+  ],
+  "coverage": {
+    "local_school_opportunity_report": "ecommerce_discovery_evidence_plus_clipboard_website_benchmark_combined_into_two_page_executive_pdf",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "pass_count_reset": false,
+  "evidence_quality": "adequate_for_internal_executive_brief_with_explicit_context_limitations",
+  "reason": "Second clean validation pass completed with no implementation, report source, or validator behavior changes after VAL-019."
+}
