@@ -19,7 +19,7 @@
 \newcommand{\ReportTitle}{Boxercraft Product Discovery Assessment}
 \newcommand{\ReportClient}{Boxercraft Leadership Team}
 \newcommand{\ReportDate}{June 29, 2026}
-\newcommand{\ReportSummary}{Rendered public-retail, public-wholesale, 36-query search/autocomplete normalization, and competitor discovery benchmark review of Boxercraft product discovery, including browse-path recovery, priority UCLA/Bruins terms, filters, recommendations, mobile, and public wholesale SKU variants. Authenticated wholesale workflows require approved access before final delivery.}
+\newcommand{\ReportSummary}{Rendered public-retail, public-wholesale, 36-query search/autocomplete normalization, all-node browse parity, and competitor discovery benchmark review of Boxercraft product discovery, including browse-path recovery, priority UCLA/Bruins terms, filters, recommendations, mobile, and public wholesale SKU variants. Authenticated wholesale workflows require approved access before final delivery.}
 \newcommand{\ReportPreparedBy}{Northvalley Intelligence LLC}
 
 \definecolor{NVIRed}{HTML}{B42318}
@@ -159,9 +159,9 @@
 \vspace{0.10in}
 \NorthvalleyLogo[0.88in]\par
 \vspace{0.24in}
-\ReportDarkCard{Primary Readout}{The full normalization matrix shows useful exact-search coverage, but search, autocomplete, and browse do not consistently recover the same customer intent. Boxercraft leads the tested public direct-brand competitor discovery score, while quarter-zip variants, color-plus-product phrases, team aliases, and UCLA/Bruins competitive visibility still expose gaps.}
+\ReportDarkCard{Primary Readout}{The full normalization matrix and all-node browse parity pass show useful exact-search coverage, but search, autocomplete, and browse do not consistently expose the same products or recovery paths. Boxercraft leads the tested public direct-brand competitor discovery score, while quarter-zip variants, color-plus-product phrases, team aliases, browse-node parity, and UCLA/Bruins competitive visibility still expose gaps.}
 \vspace{0.12in}
-\MetricCard{Scope}{36 variants + 5 sites}{Search, autocomplete, browse routing, priority team terms, public wholesale SKU checks, and competitor discovery benchmark.}
+\MetricCard{Scope}{36 variants + 96 nodes + 5 sites}{Search, autocomplete, browse routing, all public browse nodes, priority team terms, public wholesale SKU checks, and competitor discovery benchmark.}
 \end{minipage}
 \end{titlepage}
 \hypersetup{pageanchor=true}
@@ -173,15 +173,15 @@
 \begin{minipage}[t]{0.64\linewidth}
 \ReportDarkCard{Leadership Decision}{Prioritize a shared intent map so search, autocomplete, and browse recovery handle customer language consistently. Boxercraft already recovers several exact apparel and UCLA/Bruins terms, but the full matrix shows avoidable dead ends before and after query submission.}
 \vspace{0.12in}
-\ReportBody{This draft now includes rendered desktop/mobile browser evidence, screenshot artifacts, public retail search/autocomplete evidence, search/autocomplete-to-browse routing, collection filter validation, product-page recommendation validation, public wholesale search checks, a 36-query Normalization Matrix, and a public competitor benchmark against L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics. It should still not be treated as final external delivery until authenticated wholesale workflows and broader recommendation/filter samples are validated. The user-reported UCLA commercial importance is treated as stakeholder context, not independently verified public proof of client size.}\par
+\ReportBody{This draft now includes rendered desktop/mobile browser evidence, screenshot artifacts, public retail search/autocomplete evidence, search/autocomplete-to-browse routing, all-node browse parity evidence, collection filter validation, product-page recommendation validation, public wholesale search checks, a 36-query Normalization Matrix, and a public competitor benchmark against L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics. It should still not be treated as final external delivery until authenticated wholesale workflows and broader recommendation/filter samples are validated. The user-reported UCLA commercial importance is treated as stakeholder context, not independently verified public proof of client size.}\par
 \vspace{0.12in}
 \ReportSection{Key Findings}
 \begin{itemize}
 \item \Bad{Search/autocomplete normalization is uneven.} Quarter-zip variants were 2/6 relevant in search and 3/6 in autocomplete; color-plus-product variants were 4/5 relevant in search but 0/5 in autocomplete.
+\item \Bad{Browse-node parity is materially inconsistent.} GEN-007 discovered 96 public collections and evaluated 93 non-empty browse nodes; only 5/60 category or fan-shop nodes had exact search/browse product-set parity. \Code{blankets} returned 3 search/autocomplete products but only 2 browse products.
 \item \Good{Boxercraft leads the tested competitor discovery benchmark.} In the GEN-006 public benchmark, Boxercraft scored 78 versus Colosseum 55 and L2 Brands 46, driven by stronger relevant search coverage and comparable browse evidence.
 \item \Bad{Priority team discovery is not protected.} UCLA/Bruins terms were mostly recoverable at 7/8 search and 6/8 autocomplete, but \Code{UCLA quarter zip} dropped in autocomplete and \Code{Bruins apparel} returned 0 search results.
 \item \Warn{Competitive pressure remains in licensed-team visibility.} Colosseum exposed more UCLA/Bruins public catalog matches than Boxercraft in the tested direct-site feeds, 20 versus 6.
-\item \Bad{Search And Autocomplete To Browse routing is inconsistent.} UCLA and broad fan-shop terms usually expose browse paths, while quarter-zip and color-product variants rarely route to collection or page destinations.
 \end{itemize}
 \end{minipage}
 \hfill
@@ -190,7 +190,7 @@
 \vspace{0.09in}
 \MetricCard{Autocomplete}{42/100}{Some exact and UCLA/Bruins suggestions work; color-plus-product terms and some priority variants drop before search submission.}
 \vspace{0.09in}
-\MetricCard{Overall}{55/100}{Full normalization score; authenticated wholesale and broader recommendation/filter sampling remain open.}
+\MetricCard{Overall}{52/100}{Full normalization plus all-node browse parity score; authenticated wholesale and broader recommendation/filter sampling remain open.}
 \end{minipage}
 
 \newpage
@@ -204,6 +204,7 @@
 Normalization Matrix & Quarter-zip variants & 6 variants tested. Search was relevant for 2/6 and autocomplete for 3/6; zero-search variants included \Code{quarterzip}, \Code{qtr zip}, \Code{qtr-zip}, and \Code{1/4 zip}.\\
 Normalization Matrix & Women's fleece variants & 5 variants tested. Search and autocomplete were each relevant for 3/5; \Code{ladies fleece} and \Code{female fleece} returned 0 search results in this run.\\
 UCLA/Bruins & Priority-account terms & 8 variants tested. Search was relevant for 7/8, autocomplete for 6/8, search-to-browse for 8/8, and autocomplete-to-browse for 5/8. \Code{UCLA quarter zip} dropped in autocomplete; \Code{Bruins apparel} returned 0 search results.\\
+Browse Node Parity & All public collections & 96 public collections discovered and 93 non-empty browse nodes evaluated. Only 5/60 category or fan-shop nodes had exact search/browse product-set parity; \Code{blankets} returned 3 products in search/autocomplete but 2 in browse.\\
 Search And Autocomplete To Browse & Recovery routing & UCLA and broad fan-shop terms usually exposed browse paths, but quarter-zip and color-product variants had browse-path gaps across 10 tested terms.\\
 Search & Team aliases & Broad \Code{college teams} and \Code{fan shop} terms recovered, but \Code{team apparel}, \Code{Bulldogs}, and \Code{Georgia Bulldogs} returned 0 search results.\\
 Autocomplete & Color-plus-product & 5 variants tested. Search was relevant for 4/5, but autocomplete was relevant for 0/5, including \Code{maroon quarter zip}, \Code{burgundy quarter zip}, \Code{cardinal quarter zip}, and \Code{red quarter zip}.\\
@@ -213,7 +214,36 @@ Wholesale & Public SKU variants & 6 public wholesale variants tested. 4/6 were r
 \bottomrule
 \end{tabularx}
 \vspace{0.12in}
-\ReportFine{Rendered browser evidence was captured June 25, 2026. The full GEN-004 normalization matrix was captured June 26, 2026 from public Boxercraft pages, Shopify/Boost search behavior, collection/page links, and public wholesale pages. Revalidate before external delivery.}
+\ReportFine{Rendered browser evidence was captured June 25, 2026. The full GEN-004 normalization matrix was captured June 26, 2026 from public Boxercraft pages, Shopify/Boost search behavior, collection/page links, and public wholesale pages. GEN-007 all-node browse parity evidence was captured June 29, 2026 from public collection feeds and Boost search/autocomplete APIs. Revalidate before external delivery.}
+
+\newpage
+\ReportPageHeader{Browse Node Parity}
+\ReportFooter
+\ReportSection{All Browse Nodes Compared To Search And Autocomplete}
+\ReportBody{GEN-007 adds the stricter parity method: every public Boxercraft collection node is enumerated, the corresponding search query is generated from the collection handle or visible node label, full Boost search results are paged, Boost autocomplete product suggestions are captured separately, and product handles are compared against the browse-node product feed. This prevents parity claims from being based on a few sampled browse nodes.}\par
+\vspace{0.12in}
+\begin{tabularx}{\linewidth}{@{}L{0.24\linewidth}L{0.21\linewidth}L{0.18\linewidth}N@{}}
+\toprule
+\textbf{Parity measure} & \textbf{GEN-007 result} & \textbf{Evidence basis} & \textbf{Readout}\\
+\midrule
+Public collections discovered & 96 nodes & \Code{/collections.json} & Full public browse-node inventory captured.\\
+Non-empty nodes evaluated & 93 nodes & Collection product feeds plus Boost APIs & All non-empty public nodes completed with no rate-limit errors in the final run.\\
+Core category/fan-shop parity & 5/60 exact matches & Product-handle set comparison & Search and browse parity is not reliable enough for sampled claims.\\
+Search-only products & 13/60 core nodes & Search results absent from matching browse node & Browse can under-expose products that search can find.\\
+Browse-only products & 51/60 core nodes & Browse products absent from matching search & Category labels and fan-shop labels often do not behave as searchable intents.\\
+Autocomplete browse hits & 47/60 core nodes had no browse-product hit & Boost suggestion product payload & Autocomplete should be checked separately because the suggestion payload is smaller than full search.\\
+\bottomrule
+\end{tabularx}
+\vspace{0.14in}
+\begin{minipage}[t]{0.48\linewidth}
+\ReportCard{Blankets Mismatch Confirmed}{The \Code{blankets} browse node returned 2 browse products, while search and autocomplete each reported 3 products for \Code{blankets}. The search/autocomplete-only product was \Code{Lambert Soccer Everest Blanket}, which appeared under Lambert Soccer Spiritwear and other merchandising collections, not the Blankets browse feed.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\ReportCard{Broader Pattern}{\Code{fleece} returned 19 browse products versus 89 search products; \Code{quarter zip pullovers} returned 14 browse products versus 27 search products; \Code{UCLA Bruins} had 6 browse products but 0 search/autocomplete products for the fan-shop label.}
+\end{minipage}
+\vspace{0.14in}
+\ReportFine{Evidence source: GEN-007 browse-node parity JSON and Markdown under \Code{assessments/boxercraft/browse-node-parity/}. Global catalog, empty collections, and merchandising/campaign nodes are recorded but excluded from the 60-node core parity denominator. Autocomplete parity is not treated as full recall because the Boost suggestion API returns a smaller product suggestion list than full search.}
 
 \newpage
 \ReportPageHeader{Competitor Benchmark}
@@ -254,7 +284,7 @@ Fanatics & Marketplace benchmark & 0/8 relevant & Access-limited in this automat
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.46\linewidth}
-\FindingBlock{Finding 03 / High}{Search And Autocomplete To Browse routing is inconsistent}{\textbf{Observation:} UCLA and broad fan-shop terms usually exposed browse paths, but quarter-zip and color-product variants did not consistently route to useful collection, page, or fan-shop browse destinations.\\[0.04in]\textbf{Customer impact:} Customers who do not get a perfect product result may not be guided to a useful browse path, even when relevant collections or pages exist.\\[0.04in]\textbf{Recommendation:} Map search and autocomplete fallbacks to relevant collections, pages, fan-shop destinations, and close alternatives when exact product results are missing or uncertain.}
+\FindingBlock{Finding 03 / High}{Browse-node, search, and autocomplete parity is not reliable}{\textbf{Observation:} GEN-007 evaluated 93 non-empty public browse nodes and found exact search/browse product-set parity on only 5/60 category or fan-shop nodes. \Code{blankets} returned 2 browse products, while search and autocomplete reported 3 products; the missing browse product was \Code{Lambert Soccer Everest Blanket}.\\[0.04in]\textbf{Customer impact:} Customers can see different product availability depending on whether they browse, search, or type into autocomplete.\\[0.04in]\textbf{Recommendation:} Make all-node browse parity a required gate: each priority collection should have matching collection membership, search indexing, autocomplete coverage, and fallback routing before parity is reported.}
 \vspace{0.12in}
 \FindingBlock{Finding 04 / Medium}{Product-page recommendations are weakly related}{\textbf{Observation:} \Code{You May Also Like} rendered on a quarter-zip product page, but the captured recommendation repeated the same product.\\[0.04in]\textbf{Customer impact:} Shoppers receive little help discovering alternatives or complements.\\[0.04in]\textbf{Recommendation:} Tune recommendations toward distinct similar products, complements, or collection alternatives.}
 \end{minipage}
@@ -269,7 +299,7 @@ Fanatics & Marketplace benchmark & 0/8 relevant & Access-limited in this automat
 \midrule
 \PhaseRow{Now}{Normalization map}{Normalize spacing, punctuation, \Code{qtr}/\Code{1/4}, gender synonyms, and color-plus-product phrases across search and autocomplete.}{Fewer false dead ends before and after search submission}
 \PhaseRow{Next}{Priority fan-shop routing}{Protect UCLA/Bruins and other team, mascot, university, and fan-shop vocabulary with search, autocomplete, browse, and zero-result checks.}{More reliable high-intent licensed-product discovery}
-\PhaseRow{Then}{Browse recovery}{Use Search And Autocomplete To Browse rules so unsupported terms route to collections, pages, fan-shop destinations, and close alternatives.}{Better recovery from imperfect product matches}
+\PhaseRow{Then}{Browse parity gate}{Run all public browse nodes against corresponding search and autocomplete evidence, then fix collection membership, search indexing, suggestion payloads, and fallback routing together.}{Consistent product recovery across browse, search, and autocomplete}
 \PhaseRow{Validate}{Final evidence}{Validate authenticated wholesale account/order workflows and broaden filter/recommendation samples.}{Client-ready evidence quality}
 \bottomrule
 \end{tabularx}
@@ -279,7 +309,7 @@ Fanatics & Marketplace benchmark & 0/8 relevant & Access-limited in this automat
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.46\linewidth}
-\ReportCard{Strategic Improvement}{Create a shared intent map across search, autocomplete, browse, zero-result recovery, recommendations, and public/wholesale catalog discovery so customer language lands on useful product, collection, or alternative paths consistently.}
+\ReportCard{Strategic Improvement}{Create a shared intent map and browse-node parity gate across search, autocomplete, browse, zero-result recovery, recommendations, and public/wholesale catalog discovery so customer language lands on useful product, collection, or alternative paths consistently.}
 \end{minipage}
 
 \newpage
@@ -297,6 +327,8 @@ Fanatics & Marketplace benchmark & 0/8 relevant & Access-limited in this automat
 \ReportFine{\url{https://boxercraft.com/search?q=maroon+quarter+zip}\\
 \url{https://boxercraft.com/search?q=womens+fleece}\\
 \url{https://boxercraft.com/search?q=quarterzip}\\
+\url{https://boxercraft.com/search?q=blankets}\\
+\url{https://boxercraft.com/collections/blankets}\\
 \url{https://boxercraft.com/search?q=UCLA+quarter+zip}\\
 \url{https://boxercraft.com/search?q=Bruins+apparel}\\
 \url{https://boxercraft.com/search?q=Georgia+Bulldogs}\\
@@ -305,7 +337,7 @@ Fanatics & Marketplace benchmark & 0/8 relevant & Access-limited in this automat
 \url{https://wholesale.boxercraft.com/search.html?query=BM5205\&page=1}\\
 \url{https://wholesale.boxercraft.com/}}
 \vspace{0.12in}
-\ReportCard{Status}{Rendered browser draft assessment with full GEN-004 normalization evidence and GEN-006 public competitor benchmark evidence. Evidence is current through June 27, 2026 and should be revalidated before external delivery. GitHub submission is complete: \Code{main} tracks \Code{origin/main} for the private Northvalley Intelligence repository.}
+\ReportCard{Status}{Rendered browser draft assessment with full GEN-004 normalization evidence, GEN-006 public competitor benchmark evidence, and GEN-007 all-node browse parity evidence. Evidence is current through June 29, 2026 and should be revalidated before external delivery. GitHub submission is complete: \Code{main} tracks \Code{origin/main} for the private Northvalley Intelligence repository.}
 \end{minipage}
 
 \end{document}

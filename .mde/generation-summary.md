@@ -55,3 +55,41 @@ Repository Governance:
 
 Recommendation:
 - Submit the updated report. The competitor benchmark is now incorporated into the client-facing assessment PDF; decide separately whether the presentation deck should receive the same comparison page.
+
+## Generation 7 - Browse Node Search And Autocomplete Parity
+
+Goal:
+- Run every public Boxercraft browse collection node and compare corresponding browse products with search and autocomplete evidence before reporting parity.
+
+What changed:
+- Added `scripts/evaluate-boxercraft-browse-node-parity.mjs`.
+- Generated `assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.json` and `.md`.
+- Updated the structured Boxercraft assessment with GEN-007 evidence, a revised browse score, and a revised overall discovery score.
+- Updated the client-facing assessment PDF with a Browse Node Parity page and the user-observed Blankets mismatch.
+- Updated the framework validator and MDE records so GEN-007 evidence is required.
+
+Validation Result:
+- Gate: pass
+- Blocking findings: none
+- Pass count: 2/2 (`VAL-017`, `VAL-018`)
+
+Useful Signals:
+- Public collections discovered: 96.
+- Non-empty browse nodes evaluated: 93.
+- Core category/fan-shop nodes scored: 60.
+- Exact search/browse product-set parity: 5/60.
+- Search-only products were present on 13/60 core nodes; browse-only products were present on 51/60 core nodes.
+- Autocomplete had no browse-product hit on 47/60 core nodes.
+- Blankets mismatch confirmed: browse returned 2 products while search and autocomplete for `blankets` reported 3 products; the missing browse product was Lambert Soccer Everest Blanket.
+
+Noisy / Low-Signal Validators:
+- Autocomplete parity is suggestion coverage, not full recall, because the Boost suggestion API returns a smaller product payload than full search.
+- Global catalog, empty collections, and merchandising/campaign nodes are recorded but excluded from the 60-node core parity denominator.
+
+Repository Governance:
+- Current branch: `main`, tracking `origin/main`.
+- GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
+- GitHub submission: required after validation for the GEN-007 code, evidence, report, and MDE records.
+
+Recommendation:
+- Commit and push the GEN-007 update. Decide separately whether the presentation deck should receive the same Browse Node Parity page.

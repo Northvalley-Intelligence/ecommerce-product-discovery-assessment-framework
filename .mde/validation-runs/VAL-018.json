@@ -1,0 +1,71 @@
+{
+  "validation_run_id": "VAL-018",
+  "generation": "GEN-007",
+  "phase": "Generation 7 - Browse Node Search And Autocomplete Parity",
+  "started_at": "2026-06-29T13:50:00-0400",
+  "completed_at": "2026-06-29T13:55:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_from_browse_node_parity_report_update",
+  "command": "Second Validation Gate pass after adding all-node Boxercraft browse/search/autocomplete parity evidence and updating the client-facing report PDF",
+  "validations_executed": [
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed a second time with no implementation, report source, or validator behavior changes after VAL-017."
+    },
+    {
+      "category": "UI Standards / Content Integrity Validation",
+      "tool": "pdftotext",
+      "result": "pass",
+      "evidence": "Extracted PDF text remained stable and included the required GEN-007 parity content."
+    },
+    {
+      "category": "UI Standards Validation",
+      "tool": "pdfinfo / rendered page review",
+      "result": "pass",
+      "evidence": "Generated PDF remains 8 pages and rendered Evidence Snapshot and Browse Node Parity pages were clean."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "tool": "git status and remote review",
+      "result": "pass_pending_post_validation_push",
+      "evidence": "main tracks origin/main; the GEN-007 update must be committed and pushed after validation."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Project-Specific External Validation",
+      "reason": "Second pass reused the clean GEN-007 parity evidence from VAL-017 and did not rerun public external APIs, because no implementation changes were made between clean passes.",
+      "revisit_when": "Public collection membership, search indexing, autocomplete suggestions, or parity methodology changes."
+    },
+    {
+      "category": "Security Validation",
+      "reason": "No dependencies, secrets, backend code, authentication, storage, or deployment configuration changed.",
+      "revisit_when": "Dependencies, backend code, authentication, storage, secrets, or deployment configuration change."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    {
+      "finding_id": "FND-GEN007-001",
+      "status": "accepted",
+      "summary": "Blankets browse node under-exposes products returned by search and autocomplete."
+    },
+    {
+      "finding_id": "FND-GEN007-002",
+      "status": "accepted",
+      "summary": "Search and browse product sets are not equal across evaluated core browse nodes."
+    }
+  ],
+  "coverage": {
+    "browse_node_parity": "all_public_collections_enumerated_and_non_empty_nodes_compared_to_search_and_autocomplete",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "pass_count_reset": false,
+  "evidence_quality": "strong_for_public_browse_node_search_autocomplete_parity_scope",
+  "reason": "Second clean validation pass completed with no implementation, report source, or validator behavior changes after VAL-017."
+}

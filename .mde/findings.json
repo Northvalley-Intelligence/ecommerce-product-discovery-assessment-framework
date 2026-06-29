@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-06-29",
-  "current_generation": "GEN-006",
+  "current_generation": "GEN-007",
   "findings": [
     {
       "finding_id": "FND-GEN001-001",
@@ -181,6 +181,42 @@
       "last_seen_generation": "GEN-006",
       "status": "resolved",
       "resolution_notes": "Added a dedicated Competitor Benchmark page to the report using existing GEN-006 evidence. The page compares Boxercraft, L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics across relevant search, autocomplete, browse evidence, weighted score/readout, and explicit evidence limits. Regenerated the PDF and validated text/layout in VAL-015 and VAL-016."
+    },
+    {
+      "finding_id": "FND-GEN007-001",
+      "source_validator": "scripts/evaluate-boxercraft-browse-node-parity.mjs",
+      "severity": "High",
+      "category": "Browse Search Autocomplete Parity",
+      "summary": "The Blankets browse node under-exposes products returned by search and autocomplete.",
+      "affected_workflow_or_component": "Boxercraft public retail browse, search, and autocomplete parity",
+      "first_seen_generation": "GEN-007",
+      "last_seen_generation": "GEN-007",
+      "status": "new",
+      "resolution_notes": "GEN-007 found the Blankets node returned 2 browse products, while search and autocomplete for blankets reported 3 products. Lambert Soccer Everest Blanket appeared in search/autocomplete but not the Blankets browse feed."
+    },
+    {
+      "finding_id": "FND-GEN007-002",
+      "source_validator": "scripts/evaluate-boxercraft-browse-node-parity.mjs",
+      "severity": "High",
+      "category": "All Browse Node Parity",
+      "summary": "Search and browse product sets are not equal across evaluated core browse nodes.",
+      "affected_workflow_or_component": "Boxercraft public retail category and fan-shop browse nodes",
+      "first_seen_generation": "GEN-007",
+      "last_seen_generation": "GEN-007",
+      "status": "new",
+      "resolution_notes": "GEN-007 discovered 96 public collections and evaluated 93 non-empty nodes. Only 5/60 category or fan-shop nodes had exact search/browse product-set parity; 13/60 exposed search-only products and 51/60 exposed browse-only products."
+    },
+    {
+      "finding_id": "FND-GEN007-003",
+      "source_validator": "scripts/evaluate-boxercraft-browse-node-parity.mjs",
+      "severity": "Medium",
+      "category": "Autocomplete Browse Parity",
+      "summary": "Autocomplete does not consistently surface products from the corresponding browse node.",
+      "affected_workflow_or_component": "Boxercraft public retail autocomplete suggestions and browse nodes",
+      "first_seen_generation": "GEN-007",
+      "last_seen_generation": "GEN-007",
+      "status": "new",
+      "resolution_notes": "GEN-007 found 47/60 category or fan-shop nodes returned no autocomplete product that matched the corresponding browse-node feed. This is suggestion coverage rather than full recall because the Boost suggestion payload is smaller than full search."
     }
   ],
   "lifecycle_states": [

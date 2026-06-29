@@ -1,22 +1,22 @@
 {
   "updated_on": "2026-06-29",
-  "current_generation": "GEN-006",
+  "current_generation": "GEN-007",
   "validators": [
     {
       "validator": "scripts/validate-framework.mjs",
       "category": "Functional / Technical / Mission Coverage / Repository Governance",
-      "total_runs": 18,
-      "total_findings": 10,
+      "total_runs": 20,
+      "total_findings": 13,
       "critical_findings_found": 0,
-      "high_findings_found": 6,
-      "findings_accepted_as_valid": 10,
+      "high_findings_found": 8,
+      "findings_accepted_as_valid": 13,
       "findings_dismissed_as_false_positive": 0,
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-006",
+      "last_useful_finding_generation": "GEN-007",
       "recommendation": "keep",
-      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction and twice after the competitor benchmark report update. One failed run correctly exposed stale report text expectations, which were updated to require the new competitor comparison."
+      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction, twice after the competitor benchmark report update, and twice after the GEN-007 browse-node parity report update. It now requires the GEN-007 JSON/Markdown evidence and report parity copy."
     },
     {
       "validator": "scripts/validate-boxercraft-browser.mjs",
@@ -113,7 +113,23 @@
       "last_useful_finding_generation": "GEN-006",
       "recommendation": "keep",
       "notes": "Generated the GEN-006 competitor benchmark across public Shopify catalog feeds, rendered search/autocomplete/browse samples, and explicit Concepts Sport/Fanatics limitation records. One interrupted exploratory run led to a tighter catalog-plus-rendered-sample strategy."
+    },
+    {
+      "validator": "scripts/evaluate-boxercraft-browse-node-parity.mjs",
+      "category": "Project-Specific External / Functional / Usability Validation",
+      "total_runs": 4,
+      "total_findings": 3,
+      "critical_findings_found": 0,
+      "high_findings_found": 2,
+      "findings_accepted_as_valid": 3,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "about_2_to_3_minutes_when_rate_limit_backoff_is_needed",
+      "average_cost": "external_site_access_to_public_boxercraft_and_boost_apis",
+      "last_useful_finding_generation": "GEN-007",
+      "recommendation": "keep",
+      "notes": "Generated all-node browse/search/autocomplete parity evidence across public Boxercraft collections. An early run exposed methodology cleanup needs for merchandising-node classification and broad handle queries; a later run exposed 429 rate-limit handling needs. The final rate-limit-aware run completed with 96 collections discovered, 93 non-empty nodes evaluated, and no warnings or node errors."
     }
   ],
-  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 6 added the competitor pricing and discovery benchmark evaluator."
+  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 6 added the competitor pricing and discovery benchmark evaluator. Generation 7 added the all-node browse/search/autocomplete parity evaluator."
 }

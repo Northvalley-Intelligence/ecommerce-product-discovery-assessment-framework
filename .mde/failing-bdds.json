@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-06-27",
-  "current_generation": "GEN-006",
+  "updated_on": "2026-06-29",
+  "current_generation": "GEN-007",
   "failing_bdds": [],
   "not_executed_required_bdds": [],
   "deferred_bdds": [
@@ -48,5 +48,5 @@
       "revisit_when": "When approved manual/browser evidence or a comparable marketplace data source is selected."
     }
   ],
-  "note": "Generation 6 has no failing required BDDs for the competitor pricing/discovery benchmark. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, unverified UCLA commercial context, Concepts Sport comparable pricing, and Fanatics marketplace comparability remain explicit deferrals or limitations for client-delivery readiness."
+  "note": "Generation 7 has no failing required BDDs for the all-node browse/search/autocomplete parity pass. Authenticated wholesale, broader recommendation/filter sampling, independent evaluator calibration, unverified UCLA commercial context, Concepts Sport comparable pricing, and Fanatics marketplace comparability remain explicit deferrals or limitations for client-delivery readiness."
 }

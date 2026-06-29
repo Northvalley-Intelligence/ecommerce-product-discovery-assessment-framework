@@ -126,11 +126,15 @@ const requiredFiles = [
   'assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json',
   'assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.json',
   'assessments/boxercraft/competitor-evidence/GEN-006/competitor-pricing-discovery.md',
+  'assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.json',
+  'assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.md',
+  'scripts/evaluate-boxercraft-browse-node-parity.mjs',
   'deploy/release-checks.json',
   '.mde/generations/GEN-003.json',
   '.mde/generations/GEN-004.json',
   '.mde/generations/GEN-005.json',
   '.mde/generations/GEN-006.json',
+  '.mde/generations/GEN-007.json',
   '.mde/validation-runs/VAL-005.json',
   '.mde/validation-runs/VAL-006.json',
   '.mde/validation-runs/VAL-007.json',
@@ -138,7 +142,9 @@ const requiredFiles = [
   '.mde/validation-runs/VAL-009.json',
   '.mde/validation-runs/VAL-010.json',
   '.mde/validation-runs/VAL-011.json',
-  '.mde/validation-runs/VAL-012.json'
+  '.mde/validation-runs/VAL-012.json',
+  '.mde/validation-runs/VAL-017.json',
+  '.mde/validation-runs/VAL-018.json'
 ];
 
 for (const file of requiredFiles) {
@@ -248,15 +254,20 @@ textIncludesAll(report, [
 const boxercraftReport = readText('reports/boxercraft-product-discovery-assessment.tex');
 textIncludesAll(boxercraftReport, [
   'Boxercraft Product Discovery Assessment',
-  'Rendered public-retail, public-wholesale, 36-query search/autocomplete normalization, and competitor discovery benchmark',
+  'Rendered public-retail, public-wholesale, 36-query search/autocomplete normalization, all-node browse parity, and competitor discovery benchmark',
   'Executive Summary',
   'Evidence Snapshot',
+  'Browse Node Parity',
+  'All Browse Nodes Compared To Search And Autocomplete',
+  'Only 5/60 category or fan-shop nodes',
+  'Lambert Soccer Everest Blanket',
   'Competitor Benchmark',
   'Search, Autocomplete, And Browse Comparison',
   'Normalization Matrix',
   'UCLA/Bruins',
   'Search And Autocomplete To Browse',
   'Search and autocomplete normalization',
+  'GEN-007 all-node browse parity evidence',
   'Boxercraft leads the tested competitor discovery benchmark',
   'Boxercraft scored 78 versus Colosseum 55 and L2 Brands 46',
   'Colosseum Athletics',
@@ -379,6 +390,31 @@ for (const site of competitorValidation.sites || []) {
   }
 }
 
+const browseParityValidation = readJson('assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.json');
+assert(browseParityValidation.generation_id === 'GEN-007', 'browse-node parity validation must be recorded for GEN-007');
+assert(Array.isArray(browseParityValidation.failures) && browseParityValidation.failures.length === 0, 'browse-node parity validation must have no failures');
+assert(Array.isArray(browseParityValidation.warnings) && browseParityValidation.warnings.length === 0, 'browse-node parity validation must have no warnings in the final evidence run');
+assert((browseParityValidation.nodes || []).filter((node) => node.status === 'error').length === 0, 'browse-node parity validation must have no node errors');
+assert(browseParityValidation.summary?.public_collections_discovered === 96, 'browse-node parity validation must enumerate all 96 public collections captured in GEN-007');
+assert(browseParityValidation.summary?.evaluated_nodes === 93, 'browse-node parity validation must evaluate 93 non-empty public browse nodes');
+assert(browseParityValidation.summary?.core_nodes_evaluated === 60, 'browse-node parity validation must score 60 category or fan-shop nodes');
+assert(browseParityValidation.summary?.core_nodes_with_exact_search_browse_match === 5, 'browse-node parity validation must preserve the 5/60 exact search/browse parity result');
+assert(browseParityValidation.summary?.core_nodes_with_search_only_products === 13, 'browse-node parity validation must capture 13 core nodes with search-only products');
+assert(browseParityValidation.summary?.core_nodes_with_browse_only_products === 51, 'browse-node parity validation must capture 51 core nodes with browse-only products');
+assert(browseParityValidation.summary?.core_nodes_with_no_autocomplete_browse_hit === 47, 'browse-node parity validation must capture 47 core nodes with no autocomplete browse-product hit');
+const blanketsNode = (browseParityValidation.nodes || []).find((node) => node.handle === 'blankets') || {};
+assert(blanketsNode.browse_product_count === 2, 'blankets browse node must capture 2 browsed products');
+assert(blanketsNode.search_total_product === 3, 'blankets search must capture 3 products');
+assert(blanketsNode.autocomplete_total_product === 3, 'blankets autocomplete must report 3 total products');
+assert((blanketsNode.comparison?.search_only_products || []).some((product) => product.title === 'Lambert Soccer Everest Blanket'), 'blankets parity finding must include Lambert Soccer Everest Blanket as search-only');
+const browseParitySummary = readText('assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.md');
+textIncludesAll(browseParitySummary, [
+  'Boxercraft Browse Node Parity Evaluation',
+  'Exact search/browse product-set parity on core nodes: 5/60',
+  'The Blankets node used query `blankets`',
+  'Lambert Soccer Everest Blanket'
+], 'browse-node parity summary');
+
 const releaseChecks = readJson('deploy/release-checks.json');
 assert(releaseChecks.repositoryGovernance?.git_repository_present === true, 'release checks must record initialized Git repository');
 assert(releaseChecks.repositoryGovernance?.github_remote_present === true, 'release checks must record GitHub remote');
@@ -409,10 +445,19 @@ assert(gen6Evidence.validation_gate?.pass_count === '2/2', 'GEN-006 evidence mus
 assert(gen6Evidence.repository_governance?.github_remote_present === true, 'GEN-006 evidence must record GitHub remote');
 assert(gen6Evidence.evidence_quality_notes?.some((note) => note.includes('Concepts Sport')), 'GEN-006 evidence must keep Concepts Sport limitation explicit');
 assert(gen6Evidence.evidence_quality_notes?.some((note) => note.includes('Fanatics')), 'GEN-006 evidence must keep Fanatics limitation explicit');
+const gen7Evidence = readJson('.mde/generations/GEN-007.json');
+assert(gen7Evidence.validation_gate?.result === 'pass', 'GEN-007 evidence must record passing Validation Gate');
+assert(gen7Evidence.validation_gate?.pass_count === '2/2', 'GEN-007 evidence must record two Validation Gate passes');
+assert(gen7Evidence.repository_governance?.github_remote_present === true, 'GEN-007 evidence must record GitHub remote');
+assert(gen7Evidence.evidence_quality_notes?.some((note) => note.includes('Autocomplete parity is suggestion coverage')), 'GEN-007 evidence must keep autocomplete payload limitation explicit');
 const val11 = readJson('.mde/validation-runs/VAL-011.json');
 const val12 = readJson('.mde/validation-runs/VAL-012.json');
 assert(val11.gate_result === 'pass' && val11.pass_count_after_run === '1/2', 'VAL-011 must record first GEN-006 Validation Gate pass');
 assert(val12.gate_result === 'pass' && val12.pass_count_after_run === '2/2', 'VAL-012 must record second GEN-006 Validation Gate pass');
+const val17 = readJson('.mde/validation-runs/VAL-017.json');
+const val18 = readJson('.mde/validation-runs/VAL-018.json');
+assert(val17.gate_result === 'pass' && val17.pass_count_after_run === '1/2', 'VAL-017 must record first GEN-007 Validation Gate pass');
+assert(val18.gate_result === 'pass' && val18.pass_count_after_run === '2/2', 'VAL-018 must record second GEN-007 Validation Gate pass');
 
 const coverage = readJson('framework/coverage-matrix.json');
 const coveredBdds = new Set((coverage.mission_coverage || []).flatMap((item) => item.bdd_refs || []));

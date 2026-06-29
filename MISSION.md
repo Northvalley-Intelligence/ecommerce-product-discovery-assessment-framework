@@ -187,11 +187,11 @@ The framework is successful when:
 
 ## Current Phase
 
-Generation 6: Competitor Pricing And Discovery Benchmark.
+Generation 7: Browse Node Search And Autocomplete Parity.
 
 ## Current Phase Goal
 
-Benchmark Boxercraft against relevant licensed-apparel competitors using public pricing, catalog, search, autocomplete, and browse evidence while keeping direct-brand sites, marketplace benchmarks, and access-limited surfaces clearly separated.
+Run all public Boxercraft browse nodes and compare each non-empty node with corresponding search and autocomplete evidence before reporting search, autocomplete, and browse parity.
 
 ## What Matters Most Now
 
@@ -211,9 +211,10 @@ Benchmark Boxercraft against relevant licensed-apparel competitors using public 
 - Broader recommendation and filter persistence samples may change final client-delivery scoring.
 - UCLA/Bruins commercial importance is stakeholder context unless client-supplied evidence approves stronger public claims.
 - Competitor pricing and assortment evidence can be incomplete when a relevant site does not expose comparable public product feeds or rendered product grids.
+- Search, autocomplete, and browse parity can be overstated if conclusions are based on sampled nodes instead of all public browse nodes.
 - Report artifacts may fail client-facing quality checks if print/PDF output changes without repeat layout validation.
 - GitHub submission is now active for this project; future meaningful code changes should be committed and pushed to the configured GitHub remote after validation.
 
 ## Next
 
-Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark in the client-facing deck, manually validate Concepts Sport and Fanatics before strong competitor claims, and confirm any UCLA/Bruins commercial context that should be client-facing.
+Before treating the Boxercraft package as client-ready, validate authenticated wholesale workflows if access is approved, broaden recommendation/filter persistence samples, decide whether to include the competitor benchmark and browse-node parity page in the client-facing deck, manually validate Concepts Sport and Fanatics before strong competitor claims, and confirm any UCLA/Bruins commercial context that should be client-facing.

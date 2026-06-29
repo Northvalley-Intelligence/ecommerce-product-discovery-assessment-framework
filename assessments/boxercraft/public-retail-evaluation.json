@@ -1,12 +1,12 @@
 {
-  "assessment_id": "boxercraft-public-retail-2026-06-26",
+  "assessment_id": "boxercraft-public-retail-2026-06-29",
   "framework_version": "0.1.0",
   "assessment_status": "draft_report",
   "target": {
     "company_name": "Boxercraft",
     "domain": "boxercraft.com",
     "vertical": "apparel",
-    "assessment_date": "2026-06-26",
+    "assessment_date": "2026-06-29",
     "access_contexts": [
       "public_consumer",
       "unknown_or_not_available",
@@ -316,6 +316,8 @@
         "public collection discovery",
         "search-to-browse routing",
         "autocomplete-to-browse routing",
+        "all public browse-node parity comparison",
+        "blankets browse/search/autocomplete parity",
         "UCLA/Bruins fan-shop browse routing",
         "quarter-zip collection routing",
         "color-plus-product collection routing"
@@ -374,9 +376,18 @@
           "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
           "summary": "UCLA/Bruins priority terms were mostly recoverable but not complete: 7/8 search variants, 6/8 autocomplete variants, 8/8 search-to-browse paths, and 5/8 autocomplete-to-browse paths. UCLA quarter zip dropped in autocomplete and Bruins apparel returned zero search results.",
           "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSE-PARITY-001",
+          "source_type": "structured_browse_search_autocomplete_parity",
+          "captured_at": "2026-06-29",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.json",
+          "summary": "GEN-007 discovered 96 public collections and evaluated 93 non-empty browse nodes. Only 5/60 category or fan-shop nodes had exact search/browse product-set parity. The Blankets node returned 2 browse products while search and autocomplete for blankets reported 3 products, with Lambert Soccer Everest Blanket present in search/autocomplete but absent from the Blankets browse feed.",
+          "freshness_status": "current"
         }
       ],
-      "notes": "Rendered evidence now includes search/autocomplete-to-browse routing. UCLA and broad team queries usually expose browse paths, but quarter-zip and color-plus-product terms rarely route to collection browse destinations."
+      "notes": "Rendered evidence now includes search/autocomplete-to-browse routing, and GEN-007 adds all-node browse parity. UCLA and broad team queries usually expose browse paths, but exact browse/search product-set parity is limited across category and fan-shop nodes."
     },
     {
       "area_id": "filters_facets",
@@ -655,11 +666,12 @@
       ]
     },
     "browse": {
-      "score": 60,
-      "rationale": "UCLA and broad fan-shop terms usually expose browse paths, but search/autocomplete-to-browse routing is inconsistent for quarter-zip and color-plus-product terms.",
+      "score": 48,
+      "rationale": "GEN-007 all-node parity found exact search/browse product-set parity on only 5/60 category or fan-shop nodes. Browse under-exposed search/autocomplete products for blankets, fleece, and quarter-zip pullovers, while many category and fan-shop labels did not behave as searchable intents.",
       "evidence_refs": [
         "E-NORM-BROWSE-001",
-        "E-NORM-UCLA-001"
+        "E-NORM-UCLA-001",
+        "E-BROWSE-PARITY-001"
       ]
     },
     "filters": {
@@ -687,12 +699,13 @@
       ]
     },
     "product_discovery_overall": {
-      "score": 55,
-      "rationale": "The full normalization matrix lowers confidence from the rendered browser draft: UCLA/Bruins discovery is mostly recoverable, but search/autocomplete parity, browse routing, color-plus-product terms, abbreviations, and public wholesale SKU punctuation are uneven.",
+      "score": 52,
+      "rationale": "The full normalization matrix and GEN-007 browse-node parity pass lower confidence from the rendered browser draft: UCLA/Bruins discovery is mostly recoverable, but search/autocomplete parity, browse/search product-set parity, color-plus-product terms, abbreviations, and public wholesale SKU punctuation are uneven.",
       "evidence_refs": [
         "E-NORM-SEARCH-001",
         "E-NORM-AUTO-001",
         "E-NORM-BROWSE-001",
+        "E-BROWSE-PARITY-001",
         "E-NORM-UCLA-001",
         "E-NORM-WHOLESALE-001"
       ]
@@ -776,7 +789,7 @@
       "id": "F-003",
       "assessment_area": "browse_navigation",
       "severity": "High",
-      "observation": "Search and autocomplete do not consistently route normalized terms to useful browse destinations.",
+      "observation": "Browse-node, search, and autocomplete parity is not reliable across public category and fan-shop nodes.",
       "evidence": [
         {
           "id": "E-NORM-BROWSE-001",
@@ -786,11 +799,20 @@
           "locator": "assessments/boxercraft/normalization-evidence/GEN-004/normalization-evaluation.json",
           "summary": "Search/autocomplete-to-browse routing was uneven. UCLA and broad team terms usually exposed browse paths, while quarter-zip/color-product variants had browse path gaps for quarter-zip, quarterzip, qtr zip, qtr-zip, 1/4 zip, maroon quarter zip, burgundy quarter zip, cardinal quarter zip, red quarter zip, maroon qtr zip.",
           "freshness_status": "current"
+        },
+        {
+          "id": "E-BROWSE-PARITY-001",
+          "source_type": "structured_browse_search_autocomplete_parity",
+          "captured_at": "2026-06-29",
+          "access_context": "public_consumer",
+          "locator": "assessments/boxercraft/browse-node-parity/GEN-007/browse-node-parity.json",
+          "summary": "GEN-007 discovered 96 public collections and evaluated 93 non-empty browse nodes. Only 5/60 category or fan-shop nodes had exact search/browse product-set parity. The Blankets node returned 2 browse products while search and autocomplete for blankets reported 3 products, with Lambert Soccer Everest Blanket present in search/autocomplete but absent from the Blankets browse feed.",
+          "freshness_status": "current"
         }
       ],
-      "customer_impact": "Customers who use search may not be guided to relevant collections or fan-shop pages when product-level matching is weak or ambiguous.",
-      "business_impact": "Existing browse destinations may not capture recoverable search demand, limiting merchandising value from collections and fan-shop pages.",
-      "recommendation": "Use collection/page suggestions as recovery paths in both search and autocomplete for quarter-zip variants, color-plus-product phrases, and team/fan-shop terms.",
+      "customer_impact": "Customers can see different product availability depending on whether they browse, search, or use autocomplete.",
+      "business_impact": "Existing browse destinations can under-expose products that search finds, while category and fan-shop labels may fail to capture search demand for their own browse inventory.",
+      "recommendation": "Make all-node browse parity a required gate: each priority collection should have matching collection membership, search indexing, autocomplete coverage, and fallback routing before parity is reported.",
       "opportunity_class": "Strategic Improvement",
       "confidence": "high",
       "status": "validated"
@@ -877,11 +899,13 @@
   "opportunity_matrix": {
     "quick_wins": [
       "Normalize quarter-zip spacing, hyphenation, qtr/1/4 abbreviations, gender synonyms, and color-plus-product phrases across search and autocomplete.",
+      "Correct the Blankets collection membership or indexing so Lambert Soccer Everest Blanket is consistently discoverable through browse, search, and autocomplete.",
       "Normalize public wholesale SKU searches by stripping spaces/hyphens and case-folding product codes.",
       "Tune product-page recommendations so You May Also Like returns distinct related products rather than repeating the current product."
     ],
     "strategic_improvements": [
       "Treat UCLA/Bruins and other priority team/fan-shop aliases as protected relevance sets with search, autocomplete, and browse recovery checks.",
+      "Run an all-node browse parity gate before reporting search, autocomplete, and browse parity.",
       "Use relevant collection and fan-shop pages as explicit search/autocomplete recovery paths.",
       "Validate authenticated wholesale account, pricing, order, and inventory workflows with approved access."
     ],
@@ -894,6 +918,8 @@
     "Filter visibility and mobile filter entry points were validated on the fleece collection, but multi-select behavior and filter persistence were not exhaustively tested across the catalog.",
     "Recommendation relevance was validated on one product page and should be sampled across more product families before final delivery.",
     "Generation 4 normalization evidence was captured on 2026-06-26 and should be revalidated before external delivery because search/autocomplete results can change.",
+    "Generation 7 browse-node parity evidence was captured on 2026-06-29 and should be revalidated before external delivery because public collection membership, search indexing, and autocomplete suggestions can change.",
+    "Autocomplete browse parity uses the Boost suggestion API product payload, which is smaller than full search results; autocomplete parity is therefore scored as suggestion coverage, not full recall.",
     "User-reported UCLA commercial importance is treated as stakeholder context; the assessment validates UCLA/Bruins discovery behavior but does not claim public proof that UCLA is Boxercraft's largest client."
   ]
 }

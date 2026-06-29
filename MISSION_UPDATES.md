@@ -52,3 +52,8 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: User clarified that the report should answer how Boxercraft search, autocomplete, and browse compare against competitors, not merely list competitors.
 - Discovered through: Existing GEN-006 competitor benchmark evidence for Boxercraft, L2 Brands, Colosseum Athletics, Concepts Sport, and Fanatics; report PDF text extraction; and rendered PDF page checks.
 - Impact: The assessment PDF now includes a Competitor Benchmark page showing Boxercraft leads the tested public direct-brand discovery benchmark overall, while Colosseum pressures UCLA/Bruins public catalog visibility and Boxercraft autocomplete still trails its own search recovery.
+
+- Mission update: Added all-node Boxercraft browse/search/autocomplete parity evidence and updated the client-facing report.
+- Reason: User observed that searching for blankets showed three products while browsing blankets showed two, and clarified that parity should be based on running all browse nodes against corresponding search and autocomplete evidence.
+- Discovered through: GEN-007 public collection enumeration, collection product-feed pagination, Boost search pagination, Boost autocomplete suggestion checks, PDF text extraction, and rendered PDF page checks.
+- Impact: The assessment now records 96 public collections, 93 evaluated non-empty browse nodes, and only 5/60 exact search/browse product-set parity matches across category or fan-shop nodes. The report now confirms the Blankets mismatch: browse shows 2 products while search/autocomplete report 3, with Lambert Soccer Everest Blanket missing from the Blankets browse feed.
