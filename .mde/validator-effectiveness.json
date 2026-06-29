@@ -1,11 +1,11 @@
 {
-  "updated_on": "2026-06-27",
+  "updated_on": "2026-06-28",
   "current_generation": "GEN-006",
   "validators": [
     {
       "validator": "scripts/validate-framework.mjs",
       "category": "Functional / Technical / Mission Coverage / Repository Governance",
-      "total_runs": 13,
+      "total_runs": 15,
       "total_findings": 9,
       "critical_findings_found": 0,
       "high_findings_found": 6,
@@ -16,7 +16,7 @@
       "average_cost": "local_only",
       "last_useful_finding_generation": "GEN-005",
       "recommendation": "keep",
-      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission."
+      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction."
     },
     {
       "validator": "scripts/validate-boxercraft-browser.mjs",
@@ -53,7 +53,7 @@
     {
       "validator": "latexmk",
       "category": "Technical / UI Standards Validation",
-      "total_runs": 10,
+      "total_runs": 11,
       "total_findings": 1,
       "critical_findings_found": 0,
       "high_findings_found": 0,
@@ -62,25 +62,25 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_when_targets_up_to_date",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-004",
+      "last_useful_finding_generation": "GEN-006",
       "recommendation": "keep",
-      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs."
+      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction regenerated the assessment PDF successfully."
     },
     {
       "validator": "pdftotext / pdftoppm / visual spot check",
       "category": "Usability / UI Standards Validation",
-      "total_runs": 7,
-      "total_findings": 1,
+      "total_runs": 9,
+      "total_findings": 2,
       "critical_findings_found": 0,
       "high_findings_found": 0,
-      "findings_accepted_as_valid": 1,
+      "findings_accepted_as_valid": 2,
       "findings_dismissed_as_false_positive": 0,
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_for_text_extraction_and_page_rendering",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-004",
+      "last_useful_finding_generation": "GEN-006",
       "recommendation": "keep",
-      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content."
+      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly."
     },
     {
       "validator": "scripts/evaluate-boxercraft-normalization.mjs",

@@ -1,11 +1,11 @@
 {
   "state_version": 1,
-  "updated_on": "2026-06-27",
+  "updated_on": "2026-06-28",
   "project_id": "ecommerce-product-discovery-assessment-framework",
   "current_generation": "GEN-006",
   "current_phase": "Generation 6 - Competitor Pricing And Discovery Benchmark",
   "phase_goal": "Benchmark Boxercraft against relevant licensed-apparel competitors using public pricing, catalog, search, autocomplete, and browse evidence while separating direct-brand sites, marketplace benchmarks, and access-limited surfaces.",
-  "status": "generation_6_validation_gate_passed_and_github_submitted",
+  "status": "generation_6_report_status_correction_validation_gate_passed",
   "mission_version": "MISSION-2026-06-24",
   "validation_strategy_id": "VALSTRAT-001",
   "validation_strategy_status": "active_for_generation_6",
@@ -13,8 +13,8 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "pass",
-    "latest_run_id": "VAL-012",
-    "reason": "The framework validator, competitor benchmark evidence checks, npm audit, and repository governance checks passed twice after GEN-006 competitor pricing/discovery evidence was added. The GEN-006 benchmark commit e9988ff2ec5791875b013069b98fd560f1c805cb was pushed to origin/main; verify the latest relocation-handoff commit with git after restart."
+    "latest_run_id": "VAL-014",
+    "reason": "The report source and generated PDF were corrected to remove stale GitHub-blocked copy and state that main tracks origin/main. The framework validator, PDF text extraction, and rendered final-page spot check passed twice after the report-status correction."
   },
   "critical_bdds": 5,
   "high_bdds": 7,

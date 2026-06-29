@@ -1,5 +1,5 @@
 {
-  "updated_on": "2026-06-27",
+  "updated_on": "2026-06-28",
   "current_generation": "GEN-006",
   "findings": [
     {
@@ -157,6 +157,18 @@
       "last_seen_generation": "GEN-006",
       "status": "deferred",
       "resolution_notes": "Concepts Sport is relevant as a licensed lounge/sleepwear competitor, but the public Wix catalog did not expose comparable automated price/product-grid data. Fanatics is a marketplace benchmark, not a direct brand-owned catalog comparison in this run."
+    },
+    {
+      "finding_id": "FND-REPORT-STATUS-001",
+      "source_validator": "PDF text review",
+      "severity": "Medium",
+      "category": "UI Standards / Content Integrity Validation",
+      "summary": "Client-facing report status card still said GitHub submission was blocked after repository submission had been completed.",
+      "affected_workflow_or_component": "Boxercraft product discovery assessment PDF",
+      "first_seen_generation": "GEN-006",
+      "last_seen_generation": "GEN-006",
+      "status": "resolved",
+      "resolution_notes": "Corrected reports/boxercraft-product-discovery-assessment.tex, regenerated boxercraft-product-discovery-assessment.pdf, verified extracted PDF text contains the completed GitHub status, and rendered page 6 without visible layout issues in VAL-013 and VAL-014."
     }
   ],
   "lifecycle_states": [

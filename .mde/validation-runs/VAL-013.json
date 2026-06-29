@@ -1,0 +1,61 @@
+{
+  "validation_run_id": "VAL-013",
+  "generation": "GEN-006",
+  "phase": "Generation 6 - Competitor Pricing And Discovery Benchmark",
+  "started_at": "2026-06-28T23:33:00-0400",
+  "completed_at": "2026-06-28T23:34:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_from_report_status_correction",
+  "command": "First Validation Gate pass after correcting stale GitHub submission status in the client-facing report PDF",
+  "validations_executed": [
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed after the report source and generated PDF were updated."
+    },
+    {
+      "category": "UI Standards / Content Integrity Validation",
+      "tool": "pdftotext",
+      "result": "pass",
+      "evidence": "Extracted PDF text contains 'GitHub submission is complete' and no longer contains the stale 'not a Git repository' blocker language."
+    },
+    {
+      "category": "UI Standards Validation",
+      "tool": "pdftoppm rendered final-page spot check",
+      "result": "pass",
+      "evidence": "Rendered page 6 shows the updated status card without visible clipping, overlap, or footer collision."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "tool": "git status and remote review",
+      "result": "pass_pending_post_validation_push",
+      "evidence": "main tracks origin/main; the report-status correction must be committed and pushed after two clean validation passes."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Security Validation",
+      "reason": "The change touched only report source, generated PDF output, and MDE records. Dependencies and package lock state were unchanged.",
+      "revisit_when": "Dependencies, backend code, authentication, storage, secrets, or deployment configuration change."
+    },
+    {
+      "category": "Project-Specific External Validation",
+      "reason": "The correction did not change ecommerce evidence, scoring, benchmark claims, screenshots, or data collection logic.",
+      "revisit_when": "Report findings, competitor benchmark claims, or ecommerce evidence change."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "report_status_correction": "validated_pdf_text_and_rendered_page",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "pass_count_reset_reason": "Client-facing report source and generated PDF changed after the prior clean GEN-006 validation passes.",
+  "evidence_quality": "strong_for_report_status_correction_scope",
+  "reason": "First clean validation pass completed after removing stale GitHub-blocked language from the client-facing report PDF."
+}

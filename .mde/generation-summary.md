@@ -3,6 +3,10 @@
 Focus:
 Generation 6 competitor pricing and discovery benchmark: identify relevant Boxercraft competitors, compare public direct-site price ranges for common apparel categories, and run comparable public search/autocomplete/browse checks where automation can collect evidence.
 
+Post-handoff report status correction:
+- Updated the client-facing report source and regenerated `boxercraft-product-discovery-assessment.pdf` to remove stale copy saying GitHub submission was blocked.
+- The report now states that GitHub submission is complete and `main` tracks `origin/main`.
+
 Codebase Change:
 - Files changed: competitor evaluator, framework validator, package script, GEN-006 evidence, and project-local MDE status records
 - Production/report files: 0 report/deck changes
@@ -15,13 +19,14 @@ Codebase Change:
 Validation Result:
 - Gate: pass
 - Blocking findings: none
-- Pass count: 2/2
+- Pass count: 2/2 after report-status correction (`VAL-013`, `VAL-014`)
 
 Validator Findings:
 - Functional: pass; `scripts/evaluate-competitor-pricing-discovery.mjs` generated GEN-006 competitor pricing/search/autocomplete/browse evidence
 - Technical: pass; `npm run validate` checks the GEN-006 JSON/markdown evidence, screenshots, and required competitor coverage
 - Usability: adequate for supporting evidence; generated markdown summary is readable but not yet folded into the client-facing report/deck
-- UI Standards: not materially changed; report/deck PDFs were not modified in GEN-006
+- UI Standards: not materially changed by the original GEN-006 competitor benchmark; the later report-status correction regenerated the assessment PDF only
+- UI Standards status correction: pass; regenerated report PDF text was checked with `pdftotext`, and page 6 was rendered with `pdftoppm` for layout review
 - External: public catalog feeds captured Boxercraft, L2 Brands, and Colosseum Athletics; Concepts Sport and Fanatics remain limited or non-comparable in this automated pass
 
 Useful Signals:
@@ -38,7 +43,7 @@ Noisy / Low-Signal Validators:
 Repository Governance:
 - Current branch: `main`, tracking `origin/main`.
 - GitHub remote: `origin` -> `https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git`.
-- GitHub submission: GEN-006 benchmark commit `e9988ff2ec5791875b013069b98fd560f1c805cb` is on `origin/main`; verify the latest relocation-handoff commit with `git rev-parse HEAD` after restart.
+- GitHub submission: complete. The stale report copy that said submission was blocked has been corrected in the report source and generated PDF.
 - Production parity: not applicable yet; `deploy/build-manifest.json` records `platform` as `not_selected` and no production deployment exists.
 
 Recommendation:

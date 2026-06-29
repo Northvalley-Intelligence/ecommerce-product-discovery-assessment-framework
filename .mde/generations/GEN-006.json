@@ -9,6 +9,30 @@
   "focus": "Identify relevant Boxercraft competitors, compare public direct-site price ranges for common apparel categories, and run comparable public search/autocomplete/browse checks where automation can collect evidence.",
   "reason_generation_started": "User asked to find Boxercraft competitors, compare price ranges for common items such as flannel pants, and run similar search/autocomplete/browse tests on competitor sites.",
   "reason_generation_ended": "GEN-006 competitor pricing/discovery JSON and markdown evidence, 70 rendered screenshots, a reusable competitor evaluator, framework validation checks, MDE records, two Validation Gate records, and GitHub submission for benchmark commit e9988ff2ec5791875b013069b98fd560f1c805cb are present. A later relocation-handoff commit may exist after this record.",
+  "post_generation_corrections": [
+    {
+      "date": "2026-06-28",
+      "summary": "Corrected stale GitHub-blocked status copy in the client-facing assessment report after repository submission had been completed.",
+      "files_changed": [
+        "reports/boxercraft-product-discovery-assessment.tex",
+        "boxercraft-product-discovery-assessment.pdf",
+        ".mde/state.json",
+        ".mde/generation-summary.md",
+        ".mde/findings.json",
+        ".mde/validator-effectiveness.json",
+        ".mde/validation-runs/VAL-013.json",
+        ".mde/validation-runs/VAL-014.json",
+        ".mde/generations/GEN-006.json",
+        "deploy/release-checks.json"
+      ],
+      "validation_runs": [
+        "VAL-013",
+        "VAL-014"
+      ],
+      "validation_result": "pass",
+      "report_scope_note": "No ecommerce evidence, score, benchmark claim, or report finding changed."
+    }
+  ],
   "files_changed": [
     "scripts/evaluate-competitor-pricing-discovery.mjs",
     "scripts/validate-framework.mjs",
