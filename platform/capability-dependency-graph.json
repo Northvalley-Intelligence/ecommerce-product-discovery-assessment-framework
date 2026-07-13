@@ -1,0 +1,126 @@
+{
+  "schema_version": "platform-capability-dependency-graph-v0.1",
+  "generation": "GEN-013",
+  "dependencies": [
+    {
+      "capability_id": "P002",
+      "depends_on": [
+        "P001"
+      ]
+    },
+    {
+      "capability_id": "P003",
+      "depends_on": [
+        "P001",
+        "P002"
+      ]
+    },
+    {
+      "capability_id": "P004",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003"
+      ]
+    },
+    {
+      "capability_id": "P005",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P004",
+        "P009"
+      ]
+    },
+    {
+      "capability_id": "P006",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P005",
+        "P009"
+      ]
+    },
+    {
+      "capability_id": "P007",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P005",
+        "P009"
+      ]
+    },
+    {
+      "capability_id": "P008",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P009"
+      ]
+    },
+    {
+      "capability_id": "P009",
+      "depends_on": [
+        "P001",
+        "P002"
+      ]
+    },
+    {
+      "capability_id": "P010",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P009"
+      ]
+    },
+    {
+      "capability_id": "P011",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P005",
+        "P009",
+        "P010"
+      ]
+    },
+    {
+      "capability_id": "P012",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P005",
+        "P009",
+        "P010"
+      ]
+    },
+    {
+      "capability_id": "P013",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P009",
+        "P010"
+      ]
+    },
+    {
+      "capability_id": "P014",
+      "depends_on": [
+        "P001",
+        "P002",
+        "P003",
+        "P005",
+        "P006",
+        "P007",
+        "P009",
+        "P010"
+      ]
+    }
+  ]
+}

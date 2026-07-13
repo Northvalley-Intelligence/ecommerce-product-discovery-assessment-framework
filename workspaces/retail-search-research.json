@@ -1,0 +1,19 @@
+{
+  "schema_version": "workspace-v0.1",
+  "workspace_id": "retail-search-research",
+  "name": "Retail Search Research",
+  "generation": "GEN-013",
+  "description": "Reusable ecommerce inspection workspace for public retailer product discovery inspections.",
+  "targets": [
+    "targets/ridge.json"
+  ],
+  "evaluations": [
+    "evaluations/ridge-shopify-baseline.json"
+  ],
+  "query_packs": [
+    "query-packs/everyday-carry.json"
+  ],
+  "history": {
+    "path": "inspection-history/GEN-013.jsonl"
+  }
+}

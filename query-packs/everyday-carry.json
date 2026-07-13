@@ -1,0 +1,112 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "everyday-carry",
+  "name": "Everyday Carry Starter Pack",
+  "domain": "everyday-carry",
+  "generation": "GEN-013",
+  "queries": [
+    {
+      "query_id": "edc-wallet",
+      "query": "wallet",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "exact",
+          "browse_node": "wallets"
+        }
+      ],
+      "provenance": {
+        "source": "target-domain seed",
+        "reason": "Ridge's primary product category is wallets."
+      }
+    },
+    {
+      "query_id": "edc-magsafe-wallet",
+      "query": "magsafe wallet",
+      "intent": "attribute_plus_category",
+      "expected_relationships": [
+        {
+          "type": "modifier",
+          "browse_node": "wallets",
+          "attribute": "magsafe"
+        }
+      ],
+      "provenance": {
+        "source": "target-domain seed",
+        "reason": "Common customer phrase for phone-compatible wallets."
+      }
+    },
+    {
+      "query_id": "edc-money-clip",
+      "query": "money clip",
+      "intent": "product_type",
+      "expected_relationships": [
+        {
+          "type": "exact",
+          "browse_node": "money-clips"
+        }
+      ],
+      "provenance": {
+        "source": "target-domain seed",
+        "reason": "Common everyday-carry product type."
+      }
+    },
+    {
+      "query_id": "edc-airtag",
+      "query": "airtag",
+      "intent": "attribute_or_accessory",
+      "expected_relationships": [
+        {
+          "type": "attribute",
+          "browse_node": "accessories",
+          "attribute": "airtag"
+        }
+      ],
+      "provenance": {
+        "source": "target-domain seed",
+        "reason": "Common tracking accessory term."
+      }
+    },
+    {
+      "query_id": "edc-carbon-fiber-wallet",
+      "query": "carbon fiber wallet",
+      "intent": "material_plus_category",
+      "expected_relationships": [
+        {
+          "type": "attribute",
+          "browse_node": "wallets",
+          "attribute": "carbon fiber"
+        }
+      ],
+      "provenance": {
+        "source": "target-domain seed",
+        "reason": "Material-specific shopping query."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "edc-functional-slim-wallet",
+      "query": "slim wallet that fits in front pocket",
+      "intent": "functional_intent",
+      "provenance": {
+        "source_query_ids": [
+          "edc-wallet"
+        ],
+        "rule": "functional-intent-expansion"
+      }
+    },
+    {
+      "scenario_id": "edc-occasion-gift",
+      "query": "gift for someone who carries cash and cards",
+      "intent": "occasion_based",
+      "provenance": {
+        "source_query_ids": [
+          "edc-wallet",
+          "edc-money-clip"
+        ],
+        "rule": "occasion-expansion"
+      }
+    }
+  ]
+}

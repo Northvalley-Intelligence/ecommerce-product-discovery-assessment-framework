@@ -1,0 +1,20 @@
+{
+  "schema_version": "target-manifest-v0.1",
+  "target_id": "red-dress",
+  "name": "Red Dress",
+  "primary_url": "https://reddress.com/",
+  "domain": "reddress.com",
+  "role": "peer_reference",
+  "platform": {
+    "expected": "shopify",
+    "canonical_platform_host": null,
+    "confidence": "medium",
+    "source": "GEN-012 Dress Up same-query competitor benchmark used Red Dress as a boutique peer reference."
+  },
+  "inspection_defaults": {
+    "respect_robots": true,
+    "timeout_ms": 15000,
+    "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
+  },
+  "known_limitations": []
+}

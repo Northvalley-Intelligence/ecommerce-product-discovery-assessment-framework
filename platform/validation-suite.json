@@ -1,0 +1,62 @@
+{
+  "schema_version": "platform-validation-suite-v0.1",
+  "generation": "GEN-013",
+  "validators": [
+    {
+      "validator_id": "url-parsing",
+      "capability_id": "P001"
+    },
+    {
+      "validator_id": "https-handling",
+      "capability_id": "P002"
+    },
+    {
+      "validator_id": "redirect-handling",
+      "capability_id": "P003"
+    },
+    {
+      "validator_id": "robots-discovery",
+      "capability_id": "P004"
+    },
+    {
+      "validator_id": "shopify-discovery",
+      "capability_id": "P005"
+    },
+    {
+      "validator_id": "submitted-search-endpoint",
+      "capability_id": "P006"
+    },
+    {
+      "validator_id": "suggest-endpoint",
+      "capability_id": "P007"
+    },
+    {
+      "validator_id": "rendered-capture",
+      "capability_id": "P008"
+    },
+    {
+      "validator_id": "block-classification",
+      "capability_id": "P009"
+    },
+    {
+      "validator_id": "request-pacing",
+      "capability_id": "P010"
+    },
+    {
+      "validator_id": "facet-inspection",
+      "capability_id": "P011"
+    },
+    {
+      "validator_id": "recommendations-endpoint",
+      "capability_id": "P012"
+    },
+    {
+      "validator_id": "mobile-ua-inspection",
+      "capability_id": "P013"
+    },
+    {
+      "validator_id": "peer-same-query",
+      "capability_id": "P014"
+    }
+  ]
+}

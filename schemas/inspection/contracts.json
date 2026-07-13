@@ -1,0 +1,190 @@
+{
+  "schema_version": "inspection-contracts-v0.1",
+  "generation": "GEN-013",
+  "contracts": {
+    "workspace": {
+      "required": [
+        "schema_version",
+        "workspace_id",
+        "name",
+        "generation",
+        "targets",
+        "evaluations",
+        "query_packs"
+      ]
+    },
+    "evaluation_manifest": {
+      "required": [
+        "schema_version",
+        "evaluation_id",
+        "evaluation_type",
+        "generation",
+        "target",
+        "query_packs",
+        "plugins",
+        "output"
+      ]
+    },
+    "target_manifest": {
+      "required": [
+        "schema_version",
+        "target_id",
+        "name",
+        "primary_url",
+        "platform"
+      ]
+    },
+    "query_pack": {
+      "required": [
+        "schema_version",
+        "query_pack_id",
+        "domain",
+        "queries"
+      ]
+    },
+    "plugin_metadata": {
+      "required": [
+        "plugin_id",
+        "surface",
+        "version",
+        "depends_on",
+        "consumes",
+        "produces"
+      ]
+    },
+    "inspection_artifacts": {
+      "required": [
+        "inspection_id",
+        "timeline",
+        "plugin_state",
+        "checkpoint",
+        "artifact_index",
+        "inspection_model",
+        "dashboard",
+        "inspection_report"
+      ]
+    },
+    "site_profile": {
+      "required": [
+        "schema_version",
+        "target",
+        "discovered_at",
+        "platform_detection",
+        "endpoint_discovery",
+        "access"
+      ]
+    },
+    "platform_capability_registry": {
+      "required": [
+        "schema_version",
+        "generation",
+        "capabilities"
+      ]
+    },
+    "platform_capability_dependency_graph": {
+      "required": [
+        "schema_version",
+        "generation",
+        "dependencies"
+      ]
+    },
+    "platform_capability_report": {
+      "required": [
+        "schema_version",
+        "generation",
+        "target_id",
+        "generated_at",
+        "overall_status",
+        "capability_counts",
+        "changed_capabilities",
+        "affected_capabilities",
+        "checks",
+        "platform_gap_classification_rule"
+      ]
+    },
+    "platform_capability_timeline": {
+      "required": [
+        "schema_version",
+        "events"
+      ]
+    },
+    "platform_metrics": {
+      "required": [
+        "schema_version",
+        "generation",
+        "metrics"
+      ]
+    },
+    "platform_validation_suite": {
+      "required": [
+        "schema_version",
+        "generation",
+        "validators"
+      ]
+    },
+    "inspection_history_row": {
+      "required": [
+        "schema_version",
+        "inspection_id",
+        "evaluation_id",
+        "target_id",
+        "timestamp",
+        "generation",
+        "status",
+        "overall_confidence",
+        "evidence_quality",
+        "evidence_coverage",
+        "output_dir"
+      ]
+    },
+    "checkpoint": {
+      "required": [
+        "schema_version",
+        "inspection_id",
+        "written_at",
+        "started_at",
+        "output_dir",
+        "status",
+        "evaluation_manifest",
+        "evaluation_id",
+        "target_id",
+        "site_profile",
+        "plugin_graph",
+        "plugin_state",
+        "completed_phases",
+        "failed_phases",
+        "pending_phases",
+        "evidence_references",
+        "timeline_reference"
+      ]
+    },
+    "artifact_index": {
+      "required": [
+        "schema_version",
+        "inspection_id",
+        "generated_at",
+        "artifact_count",
+        "groups"
+      ]
+    },
+    "plugin_state": {
+      "required": [
+        "schema_version",
+        "inspection_id",
+        "plugins"
+      ]
+    },
+    "cache_metadata": {
+      "required": [
+        "schema_version",
+        "cache_key",
+        "artifact_path",
+        "created_at",
+        "max_age_hours",
+        "decision",
+        "age_hours",
+        "reason"
+      ]
+    }
+  }
+}

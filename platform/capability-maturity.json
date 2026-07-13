@@ -1,0 +1,38 @@
+{
+  "schema_version": "platform-capability-maturity-v0.1",
+  "generation": "GEN-013",
+  "levels": [
+    {
+      "level": 1,
+      "name": "Network and access basics",
+      "capabilities": [
+        "P001",
+        "P002",
+        "P003",
+        "P004",
+        "P009",
+        "P010"
+      ]
+    },
+    {
+      "level": 2,
+      "name": "Shopify discovery surfaces",
+      "capabilities": [
+        "P005",
+        "P006",
+        "P007",
+        "P011",
+        "P012",
+        "P013",
+        "P014"
+      ]
+    },
+    {
+      "level": 3,
+      "name": "Rendered storefront surfaces",
+      "capabilities": [
+        "P008"
+      ]
+    }
+  ]
+}

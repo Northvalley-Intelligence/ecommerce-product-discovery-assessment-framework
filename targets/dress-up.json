@@ -1,0 +1,25 @@
+{
+  "schema_version": "target-manifest-v0.1",
+  "target_id": "dress-up",
+  "name": "Dress Up",
+  "primary_url": "https://shopdressup.com/",
+  "domain": "shopdressup.com",
+  "platform": {
+    "expected": "shopify",
+    "canonical_platform_host": null,
+    "confidence": "high",
+    "source": "GEN-012 expanded IR evidence observed Shopify-style search/suggest.json and rendered search pages on the branded domain."
+  },
+  "inspection_defaults": {
+    "respect_robots": true,
+    "timeout_ms": 15000,
+    "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
+  },
+  "known_limitations": [
+    {
+      "type": "infrastructure",
+      "code": "rendered_capture_not_available",
+      "notes": "GEN-013 platform does not yet capture rendered UI evidence; GEN-012 rendered-search observations cannot be re-verified by this run."
+    }
+  ]
+}

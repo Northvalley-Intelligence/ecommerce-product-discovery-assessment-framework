@@ -1,0 +1,18 @@
+{
+  "plugin_id": "competitor-inspection",
+  "surface": "competitor_inspection",
+  "version": "0.1.0",
+  "description": "Runs the same bounded query probes (submitted search and suggest) against peer target manifests listed in the evaluation manifest and records observational same-query evidence. Comparative framing stays downstream.",
+  "depends_on": [],
+  "consumes": [
+    "evaluation_manifest",
+    "query_pack",
+    "shopify_adapter"
+  ],
+  "produces": [
+    "competitor_same_query_evidence"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}

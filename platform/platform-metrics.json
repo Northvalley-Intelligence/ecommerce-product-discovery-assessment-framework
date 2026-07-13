@@ -1,0 +1,16 @@
+{
+  "schema_version": "platform-metrics-v0.1",
+  "generation": "GEN-013",
+  "metrics": {
+    "capabilities_registered": 9,
+    "capabilities_implemented_or_basic": 8,
+    "capabilities_planned": 1,
+    "supported_platforms": [
+      "shopify_basic_public_endpoints"
+    ],
+    "inspection_success_rate": "not_enough_runs",
+    "average_evidence_coverage": "not_enough_runs",
+    "average_inspection_duration_ms": "not_enough_runs",
+    "resume_savings": "not_enough_runs"
+  }
+}

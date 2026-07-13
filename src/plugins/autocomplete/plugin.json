@@ -1,0 +1,18 @@
+{
+  "plugin_id": "autocomplete",
+  "surface": "autocomplete",
+  "version": "0.1.0",
+  "description": "Fetches Shopify suggest endpoint responses for each query and records suggested products, collections, queries, pages, timing, and limitation evidence.",
+  "depends_on": [],
+  "consumes": [
+    "site_profile",
+    "query_pack",
+    "shopify_adapter"
+  ],
+  "produces": [
+    "autocomplete_evidence"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}

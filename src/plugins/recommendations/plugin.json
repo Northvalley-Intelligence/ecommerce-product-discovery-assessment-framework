@@ -1,0 +1,17 @@
+{
+  "plugin_id": "recommendations",
+  "surface": "recommendations",
+  "version": "0.1.0",
+  "description": "Fetches the public Shopify product recommendations endpoint for sampled products and records returned products, timing, and limitation evidence.",
+  "depends_on": [],
+  "consumes": [
+    "site_profile",
+    "shopify_adapter"
+  ],
+  "produces": [
+    "recommendations_evidence"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}

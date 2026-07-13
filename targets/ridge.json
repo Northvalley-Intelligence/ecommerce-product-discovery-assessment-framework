@@ -1,0 +1,25 @@
+{
+  "schema_version": "target-manifest-v0.1",
+  "target_id": "ridge",
+  "name": "Ridge",
+  "primary_url": "https://ridge.com/",
+  "domain": "ridge.com",
+  "platform": {
+    "expected": "shopify",
+    "canonical_platform_host": "https://ridge-wallet.myshopify.com",
+    "confidence": "medium",
+    "source": "Prior GEN-013 Ridge inspection observed Shopify UCP/canonical host evidence."
+  },
+  "inspection_defaults": {
+    "respect_robots": true,
+    "timeout_ms": 15000,
+    "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
+  },
+  "known_limitations": [
+    {
+      "type": "infrastructure",
+      "code": "cloudflare_challenge_possible",
+      "notes": "Prior Ridge probes observed Cloudflare challenges on the branded domain; canonical Shopify host may still expose bounded public evidence."
+    }
+  ]
+}

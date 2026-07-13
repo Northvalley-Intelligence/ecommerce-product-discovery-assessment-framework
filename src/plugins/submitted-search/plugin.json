@@ -1,0 +1,18 @@
+{
+  "plugin_id": "submitted-search",
+  "surface": "submitted_search",
+  "version": "0.1.0",
+  "description": "Fetches submitted search result pages for each query and records access, response, timing, and limitation evidence.",
+  "depends_on": [],
+  "consumes": [
+    "site_profile",
+    "query_pack",
+    "shopify_adapter"
+  ],
+  "produces": [
+    "submitted_search_evidence"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}

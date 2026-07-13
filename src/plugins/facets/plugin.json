@@ -1,0 +1,17 @@
+{
+  "plugin_id": "facets",
+  "surface": "facets",
+  "version": "0.1.0",
+  "description": "Fetches collection pages and records observable facet/filter markup presence, filter parameter probe responses, and limitation evidence.",
+  "depends_on": [],
+  "consumes": [
+    "site_profile",
+    "shopify_adapter"
+  ],
+  "produces": [
+    "facet_evidence"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "platform-capability-registry-v0.1",
+  "generation": "GEN-013",
+  "capabilities": [
+    {
+      "capability_id": "P001",
+      "name": "URL Normalization",
+      "status": "implemented",
+      "maturity_level": 1,
+      "validator": "url-parsing"
+    },
+    {
+      "capability_id": "P002",
+      "name": "HTTPS Handling",
+      "status": "implemented",
+      "maturity_level": 1,
+      "validator": "https-handling"
+    },
+    {
+      "capability_id": "P003",
+      "name": "Redirect Handling",
+      "status": "implemented_basic",
+      "maturity_level": 1,
+      "validator": "redirect-handling"
+    },
+    {
+      "capability_id": "P004",
+      "name": "Robots Discovery",
+      "status": "implemented_basic",
+      "maturity_level": 1,
+      "validator": "robots-discovery"
+    },
+    {
+      "capability_id": "P005",
+      "name": "Shopify Discovery",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "shopify-discovery"
+    },
+    {
+      "capability_id": "P006",
+      "name": "Submitted Search Endpoint Inspection",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "submitted-search-endpoint"
+    },
+    {
+      "capability_id": "P007",
+      "name": "Autocomplete Suggest Endpoint Inspection",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "suggest-endpoint"
+    },
+    {
+      "capability_id": "P008",
+      "name": "Rendered Page Capture",
+      "status": "planned",
+      "maturity_level": 3,
+      "validator": "rendered-capture"
+    },
+    {
+      "capability_id": "P009",
+      "name": "Block Classification",
+      "status": "implemented_basic",
+      "maturity_level": 1,
+      "validator": "block-classification"
+    },
+    {
+      "capability_id": "P010",
+      "name": "Request Pacing and Transient Retry",
+      "status": "implemented_basic",
+      "maturity_level": 1,
+      "validator": "request-pacing"
+    },
+    {
+      "capability_id": "P011",
+      "name": "Facet Markup Inspection",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "facet-inspection"
+    },
+    {
+      "capability_id": "P012",
+      "name": "Recommendations Endpoint Inspection",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "recommendations-endpoint"
+    },
+    {
+      "capability_id": "P013",
+      "name": "Mobile User-Agent Inspection",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "mobile-ua-inspection"
+    },
+    {
+      "capability_id": "P014",
+      "name": "Same-Query Peer Inspection",
+      "status": "implemented_basic",
+      "maturity_level": 2,
+      "validator": "peer-same-query"
+    }
+  ]
+}

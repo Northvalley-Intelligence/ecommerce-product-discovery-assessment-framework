@@ -1,0 +1,48 @@
+{
+  "schema_version": "evaluation-manifest-v0.1",
+  "evaluation_id": "dressup-shopify-baseline",
+  "evaluation_type": "baseline_inspection",
+  "generation": "GEN-013",
+  "workspace": "workspaces/retail-search-research.json",
+  "target": "targets/dress-up.json",
+  "site_profile": {
+    "mode": "refresh",
+    "path": "site-profiles/shopdressup.com.json",
+    "max_age_hours": 168
+  },
+  "query_packs": [
+    "query-packs/boutique-womens-apparel.json"
+  ],
+  "surfaces": [
+    "submitted_search",
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile",
+    "competitor_inspection"
+  ],
+  "plugins": [
+    "submitted-search",
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile",
+    "competitor-inspection"
+  ],
+  "competitors": [
+    "targets/red-dress.json",
+    "targets/pink-lily.json"
+  ],
+  "rendering": {
+    "desktop": false,
+    "mobile": false,
+    "screenshots": false
+  },
+  "platform_validation": {
+    "required": true,
+    "minimum_maturity_level": 1
+  },
+  "output": {
+    "base_dir": "assessments/dress-up/inspection-report/GEN-013"
+  }
+}
