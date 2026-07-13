@@ -1,0 +1,112 @@
+{
+  "schema_version": "pilot-parity-v0.1",
+  "run_dir": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260713T043845Z",
+  "baseline_evidence": "assessments/dress-up/expanded-ir-evidence/GEN-012/dressup-expanded-ir-evidence.json",
+  "baseline_generation": "GEN-012",
+  "compared_queries": 5,
+  "surface_checks": {
+    "parity": 10,
+    "not_comparable_blocked": 0,
+    "mismatch": 0
+  },
+  "overall_status": "parity_within_unblocked_evidence",
+  "note": "Baseline GEN-012 evidence came from rendered browser capture; this run uses public endpoint fetches only, so parity is judged on whether each surface works, not on exact result counts.",
+  "rows": [
+    {
+      "query": "wedding guest dresses",
+      "search": {
+        "baseline_score": 100,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_result_count_hint": 249,
+        "observed_block": null,
+        "parity_status": "parity"
+      },
+      "autocomplete": {
+        "baseline_score": 95,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_suggestion_count": 8,
+        "observed_block": null,
+        "parity_status": "parity"
+      }
+    },
+    {
+      "query": "maxi dresses",
+      "search": {
+        "baseline_score": 94,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_result_count_hint": 201,
+        "observed_block": null,
+        "parity_status": "parity"
+      },
+      "autocomplete": {
+        "baseline_score": 95,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_suggestion_count": 8,
+        "observed_block": null,
+        "parity_status": "parity"
+      }
+    },
+    {
+      "query": "game day outfits",
+      "search": {
+        "baseline_score": 76,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_result_count_hint": 248,
+        "observed_block": null,
+        "parity_status": "parity"
+      },
+      "autocomplete": {
+        "baseline_score": 71,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_suggestion_count": 4,
+        "observed_block": null,
+        "parity_status": "parity"
+      }
+    },
+    {
+      "query": "white dress",
+      "search": {
+        "baseline_score": 94,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_result_count_hint": 179,
+        "observed_block": null,
+        "parity_status": "parity"
+      },
+      "autocomplete": {
+        "baseline_score": 95,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_suggestion_count": 8,
+        "observed_block": null,
+        "parity_status": "parity"
+      }
+    },
+    {
+      "query": "denim shorts",
+      "search": {
+        "baseline_score": 100,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_result_count_hint": 188,
+        "observed_block": null,
+        "parity_status": "parity"
+      },
+      "autocomplete": {
+        "baseline_score": 95,
+        "baseline_working": true,
+        "observed_status": 200,
+        "observed_suggestion_count": 8,
+        "observed_block": null,
+        "parity_status": "parity"
+      }
+    }
+  ],
+  "validated_at": "2026-07-13T04:40:03.835Z"
+}

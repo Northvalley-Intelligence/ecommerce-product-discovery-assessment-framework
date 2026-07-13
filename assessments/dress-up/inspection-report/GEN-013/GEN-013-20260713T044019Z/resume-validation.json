@@ -1,0 +1,45 @@
+{
+  "schema_version": "resume-validation-v0.1",
+  "inspection_id": "GEN-013-20260713T044019Z",
+  "evaluation_manifest": "evaluations/dressup-shopify-baseline.json",
+  "run_dir": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260713T044019Z",
+  "interrupted_after_plugin": "submitted-search",
+  "pending_phases_at_interrupt": [
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile",
+    "competitor-inspection"
+  ],
+  "reused_from_checkpoint": {
+    "plugins": [
+      "submitted-search"
+    ],
+    "site_profile": "reused_run_checkpoint",
+    "datasets": "DS1-DS4 files already existed in the run directory and were summarized, not regenerated.",
+    "platform_capability_report": "Existing platform-capability-report.json was reused without rerunning validators."
+  },
+  "rerun_work": {
+    "plugins": [
+      "autocomplete",
+      "facets",
+      "recommendations",
+      "mobile",
+      "competitor-inspection"
+    ],
+    "reason": "These plugins had no completed checkpoint entry, so their observations did not exist yet and had to run live."
+  },
+  "repeated_idempotent_writes": {
+    "artifacts": [
+      "run-manifest.json",
+      "artifact-index.json",
+      "dashboard.json",
+      "dashboard.html",
+      "inspection-report.json",
+      "inspection-report.md",
+      "checkpoint.json"
+    ],
+    "reason": "Derived artifacts are regenerated deterministically from checkpointed evidence on every pass; no network work is repeated by rebuilding them."
+  },
+  "validated_at": "2026-07-13T04:41:09.933Z"
+}

@@ -1,0 +1,827 @@
+{
+  "schema_version": "inspection-report-v0.1",
+  "inspection_id": "GEN-013-20260710T024245Z",
+  "generation": "GEN-013",
+  "generated_at": "2026-07-10T02:42:46.416Z",
+  "target": {
+    "target_id": "dress-up",
+    "name": "Dress Up",
+    "primary_url": "https://shopdressup.com/",
+    "canonical_platform_host": null
+  },
+  "inspection_window": {
+    "started_at": "2026-07-10T02:42:45.134Z",
+    "ended_at": "2026-07-10T02:42:46.416Z",
+    "duration_ms": 1282
+  },
+  "dashboard": {
+    "schema_version": "inspection-dashboard-v0.1",
+    "inspection_id": "GEN-013-20260710T024245Z",
+    "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+    "crawl_summary": {
+      "inspection_timestamp": "2026-07-10T02:42:45.134Z",
+      "target_url": "https://shopdressup.com/",
+      "target_name": "Dress Up",
+      "platform_detection": {
+        "platform": "unknown",
+        "confidence": "Medium",
+        "signals": [
+          "Target manifest expects Shopify."
+        ]
+      },
+      "overall_inspection_status": "partial",
+      "inspection_duration_ms": 1282,
+      "evidence_quality": "limited",
+      "overall_confidence": "Low"
+    },
+    "operational_summary": {
+      "experiments_completed": 1,
+      "blocked_experiments": 1,
+      "warnings": 1,
+      "evidence_files": 2,
+      "screenshot_count": 0,
+      "downstream_report_readiness": "not_ready",
+      "readiness_notes": "Inspection evidence is incomplete for downstream exports."
+    },
+    "crawl_health": [
+      {
+        "component": "Homepage",
+        "status": "FAIL",
+        "confidence": "High",
+        "notes": "Server error"
+      },
+      {
+        "component": "Search",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "0/5 submitted search observations completed."
+      },
+      {
+        "component": "Browse",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "Server error"
+      },
+      {
+        "component": "Autocomplete",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "1/5 autocomplete observations returned suggestions."
+      },
+      {
+        "component": "Product Pages",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "Server error"
+      },
+      {
+        "component": "Facets",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Facet inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Recommendations",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Recommendation inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Mobile",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Mobile rendering is not enabled in this first implementation slice."
+      },
+      {
+        "component": "Competitor Inspection",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Peer inspection is not enabled in this evaluation manifest."
+      }
+    ],
+    "evidence_coverage": {
+      "component_coverage_percent": 11,
+      "plugin_observations": 10,
+      "dataset_rows": 21,
+      "evidence_quality": "limited"
+    },
+    "platform_capability": {
+      "status": "warn",
+      "report_path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/platform-capability-report.json",
+      "failed_capabilities": [
+        "P008"
+      ]
+    },
+    "artifact_explorer": {
+      "evidence": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/dashboard.html",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/inspection-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/inspection-report.md"
+      ],
+      "datasets": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds3-search-facet.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [],
+      "raw_http": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/inspection-model.json"
+      ],
+      "other": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/artifact-index.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/dashboard.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/platform-capability-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/plugin-dependency-graph.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/plugin-state.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/run-manifest.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/site-profile.json"
+      ]
+    }
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "Server error"
+    },
+    {
+      "component": "Search",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/5 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "Server error"
+    },
+    {
+      "component": "Autocomplete",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "1/5 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "Server error"
+    },
+    {
+      "component": "Facets",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Facet inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Recommendations",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Recommendation inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Mobile",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Mobile rendering is not enabled in this first implementation slice."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    }
+  ],
+  "site_discovery": {
+    "schema_version": "site-profile-v0.1",
+    "discovered_at": "2026-07-10T02:42:45.311Z",
+    "target": {
+      "target_id": "dress-up",
+      "name": "Dress Up",
+      "primary_url": "https://shopdressup.com/",
+      "canonical_platform_host": null
+    },
+    "platform_detection": {
+      "platform": "unknown",
+      "confidence": "Medium",
+      "signals": [
+        "Target manifest expects Shopify."
+      ]
+    },
+    "access": {
+      "authentication_required": false,
+      "limitations": [
+        {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error",
+          "url": "https://shopdressup.com/",
+          "status": 503
+        },
+        {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error",
+          "url": "https://shopdressup.com/robots.txt",
+          "status": 503
+        },
+        {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error",
+          "url": "https://shopdressup.com/products.json?limit=5",
+          "status": 503
+        },
+        {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error",
+          "url": "https://shopdressup.com/collections.json?limit=5",
+          "status": 503
+        },
+        {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error",
+          "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+          "status": 503
+        }
+      ]
+    },
+    "endpoint_discovery": [
+      {
+        "label": "homepage",
+        "url": "https://shopdressup.com/",
+        "final_url": "https://shopdressup.com/",
+        "method": "GET",
+        "status": 503,
+        "ok": false,
+        "duration_ms": 167,
+        "content_type": "text/html",
+        "classification": {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+      },
+      {
+        "label": "robots",
+        "url": "https://shopdressup.com/robots.txt",
+        "final_url": "https://shopdressup.com/robots.txt",
+        "method": "GET",
+        "status": 503,
+        "ok": false,
+        "duration_ms": 128,
+        "content_type": "text/html",
+        "classification": {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+      },
+      {
+        "label": "products_json",
+        "url": "https://shopdressup.com/products.json?limit=5",
+        "final_url": "https://shopdressup.com/products.json?limit=5",
+        "method": "GET",
+        "status": 503,
+        "ok": false,
+        "duration_ms": 126,
+        "content_type": "text/html",
+        "classification": {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+      },
+      {
+        "label": "collections_json",
+        "url": "https://shopdressup.com/collections.json?limit=5",
+        "final_url": "https://shopdressup.com/collections.json?limit=5",
+        "method": "GET",
+        "status": 503,
+        "ok": false,
+        "duration_ms": 136,
+        "content_type": "text/html",
+        "classification": {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+      },
+      {
+        "label": "search_suggest_json",
+        "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "final_url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "method": "GET",
+        "status": 503,
+        "ok": false,
+        "duration_ms": 133,
+        "content_type": "text/html",
+        "classification": {
+          "category": "infrastructure",
+          "code": "server_error",
+          "label": "Server error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+      }
+    ],
+    "catalog_discovery": {
+      "status": "not_available",
+      "confidence": "Low",
+      "products_sampled": null,
+      "collections_sampled": null,
+      "source": "Shopify public JSON endpoints"
+    },
+    "autocomplete_discovery": {
+      "status": "blocked_or_unavailable",
+      "confidence": "Low",
+      "resources_observed": []
+    }
+  },
+  "platform_capability_report": {
+    "schema_version": "platform-capability-report-v0.1",
+    "generation": "GEN-013",
+    "target_id": "dress-up",
+    "generated_at": "2026-07-10T02:42:45.135Z",
+    "overall_status": "warn",
+    "evidence_quality": "partial",
+    "capability_counts": {
+      "pass": 2,
+      "warn": 6,
+      "fail": 1
+    },
+    "changed_capabilities": [],
+    "affected_capabilities": [],
+    "checks": [
+      {
+        "capability_id": "P001",
+        "name": "URL Normalization",
+        "validator": "url-parsing",
+        "status": "pass",
+        "capability_status": "implemented",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is implemented for the current evaluator version."
+      },
+      {
+        "capability_id": "P002",
+        "name": "HTTPS Handling",
+        "validator": "https-handling",
+        "status": "pass",
+        "capability_status": "implemented",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is implemented for the current evaluator version."
+      },
+      {
+        "capability_id": "P003",
+        "name": "Redirect Handling",
+        "validator": "redirect-handling",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P004",
+        "name": "Robots Discovery",
+        "validator": "robots-discovery",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P005",
+        "name": "Shopify Discovery",
+        "validator": "shopify-discovery",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P006",
+        "name": "Submitted Search Endpoint Inspection",
+        "validator": "submitted-search-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P007",
+        "name": "Autocomplete Suggest Endpoint Inspection",
+        "validator": "suggest-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P008",
+        "name": "Rendered Page Capture",
+        "validator": "rendered-capture",
+        "status": "fail",
+        "capability_status": "planned",
+        "maturity_level": 3,
+        "affected_by_change": false,
+        "notes": "Capability is registered but not implemented in this evaluator version."
+      },
+      {
+        "capability_id": "P009",
+        "name": "Block Classification",
+        "validator": "block-classification",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      }
+    ],
+    "platform_gap_classification_rule": "Capability failures describe evaluator maturity and must not be emitted as ecommerce findings."
+  },
+  "endpoint_discovery": [
+    {
+      "label": "homepage",
+      "url": "https://shopdressup.com/",
+      "final_url": "https://shopdressup.com/",
+      "method": "GET",
+      "status": 503,
+      "ok": false,
+      "duration_ms": 167,
+      "content_type": "text/html",
+      "classification": {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+    },
+    {
+      "label": "robots",
+      "url": "https://shopdressup.com/robots.txt",
+      "final_url": "https://shopdressup.com/robots.txt",
+      "method": "GET",
+      "status": 503,
+      "ok": false,
+      "duration_ms": 128,
+      "content_type": "text/html",
+      "classification": {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+    },
+    {
+      "label": "products_json",
+      "url": "https://shopdressup.com/products.json?limit=5",
+      "final_url": "https://shopdressup.com/products.json?limit=5",
+      "method": "GET",
+      "status": 503,
+      "ok": false,
+      "duration_ms": 126,
+      "content_type": "text/html",
+      "classification": {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+    },
+    {
+      "label": "collections_json",
+      "url": "https://shopdressup.com/collections.json?limit=5",
+      "final_url": "https://shopdressup.com/collections.json?limit=5",
+      "method": "GET",
+      "status": 503,
+      "ok": false,
+      "duration_ms": 136,
+      "content_type": "text/html",
+      "classification": {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+    },
+    {
+      "label": "search_suggest_json",
+      "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "final_url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "method": "GET",
+      "status": 503,
+      "ok": false,
+      "duration_ms": 133,
+      "content_type": "text/html",
+      "classification": {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!-- The source of truth for this generic error page is https://github.com/Shopify/error-pages. Please do not edit this file directly. --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <meta name=\"referrer\" content=\"never\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Something went wrong</title> <style> * { box-sizing: border-box; margin: 0; padding: 0; } html { font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; background: #F1F1F1; font"
+    }
+  ],
+  "datasets": {
+    "DS1": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "rows": 5,
+      "status": "generated"
+    },
+    "DS2": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "rows": 10,
+      "status": "generated"
+    },
+    "DS3": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds3-search-facet.jsonl",
+      "rows": 4,
+      "status": "generated"
+    },
+    "DS4": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds4-advanced-retrieval.jsonl",
+      "rows": 2,
+      "status": "generated"
+    }
+  },
+  "plugin_results": [
+    {
+      "plugin_id": "submitted-search",
+      "status": "blocked",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "completed_observations": 0,
+      "blocked_observations": 5,
+      "confidence": "Low",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-wedding-guest-dresses",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search?q=wedding+guest+dresses"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-maxi-dresses",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search?q=maxi+dresses"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-game-day-outfits",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search?q=game+day+outfits"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-white-dress",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search?q=white+dress"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-denim-shorts",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search?q=denim+shorts"
+        }
+      ]
+    },
+    {
+      "plugin_id": "autocomplete",
+      "status": "warn",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "observations_with_suggestions": 1,
+      "blocked_observations": 4,
+      "confidence": "Medium",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-wedding-guest-dresses",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search/suggest.json?q=wedding+guest+dresses&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-maxi-dresses",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search/suggest.json?q=maxi+dresses&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-game-day-outfits",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search/suggest.json?q=game+day+outfits&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "server_error",
+          "label": "Server error",
+          "query_id": "bwa-white-dress",
+          "status": 503,
+          "endpoint": "https://shopdressup.com/search/suggest.json?q=white+dress&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        }
+      ]
+    }
+  ],
+  "limitations": {
+    "platform_capability_gaps": [
+      {
+        "capability_id": "P008",
+        "name": "Rendered Page Capture",
+        "status": "planned",
+        "classification": "platform_capability_gap",
+        "notes": "Capability is registered but not implemented in this evaluator version."
+      }
+    ],
+    "infrastructure_limitations": [
+      {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error",
+        "url": "https://shopdressup.com/",
+        "status": 503
+      },
+      {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error",
+        "url": "https://shopdressup.com/robots.txt",
+        "status": 503
+      },
+      {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error",
+        "url": "https://shopdressup.com/products.json?limit=5",
+        "status": 503
+      },
+      {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error",
+        "url": "https://shopdressup.com/collections.json?limit=5",
+        "status": 503
+      },
+      {
+        "category": "infrastructure",
+        "code": "server_error",
+        "label": "Server error",
+        "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "status": 503
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-wedding-guest-dresses",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search?q=wedding+guest+dresses"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-maxi-dresses",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search?q=maxi+dresses"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-game-day-outfits",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search?q=game+day+outfits"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-white-dress",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search?q=white+dress"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-denim-shorts",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search?q=denim+shorts"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-wedding-guest-dresses",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search/suggest.json?q=wedding+guest+dresses&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-maxi-dresses",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search/suggest.json?q=maxi+dresses&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-game-day-outfits",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search/suggest.json?q=game+day+outfits&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "server_error",
+        "label": "Server error",
+        "query_id": "bwa-white-dress",
+        "status": 503,
+        "endpoint": "https://shopdressup.com/search/suggest.json?q=white+dress&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      }
+    ],
+    "commerce_observations": [],
+    "separation_rule": "Platform capability gaps and infrastructure limitations are recorded separately from observed ecommerce behavior."
+  },
+  "artifact_explorer": {
+    "schema_version": "artifact-index-v0.1",
+    "inspection_id": "GEN-013-20260710T024245Z",
+    "generated_at": "2026-07-10T02:42:46.427Z",
+    "artifact_count": 19,
+    "groups": {
+      "evidence": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/dashboard.html",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/inspection-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/inspection-report.md"
+      ],
+      "datasets": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds3-search-facet.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [],
+      "raw_http": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/inspection-model.json"
+      ],
+      "other": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/artifact-index.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/dashboard.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/platform-capability-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/plugin-dependency-graph.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/plugin-state.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/run-manifest.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024245Z/site-profile.json"
+      ]
+    }
+  }
+}

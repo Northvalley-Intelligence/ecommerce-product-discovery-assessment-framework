@@ -1,0 +1,26 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-013-20260710T024401Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "warn",
+      "started_at": "2026-07-10T02:44:01.756Z",
+      "ended_at": "2026-07-10T02:44:02.447Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024401Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "warn",
+      "started_at": "2026-07-10T02:44:02.451Z",
+      "ended_at": "2026-07-10T02:44:02.968Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260710T024401Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    }
+  }
+}
