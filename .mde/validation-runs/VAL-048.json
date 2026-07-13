@@ -1,0 +1,56 @@
+{
+  "validation_run_id": "VAL-048",
+  "generation": "GEN-012",
+  "phase": "Generation 12 - Dress Up Ecommerce Executive Report",
+  "started_at": "2026-07-06T00:18:00-0400",
+  "completed_at": "2026-07-06T00:20:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_dress_up_report_second_gate_pass",
+  "command": "Second clean validation pass after VAL-047 with no implementation or report changes between passes.",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-dressup-expanded-ir.mjs",
+      "result": "pass",
+      "evidence": "Dress Up report generator parsed successfully on the second clean pass."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/dressup-ecommerce-executive-report.tex",
+      "result": "pass",
+      "evidence": "The Dress Up PDF remained up to date and compiled successfully."
+    },
+    {
+      "category": "PDF Metadata Validation",
+      "tool": "pdfinfo dressup-ecommerce-executive-report.pdf",
+      "result": "pass",
+      "evidence": "PDF is 20 pages, letter size, unencrypted, and readable by Poppler."
+    },
+    {
+      "category": "Content Integrity Validation",
+      "tool": "pdftotext plus targeted rg checks",
+      "result": "pass",
+      "evidence": "Extracted text preserves July 6, 2026, same-query peer analysis, Dress Up baseline language, peer names, and evidence limits; raw browser script fragments were absent."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Live Ecommerce Recrawl",
+      "reason": "The second pass validates a report narrative/table refinement from saved evidence.",
+      "revisit_when": "Only when new Dress Up or peer evidence is requested."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "medium_findings": [],
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "evidence_quality": "medium_high_for_saved_evidence_report_refinement",
+  "reason": "Second clean validation pass confirmed the Dress Up report is ready for review with peer analysis visible in the executive narrative and Dress Up included beside comparable boutique retailers in the appendix tables."
+}

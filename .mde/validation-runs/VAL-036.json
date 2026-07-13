@@ -1,0 +1,85 @@
+{
+  "validation_run_id": "VAL-036",
+  "generation": "GEN-011",
+  "phase": "Generation 11 - High Country Owner Outreach Product Discovery Report",
+  "started_at": "2026-07-03T14:25:00-0400",
+  "completed_at": "2026-07-03T14:30:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_high_country_owner_outreach_second_gate_pass",
+  "command": "Second Validation Gate pass after GEN-011 owner-outreach report rebuild with no report/code changes after VAL-035",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-highcountryoutfitters-expanded-ir.mjs; node --check scripts/validate-highcountryoutfitters-report.mjs; node --check scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Evaluator script and validators parsed successfully."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -g -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "The 17-page Northvalley High Country owner report remained compiled and current."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot check",
+      "result": "pass",
+      "evidence": "PDF text/render checks preserved owner framing, 175 experiments, Spanish/bilingual discovery, competitor page, paid-placement appendix, and no visible Article/scorecard/Hispanic wording."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated validator passed against GEN-011 expanded evidence, owner report JSON/Markdown, LaTeX/PDF source, competitor checks, and handoff."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with GEN-011 artifacts and MDE records."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Sales Analytics Validation",
+      "reason": "No High Country analytics, search-session revenue, conversion, add-to-cart, or AOV data were available.",
+      "revisit_when": "Before dollarizing the modeled upside."
+    },
+    {
+      "category": "Full Visible Autocomplete Screenshot Set",
+      "reason": "GEN-011 uses browser-context suggest API evidence and prior user-observed camp dropdown correction; full visual dropdown screenshots across all 175 terms were not captured.",
+      "revisit_when": "Before visual UI claims about every protected autocomplete term."
+    },
+    {
+      "category": "Paid Placement Proof",
+      "reason": "Competitor checks record only visible paid-placement labels in sampled rendered text.",
+      "revisit_when": "Before claiming competitor result ordering is organic or sponsored."
+    },
+    {
+      "category": "Checkout Completion",
+      "reason": "Checkout completion would require a live purchase path and was out of scope for public evidence collection.",
+      "revisit_when": "Before client-facing conversion or checkout-readiness claims."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "owner_outreach_report": "175_query_experiments_25_per_concept_seven_concepts_spanish_bilingual_two_usable_competitors_paid_placement_limits_directional_sales_model_full_reference_dataset",
+    "competitor_evidence": "public_lands_blocked_half_moon_usable_mast_general_usable_no_visible_paid_placement_label_not_proof_none_exist",
+    "pdf_output": "17_pages_northvalley_template_owner_pages_reference_appendices_pdftotext_and_pdftoppm_checked",
+    "stale_framing_removed": "article_references_scorecard_visible_framing_and_hispanic_label_removed",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_owner_outreach_report_with_bounded_public_evidence_and_explicit_limits",
+  "reason": "Second clean validation pass completed after the GEN-011 owner-outreach report rebuild with no report/code changes after VAL-035."
+}

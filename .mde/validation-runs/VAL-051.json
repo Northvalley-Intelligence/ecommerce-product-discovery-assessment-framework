@@ -1,0 +1,86 @@
+{
+  "validation_run_id": "VAL-051",
+  "generation": "GEN-013",
+  "phase": "Generation 13 - Inspection Report Framework",
+  "started_at": "2026-07-13T04:30:00Z",
+  "completed_at": "2026-07-13T04:55:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_first_slice_completion_and_dressup_pilot",
+  "validations_executed": [
+    {
+      "category": "Schema Contract Validation",
+      "tool": "node src/evaluator/validation.mjs contracts",
+      "result": "pass",
+      "evidence": "All eighteen inspection contracts validate, including the newly added site profile, capability registry/report/dependency graph/timeline, platform metrics, validation suite, inspection history row, checkpoint, artifact index, plugin state, and cache metadata contracts."
+    },
+    {
+      "category": "Manifest Validation",
+      "tool": "node src/evaluator/validation.mjs manifests",
+      "result": "pass",
+      "evidence": "Manifest validation now iterates every evaluation manifest (Ridge and Dress Up), validating targets, workspaces, query packs, query provenance, plugin metadata, and plugin graph completeness."
+    },
+    {
+      "category": "Platform Capability Validation",
+      "tool": "node src/evaluator/validation.mjs platform",
+      "result": "pass",
+      "evidence": "Capability registry, dependency graph, validation suite, and maturity model are internally consistent; rendered capture P008 remains a declared platform gap."
+    },
+    {
+      "category": "Bounded Live Pilot Inspection",
+      "tool": "npm run inspect:dressup",
+      "result": "pass",
+      "evidence": "Run GEN-013-20260713T043845Z completed in 61 seconds with 100 percent component evidence coverage, Medium overall confidence, complete evidence quality, Shopify detection at High confidence, all six plugins executed, and cache metadata recording refreshed_live_discovery."
+    },
+    {
+      "category": "Generated Inspection Output Validation",
+      "tool": "node src/evaluator/validation.mjs inspection <pilot run dir>",
+      "result": "pass",
+      "evidence": "Pilot run artifacts validate: inspection ID, dashboard, platform capability classification, crawl health, DS1-DS4 datasets, checkpoint, artifact index, timeline events, observation-level confidence, evidence quality, limitation separation, language boundaries, and cache metadata contract."
+    },
+    {
+      "category": "GEN-012 Functional Parity Validation",
+      "tool": "node src/evaluator/validate-pilot-parity.mjs <pilot run dir>",
+      "result": "pass",
+      "evidence": "All ten surface checks (five submitted-search, five autocomplete) show parity with saved GEN-012 rendered-browser evidence: every query that worked in GEN-012 works in the endpoint-based pilot, with result-count hints and suggestion counts recorded. No mismatches, no blocked comparisons."
+    },
+    {
+      "category": "Checkpoint Resume Validation",
+      "tool": "node src/evaluator/validate-resume.mjs evaluations/dressup-shopify-baseline.json submitted-search",
+      "result": "pass",
+      "evidence": "Run GEN-013-20260713T044019Z was deliberately interrupted after submitted-search, resumed from checkpoint with the same inspection ID, reused the completed plugin and run-directory site profile (timeline shows reused_shared_cache then reused_run_checkpoint), and ran only the pending plugins live. resume-validation.json explains reused versus rerun work."
+    },
+    {
+      "category": "Operational Dashboard Validation",
+      "tool": "npm run validate:dashboard",
+      "result": "pass",
+      "evidence": "Dashboard server routes, inspection history, run detail, timeline, plugin state, artifact serving, and static export still validate after the slice completion changes."
+    },
+    {
+      "category": "Legacy Framework Regression Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Existing framework validator passes; BDD-012 evaluator calibration remains a known deferred warning."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Ridge blocked-domain rerun with cache metadata",
+      "reason": "The pilot sequence in the frozen design lists Ridge as the second pilot. The existing Ridge runs predate cache metadata evidence and now emit a warn-level validation notice.",
+      "revisit_when": "Next bounded Ridge run under the design doc's pilot sequence step two."
+    },
+    {
+      "category": "Rendered capture and visible autocomplete UI evidence",
+      "reason": "Platform capability P008 is intentionally a declared gap in the first slice per the frozen design.",
+      "revisit_when": "When P008 is implemented as the next reusable platform capability."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "First validation pass on the completed first implementation slice after the design freeze. Phase exit still requires a second independent clean pass with no implementation changes in between, plus the GEN-013 BDD inventory refresh."
+}

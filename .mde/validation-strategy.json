@@ -1,10 +1,29 @@
 {
   "strategy_id": "VALSTRAT-001",
-  "strategy_status": "active_for_generation_9",
+  "strategy_status": "draft_updated_for_generation_13_inspection_platform_architecture_aligned_to_local_application_charter",
   "created_on": "2026-06-24",
-  "updated_on": "2026-06-29",
-  "project_type": "consulting assessment framework and report generation system for ecommerce product discovery and information retrieval evaluation",
+  "updated_on": "2026-07-11",
+  "project_type": "reusable ecommerce inspection framework that produces canonical evidence-first Inspection Reports for public ecommerce URLs",
+  "charter_alignment_2026_07_11": {
+    "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for executive leadership and potential monetization.",
+    "validation_implications": [
+      "The operational dashboard slice validated in VAL-050 is the seed of the application surface and stays in scope for future Validation Gate passes.",
+      "Multi-site applicability becomes a validated property: inspections must work across different ecommerce websites within the declared capability maturity threshold, not only the pilot targets.",
+      "Executive-ready report generation returns to first-class validated scope as an application output that consumes Inspection Reports without re-inspecting sites.",
+      "Fix-assist workflows, when implemented, must be validated as downstream consumers of Inspection Report evidence and must not blur the inspection/interpretation boundary.",
+      "Monetization potential raises evidence quality, reproducibility, and report polish requirements before any external or client-facing use.",
+      "No new validation scenarios are activated by this record alone; scenario refresh happens with the GEN-013 BDD inventory refresh already required before phase exit."
+    ]
+  },
   "artifact_profiles": [
+    "inspection_report",
+    "operational_dashboard",
+    "inspection_history",
+    "inspection_workspace",
+    "plugin_architecture",
+    "platform_capability_report",
+    "platform_validation_suite",
+    "checkpoint_architecture",
     "report_generation",
     "client_facing_document",
     "data_contract",
@@ -13,8 +32,17 @@
     "prompt_generation",
     "pdf_generation"
   ],
-  "mission_phase": "Generation 9 - Problem-Only Local School PTA Report Revision",
+  "mission_phase": "Generation 13 - Inspection Report Framework",
   "mission_critical_workflows": [
+    {
+      "workflow": "Generate canonical ecommerce Inspection Report",
+      "users": [
+        "Northvalley Intelligence evaluator",
+        "future downstream report generator",
+        "engineering reviewer"
+      ],
+      "required_outcome": "Given a public ecommerce URL, the framework produces an evidence-first Inspection Report with a one-page dashboard, crawl health by component, endpoint discovery, catalog/browse graph, DS1-DS4 reusable datasets, search/autocomplete/browse/facet/advanced retrieval inspection observations, confidence indicators, and explicit crawl limitations, without recommendations or business interpretation."
+    },
     {
       "workflow": "Create reusable assessment rubric",
       "users": [
@@ -65,6 +93,15 @@
         "client-facing report reader"
       ],
       "required_outcome": "Generated PDFs compile, contain expected text, render nonblank pages, and show no obvious overlap in spot-checked pages."
+    },
+    {
+      "workflow": "Produce combined local-plus-ecommerce report",
+      "users": [
+        "Northvalley evaluator",
+        "Control Center reviewer",
+        "ecommerce leadership reader"
+      ],
+      "required_outcome": "Combined report separates upstream local website evidence from newly captured ecommerce/product-discovery evidence, excludes invalid upstream market evidence, and records limits before external use."
     }
   ],
   "selected_validations": [
@@ -81,7 +118,9 @@
         "scripts/evaluate-competitor-pricing-discovery.mjs",
         "scripts/evaluate-boxercraft-browse-node-parity.mjs",
         "GEN-008 local school opportunity evidence summary",
-        "finding-to-evidence traceability review"
+        "finding-to-evidence traceability review",
+        "scripts/validate-highcountryoutfitters-report.mjs",
+        "GEN-011 High Country owner outreach report evidence review"
       ],
       "reason": "Validates that the framework produces evidence-backed product discovery findings and that the Boxercraft case includes normalization, all-node browse/search/autocomplete parity, browse-routing, competitor pricing/discovery evidence, and the focused local school PTA executive brief."
     },
@@ -172,7 +211,10 @@
         "GEN-008 local school opportunity brief evidence",
         "visible collection/page browse-path extraction",
         "public wholesale search pages",
-        "authenticated wholesale access limitation record"
+        "authenticated wholesale access limitation record",
+        "High Country rendered public ecommerce workflow",
+        "upstream local website assessment evidence-limit review",
+        "blocked competitor benchmark limitation review"
       ],
       "reason": "The framework's value depends on observed ecommerce behavior, not only internal data structures."
     }
@@ -180,9 +222,9 @@
   "coverage_targets": {
     "critical_mission_objectives": "100%",
     "high_priority_mission_objectives": "90%+ with explicit deferral for independent evaluator calibration",
-    "assessment_areas": "100% represented in the assessment; rendered browser validation completed for search, autocomplete, filters, recommendations, mobile, zero-result pages, and public wholesale search; GEN-004 normalization matrix completed for search, autocomplete, browse routing, UCLA/Bruins priority terms, team aliases, and public wholesale SKU variants; GEN-006 competitor benchmark completed for public pricing, catalog search, rendered search/autocomplete samples, and browse evidence; GEN-007 all-node browse/search/autocomplete parity completed for public collection nodes; GEN-008 local school PTA brief completed from ecommerce evidence plus user-provided website benchmark; authenticated wholesale remains access-limited",
-    "output_artifacts": "100% for draft executive report, detailed findings, scorecard, opportunity matrix, presentation deck, GEN-003 browser evidence, GEN-004 normalization evidence, GEN-006 competitor benchmark evidence, GEN-007 browse-node parity evidence, GEN-008 local school PTA opportunity PDF/evidence summary, and GEN-009 problem-only local school PTA report revision",
-    "finding_traceability": "100% of report findings must trace to evidence, stakeholder-context assumption, or explicit unavailable-data note"
+    "assessment_areas": "100% represented in the framework; GEN-011 High Country owner report includes 175 public search/autocomplete experiments, 25 examples per concept across seven discovery concepts, Spanish/bilingual discovery, same-query competitor benchmarks for two usable regional competitors, prior browse/filter/cart/policy/local-site evidence as reference, and organic/paid-placement opportunity evidence with explicit limits.",
+    "output_artifacts": "100% for GEN-011 High Country expanded IR evidence JSON with same-query competitor benchmark, owner outreach report JSON/Markdown, Northvalley LaTeX/PDF report, validators, handoff, and MDE records.",
+    "finding_traceability": "100% of GEN-011 High Country owner claims trace to public ecommerce evidence, same-query competitor observations, upstream local-assessment context, directional modeling assumptions, or explicit unavailable-data notes."
   },
   "external_validators": [
     {
@@ -240,6 +282,13 @@
       "category": "Functional / Usability / UI Standards Validation",
       "run_policy": "Generation 9 and before external use of local-school buyer claims when report framing, website benchmark, local-service details, school examples, or discovery evidence changes",
       "evidence": "reports/boxercraft-local-school-pta-opportunity-report.tex, boxercraft-local-school-pta-opportunity-report.pdf, latexmk, pdftotext, pdfinfo, pdftoppm, rendered page spot checks, and disallowed visible score/proposal text scan."
+    },
+    {
+      "name": "High Country Outfitters combined ecommerce report",
+      "status": "executed_generation_11_owner_outreach_refinement",
+      "category": "Project-Specific External / Functional / Usability Validation",
+      "run_policy": "Generation 11 and before client-facing High Country delivery when public ecommerce evidence, upstream local evidence, competitor evidence, paid-placement claims, or owner-facing framing changes",
+      "evidence": "assessments/high-country-outfitters/expanded-ir-evidence/GEN-011/highcountryoutfitters-expanded-ir-evidence.json; assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.json and .md; reports/highcountryoutfitters-combined-ecommerce-report.tex; highcountryoutfitters-combined-ecommerce-report.pdf; prior GEN-010 ecommerce evidence; scripts/evaluate-highcountryoutfitters-expanded-ir.mjs; and scripts/validate-highcountryoutfitters-report.mjs."
     }
   ],
   "mde_native_validators": [
@@ -303,6 +352,213 @@
       "reason": "Requires rendered browser execution across desktop and mobile."
     }
   ],
+  "generation_13_architecture_validations": {
+    "status": "design_ready_no_code_implementation_yet",
+    "source_design_handoff": ".mde/handoffs/stream_mra8o4fq_47ae08ab_reusable_ecommerce_evaluator_design.md",
+    "critical_validations": [
+      {
+        "name": "Evaluation platform architecture contract",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "GEN-013 core architecture is marked stable for implementation.",
+          "Future architecture changes require observed inspection failures from real ecommerce sites.",
+          "Design documents define the Ecommerce Evaluator as an Inspection Platform, not simply a report generator.",
+          "Platform responsibilities are separated into trustworthy inspections, reusable evidence, and business-facing report generation.",
+          "Design documents define Workspace -> Evaluation -> Inspection hierarchy.",
+          "Evaluation Manifest is the runnable entry point.",
+          "Discovery and Inspection are separated by reusable site-profile.json.",
+          "Raw evidence, Inspection Model, Dashboard, Inspection Report, and downstream exports are separate layers.",
+          "Inspection Report remains evidence-first and contains no recommendations, business impact, or consulting interpretation."
+        ]
+      },
+      {
+        "name": "Platform capability classification",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Platform Capability gaps are explicitly separated from ecommerce observations.",
+          "Inspection failures caused by URL normalization, HTTPS, redirects, Cloudflare, robots parsing, Shopify discovery, or rendered extraction are classified as platform capability gaps.",
+          "Platform capability gaps produce platform work item identifiers rather than ecommerce findings.",
+          "Dashboard can show Inspection blocked due to Platform Capability Missing with capability ID.",
+          "Downstream reports do not convert platform limitations into retailer recommendations."
+        ]
+      },
+      {
+        "name": "Platform Capability Report and Validation Suite",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Platform Capability Registry is defined as long-lived catalog of known capabilities.",
+          "Platform Capability Report is defined as generated output for a specific evaluator version.",
+          "Registry and report have separate responsibilities and update cadence.",
+          "Platform Capability Report describes which evaluator capabilities are pass, warn, fail, or unknown.",
+          "Platform Capability Report records maturity level, last validation, known limits, and next platform work item.",
+          "Platform Validation Suite covers URL parsing, HTTPS, redirects, robots, Shopify discovery, search endpoint, suggest endpoint, rendered capture, and block classification.",
+          "Retailer inspection records the Platform Capability Report version used for classification.",
+          "Enabled inspection surfaces warn when required platform capabilities are not mature enough."
+        ]
+      },
+      {
+        "name": "Platform evolution strategy",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Design defines the loop: run inspection, identify platform gap, create capability, implement capability, run platform validation, resume inspection, update capability registry.",
+          "Retailer-specific fixes are discouraged when a reusable platform capability can be created.",
+          "Every new retailer inspection should contribute reusable platform capability, inspection reliability, evidence quality, or evaluator productivity.",
+          "GEN-014 planning is deferred until approximately 10-20 real ecommerce inspections produce observed capability gaps."
+        ]
+      },
+      {
+        "name": "Operational dashboard contract",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Dashboard Purpose defines the dashboard as the evaluator's operational workspace, not a developer console.",
+          "Primary dashboard experience focuses on inspection status, commerce surfaces, evidence, evidence quality, confidence, and report readiness.",
+          "Implementation concepts such as Evaluation Manifest, Target Manifest, Plugin, Adapter, and Inspection Model are available through drill-down views rather than dominating the primary dashboard.",
+          "Dashboard is defined as the primary operational product, not just a report page.",
+          "Dashboard supports start, resume, rerun, selected-plugin run, compare, validate, artifact browsing, screenshot viewing, timeline viewing, and report export actions.",
+          "Dashboard answers whether the inspection ran successfully, what evidence was collected or missed, and what blocks downstream report generation.",
+          "Dashboard action availability is derived from inspection state and downstream readiness."
+        ]
+      },
+      {
+        "name": "Inspection History and workspace navigation",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Inspection History rows include inspection_id, evaluation_id, target, timestamp, generation, duration, status, confidence, evidence quality, and coverage.",
+          "History supports open, compare, resume, rerun, and export actions.",
+          "Workspace manifest scopes related targets, evaluations, query packs, peer sets, reports, evidence, datasets, and history."
+        ]
+      },
+      {
+        "name": "Plugin dependency graph and orchestration",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Plugin metadata includes plugin_id, plugin_version, surface, depends_on, consumes, produces, and optional cache settings.",
+          "Evaluator can build a dependency graph from plugin metadata instead of hardcoded execution order.",
+          "Graph validation detects missing dependencies and cycles.",
+          "Blocked or skipped plugins record dependency reasons in plugin-state.json and timeline.jsonl."
+        ]
+      },
+      {
+        "name": "Evidence immutability and Inspection Model aggregation",
+        "priority": "Critical",
+        "required": true,
+        "checks": [
+          "Raw evidence is immutable and referenced by artifact index entries.",
+          "Inspection Model aggregates statistics, confidence, limitations, Evidence Quality, timeline, and downstream readiness.",
+          "Reports read from the Inspection Model and never recompute experiment results.",
+          "Infrastructure limitations and commerce observations are separate."
+        ]
+      }
+    ],
+    "high_priority_validations": [
+      {
+        "name": "Artifact Explorer contract",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "Artifact Explorer groups evidence, reports, datasets, screenshots, raw HTTP, raw HTML, timeline, site profile, plugin state, dashboard model, and Inspection Model.",
+          "Every artifact entry includes inspection_id, group, path, producer, schema/version metadata, raw/cached flags, and source URL when available.",
+          "Dashboard can show missing, stale, cached, and directly openable artifacts."
+        ]
+      },
+      {
+        "name": "Resumable inspection contract",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "plugin-state.json records pending, running, completed, failed, blocked, skipped, and cached plugin states.",
+          "Resume loads prior plugin state and dependency graph.",
+          "Completed plugins are not rerun unless forced or stale.",
+          "Resume preserves prior raw evidence immutability and writes timeline events for resumed execution."
+        ]
+      },
+      {
+        "name": "Checkpoint architecture contract",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "checkpoint.json records inspection ID, evaluation manifest, site profile, platform capability report, plugin graph, plugin state, completed phases, failed phases, pending phases, evidence refs, cache refs, timeline refs, and compatibility fingerprint.",
+          "Resume from checkpoint validates compatibility before reusing completed evidence.",
+          "Checkpointed runs resume from the first incomplete executable phase.",
+          "Development loop supports platform validation, platform capability fix, checkpoint, resume inspection, and continue without rerunning completed phases."
+        ]
+      },
+      {
+        "name": "Platform capability dependency graph and incremental validation",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "Capability Dependency Graph records dependencies and affected capabilities.",
+          "If a capability changes, impact analysis identifies affected validators and dependent capabilities.",
+          "Platform Validation can run only affected validators and record skip reasons for unaffected validators.",
+          "Dashboard explains why completed inspection work was rerun, including dependency-changed reasons."
+        ]
+      },
+      {
+        "name": "Platform timeline and metrics",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "Platform Capability Timeline records generation, capability ID, change type, validation refs, affected capabilities, and motivating inspection failures.",
+          "Platform metrics track capabilities implemented, capabilities validated, capability coverage, supported platforms, average inspection duration, resume savings, average validation time, inspection success rate, evidence coverage, and evidence quality.",
+          "Platform metrics are reported separately from retailer ecommerce quality."
+        ]
+      },
+      {
+        "name": "Plugin-level caching contract",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "Expensive plugins can define cache_key, cache_duration, and is_stale behavior.",
+          "Cache entries include plugin, adapter, target manifest, evaluation manifest, site profile, and query pack versions as applicable.",
+          "Cached evidence is reused by reference or copied with provenance; raw evidence is not mutated."
+        ]
+      },
+      {
+        "name": "Evidence Quality model",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "Evidence Quality is separate from observation confidence.",
+          "Evidence Quality includes completeness, freshness, verification, coverage, sampling, source diversity, raw evidence availability, screenshot availability, and downstream readiness.",
+          "Evidence Quality can be computed overall, by surface, by plugin, by dataset, and by downstream report readiness."
+        ]
+      },
+      {
+        "name": "Future agent namespace guardrail",
+        "priority": "High",
+        "required": true,
+        "checks": [
+          "Design reserves agents/ namespace for future search, catalog, facet, peer, and report agents.",
+          "Agents are optional orchestration layers and must consume manifests, site profiles, raw evidence, and Inspection Models.",
+          "Agents must not bypass plugins or mutate raw evidence."
+        ]
+      }
+    ],
+    "first_implementation_validation_gate": [
+      "Validate Workspace, Evaluation Manifest, Target Manifest, Query Pack, Site Profile, Platform Capability Registry, Platform Capability Dependency Graph, Platform Capability Report, Platform Capability Timeline, Platform Metrics, Platform Validation Suite, Inspection History, Checkpoint, Artifact Index, plugin metadata, plugin-state, and cache metadata schemas.",
+      "Run Platform Validation Suite for URL parsing, HTTPS, redirects, robots, Shopify discovery, search endpoint, suggest endpoint, rendered capture, and block classification stubs.",
+      "Validate incremental platform validation impact analysis for one changed capability ID.",
+      "Validate Platform Capability Report statuses and maturity levels before retailer inspection.",
+      "Validate plugin dependency graph construction, missing dependency detection, and cycle detection.",
+      "Run a bounded 5-query Shopify inspection from an Evaluation Manifest.",
+      "Generate raw evidence, timeline.jsonl, plugin-state.json, checkpoint.json, artifact-index.json, inspection-model.json, dashboard model, Inspection History row, inspection-report.json, and inspection-report.md.",
+      "Validate Evidence Quality, observation-level confidence, platform capability gap classification, infrastructure/commerce separation, and downstream readiness.",
+      "Validate resume behavior with a deliberately interrupted bounded run.",
+      "Validate dashboard explanation for any repeated work after resume or dependency change.",
+      "Validate that the Inspection Report remains observational and contains no recommendations, business impact, or consulting interpretation.",
+      "Run git diff --check."
+    ],
+    "second_pass_policy": "Rerun the same bounded evaluation without implementation changes; confirm deterministic schemas, platform capability statuses, capability dependency impact analysis, dependency graph, checkpoint, artifact index, timeline ordering, resume state, cache behavior, dashboard readiness, Evidence Quality, limitation records, and Inspection Report output.",
+    "generation_14_planning_gate": "Do not expand architecture again until the current design is implemented and approximately 10-20 real ecommerce inspections have produced observed platform capability gaps, validation misses, checkpoint/resume issues, or evidence quality gaps."
+  },
   "second_run_policy": {
     "description": "Two independent Validation Gate passes are required for phase exit. The second pass must run with no implementation changes after the first clean pass.",
     "rerun_required": [

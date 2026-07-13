@@ -1,5 +1,108 @@
 # Mission: Ecommerce Product Discovery Assessment Framework
 
+## Mission Update: Local Inspection Application As Expected Deliverable
+
+As of 2026-07-11, Ferosh clarified the expected deliverable for the active work stream: a **local application** that can:
+
+1. Run inspections on different ecommerce websites.
+2. Help fix the issues it finds.
+3. Generate an executive-ready report showing the platform issues — something that can be sent to executive leadership and potentially monetized.
+
+This extends, rather than replaces, the 2026-07-07 Inspection Report direction. The Inspection Report remains the canonical evidence artifact; the local application is the product surface that runs inspections, guides issue remediation, and produces the executive-ready report from that canonical evidence. The separation of inspection ("what did we observe?") from interpretation ("what does it mean?") still holds inside the application: the fix-assist and executive-report layers are downstream consumers of the Inspection Report.
+
+Implications for current work:
+
+- The operational dashboard slice from GEN-013 is the seed of this application, not a throwaway debug view.
+- Evidence retention, inspection identity, and capability maturity decisions should favor a multi-site, re-runnable, product-quality application.
+- Executive-ready report generation returns to first-class scope as an application output, consuming Inspection Reports rather than re-inspecting sites.
+- Monetization potential raises the bar on evidence quality, reproducibility, and report polish before external use.
+
+## Mission Update: Inspection Report As Primary Deliverable
+
+As of 2026-07-07, this project is evolving from an executive report generator into a reusable ecommerce inspection framework.
+
+The primary deliverable is now a structured **Inspection Report** generated from any public ecommerce URL. The Inspection Report is the canonical engineering artifact and source of truth for all downstream analysis, including executive reports, competitor comparisons, consulting proposals, regression tests, benchmark studies, presentations, and customer-facing documents.
+
+The project must separate **inspection** from **interpretation**:
+
+- Inspection answers: "What did we observe?"
+- Future downstream skills answer: "What does it mean?"
+
+Inspection output must not include recommendations, priorities, business impact, revenue estimates, consulting language, quick wins, or executive summaries. Those belong to downstream report-generation skills.
+
+### Inspection Report Requirements
+
+Every Inspection Report must begin with a one-page **Inspection Dashboard** optimized for rapid engineering and consultant review.
+
+The dashboard must show:
+
+- Inspection timestamp.
+- Target URL.
+- Platform detection.
+- Overall inspection status.
+- Inspection duration.
+- Evidence quality.
+- Overall confidence.
+- Crawl health by component: Homepage, Search, Browse, Autocomplete, Product Pages, Facets, Recommendations, Mobile, and Competitor Inspection.
+
+Failures must state explicit reasons, such as Cloudflare challenge, authentication required, rate limiting, traffic regulation, HTTP errors, rendering failures, JavaScript errors, browser timeout, or endpoint unavailable.
+
+### Inspection Workflow
+
+The inspection framework must execute these phases when applicable:
+
+1. Site Discovery: platform, language, currency, store selector, personalization, and authentication requirements.
+2. Endpoint Discovery: search, autocomplete, browse, collection, product, facet, inventory, and store lookup endpoints with method, parameters, authentication requirements, response status, confidence, and supporting evidence.
+3. Catalog Discovery: category hierarchy, browse tree, collection hierarchy, product counts, brands, attributes, facets, browse depth, leaf categories, and a reusable Browse Graph.
+4. Dataset Generation:
+   - DS1 Canonical Search Dataset from browse hierarchy, with explicit relationships such as exact, parent, child, ancestor, descendant, synonym, attribute, modifier, collection, and department.
+   - DS2 Query Normalization Dataset with realistic customer variations such as singular, plural, misspellings, keyboard mistakes, missing letters, extra letters, delimiter/hyphen variants, abbreviations, stemming, lemmatization, synonyms, regional terminology, and voice-search variants.
+   - DS3 Search + Facet Dataset combining observed facets with search queries.
+   - DS4 Advanced Retrieval Dataset covering semantic search, conversational search, attribute inference, functional intent, lifestyle intent, occasion-based shopping, visual reasoning, and natural language search.
+5. Search Inspection: query, expected browse node, returned products, product overlap, response time, endpoint response, and evidence.
+6. Autocomplete Inspection: typed prefix, suggested queries, products, categories, ranking, response time, and endpoint response.
+7. Browse Consistency Inspection: consistency across browse, search, and autocomplete, including product overlap, category overlap, ranking similarity, missing products, and surface inconsistencies.
+8. Facet Inspection: facet availability, facet correctness, search + facet consistency, and browse + facet consistency.
+9. Advanced Retrieval Inspection: DS4 scenarios such as semantic search, functional intent, conversational search, and attribute inference.
+10. Optional Competitor Inspection: run the same inspection workflow against competitors using identical datasets, staying observational rather than comparative at this stage.
+
+### Evidence, Confidence, And Limitations
+
+The Inspection Report must capture objective evidence, including endpoints, screenshots, JSON responses, product counts, category trees, browse graphs, response times, crawl statistics, dataset summaries, evidence references, and confidence scores.
+
+Every major section must include confidence indicators: High, Medium, Low, or Unknown. Confidence reflects completeness and reliability of evidence, not subjective opinion.
+
+Every incomplete inspection must state why. Limitations must never be hidden. Examples include Cloudflare challenge, authentication required, rate limiting, HTTP failures, JavaScript rendering failures, browser timeout, traffic regulation, store selection unavailable, mobile inspection incomplete, and endpoint unavailable.
+
+### Long-Term Architecture
+
+```text
+Public Ecommerce URL
+          |
+          v
+Site Inspection
+          |
+          v
+Inspection Report
+          |
+          +-------- Executive Report
+          +-------- Competitor Report
+          +-------- Regression Tests
+          +-------- Consulting Proposal
+          +-------- Benchmark Study
+          +-------- Engineering Validation
+```
+
+### Updated Success Criteria
+
+The mission is successful when the project can accept any public ecommerce URL and produce a high-quality Inspection Report that:
+
+1. Reliably documents everything observed.
+2. Clearly identifies what could not be inspected and why.
+3. Produces reusable DS1-DS4 datasets for future evaluations.
+4. Allows an engineer to determine within two minutes whether the inspection succeeded and whether evidence is sufficient for downstream report generation.
+5. Serves as the single source of truth for every future artifact generated by the ecommerce evaluation framework.
+
 ## Purpose
 
 Develop a reusable assessment framework that evaluates the effectiveness of ecommerce product discovery experiences across Search, Autocomplete, Browse Navigation, Filters, Recommendations, and related Information Retrieval capabilities.

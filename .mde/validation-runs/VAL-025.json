@@ -1,0 +1,78 @@
+{
+  "validation_run_id": "VAL-025",
+  "generation": "GEN-010",
+  "phase": "Generation 10 - High Country Outfitters Combined Ecommerce Report",
+  "started_at": "2026-07-02T02:10:00-0400",
+  "completed_at": "2026-07-02T02:15:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_after_high_country_northvalley_pdf_promotion",
+  "command": "First Validation Gate pass after the High Country Northvalley PDF source/PDF were added",
+  "validations_executed": [
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "Compiled the Northvalley High Country report to highcountryoutfitters-combined-ecommerce-report.pdf."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot check",
+      "result": "pass",
+      "evidence": "PDF has 6 letter pages, expected headings in extracted text, nonblank rendered page PNGs, and representative pages visually checked for overlap/readability."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Validated target identity, canonical project id, JSON/markdown artifacts, rendered evidence, Northvalley TeX/PDF presence, upstream Pest Control exclusions, benchmark limitation record, and handoff."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with High Country PDF/source artifacts and prior framework artifacts present."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    },
+    {
+      "category": "Repository Governance Validation",
+      "tool": "git status --short --branch",
+      "result": "pass_pending_post_validation_push",
+      "evidence": "main tracks origin/main; GEN-010 changes remain local pending commit/push or user review."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Checkout Completion",
+      "reason": "Checkout completion would require a live purchase path and was out of scope for public evidence collection.",
+      "revisit_when": "Before client-facing conversion or checkout-readiness claims."
+    },
+    {
+      "category": "Full Browser-Based Competitor Benchmark",
+      "reason": "Automated public benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; no competitor claims are made from those blocked pages.",
+      "revisit_when": "Before comparative outdoor-retail market claims are included in a client-facing package."
+    },
+    {
+      "category": "Security Scan",
+      "reason": "No dependencies, backend code, authentication, storage, secrets, or deployment configuration changed.",
+      "revisit_when": "Dependencies, backend code, authentication, storage, secrets, or deployment configuration change."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "combined_high_country_report": "northvalley_pdf_json_markdown_search_autocomplete_browse_filters_merchandising_mobile_policy_support_cart_and_benchmark_limits_recorded",
+    "upstream_assessment_use": "allowed_public_site_signals_only; pest_control_demand_and_competitor_sections_excluded",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_for_bounded_public_ecommerce_assessment_with_validated_northvalley_pdf_and_documented_external_benchmark_limits",
+  "reason": "First clean validation pass completed after the GEN-010 Northvalley PDF source and compiled PDF were added."
+}

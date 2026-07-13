@@ -1,0 +1,73 @@
+{
+  "validation_run_id": "VAL-027",
+  "generation": "GEN-010",
+  "phase": "Generation 10 - High Country Outfitters Combined Ecommerce Report",
+  "started_at": "2026-07-02T02:30:00-0400",
+  "completed_at": "2026-07-02T02:35:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_after_high_country_complete_report_expansion",
+  "command": "First Validation Gate pass after the High Country PDF was expanded from a scorecard-style report into a complete evidence report",
+  "validations_executed": [
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "Compiled the expanded Northvalley High Country report to highcountryoutfitters-combined-ecommerce-report.pdf."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot check",
+      "result": "pass",
+      "evidence": "PDF has 12 letter pages, extracted text includes complete-report headings and tested terms, rendered page PNGs were nonblank, and representative evidence-heavy pages were visually checked for overlap/readability."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Validated target identity, canonical project id, JSON/markdown artifacts, rendered evidence, Northvalley TeX/PDF presence, upstream Pest Control exclusions, benchmark limitation record, handoff, complete-report sections, every tested search term, and evaluated browse handles."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with complete High Country PDF/source artifact checks and prior framework artifacts present."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Checkout Completion",
+      "reason": "Checkout completion would require a live purchase path and was out of scope for public evidence collection.",
+      "revisit_when": "Before client-facing conversion or checkout-readiness claims."
+    },
+    {
+      "category": "Full Browser-Based Competitor Benchmark",
+      "reason": "Automated public benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; no competitor claims are made from those blocked pages.",
+      "revisit_when": "Before comparative outdoor-retail market claims are included in a client-facing package."
+    },
+    {
+      "category": "Additional Ecommerce Crawl",
+      "reason": "The user requested the existing report include the complete dataset and evaluations already run, not a new High Country evaluation pass.",
+      "revisit_when": "When the next action is broadened validation rather than report completeness."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "combined_high_country_report": "complete_northvalley_pdf_json_markdown_search_autocomplete_browse_filters_merchandising_mobile_policy_support_cart_and_benchmark_limits_recorded",
+    "complete_report_contents": "dataset_evaluated_every_search_term_browse_handles_rendered_pages_policy_cart_mobile_benchmark_upstream_exclusions_scorecard_limits_and_next_steps",
+    "upstream_assessment_use": "allowed_public_site_signals_only; pest_control_demand_and_competitor_sections_excluded",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_complete_bounded_public_ecommerce_report_with_documented_query_dataset_and_limits",
+  "reason": "First clean validation pass completed after the High Country PDF was expanded to include the full dataset, every tested search term, browse handles, rendered evidence, cart/policy/mobile/benchmark checks, upstream exclusions, findings, limits, and next steps."
+}

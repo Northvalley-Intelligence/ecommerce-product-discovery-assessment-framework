@@ -1,0 +1,82 @@
+{
+  "validation_run_id": "VAL-031",
+  "generation": "GEN-010",
+  "phase": "Generation 10 - High Country Outfitters Combined Ecommerce Report",
+  "started_at": "2026-07-02T09:08:00-0400",
+  "completed_at": "2026-07-02T09:12:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_after_high_country_autocomplete_api_correction",
+  "command": "First Validation Gate pass after correcting the High Country camp autocomplete evidence and rebuilding report artifacts",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-highcountryoutfitters-ecommerce.mjs; node --check scripts/validate-highcountryoutfitters-report.mjs; node --check scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Evaluator and validators parsed successfully after adding camp autocomplete follow-up assertions."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "Compiled the corrected Northvalley High Country report PDF with camp autocomplete evidence."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdftotext / pdftoppm / rendered page spot check",
+      "result": "pass",
+      "evidence": "Extracted/rendered PDF evidence includes camp snap, camp chairs, Camp Kitchen, autocomplete 78/100, and overall 83/100."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated validator passed with strict checks for corrected search counts and camp autocomplete follow-up evidence."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with updated GEN-010 report, MDE, release-check, and validation-run requirements."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Checkout Completion",
+      "reason": "Checkout completion would require a live purchase path and was out of scope for public evidence collection.",
+      "revisit_when": "Before client-facing conversion or checkout-readiness claims."
+    },
+    {
+      "category": "Full Browser-Based Competitor Benchmark",
+      "reason": "Automated public benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; no competitor claims are made from those blocked pages.",
+      "revisit_when": "Before comparative outdoor-retail market claims are included in a client-facing package."
+    },
+    {
+      "category": "Full Protected-Set Visible Autocomplete UI Validation",
+      "reason": "The camp autocomplete case is API-backed and user-observed, but visible dropdown capture across all protected terms was not run.",
+      "revisit_when": "Before broad external autocomplete suggestion-quality claims beyond the camp case."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "combined_high_country_report": "corrected_northvalley_pdf_json_markdown_search_autocomplete_browse_filters_merchandising_mobile_policy_support_cart_and_benchmark_limits_recorded",
+    "complete_report_contents": "dataset_evaluated_every_search_term_browse_handles_rendered_pages_policy_cart_mobile_benchmark_upstream_exclusions_scorecard_limits_and_next_steps",
+    "search_capture_correction": "camp_chair_183_rendered_and_camp_chairs_184_rendered_required_by_validators",
+    "autocomplete_followup_correction": "camp_snap_camp_chairs_campeones_camping_Camp_Snap_Summer_Camp_Camp_Kitchen_required_by_validators",
+    "scorecard_correction": "autocomplete_78_overall_83_required_by_validators",
+    "upstream_assessment_use": "allowed_public_site_signals_only; pest_control_demand_and_competitor_sections_excluded",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_complete_bounded_public_ecommerce_report_with_corrected_rendered_search_capture_camp_autocomplete_followup_and_documented_limits",
+  "reason": "First clean validation pass completed after the report and validators were corrected for the High Country camp autocomplete API evidence."
+}

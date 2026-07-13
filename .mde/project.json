@@ -1,13 +1,27 @@
 {
-  "project_id": "ecommerce-product-discovery-assessment-framework",
-  "project_name": "Ecommerce Product Discovery Assessment Framework",
+  "project_id": "ecommmerce-eval",
+  "project_name": "Ecommerce Evaluation Reports",
+  "legacy_project_ids": [
+    "ecommerce-product-discovery-assessment-framework"
+  ],
+  "legacy_project_names": [
+    "Ecommerce Product Discovery Assessment Framework"
+  ],
+  "identity_reconciled_on": "2026-07-01",
+  "identity_reconciliation_source": "/Users/feroshjacob/code/mde/.mde/handoffs/control-center-ecommmerce-eval-registration-2026-07-01.md",
   "created_on": "2026-06-24",
   "mde_status": "active",
   "mission_version": "MISSION-2026-06-24",
-  "current_generation": "GEN-000",
-  "current_phase": "Generation 0 - Mission and Validation Foundation",
-  "project_type": "consulting assessment framework and report generation system for ecommerce product discovery",
-  "primary_validation_target": "Boxercraft",
+  "current_generation": "GEN-013",
+  "current_phase": "Generation 13 - Inspection Report Framework",
+  "project_type": "reusable ecommerce inspection framework that produces canonical evidence-first Inspection Reports for public ecommerce URLs",
+  "primary_validation_target": "Generic public ecommerce URL Inspection Report; Dress Up, High Country Outfitters, and Boxercraft remain existing evidence packages",
+  "repository_identity": {
+    "repository_root": "/Users/feroshjacob/code/ecommmerce-eval",
+    "directory_slug": "ecommmerce-eval",
+    "github_remote_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git",
+    "github_remote_status": "legacy_slug_preserved_until_explicit_repository_rename"
+  },
   "intended_owner": "North Valley Intelligence",
   "source_mission": {
     "type": "clipboard",
@@ -16,6 +30,7 @@
   "artifact_profiles": [
     "report_generation",
     "client_facing_document",
+    "inspection_report",
     "data_contract",
     "website_assessment",
     "search_ir_evaluation",
@@ -37,7 +52,8 @@
   "downstream_dependencies": [],
   "upstream_dependencies": [
     "central-mde-context-packs",
-    "central-mde-issue-signatures"
+    "central-mde-issue-signatures",
+    "local-website-growth-assessment"
   ],
   "confidentiality_notes": [
     "Do not store client-private credentials or authenticated wholesale data in MDE artifacts.",

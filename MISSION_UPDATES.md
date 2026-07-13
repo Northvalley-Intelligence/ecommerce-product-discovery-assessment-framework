@@ -2,6 +2,27 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-13
+
+- Mission update: Froze the approved evaluator design baseline and completed the GEN-013 first implementation slice with a successful Dress Up pilot.
+- Reason: Control Center delegated implementation after Ferosh approved the evaluator design (architecture freeze, platform capability self-check layer, resumable checkpointed runs).
+- Discovered through: Frozen design doc commit with dated changelog, completed schema contract set, live bounded 5-query Dress Up inspection, GEN-012 parity validation, deliberately interrupted and resumed checkpoint run, and VAL-051 validation evidence.
+- Impact: The Inspection Report pipeline now runs end to end for a Shopify target: platform capability validation first, cached site discovery with cache-metadata evidence, plugin execution with checkpoint/resume, DS1-DS4 datasets, dashboard, and Markdown/JSON Inspection Reports. The pilot matched saved GEN-012 rendered-browser evidence on all ten search/autocomplete parity checks. Phase exit still requires a second clean Validation Gate pass with no implementation changes, the GEN-013 BDD refresh, and Ferosh's three pending clarification decisions.
+
+## 2026-07-11
+
+- Mission update: Recorded the expected deliverable as a local application for ecommerce inspection, issue fixing, and executive-ready reporting.
+- Reason: Ferosh sent a charter update through the linked work stream clarifying that the deliverable is a local application that can run inspections on different ecommerce websites, help fix the issues it finds, and generate an executive-ready report showing platform issues — sendable to executive leadership and potentially monetizable.
+- Discovered through: Direct charter update from the operator via the Control Center work stream.
+- Impact: The Inspection Report remains the canonical evidence artifact; the local application becomes the product surface around it (inspect → fix-assist → executive report). The GEN-013 operational dashboard slice is the seed of this application. The three open clarification decisions (raw artifact retention, inspection ID scheme, capability maturity threshold) were re-aligned toward a multi-site, re-runnable, product-quality application. No new implementation was started; the project is waiting on Ferosh's three pending decisions.
+
+## 2026-07-07
+
+- Mission update: Reframed the primary deliverable from executive reports to canonical ecommerce Inspection Reports.
+- Reason: User clarified that the project should separate inspection from interpretation and produce an evidence-first engineering artifact from any public ecommerce URL.
+- Discovered through: Direct mission update from the operator.
+- Impact: Future executive reports, competitor comparisons, proposals, regression tests, benchmark studies, presentations, and customer-facing documents must consume the Inspection Report rather than re-inspecting websites. The next implementation generation should design the Inspection Report schema, one-page Inspection Dashboard, inspection phases, DS1-DS4 dataset generation, confidence/limitation model, and manifest-driven inspection runner.
+
 ## 2026-06-24
 
 - Mission update: Initialized the Ecommerce Product Discovery Assessment Framework from the clipboard mission.
@@ -67,3 +88,78 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: User clarified that the report should not make proposals or show scores, and should instead focus on site problems and how they contribute to the PTA buyer problem.
 - Discovered through: User feedback, report source review, PDF text extraction, disallowed score/proposal text scan, and rendered PDF page checks.
 - Impact: The two-page report now starts with the school T-shirt need that brought the evaluator to the site, then shows how the missing elementary-school path led into broader search, autocomplete, browse, and local-trust problems.
+
+## 2026-07-02
+
+- Mission update: Created the High Country Outfitters combined ecommerce/product-discovery report.
+- Reason: Control Center delegated the High Country report after upstream local website assessment input was available.
+- Discovered through: Upstream local assessment handoff/artifacts, Shopify public catalog/search/suggest endpoints, rendered desktop/mobile High Country pages, policy/support pages, public cart add/read, and blocked/low-signal outdoor-retail benchmark attempts.
+- Impact: The project now has GEN-010 structured evidence, a combined report JSON, a markdown report, a Northvalley LaTeX/PDF report, 23 screenshot files, a High Country evaluator, a dedicated validator, and MDE handoff. The upstream Pest Control demand fit and Pest Control competitor comparison were excluded from ecommerce market evidence.
+
+- Mission update: Expanded the High Country PDF into a complete evidence report.
+- Reason: User feedback made clear that a scorecard-style PDF was insufficient and the report needed to explain the evaluations run, dataset used, and every search term tried.
+- Discovered through: PDF source review, extracted PDF text checks, rendered page spot checks, and stricter High Country validators.
+- Impact: The High Country Northvalley PDF is now a 12-page complete report with dataset, all 12 tested search terms, all 14 browse handles, rendered evidence, policy/cart/mobile/benchmark evidence, upstream exclusions, detailed findings, scorecard, evidence limits, and next steps.
+
+- Mission update: Corrected the High Country search capture problem and reran/rebuilt the report artifacts.
+- Reason: User identified that `camp chairs` visibly returned results on the live site, proving the previous report's `camp chair` unverified row was a capture issue.
+- Discovered through: Corrected rendered browser capture for every tested search query, High Country evidence JSON reconciliation after a later Cloudflare challenge pass, rebuilt Markdown/JSON/PDF report artifacts, PDF text/render checks, and tightened validators requiring `camp chair` 183 results and `camp chairs` 184 results.
+- Impact: The corrected-search build treated 429 fetches as capture-path failures, not empty search evidence. At that intermediate point, search scored 100/100, autocomplete scored 74/100, overall product discovery scored 82/100, and the report listed all 12 terms including `camp chairs`.
+
+- Mission update: Corrected the High Country `camp` autocomplete limitation using the public Shopify suggest API.
+- Reason: User observed the live autocomplete dropdown for `camp` and asked whether the underlying API was accessible.
+- Discovered through: Shopify `/search/suggest.json?q=camp` evidence matching the user-observed query and collection suggestions, rebuilt report JSON/Markdown/PDF artifacts, and validators requiring the `camp snap`, `camp chairs`, `Camp Snap`, `Summer Camp`, and `Camp Kitchen` autocomplete evidence.
+- Impact: The report no longer treats `camp` autocomplete as unverified. Autocomplete scores 78/100, overall product discovery scores 83/100, and the remaining limitation is full visible autocomplete dropdown QA across the protected query set, not API accessibility for `camp`.
+
+- Mission update: Added apparel-domain IR concept examples to the High Country report.
+- Reason: User asked for realistic apparel examples relevant to High Country Outfitters for Articles 5--10: Normalization, Tokenization, Synonyms, Field Weighting, Query Expansion, and Document Enrichment, with search and autocomplete scoring.
+- Discovered through: Rendered browser search pages and browser-context Shopify suggest API checks for 12 apparel queries, two per concept, plus rebuilt JSON/Markdown/PDF report artifacts and stricter validators requiring the Article 5--10 examples.
+- Impact: The High Country PDF is now a 14-page report with an apparel IR concept summary and detailed example table. The diagnostic concept set scored 99/100 for rendered search and 85/100 for autocomplete; the main autocomplete gap was `trail running shirt`, which had rendered search results but no suggest assistance.
+
+## 2026-07-03
+
+- Mission update: Reframed the High Country report into an owner-outreach product discovery opportunity report.
+- Reason: User clarified that a scorecard-style report was not enough and asked for a stronger executive presentation, all experiment details in references, at least 25 examples per IR concept, Spanish/bilingual discovery, competitor evidence, and careful sponsored/organic opportunity framing.
+- Discovered through: Saved GEN-011 rendered search and Shopify suggest evidence for 175 High Country search/autocomplete examples, rendered competitor checks for Public Lands, Half-Moon Outfitters, and Mast General Store, rebuilt Northvalley LaTeX/PDF artifacts, PDF text/render checks, and updated validators.
+- Impact: The primary High Country PDF is now a 17-page owner-outreach report with no visible article references or scorecard framing. It leads with business impact, records directional 1-4% sitewide ecommerce upside, includes all 175 experiments in reference, documents two usable competitor benchmarks, and treats paid-placement labels as bounded visible evidence rather than proof of organic-only results.
+
+## 2026-07-04
+
+- Mission update: Refined the High Country report and framework with same-query competitor benchmarking.
+- Reason: User clarified that competitors should be evaluated with the same query set and that organic/paid search evidence should move out of the executive summary and into references.
+- Discovered through: Repaired Playwright capture for Half-Moon Outfitters after an initial HTTP 429 run, full same-query reruns for Half-Moon Outfitters and Mast General Store, Shopify-style public suggest endpoint checks, regenerated JSON/Markdown/LaTeX/PDF artifacts, PDF render checks, and stricter validators.
+- Impact: The primary High Country PDF is now a 30-page Northvalley report with a two-page executive readout, all High Country experiment detail in references, same-query competitor splits for 175 protected examples per competitor, full competitor query rows in reference, and organic/paid-placement evidence moved to a reference appendix. The reusable framework now treats competitor comparison as a protected-query benchmark, not a small sample.
+
+- Mission update: Added an intermediate grounded competitor readout to the High Country executive summary.
+- Reason: Control Center stream `stream_mr6tdlc3_6413285c` delegated the first safe follow-up step: update the executive summary from the existing search/autocomplete IR analysis without running a new evaluation or adding unsupported claims.
+- Discovered through: Existing GEN-011 same-query competitor evidence, saved report artifacts, PDF text/render checks, and validators updated to require the executive win/loss summary.
+- Impact: This intermediate version introduced computed same-query competitor context from saved evidence only. It was later superseded by the July 5 customer-experience executive narrative: exact peer values now remain in reference tables, while the executive pages use comparable retailers as reference examples rather than winner/loser framing.
+
+## 2026-07-05
+
+- Mission update: Promoted the High Country competitor comparison into a small first-page executive section as an intermediate follow-up.
+- Reason: User clarified that the requested comparison should appear as a small section in the first 1-3 pages, not only as an inline executive paragraph and reference appendix.
+- Discovered through: Report source/PDF text review, rendered first-page PDF check, and saved GEN-011 same-query competitor evidence.
+- Impact: This intermediate version placed comparable-retailer context into the first numbered executive page. It was later reframed into the customer-experience-first `Why This Matters` executive section, with exact site comparisons preserved in references and no new live evaluation run.
+
+- Mission update: Rewrote the High Country executive pages for a President/GM advisory conversation.
+- Reason: User clarified that the report objective is to earn a meeting, not prove the framework or rank competitors.
+- Discovered through: Executive-page content review, PDF text scan for old ranking language, rendered first-pages review, and saved GEN-011 evidence.
+- Impact: The opening pages now emphasize High Country's strengths first, frame competitors as reference context, move exact peer scores out of the executive narrative, replace abstract upside percentages with customer-journey/revenue-measurement language, and preserve the full evidence dataset in references. No new live evaluation was run.
+
+- Mission update: Rewrote the High Country executive pages around customer product-finding and buying experience.
+- Reason: User clarified that the cover page, Executive Readout, and Recommended Growth Path should answer "How can we make it easier for customers to find and buy products?" rather than "How can we improve search?"
+- Discovered through: Executive-page content review, PDF text scan for technical-first language, rendered first-three-pages review, and saved GEN-011 evidence.
+- Impact: The first three pages now use customer-experience language: customer effort, shopping journey, product finding, customer confidence, conversion, and business measurement. Search, autocomplete, ranking, synonyms, and query concepts remain in the evidence references instead of becoming the executive headline. No new live evaluation was run.
+
+- Mission update: Completed a final design-focused review of the High Country executive pages.
+- Reason: User asked to review pages 1-3 as presentation slides, identify excess whitespace, avoid filling it with paragraphs, add an executive-quality page 3 visual, and rename `First Improvements`.
+- Discovered through: Rendered PDF page review, page 3 whitespace inspection, PDF text extraction, and saved GEN-011 evidence.
+- Impact: Page 3 now uses a before/after Customer Effort Reduction Model to show reducing customer effort early in the shopping journey, adds a Business Value Lens and Executive Decision Focus strip, and renames the action section to `90-Day Opportunity Roadmap`. Pages 1-3 remain concise, High Country-first, and customer-experience focused.
+
+## 2026-07-06
+
+- Mission update: Completed the Dress Up ecommerce executive report peer-reference refinement.
+- Reason: User asked to create a similar report for Dress Up, then clarified that the executive summary should mention competitor analysis and that Dress Up scores should appear beside peer scores for comparison.
+- Discovered through: Saved GEN-012 Dress Up public search/autocomplete evidence, same-query peer evidence for Red Dress, Pink Lily, and Impressions, PDF text extraction, rendered page checks, and two clean local validation passes.
+- Impact: `dressup-ecommerce-executive-report.pdf` now mentions same-query peer analysis in the executive narrative, shows Dress Up first as the current-site baseline in the appendix benchmark tables, preserves peer references as non-ranking examples, and removes raw browser-script noise from appendix evidence notes.

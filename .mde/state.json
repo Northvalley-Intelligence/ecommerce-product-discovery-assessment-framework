@@ -1,20 +1,26 @@
 {
   "state_version": 1,
-  "updated_on": "2026-06-29",
-  "project_id": "ecommerce-product-discovery-assessment-framework",
-  "current_generation": "GEN-009",
-  "current_phase": "Generation 9 - Problem-Only Local School PTA Report Revision",
-  "phase_goal": "Revise the local-school PTA report so it avoids visible scores, proposals, recommendations, and roadmap language, and focuses only on site problems and how those problems contribute to nearby PTA buyers not choosing Boxercraft.",
-  "status": "generation_9_problem_only_report_revision_validation_gate_passed",
-  "mission_version": "MISSION-2026-06-24",
+  "updated_on": "2026-07-13",
+  "project_id": "ecommmerce-eval",
+  "project_name": "Ecommerce Evaluation Reports",
+  "legacy_project_ids": [
+    "ecommerce-product-discovery-assessment-framework"
+  ],
+  "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
+  "current_generation": "GEN-013",
+  "current_phase": "Generation 13 - Inspection Report Framework",
+  "phase_goal": "Make the Inspection Report the canonical engineering artifact for ecommerce evaluation: given a public ecommerce URL, inspect observable discovery surfaces, document evidence and limitations, generate DS1-DS4 reusable datasets, and keep downstream executive or competitor reports dependent on the Inspection Report rather than new site inspection.",
+  "status": "generation_13_first_slice_complete_dressup_pilot_parity_validated",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
-  "validation_strategy_status": "active_for_generation_9",
+  "validation_strategy_status": "draft_updated_for_generation_13_inspection_platform_architecture",
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
-    "current_pass_count": 2,
-    "latest_result": "pass",
-    "latest_run_id": "VAL-022",
-    "reason": "GEN-009 revised the local school PTA report into a problem-only diagnosis, removed visible scores/proposal/roadmap/recommendation language, regenerated the PDF, added validator exclusions, and passed the validation gate twice."
+    "current_pass_count": 1,
+    "latest_result": "pass_for_completed_first_slice_and_dressup_pilot",
+    "latest_run_id": "VAL-051",
+    "reason": "The approved design is frozen in git and the Recommended First Implementation Task is complete: schema contracts, platform self-checks, cache metadata, resume validation, and the Dress Up bounded 5-query pilot with full GEN-012 parity all passed in VAL-051. Implementation changed since VAL-050, so the clean-pass count restarts at one; phase exit needs a second independent pass with no implementation changes plus the GEN-013 BDD inventory refresh."
   },
   "critical_bdds": 5,
   "high_bdds": 7,
@@ -22,12 +28,11 @@
   "low_bdds": 0,
   "known_blockers": [],
   "open_clarifications": [
-    "Confirm whether Boxercraft wholesale assessment has authenticated access or public-only evidence.",
-    "Confirm whether the next client-facing draft should embed selected rendered screenshots inside the report and deck instead of linking to screenshot artifacts.",
-    "Confirm whether UCLA/Bruins priority demand should be supported with client-supplied commercial context before external delivery.",
-    "Confirm actual local service radius, approved school examples, turnaround, minimum-order, and fulfillment details before external use of the local-school PTA brief."
+    "Decide raw artifact retention defaults for HTTP, HTML, API payloads, screenshots, and cached evidence. Charter alignment: the local application must re-render executive reports and support fix verification without re-inspecting sites, which favors retaining raw evidence per inspection.",
+    "Decide whether Inspection IDs should be timestamp-based or sequential within workspace history. Charter alignment: IDs become user-visible in the application's inspection history and report headers; the implemented timestamp scheme sorts naturally and needs no coordination.",
+    "Decide initial Platform Capability maturity threshold required before running broad retailer inspections. Charter alignment: the application promises inspections on different ecommerce websites, so the threshold defines which sites the app can credibly accept per platform type."
   ],
-  "next_recommended_action": "Open and review the revised problem-only local-school PTA PDF; use this version for executive discussion instead of the earlier score/proposal-oriented version.",
-  "session_router_case": "Case F - Brand-New Non-Client Project",
-  "last_prompt_used": "problem-only local school PTA report revision with Northvalley PDF validation"
+  "next_recommended_action": "Still waiting on Ferosh for the three clarification decisions (docs/operations/gen-013-clarification-decisions.md). Next implementation steps per the frozen design pilot sequence: a bounded Ridge run for blocked-domain/canonical-host behavior, then the second independent Validation Gate pass with no implementation changes, then the GEN-013 BDD inventory refresh before phase exit.",
+  "session_router_case": "Existing MDE project - delegated first-slice implementation and pilot completed",
+  "last_prompt_used": "Control Center delegation: freeze the approved evaluator design baseline in git and implement the Recommended First Implementation Task with the Dress Up bounded 5-query pilot"
 }

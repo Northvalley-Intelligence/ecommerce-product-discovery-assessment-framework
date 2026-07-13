@@ -1,0 +1,55 @@
+{
+  "validation_run_id": "VAL-047",
+  "generation": "GEN-012",
+  "phase": "Generation 12 - Dress Up Ecommerce Executive Report",
+  "started_at": "2026-07-06T00:15:00-0400",
+  "completed_at": "2026-07-06T00:18:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_dress_up_report_first_gate_pass",
+  "command": "First clean validation pass after adding Dress Up peer-analysis summary language and Dress Up baseline rows to the peer reference tables.",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-dressup-expanded-ir.mjs",
+      "result": "pass",
+      "evidence": "Dress Up report generator parsed successfully."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/dressup-ecommerce-executive-report.tex",
+      "result": "pass",
+      "evidence": "The Dress Up PDF compiled successfully as a 20-page Northvalley report."
+    },
+    {
+      "category": "Content Integrity Validation",
+      "tool": "pdftotext plus targeted rg checks",
+      "result": "pass",
+      "evidence": "Extracted text contains same-query peer analysis, Dress Up baseline language, Red Dress, Pink Lily, Impressions, and Evidence Limits; no raw browser script fragments were found."
+    },
+    {
+      "category": "UI Standards Validation",
+      "tool": "pdftoppm rendered page checks",
+      "result": "pass",
+      "evidence": "Rendered cover, Executive Readout, Recommended Growth Path, and peer-reference appendix pages were visually checked."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Live Ecommerce Recrawl",
+      "reason": "This refinement rebuilt from saved GEN-012 evidence only.",
+      "revisit_when": "When new Dress Up evidence or a broader peer set is requested."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "medium_findings": [],
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "evidence_quality": "medium_high_for_report_content_and_rendered_pdf_validation"
+}

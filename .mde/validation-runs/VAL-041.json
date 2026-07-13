@@ -1,0 +1,83 @@
+{
+  "validation_run_id": "VAL-041",
+  "generation": "GEN-011",
+  "phase": "Generation 11 - High Country Executive Summary Competitor Win/Loss Refinement",
+  "started_at": "2026-07-04T16:45:00-0400",
+  "completed_at": "2026-07-04T16:47:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_high_country_exec_summary_competitor_win_loss_final_first_gate_pass",
+  "command": "First final Validation Gate pass after report, validator, and MDE bookkeeping updates for the executive competitor win/loss refinement",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-highcountryoutfitters-expanded-ir.mjs; node --check scripts/validate-highcountryoutfitters-report.mjs; node --check scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Report generator and validators parsed successfully after all report and MDE bookkeeping updates."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated High Country validator passed with the executive win/loss regression checks."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with validation records through VAL-042 and release-check metadata pointing at the final executive-summary refinement gate."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "The revised 30-page PDF remained up to date."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdftotext highcountryoutfitters-combined-ecommerce-report.pdf -",
+      "result": "pass",
+      "evidence": "Extracted PDF text preserved the same-query competitor readout and evidence-limit language."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Live Ecommerce Evaluation",
+      "reason": "The stream explicitly requested no new evaluation; this gate validates saved-evidence report and metadata updates only.",
+      "revisit_when": "Only when the user requests broader High Country validation."
+    },
+    {
+      "category": "Sales Analytics Validation",
+      "reason": "No High Country analytics, search-session revenue, conversion, add-to-cart, or AOV data were available.",
+      "revisit_when": "Before dollarizing the modeled upside."
+    },
+    {
+      "category": "Full Visible Autocomplete Screenshot Set",
+      "reason": "GEN-011 uses browser-context suggest API evidence and prior user-observed camp dropdown correction; full visual dropdown screenshots across all 175 target terms were not captured.",
+      "revisit_when": "Before visual UI claims about every protected autocomplete term."
+    },
+    {
+      "category": "Broader Competitor Cohort",
+      "reason": "The requested safe step used existing same-query evidence for Half-Moon Outfitters and Mast General Store only.",
+      "revisit_when": "Before stronger outdoor-retail market comparison claims."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "executive_summary_competitor_win_loss": "validated_in_pdf_markdown_structured_report_and_mde_records",
+    "grounding": "no_new_evaluation; no_unsupported_claims; win_loss_numbers_match_saved_evidence",
+    "validator_regression": "high_country_validator_and_framework_validator_require_latest_exec_summary_gate_evidence",
+    "pdf_output": "30_pages_northvalley_template_text_checked"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_owner_outreach_report_with_saved_public_evidence_grounded_competitor_win_loss_summary_and_final_mde_bookkeeping",
+  "reason": "First final validation pass completed after report, validator, and MDE bookkeeping updates."
+}

@@ -1,0 +1,303 @@
+{
+  "generation_id": "GEN-010",
+  "mission_phase": "Generation 10 - High Country Outfitters Combined Ecommerce Report",
+  "mission_version": "MISSION-2026-06-24",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-02T00:20:00-0400",
+  "ended_at": "2026-07-02T02:45:00-0400",
+  "record_status": "recorded_from_high_country_combined_ecommerce_report",
+  "focus": "Produce a combined High Country Outfitters ecommerce/product-discovery report using the upstream local website assessment as partial public-site evidence and adding ecommerce-specific public evidence for search, autocomplete, browse, filters, merchandising, mobile, policy/support, cart, and benchmark limits.",
+  "reason_generation_started": "Control Center delegated the High Country Outfitters combined ecommerce/product-discovery report after upstream local website assessment handoff was available.",
+  "reason_generation_ended": "Structured ecommerce evidence, IR concept evidence, combined report JSON, markdown report, screenshots, workflow scripts, validator, handoff, and a complete 14-page Northvalley PDF report were created and validated for review, then corrected with camp autocomplete API follow-up evidence and apparel-domain IR concept examples across Articles 5--10.",
+  "files_changed": [
+    "scripts/evaluate-highcountryoutfitters-ecommerce.mjs",
+    "scripts/evaluate-highcountryoutfitters-ir-concepts.mjs",
+    "scripts/validate-highcountryoutfitters-report.mjs",
+    "package.json",
+    "assessments/high-country-outfitters/ecommerce-evidence/GEN-010/highcountryoutfitters-ecommerce-evidence.json",
+    "assessments/high-country-outfitters/ir-concept-evidence/GEN-010/highcountryoutfitters-ir-concept-evidence.json",
+    "assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.md",
+    "assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.json",
+    "assessments/high-country-outfitters/ecommerce-evidence/GEN-010/screenshots/",
+    ".mde/handoffs/control-center-highcountryoutfitters-combined-ecommerce-report-2026-07-02.md",
+    "MISSION_UPDATES.md",
+    "docs/operations/mde-status.md",
+    ".mde/project.json",
+    ".mde/state.json",
+    ".mde/validation-strategy.json",
+    ".mde/failing-bdds.json",
+    ".mde/findings.json",
+    ".mde/generation-summary.md",
+    ".mde/generations/GEN-010.json",
+    ".mde/validation-runs/VAL-023.json",
+    ".mde/validation-runs/VAL-024.json",
+    ".mde/validation-runs/VAL-025.json",
+    ".mde/validation-runs/VAL-026.json",
+    ".mde/validation-runs/VAL-027.json",
+    ".mde/validation-runs/VAL-028.json",
+    ".mde/validation-runs/VAL-029.json",
+    ".mde/validation-runs/VAL-030.json",
+    ".mde/validation-runs/VAL-031.json",
+    ".mde/validation-runs/VAL-032.json",
+    ".mde/validation-runs/VAL-033.json",
+    ".mde/validation-runs/VAL-034.json",
+    ".mde/validator-effectiveness.json",
+    ".mde/outbox/events.jsonl",
+    ".mde/outbox/portfolio-sync.json",
+    "deploy/release-checks.json",
+    "reports/highcountryoutfitters-combined-ecommerce-report.tex",
+    "highcountryoutfitters-combined-ecommerce-report.pdf"
+  ],
+  "production_files_changed": 1,
+  "test_files_changed": 1,
+  "config_files_changed": 11,
+  "documentation_files_changed": 5,
+  "report_artifacts_created": [
+    "assessments/high-country-outfitters/ecommerce-evidence/GEN-010/highcountryoutfitters-ecommerce-evidence.json",
+    "assessments/high-country-outfitters/ir-concept-evidence/GEN-010/highcountryoutfitters-ir-concept-evidence.json",
+    "assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.json",
+    "assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.md",
+    "assessments/high-country-outfitters/ecommerce-evidence/GEN-010/screenshots/",
+    "reports/highcountryoutfitters-combined-ecommerce-report.tex",
+    "highcountryoutfitters-combined-ecommerce-report.pdf"
+  ],
+  "browser_screenshots_added": 23,
+  "validators": [
+    {
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "category": "Technical / UI Standards Validation",
+      "executed": true,
+      "result": "pass",
+      "findings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "new_findings": 0,
+      "resolved_findings": 1,
+      "repeated_findings": 0,
+      "false_positives": 0,
+      "execution_time": "under_2_seconds_when_assets_are_warm",
+      "cost": "local_only",
+      "usefulness": "high",
+      "execution_note": "Compiled the Northvalley High Country report to a complete 14-page evidence PDF with apparel IR concept examples."
+    },
+    {
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot check",
+      "category": "Usability / UI Standards / Content Integrity Validation",
+      "executed": true,
+      "result": "pass",
+      "findings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "new_findings": 0,
+      "resolved_findings": 1,
+      "repeated_findings": 0,
+      "false_positives": 0,
+      "execution_time": "under_3_seconds",
+      "cost": "local_only",
+      "usefulness": "high",
+      "execution_note": "PDF has 14 letter pages; extracted text includes complete-report sections, every tested search term, corrected camp search counts, camp autocomplete API evidence, Article 5--10 IR concept examples, autocomplete 78/100, and overall 83/100; rendered PNG pages were nonblank and representative evidence-heavy pages were visually spot-checked."
+    },
+    {
+      "tool": "node scripts/evaluate-highcountryoutfitters-ecommerce.mjs",
+      "category": "Project-Specific External / Functional / Usability Validation",
+      "executed": true,
+      "result": "pass",
+      "findings": {
+        "critical": 0,
+        "high": 3,
+        "medium": 3,
+        "low": 0
+      },
+      "new_findings": 6,
+      "resolved_findings": 0,
+      "repeated_findings": 0,
+      "false_positives": 0,
+      "execution_time": "about_1_to_2_minutes_when_external_pages_load",
+      "cost": "external_site_access_and_local_browser",
+      "usefulness": "high",
+      "execution_note": "Generated High Country evidence/report artifacts with 23 screenshot files after the corrected rendered-search capture and later rebuilt from evidence with the camp autocomplete follow-up and 12 apparel IR concept examples. Playwright required unsandboxed browser launch on this machine; later challenge captures are preserved as latest_failed_capture rather than treated as search evidence."
+    },
+    {
+      "tool": "npm run validate:highcountryoutfitters",
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "executed": true,
+      "result": "pass",
+      "findings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "repeated_findings": 0,
+      "false_positives": 0,
+      "execution_time": "under_1_second",
+      "cost": "local_only",
+      "usefulness": "high"
+    },
+    {
+      "tool": "npm run validate",
+      "category": "Framework / Repository Validation",
+      "executed": true,
+      "result": "pass",
+      "findings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "repeated_findings": 0,
+      "false_positives": 0,
+      "execution_time": "under_1_second",
+      "cost": "local_only",
+      "usefulness": "high"
+    },
+    {
+      "tool": "git diff --check",
+      "category": "Repository Hygiene Validation",
+      "executed": true,
+      "result": "pass",
+      "findings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "repeated_findings": 0,
+      "false_positives": 0,
+      "execution_time": "under_1_second",
+      "cost": "local_only",
+      "usefulness": "medium"
+    }
+  ],
+  "findings_by_severity": {
+    "critical": 0,
+    "high": 3,
+    "medium": 3,
+    "low": 0
+  },
+  "finding_lifecycle": {
+    "new": 6,
+    "repeated": 7,
+    "resolved": 0,
+    "accepted": 2,
+    "deferred": 9,
+    "false_positive": 0
+  },
+  "validation_gate": {
+    "result": "pass",
+    "pass_count": "2/2",
+    "latest_run_id": "VAL-034",
+    "failed_categories": [],
+    "blocking_findings": [],
+    "evidence_quality": "medium_high_for_complete_bounded_public_ecommerce_report_with_documented_query_dataset_corrected_search_autocomplete_followup_ir_concept_examples_and_limits"
+  },
+  "repository_governance": {
+    "git_repository_present": true,
+    "current_branch": "main",
+    "github_remote_present": true,
+    "github_remote": "origin",
+    "remote_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git",
+    "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
+    "code_submitted_to_github": false,
+    "submission_status": "pending_post_validation_commit_or_user_review",
+    "production_deployed": false,
+    "production_parity_status": "not_applicable_no_deploy_target",
+    "sibling_repos_modified": false,
+    "sibling_repos_read_only_inputs_consumed": [
+      "/Users/feroshjacob/code/local-website-growth-assessment/.mde/handoffs/highcountryoutfitters-local-website-assessment-2026-07-01.md",
+      "/Users/feroshjacob/code/local-website-growth-assessment/.mde/assessment-artifacts/highcountryoutfitters-local-website-assessment-2026-07-01-summary.json",
+      "/Users/feroshjacob/code/local-website-growth-assessment/.mde/assessment-artifacts/highcountryoutfitters-local-website-assessment-2026-07-01.json"
+    ]
+  },
+  "evidence_quality_notes": [
+    "The upstream local website assessment was used only for crawlability, lead-path visibility, trust/message signals, security/reliability, and evidence limits.",
+    "The upstream Pest Control demand fit and Pest Control competitor comparison were explicitly excluded from ecommerce market evidence.",
+    "Search and autocomplete evidence is sampled. Corrected rendered search recovered all tested commercial product/category, rental, local-team, and typo terms; later fetch/rendered challenge pages are treated as capture failures unless a successful rendered capture exists.",
+    "Public Shopify suggest API follow-up for camp matched the user-observed visible dropdown with query suggestions camp snap, camp chairs, campeones, camping and collection suggestions Camp Snap, Summer Camp, and Camp Kitchen. Full visible dropdown QA across all protected terms remains a separate broadening step.",
+    "Apparel IR concept diagnostic set covered 12 examples across Articles 5--10. Rendered search averaged 99/100 and autocomplete averaged 85/100. This is diagnostic concept evidence, not a full apparel relevance benchmark.",
+    "Cart add/read was verified through a public Shopify cart session, but checkout was not completed.",
+    "Outdoor-retail competitor/benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; no competitor market claims are made from that benchmark layer.",
+    "Prices, product counts, promotions, and inventory are point-in-time public evidence from 2026-07-02.",
+    "GEN-010 now includes a Northvalley LaTeX source and compiled 14-page complete evidence report PDF validated by latexmk, pdfinfo, pdftotext, pdftoppm, rendered page spot checks, and validators that require the dataset, every tested search term, browse handles, rendered pages, policy/cart/mobile/benchmark checks, camp autocomplete follow-up, apparel IR concept examples, upstream exclusions, findings, limits, and next steps."
+  ],
+  "scorecard": {
+    "search": 100,
+    "autocomplete": 78,
+    "browse": 90,
+    "filters": 88,
+    "recommendations": 68,
+    "mobile_experience": 74,
+    "product_discovery_overall": 83
+  },
+    "top_findings": [
+    {
+      "finding_id": "HCO-FND-001",
+      "severity": "High",
+      "category": "Search And Autocomplete",
+      "summary": "High Country Outfitters search recovered all tested commercial product/category, rental, local-team, and typo terms through fetch or rendered browser evidence, and the camp autocomplete suggest API matched the user-observed dropdown.",
+      "confidence": "medium"
+    },
+    {
+      "finding_id": "HCO-FND-002",
+      "severity": "High",
+      "category": "Browse And Navigation",
+      "summary": "Browse navigation is broad and commercially useful, covering apparel, footwear, gear, locations, rentals, brands, sale, and detailed outdoor subcategories.",
+      "confidence": "medium"
+    },
+    {
+      "finding_id": "HCO-FND-003",
+      "severity": "High",
+      "category": "Filters And Local Inventory",
+      "summary": "Rendered collection pages expose robust filters, including product type, vendor, size, price, availability, color, and store-location inventory.",
+      "confidence": "high"
+    },
+    {
+      "finding_id": "HCO-FND-004",
+      "severity": "Medium",
+      "category": "Merchandising And Conversion",
+      "summary": "Homepage and collection evidence show active merchandising, sale framing, staff picks, quick-add controls, free-shipping threshold messaging, pickup messaging, and cart functionality.",
+      "confidence": "medium"
+    },
+    {
+      "finding_id": "HCO-FND-005",
+      "severity": "Medium",
+      "category": "Local Trust And Public Site Signals",
+      "summary": "The upstream local-site assessment is useful only as partial public-site evidence; its static crawl missed dynamic ecommerce paths and selected an invalid Pest Control demand/competitor layer.",
+      "confidence": "high"
+    },
+    {
+      "finding_id": "HCO-FND-006",
+      "severity": "Medium",
+      "category": "Outdoor Retail Benchmark",
+      "summary": "Outdoor-retail benchmark pages were attempted, but bounded public fetches were blocked or too low-signal for comparative market claims.",
+      "confidence": "low"
+    }
+  ],
+  "ir_concept_summary": {
+    "example_count": 12,
+    "search_average": 99,
+    "autocomplete_average": 85,
+    "concepts": [
+      "Article 5 Normalization",
+      "Article 6 Tokenization",
+      "Article 7 Synonyms",
+      "Article 8 Field Weighting",
+      "Article 9 Query Expansion",
+      "Article 10 Document Enrichment"
+    ],
+    "main_gap": "trail running shirt had rendered search results but no autocomplete/suggest assistance."
+  },
+  "next_recommended_action": "Review the corrected 14-page Northvalley PDF and decide whether to use it as the review draft or broaden validation first with all-node browse/search parity, full protected-set autocomplete/mobile journey QA, browser/manual competitor benchmark, checkout/pickup policy review, and a larger apparel IR relevance benchmark."
+}

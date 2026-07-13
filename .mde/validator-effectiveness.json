@@ -1,12 +1,28 @@
 {
-  "updated_on": "2026-06-29",
-  "current_generation": "GEN-009",
+  "updated_on": "2026-07-07",
+  "current_generation": "GEN-013",
   "validators": [
+    {
+      "validator": "src/evaluator/validation.mjs",
+      "category": "GEN-013 Contract / Platform / Inspection Artifact Validation",
+      "total_runs": 5,
+      "total_findings": 2,
+      "critical_findings_found": 0,
+      "high_findings_found": 0,
+      "findings_accepted_as_valid": 2,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "under_1_second",
+      "average_cost": "local_only",
+      "last_useful_finding_generation": "GEN-013",
+      "recommendation": "keep",
+      "notes": "Added in the first GEN-013 implementation slice. It caught overbroad interpretation-language validation around the required Recommendations dashboard component and validates contracts, manifests, plugin dependency graph, platform capability registry/dependency graph, platform gap separation, generated Inspection Report artifacts, DS1-DS4 first-slice datasets, checkpoint, artifact explorer, and no-advisory-language boundaries."
+    },
     {
       "validator": "scripts/validate-framework.mjs",
       "category": "Functional / Technical / Mission Coverage / Repository Governance",
-      "total_runs": 25,
-      "total_findings": 14,
+      "total_runs": 46,
+      "total_findings": 17,
       "critical_findings_found": 0,
       "high_findings_found": 8,
       "findings_accepted_as_valid": 13,
@@ -14,9 +30,9 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-009",
+      "last_useful_finding_generation": "GEN-011",
       "recommendation": "keep",
-      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction, twice after the competitor benchmark report update, twice after the GEN-007 browse-node parity report update, twice after the GEN-008 local school PTA brief, and twice after the GEN-009 problem-only report revision. It now rejects visible score/proposal text in the local school PTA report."
+      "notes": "Validator confirms required framework artifacts, Boxercraft evidence, report/deck source text, expected deferrals, and resolved repository-governance records after GitHub submission. It passed twice after the report-status correction, twice after the competitor benchmark report update, twice after the GEN-007 browse-node parity report update, twice after the GEN-008 local school PTA brief, twice after the GEN-009 problem-only report revision, and repeatedly through GEN-010 High Country refinements. GEN-011 updated it to require the owner-outreach artifacts, 175 experiments, seven concepts with 25 examples each, Spanish/bilingual discovery, same-query competitor benchmark coverage for two usable regional competitors, customer-experience executive narrative coverage, High Country-first advisory language, final page 3 customer-effort visual coverage, paid-placement limitations, validation runs through VAL-046, the latest release-check run reference, and removal of visible article-reference, scorecard, demographic-label, old competitor-ranking framing, and technical-first executive language."
     },
     {
       "validator": "scripts/validate-boxercraft-browser.mjs",
@@ -53,7 +69,7 @@
     {
       "validator": "latexmk",
       "category": "Technical / UI Standards Validation",
-      "total_runs": 15,
+      "total_runs": 32,
       "total_findings": 1,
       "critical_findings_found": 0,
       "high_findings_found": 0,
@@ -62,25 +78,25 @@
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_when_targets_up_to_date",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-009",
+      "last_useful_finding_generation": "GEN-011",
       "recommendation": "keep",
-      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction and competitor benchmark report update both regenerated the assessment PDF successfully. Generation 8 compiled the two-page local school PTA opportunity brief successfully. Generation 9 recompiled the problem-only revision successfully."
+      "notes": "LaTeX compilation remains useful because the client-facing report and deck are core outputs. Generation 4 compiles confirmed the normalization and browse-routing narrative renders into PDFs. Generation 6 report-status correction and competitor benchmark report update both regenerated the assessment PDF successfully. Generation 8 compiled the two-page local school PTA opportunity brief successfully. Generation 9 recompiled the problem-only revision successfully. Generation 10 compiled the complete High Country evidence report successfully. Generation 11 compiled the owner-outreach High Country report as a 17-page Northvalley PDF, then the same-query competitor refinement as a 30-page Northvalley PDF. The customer-experience executive narrative refinement and final executive page design review kept the PDF at 30 pages after rebuilding from saved evidence."
     },
     {
       "validator": "pdftotext / pdftoppm / visual spot check",
       "category": "Usability / UI Standards Validation",
-      "total_runs": 15,
-      "total_findings": 4,
+      "total_runs": 31,
+      "total_findings": 5,
       "critical_findings_found": 0,
       "high_findings_found": 0,
-      "findings_accepted_as_valid": 3,
+      "findings_accepted_as_valid": 4,
       "findings_dismissed_as_false_positive": 0,
       "findings_repeated_without_action": 0,
       "average_execution_time": "under_1_second_for_text_extraction_and_page_rendering",
       "average_cost": "local_only",
-      "last_useful_finding_generation": "GEN-009",
+      "last_useful_finding_generation": "GEN-011",
       "recommendation": "keep",
-      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly. The competitor benchmark report update verified the new comparison text and rendered the competitor/final pages cleanly. Generation 8 verified the local school PTA report text, two-page count, and rendered page layout. Generation 9 verified the score/proposal text was removed and both rendered pages remained readable."
+      "notes": "Text extraction and representative rendered pages continue to provide useful PDF evidence. Generation 4 checks verified updated normalization, UCLA/Bruins, and browse-routing content. Generation 6 report-status correction verified the stale GitHub-blocked copy was removed and page 6 still rendered cleanly. The competitor benchmark report update verified the new comparison text and rendered the competitor/final pages cleanly. Generation 8 verified the local school PTA report text, two-page count, and rendered page layout. Generation 9 verified the score/proposal text was removed and both rendered pages remained readable. Generation 11 verified the High Country owner pages, same-query competitor references, customer-experience executive narrative, final page 3 customer-effort visual, full competitor dataset pages, organic/paid reference, concept summary, and final prior-evidence appendix rendered cleanly, and that extracted text omitted stale article/scorecard/demographic/ranking/technical-first framing."
     },
     {
       "validator": "scripts/evaluate-boxercraft-normalization.mjs",
@@ -101,7 +117,7 @@
     {
       "validator": "scripts/evaluate-competitor-pricing-discovery.mjs",
       "category": "Project-Specific External / Functional / Usability Validation",
-      "total_runs": 4,
+      "total_runs": 6,
       "total_findings": 5,
       "critical_findings_found": 0,
       "high_findings_found": 2,
@@ -129,7 +145,71 @@
       "last_useful_finding_generation": "GEN-007",
       "recommendation": "keep",
       "notes": "Generated all-node browse/search/autocomplete parity evidence across public Boxercraft collections. An early run exposed methodology cleanup needs for merchandising-node classification and broad handle queries; a later run exposed 429 rate-limit handling needs. The final rate-limit-aware run completed with 96 collections discovered, 93 non-empty nodes evaluated, and no warnings or node errors."
+    },
+    {
+      "validator": "scripts/evaluate-highcountryoutfitters-ecommerce.mjs",
+      "category": "Project-Specific External / Functional / Usability Validation",
+      "total_runs": 7,
+      "total_findings": 6,
+      "critical_findings_found": 0,
+      "high_findings_found": 3,
+      "findings_accepted_as_valid": 6,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "about_1_to_2_minutes_when_external_pages_load",
+      "average_cost": "external_site_access_and_local_browser",
+      "last_useful_finding_generation": "GEN-010",
+      "recommendation": "keep",
+      "notes": "Generated the High Country combined ecommerce evidence/report. Useful for Shopify public catalog/search/suggest evidence plus rendered pages, screenshots, cart, policy/support, and explicit benchmark limitations. Playwright required unsandboxed browser launch in this environment."
+    },
+    {
+      "validator": "scripts/evaluate-highcountryoutfitters-ir-concepts.mjs",
+      "category": "Project-Specific External / Functional / Search IR Validation",
+      "total_runs": 1,
+      "total_findings": 1,
+      "critical_findings_found": 0,
+      "high_findings_found": 0,
+      "findings_accepted_as_valid": 1,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "about_1_to_2_minutes_when_external_pages_load",
+      "average_cost": "external_site_access_and_local_browser",
+      "last_useful_finding_generation": "GEN-010",
+      "recommendation": "keep",
+      "notes": "Generated the 12-example High Country apparel IR concept evidence set across Articles 5-10 and merged the summary into the main ecommerce evidence. Search averaged 99/100 and autocomplete averaged 85/100; the useful gap was that trail running shirt had rendered search results but no autocomplete/suggest assistance. Playwright required unsandboxed browser launch in this environment."
+    },
+    {
+      "validator": "scripts/evaluate-highcountryoutfitters-expanded-ir.mjs",
+      "category": "Project-Specific External / Functional / Search IR / Competitor Opportunity Validation",
+      "total_runs": 5,
+      "total_findings": 4,
+      "critical_findings_found": 0,
+      "high_findings_found": 2,
+      "findings_accepted_as_valid": 4,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "about_8_to_10_minutes_for target live crawl; same-query competitor refresh can take 10_to_25_minutes depending on throttling",
+      "average_cost": "external_site_access_and_local_browser",
+      "last_useful_finding_generation": "GEN-011",
+      "recommendation": "keep",
+      "notes": "Generated the GEN-011 High Country owner-outreach evidence with 175 examples, 25 per discovery concept, Spanish/bilingual discovery, competitor checks for Public Lands, Half-Moon Outfitters, and Mast General Store, and paid-placement caveats. The July 4 refinement added a same-query competitor benchmark lane, retry/backoff handling for public rate limits, and a site-filtered refresh mode that repaired Half-Moon after an initial HTTP 429 capture. A rebuild-from-evidence mode allowed the executive competitor win/loss wording to be regenerated without rerunning the live crawl."
+    },
+    {
+      "validator": "scripts/validate-highcountryoutfitters-report.mjs",
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "total_runs": 17,
+      "total_findings": 0,
+      "critical_findings_found": 0,
+      "high_findings_found": 0,
+      "findings_accepted_as_valid": 0,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "under_1_second",
+      "average_cost": "local_only",
+      "last_useful_finding_generation": "GEN-011",
+      "recommendation": "keep",
+      "notes": "Checks High Country owner-outreach artifact identity, GEN-011 expanded evidence, 175 target examples, seven concepts with 25 examples each, Spanish/bilingual discovery, two usable competitor benchmarks, 175 same-query competitor rows per usable competitor, blocked Public Lands limitation, executive competitor context JSON, customer-experience executive narrative text, final page 3 customer-effort visual labels, High Country-first consulting language, paid-placement wording, revenue-measurement framing, Northvalley PDF source, compiled PDF presence, handoff presence, and stale framing exclusions for article references, scorecard copy, demographic labeling, sponsored/promoted wording, old competitor-ranking phrases, and technical-first executive wording."
     }
   ],
-  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 6 added the competitor pricing and discovery benchmark evaluator. Generation 7 added the all-node browse/search/autocomplete parity evaluator. Generation 8 added the local school PTA executive report validation checks. Generation 9 added problem-only report framing and score/proposal exclusion checks."
+  "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 11 added High Country owner-outreach validation with expanded IR examples, Spanish/bilingual discovery, same-query competitor benchmarking, customer-experience executive narrative checks, final executive-page design visual checks, paid-placement caveats, and stale-framing rejection. Generation 13 mission update changes the primary deliverable to a canonical Inspection Report; existing validators remain useful for legacy reports but do not yet validate inspection dashboard completeness, endpoint discovery, browse graph generation, DS1-DS4 datasets, confidence/limitation coverage, or downstream artifact reuse from the Inspection Report."
 }

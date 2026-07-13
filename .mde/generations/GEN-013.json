@@ -1,0 +1,55 @@
+{
+  "generation_id": "GEN-013",
+  "mission_phase": "Generation 13 - Inspection Report Framework",
+  "mission_version": "MISSION-2026-07-07-inspection-report-primary-deliverable",
+  "validation_strategy_version": "VALSTRAT-001-needs-update",
+  "started_at": "2026-07-07T00:00:00-0400",
+  "ended_at": null,
+  "record_status": "first_slice_complete_dressup_pilot_parity_validated",
+  "focus": "Reframe the ecommerce evaluation project around a canonical evidence-first Inspection Report generated from any public ecommerce URL.",
+  "reason_generation_started": "The operator clarified that the primary deliverable is no longer an executive report. The project must separate inspection from interpretation and make the Inspection Report the authoritative source for downstream artifacts.",
+  "primary_deliverable": "Structured ecommerce Inspection Report with one-page Inspection Dashboard, crawl health, endpoint discovery, catalog/browse graph, DS1-DS4 datasets, objective evidence, confidence indicators, and explicit limitations.",
+  "downstream_artifact_rule": "Executive reports, competitor reports, consulting proposals, regression tests, benchmark studies, presentations, and customer-facing documents must consume the Inspection Report instead of re-inspecting the website.",
+  "files_changed": [
+    "MISSION.md",
+    "MISSION_UPDATES.md",
+    ".mde/state.json",
+    ".mde/project.json",
+    ".mde/validation-strategy.json",
+    ".mde/generations/GEN-013.json"
+  ],
+  "implementation_status": "recommended_first_implementation_task_complete_design_baseline_frozen",
+  "required_next_design_outputs": [
+    "Inspection Report JSON schema",
+    "Inspection Dashboard schema",
+    "target manifest schema",
+    "platform adapter contract",
+    "endpoint discovery model",
+    "browse graph model",
+    "DS1 canonical search dataset contract",
+    "DS2 query normalization dataset contract",
+    "DS3 search plus facet dataset contract",
+    "DS4 advanced retrieval dataset contract",
+    "confidence and limitation taxonomy",
+    "validation strategy update for inspection completeness and downstream reuse"
+  ],
+  "validation_notes": [
+    "VAL-049 validates the first GEN-013 implementation slice.",
+    "A live Ridge pilot generated a partial Inspection Report with Shopify canonical-host evidence and explicit Cloudflare limitations on the branded domain.",
+    "Checkpoint/resume validation passed using an interrupted Ridge run resumed in the same output directory.",
+    "No executive report or PDF was rebuilt.",
+    "The prior GEN-012 Dress Up report remains validated by VAL-047 and VAL-048.",
+    "The approved design doc and review packet are committed as the frozen baseline with a dated changelog (commit beee334).",
+    "VAL-051 validates the completed first slice: full schema contract set including cache metadata, generalized manifest validation across all evaluations, platform capability checks, and generated-output validation.",
+    "Dress Up bounded 5-query pilot GEN-013-20260713T043845Z reached 100 percent evidence coverage and full functional parity with saved GEN-012 rendered-browser evidence on all ten search/autocomplete checks (pilot-parity.json).",
+    "Resume validation GEN-013-20260713T044019Z proved interrupted-run resume: reused submitted-search and the cached site profile, reran only pending plugins, and recorded why repeated artifact writes are idempotent (resume-validation.json).",
+    "Site profile cache decisions are now first-class evidence: refreshed_live_discovery, reused_shared_cache, and reused_run_checkpoint were all exercised and recorded in timelines and cache-metadata.json."
+  ],
+  "known_gaps_opened": [
+    "Rendered page capture is registered as platform capability P008 but remains planned.",
+    "Browse graph extraction is represented by bounded collections endpoint evidence only.",
+    "Facet, recommendation, mobile, product-page rendering, and competitor inspection plugins are not implemented yet.",
+    "DS1-DS4 are generated as first-slice reusable dataset stubs and need expansion from real catalog/browse evidence.",
+    "The operational dashboard is JSON/Markdown only; no local web UI exists yet."
+  ]
+}

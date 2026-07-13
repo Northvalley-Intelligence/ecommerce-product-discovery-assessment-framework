@@ -1,0 +1,80 @@
+{
+  "generation_id": "GEN-012",
+  "mission_phase": "Generation 12 - Dress Up Ecommerce Executive Report",
+  "mission_version": "MISSION-2026-06-24",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-05T20:00:00-0400",
+  "ended_at": "2026-07-06T00:20:00-0400",
+  "record_status": "recorded_from_dress_up_report_peer_reference_refinement",
+  "focus": "Create a Dress Up executive customer-experience opportunity report from public ecommerce evidence, same-query boutique peer references, and appendix-level method evidence.",
+  "reason_generation_started": "User asked to create a similar report for Dress Up after the High Country report workflow.",
+  "reason_generation_ended": "The Dress Up report PDF was generated, updated to mention same-query peer analysis in the executive narrative, and updated so Dress Up appears as the current-site baseline beside Red Dress, Pink Lily, and Impressions in the appendix benchmark tables.",
+  "files_changed": [
+    "scripts/evaluate-dressup-expanded-ir.mjs",
+    "assessments/dress-up/expanded-ir-evidence/GEN-012/dressup-expanded-ir-evidence.json",
+    "assessments/dress-up/owner-outreach-report/GEN-012/dressup-owner-outreach-report.json",
+    "assessments/dress-up/owner-outreach-report/GEN-012/dressup-owner-outreach-report.md",
+    "reports/dressup-ecommerce-executive-report.tex",
+    "dressup-ecommerce-executive-report.pdf"
+  ],
+  "report_artifacts_created": [
+    "assessments/dress-up/expanded-ir-evidence/GEN-012/dressup-expanded-ir-evidence.json",
+    "assessments/dress-up/owner-outreach-report/GEN-012/dressup-owner-outreach-report.json",
+    "assessments/dress-up/owner-outreach-report/GEN-012/dressup-owner-outreach-report.md",
+    "reports/dressup-ecommerce-executive-report.tex",
+    "dressup-ecommerce-executive-report.pdf"
+  ],
+  "validators": [
+    {
+      "tool": "node --check scripts/evaluate-dressup-expanded-ir.mjs",
+      "category": "Technical Syntax Validation",
+      "executed": true,
+      "result": "pass"
+    },
+    {
+      "tool": "DRESSUP_REBUILD_FROM_EVIDENCE=1 node scripts/evaluate-dressup-expanded-ir.mjs",
+      "category": "Reproducibility Validation",
+      "executed": true,
+      "result": "pass"
+    },
+    {
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/dressup-ecommerce-executive-report.tex",
+      "category": "Technical / UI Standards Validation",
+      "executed": true,
+      "result": "pass"
+    },
+    {
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot checks",
+      "category": "Usability / UI Standards / Content Integrity Validation",
+      "executed": true,
+      "result": "pass"
+    },
+    {
+      "tool": "git diff --check",
+      "category": "Repository Hygiene Validation",
+      "executed": true,
+      "result": "pass"
+    }
+  ],
+  "validation_gate": {
+    "result": "pass",
+    "pass_count": "2/2",
+    "latest_run_id": "VAL-048",
+    "failed_categories": [],
+    "blocking_findings": [],
+    "evidence_quality": "medium_high_for_public_ecommerce_report_with_saved_evidence_rebuild_same_query_peer_reference_tables_and_rendered_pdf_spot_checks"
+  },
+  "evidence_quality_notes": [
+    "Dress Up was evaluated with 70 protected shopper-language examples across seven discovery concepts.",
+    "The report uses Red Dress, Pink Lily, and Impressions as comparable boutique reference implementations, not as competitor-superiority claims.",
+    "Dress Up now appears first in the appendix benchmark tables as the current-site baseline: 69 usable search rows averaging 93%, 70 autocomplete rows averaging 52%, and 70 total examples.",
+    "Executive pages mention same-query peer analysis while keeping Dress Up's customer experience as the headline.",
+    "No internal analytics, revenue, search logs, conversion data, paid-media data, or customer records were available."
+  ],
+  "repository_governance": {
+    "git_repository_present": true,
+    "current_branch": "main",
+    "code_submitted_to_github": false,
+    "submission_status": "pending_user_review_or_follow_up_commit"
+  }
+}

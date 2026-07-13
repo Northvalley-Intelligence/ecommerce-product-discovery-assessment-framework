@@ -1,0 +1,84 @@
+{
+  "validation_run_id": "VAL-049",
+  "generation": "GEN-013",
+  "phase": "Generation 13 - Inspection Report Framework",
+  "started_at": "2026-07-08T15:16:00-0400",
+  "completed_at": "2026-07-08T16:13:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_gen13_first_implementation_slice",
+  "validations_executed": [
+    {
+      "category": "Contract / Manifest Validation",
+      "tool": "npm run validate:gen13",
+      "result": "pass",
+      "evidence": "Validated inspection contracts, Ridge Evaluation Manifest, Target Manifest, Query Pack, plugin metadata, and acyclic plugin dependency graph."
+    },
+    {
+      "category": "Platform Capability Validation",
+      "tool": "npm run validate:platform",
+      "result": "pass",
+      "evidence": "Validated Platform Capability Registry, Capability Dependency Graph, maturity model, validation suite references, and the expected P008 rendered-capture platform gap."
+    },
+    {
+      "category": "Live Inspection Pilot",
+      "tool": "npm run inspect:ridge",
+      "result": "pass",
+      "evidence": "Generated live Ridge run GEN-013-20260708T151930Z with Shopify detection, Cloudflare limitation on branded homepage/search, products/collections endpoint evidence, autocomplete observations, DS1-DS4 dataset stubs, dashboard, checkpoint, artifact index, inspection model, and Inspection Report."
+    },
+    {
+      "category": "Checkpoint / Resume Validation",
+      "tool": "npm run inspect:ridge -- --simulate-interrupt-after submitted-search; npm run inspect:evaluation -- --resume assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T161237Z",
+      "result": "pass",
+      "evidence": "Interrupted Ridge run resumed in place. Timeline records blocked submitted-search evidence reused from checkpoint and autocomplete executed afterward. Final checkpoint status is complete with no pending or failed runner phases."
+    },
+    {
+      "category": "Generated Inspection Artifact Validation",
+      "tool": "npm run validate:inspection",
+      "result": "pass",
+      "evidence": "Validated generated run artifacts including dashboard, crawl health, platform capability classification, DS1-DS4 outputs, timeline, plugin state, checkpoint, artifact explorer, Inspection Model, and Inspection Report."
+    },
+    {
+      "category": "Legacy Framework Regression Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Existing framework validator still passes after adding GEN-013 evaluator scripts and manifests."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Rendered Browser Capture",
+      "reason": "Rendered capture is intentionally recorded as platform capability P008 with status planned in the first implementation slice.",
+      "revisit_when": "Implementing GEN-013 maturity level 3 platform capabilities."
+    },
+    {
+      "category": "Full Browse Graph / Facets / Recommendations / Mobile",
+      "reason": "The first slice only implements submitted-search, autocomplete, and bounded Shopify endpoint discovery.",
+      "revisit_when": "After the first manifest-driven runner is accepted and the next platform capabilities are selected."
+    },
+    {
+      "category": "Second Clean Phase Exit Pass",
+      "reason": "VAL-049 is the first clean validation pass for the implementation slice, not a full GEN-013 phase exit.",
+      "revisit_when": "Run a second independent validation pass with no implementation changes after review."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "medium_findings": [
+    {
+      "finding_id": "FND-GEN013-002",
+      "summary": "Rendered capture, full browse graph, facets, recommendations, mobile, and competitor inspection remain platform or plugin gaps after the first implementation slice.",
+      "status": "accepted_gap",
+      "reason": "The requested implementation has started with a bounded manifest-driven Shopify slice. The generated dashboard correctly classifies unavailable surfaces as not run or platform gaps rather than ecommerce findings."
+    }
+  ],
+  "gate_result": "pass_for_first_slice_not_phase_exit",
+  "pass_count_after_run": "1/2",
+  "evidence_quality": "medium_for_platform_runner_contracts_low_for_ridge_downstream_report_readiness",
+  "reason": "The first reusable evaluator slice is implemented and locally validated, but the Ridge live run remains partial because the branded domain blocks homepage/submitted search through Cloudflare and rendered capture is not implemented yet."
+}

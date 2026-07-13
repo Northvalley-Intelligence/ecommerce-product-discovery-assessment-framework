@@ -1,0 +1,89 @@
+{
+  "validation_run_id": "VAL-039",
+  "generation": "GEN-011",
+  "phase": "Generation 11 - High Country Executive Summary Competitor Win/Loss Refinement",
+  "started_at": "2026-07-04T16:34:00-0400",
+  "completed_at": "2026-07-04T16:38:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_high_country_exec_summary_competitor_win_loss_first_gate_pass",
+  "command": "First Validation Gate pass after adding the grounded same-query competitor win/loss summary to the executive readout from saved GEN-011 evidence",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-highcountryoutfitters-expanded-ir.mjs; node --check scripts/validate-highcountryoutfitters-report.mjs; node --check scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Report generator and validators parsed successfully after adding the executive competitor win/loss summary and validator assertions."
+    },
+    {
+      "category": "Functional / Content Integrity Validation",
+      "tool": "HCO_OWNER_REBUILD_FROM_EVIDENCE=1 node scripts/evaluate-highcountryoutfitters-expanded-ir.mjs",
+      "result": "pass",
+      "evidence": "Report artifacts were rebuilt from the existing GEN-011 evidence only, preserving 175 examples, 94 search average, 45 autocomplete average, and 43 uniformity rate."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -g -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "The revised 30-page Northvalley PDF compiled successfully."
+    },
+    {
+      "category": "Usability / UI Standards / Content Integrity Validation",
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered executive page spot check",
+      "result": "pass",
+      "evidence": "The compiled PDF remained 30 pages; extracted text and rendered executive page showed the same-query competitor readout without visible overlap."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated High Country validator now requires the executive JSON/text win/loss summary and passed with 175 examples and two usable same-query competitors."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed; BDD-012 remains the only deferred calibration warning."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Live Ecommerce Evaluation",
+      "reason": "The stream explicitly requested no new evaluation; report artifacts were rebuilt from saved GEN-011 evidence only.",
+      "revisit_when": "Only when the user requests broader High Country validation."
+    },
+    {
+      "category": "Sales Analytics Validation",
+      "reason": "No High Country analytics, search-session revenue, conversion, add-to-cart, or AOV data were available.",
+      "revisit_when": "Before dollarizing the modeled upside."
+    },
+    {
+      "category": "Full Visible Autocomplete Screenshot Set",
+      "reason": "GEN-011 uses browser-context suggest API evidence and prior user-observed camp dropdown correction; full visual dropdown screenshots across all 175 target terms were not captured.",
+      "revisit_when": "Before visual UI claims about every protected autocomplete term."
+    },
+    {
+      "category": "Broader Competitor Cohort",
+      "reason": "The requested safe step used existing same-query evidence for Half-Moon Outfitters and Mast General Store only.",
+      "revisit_when": "Before stronger outdoor-retail market comparison claims."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "executive_summary_competitor_win_loss": "added_to_pdf_markdown_and_structured_report_from_existing_same_query_evidence",
+    "grounding": "no_new_evaluation; no_unsupported_claims; win_loss_numbers_match_saved_evidence",
+    "validator_regression": "high_country_validator_requires_executive_win_loss_json_and_visible_text",
+    "pdf_output": "30_pages_northvalley_template_executive_page_render_checked"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_owner_outreach_report_with_saved_public_evidence_and_grounded_competitor_win_loss_summary",
+  "reason": "First clean validation pass completed after the executive-summary-only competitor win/loss refinement."
+}

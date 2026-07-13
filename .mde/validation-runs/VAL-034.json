@@ -1,0 +1,88 @@
+{
+  "validation_run_id": "VAL-034",
+  "generation": "GEN-010",
+  "phase": "Generation 10 - High Country Outfitters Combined Ecommerce Report",
+  "started_at": "2026-07-02T10:27:00-0400",
+  "completed_at": "2026-07-02T10:34:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_after_high_country_ir_concept_refinement",
+  "command": "Second Validation Gate pass after the High Country IR concept refinement with no report/code changes after VAL-033",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-highcountryoutfitters-ecommerce.mjs; node --check scripts/evaluate-highcountryoutfitters-ir-concepts.mjs; node --check scripts/validate-highcountryoutfitters-report.mjs; node --check scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Evaluator scripts and validators parsed successfully."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "The 14-page Northvalley High Country report PDF was up to date after the IR concept refinement."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot check",
+      "result": "pass",
+      "evidence": "PDF text/render checks preserved the complete-report sections and Article 5-10 IR concept example pages."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated High Country validator passed with IR evidence assertions."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with updated High Country report/evidence/MDE checks and prior framework artifacts present."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Checkout Completion",
+      "reason": "Checkout completion would require a live purchase path and was out of scope for public evidence collection.",
+      "revisit_when": "Before client-facing conversion or checkout-readiness claims."
+    },
+    {
+      "category": "Full Browser-Based Competitor Benchmark",
+      "reason": "Automated public benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; no competitor claims are made from those blocked pages.",
+      "revisit_when": "Before comparative outdoor-retail market claims are included in a client-facing package."
+    },
+    {
+      "category": "Full Protected-Set Visible Autocomplete UI Validation",
+      "reason": "The camp autocomplete case is API-backed and user-observed, and the 12 IR examples use browser-context suggest evidence, but full visible dropdown QA across all protected terms was not run.",
+      "revisit_when": "Before broad external autocomplete suggestion-quality claims."
+    },
+    {
+      "category": "Large Apparel Relevance Benchmark",
+      "reason": "The Article 5-10 IR examples are diagnostic concept checks, not a full relevance benchmark with expected product-level judgments.",
+      "revisit_when": "Before product-level relevance or recall claims beyond the tested examples."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "combined_high_country_report": "corrected_northvalley_pdf_json_markdown_search_autocomplete_browse_filters_merchandising_mobile_policy_support_cart_and_benchmark_limits_recorded",
+    "complete_report_contents": "dataset_evaluated_every_search_term_browse_handles_rendered_pages_policy_cart_mobile_benchmark_upstream_exclusions_scorecard_limits_ir_concepts_and_next_steps",
+    "search_capture_correction": "camp_chair_183_rendered_and_camp_chairs_184_rendered_required_by_validators",
+    "autocomplete_followup_correction": "camp_snap_camp_chairs_campeones_camping_Camp_Snap_Summer_Camp_Camp_Kitchen_required_by_validators",
+    "ir_concept_refinement": "article_5_10_normalization_tokenization_synonyms_field_weighting_query_expansion_document_enrichment_12_examples_search_average_99_autocomplete_average_85_trail_running_shirt_autocomplete_gap",
+    "scorecard_correction": "autocomplete_78_overall_83_required_by_validators",
+    "upstream_assessment_use": "allowed_public_site_signals_only; pest_control_demand_and_competitor_sections_excluded",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_complete_bounded_public_ecommerce_report_with_corrected_search_autocomplete_followup_ir_concept_examples_and_documented_limits",
+  "reason": "Second clean validation pass completed after the High Country IR concept refinement with no report/code changes after VAL-033."
+}

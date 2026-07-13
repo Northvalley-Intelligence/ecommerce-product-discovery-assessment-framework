@@ -1,0 +1,74 @@
+{
+  "validation_run_id": "VAL-029",
+  "generation": "GEN-010",
+  "phase": "Generation 10 - High Country Outfitters Combined Ecommerce Report",
+  "started_at": "2026-07-02T03:11:00-0400",
+  "completed_at": "2026-07-02T03:14:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_after_high_country_search_capture_correction",
+  "command": "First Validation Gate pass after correcting the High Country rendered-search capture problem and rebuilding the report artifacts",
+  "validations_executed": [
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "Compiled or confirmed the corrected Northvalley High Country report PDF was up to date."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdfinfo / pdftotext / pdftoppm / rendered page spot check",
+      "result": "pass",
+      "evidence": "PDF has 12 letter pages. Extracted text includes camp chair 183 rendered, camp chairs 184 rendered, search 100/100, and overall 82/100. Rendered pages were nonblank and representative table/finding/scorecard pages were readable."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated validator passed with strict checks for the corrected 12-query set and rendered counts for camp chair and camp chairs."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with corrected High Country report/evidence checks and prior framework artifacts present."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Checkout Completion",
+      "reason": "Checkout completion would require a live purchase path and was out of scope for public evidence collection.",
+      "revisit_when": "Before client-facing conversion or checkout-readiness claims."
+    },
+    {
+      "category": "Full Browser-Based Competitor Benchmark",
+      "reason": "Automated public benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; no competitor claims are made from those blocked pages.",
+      "revisit_when": "Before comparative outdoor-retail market claims are included in a client-facing package."
+    },
+    {
+      "category": "Visible Autocomplete UI Validation",
+      "reason": "The suggest endpoint and rendered search input were checked, but visible autocomplete dropdown behavior was not confirmed.",
+      "revisit_when": "Before external autocomplete suggestion-quality claims."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "coverage": {
+    "combined_high_country_report": "corrected_northvalley_pdf_json_markdown_search_autocomplete_browse_filters_merchandising_mobile_policy_support_cart_and_benchmark_limits_recorded",
+    "complete_report_contents": "dataset_evaluated_every_search_term_browse_handles_rendered_pages_policy_cart_mobile_benchmark_upstream_exclusions_scorecard_limits_and_next_steps",
+    "search_capture_correction": "camp_chair_183_rendered_and_camp_chairs_184_rendered_required_by_validators",
+    "upstream_assessment_use": "allowed_public_site_signals_only; pest_control_demand_and_competitor_sections_excluded",
+    "critical_mission_coverage": "100%",
+    "high_priority_mission_coverage": "accepted_with_documented_deferrals"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "1/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_complete_bounded_public_ecommerce_report_with_corrected_rendered_search_capture_and_documented_limits",
+  "reason": "First clean validation pass completed after the report and validators were corrected for the High Country search capture issue."
+}

@@ -1,0 +1,80 @@
+{
+  "validation_run_id": "VAL-044",
+  "generation": "GEN-011",
+  "phase": "Generation 11 - High Country Customer-Experience Executive Narrative Refinement",
+  "started_at": "2026-07-05T01:47:00-0400",
+  "completed_at": "2026-07-05T01:49:00-0400",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_high_country_customer_experience_executive_narrative_second_gate_pass",
+  "command": "Second Validation Gate pass after VAL-043 for the customer-experience executive narrative rewrite, with no implementation, report, validator, or MDE artifact changes between clean passes",
+  "validations_executed": [
+    {
+      "category": "Technical Syntax Validation",
+      "tool": "node --check scripts/evaluate-highcountryoutfitters-expanded-ir.mjs; node --check scripts/validate-highcountryoutfitters-report.mjs; node --check scripts/validate-framework.mjs",
+      "result": "pass",
+      "evidence": "Report generator and validators parsed successfully after the customer-experience executive narrative rewrite."
+    },
+    {
+      "category": "Functional / Technical / Mission Coverage Validation",
+      "tool": "npm run validate:highcountryoutfitters",
+      "result": "pass",
+      "evidence": "Dedicated High Country validator passed with the customer-experience executive narrative, High Country-first advisory tone, qualitative peer-reference framing, and stale-language exclusions."
+    },
+    {
+      "category": "Framework / Repository Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passed with the High Country customer-experience executive narrative checks."
+    },
+    {
+      "category": "Technical / UI Standards Validation",
+      "tool": "latexmk -pdf -interaction=nonstopmode -halt-on-error reports/highcountryoutfitters-combined-ecommerce-report.tex",
+      "result": "pass",
+      "evidence": "The revised 30-page PDF remained up to date after the customer-experience-first executive rewrite and July 5 cover-date correction."
+    },
+    {
+      "category": "Content Integrity / UI Standards Validation",
+      "tool": "pdftotext highcountryoutfitters-combined-ecommerce-report.pdf -; pdftoppm -png -f 1 -l 3 highcountryoutfitters-combined-ecommerce-report.pdf tmp/pdfs/highcountry-exec",
+      "result": "pass",
+      "evidence": "Extracted PDF text still contains the revised customer-experience advisory language, the July 5 cover date, and no old trails/leads/top-performer or technical-first executive phrasing. Rendered executive pages remained readable."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors were reported in the working tree diff."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Live Ecommerce Evaluation",
+      "reason": "The second pass validates the saved-evidence executive report framing correction only.",
+      "revisit_when": "Only when new competitor or High Country evidence is requested."
+    },
+    {
+      "category": "Broader Competitor Cohort",
+      "reason": "The report continues to avoid stronger outdoor-retail comparison claims beyond the two usable same-query benchmarks.",
+      "revisit_when": "Before stronger outdoor-retail market comparison claims."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "medium_findings": [
+    {
+      "finding_id": "FND-GEN011-008",
+      "summary": "The executive pages needed to read as a customer-experience conversation starter about helping shoppers find and buy products, not as a search-technology audit or competitor ranking.",
+      "status": "resolved"
+    }
+  ],
+  "coverage": {
+    "customer_experience_executive_narrative": "validated_in_markdown_latex_pdf_text_and_rendered_pages; cover_executive_readout_recommended_growth_path_answer_make_it_easier_for_customers_to_find_and_buy_products",
+    "executive_consulting_positioning": "customer_first; High_Country_is_hero; competitors_as_reference_examples; exact_peer_scores_moved_to_references; revenue_language_uses_customer_journey_and_measurement",
+    "grounding": "saved_GEN_011_same_query_evidence_only; no_new_live_evaluation; no_market_share_or_paid_organic_overclaim",
+    "validator_regression": "high_country_validator_and_framework_validator_require_customer_experience_language_and_reject_old_ranking_or_technical_first_language"
+  },
+  "gate_result": "pass",
+  "pass_count_after_run": "2/2",
+  "pass_count_reset": true,
+  "evidence_quality": "medium_high_for_customer_experience_executive_report_framing_fix_bounded_to_existing_same_query_competitor_evidence",
+  "reason": "Second clean validation pass after VAL-043 confirmed that the executive pages center customer product finding and buying experience rather than search technology."
+}

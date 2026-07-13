@@ -1,6 +1,15 @@
 {
-  "project_id": "ecommerce-product-discovery-assessment-framework",
-  "project_name": "Ecommerce Product Discovery Assessment Framework",
+  "project_id": "ecommmerce-eval",
+  "project_name": "Ecommerce Evaluation Reports",
+  "legacy_project_ids": [
+    "ecommerce-product-discovery-assessment-framework"
+  ],
+  "legacy_project_names": [
+    "Ecommerce Product Discovery Assessment Framework"
+  ],
+  "identity_reconciled_on": "2026-07-01",
+  "identity_reconciliation_source": "/Users/feroshjacob/code/mde/.mde/handoffs/control-center-ecommmerce-eval-registration-2026-07-01.md",
+  "repository_root": "/Users/feroshjacob/code/ecommmerce-eval",
   "mde_status": "active",
   "artifact_profiles": [
     "report_generation",
@@ -16,13 +25,29 @@
     "context-packs/printable-artifacts.md",
     "context-packs/website-assessment-to-build.md"
   ],
-  "validation_strategy_status": "active_for_generation_1",
-  "latest_generation": "GEN-001",
+  "validation_strategy_status": "active_for_generation_11",
+  "latest_generation": "GEN-011",
   "latest_validation_gate_result": "pass",
   "upstream_dependencies": [
     "central-mde-context-packs",
-    "central-mde-issue-signatures"
+    "central-mde-issue-signatures",
+    "local-website-growth-assessment",
+    "ecommerce-target-intelligence"
   ],
   "downstream_dependencies": [],
-  "last_sync_note": "Generation 1 completed on 2026-06-24 with two passing Validation Gate runs. No cross-repo impact yet."
+  "pending_inputs": [],
+  "last_sync_note": "GEN-011 High Country owner-outreach product discovery report refined as a 30-page Northvalley PDF with an executive competitor win/loss readout grounded in existing same-query search/autocomplete evidence only. The report preserves 175 High Country experiments, 25 examples per concept across seven discovery concepts, Spanish/bilingual discovery, same-query competitor benchmarks for Half-Moon Outfitters and Mast General Store across all 175 protected examples, paid-placement caveats in references, directional sales upside modeling, full experiment references, and no visible scorecard/article framing. Next action is review the PDF and either send a concise owner outreach note or broaden validation with analytics, full visible autocomplete screenshots, search/browse parity, checkout/pickup review, and a larger competitor cohort.",
+  "latest_artifacts": [
+    "assessments/high-country-outfitters/ecommerce-evidence/GEN-010/highcountryoutfitters-ecommerce-evidence.json",
+    "assessments/high-country-outfitters/ir-concept-evidence/GEN-010/highcountryoutfitters-ir-concept-evidence.json",
+    "assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.json",
+    "assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.md",
+    "assessments/high-country-outfitters/expanded-ir-evidence/GEN-011/highcountryoutfitters-expanded-ir-evidence.json",
+    "assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.json",
+    "assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.md",
+    ".mde/handoffs/control-center-highcountryoutfitters-combined-ecommerce-report-2026-07-02.md",
+    ".mde/handoffs/control-center-highcountryoutfitters-owner-outreach-report-2026-07-03.md",
+    "reports/highcountryoutfitters-combined-ecommerce-report.tex",
+    "highcountryoutfitters-combined-ecommerce-report.pdf"
+  ]
 }
