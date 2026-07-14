@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-013-20260714T121542Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-14T12:15:42.771Z",
+      "ended_at": "2026-07-14T12:15:51.395Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T121542Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-14T12:15:51.398Z",
+      "ended_at": "2026-07-14T12:15:58.549Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T121542Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-14T12:15:58.553Z",
+      "ended_at": "2026-07-14T12:16:03.273Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T121542Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-14T12:16:03.277Z",
+      "ended_at": "2026-07-14T12:16:09.214Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T121542Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-14T12:16:09.217Z",
+      "ended_at": "2026-07-14T12:16:12.519Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T121542Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "competitor-inspection": {
+      "plugin_id": "competitor-inspection",
+      "status": "pass",
+      "started_at": "2026-07-14T12:16:12.522Z",
+      "ended_at": "2026-07-14T12:16:32.344Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T121542Z/evidence/experiments/competitor-inspection.jsonl",
+      "observations": 12,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    }
+  }
+}
