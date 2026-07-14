@@ -11,6 +11,8 @@
     "validate:resume": "node src/evaluator/validate-resume.mjs",
     "validate:parity:dressup": "node src/evaluator/validate-pilot-parity.mjs",
     "dashboard": "node src/evaluator/dashboard-server.mjs",
+    "onboard": "node src/evaluator/onboard-target.mjs",
+    "report:executive": "node src/evaluator/generate-executive-report.mjs",
     "render:dashboard": "node src/evaluator/render-dashboard.mjs",
     "validate:gen13": "node src/evaluator/validation.mjs all",
     "validate:platform": "node src/evaluator/validation.mjs platform",

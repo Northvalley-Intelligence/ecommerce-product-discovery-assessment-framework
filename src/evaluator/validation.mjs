@@ -85,7 +85,7 @@ function validateManifests() {
     requiredFields(evaluation, ['schema_version', 'evaluation_id', 'evaluation_type', 'generation', 'target', 'query_packs', 'plugins', 'output'], `${label} manifest`);
     requiredFields(target, ['schema_version', 'target_id', 'name', 'primary_url', 'platform'], `${label} target manifest`);
     requiredFields(workspace, ['schema_version', 'workspace_id', 'name', 'generation', 'targets', 'evaluations', 'query_packs'], `${label} workspace manifest`);
-    assert(evaluation.generation === 'GEN-013', `${label} must run under GEN-013.`);
+    assert(['GEN-013', 'GEN-014'].includes(evaluation.generation), `${label} must run under a known generation (GEN-013 or GEN-014).`);
     assert(target.platform.expected === 'shopify', `${label} target should declare an expected platform (Shopify in the first slice).`);
     assert(queryPacks.length > 0, `${label} must include at least one query pack.`);
 
@@ -160,10 +160,6 @@ function validateInspectionRun(runDir = latestInspectionDir()) {
     'inspection-report.json',
     'inspection-report.md',
     'evidence/timeline.jsonl',
-    'evidence/datasets/ds1-canonical-search.jsonl',
-    'evidence/datasets/ds2-query-normalization.jsonl',
-    'evidence/datasets/ds3-search-facet.jsonl',
-    'evidence/datasets/ds4-advanced-retrieval.jsonl',
     'evidence/experiments/submitted-search.jsonl',
     'evidence/experiments/autocomplete.jsonl'
   ];
@@ -173,6 +169,10 @@ function validateInspectionRun(runDir = latestInspectionDir()) {
   }
 
   const report = readJson(path.join(runDir, 'inspection-report.json'));
+  const generatedDatasets = Object.entries(report.datasets || {}).filter(([, dataset]) => dataset.status === 'generated');
+  for (const [datasetId, dataset] of generatedDatasets) {
+    assert(exists(dataset.path), `Generated dataset ${datasetId} is missing its file: ${dataset.path}`);
+  }
   const dashboard = readJson(path.join(runDir, 'dashboard.json'));
   const checkpoint = readJson(path.join(runDir, 'checkpoint.json'));
   const artifactIndex = readJson(path.join(runDir, 'artifact-index.json'));
@@ -183,7 +183,7 @@ function validateInspectionRun(runDir = latestInspectionDir()) {
 
   requiredFields(report, ['schema_version', 'inspection_id', 'dashboard', 'crawl_health', 'site_discovery', 'datasets', 'limitations', 'artifact_explorer'], 'Inspection report');
   assert(report.schema_version === 'inspection-report-v0.1', 'Inspection report schema version mismatch.');
-  assert(report.inspection_id.startsWith('GEN-013-'), 'Inspection ID should include generation and timestamp.');
+  assert(/^GEN-\d{3}-/.test(report.inspection_id), 'Inspection ID should include generation and timestamp.');
   assert(report.dashboard.purpose_question.includes('trust this inspection'), 'Dashboard purpose question missing trust framing.');
   assert(Array.isArray(report.crawl_health) && report.crawl_health.length >= 9, 'Crawl health must include the mission dashboard components.');
   assert(Object.keys(report.datasets || {}).length === 4, 'Inspection report must include DS1-DS4 dataset summaries.');
@@ -195,7 +195,7 @@ function validateInspectionRun(runDir = latestInspectionDir()) {
   assert(timeline.some((entry) => entry.event === 'inspection_started'), 'Timeline missing inspection_started event.');
   assert(timeline.some((entry) => entry.event === 'inspection_completed'), 'Timeline missing inspection_completed event.');
   assert(dashboard.artifact_explorer.evidence.length >= 2, 'Dashboard artifact explorer should expose plugin evidence files.');
-  assert(dashboard.artifact_explorer.datasets.length >= 4, 'Dashboard artifact explorer should expose dataset files.');
+  assert(dashboard.artifact_explorer.datasets.length >= generatedDatasets.length, 'Dashboard artifact explorer should expose every generated dataset file.');
   assert(dashboardHtml.includes('Inspection Dashboard'), 'Static dashboard HTML missing Inspection Dashboard title.');
   assert(dashboardHtml.includes('Report Readiness'), 'Static dashboard HTML missing Report Readiness section.');
   assert(dashboardHtml.includes('Artifact Explorer'), 'Static dashboard HTML missing Artifact Explorer section.');

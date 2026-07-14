@@ -968,7 +968,7 @@ async function main() {
     status: 'complete'
   });
 
-  writeHistoryRow('inspection-history/GEN-013.jsonl', {
+  writeHistoryRow(`inspection-history/${evaluation.generation}.jsonl`, {
     schema_version: 'inspection-history-row-v0.1',
     inspection_id: inspectionId,
     evaluation_id: evaluation.evaluation_id,

@@ -3,7 +3,7 @@
   "created_on": "2026-07-14",
   "supersedes": "BDD-INV-002",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_13_inventory_refresh_for_phase_exit",
+  "status": "generation_14_first_slice_bdd_g13_009_passing",
   "refresh_rationale": "BDD-INV-002 was mission-versioned to MISSION-2026-06-24, before the 2026-07-07 inspection-first reframe and the 2026-07-11 local-application charter. This refresh adds inspection-platform scenarios graded against VAL-051/VAL-052/VAL-053 evidence and reclassifies the legacy report-era BDDs as the downstream interpretation set, which per the mission consumes Inspection Reports rather than re-inspecting sites.",
   "summary": {
     "total": 26,
@@ -11,10 +11,10 @@
     "high": 12,
     "medium": 4,
     "low": 0,
-    "passing": 23,
+    "passing": 24,
     "failing": 0,
     "not_executed": 0,
-    "deferred": 3
+    "deferred": 2
   },
   "gen13_inspection_platform_bdds": [
     {
@@ -27,7 +27,9 @@
       "when": "an inspection runs",
       "then": "the run produces inspection-report.json/md with a dashboard covering timestamp, target, platform detection, overall status, duration, evidence quality, overall confidence, and crawl health by component",
       "evidence": "Dress Up GEN-013-20260713T043845Z (100% coverage, Medium confidence) and Ridge GEN-013-20260714T121451Z (partial, Low confidence); both pass node src/evaluator/validation.mjs inspection. VAL-051, VAL-053.",
-      "mission_links": ["Inspection Report Requirements"]
+      "mission_links": [
+        "Inspection Report Requirements"
+      ]
     },
     {
       "id": "BDD-G13-002",
@@ -39,7 +41,9 @@
       "when": "its language and structure are validated",
       "then": "it contains no recommendations, priorities, business impact, revenue estimates, consulting language, quick wins, or executive summaries",
       "evidence": "Language-boundary checks in the GEN-013 validation suite pass on all runs. VAL-051, VAL-053.",
-      "mission_links": ["Mission Update: Inspection Report As Primary Deliverable"]
+      "mission_links": [
+        "Mission Update: Inspection Report As Primary Deliverable"
+      ]
     },
     {
       "id": "BDD-G13-003",
@@ -51,7 +55,9 @@
       "when": "the inspection completes partially",
       "then": "the report records explicit infrastructure limitations (HTTP status, endpoint, classification) and never hides them",
       "evidence": "Ridge GEN-013-20260714T121451Z: partial status with six recorded infrastructure limitations and readiness not_ready, while Shopify was still detected at High confidence via canonical-host payloads. VAL-053.",
-      "mission_links": ["Evidence, Confidence, And Limitations"]
+      "mission_links": [
+        "Evidence, Confidence, And Limitations"
+      ]
     },
     {
       "id": "BDD-G13-004",
@@ -63,7 +69,9 @@
       "when": "dataset generation runs",
       "then": "DS1 canonical search, DS2 query normalization, DS3 search+facet, and DS4 advanced retrieval JSONL datasets exist with schema versions, provenance, and rows traceable to observed evidence",
       "evidence": "Both pilots emit all four datasets validated by schema contracts; rows remain first-slice breadth pending real catalog/browse evidence expansion. VAL-051, VAL-053.",
-      "mission_links": ["Inspection Workflow: Dataset Generation"]
+      "mission_links": [
+        "Inspection Workflow: Dataset Generation"
+      ]
     },
     {
       "id": "BDD-G13-005",
@@ -75,7 +83,10 @@
       "when": "limitations are recorded",
       "then": "the gap carries a capability ID (e.g. P008) separate from ecommerce observations, and downstream surfaces show it as platform work",
       "evidence": "P008 rendered capture appears in platform_capability_gaps on Ridge and Dress Up runs and in the dashboard Report Readiness panel, now linking to the capability registry record. VAL-052, VAL-053.",
-      "mission_links": ["Long-Term Architecture", "Platform capability classification (VALSTRAT)"]
+      "mission_links": [
+        "Long-Term Architecture",
+        "Platform capability classification (VALSTRAT)"
+      ]
     },
     {
       "id": "BDD-G13-006",
@@ -87,7 +98,9 @@
       "when": "an engineer opens the operational dashboard",
       "then": "status, readiness, evidence quality, confidence, coverage, crawl health, limitations, and artifacts are visible without reading raw files",
       "evidence": "Dashboard hero/metrics/readiness panels validated by npm run validate:dashboard and a live browser walkthrough. VAL-052.",
-      "mission_links": ["Updated Success Criteria #4"]
+      "mission_links": [
+        "Updated Success Criteria #4"
+      ]
     },
     {
       "id": "BDD-G13-007",
@@ -99,7 +112,9 @@
       "when": "the run is resumed from its checkpoint",
       "then": "the same inspection ID continues, completed plugins and cached site profiles are reused with recorded reasons, and only pending plugins execute",
       "evidence": "Resume validation on GEN-013-20260713T044019Z; timeline records reused_shared_cache and reused_run_checkpoint. VAL-051.",
-      "mission_links": ["Checkpoint architecture contract (VALSTRAT)"]
+      "mission_links": [
+        "Checkpoint architecture contract (VALSTRAT)"
+      ]
     },
     {
       "id": "BDD-G13-008",
@@ -111,20 +126,23 @@
       "when": "the operator uses the dashboard",
       "then": "history rows expose id, target, timestamp, status, confidence, coverage, and readiness, with run/resume/rerun actions and a compare API",
       "evidence": "Dashboard run list, action endpoints, and /api/compare validated in VAL-050 and revalidated in VAL-052/VAL-053.",
-      "mission_links": ["Inspection History and workspace navigation (VALSTRAT)"]
+      "mission_links": [
+        "Inspection History and workspace navigation (VALSTRAT)"
+      ]
     },
     {
       "id": "BDD-G13-009",
       "title": "Downstream reports consume the Inspection Report instead of re-inspecting",
       "severity": "High",
       "category": "Mission Coverage Validation",
-      "status": "deferred",
-      "given": "an executive or competitor report is requested for an inspected site",
+      "status": "passed_gen_014",
+      "given": "an executive report is requested for an inspected site",
       "when": "the report is generated by the application",
-      "then": "it reads the Inspection Report and Inspection Model without new site inspection",
-      "defer_reason": "Executive-report generation as an application output is the next major slice after GEN-013 phase exit; the boundary rule is enforced in design validations and decision 1A retains the raw evidence that makes it possible. Existing GEN-011/012 reports predate the inspection-first architecture.",
-      "revisit_when": "First application-generated executive report slice.",
-      "mission_links": ["Mission Update: Local Inspection Application As Expected Deliverable"]
+      "then": "it reads the Inspection Report and retained evidence without new site inspection",
+      "evidence": "GEN-014 executive report generator reads only the run directory, states 'No new site inspection was performed' in every report, and is validated by extended validate:dashboard assertions plus the live Pink Lily full-cycle proof. VAL-054.",
+      "mission_links": [
+        "Mission Update: Local Inspection Application As Expected Deliverable"
+      ]
     },
     {
       "id": "BDD-G13-010",
@@ -136,7 +154,9 @@
       "when": "they open the Datasets tab or a finding's dataset link",
       "then": "evaluations, targets, query packs, site profiles, platform registries, inspection history, and generated DS1-DS4 records render as searchable, field-filterable tables with per-record detail, without leaving the dashboard",
       "evidence": "Dataset viewer delegated by stream_mra8o4fq_47ae08ab; validated by extended validate:dashboard assertions and a live browser walkthrough. VAL-052.",
-      "mission_links": ["Mission Update: Local Inspection Application As Expected Deliverable"]
+      "mission_links": [
+        "Mission Update: Local Inspection Application As Expected Deliverable"
+      ]
     },
     {
       "id": "BDD-G13-011",
@@ -148,7 +168,10 @@
       "when": "evidence is captured",
       "then": "raw HTTP responses, API payloads, and cached evidence are preserved immutably per run so reports can re-render and fixes can be verified without re-inspection",
       "evidence": "Run directories contain raw/http and evidence trees referenced by artifact-index.json; retention ratified as operator decision 1A on 2026-07-14.",
-      "mission_links": ["Evidence, Confidence, And Limitations", "operator_decisions_2026_07_14 (VALSTRAT)"]
+      "mission_links": [
+        "Evidence, Confidence, And Limitations",
+        "operator_decisions_2026_07_14 (VALSTRAT)"
+      ]
     },
     {
       "id": "BDD-G13-012",
@@ -161,12 +184,29 @@
       "then": "Shopify targets require Level 2 maturity and non-Shopify or heavily rendered storefronts require Level 3 (P008), with bounded pilots allowed below threshold under declared limitations",
       "defer_reason": "The threshold is ratified policy (decision 3A) recorded in the validation strategy, but automated target-acceptance enforcement is not yet implemented in code.",
       "revisit_when": "Before the first broad multi-retailer inspection sweep.",
-      "mission_links": ["operator_decisions_2026_07_14 (VALSTRAT)"]
+      "mission_links": [
+        "operator_decisions_2026_07_14 (VALSTRAT)"
+      ]
     }
   ],
   "downstream_interpretation_bdds_carried_from_inv_002": {
     "note": "BDD-001 through BDD-014 from BDD-INV-002 remain valid for the interpretation layer (rubrics, findings, executive reports, scorecards, opportunity matrices, PDFs) and retain their last validated statuses. Under the GEN-013 architecture these behaviors apply to downstream consumers of Inspection Reports, not to inspection itself.",
-    "ids": ["BDD-001", "BDD-002", "BDD-003", "BDD-004", "BDD-005", "BDD-006", "BDD-007", "BDD-008", "BDD-009", "BDD-010", "BDD-011", "BDD-012", "BDD-013", "BDD-014"],
+    "ids": [
+      "BDD-001",
+      "BDD-002",
+      "BDD-003",
+      "BDD-004",
+      "BDD-005",
+      "BDD-006",
+      "BDD-007",
+      "BDD-008",
+      "BDD-009",
+      "BDD-010",
+      "BDD-011",
+      "BDD-012",
+      "BDD-013",
+      "BDD-014"
+    ],
     "statuses": "13 passing as of GEN-003 through GEN-012 evidence; BDD-012 (independent evaluator calibration) remains deferred until a second evaluator and completed pilot exist.",
     "source": "BDD-INV-002 (preserved in git history)"
   }

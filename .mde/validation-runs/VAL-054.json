@@ -1,0 +1,57 @@
+{
+  "validation_run_id": "VAL-054",
+  "generation": "GEN-014",
+  "phase": "Generation 14 - Full-Cycle Local Application",
+  "started_at": "2026-07-14T19:25:00Z",
+  "completed_at": "2026-07-14T19:45:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_full_cycle_first_slice",
+  "validations_executed": [
+    {
+      "category": "Live Full-Cycle Proof (new site through the UI)",
+      "tool": "Chrome against http://127.0.0.1:4173",
+      "result": "pass",
+      "evidence": "pinklily.com was added through the dashboard's new Add Site control, which generated its target manifest, starter query pack, and GEN-014 evaluation manifest and started the inspection. Run GEN-014-20260714T193151Z completed in 37 seconds: partial status, Medium confidence, 89% component coverage, Shopify detected at High confidence, all five plugins pass, zero infrastructure limitations, P008 the only capability gap. The Generate Executive Report button then produced executive-report.md/json from the run's retained evidence, and the detail view surfaces the report links."
+    },
+    {
+      "category": "Generated Inspection Output Validation",
+      "tool": "node src/evaluator/validation.mjs inspection <pinklily run dir>",
+      "result": "pass",
+      "evidence": "The onboarded site's run validates end to end. Run validation was corrected during this slice to require dataset files only for datasets reported as generated (DS3 is legitimately empty for starter packs) and to accept any GEN-prefixed inspection ID."
+    },
+    {
+      "category": "Operational Dashboard Validation",
+      "tool": "npm run validate:dashboard",
+      "result": "pass",
+      "evidence": "All prior dashboard and dataset viewer assertions pass, plus new coverage: onboarding in an isolated temp root (manifest creation, target id derivation, decision-3A maturity level 2 requirement, five-query starter pack completeness, idempotent re-onboarding, invalid URL rejection) and executive report generation (markdown and JSON artifacts, inspection provenance, explainable per-surface scores with formulas, limitations section, no-re-inspection statement, detail-view linkage)."
+    },
+    {
+      "category": "GEN-013 Suite Validation",
+      "tool": "npm run validate:gen13",
+      "result": "pass",
+      "evidence": "Contracts, manifests (now accepting GEN-013 and GEN-014 generations, including the onboarded Pink Lily manifests), platform, and inspection validation pass."
+    },
+    {
+      "category": "Legacy Framework Regression Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passes; BDD-012 calibration remains the known deferred warning."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Executive report PDF layout validation",
+      "reason": "The generated executive report is Markdown/JSON in this slice; Northvalley LaTeX/PDF rendering is a future slice and its layout gates apply then.",
+      "revisit_when": "When executive report PDF rendering is implemented."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "First clean Validation Gate pass for GEN-014. BDD-G13-009 (downstream reports consume the Inspection Report instead of re-inspecting) now passes: the generator reads only the run directory and states so in every report. Phase exit for GEN-014 requires a second independent clean pass with no implementation changes plus any BDD additions for the full-cycle scope."
+}

@@ -6,6 +6,8 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
+import { generateExecutiveReport } from './generate-executive-report.mjs';
+import { onboardTarget } from './onboard-target.mjs';
 
 const DEFAULT_HOST = '127.0.0.1';
 const DEFAULT_PORT = 4173;
@@ -107,8 +109,11 @@ async function readBody(request) {
 }
 
 function latestHistoryRows(rootDir) {
-  const historyPath = path.join(rootDir, 'inspection-history', 'GEN-013.jsonl');
-  return readJsonl(historyPath).sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
+  const historyDir = path.join(rootDir, 'inspection-history');
+  const rows = listFilesRecursive(historyDir)
+    .filter((file) => file.endsWith('.jsonl'))
+    .flatMap((file) => readJsonl(file));
+  return rows.sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
 }
 
 function loadRun(rootDir, runDir) {
@@ -121,9 +126,17 @@ function loadRun(rootDir, runDir) {
   const artifactIndexPath = path.join(resolvedRunDir, 'artifact-index.json');
   const timelinePath = path.join(resolvedRunDir, 'evidence', 'timeline.jsonl');
   const runManifestPath = path.join(resolvedRunDir, 'run-manifest.json');
+  const executiveJsonPath = path.join(resolvedRunDir, 'executive', 'executive-report.json');
+  const executiveMdPath = path.join(resolvedRunDir, 'executive', 'executive-report.md');
 
   return {
     run_dir: relativeRunDir,
+    executive_report: exists(executiveJsonPath)
+      ? {
+          json_path: path.relative(rootDir, executiveJsonPath),
+          md_path: path.relative(rootDir, executiveMdPath)
+        }
+      : null,
     report: exists(reportPath) ? readJson(reportPath) : null,
     dashboard: exists(dashboardPath) ? readJson(dashboardPath) : null,
     checkpoint: exists(checkpointPath) ? readJson(checkpointPath) : null,
@@ -741,6 +754,17 @@ function dashboardPage() {
     </aside>
     <main>
       <div id="inspectionView">
+        <section class="toolbar" aria-label="Add a site">
+          <div class="field">
+            <label for="siteUrl">Add Ecommerce Site (Shopify supported)</label>
+            <input id="siteUrl" placeholder="https://yourstore.com">
+          </div>
+          <div class="field">
+            <label for="siteName">Display Name (optional)</label>
+            <input id="siteName" placeholder="Your Store">
+          </div>
+          <button id="addSiteBtn">Add Site &amp; Inspect</button>
+        </section>
         <section class="toolbar" aria-label="Dashboard actions">
           <div class="field">
             <label for="evaluationPath">Evaluation Manifest</label>
@@ -887,6 +911,11 @@ function dashboardPage() {
         '</section>' +
         panel('Report Readiness', 'What should be fixed?', '<div class="panel-body readiness"><div>' + pill(op.downstream_report_readiness) + '<p class="muted">' + escapeHtml(op.readiness_notes || '') + '</p></div><div class="readiness-stats"><span class="chip">' + platformGaps.length + ' platform gaps</span><span class="chip">' + infra.length + ' infrastructure limits</span><span class="chip">' + (op.blocked_experiments || 0) + ' blocked experiments</span></div></div>' +
           table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '', dataset_link: gap.capability_id ? datasetHash('platform/capability-registry.json', gap.capability_id) : '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + (item.dataset_link ? '<a href="' + item.dataset_link + '">' + escapeHtml(item.issue) + '</a>' : escapeHtml(item.issue)) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>'])) +
+        panel('Executive Report', 'Generated from this inspection, no re-inspection', '<div class="panel-body readiness"><div>' +
+          (data.executive_report
+            ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0"><a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Open report (Markdown)</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
+            : '<p class="muted" style="margin:0">No executive report generated yet for this inspection.</p>') +
+          '</div><div class="readiness-stats"><button id="execReportBtn" data-run="' + escapeHtml(data.run_dir) + '">' + (data.executive_report ? 'Regenerate' : 'Generate Executive Report') + '</button></div></div>') +
         panel('Crawl Health', 'Inspection phases', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
         '<div class="two-col">' +
           panel('Plugin State', 'Execution', table(['Plugin', 'Status', 'Observations', 'Evidence'], report.plugin_results || [], (item) => ['<td><strong>' + escapeHtml(item.plugin_id) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.observations || 0) + '</td>', '<td>' + evidenceLinks(item.evidence_file) + '</td>'])) +
@@ -895,6 +924,50 @@ function dashboardPage() {
         panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
         panel('Inspection Timeline', 'Debug trace', table(['Time', 'Event', 'Details'], (data.timeline || []).slice(-30), (item) => { const copy = {...item}; delete copy.at; delete copy.event; delete copy.inspection_id; return ['<td class="mono">' + escapeHtml(item.at) + '</td>', '<td><strong>' + escapeHtml(item.event) + '</strong></td>', '<td><span class="mono">' + escapeHtml(JSON.stringify(copy)) + '</span></td>']; })) +
         panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+      const execBtn = document.getElementById('execReportBtn');
+      if (execBtn) {
+        execBtn.addEventListener('click', async () => {
+          execBtn.disabled = true;
+          execBtn.textContent = 'Generating...';
+          try {
+            const result = await api('/api/executive-report', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ run_dir: execBtn.dataset.run })
+            });
+            document.getElementById('actionResult').innerHTML = 'Executive report generated from inspection ' + escapeHtml(result.inspection_id) + ': <a href="' + artifactHref(result.md_path) + '" target="_blank">' + escapeHtml(result.md_path) + '</a>';
+            await loadInspection(state.selected);
+          } catch (error) {
+            alert(error.message);
+            execBtn.disabled = false;
+            execBtn.textContent = 'Generate Executive Report';
+          }
+        });
+      }
+    }
+    async function addSite() {
+      const url = document.getElementById('siteUrl').value.trim();
+      if (!url) {
+        alert('Enter the site URL first.');
+        return;
+      }
+      const name = document.getElementById('siteName').value;
+      const status = document.getElementById('actionResult');
+      status.textContent = 'Onboarding ' + url + '...';
+      const onboarded = await api('/api/onboard', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url, name })
+      });
+      document.getElementById('evaluationPath').value = onboarded.evaluation;
+      status.textContent = (onboarded.created ? 'Created manifests for ' : 'Reusing existing manifests for ') + onboarded.name + '. Starting inspection...';
+      const run = await api('/api/run', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ evaluation: onboarded.evaluation })
+      });
+      status.innerHTML = 'Inspection started for ' + escapeHtml(onboarded.name) + ' (process ' + run.pid + '). Log: <a href="' + artifactHref(run.log_path) + '" target="_blank">' + escapeHtml(run.log_path) + '</a>. The run appears in the list when it completes.';
+      for (const delay of [5000, 20000, 60000, 120000]) setTimeout(refresh, delay);
     }
     function setView(view) {
       state.view = view;
@@ -1084,6 +1157,7 @@ function dashboardPage() {
       document.getElementById('actionResult').innerHTML = 'Started process ' + result.pid + '. Log: <a href="' + artifactHref(result.log_path) + '" target="_blank">' + escapeHtml(result.log_path) + '</a>';
       setTimeout(refresh, 1500);
     }
+    document.getElementById('addSiteBtn').addEventListener('click', () => addSite().catch((error) => alert(error.message)));
     document.getElementById('runBtn').addEventListener('click', () => runAction('run').catch((error) => alert(error.message)));
     document.getElementById('resumeBtn').addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
     document.getElementById('rerunBtn').addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
@@ -1177,6 +1251,28 @@ function routeRequest(rootDir, request, response) {
     } catch (error) {
       sendText(response, 400, error.message);
     }
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/onboard') {
+    readBody(request)
+      .then((body) => {
+        const result = onboardTarget(rootDir, { url: body.url, name: body.name });
+        sendJson(response, result.created ? 201 : 200, result);
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/executive-report') {
+    readBody(request)
+      .then((body) => {
+        if (!body.run_dir) throw new Error('run_dir is required.');
+        safeResolve(rootDir, body.run_dir);
+        const result = generateExecutiveReport(rootDir, body.run_dir);
+        sendJson(response, 201, result);
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 

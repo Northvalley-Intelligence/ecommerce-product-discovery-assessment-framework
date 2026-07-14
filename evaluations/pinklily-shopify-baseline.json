@@ -1,0 +1,43 @@
+{
+  "schema_version": "evaluation-manifest-v0.1",
+  "evaluation_id": "pinklily-shopify-baseline",
+  "evaluation_type": "baseline_inspection",
+  "generation": "GEN-014",
+  "workspace": "workspaces/retail-search-research.json",
+  "target": "targets/pinklily.json",
+  "site_profile": {
+    "mode": "refresh",
+    "path": "site-profiles/pinklily.com.json",
+    "max_age_hours": 168
+  },
+  "query_packs": [
+    "query-packs/pinklily-starter.json"
+  ],
+  "surfaces": [
+    "submitted_search",
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile"
+  ],
+  "plugins": [
+    "submitted-search",
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile"
+  ],
+  "competitors": [],
+  "rendering": {
+    "desktop": false,
+    "mobile": false,
+    "screenshots": false
+  },
+  "platform_validation": {
+    "required": true,
+    "minimum_maturity_level": 2
+  },
+  "output": {
+    "base_dir": "assessments/pinklily/inspection-report/GEN-014"
+  }
+}

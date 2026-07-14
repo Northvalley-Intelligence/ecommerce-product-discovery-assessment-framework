@@ -1,0 +1,56 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260714T193151Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-14T19:31:58.252Z",
+      "ended_at": "2026-07-14T19:32:07.078Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T193151Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-14T19:32:07.081Z",
+      "ended_at": "2026-07-14T19:32:14.211Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T193151Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-14T19:32:14.214Z",
+      "ended_at": "2026-07-14T19:32:19.315Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T193151Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-14T19:32:19.318Z",
+      "ended_at": "2026-07-14T19:32:24.998Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T193151Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-14T19:32:25.001Z",
+      "ended_at": "2026-07-14T19:32:28.524Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T193151Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    }
+  }
+}

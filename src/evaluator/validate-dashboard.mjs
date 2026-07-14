@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { exists, latestDirectory, readJson } from '../lib/fs-json.mjs';
 import { createDashboardServer } from './dashboard-server.mjs';
@@ -10,8 +12,8 @@ function assert(condition, message) {
   if (!condition) failures.push(message);
 }
 
-async function fetchJson(url) {
-  const response = await fetch(url);
+async function fetchJson(url, options) {
+  const response = await fetch(url, options);
   const text = await response.text();
   assert(response.ok, `${url} returned ${response.status}: ${text.slice(0, 200)}`);
   return JSON.parse(text);
@@ -113,6 +115,66 @@ async function main() {
     assert(traversal.status === 400, 'Dataset route did not reject path traversal.');
     const badExtension = await fetch(`${dashboard.url}/api/dataset?path=${encodeURIComponent('MISSION.md')}`);
     assert(badExtension.status === 400, 'Dataset route did not reject non-JSON files.');
+
+    assert(page.includes('id="addSiteBtn"'), 'Dashboard page missing Add Site control.');
+    assert(page.includes("'/api/onboard'"), 'Dashboard page missing onboarding API wiring.');
+    assert(page.includes("'/api/executive-report'"), 'Dashboard page missing executive report API wiring.');
+
+    const dressUpRun = latestDirectory('assessments/dress-up/inspection-report/GEN-013');
+    if (dressUpRun) {
+      const generated = await fetchJson(`${dashboard.url}/api/executive-report`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ run_dir: dressUpRun })
+      });
+      assert(generated.md_path?.endsWith('executive-report.md'), 'Executive report generation did not return a markdown path.');
+      const executive = readJson(generated.json_path);
+      assert(executive.generated_from_inspection, 'Executive report missing inspection provenance.');
+      assert(Array.isArray(executive.scorecard) && executive.scorecard.length >= 3, 'Executive report scorecard missing surfaces.');
+      assert(executive.scorecard.every((entry) => entry.status !== 'observed' || (typeof entry.score === 'number' && entry.formula)), 'Observed scorecard entries must carry an explainable score and formula.');
+      assert(Array.isArray(executive.limitations) && executive.limitations.length > 0, 'Executive report must state limitations.');
+      const markdown = await fetchText(`${dashboard.url}/artifact?path=${encodeURIComponent(generated.md_path)}`);
+      assert(markdown.includes('Executive Report'), 'Executive report markdown missing title.');
+      assert(markdown.includes('No new site inspection was performed'), 'Executive report markdown missing no-re-inspection statement.');
+      assert(markdown.includes('What This Report Does Not Claim'), 'Executive report markdown missing limitations section.');
+      const detailWithReport = await fetchJson(`${dashboard.url}/api/inspection/${encodeURIComponent(path.basename(dressUpRun))}`);
+      assert(detailWithReport.executive_report?.md_path, 'Inspection detail does not surface the generated executive report.');
+    }
+
+    const scratchRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'onboard-validate-'));
+    const scratch = await createDashboardServer({ port: 0, host: '127.0.0.1', rootDir: scratchRoot });
+    try {
+      const onboarded = await fetchJson(`${scratch.url}/api/onboard`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url: 'https://www.example-boutique.com/', name: 'Example Boutique' })
+      });
+      assert(onboarded.created === true, 'Onboarding did not create manifests.');
+      assert(onboarded.target_id === 'example-boutique', `Unexpected onboarded target id: ${onboarded.target_id}`);
+      const targetManifest = readJson(path.join(scratchRoot, onboarded.target));
+      const evaluationManifest = readJson(path.join(scratchRoot, onboarded.evaluation));
+      const queryPack = readJson(path.join(scratchRoot, onboarded.query_pack));
+      assert(targetManifest.platform.expected === 'shopify', 'Onboarded target must declare the Shopify-supported path.');
+      assert(evaluationManifest.generation === 'GEN-014', 'Onboarded evaluation must run under GEN-014.');
+      assert(evaluationManifest.platform_validation.minimum_maturity_level === 2, 'Onboarded evaluation must require maturity level 2 per decision 3A.');
+      assert(queryPack.queries.length >= 5, 'Onboarded starter query pack must include at least five queries.');
+      assert(queryPack.queries.every((query) => query.query_id && query.query && query.intent && query.provenance), 'Starter queries missing required fields.');
+      const again = await fetchJson(`${scratch.url}/api/onboard`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url: 'example-boutique.com' })
+      });
+      assert(again.created === false, 'Re-onboarding the same domain should reuse existing manifests.');
+      const badOnboard = await fetch(`${scratch.url}/api/onboard`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url: 'not a url' })
+      });
+      assert(badOnboard.status === 400, 'Onboarding did not reject an invalid URL.');
+    } finally {
+      await new Promise((resolve) => scratch.server.close(resolve));
+      fs.rmSync(scratchRoot, { recursive: true, force: true });
+    }
   } finally {
     await new Promise((resolve) => dashboard.server.close(resolve));
   }

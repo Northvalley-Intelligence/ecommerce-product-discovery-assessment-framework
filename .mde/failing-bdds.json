@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-07-14",
-  "current_generation": "GEN-013",
+  "current_generation": "GEN-014",
   "bdd_inventory": "BDD-INV-003",
   "failing_bdds": [],
   "not_executed_required_bdds": [],
@@ -10,12 +10,6 @@
       "severity": "High",
       "reason": "Independent evaluator calibration requires a completed assessment package and a second evaluator.",
       "revisit_when": "Before declaring the framework reusable for client engagements."
-    },
-    {
-      "id": "BDD-G13-009",
-      "severity": "High",
-      "reason": "Application-generated executive reports that consume Inspection Reports are the next major slice after GEN-013 phase exit; the inspection/interpretation boundary is design-enforced and raw evidence retention (decision 1A) preserves the inputs.",
-      "revisit_when": "First application-generated executive report slice."
     },
     {
       "id": "BDD-G13-012",
@@ -110,5 +104,5 @@
       "revisit_when": "Before making any claim that competitor result ordering is purely organic."
     }
   ],
-  "note": "GEN-013 BDD inventory refresh complete (BDD-INV-003, 2026-07-14): no failing or not-executed required BDDs. Ten of twelve new inspection-platform BDDs pass on VAL-051/VAL-052/VAL-053 evidence; BDD-G13-009 (downstream reports consume Inspection Reports) and BDD-G13-012 (maturity-threshold enforcement per decision 3A) are deferred with revisit conditions as the first post-phase-exit slices. Legacy interpretation-layer BDDs carry forward from BDD-INV-002 with BDD-012 still deferred. Prior GEN-011 limitations on external claims remain recorded under deferred_validation_items."
+  "note": "GEN-014 first slice: BDD-G13-009 now passes (application-generated executive reports consume the Inspection Report; proven live on Pink Lily in VAL-054). Remaining deferrals: BDD-012 (calibration) and BDD-G13-012 (automated maturity threshold enforcement). Prior GEN-011 limitations on external claims remain under deferred_validation_items."
 }
