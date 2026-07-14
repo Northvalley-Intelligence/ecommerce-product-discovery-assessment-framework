@@ -1,0 +1,130 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "pinklily-curated",
+  "name": "Pinklily Curated Pack",
+  "domain": "pinklily-catalog",
+  "generation": "GEN-014",
+  "curated_from_inspection": "GEN-014-20260714T203102Z",
+  "queries": [
+    {
+      "query_id": "pinklily-col-cozy-christmas",
+      "query": "a pink lily holiday",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "cozy-christmas"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"A Pink Lily Holiday\" (578 products) in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-col-a-fall-affair",
+      "query": "a fall affair",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "a-fall-affair"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"A Fall Affair\" (335 products) in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-col-90s-nostalgia",
+      "query": "90's nostalgia",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "90s-nostalgia"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"90's Nostalgia\" (92 products) in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-col-accessorize-yourself",
+      "query": "accessorize yourself gift guide",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "accessorize-yourself"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Accessorize Yourself Gift Guide\" (81 products) in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-type-graphic-sweatshirt",
+      "query": "graphic sweatshirt",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-type-striped-shorts",
+      "query": "striped shorts",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-type-neck-top",
+      "query": "neck top",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+      }
+    },
+    {
+      "query_id": "pinklily-type-striped-tee",
+      "query": "striped tee",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "pinklily-adv-cozy-christmas",
+      "query": "something from a pink lily holiday",
+      "intent": "conversational_search",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-conversational-expansion"
+      }
+    },
+    {
+      "scenario_id": "pinklily-adv-gift",
+      "query": "gift idea a pink lily holiday",
+      "intent": "occasion_based",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-occasion-expansion"
+      }
+    }
+  ]
+}

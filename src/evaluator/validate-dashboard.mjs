@@ -141,6 +141,8 @@ async function main() {
       assert(detailWithReport.executive_report?.md_path, 'Inspection detail does not surface the generated executive report.');
     }
 
+    assert(page.includes("'/api/curate-queries'"), 'Dashboard page missing curation API wiring.');
+
     const scratchRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'onboard-validate-'));
     const scratch = await createDashboardServer({ port: 0, host: '127.0.0.1', rootDir: scratchRoot });
     try {
@@ -171,6 +173,53 @@ async function main() {
         body: JSON.stringify({ url: 'not a url' })
       });
       assert(badOnboard.status === 400, 'Onboarding did not reject an invalid URL.');
+
+      const fakeRun = path.join('assessments', 'example-boutique', 'inspection-report', 'GEN-014', 'GEN-014-00000000T000000Z');
+      fs.mkdirSync(path.join(scratchRoot, fakeRun), { recursive: true });
+      fs.writeFileSync(
+        path.join(scratchRoot, fakeRun, 'inspection-report.json'),
+        JSON.stringify({ inspection_id: 'GEN-014-00000000T000000Z', target: { target_id: 'example-boutique', name: 'Example Boutique' } })
+      );
+      fs.writeFileSync(
+        path.join(scratchRoot, fakeRun, 'site-profile.json'),
+        JSON.stringify({
+          catalog_discovery: {
+            collections: [
+              { title: 'Maxi Dresses', handle: 'maxi-dresses', products_count: 120 },
+              { title: 'New Arrivals', handle: 'new-arrivals', products_count: 300 },
+              { title: 'Denim Shorts', handle: 'denim-shorts', products_count: 45 },
+              { title: '$10 & Under Clearance Sale Items', handle: '10-under-sale', products_count: 900 },
+              { title: 'Wedding Guest', handle: 'wedding-guest', products_count: 80 }
+            ],
+            products: [
+              { title: 'Blue Floral Maxi Dress', handle: 'blue-floral', product_type: 'Dresses' },
+              { title: 'White Denim Shorts', handle: 'white-denim', product_type: 'Shorts' }
+            ]
+          }
+        })
+      );
+      const curated = await fetchJson(`${scratch.url}/api/curate-queries`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ run_dir: fakeRun })
+      });
+      assert(curated.queries >= 5, 'Curation should yield at least five queries from catalog evidence.');
+      const curatedPack = readJson(path.join(scratchRoot, curated.query_pack));
+      assert(curatedPack.queries.some((query) => query.expected_relationships?.[0]?.browse_node === 'maxi-dresses'), 'Curated pack missing collection-backed relationship.');
+      assert(curatedPack.queries.every((query) => query.query_id && query.query && query.intent && query.provenance), 'Curated queries missing required fields.');
+      assert(!curatedPack.queries.some((query) => /\$|clearance/i.test(query.query)), 'Curated queries should clean price/clearance noise from collection titles.');
+      const updatedEvaluation = readJson(path.join(scratchRoot, onboarded.evaluation));
+      assert(updatedEvaluation.query_packs[0] === curated.query_pack, 'Curation should point the evaluation manifest at the curated pack.');
+      const emptyRun = path.join('assessments', 'example-boutique', 'inspection-report', 'GEN-014', 'GEN-014-00000000T000001Z');
+      fs.mkdirSync(path.join(scratchRoot, emptyRun), { recursive: true });
+      fs.writeFileSync(path.join(scratchRoot, emptyRun, 'inspection-report.json'), JSON.stringify({ inspection_id: 'x', target: { target_id: 'example-boutique' } }));
+      fs.writeFileSync(path.join(scratchRoot, emptyRun, 'site-profile.json'), JSON.stringify({ catalog_discovery: {} }));
+      const noEvidence = await fetch(`${scratch.url}/api/curate-queries`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ run_dir: emptyRun })
+      });
+      assert(noEvidence.status === 400, 'Curation should refuse when no catalog payloads are retained.');
     } finally {
       await new Promise((resolve) => scratch.server.close(resolve));
       fs.rmSync(scratchRoot, { recursive: true, force: true });

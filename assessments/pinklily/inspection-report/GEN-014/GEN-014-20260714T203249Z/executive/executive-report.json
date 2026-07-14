@@ -1,0 +1,275 @@
+{
+  "schema_version": "executive-report-v0.1",
+  "report_type": "application_generated_executive_report",
+  "generated_from_inspection": "GEN-014-20260714T203249Z",
+  "inspection_run_dir": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z",
+  "target": {
+    "name": "Pinklily",
+    "target_id": "pinklily",
+    "url": "https://pinklily.com/"
+  },
+  "inspection_context": {
+    "inspected_at": "2026-07-14T20:33:27.516Z",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "overall_confidence": "Medium",
+    "evidence_quality": "partial",
+    "component_coverage_percent": 89
+  },
+  "evidence_basis": "Generated entirely from the referenced Inspection Report and its retained evidence. No new site inspection was performed.",
+  "scorecard": [
+    {
+      "surface": "Search",
+      "plugin_id": "submitted-search",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/submitted-search.jsonl",
+      "score": 100,
+      "formula": "queries returning at least one result / queries attempted",
+      "observations": 8,
+      "details": [
+        {
+          "query": "a pink lily holiday",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 1002,
+          "response_ms": 584
+        },
+        {
+          "query": "a fall affair",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 55,
+          "response_ms": 445
+        },
+        {
+          "query": "90's nostalgia",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 27,
+          "response_ms": 458
+        },
+        {
+          "query": "accessorize yourself gift guide",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 11,
+          "response_ms": 409
+        },
+        {
+          "query": "graphic sweatshirt",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 481,
+          "response_ms": 407
+        },
+        {
+          "query": "striped shorts",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 268,
+          "response_ms": 478
+        },
+        {
+          "query": "neck top",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 856,
+          "response_ms": 503
+        },
+        {
+          "query": "striped tee",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 478,
+          "response_ms": 477
+        }
+      ],
+      "zero_result_queries": [],
+      "failed_queries": []
+    },
+    {
+      "surface": "Autocomplete",
+      "plugin_id": "autocomplete",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/autocomplete.jsonl",
+      "score": 100,
+      "formula": "typed prefixes receiving at least one suggestion / prefixes attempted",
+      "observations": 8,
+      "details": [
+        {
+          "typed_prefix": "a pink lily holiday",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 242
+        },
+        {
+          "typed_prefix": "a fall affair",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 162
+        },
+        {
+          "typed_prefix": "90's nostalgia",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 230
+        },
+        {
+          "typed_prefix": "accessorize yourself gift guide",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 189
+        },
+        {
+          "typed_prefix": "graphic sweatshirt",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 214
+        },
+        {
+          "typed_prefix": "striped shorts",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 203
+        },
+        {
+          "typed_prefix": "neck top",
+          "ok": true,
+          "suggestion_count": 5,
+          "response_ms": 207
+        },
+        {
+          "typed_prefix": "striped tee",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 207
+        }
+      ],
+      "unassisted_prefixes": []
+    },
+    {
+      "surface": "Filters & Facets",
+      "plugin_id": "facets",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/facets.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://pinklily.com/collections/10-under-sale",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 118
+        },
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://pinklily.com/collections/15-under-sale",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 702
+        }
+      ]
+    },
+    {
+      "surface": "Recommendations",
+      "plugin_id": "recommendations",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/recommendations.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 3,
+      "details": [
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://pinklily.com/recommendations/products.json?product_id=7414755754039&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 374
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://pinklily.com/recommendations/products.json?product_id=7455629246519&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 262
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://pinklily.com/recommendations/products.json?product_id=7455629213751&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 164
+        }
+      ]
+    },
+    {
+      "surface": "Mobile Experience",
+      "plugin_id": "mobile",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/mobile.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "mobile-homepage",
+          "endpoint": "https://pinklily.com/",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 160
+        },
+        {
+          "observation": "mobile-search",
+          "endpoint": "https://pinklily.com/search?q=a+pink+lily+holiday",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 455
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "type": "strength",
+      "surface": "Search",
+      "severity": "Positive",
+      "observation": "Every attempted search query returned products (8 of 8).",
+      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/submitted-search.jsonl",
+      "customer_impact": "Customers searching Pinklily with these query styles reach product results instead of dead ends.",
+      "business_impact": "Search is carrying discovery traffic to sellable inventory for the observed query set.",
+      "recommendation": "Protect this behavior with a regression query set and broaden coverage beyond the starter queries."
+    },
+    {
+      "type": "strength",
+      "surface": "Autocomplete",
+      "severity": "Positive",
+      "observation": "Every typed prefix received suggestions (8 of 8).",
+      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T203249Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers get guidance before submitting a search, reducing typing effort and misses.",
+      "business_impact": "Assisted queries convert better than unassisted ones.",
+      "recommendation": "Verify the visible dropdown matches the API suggestions once rendered capture (P008) lands."
+    }
+  ],
+  "opportunities": [],
+  "limitations": [
+    "Platform capability P008 (Rendered Page Capture) is not implemented; related evidence is unavailable.",
+    "Scores are directional, computed from 23 bounded endpoint observations, not a full catalog benchmark.",
+    "No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report."
+  ]
+}

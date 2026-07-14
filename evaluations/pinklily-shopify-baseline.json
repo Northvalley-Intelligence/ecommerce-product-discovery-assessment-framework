@@ -11,7 +11,7 @@
     "max_age_hours": 168
   },
   "query_packs": [
-    "query-packs/pinklily-starter.json"
+    "query-packs/pinklily-curated.json"
   ],
   "surfaces": [
     "submitted_search",

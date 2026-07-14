@@ -5,7 +5,7 @@
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-14T18:30:00Z",
   "ended_at": null,
-  "record_status": "first_slice_complete_full_cycle_proven_on_new_site",
+  "record_status": "second_slice_complete_catalog_curated_queries_improvement_loop_proven",
   "focus": "Close the charter loop inside the application: the operator adds an ecommerce site by URL in the dashboard, the platform runs the inspection, and an executive report is generated from the Inspection Report without re-inspecting the site.",
   "reason_generation_started": "Ferosh chose application-generated executive reports as the next slice and asked to close the full cycle, noting the UI had no way to provide an ecommerce site. Scope is Shopify sites per decision 3A until P008 lands.",
   "primary_deliverable": "In-app full cycle: site onboarding (target manifest, starter query pack, evaluation manifest generated from a URL), one-click inspection, and a generated executive report (scorecard, findings, opportunities, limitations) that consumes only retained inspection evidence.",
@@ -20,13 +20,15 @@
     "VAL-054 validates the first GEN-014 slice.",
     "Live full-cycle proof: pinklily.com was onboarded through the dashboard UI, inspected (GEN-014-20260714T193151Z: partial, Medium confidence, 89% coverage, Shopify High, all five plugins pass, zero infrastructure limitations, P008 the only gap), and its executive report was generated with the in-app button.",
     "Dress Up executive report generated from the existing GEN-013 pilot run as the benchmark case.",
-    "Extended validate:dashboard covers onboarding (temp-root isolation, idempotency, invalid-URL rejection, decision-3A maturity requirement) and executive report generation (provenance, explainable scores, limitations, no-re-inspection statement)."
+    "Extended validate:dashboard covers onboarding (temp-root isolation, idempotency, invalid-URL rejection, decision-3A maturity requirement) and executive report generation (provenance, explainable scores, limitations, no-re-inspection statement).",
+    "VAL-055 validates the catalog-curation slice: full payload retention per decision 1A, store-specific query packs curated from retained evidence only, the curated Pink Lily re-inspection (8/8 queries returning products, DS1 8 rows, DS2 23 rows), and the in-app Curate button."
   ],
   "known_gaps_opened": [
     "Executive report renders as Markdown/JSON only; Northvalley LaTeX/PDF polish is a future slice.",
-    "Starter query packs are not derived from the store's own catalog yet.",
     "Onboarding does not yet enforce the decision-3A maturity gate against non-Shopify platforms at submission time; the expectation is declared in the manifest.",
     "BDD-G13-012 (automated maturity threshold enforcement) remains deferred.",
-    "Fix-assist workflows (charter item 2) are not started."
+    "Fix-assist workflows (charter item 2) are not started.",
+    "Curated packs carry collection relationships but no facet attributes yet, so DS3 stays empty until facet-aware curation lands.",
+    "Curation quality is bounded by the 20-collection/10-product discovery sample."
   ]
 }

@@ -22,7 +22,10 @@ function endpointSummary(label, evidence) {
     content_type: evidence.content_type,
     classification: evidence.classification,
     confidence: evidence.status ? 'High' : 'Low',
-    text_excerpt: evidence.text_excerpt
+    text_excerpt: evidence.text_excerpt,
+    // Decision 1A: retain the full parsed payload for JSON endpoints so
+    // downstream curation and reports never need to re-contact the site.
+    json_payload: evidence.json ?? null
   };
 }
 
@@ -50,8 +53,8 @@ export function createShopifyAdapter(target) {
       const [homepage, robots, products, collections, suggest] = await Promise.all([
         get(joinUrl(primaryBase, '/')),
         get(joinUrl(primaryBase, '/robots.txt')),
-        get(joinUrl(canonicalBase, '/products.json?limit=5')),
-        get(joinUrl(canonicalBase, '/collections.json?limit=5')),
+        get(joinUrl(canonicalBase, '/products.json?limit=10')),
+        get(joinUrl(canonicalBase, '/collections.json?limit=20')),
         get(
           `${joinUrl(canonicalBase, '/search/suggest.json')}?${new URLSearchParams({
             q: 'wallet',
@@ -112,7 +115,17 @@ export function createShopifyAdapter(target) {
           confidence: productCount !== null && collectionCount !== null ? 'Medium' : 'Low',
           products_sampled: productCount,
           collections_sampled: collectionCount,
-          source: 'Shopify public JSON endpoints'
+          source: 'Shopify public JSON endpoints',
+          collections: (collections.json?.collections || []).map((collection) => ({
+            title: collection.title,
+            handle: collection.handle,
+            products_count: collection.products_count ?? null
+          })),
+          products: (products.json?.products || []).map((product) => ({
+            title: product.title,
+            handle: product.handle,
+            product_type: product.product_type || null
+          }))
         },
         autocomplete_discovery: {
           status: suggest.ok ? 'available' : 'blocked_or_unavailable',

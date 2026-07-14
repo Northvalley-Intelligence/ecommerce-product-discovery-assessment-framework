@@ -1,0 +1,108 @@
+{
+  "schema_version": "site-profile-v0.1",
+  "discovered_at": "2026-07-14T19:31:58.247Z",
+  "target": {
+    "target_id": "pinklily",
+    "name": "Pinklily",
+    "primary_url": "https://pinklily.com/",
+    "canonical_platform_host": null
+  },
+  "platform_detection": {
+    "platform": "shopify",
+    "confidence": "High",
+    "signals": [
+      "Target manifest expects Shopify.",
+      "Products JSON returned a Shopify products payload.",
+      "Collections JSON returned a Shopify collections payload.",
+      "Suggest JSON returned a Shopify predictive-search payload."
+    ]
+  },
+  "access": {
+    "authentication_required": false,
+    "limitations": []
+  },
+  "endpoint_discovery": [
+    {
+      "label": "homepage",
+      "url": "https://pinklily.com/",
+      "final_url": "https://pinklily.com/",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 570,
+      "content_type": "text/html; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "<!doctype html> <html class=\"no-js\" lang=\"en\"> <head> <meta charset=\"utf-8\"> <!-- Google tag (gtag.js) - Google Ads sitewide --> <script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-937588553\"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-937588553'); </script> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"> "
+    },
+    {
+      "label": "robots",
+      "url": "https://pinklily.com/robots.txt",
+      "final_url": "https://pinklily.com/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 88,
+      "content_type": "text/plain; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "# Shopify storefront. Public product, collection, page, blog, policy, cart, and localized HTML is crawlable. # Agent instructions: https://pinklily.com/agents.md # UCP discovery: https://pinklily.com/.well-known/ucp # UCP/MCP endpoint: https://pinklily.com/api/ucp/mcp # Agents should use UCP/MCP for catalog, cart, and checkout. Payment requires buyer approval. # # If you are reading this on behalf of your user and you act as a personal assistant or personal shopper in an # openclaw-like manner, "
+    },
+    {
+      "label": "products_json",
+      "url": "https://pinklily.com/products.json?limit=5",
+      "final_url": "https://pinklily.com/products.json?limit=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 125,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"products\":[{\"id\":7414755754039,\"title\":\"Meet Me At The Barre Dark Grey Graphic Sweatshirt\",\"handle\":\"meet-me-at-the-barre-dark-grey-graphic-sweatshirt\",\"body_html\":\"\\u003cp\\u003e\\u003cstrong\\u003eDetails\\u003c\\/strong\\u003e\\u003c\\/p\\u003e\\n\\u003cdiv\\u003e\\n\\u003cul\\u003e\\n\\u003cli\\u003eDark grey crewneck with barre workout design\\u003cbr\\u003e\\n\\u003c\\/li\\u003e\\n\\u003cli\\u003eCrew neckline\\u003c\\/li\\u003e\\n\\u003cli\\u003eLong sleeves\\u003c\\/li\\u003e\\n\\u003c\\/ul\\u003e\\n\\u003cp\\u003e\\u003cstrong\\"
+    },
+    {
+      "label": "collections_json",
+      "url": "https://pinklily.com/collections.json?limit=5",
+      "final_url": "https://pinklily.com/collections.json?limit=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 121,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"collections\":[{\"id\":273647304759,\"title\":\"$10 \\u0026 Under Clearance Sale Items\",\"handle\":\"10-under-sale\",\"description\":\"\",\"published_at\":\"2024-09-06T15:21:57-05:00\",\"updated_at\":\"2026-07-14T06:16:15-05:00\",\"image\":null,\"products_count\":2551},{\"id\":273647337527,\"title\":\"$15 \\u0026 Under Clearance Sale Items\",\"handle\":\"15-under-sale\",\"description\":\"\",\"published_at\":\"2024-09-06T15:22:37-05:00\",\"updated_at\":\"2026-07-14T06:16:15-05:00\",\"image\":null,\"products_count\":7572},{\"id\":273647370295,\"title\""
+    },
+    {
+      "label": "search_suggest_json",
+      "url": "https://pinklily.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "final_url": "https://pinklily.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 215,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"resources\":{\"results\":{\"products\":[{\"available\":true,\"body\":\"\\u003cp data-end=\\\"312\\\" data-start=\\\"196\\\"\\u003eStreamline your essentials with the \\u003cstrong data-end=\\\"251\\\" data-start=\\\"232\\\"\\u003eMagnetic Wallet\\u003c\\/strong\\u003e, a sleek 3-in-1 accessory designed for everyday convenience.\\u003c\\/p\\u003e\\n\\u003cul data-end=\\\"721\\\" data-start=\\\"314\\\"\\u003e\\n\\u003cli data-end=\\\"441\\\" data-start=\\\"314\\\"\\u003e\\n\\u003cp data-end=\\\"441\\\" data-start=\\\"316\\\"\\u003e\\u003cstrong data-end=\\\"343\\\" da"
+    }
+  ],
+  "catalog_discovery": {
+    "status": "partial",
+    "confidence": "Medium",
+    "products_sampled": 5,
+    "collections_sampled": 5,
+    "source": "Shopify public JSON endpoints"
+  },
+  "autocomplete_discovery": {
+    "status": "available",
+    "confidence": "Medium",
+    "resources_observed": [
+      "products",
+      "collections",
+      "queries",
+      "pages"
+    ]
+  }
+}

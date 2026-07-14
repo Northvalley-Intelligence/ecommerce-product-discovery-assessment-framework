@@ -6,6 +6,7 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
+import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
 import { onboardTarget } from './onboard-target.mjs';
 
@@ -915,7 +916,7 @@ function dashboardPage() {
           (data.executive_report
             ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0"><a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Open report (Markdown)</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
             : '<p class="muted" style="margin:0">No executive report generated yet for this inspection.</p>') +
-          '</div><div class="readiness-stats"><button id="execReportBtn" data-run="' + escapeHtml(data.run_dir) + '">' + (data.executive_report ? 'Regenerate' : 'Generate Executive Report') + '</button></div></div>') +
+          '</div><div class="readiness-stats"><button id="curateBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Curate Queries from Catalog</button><button id="execReportBtn" data-run="' + escapeHtml(data.run_dir) + '">' + (data.executive_report ? 'Regenerate' : 'Generate Executive Report') + '</button></div></div>') +
         panel('Crawl Health', 'Inspection phases', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
         '<div class="two-col">' +
           panel('Plugin State', 'Execution', table(['Plugin', 'Status', 'Observations', 'Evidence'], report.plugin_results || [], (item) => ['<td><strong>' + escapeHtml(item.plugin_id) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.observations || 0) + '</td>', '<td>' + evidenceLinks(item.evidence_file) + '</td>'])) +
@@ -924,6 +925,27 @@ function dashboardPage() {
         panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
         panel('Inspection Timeline', 'Debug trace', table(['Time', 'Event', 'Details'], (data.timeline || []).slice(-30), (item) => { const copy = {...item}; delete copy.at; delete copy.event; delete copy.inspection_id; return ['<td class="mono">' + escapeHtml(item.at) + '</td>', '<td><strong>' + escapeHtml(item.event) + '</strong></td>', '<td><span class="mono">' + escapeHtml(JSON.stringify(copy)) + '</span></td>']; })) +
         panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+      const curateBtn = document.getElementById('curateBtn');
+      if (curateBtn) {
+        curateBtn.addEventListener('click', async () => {
+          curateBtn.disabled = true;
+          curateBtn.textContent = 'Curating...';
+          try {
+            const result = await api('/api/curate-queries', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ run_dir: curateBtn.dataset.run })
+            });
+            document.getElementById('actionResult').innerHTML = 'Curated ' + result.queries + ' store-specific queries from inspection ' + escapeHtml(result.curated_from_inspection) + ' into <a href="' + datasetHash(result.query_pack) + '">' + escapeHtml(result.query_pack) + '</a>' + (result.evaluation ? '; the evaluation manifest now uses it. Click Rerun to inspect with the curated queries.' : '.');
+            curateBtn.textContent = 'Curate Queries from Catalog';
+            curateBtn.disabled = false;
+          } catch (error) {
+            alert(error.message);
+            curateBtn.disabled = false;
+            curateBtn.textContent = 'Curate Queries from Catalog';
+          }
+        });
+      }
       const execBtn = document.getElementById('execReportBtn');
       if (execBtn) {
         execBtn.addEventListener('click', async () => {
@@ -1259,6 +1281,18 @@ function routeRequest(rootDir, request, response) {
       .then((body) => {
         const result = onboardTarget(rootDir, { url: body.url, name: body.name });
         sendJson(response, result.created ? 201 : 200, result);
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/curate-queries') {
+    readBody(request)
+      .then((body) => {
+        if (!body.run_dir) throw new Error('run_dir is required.');
+        safeResolve(rootDir, body.run_dir);
+        const result = curateQueryPack(rootDir, body.run_dir);
+        sendJson(response, 201, result);
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;

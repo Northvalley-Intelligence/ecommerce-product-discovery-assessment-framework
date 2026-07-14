@@ -1,0 +1,57 @@
+{
+  "validation_run_id": "VAL-055",
+  "generation": "GEN-014",
+  "phase": "Generation 14 - Full-Cycle Local Application",
+  "started_at": "2026-07-14T20:25:00Z",
+  "completed_at": "2026-07-14T20:45:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_catalog_curated_query_pack_slice",
+  "validations_executed": [
+    {
+      "category": "Catalog Evidence Retention",
+      "tool": "npm run inspect (Pink Lily fresh discovery)",
+      "result": "pass",
+      "evidence": "Site discovery now retains full JSON payloads per decision 1A (json_payload on endpoint evidence) plus structured collections/products lists in catalog_discovery (20 collections, 10 products sampled). Run GEN-014-20260714T203102Z recorded them after a forced site-profile refresh."
+    },
+    {
+      "category": "Query Pack Curation From Retained Evidence",
+      "tool": "npm run curate:queries",
+      "result": "pass",
+      "evidence": "Curation reads only the run directory: 8 store-specific queries for Pink Lily (4 collection-backed with browse_node relationships, 4 derived from product titles), promo/clearance/year-stamped collections excluded, evaluation manifest repointed at the curated pack. Refuses gracefully when a run predates payload retention."
+    },
+    {
+      "category": "Improvement Loop Proof (curated re-inspection)",
+      "tool": "npm run inspect + report:executive",
+      "result": "pass",
+      "evidence": "Run GEN-014-20260714T203249Z inspected the curated queries: 8/8 search observations returned products (11 to 1002 result hints), 8/8 autocomplete prefixes assisted, DS1 rose to 8 rows and DS2 to 23 rows from store-specific queries. Executive report regenerated from the curated run."
+    },
+    {
+      "category": "Operational Dashboard Validation",
+      "tool": "npm run validate:dashboard",
+      "result": "pass",
+      "evidence": "New coverage: curation API wiring on the page, temp-root curation test (collection-backed relationships, required query fields, promo-noise rejection, evaluation repointing) and refusal on payload-free runs. Curate button verified live in the browser on the curated Pink Lily run."
+    },
+    {
+      "category": "GEN-013 Suite Validation",
+      "tool": "npm run validate:gen13",
+      "result": "pass",
+      "evidence": "All suites pass. Run validation now excludes downstream executive/ artifacts from the artifact-index consistency check; DS3 remains legitimately empty until curation carries facet attributes."
+    },
+    {
+      "category": "Legacy Framework Regression Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passes; BDD-012 calibration remains the known deferred warning."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Implementation changed after VAL-054, so the GEN-014 clean-pass count restarts: VAL-055 is pass one for the current state. Curated query quality is bounded by the 20-collection/10-product discovery sample; deeper catalog sampling and facet-attribute relationships (to populate DS3) are the natural next refinements."
+}

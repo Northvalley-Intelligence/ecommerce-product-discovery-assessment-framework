@@ -179,7 +179,10 @@ function validateInspectionRun(runDir = latestInspectionDir()) {
   const platformReport = readJson(path.join(runDir, 'platform-capability-report.json'));
   const dashboardHtml = fs.readFileSync(path.join(runDir, 'dashboard.html'), 'utf8');
   const timeline = readJsonl(path.join(runDir, 'evidence/timeline.jsonl'));
-  const files = listFilesRecursive(runDir);
+  // Downstream interpretation artifacts (executive reports) are written into
+  // the run dir after inspection completes; they are not inspection artifacts
+  // and are excluded from the artifact index consistency check.
+  const files = listFilesRecursive(runDir).filter((file) => !file.includes(`${path.sep}executive${path.sep}`));
 
   requiredFields(report, ['schema_version', 'inspection_id', 'dashboard', 'crawl_health', 'site_discovery', 'datasets', 'limitations', 'artifact_explorer'], 'Inspection report');
   assert(report.schema_version === 'inspection-report-v0.1', 'Inspection report schema version mismatch.');
