@@ -1,0 +1,1000 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\input{northvalley-template-assets/northvalley-brand.sty}
+\usepackage[letterpaper,margin=0.62in,top=0.62in,bottom=0.72in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=0.14in
+
+\newcommand{\ReportTitle}{High Country Outfitters Online Customer Experience Opportunity}
+\newcommand{\ReportClient}{High Country Outfitters Leadership Team}
+\newcommand{\ReportDate}{July 5, 2026}
+\newcommand{\ReportSummary}{Executive conversation starter on making it easier for customers to find and buy products online, supported by public observations and reference evidence.}
+\newcommand{\ReportPreparedBy}{Northvalley Intelligence LLC}
+
+\definecolor{NVIRed}{HTML}{B42318}
+\definecolor{NVIRedSoft}{HTML}{FDE7E7}
+\definecolor{NVIGreenSoft}{HTML}{E2F1ED}
+\definecolor{NVIAmberSoft}{HTML}{FFF4D8}
+
+\newcommand{\Good}[1]{\textcolor{NVIAccentDark}{\textbf{#1}}}
+\newcommand{\Warn}[1]{\textcolor{NVIWarning}{\textbf{#1}}}
+\newcommand{\Code}[1]{\texttt{\fontsize{8.0}{9.0}\selectfont #1}}
+\newcommand{\ReportKicker}[1]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+\newcommand{\ReportBody}[1]{{\fontsize{9.35}{11.45}\selectfont\color{NVIInk}#1}}
+\newcommand{\ReportFine}[1]{{\fontsize{7.45}{8.9}\selectfont\color{NVIMuted}#1}}
+\newcommand{\CustomerEffortVisual}{%
+  \resizebox{\linewidth}{!}{%
+  \begin{tikzpicture}[x=1in,y=1in]
+    \path[use as bounding box] (0,0) rectangle (8.55,3.45);
+    \draw[draw=NVIRule,fill=NVIPanel,rounded corners=2pt] (0,0) rectangle (8.55,3.45);
+    \node[anchor=west,font=\fontsize{7.9}{9.4}\selectfont\bfseries,text=NVIAccent] at (0.22,3.20) {CUSTOMER EFFORT REDUCTION MODEL};
+    \node[anchor=east,font=\fontsize{7.1}{8.4}\selectfont,text=NVIMuted] at (8.31,3.20) {Where the first 90 days should focus};
+
+    \node[anchor=west,font=\fontsize{7.1}{8.4}\selectfont\bfseries,text=NVIMuted] at (0.30,2.68) {Customer works harder};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (needA) at (1.35,2.22) {Need or wording};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (guideA) at (3.15,2.22) {Limited early guidance};
+    \node[draw=NVIWarning,fill=NVIAmberSoft,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (refineA) at (4.95,2.22) {Extra refinements};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (pathA) at (6.75,2.22) {Product path};
+    \draw[->,line width=0.8pt,color=NVIMuted] (needA.east) -- (guideA.west);
+    \draw[->,line width=0.8pt,color=NVIMuted] (guideA.east) -- (refineA.west);
+    \draw[->,line width=0.8pt,color=NVIMuted] (refineA.east) -- (pathA.west);
+
+    \node[anchor=west,font=\fontsize{7.1}{8.4}\selectfont\bfseries,text=NVIAccent] at (0.30,1.50) {First 90 days: reduce early effort};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (needB) at (1.35,1.02) {Need or wording};
+    \node[draw=NVIAccent,fill=NVIGreenSoft,rounded corners=2pt,text width=1.44in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] (guideB) at (3.25,1.02) {Earlier guidance};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (pathB) at (5.25,1.02) {Relevant path};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (buyB) at (7.15,1.02) {Confidence to buy};
+    \draw[->,line width=0.9pt,color=NVIAccentDark] (needB.east) -- (guideB.west);
+    \draw[->,line width=0.9pt,color=NVIAccentDark] (guideB.east) -- (pathB.west);
+    \draw[->,line width=0.9pt,color=NVIAccentDark] (pathB.east) -- (buyB.west);
+
+    \draw[->,line width=0.95pt,color=NVIAccent] (guideA.south) -- (guideB.north);
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=2.42in,align=center,font=\fontsize{7.0}{8.4}\selectfont\bfseries,text=NVIAccentDark] at (3.25,0.32) {Suggestions, category paths, customer wording, and bilingual needs};
+    \node[anchor=west,font=\fontsize{7.0}{8.4}\selectfont,text=NVIMuted] at (5.00,0.32) {Measure: product-page reach, add-to-cart, conversion, and order value.};
+  \end{tikzpicture}%
+  }%
+}
+\newcommand{\ExecutiveDecisionStrip}{%
+  \resizebox{\linewidth}{!}{%
+  \begin{tikzpicture}[x=1in,y=1in]
+    \path[use as bounding box] (0,0) rectangle (8.55,0.95);
+    \draw[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt] (0,0) rectangle (8.55,0.95);
+    \node[anchor=west,font=\fontsize{7.6}{9.0}\selectfont\bfseries,text=NVIAccentSoft] at (0.25,0.72) {EXECUTIVE DECISION FOCUS};
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=1.55in,minimum height=0.36in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] at (2.05,0.33) {Priority journeys};
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=1.55in,minimum height=0.36in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] at (4.30,0.33) {Early guidance pilots};
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=1.55in,minimum height=0.36in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] at (6.55,0.33) {Impact measurement};
+  \end{tikzpicture}%
+  }%
+}
+
+\newcommand{\ReportPageHeader}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-0.46in]current page.north east);
+    \fill[NVIAccent] ([yshift=-0.46in]current page.north west) rectangle ([yshift=-0.49in]current page.north east);
+    \node[anchor=west,text=white,font=\fontsize{8.4}{9.8}\selectfont\bfseries]
+      at ([xshift=0.62in,yshift=-0.23in]current page.north west) {#1};
+    \node[anchor=east,text=white,font=\fontsize{7.4}{8.6}\selectfont]
+      at ([xshift=-0.62in,yshift=-0.23in]current page.north east) {\ReportClient};
+  \end{tikzpicture}
+  \vspace*{0.22in}
+}
+\newcommand{\ReportFooter}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.34in]current page.south east);
+    \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=0.62in,yshift=0.17in]current page.south west) {\NorthvalleyContactLine};
+    \node[anchor=east,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=-0.62in,yshift=0.17in]current page.south east) {\thepage};
+  \end{tikzpicture}
+}
+\newcommand{\ReportSection}[1]{%
+  \vspace{0.10in}
+  {\fontsize{15}{18}\selectfont\bfseries\color{NVIInk}#1}\\[-0.02in]
+  {\color{NVIAccent}\rule{\linewidth}{0.8pt}}
+  \vspace{0.07in}
+}
+\newcommand{\ReportCard}[2]{%
+  \begin{tikzpicture}
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,inner xsep=11pt,inner ysep=9pt,text width=\dimexpr\linewidth-24pt\relax,align=left]
+      {\ReportKicker{#1}\\[0.05in]\ReportBody{#2}};
+  \end{tikzpicture}
+}
+\newcommand{\ReportDarkCard}[2]{%
+  \begin{tikzpicture}
+    \node[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt,inner xsep=12pt,inner ysep=10pt,text width=\dimexpr\linewidth-26pt\relax,align=left]
+      {{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.06in]{\fontsize{10.2}{12.4}\selectfont\color{white}#2}};
+  \end{tikzpicture}
+}
+\newcommand{\MetricCard}[3]{%
+  \begin{tikzpicture}
+    \node[draw=NVIRule,fill=NVIPanel,rounded corners=2pt,inner xsep=9pt,inner ysep=8pt,text width=\dimexpr\linewidth-20pt\relax,minimum height=0.88in,align=left]
+      {\ReportKicker{#1}\\[0.04in]{\fontsize{18}{21}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]\ReportFine{#3}};
+  \end{tikzpicture}
+}
+
+\begin{document}
+\color{NVIInk}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+  \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.05in]current page.north east);
+  \fill[NVIAccent] ([yshift=-1.05in]current page.north west) rectangle ([yshift=-1.10in]current page.north east);
+  \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.45in]current page.south east);
+  \node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries]
+    at ([xshift=0.62in,yshift=-0.52in]current page.north west) {\NorthvalleyBusinessName};
+  \node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont]
+    at ([xshift=-0.62in,yshift=-0.52in]current page.north east) {\ReportDate};
+  \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+    at ([xshift=0.62in,yshift=0.22in]current page.south west) {\NorthvalleyContactLine};
+\end{tikzpicture}
+
+\vspace*{1.08in}
+\begin{minipage}[t]{0.60\linewidth}
+\raggedright
+\ReportKicker{Customer Experience Review}\\[0.12in]
+{\fontsize{31}{36}\selectfont\bfseries\color{NVIInk}\ReportTitle}\par
+\vspace{0.20in}
+{\fontsize{12.1}{14.6}\selectfont\color{NVIInk}\ReportSummary}\par
+\vspace{0.30in}
+{\color{NVIAccent}\rule{2.6in}{0.9pt}}\par
+\vspace{0.18in}
+{\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]
+{\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}\ReportClient}\par
+\vspace{0.08in}
+{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \ReportPreparedBy}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.31\linewidth}
+\centering
+\vspace{0.10in}
+\NorthvalleyLogo[0.88in]\par
+\vspace{0.22in}
+\ReportDarkCard{Primary Readout}{High Country already has a strong online shopping foundation. The opportunity is helping customers reach the right products faster and with less effort.}
+\vspace{0.11in}
+\MetricCard{Evidence Base}{Public}{Detailed experiments, methodology, and peer references remain in the appendix.}
+\end{minipage}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\ReportPageHeader{Executive Readout}
+\ReportFooter
+\ReportSection{Executive Readout}
+\begin{minipage}[t]{0.62\linewidth}
+\ReportDarkCard{Customer Buying Experience Opportunity}{High Country Outfitters already provides a strong regional outdoor retail ecommerce experience. Customers can generally find products, see useful store and inventory cues, enter the cart flow, and reach support information. The opportunity is to reduce customer effort before shoppers reach the products they intend to buy.}
+\vspace{0.12in}
+\ReportBody{We periodically review regional retailers to identify practical opportunities for improving the online customer experience. \textbf{High Country was selected because it already has a strong ecommerce foundation}. Mature retailers often benefit most from targeted improvements that make shopping faster, easier, and more confidence-building for customers.}\par
+\vspace{0.08in}
+\ReportKicker{Why This Matters}\\[0.03in]
+\ReportBody{Comparable regional outdoor retailers provide useful reference examples for how customers can be guided during the earliest moments of shopping. The executive takeaway is favorable for High Country: customers already encounter a strong online shopping foundation. The remaining opportunity is not a competitor race. It is helping more customers reach the right products faster, with less effort, and with greater confidence to continue toward purchase.}\par
+\vspace{0.05in}
+{\fontsize{7.0}{8.3}\selectfont
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabularx}{\linewidth}{@{}L{0.26\linewidth}N@{}}
+\toprule
+\textbf{Executive question} & \textbf{Customer-experience answer}\\
+\midrule
+Why High Country? & Customers already encounter a mature online shopping experience, which makes targeted improvements more valuable than a broad redesign.\\
+What can improve? & Customers can receive clearer early guidance when they begin with a need, activity, brand, gift idea, or mixed-language wording.\\
+How should value be measured? & Internal shopping behavior, product-page reach, add-to-cart rate, conversion rate, and average order value can quantify the opportunity.\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.07in}
+\begin{itemize}
+\item \Good{Customers already have a strong shopping foundation.} We observed broad catalog paths, product-recovery paths, location-inventory signals, and support cues.
+\item \Warn{Customers can receive clearer guidance earlier.} Some shoppers may need to work harder than necessary before reaching the product they intend to buy.
+\item \Warn{Customers using different wording or language should still feel confident.} The buying journey should support activity, need, brand, gift, and mixed-language phrasing.
+\item \Good{Peer examples should guide the work, not become the headline.} Comparable regional retailers help identify options, while the recommendation remains centered on High Country's customers.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.31\linewidth}
+\MetricCard{Shopping Foundation}{Strong}{Customers already have useful product-finding paths to build on.}
+\vspace{0.09in}
+\MetricCard{Customer Effort}{Reduce}{The clearest opportunity is making early product finding easier.}
+\vspace{0.09in}
+\MetricCard{Business Value}{Measure}{Use customer journey data, add-to-cart rate, conversion, and order value to estimate impact.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Executive Opportunity}
+\ReportFooter
+\ReportSection{Recommended Growth Path}
+\ReportCard{Short Version}{High Country already gives customers a solid online shopping experience. The next growth opportunity is reducing effort early in product finding: a customer looking for a rain shell, sun hoodie, trail running shirt, camp chair, HOKA shoe, or Spanish-language equivalent should reach relevant products quickly, confidently, and with as few extra steps as possible.}
+\vspace{0.10in}
+\CustomerEffortVisual
+\vspace{0.08in}
+\begin{minipage}[t]{0.43\linewidth}
+\ReportSection{Business Value Lens}
+{\fontsize{7.85}{9.35}\selectfont
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabularx}{\linewidth}{@{}L{0.36\linewidth}N@{}}
+\toprule
+\textbf{Customer outcome} & Less effort reaching relevant products.\\
+\textbf{Business signal} & Product-page reach, add-to-cart, conversion, and order value.\\
+\textbf{Decision use} & Prioritize fixes with High Country analytics; no public dollar claim.\\
+\bottomrule
+\end{tabularx}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.51\linewidth}
+\ReportSection{90-Day Opportunity Roadmap}
+{\fontsize{7.65}{9.15}\selectfont
+\setlength{\tabcolsep}{3.3pt}
+\begin{tabularx}{\linewidth}{@{}L{0.31\linewidth}L{0.31\linewidth}L{0.31\linewidth}@{}}
+\toprule
+\textbf{0-30 days} & \textbf{31-60 days} & \textbf{61-90 days}\\
+\midrule
+Map customer language across brand, activity, feature, typo, gift, and bilingual needs. &
+Pilot earlier guidance for priority journeys: rain gear, sun protection, trail running, camp, and gifts. &
+Connect journey analytics to product-page reach, add-to-cart, conversion, and order value.\\
+\bottomrule
+\end{tabularx}
+}
+\end{minipage}
+\vspace{0.14in}
+\ExecutiveDecisionStrip
+
+\newpage
+\ReportPageHeader{Reference: Concepts}
+\ReportFooter
+\ReportSection{Reference A: Executive-Level IR Concepts}
+\ReportBody{This section intentionally avoids academic labels in the main narrative. These are seven discovery concepts a leadership team can understand and act on.}\par
+\vspace{0.08in}
+{\fontsize{7.65}{9.0}\selectfont
+\begin{longtable}{@{}L{0.20\linewidth}L{0.37\linewidth}L{0.34\linewidth}@{}}
+\toprule
+\textbf{Concept} & \textbf{Executive explanation} & \textbf{Why it matters}\\
+\midrule
+\endhead
+Normalization & Whether the site understands common typing variations such as missing apostrophes, plurals, shorthand, and gender wording. & Good normalization keeps high-intent shoppers from being punished for normal typing habits.\\
+Tokenization & Whether the site handles multi-word phrases, slash notation, brand numerals, and product phrases as shopper intent rather than isolated words. & Token handling affects whether customers can search naturally instead of memorizing exact product names.\\
+Synonyms & Whether the site connects customer language to retailer language: shell versus jacket, puffer versus insulated, pack versus backpack, and similar wording. & Synonym coverage is often where good search looks expert, because customers rarely use catalog-perfect terminology.\\
+Ranking And Field Weighting & Whether important fields such as brand, product type, gender, activity, and model name appear to influence what rises first. & Strong ranking makes the first few results feel obvious, which is what owners notice when they test their own site.\\
+Query Expansion & Whether broader needs such as trail running, hot-weather hiking, lake day, or gifts expand into useful products. & Expansion is where search moves from order-taking to selling: it helps a shopper who knows the use case but not the product name.\\
+Document Enrichment & Whether searchable fields include useful product attributes such as UPF, waterproof, quick-dry, merino, polarized, packable, and breathable. & Enriched product data lets shoppers search by benefits, materials, and features instead of exact titles.\\
+Spanish/Bilingual Discovery & Whether Spanish or mixed Spanish-English searches can still guide local and visiting shoppers to the right English-language products. & This is a market-access question, not a demographic assumption: bilingual discovery reduces friction when customers search in Spanish, English, or both.\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Results}
+\ReportFooter
+\ReportSection{Reference B: Concept Results Summary}
+{\fontsize{7.7}{9.0}\selectfont
+\begin{tabularx}{\linewidth}{@{}L{0.24\linewidth}R{0.13\linewidth}R{0.16\linewidth}R{0.15\linewidth}N@{}}
+\toprule
+\textbf{Concept} & \textbf{Search avg} & \textbf{Auto avg} & \textbf{Uniform} & \textbf{Representative gaps}\\
+\midrule
+Normalization & 99\% & 82\% & 84\% & kids rain jacket; girls sandals; boys fishing shirt\\
+Tokenization & 97\% & 48\% & 48\% & sun protection shirt; waterproof hiking boot; packable rain jacket\\
+Synonyms & 96\% & 74\% & 64\% & puffer jacket; waterproof coat; hiking shoes\\
+Ranking And Field Weighting & 99\% & 72\% & 80\% & costa sunglasses men; arcteryx mens shirt; teva sandals men\\
+Query Expansion & 83\% & 17\% & 8\% & trail running shirt; hiking outfit women; beach cover up\\
+Document Enrichment & 97\% & 19\% & 16\% & waterproof breathable jacket; quick dry shorts; moisture wicking shirt\\
+Spanish/Bilingual Discovery & 86\% & 0\% & 0\% & chaqueta lluvia mujer; botas senderismo; camisa manga larga\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.14in}
+\ReportSection{Reference C: Highest-Priority Autocomplete Gaps}
+{\fontsize{7.6}{8.9}\selectfont
+\begin{longtable}{@{}L{0.21\linewidth}L{0.20\linewidth}R{0.11\linewidth}R{0.11\linewidth}L{0.29\linewidth}@{}}
+\toprule
+\textbf{Concept} & \textbf{Query} & \textbf{Search} & \textbf{Auto} & \textbf{Autocomplete evidence}\\
+\midrule
+\endhead
+Normalization & kids rain jacket & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Normalization & girls sandals & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Normalization & boys fishing shirt & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & sun protection shirt & 90\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & waterproof hiking boot & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & packable rain jacket & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & wide brim hat & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & fly fishing shirt & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & water bottle holder & 85\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & insulated water bottle & 90\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & ski bib pants & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & leather flip flop & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & cotton pocket tee & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & better sweater vest & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Tokenization & kayak rental & 95\% & 0\% & no product, collection, query, or page suggestions\\
+Synonyms & waterproof coat & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Synonyms & camp stool & 100\% & 0\% & no product, collection, query, or page suggestions\\
+Synonyms & drink tumbler & 100\% & 0\% & no product, collection, query, or page suggestions\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Experiment Data}
+\ReportFooter
+\ReportSection{Reference D: Full Query Dataset}
+\ReportBody{The following table contains all 175 public search/autocomplete experiments. Percentages are experiment readouts, not an overall public-facing grade. They are included here so the recommendations can be traced back to concrete shopper-language tests.}\par
+\vspace{0.06in}
+{\fontsize{6.45}{7.55}\selectfont
+\setlength{\tabcolsep}{1.7pt}
+\begin{longtable}{@{}L{0.16\linewidth}L{0.16\linewidth}L{0.17\linewidth}R{0.08\linewidth}R{0.08\linewidth}L{0.27\linewidth}@{}}
+\toprule
+\textbf{Concept} & \textbf{Query} & \textbf{Intent} & \textbf{Search} & \textbf{Auto} & \textbf{Evidence note}\\
+\midrule
+\endhead
+Normalization & womens rain jacket & women rainwear & 100\% & 97\% & 93 rendered results; sample: Women's Torrentshell 3L Jacket Patagonia THI THIN ICE Color THI THIN ICE ... / products: Women's Torrentshell 3L Jacket; Women's Kisa III Jacket | queries: womens rain jacket\\
+Normalization & mens patagonia fleece & men Patagonia fleece & 100\% & 92\% & 58 rendered results; sample: Men's Better Sweater 1/4 Zip Fleece Patagonia OLGG OLD GROWTH GREEN Color... / products: Men's Better Sweater 1/4 Zip Fleece; Men's Retro Pile Vest\\
+Normalization & womens hoka shoes & women HOKA footwear & 100\% & 97\% & 81 rendered results; sample: Women's Clifton 10 HOKA RMD ROSE CREAM | DRIED ROSE Color RMD ROSE CREAM ... / products: Women's Clifton 10; Women's Speedgoat 7 | queries: womens hoka shoes\\
+Normalization & mens hiking boots & men hiking boots & 100\% & 92\% & 96 rendered results; sample: Men's Cloudrock Mid Waterproof On Running GLACIER | ALLOY Color GLACIER |... / products: Men's Timp 5 Hiker GTX Hiking Boots; Men's X Ultra 5 Mid GTX Hiking Boot\\
+Normalization & womens sandals & women sandals & 100\% & 97\% & 82 rendered results; sample: Women's Original Universal Teva SDDN SAND DUNE Color SDDN SAND DUNE; Wome... / products: Women's Flirty Braidy Sandal; Women's Las Flores Sandal | collections: Women's Sandals | que...\\
+Normalization & kids rain jacket & kids rainwear & 100\% & 0\% & 63 rendered results; sample: Kids' 4-in-1 Everyday Jacket Patagonia PTRE POTTERS RED Color PTRE POTTER... / no product, collection, query, or page suggestions\\
+Normalization & patagonia womens jacket & Patagonia women jacket & 100\% & 97\% & 109 rendered results; sample: Women's Torrentshell 3L Jacket Patagonia THI THIN ICE Color THI THIN ICE... / products: Women's Nano Puff(R) Jacket; Women's Silent Down Jacket | queries: womens patagonia jacket\\
+Normalization & vuori womens joggers & Vuori women joggers & 100\% & 87\% & 83 rendered results; sample: Women's Performance Jogger Vuori HMD MIDNIGHT HEATHER Color HMD MIDNIGHT ... / products: Women's Performance Jogger\\
+Normalization & yeti coolers & YETI coolers & 100\% & 97\% & 60 rendered results; sample: YETI Hopper Flip 12 BLACK FOREST GREEN Color BLACK FOREST GREEN CHARCOAL ... / products: YETI Hopper M12 Backpack Soft Cooler; YETI Hopper M20 Backpack Soft Cooler | collections: YE...\\
+Normalization & braves hats & Atlanta Braves hats & 100\% & 92\% & 65 rendered results; sample: Atlanta Braves Hat | Navy '47 Brand; Atlanta Braves Cooperstown Hat | Roy... / products: Atlanta Braves Cooperstown Hat | Royal; Atlanta Braves Hat | Navy\\
+Normalization & camp chairs & camping chairs & 90\% & 97\% & 190 rendered results; sample: Eclipse | Slate PARKIT; Eclipse | Old Glory PARKIT / products: Trailhead Camp Chair; MoonLite Reclining Camp Chair | queries: camp chairs\\
+Normalization & rain jackets & rain jackets & 100\% & 92\% & 86 rendered results; sample: Men's Torrentshell 3L Jacket Patagonia SMDB SMOLDER BLUE Color SMDB SMOLD... / products: Men's Cloudshield Rain Jacket; Men's Boulder Fork Rain Jacket\\
+Normalization & sun hoodies & sun hoodies & 100\% & 92\% & 191 rendered results; sample: Men's Cormac Hoody Arc'teryx 019001 HABITAT Color 019001 HABITAT 020142 ... / products: Men's Capilene(R) Cool Sun Hoody; Men's Capilene(R) Cool Sun Hoody | Fitz Roy Trout\\
+Normalization & long sleeve shirts & long-sleeve shirts & 100\% & 97\% & 225 rendered results; sample: Men's Long Sleeve Ace Button Down Vuori INK INK Color INK INK; Men's Lon... / products: Men's Original Shirt Long Sleeve; Men's Original Long Sleeve Shirt | collections: Long Sleev...\\
+Normalization & quarter zip pullover & quarter-zip pullover & 100\% & 97\% & 24 rendered results; sample: Men's Sully 1/4 Zip Pullover johnnie-O HELIOS BLUE Color HELIOS BLUE LAGU... / products: Men's UGA Sully Quarter Zip Pullover; Men's Ransel Quarter Snap Placket Pullover | queries: ...\\
+Normalization & womens upf shirt & women UPF shirt & 95\% & 87\% & 277 rendered results; sample: Women's Bamboo Lightweight Long Sleeve II Free Fly Apparel SLATE Color S... / products: Everyday Performance Sun Shirt UPF 50+ Dry Lite\\
+Normalization & mens swim trunks & men swim trunks & 100\% & 97\% & 86 rendered results; sample: Men's The Classic Trunk - 5.5 in Chubbies THE MERICAS Color THE MERICAS; ... / products: Men's Half Elastic 7" Swim Trunks - Freesia; Men's Half Elastic 7" Swim Trunks - Caladesi | ...\\
+Normalization & girls sandals & girls sandals & 100\% & 0\% & 76 rendered results; sample: Women's Flirty Braidy Sandal Rainbow RDWD REDWOOD Color RDWD REDWOOD SRBR... / no product, collection, query, or page suggestions\\
+Normalization & boys fishing shirt & boys fishing shirt & 100\% & 0\% & 18 rendered results; sample: Kids Original Shirt Long Sleeve Poncho Outdoors THE FIRST MATE|BLUE MICRO... / no product, collection, query, or page suggestions\\
+Normalization & fleece pullovers & fleece pullovers & 100\% & 97\% & 27 rendered results; sample: Men's Better Sweater 1/4 Zip Fleece Patagonia OLGG OLD GROWTH GREEN Color... / products: Women's Turpin Fleece Snap Pullover; Men's Gridback Fleece Snap Pullover | queries: snap t f...\\
+Normalization & womens fleece & women fleece & 100\% & 92\% & 62 rendered results; sample: Women's Roselle Half Zip Fleece Varley DEMA DEEP MAHOGANY Color DEMA DEEP... / products: Women's Active Fleece Tight; Women's High Standard Fleece Sweatpant\\
+Normalization & mens shorts & men shorts & 95\% & 97\% & 401 rendered results; sample: Men's Kore Short - 5 in Vuori GGL AGATE GREEN TONAL Color GGL AGATE GREE... / products: Men's Khaki Shorts; Men's Jupiters Cotton Performance Shorts | collections: Men's Shorts; Ch...\\
+Normalization & kids hats & kids hats & 100\% & 92\% & 163 rendered results; sample: Little Kids Hemlock NOMAD PLUE Color NOMAD PLUE SUNS; Kids' Trucker Hat ... / products: Baby Furry Friends Hat; Kids' Trucker Hat\\
+Normalization & travel packs & travel packs & 100\% & 97\% & 153 rendered results; sample: Cubo Packing Travel Bundle Cotopaxi DEL DIA Color DEL DIA; Allpa 42L Tra... / products: Cuba 3L Travel Cube; Farpoint(TM) 40 Travel Pack | collections: Packs \& Travel\\
+Normalization & hoka shoe & HOKA footwear singular & 100\% & 73\% & 48 rendered results; sample: Women's Clifton 10 HOKA RMD ROSE CREAM | DRIED ROSE Color RMD ROSE CREAM ... / products: Women's Clifton 10; Men's Clifton 10 | queries: womens hoka shoes\\
+Tokenization & long sleeve shirt & long-sleeve shirt & 100\% & 97\% & 236 rendered results; sample: Men's Long Sleeve Ace Button Down Vuori INK INK Color INK INK; Men's Lon... / products: Men's Original Shirt Long Sleeve; Men's Original Long Sleeve Shirt | collections: Long Sleev...\\
+Tokenization & 1/4 zip pullover & quarter-zip pullover & 100\% & 92\% & 19 rendered results; sample: Men's Sully 1/4 Zip Pullover johnnie-O HELIOS BLUE Color HELIOS BLUE LAGU... / products: Men's Sully 1/4 Zip Pullover; Men's Georgia Hoppin Ribbed Knit Performance 1/4 Zip Pullover\\
+Tokenization & quarter zip pullover & quarter-zip pullover & 100\% & 97\% & 24 rendered results; sample: Men's Sully 1/4 Zip Pullover johnnie-O HELIOS BLUE Color HELIOS BLUE LAGU... / products: Men's UGA Sully Quarter Zip Pullover; Men's Ransel Quarter Snap Placket Pullover | queries: ...\\
+Tokenization & button down shirt & button-down shirt & 100\% & 92\% & 78 rendered results; sample: Men's Short Sleeve Bridge Button Down Vuori API ATMOSPHERE MINI STRIPE Co... / products: Men's Short Sleeve Manhattan Button Down; Men's Long Sleeve Bridge Button Down\\
+Tokenization & short sleeve tee & short-sleeve tee & 100\% & 92\% & 186 rendered results; sample: Men's Short Sleeve Ponto Performance Tee Vuori HYB MISTY BLUE HEATHER Co... / products: Men's Short Sleeve Ponto Performance Tee; Women's Lucent Tee Short Sleeve\\
+Tokenization & sun protection shirt & sun protective shirt & 90\% & 0\% & 238 rendered results; sample: Women's Energy Top Vuori FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER... / no product, collection, query, or page suggestions\\
+Tokenization & rain shell jacket & rain shell jacket & 100\% & 92\% & 51 rendered results; sample: Men's Torrentshell 3L Jacket Patagonia; Women's Torrentshell 3L Jacket Pa... / products: Women's Fineline Stretch Shell; Men's Fineline Stretch Shell\\
+Tokenization & waterproof hiking boot & waterproof hiking boot & 100\% & 0\% & 53 rendered results; sample: Men's Cloudrock Mid Waterproof On Running GLACIER | ALLOY Color GLACIER |... / no product, collection, query, or page suggestions\\
+Tokenization & trail running shoe & trail running footwear & 90\% & 92\% & 101 rendered results; sample: Women's Lone Peak 9 Altra 315 DUSTY OLIVE Color 315 DUSTY OLIVE 550 PURP... / products: Men's Speedcross 6 Trail Running Shoes; Women's Ghost Trail\\
+Tokenization & packable rain jacket & packable rainwear & 100\% & 0\% & 70 rendered results; sample: Women's Torrentshell 3L Jacket Patagonia THI THIN ICE Color THI THIN ICE ... / no product, collection, query, or page suggestions\\
+Tokenization & wide brim hat & wide-brim sun hat & 100\% & 0\% & 122 rendered results; sample: Patagonia Brimmer RVGN RIVER ROCK GREEN Color RVGN RIVER ROCK GREEN FGE ... / no product, collection, query, or page suggestions\\
+Tokenization & camp kitchen set & camp kitchen products & 100\% & 92\% & 142 rendered results; sample: Ceramic 2-Pot Set Cascade Designs; Camp Cutlery Set Sea to Summit / products: Camp Cutlery Set; Ceramic 2-Pot Set\\
+Tokenization & fly fishing shirt & fly-fishing shirt & 100\% & 0\% & 16 rendered results; sample: Hand Tied Flies T-Shirt Sendero Provisions Co. SAND Color SAND; Men's Div... / no product, collection, query, or page suggestions\\
+Tokenization & stand up paddle board & stand-up paddleboard & 85\% & 62\% & 5 rendered results; sample: 2020 BOTE 11'6" HD Aero FULL TRAX TEAL Color FULL TRAX TEAL; HD Aero 11'6"... / queries: stand up paddle board\\
+Tokenization & water bottle holder & water bottle holder & 85\% & 0\% & 48 rendered results; sample: Freesip Stainless Steel 24 oz Owala CAN YOU SEE ME Color CAN YOU SEE ME C... / no product, collection, query, or page suggestions\\
+Tokenization & fleece snap pullover & fleece snap pullover & 100\% & 97\% & 8 rendered results; sample: Men's Gridback Fleece Snap Pullover Free Fly Apparel DEEP NAVY Color DEEP ... / products: Women's Turpin Fleece Snap Pullover; Men's Gridback Fleece Snap Pullover | queries: snap t f...\\
+Tokenization & insulated water bottle & insulated bottle & 90\% & 0\% & 52 rendered results; sample: Freesip Stainless Steel 24 oz Owala CAN YOU SEE ME Color CAN YOU SEE ME C... / no product, collection, query, or page suggestions\\
+Tokenization & ski bib pants & ski bib pants & 100\% & 0\% & 17 rendered results; sample: Men's Legendary Insulated Ski Pants Helly Hansen 601 WASHED NAVY Color 60... / no product, collection, query, or page suggestions\\
+Tokenization & leather flip flop & leather flip-flop & 100\% & 0\% & 43 rendered results; sample: Men's 302 Leather Flip Rainbow SIERRA BROWN Color SIERRA BROWN DARK BROWN... / no product, collection, query, or page suggestions\\
+Tokenization & cotton pocket tee & cotton pocket tee & 100\% & 0\% & 34 rendered results; sample: Men's Dale 2.0 Pocket T-Shirt johnnie-O HAZE Color HAZE NAVY MALIBLU BAND... / no product, collection, query, or page suggestions\\
+Tokenization & performance jogger women & women performance jogger & 100\% & 92\% & 95 rendered results; sample: Women's Performance Jogger Vuori HMD MIDNIGHT HEATHER Color HMD MIDNIGHT ... / products: Women's Performance Jogger | queries: womens performance jogger\\
+Tokenization & cloud 6 waterproof & On Cloud 6 Waterproof & 100\% & 97\% & 14 rendered results; sample: Men's Cloud 6 Waterproof On Running OLIVE | SAFARI Color OLIVE | SAFARI P... / products: Women's Cloud 6 Waterproof; Men's Cloud 6 Waterproof | queries: cloud 6 geo waterproof\\
+Tokenization & better sweater vest & Patagonia Better Sweater vest & 100\% & 0\% & 20 rendered results; sample: Men's Better Sweater 1/4 Zip Fleece Patagonia OLGG OLD GROWTH GREEN Color... / no product, collection, query, or page suggestions\\
+Tokenization & atlanta braves hat & Atlanta Braves hat & 100\% & 97\% & 42 rendered results; sample: Atlanta Braves Hat | Navy '47 Brand; Atlanta Braves Cooperstown Hat | Roy... / products: Atlanta Braves Cooperstown Hat | Royal; Atlanta Braves Hat | Navy | queries: atlanta braves ...\\
+Tokenization & kayak rental & kayak rental/service intent & 95\% & 0\% & 5 rendered results; sample: Magic Mystic Paddle Ocean Kayak RED FIRE Color RED FIRE; Original Glass Ad... / no product, collection, query, or page suggestions\\
+Synonyms & rain shell & rain jacket/shell & 100\% & 92\% & 70 rendered results; sample: Women's Torrentshell 3L Jacket Patagonia THI THIN ICE Color THI THIN ICE ... / products: Women's Fineline Stretch Shell; Men's Fineline Stretch Shell\\
+Synonyms & puffer jacket & insulated/down jacket & 100\% & 62\% & 73 rendered results; sample: Women's Nano Puff(R) Jacket Patagonia BLK BLACK Color BLK BLACK ELGR ELLWOO... / queries: patagonia nano puffer jacket\\
+Synonyms & waterproof coat & waterproof jacket & 100\% & 0\% & 64 rendered results; sample: Men's Beta Jacket Arc'teryx 022824 SPOTLIGHT Color 022824 SPOTLIGHT BLACK... / no product, collection, query, or page suggestions\\
+Synonyms & insulated jacket & warm jacket & 100\% & 97\% & 153 rendered results; sample: Women's Canyon Insulated Jacket Vuori BNE BONE Color BNE BONE; Men's Ato... / products: Women's Nano Puff(R) Jacket; Women's Silent Down Jacket | queries: radalie insulated jacket; i...\\
+Synonyms & down sweater & down jacket/sweater & 100\% & 97\% & 70 rendered results; sample: Women's Down Sweater(TM) Jacket Patagonia BNLB BARNACLE BLUE Color BNLB BARN... / products: Women's Down Sweater(TM) Vest; Women's Down Sweater(TM) Jacket | queries: womens down sweater\\
+Synonyms & hiking shoes & trail/hiking footwear & 80\% & 73\% & 235 rendered results; sample: Men's Cloudrock Low Waterproof On Running IVORY | IVORY Color IVORY | IV... / products: Men's Cloudrock Low Waterproof; Men's Cloudvista 2\\
+Synonyms & trail shoes & trail running shoes & 85\% & 97\% & 169 rendered results; sample: Women's Lone Peak 9 Altra 315 DUSTY OLIVE Color 315 DUSTY OLIVE 550 PURP... / products: Men's Speedcross 6 Trail Running Shoes; Women's Ghost Trail | collections: Men's Trail Shoes...\\
+Synonyms & sun shirt & UPF/sun protection shirt & 77\% & 97\% & 451 rendered results; sample: Women's Bamboo Lightweight Long Sleeve II Free Fly Apparel SLATE Color S... / products: Men's Capilene(R) Cool Sun Hoody; Men's Capilene(R) Cool Sun Hoody | Fitz Roy Trout | queries: s...\\
+Synonyms & fishing shirt & performance fishing shirt & 100\% & 87\% & 247 rendered results; sample: Men's Tamiami ll Long Sleeve Shirt Columbia 160 FOSSIL Color 160 FOSSIL ... / products: Men's Short-Sleeve Breeze Shirt\\
+Synonyms & camp chair & camping chair & 90\% & 97\% & 191 rendered results; sample: Eclipse | Slate PARKIT; Eclipse | Old Glory PARKIT / products: MoonLite Reclining Camp Chair; Trailhead Camp Chair | queries: camp chairs\\
+Synonyms & camp stool & camp seat/chair & 100\% & 0\% & 163 rendered results; sample: Trailhead Camp Chair YETI NAVY Color NAVY CHARCOAL; MoonLite Reclining C... / no product, collection, query, or page suggestions\\
+Synonyms & cooler bag & soft cooler & 100\% & 62\% & 77 rendered results; sample: YETI Hopper M20 Backpack Soft Cooler BLACK FOREST GREEN Color BLACK FORES... / queries: yeti cooler bag pink\\
+Synonyms & drink tumbler & tumbler/drinkware & 100\% & 0\% & 39 rendered results; sample: Rambler 20 oz Tumbler with Magslider Lid YETI RESCUE RED Color RESCUE RED... / no product, collection, query, or page suggestions\\
+Synonyms & travel backpack & travel pack & 100\% & 97\% & 108 rendered results; sample: Allpa 42L Travel Pack Cotopaxi FATIGUE Color FATIGUE COTOPAXI BLACK; Far... / products: Allpa 35L Travel Pack; Allpa Mini 20L Travel Pack | queries: travel backpack\\
+Synonyms & day pack & daypack/backpack & 100\% & 97\% & 70 rendered results; sample: Refugio Day Pack 26L Patagonia GEMG GEM GREEN Color GEMG GEM GREEN BLSG B... / products: Day Tripper Tote; Refugio Day Pack 32L | queries: refugio day pack\\
+Synonyms & flip flops & sandals & 100\% & 97\% & 92 rendered results; sample: Women's Flirty Braidy Sandal Rainbow RDWD REDWOOD Color RDWD REDWOOD SRBR... / products: Women's Flirty Braidy Sandal; Men's OOahh+ Slide | collections: Rainbow | queries: rainbow f...\\
+Synonyms & sandals & sandals & 100\% & 97\% & 91 rendered results; sample: Women's OOmega OOahh Sandal OOFOS BLACK Color BLACK; Men's Ohana OluKai 3... / products: Women's Flirty Braidy Sandal; Women's Las Flores Sandal | collections: Sandals; Men's Sandal...\\
+Synonyms & fleece jacket & fleece outerwear & 100\% & 92\% & 81 rendered results; sample: Men's Better Sweater 1/4 Zip Fleece Patagonia OLGG OLD GROWTH GREEN Color... / products: Men's Delta Jacket; Women's Chilled Out Full Zip | queries: gridback fleece jacket\\
+Synonyms & pullover sweater & pullover/fleece & 100\% & 92\% & 247 rendered results; sample: Men's Sully 1/4 Zip Pullover johnnie-O HELIOS BLUE Color HELIOS BLUE LAG... / products: Women's Halo Modern Pullover Hoodie; Men's Sully 1/4 Zip Pullover\\
+Synonyms & windbreaker & wind/rain shell & 100\% & 62\% & 78 rendered results; sample: Women's Canyon Insulated Jacket Vuori BNE BONE Color BNE BONE; Men's Atom... / queries: windbreaker liner light\\
+Synonyms & raincoat & rain jacket & 100\% & 0\% & 52 rendered results; sample: Men's Torrentshell 3L Jacket Patagonia SMDB SMOLDER BLUE Color SMDB SMOLD... / no product, collection, query, or page suggestions\\
+Synonyms & water shoes & water footwear & 85\% & 62\% & 223 rendered results; sample: Men's Loyak Astral Buoyancy GRAY | WHITE Color GRAY | WHITE NAVY | BROWN... / queries: water shoes; waterproof shoes\\
+Synonyms & swimsuit & swimwear & 100\% & 92\% & 43 rendered results; sample: Men's Classic Lined Swim Truck 5.5" Chubbies THE OUT OF THE BLUES Color T... / products: Men's Classic Lined Swim Truck 5.5"; Men's Half Elastic 7" Swim Trunks - Freesia\\
+Synonyms & bathing suit & swimwear & 100\% & 92\% & 42 rendered results; sample: Men's All Day Trunk 6" Faherty BEZ BEACH BREEZE STRIPE Color BEZ BEACH BR... / products: Men's Classic Lined Swim Truck 5.5"; Men's Half Elastic 7" Swim Trunks - Freesia\\
+Synonyms & hat & headwear & 90\% & 97\% & 220 rendered results; sample: Women's Darlin Snapback DARLIN' BLACK|CREAM Color BLACK|CREAM RED|CREAM;... / products: Baby Furry Friends Hat; Poncho Hat | collections: Hats; Sun Hats | queries: hats; hat\\
+Ranking And Field Weighting & patagonia womens jacket & Patagonia women jackets & 100\% & 97\% & 109 rendered results; sample: Women's Torrentshell 3L Jacket Patagonia THI THIN ICE Color THI THIN ICE... / products: Women's Nano Puff(R) Jacket; Women's Silent Down Jacket | queries: womens patagonia jacket\\
+Ranking And Field Weighting & vuori joggers women & Vuori women joggers & 100\% & 87\% & 85 rendered results; sample: Women's Performance Jogger Vuori HMD MIDNIGHT HEATHER Color HMD MIDNIGHT ... / products: Women's Performance Jogger\\
+Ranking And Field Weighting & hoka shoes women & HOKA women shoes & 100\% & 97\% & 83 rendered results; sample: Women's Clifton 10 HOKA RMD ROSE CREAM | DRIED ROSE Color RMD ROSE CREAM ... / products: Women's Clifton 10; Women's Speedgoat 7 | queries: womens hoka shoes\\
+Ranking And Field Weighting & yeti rambler tumbler & YETI Rambler tumbler & 100\% & 92\% & 54 rendered results; sample: Rambler 20 oz Tumbler with Magslider Lid YETI RESCUE RED Color RESCUE RED... / products: Rambler 20 oz Tumbler with Magslider Lid; Rambler Jr. 10 oz Tumbler\\
+Ranking And Field Weighting & patagonia mens shorts & Patagonia men shorts & 100\% & 92\% & 117 rendered results; sample: Men's Heritage Stand Up Shorts - 5 In. Patagonia FGE FORGE GREY Color FG... / products: Men's Baggies Shorts - 5in; Men's Heritage Stand Up Shorts - 5 In.\\
+Ranking And Field Weighting & on cloud waterproof women & On Cloud waterproof women & 100\% & 92\% & 88 rendered results; sample: Women's Cloud 6 Waterproof On Running SAND | DESERT Color SAND | DESERT B... / products: Women's Cloud 6 Waterproof; Women's Cloudrock Low Waterproof\\
+Ranking And Field Weighting & free people dress & Free People dress & 85\% & 78\% & 29 rendered results; sample: Women's Hot Shot Mini FP Movement 9055 BLUE ASH Color 9055 BLUE ASH 6694 ... / products: Women's Hot Shot Mini; Women's Hot Shot Mini Skort | queries: free people dress\\
+Ranking And Field Weighting & faherty mens shirt & Faherty men shirt & 100\% & 92\% & 49 rendered results; sample: Men's Cloud Cotton Long Sleeve Henley Faherty LIH LIGHT BLUE HEATHER Colo... / products: Men's Short-Sleeve Movement(TM) Polo Shirt; Men's Legend Sweater Shirt\\
+Ranking And Field Weighting & z supply sweater women & Z Supply women sweater & 100\% & 92\% & 85 rendered results; sample: Women's Tiger's Eye Sweater Z Supply CON COCONUT Color CON COCONUT; Women... / products: Women's Sienna Patriot Sweater; Women's Tiger's Eye Sweater\\
+Ranking And Field Weighting & maui jim sunglasses & Maui Jim sunglasses & 100\% & 92\% & 18 rendered results; sample: The Flats Maui Jim MATTE BLACK W/GREY Color MATTE BLACK W/GREY BLACK W/TO... / products: Men's Castles Polarized Sunglasses; Women's Baby Beach Sunglasses\\
+Ranking And Field Weighting & costa sunglasses men & Costa men sunglasses & 100\% & 0\% & 55 rendered results; sample: Brine II Costa Del Mar MATTE TORTOISE Color MATTE TORTOISE; Middles Costa... / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & johnnie-o polo mens & johnnie-O men polo & 100\% & 97\% & 82 rendered results; sample: Men's Tee Party Polo johnnie-O NAVY Color NAVY WHITE; Men's Featherweight... / products: Men's Featherweight Performance Polo - JO Merica; Men's Atlanta Braves Rally Cap Performance...\\
+Ranking And Field Weighting & spanx pants women & SPANX women pants & 100\% & 92\% & 79 rendered results; sample: Women's AirEssentials Wide Leg Pant SPANX DARK CACAO Color DARK CACAO VER... / products: Women's AirEssentials Wide Leg Pant; Women's AirEssentials Luxe Ankle Pant\\
+Ranking And Field Weighting & arcteryx mens shirt & Arc'teryx men shirt & 100\% & 0\% & 81 rendered results; sample: Men's Skyline Short Sleeve Arc'teryx 002291 BLACK (S26) Color 002291 BLAC... / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & black diamond shell women & Black Diamond women shell & 100\% & 87\% & 4 rendered results; sample: Women's Fineline Stretch Shell Black Diamond 0002 BLACK Color 0002 BLACK 3... / products: Women's Fineline Stretch Shell\\
+Ranking And Field Weighting & birkenstock sandals women & Birkenstock women sandals & 100\% & 78\% & 36 rendered results; sample: Arizona Soft Footbed Suede Leather Birkenstock TAUPE Color TAUPE; Arizona... / products: Arizona Birkibuc; Women's Arizona Big Buckle EVA\\
+Ranking And Field Weighting & teva sandals men & Teva men sandals & 100\% & 0\% & 26 rendered results; sample: Women's Original Universal Teva SDDN SAND DUNE Color SDDN SAND DUNE; Wome... / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & chaco sandals women & Chaco women sandals & 100\% & 92\% & 36 rendered results; sample: Women's Z/Cloud 2 Chaco OCULI SAND Color OCULI SAND; Women's Z/Cloud Chac... / products: Women's ZX2 Classic; Women's Z/Cloud\\
+Ranking And Field Weighting & southern tide polo & Southern Tide polo & 100\% & 0\% & 41 rendered results; sample: Men's Atlanta Braves Tee Party Performance Jersey Polo johnnie-O WHITE SC... / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & atlanta braves womens hat & Atlanta Braves women hat & 100\% & 0\% & 48 rendered results; sample: Atlanta Braves Hat | Navy '47 Brand; Atlanta Braves Cooperstown Hat | Roy... / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & yeti roadie cooler & YETI Roadie cooler & 100\% & 92\% & 54 rendered results; sample: Roadie 15 YETI PATRIOTIC 26 Color PATRIOTIC 26 RIDGELINE BLACK FOREST GRE... / products: Roadie 32; Roadie 15\\
+Ranking And Field Weighting & patagonia capilene shirt & Patagonia Capilene shirt & 100\% & 92\% & 32 rendered results; sample: Men's Capilene(R) Cool Daily Shirt Patagonia SHRX SHORE BLUE - LIGHT SHORE ... / products: Men's Capilene(R) Cool Sun Hoody; Men's Capilene(R) Cool Sun Hoody | Fitz Roy Trout\\
+Ranking And Field Weighting & vuori kore shorts & Vuori Kore shorts & 100\% & 92\% & 52 rendered results; sample: Men's Kore Short - 7 in. Vuori TBL COURT BLUE Color TBL COURT BLUE GGL AG... / products: Men's Kore Short - 7 in.; Men's Kore Short - 5 in\\
+Ranking And Field Weighting & hoka bondi men & HOKA Bondi men & 100\% & 87\% & 7 rendered results; sample: Men's Bondi 9 HOKA STUCCO | GROUT Color STUCCO | GROUT SSTC STARDUST | COS... / products: Men's Bondi 9\\
+Ranking And Field Weighting & on cloudmonster women & On Cloudmonster women & 100\% & 87\% & 22 rendered results; sample: Women's Cloudmonster 3 On Running WHITE | WHITE Color WHITE | WHITE WHITE... / products: Women's Cloudmonster 3\\
+Query Expansion & sun hoodie & sun protective hoodie & 100\% & 97\% & 190 rendered results; sample: Men's Cormac Hoody Arc'teryx 019001 HABITAT Color 019001 HABITAT 020142 ... / products: Men's Capilene(R) Cool Sun Hoody; Men's Capilene(R) Cool Sun Hoody | Fitz Roy Trout | queries: m...\\
+Query Expansion & trail running shirt & technical trail shirt & 90\% & 0\% & 80 rendered results; sample: Men's Cormac Crew Short Sleeve Arc'teryx 019001 HABITAT Color 019001 HABI... / no product, collection, query, or page suggestions\\
+Query Expansion & hiking outfit women & women hiking apparel & 95\% & 0\% & 348 rendered results; sample: Women's Energy Top Vuori FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER... / no product, collection, query, or page suggestions\\
+Query Expansion & camping gifts & camping gift items & 90\% & 87\% & 271 rendered results; sample: Camp Cutlery Set Sea to Summit; Heliad 15L Backpack Arc'teryx 022632 REE... / products: Fifty Places to Camp Before You Die\\
+Query Expansion & beach cover up & women beach cover-up & 80\% & 0\% & 20 rendered results; sample: The Neso Grande Tent PERIWINKLE Color PERIWINKLE; Women's Southshore OluK... / no product, collection, query, or page suggestions\\
+Query Expansion & hot weather hiking shirt & warm-weather hiking shirt & 90\% & 0\% & 82 rendered results; sample: Women's Elevate Lightweight Tee Free Fly Apparel SEA PINE Color SEA PINE ... / no product, collection, query, or page suggestions\\
+Query Expansion & rain gear women & women rain gear & 100\% & 62\% & 124 rendered results; sample: Women's Torrentshell 3L Pants - Short Patagonia BLK BLACK Color BLK BLAC... / queries: womens rain gear\\
+Query Expansion & cold weather jacket & warm jacket & 100\% & 0\% & 130 rendered results; sample: Women's Alta Down Jacket Vuori CLB CRYSTAL BLUE Color CLB CRYSTAL BLUE B... / no product, collection, query, or page suggestions\\
+Query Expansion & travel pants women & women travel pants & 100\% & 0\% & 175 rendered results; sample: Women's Ferrosi Pants Outdoor Research 2288 RANGER GREEN Color 2288 RANG... / no product, collection, query, or page suggestions\\
+Query Expansion & lightweight backpack & lightweight pack & 100\% & 0\% & 108 rendered results; sample: Daylite Osprey Packs NIGHT SHIFT BLUE Color NIGHT SHIFT BLUE TAN CONCRET... / no product, collection, query, or page suggestions\\
+Query Expansion & summer camp clothes & summer camp apparel & 75\% & 0\% & 290 rendered results; sample: Women's Elevate Lightweight Hoodie Free Fly Apparel STORM CLOUD Color ST... / no product, collection, query, or page suggestions\\
+Query Expansion & lake day outfit & lake apparel/accessories & 0\% & 0\% & Rendered search produced zero results. / no product, collection, query, or page suggestions\\
+Query Expansion & paddle board gear & paddleboard gear & 90\% & 0\% & 12 rendered results; sample: 2020 BOTE 11'6" HD Aero FULL TRAX TEAL Color FULL TRAX TEAL; HD Aero 11'6... / no product, collection, query, or page suggestions\\
+Query Expansion & ski trip jacket & ski jacket & 100\% & 0\% & 46 rendered results; sample: Women's Alphelia Lifaloft Jacket Helly Hansen 403 SEAFOAM Color 403 SEAFO... / no product, collection, query, or page suggestions\\
+Query Expansion & dog walk jacket & casual walking jacket & 100\% & 0\% & 30 rendered results; sample: Women's Canyon Insulated Jacket Vuori BNE BONE Color BNE BONE; Men's Sund... / no product, collection, query, or page suggestions\\
+Query Expansion & pickleball dress & active dress & 0\% & 0\% & Rendered search produced zero results. / no product, collection, query, or page suggestions\\
+Query Expansion & running hat women & women running hat & 100\% & 0\% & 171 rendered results; sample: Women's Capistrano Crushable Hat Carve Designs NATURAL Color NATURAL; Wo... / no product, collection, query, or page suggestions\\
+Query Expansion & fly fishing gear & fly fishing gear & 95\% & 0\% & 46 rendered results; sample: Fifty Places To Fly Fish Before You Die Abrams; Hand Tied Flies T-Shirt S... / no product, collection, query, or page suggestions\\
+Query Expansion & weekend travel bag & travel duffel/bag & 100\% & 0\% & 64 rendered results; sample: Black Hole Duffel 55L Patagonia NGRY NOBLE GREY Color NGRY NOBLE GREY BOB... / no product, collection, query, or page suggestions\\
+Query Expansion & work from home joggers & comfortable joggers & 100\% & 0\% & 19 rendered results; sample: Men's Ponto Performance Jogger Vuori HHS SANGRIA HEATHER Color HHS SANGRI... / no product, collection, query, or page suggestions\\
+Query Expansion & game day hat & team hat & 100\% & 0\% & 156 rendered results; sample: Men's Hydro A-Game Links Drive Baseball Cap melin SKY|LT GREY Color SKY|... / no product, collection, query, or page suggestions\\
+Query Expansion & fathers day gift & gift products & 0\% & 62\% & Rendered search produced zero results. / collections: Father's Day Gift Guide; Father's Day Gifts Under \$50\\
+Query Expansion & mothers day gift & gift products & unverified & 62\% & null rendered results; sample: Waddles Duck Mon Ami / collections: Mother's Day Gift Guide; Top Mother's Day Gifts\\
+Query Expansion & gift under 50 & budget gift & 95\% & 62\% & 2 rendered results; sample: High Country Outfitters Digital Gift Card From; Rambler 20oz Cocktail Shak... / collections: Father's Day Gifts Under \$50; Mother's Day Gifts Under \$50\\
+Query Expansion & airport travel outfit & travel apparel & 80\% & 0\% & 11 rendered results; sample: Men's Cloud 6 Coast On Running IVORY | OLIVE Color IVORY | OLIVE ZODIAC |... / no product, collection, query, or page suggestions\\
+Document Enrichment & UPF shirt women & women UPF shirt & 95\% & 87\% & 415 rendered results; sample: Women's Energy Top Vuori FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER... / products: Everyday Performance Sun Shirt UPF 50+ Dry Lite\\
+Document Enrichment & fleece pullover women & women fleece pullover & 100\% & 87\% & 158 rendered results; sample: Women's Turpin Fleece Snap Pullover Stio; Women's Cal Sweater Beach Riot... / products: Women's Turpin Fleece Snap Pullover\\
+Document Enrichment & waterproof breathable jacket & waterproof breathable jacket & 100\% & 0\% & 67 rendered results; sample: Men's Torrentshell 3L Jacket Patagonia SMDB SMOLDER BLUE Color SMDB SMOLD... / no product, collection, query, or page suggestions\\
+Document Enrichment & quick dry shorts & quick-dry shorts & 100\% & 0\% & 158 rendered results; sample: Women's Daily Speed Short 2.5" Vuori RVB RIVIERA BLUE Color RVB RIVIERA ... / no product, collection, query, or page suggestions\\
+Document Enrichment & moisture wicking shirt & moisture-wicking shirt & 80\% & 0\% & 370 rendered results; sample: Men's Long Sleeve Strato Tech Tee Vuori HPB POOL BLUE HEATHER Color HPB ... / no product, collection, query, or page suggestions\\
+Document Enrichment & polarized sunglasses & polarized sunglasses & 80\% & 97\% & 193 rendered results; sample: The OGs Goodr TOASTED MARSHMELLOW MAGIC Color TOASTED MARSHMELLOW MAGIC ... / products: Hundo Polarized Sunglasses; Women's Cruise Polarized Sunglasses | queries: polarized sunglas...\\
+Document Enrichment & insulated tumbler & insulated tumbler & 100\% & 0\% & 54 rendered results; sample: Rambler 20 oz Tumbler with Magslider Lid YETI RESCUE RED Color RESCUE RED... / no product, collection, query, or page suggestions\\
+Document Enrichment & gore tex jacket & GORE-TEX jacket & 100\% & 0\% & 16 rendered results; sample: Men's Beta AR Jacket Arc'teryx SOLITUDE | VOID Color SOLITUDE | VOID BLAC... / no product, collection, query, or page suggestions\\
+Document Enrichment & recycled polyester fleece & recycled fleece & 95\% & 0\% & 26 rendered results; sample: Men's Better Sweater 1/4 Zip Fleece Patagonia OLGG OLD GROWTH GREEN Color... / no product, collection, query, or page suggestions\\
+Document Enrichment & merino wool socks & merino socks & 100\% & 62\% & 60 rendered results; sample: Women's Run Targeted Cushion Low Ankle Socks Smartwool MEDIUM GRAY Color ... / queries: womens merino wool socks smartwool\\
+Document Enrichment & vegan leather sandals & vegan leather sandals & 100\% & 0\% & 42 rendered results; sample: Women's Tubular Lily Sandal TKEES KELLY GREEN Color KELLY GREEN CITRA; Wo... / no product, collection, query, or page suggestions\\
+Document Enrichment & adjustable strap hat & adjustable hat & 100\% & 0\% & 163 rendered results; sample: UPF 50+ Lifeguard Straw Hat Hemlock SOLID BLACK Color SOLID BLACK STARS ... / no product, collection, query, or page suggestions\\
+Document Enrichment & zippered pocket shorts & zip pocket shorts & 100\% & 0\% & 67 rendered results; sample: Women's Pull-On Breeze Short Free Fly Apparel PACIFIC BLUE Color PACIFIC ... / no product, collection, query, or page suggestions\\
+Document Enrichment & packable jacket & packable jacket & 100\% & 62\% & 89 rendered results; sample: Women's Torrentshell 3L Jacket Patagonia THI THIN ICE Color THI THIN ICE ... / queries: packable jacket\\
+Document Enrichment & lightweight rain jacket & lightweight rain jacket & 100\% & 0\% & 86 rendered results; sample: Men's Torrentshell 3L Jacket Patagonia SMDB SMOLDER BLUE Color SMDB SMOLD... / no product, collection, query, or page suggestions\\
+Document Enrichment & water resistant backpack & water-resistant backpack & 100\% & 0\% & 56 rendered results; sample: Heliad 15L Backpack Arc'teryx 022632 REEF Color 022632 REEF 022615 MANTIS... / no product, collection, query, or page suggestions\\
+Document Enrichment & odor resistant shirt & odor-resistant shirt & 90\% & 0\% & 72 rendered results; sample: Men's Cormac Crew Short Sleeve Arc'teryx 019001 HABITAT Color 019001 HABI... / no product, collection, query, or page suggestions\\
+Document Enrichment & wide brim sun hat & wide-brim sun hat & 100\% & 0\% & 39 rendered results; sample: UPF 50+ Lifeguard Straw Hat Hemlock SOLID BLACK Color SOLID BLACK STARS A... / no product, collection, query, or page suggestions\\
+Document Enrichment & high rise leggings & high-rise leggings & 100\% & 92\% & 80 rendered results; sample: Women's SPANXsmooth(TM) OnForm Full-Length Leggings VERY BLACK Color VERY BL... / products: Women's Fiona Super High Rise Wide Leg Jeans; Women's Audrey High Rise Wide Leg Cropped Jeans\\
+Document Enrichment & compression shorts women & women compression shorts & 100\% & 0\% & 162 rendered results; sample: Women's Carpe Diem Shorts FP Movement 4166 LIGHT COBALT Color 4166 LIGHT... / no product, collection, query, or page suggestions\\
+Document Enrichment & non slip sandals & non-slip sandals & 85\% & 0\% & 47 rendered results; sample: Women's 301 Leather Flip Rainbow DARK BROWN Color DARK BROWN SIERRA BROWN... / no product, collection, query, or page suggestions\\
+Document Enrichment & machine washable dress & washable dress & 100\% & 0\% & 19 rendered results; sample: Women's Hot Shot Mini Dress FP Movement 1100 WHITE Color 1100 WHITE 0010 ... / no product, collection, query, or page suggestions\\
+Document Enrichment & ripstop pants & ripstop pants & 90\% & 0\% & 107 rendered results; sample: Men's No Sweat Relaxed Taper DUER CAMEL Color CAMEL CANTEEN NAVY DESERT ... / no product, collection, query, or page suggestions\\
+Document Enrichment & stretchy hiking pants & stretch hiking pants & 100\% & 0\% & 92 rendered results; sample: Men's Quandary Pant - Regular Patagonia FGE FORGE GREY Color FGE FORGE GR... / no product, collection, query, or page suggestions\\
+Document Enrichment & breathable trail shirt & breathable trail shirt & 100\% & 0\% & 147 rendered results; sample: Men's Ionia Merino Wool Shirt Arc'teryx 018159 SOLITUDE HEATHER Color 01... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & chaqueta lluvia mujer & women rain jacket in Spanish & 100\% & 0\% & 16 rendered results; sample: Women's Canyon Insulated Jacket Vuori BNE BONE Color BNE BONE; Women's To... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & botas senderismo & hiking boots in Spanish & 85\% & 0\% & 14 rendered results; sample: Men's Cloudrock Mid Waterproof On Running GLACIER | ALLOY Color GLACIER |... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & camisa manga larga & long-sleeve shirt in Spanish & 100\% & 0\% & 114 rendered results; sample: Men's Long Sleeve Ace Button Down Vuori INK INK Color INK INK; Men's Ori... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & sombrero sol & sun hat in Spanish & 100\% & 0\% & 24 rendered results; sample: Floppy Sun Hat Faherty 204 CHOCOLATE Color 204 CHOCOLATE 107 NATURAL; Min... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & zapatos trail mujer & women trail shoes mixed Spanish/English & 100\% & 0\% & 3 rendered results; sample: Women's Lone Peak 9 Altra 315 DUSTY OLIVE Color 315 DUSTY OLIVE 550 PURPLE... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & mochila viaje & travel backpack in Spanish & 100\% & 0\% & 29 rendered results; sample: Farpoint(TM) 40 Travel Pack Osprey Packs ANTIQUE BLUE Color ANTIQUE BLUE SAW... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & sandalias mujer & women sandals in Spanish & 100\% & 0\% & 18 rendered results; sample: Women's Las Flores Sandal Rainbow DARK BROWN Color DARK BROWN SIERRA BROW... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & ropa mujer & women clothing in Spanish & 0\% & 0\% & Rendered search produced zero results. / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & impermeable mujer & women rainwear in Spanish & 100\% & 0\% & 27 rendered results; sample: Women's Cloud 6 Waterproof On Running SAND | DESERT Color SAND | DESERT B... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & gorra braves & Braves cap in Spanish & 100\% & 0\% & 8 rendered results; sample: Atlanta Braves Hat | Navy '47 Brand; Men's Atlanta Braves Rally Cap Perfor... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & silla camping & camp chair in Spanish/English mix & 100\% & 0\% & 23 rendered results; sample: MoonLite Reclining Camp Chair Nemo BLACK PEARL Color BLACK PEARL QUICKSIL... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & kayak renta & kayak rental in Spanish/English mix & 95\% & 0\% & 3 rendered results; sample: Magic Mystic Paddle Ocean Kayak RED FIRE Color RED FIRE; Original Glass Ad... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & camiseta patagonia hombre & men Patagonia shirt in Spanish & 100\% & 0\% & 24 rendered results; sample: Men's Better Sweater 1/4 Zip Fleece Patagonia OLGG OLD GROWTH GREEN Color... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & tenis hoka mujer & women HOKA shoes in Spanish & 100\% & 0\% & 5 rendered results; sample: Women's Clifton 10 HOKA RMD ROSE CREAM | DRIED ROSE Color RMD ROSE CREAM |... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & bolsa viaje & travel bag in Spanish & 100\% & 0\% & 55 rendered results; sample: Black Hole Duffel 55L Patagonia NGRY NOBLE GREY Color NGRY NOBLE GREY BOB... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & pantalon senderismo mujer & women hiking pants in Spanish & 100\% & 0\% & 18 rendered results; sample: Women's Miles Ankle Pant Vuori BHR BLUE HERON Color BHR BLUE HERON CER CE... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & chamarra lluvia hombre & men rain jacket in Spanish & 95\% & 0\% & 2 rendered results; sample: Men's Torrentshell 3L Jacket Patagonia SMDB SMOLDER BLUE Color SMDB SMOLDE... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & playera manga larga & long-sleeve tee in Spanish & 100\% & 0\% & 87 rendered results; sample: Men's Long Sleeve Strato Tech Tee Vuori HPB POOL BLUE HEATHER Color HPB P... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & short pesca & fishing shorts bilingual & 100\% & 0\% & 13 rendered results; sample: Women's Barely Baggies Shorts - 2 1/2 in Patagonia TCLN TROPICLIMB| NEW N... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & traje de bano mujer & women swimwear in Spanish & unverified & 0\% & null rendered results; sample: Men's The Classic Trunk - 5.5 in Chubbies THE MERICAS Color THE MERICAS / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & lentes de sol & sunglasses in Spanish & 0\% & 0\% & Rendered search produced zero results. / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & chaqueta fleece mujer & women fleece jacket bilingual & 100\% & 0\% & 18 rendered results; sample: Women's Marlene Confetti Jacket UGG COLA Color COLA WHITE PEPPER; Women's... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & camisa upf mujer & women UPF shirt bilingual & 95\% & 0\% & 2 rendered results; sample: Women's Energy Tee Vuori LZH LILAC BREEZE HEATHER Color LZH LILAC BREEZE H... / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & zapatos caminar hombre & men walking shoes in Spanish & 0\% & 0\% & Rendered search produced zero results. / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & regalo camping & camping gift in Spanish/English mix & 85\% & 0\% & 57 rendered results; sample: Heliad 15L Backpack Arc'teryx 022632 REEF Color 022632 REEF 022615 MANTIS... / no product, collection, query, or page suggestions\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Competitors}
+\ReportFooter
+\ReportSection{Reference E: Same-Query Competitor Benchmark}
+\ReportBody{The same 175 protected shopper-language examples were run against the usable competitor sites. This lets the framework compare performance by query type instead of relying on a small competitor sample. High Country includes rendered search and autocomplete. Competitors include rendered search and public suggest autocomplete only where a public endpoint returned usable JSON.}\par
+\vspace{0.06in}
+{\fontsize{6.5}{7.7}\selectfont
+\setlength{\tabcolsep}{1.55pt}
+\begin{longtable}{@{}L{0.17\linewidth}R{0.09\linewidth}R{0.09\linewidth}R{0.09\linewidth}R{0.10\linewidth}R{0.10\linewidth}R{0.10\linewidth}R{0.10\linewidth}@{}}
+\toprule
+\textbf{Query type} & \textbf{HCO search} & \textbf{HCO auto} & \textbf{HCO uniform} & \textbf{Half-Moon search} & \textbf{Half-Moon auto} & \textbf{Mast search} & \textbf{Mast auto}\\
+\midrule
+\endhead
+Normalization & 99\% & 82\% & 84\% & 99\% & 75\% & 84\% & 71\%\\
+Tokenization & 97\% & 48\% & 48\% & 100\% & 45\% & 83\% & 42\%\\
+Synonyms & 96\% & 74\% & 64\% & 99\% & 66\% & 82\% & 68\%\\
+Ranking And Field Weighting & 99\% & 72\% & 80\% & 98\% & 52\% & 86\% & 48\%\\
+Query Expansion & 83\% & 17\% & 8\% & 99\% & 9\% & 86\% & 4\%\\
+Document Enrichment & 97\% & 19\% & 16\% & 99\% & 19\% & 83\% & 25\%\\
+Spanish/Bilingual Discovery & 86\% & 0\% & 0\% & 98\% & 0\% & 85\% & 0\%\\
+\bottomrule
+\end{longtable}
+}
+\vspace{0.08in}
+{\fontsize{7.1}{8.4}\selectfont
+\begin{tabularx}{\linewidth}{@{}L{0.25\linewidth}R{0.10\linewidth}R{0.12\linewidth}R{0.12\linewidth}R{0.14\linewidth}N@{}}
+\toprule
+\textbf{Site} & \textbf{Queries} & \textbf{Search usable} & \textbf{Search avg} & \textbf{Auto comparable} & \textbf{Auto avg}\\
+\midrule
+Mast General Store & 175 & 175 & 84\% & 175 & 37\%\\
+Half-Moon Outfitters & 175 & 175 & 99\% & 175 & 38\%\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.08in}
+\ReportFine{Competitor autocomplete is marked unverified when the public suggest endpoint is unavailable, blocked, or not JSON. That is a data-capture and public-access limit, not a conclusion that the competitor has no autocomplete UI.}
+
+\newpage
+\ReportPageHeader{Reference: Competitor Dataset}
+\ReportFooter
+\ReportSection{Reference F: Full Competitor Same-Query Dataset}
+\ReportBody{These rows preserve the same-query competitor rerun. The search score is a bounded public-evidence proxy from rendered access, product-like links, query-term matches, and page text. It is not a calibrated relevance judgment or a paid/organic ranking claim.}\par
+\vspace{0.06in}
+{\fontsize{5.9}{7.0}\selectfont
+\setlength{\tabcolsep}{1.35pt}
+\begin{longtable}{@{}L{0.13\linewidth}L{0.15\linewidth}L{0.15\linewidth}R{0.08\linewidth}R{0.08\linewidth}R{0.07\linewidth}L{0.26\linewidth}@{}}
+\toprule
+\textbf{Site} & \textbf{Query type} & \textbf{Query} & \textbf{Search} & \textbf{Auto} & \textbf{Links} & \textbf{Evidence note}\\
+\midrule
+\endhead
+Mast General Store & Normalization & womens rain jacket & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Columbia Women's Arcadia II Rain Jacket; Marmot Women's Superalloy Bio R...\\
+Mast General Store & Normalization & mens patagonia fleece & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Normalization & womens hoka shoes & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: HOKA Women's Transport GTX Shoes; HOKA Women's Clifton 10 Shoes | querie...\\
+Mast General Store & Normalization & mens hiking boots & 100\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: KEEN Men's Targhee IV Mid Waterproof Hiking Boots; KEEN Men's Targhee IV...\\
+Mast General Store & Normalization & womens sandals & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Teva Women's Hurricane Ampsole Gaila Sandals; Pikolinos Women's Palma Sa...\\
+Mast General Store & Normalization & kids rain jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Normalization & patagonia womens jacket & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Women's Torrentshell 3L Rain Jacket\\
+Mast General Store & Normalization & vuori womens joggers & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Normalization & yeti coolers & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: YETI Camino 20 Carry All Tote Bag; YETI Ice - 2 pound | queries: yeti co...\\
+Mast General Store & Normalization & braves hats & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Normalization & camp chairs & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Kelty Low-Loveseat Nest Camp Chair\\
+Mast General Store & Normalization & rain jackets & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: L.L.Bean Toddler Discovery Rain Jacket; Patagonia Men's Torrentshell 3L ...\\
+Mast General Store & Normalization & sun hoodies & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Free Fly Men's Bamboo Hybrid Sun Hoodie; Columbia Women's PFG Wild Cast ...\\
+Mast General Store & Normalization & long sleeve shirts & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Wrangler Men's Mixed Material Long Sleeve Shirt; Mast Store Outfitters S...\\
+Mast General Store & Normalization & quarter zip pullover & 92\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Birddogs Men's Super Soft Quarter Zip Pullover; Duck Head Men's Dunmore ...\\
+Mast General Store & Normalization & womens upf shirt & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Marmot Women's AirExchange UPF 40 Long Sleeve Shirt; Marmot Women's AirE...\\
+Mast General Store & Normalization & mens swim trunks & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Normalization & girls sandals & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Normalization & boys fishing shirt & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Columbia Boys' Toddler PFG Terminal Tackle Fish Flag Long Sleeve Shirt; ...\\
+Mast General Store & Normalization & fleece pullovers & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Women's Lightweight Synchilla Snap-T Fleece Pullover | queries...\\
+Mast General Store & Normalization & womens fleece & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: L.L.Bean Women's Mountain Classic Fleece Vest; Patagonia Women's Lightwe...\\
+Mast General Store & Normalization & mens shorts & 92\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: L.L.Bean Men's Everyday Poplin Shorts; Birddogs Men's Khaki Lined Shorts...\\
+Mast General Store & Normalization & kids hats & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Kids' Logo Trucker Hat; Andes Gifts Kids' Adventure Goat Hat\\
+Mast General Store & Normalization & travel packs & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Osprey Fairview 40 Travel Backpack; Osprey AirPorter Travel Cover - Medium\\
+Mast General Store & Normalization & hoka shoe & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: HOKA Women's Transport GTX Shoes; HOKA Women's Clifton 10 Shoes | querie...\\
+Mast General Store & Tokenization & long sleeve shirt & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Wrangler Men's Mixed Material Long Sleeve Shirt; Mast Store Outfitters S...\\
+Mast General Store & Tokenization & 1/4 zip pullover & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & quarter zip pullover & 92\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Birddogs Men's Super Soft Quarter Zip Pullover; Duck Head Men's Dunmore ...\\
+Mast General Store & Tokenization & button down shirt & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: AFTCO Men's Boatbar Button Down Shirt; Aftco Men's Boatbar Button Down S...\\
+Mast General Store & Tokenization & short sleeve tee & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Mast General Store Battle of Wits Short Sleeve T-Shirt; Sweet Memories B...\\
+Mast General Store & Tokenization & sun protection shirt & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & rain shell jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & waterproof hiking boot & 92\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: KEEN Kids' Hightrail Waterproof Mid Hiking Boots; KEEN Kids' Hightrail W...\\
+Mast General Store & Tokenization & trail running shoe & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Teva Women's Hurricane Trailsetter Trail Running Shoes; Altra Women's Lo...\\
+Mast General Store & Tokenization & packable rain jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & wide brim hat & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Sun N Sand Women's Paper Braid Wide Brim Sun Hat | queries: hats wide br...\\
+Mast General Store & Tokenization & camp kitchen set & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & fly fishing shirt & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & stand up paddle board & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & water bottle holder & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & fleece snap pullover & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Women's Lightweight Synchilla Snap-T Fleece Pullover | queries...\\
+Mast General Store & Tokenization & insulated water bottle & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Klean Kanteen 12-Ounce TKWide Insulated Water Bottle with Twist Cap; Kle...\\
+Mast General Store & Tokenization & ski bib pants & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & leather flip flop & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: KEEN Women's Waimea Leather Flip-Flops; Chaco Women's Lowdown Leather Fl...\\
+Mast General Store & Tokenization & cotton pocket tee & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & performance jogger women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & cloud 6 waterproof & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: On Women's Cloud 6 Waterproof Shoes; On Men's Cloud 6 Waterproof Shoes |...\\
+Mast General Store & Tokenization & better sweater vest & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & atlanta braves hat & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Tokenization & kayak rental & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & rain shell & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & puffer jacket & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: L.L.Bean Men's Utility Puffer Jacket\\
+Mast General Store & Synonyms & waterproof coat & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & insulated jacket & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Puffin Drinkwear The Skiff Insulated Drink Jacket; Puffin Drinkwear The ...\\
+Mast General Store & Synonyms & down sweater & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Men's Down Sweater Jacket; Patagonia Men's Down Sweater Jacket\\
+Mast General Store & Synonyms & hiking shoes & 92\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Lems Men's Trail Thrasher Hiking Shoes; On Women's Cloudhorizon Hiking S...\\
+Mast General Store & Synonyms & trail shoes & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Lems Men's Trail Thrasher Hiking Shoes; Lems Men's Trail Blazer Hiking S...\\
+Mast General Store & Synonyms & sun shirt & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Men's Short-Sleeved Self-Guided Sun Shirt; Patagonia Men's Sho...\\
+Mast General Store & Synonyms & fishing shirt & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Life is Good Men's Fish Flag Short Sleeve Crusher T-Shirt; Beach \& Barn ...\\
+Mast General Store & Synonyms & camp chair & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Kelty Low-Loveseat Nest Camp Chair | queries: camp chair\\
+Mast General Store & Synonyms & camp stool & 82\% & 62\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / queries: camp stool\\
+Mast General Store & Synonyms & cooler bag & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: YETI Camino 20 Carry All Tote Bag; YETI Daytrip 20 Liter Insulated Tote Bag\\
+Mast General Store & Synonyms & drink tumbler & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & travel backpack & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Osprey Fairview 40 Travel Backpack; Osprey Farpoint 40 Travel Backpack |...\\
+Mast General Store & Synonyms & day pack & 82\% & 62\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / collections: Backpacks - Day Packs | queries: day packs\\
+Mast General Store & Synonyms & flip flops & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Chaco Women's Classic Flip Flops; Chaco Women's Classic Flip Flops | que...\\
+Mast General Store & Synonyms & sandals & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Teva Women's Hurricane Ampsole Gaila Sandals; Birkenstock Kids' Arizona ...\\
+Mast General Store & Synonyms & fleece jacket & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Columbia Women's Benton Springs Full Zip Fleece Jacket - Curvy | collect...\\
+Mast General Store & Synonyms & pullover sweater & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & windbreaker & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & raincoat & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Puffin Drinkwear The Raincoat Insulated Drink Jacket | queries: raincoat\\
+Mast General Store & Synonyms & water shoes & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Astral Men's Brewer 3.0 Water Shoes; Astral Women's Brewer 3.0 Water Sho...\\
+Mast General Store & Synonyms & swimsuit & 82\% & 62\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / queries: mens swimsuits\\
+Mast General Store & Synonyms & bathing suit & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Synonyms & hat & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Legacy Hats NC State Outline Trucker Hat; Legacy Hats Fish NC Flag Truck...\\
+Mast General Store & Ranking And Field Weighting & patagonia womens jacket & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Women's Torrentshell 3L Rain Jacket\\
+Mast General Store & Ranking And Field Weighting & vuori joggers women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & hoka shoes women & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: HOKA Women's Transport GTX Shoes; HOKA Women's Clifton 10 Shoes | querie...\\
+Mast General Store & Ranking And Field Weighting & yeti rambler tumbler & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: YETI Rambler Tumbler Straw Lid - 20 Ounce; YETI Rambler Tumbler Straw Li...\\
+Mast General Store & Ranking And Field Weighting & patagonia mens shorts & 92\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Men's Outdoor Everyday Shorts - 6 Inch; Patagonia Men's Outdoo...\\
+Mast General Store & Ranking And Field Weighting & on cloud waterproof women & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: On Women's Cloud 6 Waterproof Shoes\\
+Mast General Store & Ranking And Field Weighting & free people dress & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & faherty mens shirt & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & z supply sweater women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & maui jim sunglasses & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Maui Jim Punikai Polarized Sunglasses; Maui Jim Cheetah 5 Polarized Sung...\\
+Mast General Store & Ranking And Field Weighting & costa sunglasses men & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & johnnie-o polo mens & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & spanx pants women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & arcteryx mens shirt & 100\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & black diamond shell women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & birkenstock sandals women & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Birkenstock Women's Arizona Crosstown Sandals; Birkenstock Women's Mayar...\\
+Mast General Store & Ranking And Field Weighting & teva sandals men & 92\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Teva Men's Hurricane XLT3 Sandals; Teva Men's Hurricane Flip Sandals\\
+Mast General Store & Ranking And Field Weighting & chaco sandals women & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Chaco Women's Lowdown Strappy Sandal; Chaco Women's Z/1 Adjustable Strap...\\
+Mast General Store & Ranking And Field Weighting & southern tide polo & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & atlanta braves womens hat & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & yeti roadie cooler & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: YETI Roadie 8 Hard Cooler\\
+Mast General Store & Ranking And Field Weighting & patagonia capilene shirt & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Women's Capilene Cool Daily Shirt - Trailcheck; Patagonia Wome...\\
+Mast General Store & Ranking And Field Weighting & vuori kore shorts & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Ranking And Field Weighting & hoka bondi men & 92\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: HOKA Men's Bondi 9 Shoes | queries: hoka mens bondi 9 shoes\\
+Mast General Store & Ranking And Field Weighting & on cloudmonster women & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: On Women's Cloudmonster 2 Running; On Women's Cloudmonster 3 Running Shoes\\
+Mast General Store & Query Expansion & sun hoodie & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Free Fly Men's Bamboo Hybrid Sun Hoodie; Columbia Women's PFG Wild Cast ...\\
+Mast General Store & Query Expansion & trail running shirt & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & hiking outfit women & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & camping gifts & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & beach cover up & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & hot weather hiking shirt & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & rain gear women & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & cold weather jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & travel pants women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & lightweight backpack & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & summer camp clothes & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & lake day outfit & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & paddle board gear & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & ski trip jacket & 87\% & 0\% & 2 & 2 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store Pr... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & dog walk jacket & 77\% & 0\% & 2 & 2 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store Pr... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & pickleball dress & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & running hat women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & fly fishing gear & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & weekend travel bag & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & work from home joggers & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & game day hat & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & fathers day gift & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & mothers day gift & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & gift under 50 & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Query Expansion & airport travel outfit & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & UPF shirt women & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Marmot Women's AirExchange UPF 40 Long Sleeve Shirt; Marmot Women's AirE...\\
+Mast General Store & Document Enrichment & fleece pullover women & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Patagonia Women's Lightweight Synchilla Snap-T Fleece Pullover\\
+Mast General Store & Document Enrichment & waterproof breathable jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & quick dry shorts & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & moisture wicking shirt & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & polarized sunglasses & 82\% & 97\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Zeal Optics Kittredge Polarized Sunglasses; Zeal Optics Decker Polarized...\\
+Mast General Store & Document Enrichment & insulated tumbler & 82\% & 92\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Klean Kanteen 16-Ounce TKWide Insulated Coffee Tumbler with Café Cap | q...\\
+Mast General Store & Document Enrichment & gore tex jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & recycled polyester fleece & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & merino wool socks & 92\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Socksmith Ride On Ride On Ride On Merino Wool Crew Socks\\
+Mast General Store & Document Enrichment & vegan leather sandals & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & adjustable strap hat & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & zippered pocket shorts & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & packable jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & lightweight rain jacket & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & water resistant backpack & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & odor resistant shirt & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & wide brim sun hat & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Sun N Sand Women's Paper Braid Wide Brim Sun Hat\\
+Mast General Store & Document Enrichment & high rise leggings & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & compression shorts women & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & non slip sandals & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & machine washable dress & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & ripstop pants & 82\% & 87\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / products: Old Ranch Women's Harris Cotton Ripstop Wide Leg Pants\\
+Mast General Store & Document Enrichment & stretchy hiking pants & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Document Enrichment & breathable trail shirt & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & chaqueta lluvia mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & botas senderismo & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & camisa manga larga & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & sombrero sol & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & zapatos trail mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & mochila viaje & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & sandalias mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & ropa mujer & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & impermeable mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & gorra braves & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & silla camping & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & kayak renta & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & camiseta patagonia hombre & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & tenis hoka mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & bolsa viaje & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & pantalon senderismo mujer & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & chamarra lluvia hombre & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & playera manga larga & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & short pesca & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & traje de bano mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & lentes de sol & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & chaqueta fleece mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & camisa upf mujer & 82\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & zapatos caminar hombre & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Mast General Store & Spanish/Bilingual Discovery & regalo camping & 92\% & 0\% & 10 & 10 product-like links; sample: Digital Gift Card - Up to 24 Hours for Delivery; Mast Store P... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Normalization & womens rain jacket & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for WomenPatagoni... / products: The North Face Alta Vista Rain Jacket for Women; L.L.Bean Trail Model Ra...\\
+Half-Moon Outfitters & Normalization & mens patagonia fleece & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Patagonia Retro Pile Fleece Jacket for MenPatagoni... / products: Patagonia Better Sweater Fleece Jacket for Men; Patagonia R1 Fleece Pull...\\
+Half-Moon Outfitters & Normalization & womens hoka shoes & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Hoka Transport Shoes for WomenHoka; Quick view Hok... / products: Hoka Challenger 8 Shoes for Women; Hoka Clifton 10 Shoes for Women\\
+Half-Moon Outfitters & Normalization & mens hiking boots & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Altra Lone Peak 9 Mid Shoes for MenAltra; Quick vi... / products: Keen Hightrail Waterproof Hiking Boot for Men; Keen Targhee IV Waterproo...\\
+Half-Moon Outfitters & Normalization & womens sandals & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Rainbow Single Layer Premier Leather with Arch Sup... / products: Olukai Ohana Sandals for Women; Rainbow Flirty Braidy Single Layer Premi...\\
+Half-Moon Outfitters & Normalization & kids rain jacket & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view L.L.Bean Trail Model Rain Jacket for KidsL.L.Bean;... / products: L.L.Bean Trail Model Rain Jacket for Kids | queries: kids rain jacket\\
+Half-Moon Outfitters & Normalization & patagonia womens jacket & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for WomenPatagoni... / products: Patagonia Torrentshell 3L Jacket for Women; Patagonia Down Sweater Jacke...\\
+Half-Moon Outfitters & Normalization & vuori womens joggers & 95\% & 0\% & 7 & 7 product-like links; sample: Quick view Free Fly Apparel Pull-On Breeze Jogger for WomenFre... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Normalization & yeti coolers & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Yeti Tundra 45 Hard CoolerYetifrom; Quick view Yet... / products: Yeti Hopper M30 2.0 Cooler; Yeti Hopper Flip 12 Soft Cooler | queries: y...\\
+Half-Moon Outfitters & Normalization & braves hats & 95\% & 0\% & 7 & 7 product-like links; sample: Quick view Patagonia Boardshort Label Funfarer CapPatagonia; Q... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Normalization & camp chairs & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Crazy Creek Products The ChairCrazy Creek Products... / products: Nemo Stargaze EVO-X Folding Reclining Camp Chair; Helinox Chair Zero\\
+Half-Moon Outfitters & Normalization & rain jackets & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / products: L.L.Bean Trail Model Rain Jacket for Kids; L.L.Bean Trail Model Rain Jac...\\
+Half-Moon Outfitters & Normalization & sun hoodies & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Bamboo Lightweight Hoodie for Men... / products: Half-Moon Outfitters Flying Bird Sun Protection Long Sleeve Hoodie; Pata...\\
+Half-Moon Outfitters & Normalization & long sleeve shirts & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Poncho The Bigeye Long Sleeve Regular Shirt for Me... / products: AFTCO Palomar Long Sleeve Vented Fishing Shirt for Men; Half-Moon Outfit...\\
+Half-Moon Outfitters & Normalization & quarter zip pullover & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view Johnnie-O The Sully 1/4 Zip Pullover for Men (SALE... / products: L.L.Bean L.L. Bean Peaks Island Quarter-Zip Pullover for Women\\
+Half-Moon Outfitters & Normalization & womens upf shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Kuhl Eclipser Short Sleeve Shirt for WomenKuhl; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Normalization & mens swim trunks & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view AFTCO Strike Swim Shorts for MenAFTCO; Quick view ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Normalization & girls sandals & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view Reef Little Windswell Sandals for KidsReef; Quick ... / products: Reef Little Water Vista Sandals for Girls\\
+Half-Moon Outfitters & Normalization & boys fishing shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Target Species Tee for KidsFree F... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Normalization & fleece pullovers & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Lightweight Synchilla Snap-T Fleece Pull... / products: Patagonia R1 Fleece Pullover for Men; Free Fly Apparel Gridback Fleece S...\\
+Half-Moon Outfitters & Normalization & womens fleece & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Synchilla Fleece Jacket for WomenPatagon... / products: Patagonia R1 Air Fleece Full-Zip Hoodie for Women (SALE); Patagonia Ligh...\\
+Half-Moon Outfitters & Normalization & mens shorts & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Multi Trails 6" Shorts for MenPatagonia;... / products: Free Fly Apparel Breeze Shorts - 6" for Men; Marsh Wear Prime Shorts for...\\
+Half-Moon Outfitters & Normalization & kids hats & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Logo Beanie for KidsPatagonia; Quick vie... / products: Pistil Reef Sun Hat for Kids; Half-Moon Outfitters Badge Trucker Hat for...\\
+Half-Moon Outfitters & Normalization & travel packs & 100\% & 92\% & 11 & 11 product-like links; sample: Quick view Cotopaxi Allpa 35L Travel PackCotopaxifrom; Quick ... / products: Cotopaxi Allpa 35L Travel Pack; Cotopaxi Allpa 42L Travel Pack\\
+Half-Moon Outfitters & Normalization & hoka shoe & 92\% & 97\% & 12 & 12 product-like links; sample: Quick view Hoka Bondi 9 for MenHoka; Quick view Hoka Solimar ... / products: Hoka Challenger 8 Shoes for Women; Hoka Clifton 10 Shoes for Women | que...\\
+Half-Moon Outfitters & Tokenization & long sleeve shirt & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Bamboo Shade Long Sleeve Shirt II... / products: Half-Moon Outfitters Badge Logo Long Sleeve Pocket T-Shirt; Half-Moon Ou...\\
+Half-Moon Outfitters & Tokenization & 1/4 zip pullover & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Johnnie-O The Sully 1/4 Zip Pullover for Men (SALE... / products: Johnnie-O Sully 1/4 Zip Pullover for Men (SALE); Duck Head Dunmore Perfo...\\
+Half-Moon Outfitters & Tokenization & quarter zip pullover & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view Johnnie-O The Sully 1/4 Zip Pullover for Men (SALE... / products: L.L.Bean L.L. Bean Peaks Island Quarter-Zip Pullover for Women\\
+Half-Moon Outfitters & Tokenization & button down shirt & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Johnnie-O Short Sleeve Cotton Blend Ennis Button D... / products: AFTCO Air O Mesh Printed SS Button Down Shirt for Men (FINAL SALE); AFTC...\\
+Half-Moon Outfitters & Tokenization & short sleeve tee & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Half-Moon Outfitters Flower Logo Short Sleeve T-Sh... / products: Vissla Canopy Cosmic Wash Short Sleeve Tee; Prana Everyday Short Sleeve ...\\
+Half-Moon Outfitters & Tokenization & sun protection shirt & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Half-Moon Outfitters Flying Bird Sun Protection Lo... / products: Half-Moon Outfitters Flying Bird Sun Protection Long Sleeve Hoodie; Half...\\
+Half-Moon Outfitters & Tokenization & rain shell jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & waterproof hiking boot & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Merrell Moab 3 Mid Waterproof for MenMerrell; Quic... / products: Keen Hightrail Waterproof Hiking Boot for Women; Keen Hightrail Waterpro...\\
+Half-Moon Outfitters & Tokenization & trail running shoe & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view On Cloudsurfer Trail for Men (SALE)Onfrom; Quick v... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & packable rain jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view The North Face Alta Vista Rain Jacket for WomenThe... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & wide brim hat & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Sunday Afternoons Siena HatSunday Afternoons; Quic... / products: Pistil Soho Wide Brim Hat for Women | queries: wide brim hat; pistil soh...\\
+Half-Moon Outfitters & Tokenization & camp kitchen set & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view GSI Outdoors Glacier Stainless Base CamperGSI Outd... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & fly fishing shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Tide Chaser Tee for MenFree Fly A... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & stand up paddle board & 100\% & 0\% & 10 & 10 product-like links; sample: Quick view Half-Moon Outfitters 10'0" Tri Fin Stand Up Paddle... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & water bottle holder & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Yeti Rambler 36oz Bottle with Chug CapYetifrom; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & fleece snap pullover & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Gridback Fleece Snap Pullover for... / products: Free Fly Apparel Gridback Fleece Snap Pullover for Women; Patagonia Ligh...\\
+Half-Moon Outfitters & Tokenization & insulated water bottle & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view Yeti Rambler 36oz Bottle with Chug CapYetifrom; Qu... / products: Polar Bottle Half-Moon Outfitters Breakaway Insulated 24 oz\\
+Half-Moon Outfitters & Tokenization & ski bib pants & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view The North Face Freedom Insulated Bib for WomenThe ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & leather flip flop & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Rainbow Premier Leather Single Arch Sandal for Wom... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & cotton pocket tee & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Half-Moon Outfitters Badge Logo Short Sleeve Pocke... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & performance jogger women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Pull-On Breeze Jogger for WomenFr... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & cloud 6 waterproof & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view On Cloud 6 Waterproof Shoes for MenOn; Quick view ... / products: On Cloud 6 Waterproof Shoes for Men; On Cloud 6 Waterproof Shoes for Wom...\\
+Half-Moon Outfitters & Tokenization & better sweater vest & 100\% & 97\% & 11 & 11 product-like links; sample: Quick view Patagonia Better Sweater Fleece Vest for MenPatago... / products: Patagonia Better Sweater Fleece Vest for Women; Patagonia Better Sweater...\\
+Half-Moon Outfitters & Tokenization & atlanta braves hat & 100\% & 0\% & 10 & 10 product-like links; sample: Quick view Patagonia Fitz Roy Trout Trucker HatPatagonia; Qui... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Tokenization & kayak rental & 92\% & 0\% & 12 & 12 product-like links; sample: Quick view Perception Kayaks Tribe 9.5 KayakPerception Kayaks... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & rain shell & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & puffer jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Nano Puff Jacket for WomenPatagonia; Qui... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & waterproof coat & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & insulated jacket & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Down With It Jacket for WomenPatagoniafr... / products: Kuhl Stretch Voyagr Insulated Jacket for Men (SALE); Kuhl Stretch Voyagr...\\
+Half-Moon Outfitters & Synonyms & down sweater & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Down Sweater Jacket for WomenPatagoniafr... / products: Patagonia Down Sweater Jacket for Women; Patagonia Down Sweater Vest for...\\
+Half-Moon Outfitters & Synonyms & hiking shoes & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view The North Face Fastpack Waterproof Shoes for Women... / products: Keen Targhee IV Waterproof Hiking Shoes for Men; Keen Targhee IV Waterpr...\\
+Half-Moon Outfitters & Synonyms & trail shoes & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Altra Lone Peak All-Weather Low 2 for MenAltra; Qu... / products: On Cloudsurfer Trail for Women (SALE); On Cloudsurfer Trail 2 Shoes for ...\\
+Half-Moon Outfitters & Synonyms & sun shirt & 92\% & 97\% & 12 & 12 product-like links; sample: Quick view Half-Moon Outfitters Flying Bird Sun Protection Lo... / products: Half-Moon Outfitters Flying Bird Sun Protection Long Sleeve Hoodie; The ...\\
+Half-Moon Outfitters & Synonyms & fishing shirt & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Aftco Air-O Mesh Short Sleeve Button Down Shirt fo... / products: AFTCO Palomar Long Sleeve Vented Fishing Shirt for Men; Aftco Palomar Sh...\\
+Half-Moon Outfitters & Synonyms & camp chair & 92\% & 97\% & 12 & 12 product-like links; sample: Quick view Crazy Creek Products The ChairCrazy Creek Products... / products: Nemo Stargaze EVO-X Folding Reclining Camp Chair; Helinox Chair Zero | q...\\
+Half-Moon Outfitters & Synonyms & camp stool & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view GCI Outdoor Quik-E-SeatGCI Outdoor; Quick view Hel... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & cooler bag & 100\% & 62\% & 12 & 12 product-like links; sample: Quick view Yeti Daytrip 14L Insulated Tote BagYetifrom; Quick... / collections: Lunch Boxes \& Cooler Bags | queries: bag cooler; cooler bag\\
+Half-Moon Outfitters & Synonyms & drink tumbler & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Yeti Rambler 30oz Tumbler with MagSlider LidYetifr... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & travel backpack & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Cotopaxi Allpa 42L Travel PackCotopaxifrom; Quick ... / products: Cotopaxi Allpa 35L Travel Pack; Cotopaxi Allpa 42L Travel Pack\\
+Half-Moon Outfitters & Synonyms & day pack & 100\% & 62\% & 10 & 10 product-like links; sample: Quick view Patagonia Refugio Daypack 30LPatagoniaRegular pric... / queries: women s day packs; day pack\\
+Half-Moon Outfitters & Synonyms & flip flops & 100\% & 62\% & 11 & 11 product-like links; sample: Quick view Reef Cushion Breeze Sandals for WomenReef; Quick v... / collections: SALE Flip Flops | queries: rainbow flip flops; flip flops\\
+Half-Moon Outfitters & Synonyms & sandals & 92\% & 97\% & 11 & 11 product-like links; sample: Quick view Reef Ojai Classic Sandals for MenReeffrom; Quick v... / products: Reef Leather Offshore Sandals for Men; Reef Ojai Classic Sandals for Men...\\
+Half-Moon Outfitters & Synonyms & fleece jacket & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Retro Pile Fleece Jacket for MenPatagoni... / products: Free Fly Apparel Gridback Fleece Jacket for Men (SALE); Patagonia R1 Air...\\
+Half-Moon Outfitters & Synonyms & pullover sweater & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Johnnie-O The Sully 1/4 Zip Pullover for Men (SALE... / products: Patagonia Better Sweater 1/4 Zip Fleece Pullover for Men; Carve Designs ...\\
+Half-Moon Outfitters & Synonyms & windbreaker & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view L.L.Bean Mountain Classic Anorak, Multi-Color for ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Synonyms & raincoat & 100\% & 62\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / queries: women raincoat\\
+Half-Moon Outfitters & Synonyms & water shoes & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Olukai Moku Pae Shoes for MenOlukai; Quick view As... / products: Reef Water Vista Sandals for Women | queries: water shoes; men water shoes\\
+Half-Moon Outfitters & Synonyms & swimsuit & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Prana Reef Break Swim One Piece for WomenPrana; Qu... / products: Carve Designs All Day One Piece Swimsuit for Women; Free Fly Apparel Wav...\\
+Half-Moon Outfitters & Synonyms & bathing suit & 100\% & 62\% & 11 & 11 product-like links; sample: Quick view Prana Reef Break Swim One Piece for WomenPrana; Qu... / queries: men s bathing suit\\
+Half-Moon Outfitters & Synonyms & hat & 92\% & 97\% & 12 & 12 product-like links; sample: Quick view Outdoor Research Swift CapOutdoor Research; Quick ... / products: Patagonia Beanie Hat; Free Fly Apparel Reverb Packable Trucker Hat | col...\\
+Half-Moon Outfitters & Ranking And Field Weighting & patagonia womens jacket & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for WomenPatagoni... / products: Patagonia Torrentshell 3L Jacket for Women; Patagonia Down Sweater Jacke...\\
+Half-Moon Outfitters & Ranking And Field Weighting & vuori joggers women & 95\% & 0\% & 7 & 7 product-like links; sample: Quick view Free Fly Apparel Pull-On Breeze Jogger for WomenFre... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & hoka shoes women & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Hoka Transport Shoes for WomenHoka; Quick view Hok... / products: Hoka Challenger 8 Shoes for Women; Hoka Clifton 10 Shoes for Women\\
+Half-Moon Outfitters & Ranking And Field Weighting & yeti rambler tumbler & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Yeti Rambler 20oz Tumbler with MagSlider LidYetifr... / products: Yeti Rambler 30oz Tumbler with MagSlider Lid; Yeti Rambler 20oz Tumbler ...\\
+Half-Moon Outfitters & Ranking And Field Weighting & patagonia mens shorts & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Patagonia Multi Trails 6" Shorts for MenPatagonia;... / products: Patagonia Heritage Stand Up Shorts for Men - 5"; Patagonia Baggies Light...\\
+Half-Moon Outfitters & Ranking And Field Weighting & on cloud waterproof women & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view On Cloud 6 Waterproof Shoes for WomenOn; Quick vie... / products: On Cloud 6 Waterproof Shoes for Women\\
+Half-Moon Outfitters & Ranking And Field Weighting & free people dress & 95\% & 92\% & 3 & 3 product-like links; sample: Quick view Free People Movement Hot Shot Mini Dress for WomenF... / products: Free People Movement Smockin' Hot Dress for Women; Free People Movement ...\\
+Half-Moon Outfitters & Ranking And Field Weighting & faherty mens shirt & 95\% & 0\% & 5 & 5 product-like links; sample: Quick view Marsh Wear Coffin Point Shirt for MenMarsh Wear; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & z supply sweater women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Roxy Swell Season Stripe Sweater for WomenRoxy; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & maui jim sunglasses & 95\% & 0\% & 2 & 2 product-like links; sample: Quick view Smartwool Everyday Diamond Jim Argyle Targeted Cush... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & costa sunglasses men & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Costa Del Mar Brine II SunglassesCosta Del Mar; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & johnnie-o polo mens & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Johnnie-O Ryan Polo for MenJohnnie-O; Quick view J... / products: Johnnie-O Ryan Polo for Men; Johnnie-O The Original Polo for Men\\
+Half-Moon Outfitters & Ranking And Field Weighting & spanx pants women & 95\% & 0\% & 7 & 7 product-like links; sample: Quick view Prana Koen Pants for WomenPranafrom; Quick view Fre... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & arcteryx mens shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Arc'Teryx Beta SL Jacket for MenArc'Teryx; Quick v... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & black diamond shell women & 95\% & 0\% & 4 & 4 product-like links; sample: Quick view Black Diamond Equipment Momentum Harness for WomenB... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & birkenstock sandals women & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Birkenstock Arizona Soft Footbed Suede Leather San... / products: Birkenstock Madrid Oiled Leather Big Buckle Sandals for Women (Medium/Na...\\
+Half-Moon Outfitters & Ranking And Field Weighting & teva sandals men & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Teva Hurricane XLT2 Sandals for MenTeva; Quick vie... / products: Teva Langdon Hiking Sandals for Men; Teva Hydratrek Sandals for Men\\
+Half-Moon Outfitters & Ranking And Field Weighting & chaco sandals women & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Chaco Z/Cloud Adjustable Strap Cushioned Sandals f... / products: Chaco CushZ Extra Cushioned Sandals for Women (SALE); Chaco CushZ Toe-Lo...\\
+Half-Moon Outfitters & Ranking And Field Weighting & southern tide polo & 100\% & 0\% & 8 & 8 product-like links; sample: Quick view Patagonia Essential Polo Shirt for MenPatagoniaRegu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & atlanta braves womens hat & 95\% & 0\% & 5 & 5 product-like links; sample: Quick view Free People Movement Big Buti Baseball Cap for Wome... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & yeti roadie cooler & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Yeti Roadie 15 Hard CoolerYeti; Quick view Yeti Ro... / products: Yeti Roadie 15 Hard Cooler; Yeti Roadie 24 (SALE)\\
+Half-Moon Outfitters & Ranking And Field Weighting & patagonia capilene shirt & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Patagonia Long-Sleeved Capilene Cool Daily Shirt f... / products: Patagonia Capilene Cool Daily Shirt for Men; Patagonia Capilene Cool Dai...\\
+Half-Moon Outfitters & Ranking And Field Weighting & vuori kore shorts & 95\% & 0\% & 1 & 1 product-like links; sample: Quick view Smartwool Everyday Diamond Jim Argyle Targeted Cush... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Ranking And Field Weighting & hoka bondi men & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Hoka Bondi 9 for MenHoka; Quick view Hoka Bondi SR... / products: Hoka Bondi 9 for Men; Hoka Bondi SR for Men\\
+Half-Moon Outfitters & Ranking And Field Weighting & on cloudmonster women & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view On Cloudmonster 3 Running Shoes for WomenOn; Quick... / products: On Cloudmonster 3 Running Shoes for Women\\
+Half-Moon Outfitters & Query Expansion & sun hoodie & 100\% & 97\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Bamboo Lightweight Hoodie for Men... / products: Half-Moon Outfitters Flying Bird Sun Protection Long Sleeve Hoodie; Aftc...\\
+Half-Moon Outfitters & Query Expansion & trail running shirt & 100\% & 0\% & 10 & 10 product-like links; sample: Quick view Roark Mathis Active Short Sleeve Tee for MenRoark;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & hiking outfit women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view The North Face Recon Backpack for WomenThe North F... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & camping gifts & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view GSI Outdoors Glacier Stainless Base CamperGSI Outd... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & beach cover up & 100\% & 62\% & 12 & 12 product-like links; sample: Quick view Marsh Wear Baracoa Cover Up for WomenMarsh Wear; Q... / queries: beach cover up\\
+Half-Moon Outfitters & Query Expansion & hot weather hiking shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view On Climate 1/4 Zip Shirt for WomenOn; Quick view P... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & rain gear women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Kuhl Stretch Voyagr Jacket for WomenKuhlfrom; Quic... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & cold weather jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Kuhl Stretch Voyagr Insulated Parka for Women (SAL... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & travel pants women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Sullivan's Pants for WomenFree Fl... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & lightweight backpack & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Osprey 18L Ultralight Stuff PackOspreyfrom; Quick ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & summer camp clothes & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Toad\&Co Earthworks Camp Shorts for Women (FINAL SA... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & lake day outfit & 95\% & 0\% & 3 & 3 product-like links; sample: Quick view Smartwool Everyday Pin Stripe Crew Socks for WomenS... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & paddle board gear & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Half-Moon Outfitters 11'6" Stand Up PaddleboardHal... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & ski trip jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view The North Face Descendit Jacket for WomenThe North... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & dog walk jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Ruffwear Float Coat Dog Life JacketRuffwearfrom; Q... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & pickleball dress & 87\% & 0\% & 4 & 4 product-like links; sample: Quick view Prana Luxara Balance Dress for WomenPranaRegular pr... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & running hat women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Outdoor Research Sun Runner CapOutdoor Researchfro... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & fly fishing gear & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Menasha Ridge Press The Ultimate Fly-Fishing Guide... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & weekend travel bag & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Cotopaxi Viaje 35L Weekender BagCotopaxi; Quick vi... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & work from home joggers & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Pull-On Breeze Jogger for WomenFr... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & game day hat & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Sunday Afternoons Coronado HatSunday Afternoons; Q... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & fathers day gift & 95\% & 0\% & 2 & 2 product-like links; sample: Quick view Smartwool Everyday Pin Stripe Crew Socks for WomenS... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & mothers day gift & 95\% & 0\% & 2 & 2 product-like links; sample: Quick view Smartwool Everyday Diamond Jim Argyle Targeted Cush... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Query Expansion & gift under 50 & 95\% & 62\% & 1 & 1 product-like links; sample: Quick view Smartwool Everyday Diamond Jim Argyle Targeted Cush... / collections: Gifts under \$50\\
+Half-Moon Outfitters & Query Expansion & airport travel outfit & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Cotopaxi Allpa 42L Travel PackCotopaxifrom; Quick ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & UPF shirt women & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Bamboo Shade Long Sleeve Shirt II... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & fleece pullover women & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Patagonia Lightweight Synchilla Snap-T Fleece Pull... / products: Patagonia Lightweight Synchilla Snap-T Fleece Pullover for Women (SALE);...\\
+Half-Moon Outfitters & Document Enrichment & waterproof breathable jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & quick dry shorts & 100\% & 62\% & 12 & 12 product-like links; sample: Quick view Patagonia Terrebonne Trail Shorts for WomenPatagon... / queries: quick dry shorts\\
+Half-Moon Outfitters & Document Enrichment & moisture wicking shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Roark Bless Up Breathable Stretch Shirt for MenRoa... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & polarized sunglasses & 92\% & 92\% & 12 & 12 product-like links; sample: Quick view Suncloud Optics Milestone SunglassesSuncloud Optic... / products: Suncloud Optics Loveseat Sunglasses; Suncloud Optics Boundary Sunglasses\\
+Half-Moon Outfitters & Document Enrichment & insulated tumbler & 100\% & 62\% & 12 & 12 product-like links; sample: Quick view Yeti Rambler 20oz Tumbler with MagSlider LidYetifr... / collections: Insulated Tumblers\\
+Half-Moon Outfitters & Document Enrichment & gore tex jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Arc'Teryx Beta AR Jacket for MenArc'Teryxfrom; Qui... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & recycled polyester fleece & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Retro Pile Fleece Jacket for MenPatagoni... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & merino wool socks & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Smartwool Everyday No Show Sock (FINAL SALE)Smartw... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & vegan leather sandals & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Reef Cushion Vista Sandals for WomenReef; Quick vi... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & adjustable strap hat & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Pistil Madi Sun Hat for WomenPistil; Quick view Pa... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & zippered pocket shorts & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Marsh Wear Fulton 3" Volley Shorts for WomenMarsh ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & packable jacket & 92\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Gridback Fleece Jacket for Women ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & lightweight rain jacket & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & water resistant backpack & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Refugio Daypack 26LPatagonia; Quick view... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & odor resistant shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Lightweight Long-Sleeve Shirt for... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & wide brim sun hat & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Sunday Afternoons Sojourn HatSunday Afternoonsfrom... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & high rise leggings & 100\% & 92\% & 12 & 12 product-like links; sample: Quick view Free People Movement Good Karma High-Rise 7/8 Leng... / products: Free People Movement Good Karma High-Rise 7/8 Length Leggings for Women;...\\
+Half-Moon Outfitters & Document Enrichment & compression shorts women & 100\% & 87\% & 12 & 12 product-like links; sample: Quick view Carve Designs Lucie Compression Shorts for Women (... / products: Carve Designs Lucie Compression Shorts for Women (FINAL SALE)\\
+Half-Moon Outfitters & Document Enrichment & non slip sandals & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Rainbow Flirty Braidy Single Layer Premier Leather... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & machine washable dress & 100\% & 0\% & 8 & 8 product-like links; sample: Quick view Patagonia Amber Dawn Dress for WomenPatagoniafrom; ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & ripstop pants & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Kuhl Rydr Pants for MenKuhl; Quick view Kuhl Free ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & stretchy hiking pants & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Fjallraven Keb Trousers for MenFjallraven; Quick v... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Document Enrichment & breathable trail shirt & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Capilene Cool Daily Shirt for MenPatagon... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & chaqueta lluvia mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Down Sweater Jacket for WomenPatagoniafr... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & botas senderismo & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Keen Hightrail Waterproof Hiking Boot for WomenKee... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & camisa manga larga & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Free Fly Apparel Lightweight Long-Sleeve Shirt for... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & sombrero sol & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Sunday Afternoons Sol Seeker HatSunday Afternoons;... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & zapatos trail mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Altra Lone Peak 9+ GTX Shoes for WomenAltra; Quick... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & mochila viaje & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Cotopaxi Allpa 35L Travel PackCotopaxifrom; Quick ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & sandalias mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Chaco CushZ Extra Cushioned Sandals for Women (SAL... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & ropa mujer & 95\% & 0\% & 2 & 2 product-like links; sample: Quick view Smartwool Everyday Pin Stripe Crew Socks for WomenS... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & impermeable mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view On Cloud 6 Waterproof Shoes for WomenOn; Quick vie... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & gorra braves & 95\% & 0\% & 3 & 3 product-like links; sample: Quick view Free People Movement Big Buti Baseball Cap for Wome... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & silla camping & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Nemo Moonlite Reclining ChairNemo; Quick view Craz... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & kayak renta & 100\% & 0\% & 8 & 8 product-like links; sample: Quick view Sea To Summit Solution Cart for Kayaks \& CanoesSea ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & camiseta patagonia hombre & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia '73 Skyline T-Shirt for MenPatagonia; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & tenis hoka mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Hoka Clifton 10 Shoes for WomenHoka; Quick view Ho... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & bolsa viaje & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Topo Designs Global Travel Bag 30LTopo Designs; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & pantalon senderismo mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Terrebonne Trail Shorts for WomenPatagon... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & chamarra lluvia hombre & 95\% & 0\% & 3 & 3 product-like links; sample: Quick view Patagonia Torrentshell 3L Jacket for MenPatagonia; ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & playera manga larga & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Long-Sleeved P-6 Logo Responsibili-Tee f... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & short pesca & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view AFTCO 6" Original Fishing Short for MenAFTCOfrom; ... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & traje de bano mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Prana Reef Break Swim One Piece for WomenPrana; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & lentes de sol & 87\% & 0\% & 2 & 2 product-like links; sample: Quick view Smartwool Everyday Pin Stripe Crew Socks for WomenS... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & chaqueta fleece mujer & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Synchilla Fleece Jacket for WomenPatagon... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & camisa upf mujer & 95\% & 0\% & 3 & 3 product-like links; sample: Quick view Marsh Wear Buxton Tech Tank for WomenMarsh Wear; Qu... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & zapatos caminar hombre & 95\% & 0\% & 4 & 4 product-like links; sample: Quick view New Balance Fresh Foam X Hierro Trek Shoes for MenN... / no product, collection, query, or page suggestions\\
+Half-Moon Outfitters & Spanish/Bilingual Discovery & regalo camping & 100\% & 0\% & 12 & 12 product-like links; sample: Quick view Patagonia Refugio Daypack 18L for KidsPatagonia; Q... / no product, collection, query, or page suggestions\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Organic/Paid Checks}
+\ReportFooter
+\ReportSection{Reference G: Competitor Organic And Paid-Placement Checks}
+\ReportBody{These checks are bounded public browser observations across shared outdoor-retail queries. They are included to support the opportunity story, not to claim market share or ad spend. Unusable public captures are retained in the structured evidence artifact and excluded from this table.}\par
+\vspace{0.06in}
+\ReportFine{A national benchmark capture attempt is retained in the structured evidence artifact but excluded from this comparison because it did not produce usable public search evidence.}\par
+\vspace{0.06in}
+{\fontsize{7.65}{9.0}\selectfont
+\begin{tabularx}{\linewidth}{@{}L{0.17\linewidth}L{0.25\linewidth}R{0.09\linewidth}R{0.10\linewidth}R{0.11\linewidth}N@{}}
+\toprule
+\textbf{Competitor} & \textbf{Benchmark role} & \textbf{Queries} & \textbf{Usable} & \textbf{Paid-placement labels} & \textbf{Interpretation}\\
+\midrule
+Half-Moon Outfitters & Regional outdoor specialty retailer benchmark & 8 & 8 & 0 & No visible paid-placement labels in sampled rendered text; not proof none exist.\\
+Mast General Store & Regional outdoor/lifestyle retailer benchmark & 8 & 8 & 0 & No visible paid-placement labels in sampled rendered text; not proof none exist.\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.12in}
+\ReportCard{Organic And Paid-Placement Readout}{The experiment records visible paid-placement labels when rendered page text exposes them. If no label is visible, that is not proof of no retail media; it only means this public sample did not expose a paid-placement label. The business point remains useful: owned search, browse, and autocomplete improvements reduce dependency on expensive paid recovery.}
+\vspace{0.10in}
+{\fontsize{6.55}{7.7}\selectfont
+\setlength{\tabcolsep}{1.7pt}
+\begin{longtable}{@{}L{0.15\linewidth}L{0.15\linewidth}R{0.08\linewidth}R{0.10\linewidth}R{0.10\linewidth}L{0.34\linewidth}@{}}
+\toprule
+\textbf{Competitor} & \textbf{Query} & \textbf{Access} & \textbf{Links} & \textbf{Paid label} & \textbf{Interpretation}\\
+\midrule
+\endhead
+Half-Moon Outfitters & rain jacket & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & camp chair & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & hoka shoes & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & yeti cooler & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & trail running shirt & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & patagonia fleece & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & womens sandals & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Half-Moon Outfitters & sun hoodie & Usable & 12 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & rain jacket & Usable & 2 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & camp chair & Usable & 2 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & hoka shoes & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & yeti cooler & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & trail running shirt & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & patagonia fleece & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & womens sandals & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+Mast General Store & sun hoodie & Usable & 10 & no & No visible paid-placement label in rendered text; not proof none exists.\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Prior Evidence}
+\ReportFooter
+\ReportSection{Reference H: Prior Ecommerce And Local-Site Evidence}
+\ReportBody{The earlier ecommerce evidence still matters, but it belongs in reference, not in the opening pitch. Prior public evidence found broad browse coverage, location-inventory filters, useful rendered search results for the original protected query set, a public cart add/read path, mobile homepage cues, policy/support pages, and a camp autocomplete API response matching the visible dropdown observed by the user.}\par
+\vspace{0.12in}
+\begin{tabularx}{\linewidth}{@{}L{0.26\linewidth}N@{}}
+\toprule
+\textbf{Evidence area} & \textbf{How it should be used}\\
+\midrule
+Browse and filters & Use as a strength. High Country has meaningful category depth and useful location-inventory filtering.\\
+Original search rerun & Use as proof that earlier empty-result claims were capture problems, not site failures. Camp chair and camp chairs returned rendered results.\\
+Camp autocomplete & Use as proof that the underlying suggest API is accessible and can match the visible dropdown.\\
+Local website assessment & Use only as supporting context for crawlability, local visibility, lead-path visibility, trust/message signals, and evidence limits.\\
+Excluded local-assessment content & Do not use Pest Control demand fit or Pest Control competitor comparison as outdoor retail evidence.\\
+Competitor benchmark attempts & Prior automated fetch attempts were blocked or low-signal; this revision adds a separate rendered competitor lane and keeps all competitor claims bounded to visible evidence.\\
+\bottomrule
+\end{tabularx}
+\vspace{0.14in}
+\ReportSection{Evidence Limits}
+\begin{itemize}
+\item This is public evidence only: no analytics, revenue data, customer records, admin data, search logs, or checkout completion.
+\item The sales upside range is directional. It should be replaced with a dollar estimate after connecting site-search usage, conversion rate, add-to-cart rate, average order value, and revenue.
+\item Spanish/bilingual discovery is evaluated as a search-access issue, not as a demographic claim about current customers.
+\item Autocomplete was measured through the public Shopify suggest API and browser-context checks. Full visual dropdown QA across desktop/mobile should be run before final external claims.
+\item Competitor paid-placement checks record visible labels only. Absence of a visible label in this sample does not prove a competitor has no paid placement, retail media, or advertising program.
+\item Product counts, result counts, inventory, and promotions are point-in-time public observations from July 2026.
+\end{itemize}
+\vspace{0.10in}
+\ReportCard{Recommended Follow-Up}{The next conversation should connect these public findings to actual search usage, conversion rate, add-to-cart rate, average order value, and inventory priorities. That would turn the directional opportunity into a measurable discovery roadmap.}
+
+\end{document}

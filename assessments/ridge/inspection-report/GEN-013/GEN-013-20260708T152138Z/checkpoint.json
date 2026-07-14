@@ -1,0 +1,105 @@
+{
+  "schema_version": "checkpoint-v0.1",
+  "inspection_id": "GEN-013-20260708T152138Z",
+  "written_at": "2026-07-08T16:11:29.042Z",
+  "started_at": "2026-07-08T15:21:38.329Z",
+  "output_dir": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z",
+  "status": "complete",
+  "evaluation_manifest": "evaluations/ridge-shopify-baseline.json",
+  "evaluation_id": "ridge-shopify-baseline",
+  "target_id": "ridge",
+  "site_profile": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/site-profile.json",
+  "plugin_graph": {
+    "schema_version": "plugin-dependency-graph-v0.1",
+    "plugins": [
+      {
+        "plugin_id": "submitted-search",
+        "surface": "submitted_search",
+        "version": "0.1.0",
+        "description": "Fetches submitted search result pages for each query and records access, response, timing, and limitation evidence.",
+        "depends_on": [],
+        "consumes": [
+          "site_profile",
+          "query_pack",
+          "shopify_adapter"
+        ],
+        "produces": [
+          "submitted_search_evidence"
+        ],
+        "cache": {
+          "enabled": false
+        }
+      },
+      {
+        "plugin_id": "autocomplete",
+        "surface": "autocomplete",
+        "version": "0.1.0",
+        "description": "Fetches Shopify suggest endpoint responses for each query and records suggested products, collections, queries, pages, timing, and limitation evidence.",
+        "depends_on": [],
+        "consumes": [
+          "site_profile",
+          "query_pack",
+          "shopify_adapter"
+        ],
+        "produces": [
+          "autocomplete_evidence"
+        ],
+        "cache": {
+          "enabled": false
+        }
+      }
+    ],
+    "graph": [
+      {
+        "plugin_id": "submitted-search",
+        "depends_on": []
+      },
+      {
+        "plugin_id": "autocomplete",
+        "depends_on": []
+      }
+    ],
+    "execution_order": [
+      "submitted-search",
+      "autocomplete"
+    ]
+  },
+  "plugin_state": {
+    "schema_version": "plugin-state-v0.1",
+    "inspection_id": "GEN-013-20260708T152138Z",
+    "plugins": {
+      "submitted-search": {
+        "plugin_id": "submitted-search",
+        "status": "blocked",
+        "started_at": "2026-07-08T16:11:28.017Z",
+        "ended_at": "2026-07-08T16:11:28.179Z",
+        "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/submitted-search.jsonl",
+        "observations": 5,
+        "confidence": "Low",
+        "evidence_quality": "partial"
+      },
+      "autocomplete": {
+        "plugin_id": "autocomplete",
+        "status": "pass",
+        "started_at": "2026-07-08T16:11:28.180Z",
+        "ended_at": "2026-07-08T16:11:29.036Z",
+        "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/autocomplete.jsonl",
+        "observations": 5,
+        "confidence": "Medium",
+        "evidence_quality": "bounded"
+      }
+    }
+  },
+  "completed_phases": [
+    "autocomplete"
+  ],
+  "failed_phases": [
+    "submitted-search"
+  ],
+  "pending_phases": [],
+  "evidence_references": [
+    "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/autocomplete.jsonl",
+    "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/submitted-search.jsonl"
+  ],
+  "timeline_reference": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/timeline.jsonl"
+}

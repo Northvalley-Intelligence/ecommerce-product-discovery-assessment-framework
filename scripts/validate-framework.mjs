@@ -77,6 +77,21 @@ function textIncludesAll(text, required, label) {
   assert(missing.length === 0, `${label} missing text: ${missing.join(', ')}`);
 }
 
+function textExcludesAll(text, disallowed, label) {
+  const lower = text.toLowerCase();
+  const present = disallowed.filter((item) => lower.includes(item.toLowerCase()));
+  assert(present.length === 0, `${label} contains disallowed text: ${present.join(', ')}`);
+}
+
+function renderedSearchCount(evidence, query) {
+  const page = (evidence.rendered?.search_pages || []).find((entry) => {
+    const haystack = `${entry.label || ''} ${entry.title || ''} ${entry.url || ''}`.toLowerCase();
+    return haystack.includes(query.toLowerCase());
+  });
+  const match = page?.title?.match(/Search:\s*([\d,]+)\s+results found/i);
+  return match ? Number(match[1].replace(/,/g, '')) : null;
+}
+
 function validateAssessmentDoc(doc, path, options = {}) {
   assert(doc.assessment_id, `${path} missing assessment_id`);
   assert(doc.framework_version === '0.1.0', `${path} must use framework_version 0.1.0`);
@@ -132,6 +147,22 @@ const requiredFiles = [
   'assessments/boxercraft/local-school-opportunity/GEN-008/evidence-summary.json',
   'reports/boxercraft-local-school-pta-opportunity-report.tex',
   'boxercraft-local-school-pta-opportunity-report.pdf',
+  'scripts/evaluate-highcountryoutfitters-ecommerce.mjs',
+  'scripts/evaluate-highcountryoutfitters-ir-concepts.mjs',
+  'scripts/evaluate-highcountryoutfitters-expanded-ir.mjs',
+  'scripts/validate-highcountryoutfitters-report.mjs',
+  'assessments/high-country-outfitters/ecommerce-evidence/GEN-010/highcountryoutfitters-ecommerce-evidence.json',
+  'assessments/high-country-outfitters/ir-concept-evidence/GEN-010/highcountryoutfitters-ir-concept-evidence.json',
+  'assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.json',
+  'assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.md',
+  'assessments/high-country-outfitters/expanded-ir-evidence/GEN-011/highcountryoutfitters-expanded-ir-evidence.json',
+  'assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.json',
+  'assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.md',
+  'reports/highcountryoutfitters-combined-ecommerce-report.tex',
+  'highcountryoutfitters-combined-ecommerce-report.pdf',
+  '.mde/handoffs/control-center-highcountryoutfitters-combined-ecommerce-report-2026-07-02.md',
+  '.mde/handoffs/control-center-highcountryoutfitters-owner-outreach-report-2026-07-03.md',
+  '.mde/handoffs/control-center-highcountryoutfitters-same-query-competitor-refinement-2026-07-04.md',
   'deploy/release-checks.json',
   '.mde/generations/GEN-003.json',
   '.mde/generations/GEN-004.json',
@@ -140,6 +171,8 @@ const requiredFiles = [
   '.mde/generations/GEN-007.json',
   '.mde/generations/GEN-008.json',
   '.mde/generations/GEN-009.json',
+  '.mde/generations/GEN-010.json',
+  '.mde/generations/GEN-011.json',
   '.mde/validation-runs/VAL-005.json',
   '.mde/validation-runs/VAL-006.json',
   '.mde/validation-runs/VAL-007.json',
@@ -153,7 +186,31 @@ const requiredFiles = [
   '.mde/validation-runs/VAL-019.json',
   '.mde/validation-runs/VAL-020.json',
   '.mde/validation-runs/VAL-021.json',
-  '.mde/validation-runs/VAL-022.json'
+  '.mde/validation-runs/VAL-022.json',
+  '.mde/validation-runs/VAL-023.json',
+  '.mde/validation-runs/VAL-024.json',
+  '.mde/validation-runs/VAL-025.json',
+  '.mde/validation-runs/VAL-026.json',
+  '.mde/validation-runs/VAL-027.json',
+  '.mde/validation-runs/VAL-028.json',
+  '.mde/validation-runs/VAL-029.json',
+  '.mde/validation-runs/VAL-030.json',
+  '.mde/validation-runs/VAL-031.json',
+  '.mde/validation-runs/VAL-032.json',
+  '.mde/validation-runs/VAL-033.json',
+  '.mde/validation-runs/VAL-034.json',
+  '.mde/validation-runs/VAL-035.json',
+  '.mde/validation-runs/VAL-036.json',
+  '.mde/validation-runs/VAL-037.json',
+  '.mde/validation-runs/VAL-038.json',
+  '.mde/validation-runs/VAL-039.json',
+  '.mde/validation-runs/VAL-040.json',
+  '.mde/validation-runs/VAL-041.json',
+  '.mde/validation-runs/VAL-042.json',
+  '.mde/validation-runs/VAL-043.json',
+  '.mde/validation-runs/VAL-044.json',
+  '.mde/validation-runs/VAL-045.json',
+  '.mde/validation-runs/VAL-046.json'
 ];
 
 for (const file of requiredFiles) {
@@ -474,6 +531,233 @@ assert(localSchoolOpportunity.ecommerce_discovery_evidence?.browse_parity?.exact
 assert((localSchoolOpportunity.ecommerce_discovery_evidence?.school_browse_evidence || []).some((node) => node.title === 'Lambert High School Spiritwear' && node.search_total_product === 0), 'local school evidence must capture Lambert school browse/search gap');
 assert(localSchoolOpportunity.executive_readout?.includes('local school buyer'), 'local school evidence must include executive readout');
 
+const highCountryEvidence = readJson('assessments/high-country-outfitters/ecommerce-evidence/GEN-010/highcountryoutfitters-ecommerce-evidence.json');
+const highCountryIrEvidence = readJson('assessments/high-country-outfitters/ir-concept-evidence/GEN-010/highcountryoutfitters-ir-concept-evidence.json');
+const highCountryReport = readJson('assessments/high-country-outfitters/combined-report/GEN-010/highcountryoutfitters-combined-ecommerce-report.json');
+const highCountryOwnerEvidence = readJson('assessments/high-country-outfitters/expanded-ir-evidence/GEN-011/highcountryoutfitters-expanded-ir-evidence.json');
+const highCountryOwnerReport = readJson('assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.json');
+const highCountryOwnerMarkdown = readText('assessments/high-country-outfitters/owner-outreach-report/GEN-011/highcountryoutfitters-owner-outreach-report.md');
+const highCountryLatex = readText('reports/highcountryoutfitters-combined-ecommerce-report.tex');
+const highCountryExecutiveMarkdown = highCountryOwnerMarkdown.split('\n## Concepts')[0] || highCountryOwnerMarkdown;
+const highCountryExecutiveLatex = highCountryLatex.split('\\newpage\n\\ReportPageHeader{Reference: Concepts}')[0] || highCountryLatex;
+assert(highCountryEvidence.project_id === 'ecommmerce-eval', 'High Country evidence must use canonical project id');
+assert(highCountryReport.project_id === 'ecommmerce-eval', 'High Country report must use canonical project id');
+assert(highCountryReport.generation === 'GEN-010', 'High Country report must be recorded for GEN-010');
+assert(highCountryEvidence.target?.domain === 'highcountryoutfitters.com', 'High Country evidence must target highcountryoutfitters.com');
+assert(highCountryOwnerEvidence.generation === 'GEN-011', 'High Country owner evidence must be recorded for GEN-011');
+assert(highCountryOwnerReport.generation === 'GEN-011', 'High Country owner report must be recorded for GEN-011');
+assert(highCountryOwnerEvidence.target?.domain === 'highcountryoutfitters.com', 'High Country owner evidence must target highcountryoutfitters.com');
+assert((highCountryEvidence.search_queries || []).length >= 12, 'High Country evidence must include the corrected 12-query search set');
+assert((highCountryEvidence.search_queries || []).some((entry) => entry.query === 'patagonia' && ((entry.result_count || 0) > 0 || (entry.suggest?.products || []).length > 0)), 'High Country evidence must capture Patagonia search/suggest evidence');
+assert((highCountryEvidence.search_queries || []).some((entry) => entry.query === 'camp chair'), 'High Country evidence must include camp chair query');
+assert((highCountryEvidence.search_queries || []).some((entry) => entry.query === 'camp chairs'), 'High Country evidence must include camp chairs follow-up query');
+assert(renderedSearchCount(highCountryEvidence, 'camp chair') === 183, 'High Country evidence must capture 183 rendered camp chair results');
+assert(renderedSearchCount(highCountryEvidence, 'camp chairs') === 184, 'High Country evidence must capture 184 rendered camp chairs results');
+const highCountryCampAutocomplete = (highCountryEvidence.autocomplete_followups || []).find((entry) => entry.query === 'camp');
+assert(highCountryCampAutocomplete?.api_matches_user_observation === true, 'High Country evidence must record camp autocomplete API/UI match');
+assert((highCountryCampAutocomplete?.queries || []).includes('camp chairs'), 'High Country camp autocomplete must include camp chairs query suggestion');
+assert((highCountryCampAutocomplete?.collections || []).some((entry) => entry.title === 'Camp Kitchen'), 'High Country camp autocomplete must include Camp Kitchen collection suggestion');
+assert(highCountryEvidence.ir_concept_tests?.example_count >= 12, 'High Country evidence must include at least 12 apparel IR concept examples');
+assert(highCountryIrEvidence.example_count >= 12, 'High Country standalone IR evidence must include at least 12 apparel IR concept examples');
+assert(highCountryIrEvidence.search_example_count >= 10, 'High Country IR evidence must include at least 10 scored search examples');
+assert(highCountryIrEvidence.autocomplete_example_count >= 10, 'High Country IR evidence must include at least 10 scored autocomplete examples');
+for (const concept of ['Normalization', 'Tokenization', 'Synonyms', 'Field Weighting', 'Query Expansion', 'Document Enrichment']) {
+  assert((highCountryIrEvidence.concepts || []).some((entry) => entry.concept === concept), `High Country IR evidence must include concept: ${concept}`);
+}
+for (const query of ['womens rain jacket', '1/4 zip pullover', 'puffer jacket', 'vuori joggers women', 'trail running shirt', 'UPF shirt women']) {
+  assert((highCountryIrEvidence.examples || []).some((entry) => entry.query === query && Number.isFinite(entry.search_score) && Number.isFinite(entry.autocomplete_score)), `High Country IR evidence must include scored query: ${query}`);
+}
+assert(highCountryIrEvidence.search_average >= 80, 'High Country IR search average should be recorded and usable');
+assert(highCountryIrEvidence.autocomplete_average >= 50, 'High Country IR autocomplete average should be recorded and usable');
+assert((highCountryEvidence.browse?.collection_samples || []).filter((entry) => entry.product_sample_count > 0).length >= 8, 'High Country evidence must capture sampled browse collections with products');
+assert((highCountryEvidence.rendered?.collection_pages || []).some((page) => Object.keys(page.filter_groups || {}).length >= 5), 'High Country rendered evidence must capture collection filters');
+assert(highCountryEvidence.cart?.attempted === true && highCountryEvidence.cart?.add_result?.ok === true && highCountryEvidence.cart?.cart_result?.ok === true, 'High Country evidence must verify public cart add/read');
+assert((highCountryEvidence.policy_pages || []).some((page) => /shipping/i.test(page.label) && page.ok && page.checks?.shipping), 'High Country evidence must verify rendered shipping/pickup policy content');
+assert((highCountryEvidence.policy_pages || []).some((page) => /return/i.test(page.label) && page.ok && page.checks?.returns), 'High Country evidence must verify rendered return policy content');
+assert((highCountryEvidence.benchmark?.results || []).length >= 3, 'High Country evidence must record outdoor-retail benchmark attempts');
+assert((highCountryReport.evidence_limits || []).some((limit) => /competitor\/benchmark pages were attempted/i.test(limit)), 'High Country report must document blocked/low-signal benchmark limits');
+assert((highCountryEvidence.upstream_local_assessment?.excluded_sections || []).some((entry) => entry.section === 'demandSatisfaction'), 'High Country evidence must exclude upstream demand fit');
+assert((highCountryEvidence.upstream_local_assessment?.excluded_sections || []).some((entry) => entry.section === 'competitorComparison'), 'High Country evidence must exclude upstream competitor comparison');
+assert(!JSON.stringify(highCountryReport).toLowerCase().includes('"sector":"pest_control"'), 'High Country report must not carry Pest Control sector as ecommerce evidence');
+assert((highCountryReport.findings || []).length >= 6, 'High Country report must include at least six findings');
+assert(highCountryReport.scorecard?.product_discovery_overall?.score >= 1, 'High Country report must include a product discovery score');
+assert(highCountryOwnerEvidence.summary?.total_examples === 175, 'High Country owner evidence must include 175 experiments');
+assert(highCountryOwnerEvidence.methodology?.examples_per_concept === 25, 'High Country owner evidence must record 25 examples per concept');
+assert(highCountryOwnerEvidence.methodology?.concept_count === 7, 'High Country owner evidence must record seven executive concepts');
+assert((highCountryOwnerEvidence.examples || []).length === 175, 'High Country owner evidence must include all 175 example rows');
+for (const concept of [
+  'Normalization',
+  'Tokenization',
+  'Synonyms',
+  'Ranking And Field Weighting',
+  'Query Expansion',
+  'Document Enrichment',
+  'Spanish/Bilingual Discovery'
+]) {
+  const conceptSummary = (highCountryOwnerEvidence.concepts || []).find((entry) => entry.concept === concept);
+  const examples = (highCountryOwnerEvidence.examples || []).filter((entry) => entry.concept === concept);
+  assert(conceptSummary?.example_count === 25, `High Country owner evidence must record 25 examples for ${concept}`);
+  assert(examples.length === 25, `High Country owner evidence examples missing for ${concept}`);
+}
+assert(highCountryOwnerEvidence.summary?.search_average === 94, 'High Country owner evidence must preserve final search average');
+assert(highCountryOwnerEvidence.summary?.autocomplete_average === 45, 'High Country owner evidence must preserve final autocomplete average');
+assert(highCountryOwnerEvidence.summary?.uniform_experience_rate === 43, 'High Country owner evidence must preserve final uniformity rate');
+assert(highCountryOwnerEvidence.summary?.search_strong_autocomplete_weak_count === 92, 'High Country owner evidence must preserve search-strong/autocomplete-weak gap count');
+assert(highCountryOwnerEvidence.summary?.spanish_bilingual_autocomplete_average === 0, 'High Country owner evidence must preserve Spanish/bilingual autocomplete gap');
+assert(highCountryOwnerEvidence.opportunity_model?.conservative_sitewide_sales_upside_range === '1% to 4%', 'High Country owner report must record conservative directional sales upside');
+assert(highCountryOwnerEvidence.opportunity_model?.stretch_sitewide_sales_upside_range === '3% to 7%', 'High Country owner report must record stretch directional sales upside');
+for (const query of ['camp chairs', 'trail running shirt', 'waterproof breathable jacket', 'hiking outfit women', 'chaqueta lluvia mujer', 'tenis hoka mujer']) {
+  assert((highCountryOwnerEvidence.examples || []).some((entry) => entry.query === query), `High Country owner evidence missing expanded query: ${query}`);
+}
+const highCountryCompetitors = highCountryOwnerEvidence.competitor_evidence?.competitors || [];
+const usableHighCountryCompetitors = highCountryCompetitors.filter((competitor) => competitor.usable_run_count >= 8);
+const visibleHighCountryCompetitorNames = usableHighCountryCompetitors.map((competitor) => competitor.name);
+assert(usableHighCountryCompetitors.length >= 2, 'High Country owner evidence must include at least two usable competitor benchmarks');
+assert(usableHighCountryCompetitors.some((competitor) => competitor.name === 'Half-Moon Outfitters'), 'High Country owner competitor evidence must include Half-Moon Outfitters');
+assert(usableHighCountryCompetitors.some((competitor) => competitor.name === 'Mast General Store'), 'High Country owner competitor evidence must include Mast General Store');
+assert(highCountryCompetitors.some((competitor) => competitor.name === 'Public Lands' && competitor.usable_run_count === 0 && (competitor.runs || []).every((run) => run.status === 403)), 'High Country owner competitor evidence must document blocked Public Lands samples');
+assert((highCountryOwnerEvidence.competitor_evidence?.summary?.interpretation || '').includes('not proof'), 'High Country owner competitor summary must not overclaim paid-placement absence');
+const highCountryCompetitorQueryBenchmark = highCountryOwnerEvidence.competitor_query_benchmark || {};
+const highCountryBenchmarkSites = highCountryCompetitorQueryBenchmark.sites || [];
+assert(highCountryBenchmarkSites.length >= 2, 'High Country owner evidence must include a same-query competitor benchmark');
+for (const siteName of ['Half-Moon Outfitters', 'Mast General Store']) {
+  const site = highCountryBenchmarkSites.find((entry) => entry.name === siteName);
+  assert(Boolean(site), `High Country same-query competitor benchmark missing site: ${siteName}`);
+  assert(site?.query_count === 175, `${siteName} same-query benchmark must run all 175 protected examples`);
+  assert(site?.usable_search_count === 175, `${siteName} same-query benchmark must have 175 usable search rows`);
+  assert(site?.autocomplete_available_count === 175, `${siteName} same-query benchmark must have 175 public suggest rows`);
+  assert((site?.runs || []).length === 175, `${siteName} same-query benchmark must preserve all individual query rows`);
+  assert((site?.concept_summaries || []).length === 7, `${siteName} same-query benchmark must summarize all seven query concepts`);
+  for (const concept of [
+    'Normalization',
+    'Tokenization',
+    'Synonyms',
+    'Ranking And Field Weighting',
+    'Query Expansion',
+    'Document Enrichment',
+    'Spanish/Bilingual Discovery'
+  ]) {
+    const summary = (site?.concept_summaries || []).find((entry) => entry.concept === concept);
+    const runs = (site?.runs || []).filter((entry) => entry.concept === concept);
+    assert(summary?.query_count === 25, `${siteName} same-query concept summary must include 25 rows for ${concept}`);
+    assert(runs.length === 25, `${siteName} same-query rows missing for ${concept}`);
+  }
+}
+const highCountryHalfMoonBenchmark = highCountryBenchmarkSites.find((entry) => entry.name === 'Half-Moon Outfitters') || {};
+const highCountryMastBenchmark = highCountryBenchmarkSites.find((entry) => entry.name === 'Mast General Store') || {};
+assert(highCountryHalfMoonBenchmark.search_average === 99 && highCountryHalfMoonBenchmark.autocomplete_average === 38, 'High Country Half-Moon same-query benchmark summary must match repaired capture');
+assert(highCountryMastBenchmark.search_average === 84 && highCountryMastBenchmark.autocomplete_average === 37, 'High Country Mast same-query benchmark summary must match repaired capture');
+textIncludesAll(highCountryOwnerMarkdown, [
+  'High Country Outfitters Online Customer Experience Opportunity Report',
+  'already provides a strong online shopping experience',
+  'exact measurements remain in the reference tables',
+  'Estimated Upside',
+  'Why This Matters',
+  'High Country was selected because mature retailers with strong ecommerce foundations often benefit most from targeted, incremental improvements',
+  'Executive question',
+  'Customer-experience answer',
+  'Why High Country?',
+  'What can improve?',
+  'How should value be measured?',
+  'reduce customer effort',
+  'Same-Query Competitor Benchmark',
+  'Full Competitor Same-Query Dataset',
+  'Competitor Paid-Placement Reference',
+  'Paid-placement labels visible',
+  'Unusable competitor capture attempts are retained in the structured evidence artifact but excluded from the comparison table',
+  'Full Experiment Dataset',
+  'Spanish/Bilingual Discovery',
+  'Half-Moon Outfitters',
+  'Mast General Store'
+], 'High Country owner outreach markdown');
+textIncludesAll(highCountryLatex, [
+  'northvalley-template-assets/northvalley-brand.sty',
+  'High Country Outfitters Online Customer Experience Opportunity',
+  'Executive Readout',
+  'Customer Buying Experience Opportunity',
+  'strong regional outdoor retail ecommerce experience',
+  'High Country was selected because it already has a strong ecommerce foundation',
+  'Why This Matters',
+  'Executive question',
+  'Customer-experience answer',
+  'Why High Country?',
+  'What can improve?',
+  'How should value be measured?',
+  'Customers already have a strong shopping foundation',
+  'Customers can receive clearer guidance earlier',
+  'making it easier for customers to find and buy products online',
+  'Use customer journey data, add-to-cart rate, conversion, and order value to estimate impact',
+  'Recommended Growth Path',
+  'Customer Effort Reduction Model',
+  'Customer works harder',
+  'First 90 days: reduce early effort',
+  'Limited early guidance',
+  'Extra refinements',
+  'Business Value Lens',
+  '90-Day Opportunity Roadmap',
+  'Executive Decision Focus',
+  'Reference A: Executive-Level IR Concepts',
+  'Reference B: Concept Results Summary',
+  'Reference D: Full Query Dataset',
+  'Reference E: Same-Query Competitor Benchmark',
+  'Reference F: Full Competitor Same-Query Dataset',
+  'Reference G: Competitor Organic And Paid-Placement Checks',
+  'Unusable public captures are retained in the structured evidence artifact and excluded from this table',
+  'Reference H: Prior Ecommerce And Local-Site Evidence',
+  'The following table contains all 175 public search/autocomplete experiments',
+  'Spanish/Bilingual Discovery',
+  'No visible paid-placement labels',
+  'Half-Moon Outfitters',
+  'Mast General Store',
+  'Recommended Follow-Up'
+], 'High Country Northvalley PDF source');
+textExcludesAll(`${JSON.stringify(highCountryOwnerReport.executive_positioning)}\n${highCountryExecutiveMarkdown}\n${highCountryExecutiveLatex}`, [
+  'trails Half-Moon',
+  'not the top performer',
+  'leads Mast General Store overall',
+  'High Country leads both regional benchmarks overall',
+  'Autocomplete averaged 45%',
+  'Rendered search average & 94',
+  'Public suggest/autocomplete average & 45',
+  '1--4\\% sitewide ecommerce sales upside',
+  '3--7\\%',
+  'Tokenization',
+  'Synonyms',
+  'Ranking',
+  'Query Expansion',
+  'autocomplete dictionaries',
+  'search/browse/autocomplete',
+  'search and browse foundation',
+  'pre-search guidance',
+  'presses Enter'
+], 'High Country executive narrative');
+for (const name of visibleHighCountryCompetitorNames) {
+  assert(highCountryLatex.includes(name), `High Country owner PDF source missing visible competitor: ${name}`);
+}
+assert(!highCountryLatex.includes('Public Lands'), 'High Country owner PDF source must not present blocked Public Lands capture as evaluated competitor data');
+for (const disallowedHighCountryText of [
+  'What Should Make The Owner Care',
+  'What I Would Tell The Owner',
+  'Owner Outreach Report',
+  'owner-facing',
+  'owner can',
+  'Article 5',
+  'Article 6',
+  'Article 7',
+  'Article 8',
+  'Article 9',
+  'Article 10',
+  'scorecard',
+  'First Improvements',
+  'Hispanic',
+  'sponsored/promoted',
+  'Competitor And Organic Visibility Opportunity',
+  'Paid-Placement Versus Organic Readout'
+]) {
+  assert(!highCountryLatex.includes(disallowedHighCountryText), `High Country owner PDF source must omit stale text: ${disallowedHighCountryText}`);
+  assert(!highCountryOwnerMarkdown.includes(disallowedHighCountryText), `High Country owner markdown must omit stale text: ${disallowedHighCountryText}`);
+}
+
 const releaseChecks = readJson('deploy/release-checks.json');
 assert(releaseChecks.repositoryGovernance?.git_repository_present === true, 'release checks must record initialized Git repository');
 assert(releaseChecks.repositoryGovernance?.github_remote_present === true, 'release checks must record GitHub remote');
@@ -519,6 +803,20 @@ assert(gen9Evidence.validation_gate?.result === 'pass', 'GEN-009 evidence must r
 assert(gen9Evidence.validation_gate?.pass_count === '2/2', 'GEN-009 evidence must record two Validation Gate passes');
 assert(gen9Evidence.repository_governance?.github_remote_present === true, 'GEN-009 evidence must record GitHub remote');
 assert(gen9Evidence.evidence_quality_notes?.some((note) => note.includes('problem-only diagnosis')), 'GEN-009 evidence must preserve problem-only report revision note');
+const gen10Evidence = readJson('.mde/generations/GEN-010.json');
+assert(gen10Evidence.validation_gate?.result === 'pass', 'GEN-010 evidence must record passing Validation Gate');
+assert(gen10Evidence.validation_gate?.pass_count === '2/2', 'GEN-010 evidence must record two Validation Gate passes');
+assert(gen10Evidence.repository_governance?.github_remote_present === true, 'GEN-010 evidence must record GitHub remote');
+assert(gen10Evidence.evidence_quality_notes?.some((note) => note.includes('Pest Control')), 'GEN-010 evidence must preserve upstream Pest Control exclusion note');
+assert(gen10Evidence.evidence_quality_notes?.some((note) => note.includes('benchmark')), 'GEN-010 evidence must preserve benchmark limitation note');
+assert(gen10Evidence.evidence_quality_notes?.some((note) => note.includes('complete evidence report')), 'GEN-010 evidence must preserve complete report expansion note');
+const gen11Evidence = readJson('.mde/generations/GEN-011.json');
+assert(gen11Evidence.validation_gate?.result === 'pass', 'GEN-011 evidence must record passing Validation Gate');
+assert(gen11Evidence.validation_gate?.pass_count === '2/2', 'GEN-011 evidence must record two Validation Gate passes');
+assert(gen11Evidence.repository_governance?.github_remote_present === true, 'GEN-011 evidence must record GitHub remote');
+assert(gen11Evidence.evidence_quality_notes?.some((note) => note.includes('175')), 'GEN-011 evidence must preserve expanded 175-experiment note');
+assert(gen11Evidence.evidence_quality_notes?.some((note) => note.includes('Spanish/bilingual')), 'GEN-011 evidence must preserve Spanish/bilingual discovery note');
+assert(gen11Evidence.evidence_quality_notes?.some((note) => note.includes('paid-placement')), 'GEN-011 evidence must preserve paid-placement limitation note');
 const val11 = readJson('.mde/validation-runs/VAL-011.json');
 const val12 = readJson('.mde/validation-runs/VAL-012.json');
 assert(val11.gate_result === 'pass' && val11.pass_count_after_run === '1/2', 'VAL-011 must record first GEN-006 Validation Gate pass');
@@ -535,6 +833,76 @@ const val21 = readJson('.mde/validation-runs/VAL-021.json');
 const val22 = readJson('.mde/validation-runs/VAL-022.json');
 assert(val21.gate_result === 'pass' && val21.pass_count_after_run === '1/2', 'VAL-021 must record first GEN-009 Validation Gate pass');
 assert(val22.gate_result === 'pass' && val22.pass_count_after_run === '2/2', 'VAL-022 must record second GEN-009 Validation Gate pass');
+const val23 = readJson('.mde/validation-runs/VAL-023.json');
+const val24 = readJson('.mde/validation-runs/VAL-024.json');
+assert(val23.gate_result === 'pass' && val23.pass_count_after_run === '1/2', 'VAL-023 must record first GEN-010 Validation Gate pass');
+assert(val24.gate_result === 'pass' && val24.pass_count_after_run === '2/2', 'VAL-024 must record second GEN-010 Validation Gate pass');
+const val25 = readJson('.mde/validation-runs/VAL-025.json');
+const val26 = readJson('.mde/validation-runs/VAL-026.json');
+assert(val25.gate_result === 'pass' && val25.pass_count_after_run === '1/2', 'VAL-025 must record first GEN-010 post-PDF Validation Gate pass');
+assert(val26.gate_result === 'pass' && val26.pass_count_after_run === '2/2', 'VAL-026 must record second GEN-010 post-PDF Validation Gate pass');
+const val27 = readJson('.mde/validation-runs/VAL-027.json');
+const val28 = readJson('.mde/validation-runs/VAL-028.json');
+assert(val27.gate_result === 'pass' && val27.pass_count_after_run === '1/2', 'VAL-027 must record first GEN-010 complete-report Validation Gate pass');
+assert(val28.gate_result === 'pass' && val28.pass_count_after_run === '2/2', 'VAL-028 must record second GEN-010 complete-report Validation Gate pass');
+assert((val28.coverage?.complete_report_contents || '').includes('every_search_term'), 'VAL-028 must record complete report query/dataset coverage');
+const val29 = readJson('.mde/validation-runs/VAL-029.json');
+const val30 = readJson('.mde/validation-runs/VAL-030.json');
+assert(val29.gate_result === 'pass' && val29.pass_count_after_run === '1/2', 'VAL-029 must record first GEN-010 corrected-search Validation Gate pass');
+assert(val30.gate_result === 'pass' && val30.pass_count_after_run === '2/2', 'VAL-030 must record second GEN-010 corrected-search Validation Gate pass');
+assert((val30.coverage?.search_capture_correction || '').includes('camp_chairs_184_rendered'), 'VAL-030 must record corrected camp chairs rendered-search coverage');
+const val31 = readJson('.mde/validation-runs/VAL-031.json');
+const val32 = readJson('.mde/validation-runs/VAL-032.json');
+assert(val31.gate_result === 'pass' && val31.pass_count_after_run === '1/2', 'VAL-031 must record first GEN-010 autocomplete follow-up Validation Gate pass');
+assert(val32.gate_result === 'pass' && val32.pass_count_after_run === '2/2', 'VAL-032 must record second GEN-010 autocomplete follow-up Validation Gate pass');
+assert((val32.coverage?.autocomplete_followup_correction || '').includes('camp_snap'), 'VAL-032 must record camp autocomplete follow-up coverage');
+const val33 = readJson('.mde/validation-runs/VAL-033.json');
+const val34 = readJson('.mde/validation-runs/VAL-034.json');
+assert(val33.gate_result === 'pass' && val33.pass_count_after_run === '1/2', 'VAL-033 must record first GEN-010 IR concept refinement Validation Gate pass');
+assert(val34.gate_result === 'pass' && val34.pass_count_after_run === '2/2', 'VAL-034 must record second GEN-010 IR concept refinement Validation Gate pass');
+assert((val34.coverage?.ir_concept_refinement || '').includes('article_5_10'), 'VAL-034 must record Article 5-10 IR concept coverage');
+assert((val34.coverage?.ir_concept_refinement || '').includes('trail_running_shirt_autocomplete_gap'), 'VAL-034 must record the trail running shirt autocomplete gap');
+const val35 = readJson('.mde/validation-runs/VAL-035.json');
+const val36 = readJson('.mde/validation-runs/VAL-036.json');
+assert(val35.gate_result === 'pass' && val35.pass_count_after_run === '1/2', 'VAL-035 must record first GEN-011 owner outreach Validation Gate pass');
+assert(val36.gate_result === 'pass' && val36.pass_count_after_run === '2/2', 'VAL-036 must record second GEN-011 owner outreach Validation Gate pass');
+assert((val36.coverage?.owner_outreach_report || '').includes('175_query_experiments'), 'VAL-036 must record expanded 175-query owner report coverage');
+assert((val36.coverage?.owner_outreach_report || '').includes('two_usable_competitors'), 'VAL-036 must record two usable competitor benchmarks');
+assert((val36.coverage?.owner_outreach_report || '').includes('paid_placement_limits'), 'VAL-036 must record paid-placement evidence limits');
+const val37 = readJson('.mde/validation-runs/VAL-037.json');
+const val38 = readJson('.mde/validation-runs/VAL-038.json');
+assert(val37.gate_result === 'pass' && val37.pass_count_after_run === '1/2', 'VAL-037 must record first GEN-011 same-query competitor refinement Validation Gate pass');
+assert(val38.gate_result === 'pass' && val38.pass_count_after_run === '2/2', 'VAL-038 must record second GEN-011 same-query competitor refinement Validation Gate pass');
+assert((val38.coverage?.same_query_competitor_benchmark || '').includes('half_moon_175'), 'VAL-038 must record Half-Moon 175-query competitor benchmark coverage');
+assert((val38.coverage?.same_query_competitor_benchmark || '').includes('mast_175'), 'VAL-038 must record Mast 175-query competitor benchmark coverage');
+assert((val38.coverage?.pdf_output || '').includes('30_pages'), 'VAL-038 must record revised 30-page PDF output');
+const val39 = readJson('.mde/validation-runs/VAL-039.json');
+const val40 = readJson('.mde/validation-runs/VAL-040.json');
+assert(val39.gate_result === 'pass' && val39.pass_count_after_run === '1/2', 'VAL-039 must record first GEN-011 executive competitor win/loss Validation Gate pass');
+assert(val40.gate_result === 'pass' && val40.pass_count_after_run === '2/2', 'VAL-040 must record second GEN-011 executive competitor win/loss Validation Gate pass');
+assert((val40.coverage?.executive_summary_competitor_win_loss || '').includes('preserved'), 'VAL-040 must record executive competitor win/loss coverage');
+assert((val40.coverage?.grounding || '').includes('no_new_evaluation'), 'VAL-040 must record saved-evidence/no-new-evaluation grounding');
+const val41 = readJson('.mde/validation-runs/VAL-041.json');
+const val42 = readJson('.mde/validation-runs/VAL-042.json');
+assert(val41.gate_result === 'pass' && val41.pass_count_after_run === '1/2', 'VAL-041 must record first final GEN-011 executive competitor win/loss Validation Gate pass');
+assert(val42.gate_result === 'pass' && val42.pass_count_after_run === '2/2', 'VAL-042 must record second final GEN-011 executive competitor win/loss Validation Gate pass');
+assert((val42.coverage?.executive_summary_competitor_win_loss || '').includes('validated'), 'VAL-042 must record final executive competitor win/loss coverage');
+assert((val42.coverage?.grounding || '').includes('no_new_evaluation'), 'VAL-042 must record final saved-evidence/no-new-evaluation grounding');
+const val43 = readJson('.mde/validation-runs/VAL-043.json');
+const val44 = readJson('.mde/validation-runs/VAL-044.json');
+assert(val43.gate_result === 'pass' && val43.pass_count_after_run === '1/2', 'VAL-043 must record first GEN-011 customer-experience executive narrative Validation Gate pass');
+assert(val44.gate_result === 'pass' && val44.pass_count_after_run === '2/2', 'VAL-044 must record second GEN-011 customer-experience executive narrative Validation Gate pass');
+assert((val44.coverage?.customer_experience_executive_narrative || '').includes('validated'), 'VAL-044 must record customer-experience executive narrative coverage');
+assert((val44.coverage?.executive_consulting_positioning || '').includes('customer_first'), 'VAL-044 must record customer-first consulting positioning coverage');
+assert((val44.coverage?.grounding || '').includes('no_new_live_evaluation'), 'VAL-044 must record saved-evidence/no-new-live-evaluation grounding');
+const val45 = readJson('.mde/validation-runs/VAL-045.json');
+const val46 = readJson('.mde/validation-runs/VAL-046.json');
+assert(val45.gate_result === 'pass' && val45.pass_count_after_run === '1/2', 'VAL-045 must record first GEN-011 executive page design Validation Gate pass');
+assert(val46.gate_result === 'pass' && val46.pass_count_after_run === '2/2', 'VAL-046 must record second GEN-011 executive page design Validation Gate pass');
+assert((val46.coverage?.executive_page_design || '').includes('customer_effort_visual'), 'VAL-046 must record customer-effort visual coverage');
+assert((val46.coverage?.page_three_visual_review || '').includes('90_day_opportunity_roadmap'), 'VAL-046 must record 90-day roadmap visual review coverage');
+assert((val46.coverage?.narrative_integrity || '').includes('customer_experience_first'), 'VAL-046 must preserve customer-experience-first narrative coverage');
+assert((releaseChecks.repositoryGovernance?.latest_high_country_combined_report_validation_runs || []).includes('VAL-046'), 'release checks must record latest High Country executive page design validation run');
 
 const coverage = readJson('framework/coverage-matrix.json');
 const coveredBdds = new Set((coverage.mission_coverage || []).flatMap((item) => item.bdd_refs || []));

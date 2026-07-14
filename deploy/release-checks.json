@@ -48,7 +48,7 @@
     "highPriorityMissionCoverage": "90%+"
   },
   "repositoryGovernance": {
-    "updated_on": "2026-06-29",
+    "updated_on": "2026-07-05",
     "git_status_command": "git status --short --branch",
     "git_repository_present": true,
     "current_branch": "main",
@@ -57,8 +57,8 @@
     "remote_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework.git",
     "github_repo_url": "https://github.com/Northvalley-Intelligence/ecommerce-product-discovery-assessment-framework",
     "code_submitted_to_github": true,
-    "last_submission_check_after_generation": "GEN-009",
-    "last_submission_check_after_validation_run": "VAL-022",
+    "last_submission_check_after_generation": "GEN-011",
+    "last_submission_check_after_validation_run": "VAL-046",
     "submitted_branch": "main",
     "initial_submitted_commit_sha": "3e62879cea8a548f5ed13c00c2e696589e90d1a8",
     "latest_generation_6_benchmark_commit_sha": "e9988ff2ec5791875b013069b98fd560f1c805cb",
@@ -87,7 +87,16 @@
     "latest_generation_9_problem_only_report_commit_sha": "4be6b458e7e224402f44dad86eb6c933277c7014",
     "submission_required_after_meaningful_code_changes": true,
     "submission_blocker": null,
-    "sibling_repos_modified": false
+    "sibling_repos_modified": false,
+    "latest_high_country_combined_report_validation_runs": [
+      "VAL-045",
+      "VAL-046"
+    ],
+    "latest_generation_10_submission_status": "pending_post_validation_commit_or_user_review",
+    "latest_generation_11_submission_status": "pending_post_validation_commit_or_user_review",
+    "latest_generation_11_pdf_report": "highcountryoutfitters-combined-ecommerce-report.pdf",
+    "latest_generation_11_pdf_pages": 30,
+    "latest_generation_11_refinement": "executive_page_design_customer_effort_visual_from_existing_same_query_evidence"
   },
   "productionParity": {
     "updated_on": "2026-06-27",
@@ -107,6 +116,12 @@
     "UCLA commercial importance is stakeholder context, not independently verified public proof of client size.",
     "Concepts Sport and Fanatics competitor comparisons need manual or alternate-source validation before strong client-facing claims.",
     "The GEN-009 local school PTA report uses stakeholder-provided 20-mile proximity context and a partial, medium-confidence clipboard website benchmark; verify service radius, school examples, turnaround, minimum-order, and fulfillment details before external use.",
-    "Deployment validation is skipped until a deploy target exists."
+    "Deployment validation is skipped until a deploy target exists.",
+    "GEN-010 High Country outdoor-retail benchmark fetches for REI, Backcountry, and Public Lands were blocked or low-signal; do not make competitor claims without browser/manual benchmark evidence.",
+    "GEN-010 High Country camp autocomplete is backed by the public Shopify suggest API and matched the user-observed dropdown; full visible dropdown QA across the protected query set was not run.",
+    "GEN-011 High Country expanded discovery examples and same-query competitor checks are diagnostic concept benchmarks, not calibrated relevance benchmarks with expected product-level judgments.",
+    "GEN-011 High Country competitor checks record visible paid-placement labels only; absence of visible labels is not proof that competitor results are organic-only.",
+    "GEN-011 High Country checkout completion, pickup selection, payment, and return app workflows were not attempted; only public cart add/read and rendered support/policy pages were validated.",
+    "GEN-011 High Country sales upside ranges are directional only because analytics, revenue, conversion, add-to-cart, and AOV data were not available."
   ]
 }

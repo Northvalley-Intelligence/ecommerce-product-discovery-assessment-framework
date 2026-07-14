@@ -1,0 +1,26 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-013-20260708T151930Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "blocked",
+      "started_at": "2026-07-08T15:19:30.625Z",
+      "ended_at": "2026-07-08T15:19:30.692Z",
+      "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T151930Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-08T15:19:30.693Z",
+      "ended_at": "2026-07-08T15:19:31.491Z",
+      "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T151930Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    }
+  }
+}

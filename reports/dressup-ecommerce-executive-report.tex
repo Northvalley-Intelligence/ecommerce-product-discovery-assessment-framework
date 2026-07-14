@@ -1,0 +1,680 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\input{northvalley-template-assets/northvalley-brand.sty}
+\usepackage[letterpaper,margin=0.62in,top=0.62in,bottom=0.72in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=0.14in
+
+\newcommand{\ReportTitle}{Dress Up Online Customer Experience Opportunity}
+\newcommand{\ReportClient}{Dress Up Leadership Team}
+\newcommand{\ReportDate}{July 6, 2026}
+\newcommand{\ReportSummary}{Executive conversation starter on making it easier for shoppers to find and buy boutique apparel online, supported by public observations, same-query peer analysis, and reference evidence.}
+\newcommand{\ReportPreparedBy}{Northvalley Intelligence LLC}
+
+\definecolor{NVIAmberSoft}{HTML}{FFF4D8}
+\definecolor{NVIGreenSoft}{HTML}{E2F1ED}
+
+\newcommand{\Good}[1]{\textcolor{NVIAccentDark}{\textbf{#1}}}
+\newcommand{\Warn}[1]{\textcolor{NVIWarning}{\textbf{#1}}}
+\newcommand{\ReportKicker}[1]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+\newcommand{\ReportBody}[1]{{\fontsize{9.35}{11.45}\selectfont\color{NVIInk}#1}}
+\newcommand{\ReportFine}[1]{{\fontsize{7.45}{8.9}\selectfont\color{NVIMuted}#1}}
+\newcommand{\CustomerEffortVisual}{%
+  \resizebox{\linewidth}{!}{%
+  \begin{tikzpicture}[x=1in,y=1in]
+    \path[use as bounding box] (0,0) rectangle (8.55,3.45);
+    \draw[draw=NVIRule,fill=NVIPanel,rounded corners=2pt] (0,0) rectangle (8.55,3.45);
+    \node[anchor=west,font=\fontsize{7.9}{9.4}\selectfont\bfseries,text=NVIAccent] at (0.22,3.20) {CUSTOMER EFFORT REDUCTION MODEL};
+    \node[anchor=east,font=\fontsize{7.1}{8.4}\selectfont,text=NVIMuted] at (8.31,3.20) {Where the first 90 days should focus};
+    \node[anchor=west,font=\fontsize{7.1}{8.4}\selectfont\bfseries,text=NVIMuted] at (0.30,2.68) {Customer works harder};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (needA) at (1.35,2.22) {Occasion or style need};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (guideA) at (3.15,2.22) {Limited early guidance};
+    \node[draw=NVIWarning,fill=NVIAmberSoft,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (refineA) at (4.95,2.22) {Extra refinements};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.52in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (pathA) at (6.75,2.22) {Product path};
+    \draw[->,line width=0.8pt,color=NVIMuted] (needA.east) -- (guideA.west);
+    \draw[->,line width=0.8pt,color=NVIMuted] (guideA.east) -- (refineA.west);
+    \draw[->,line width=0.8pt,color=NVIMuted] (refineA.east) -- (pathA.west);
+    \node[anchor=west,font=\fontsize{7.1}{8.4}\selectfont\bfseries,text=NVIAccent] at (0.30,1.50) {First 90 days: reduce early effort};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (needB) at (1.35,1.02) {Occasion or style need};
+    \node[draw=NVIAccent,fill=NVIGreenSoft,rounded corners=2pt,text width=1.44in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] (guideB) at (3.25,1.02) {Earlier guidance};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (pathB) at (5.25,1.02) {Relevant style path};
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,text width=1.28in,minimum height=0.54in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIInk] (buyB) at (7.15,1.02) {Confidence to buy};
+    \draw[->,line width=0.9pt,color=NVIAccentDark] (needB.east) -- (guideB.west);
+    \draw[->,line width=0.9pt,color=NVIAccentDark] (guideB.east) -- (pathB.west);
+    \draw[->,line width=0.9pt,color=NVIAccentDark] (pathB.east) -- (buyB.west);
+    \draw[->,line width=0.95pt,color=NVIAccent] (guideA.south) -- (guideB.north);
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=2.42in,align=center,font=\fontsize{7.0}{8.4}\selectfont\bfseries,text=NVIAccentDark] at (3.25,0.32) {Occasions, fit, color, customer wording, and bilingual needs};
+    \node[anchor=west,font=\fontsize{7.0}{8.4}\selectfont,text=NVIMuted] at (5.00,0.32) {Measure: product-page reach, add-to-cart, conversion, and order value.};
+  \end{tikzpicture}%
+  }%
+}
+\newcommand{\ExecutiveDecisionStrip}{%
+  \resizebox{\linewidth}{!}{%
+  \begin{tikzpicture}[x=1in,y=1in]
+    \path[use as bounding box] (0,0) rectangle (8.55,0.95);
+    \draw[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt] (0,0) rectangle (8.55,0.95);
+    \node[anchor=west,font=\fontsize{7.6}{9.0}\selectfont\bfseries,text=NVIAccentSoft] at (0.25,0.72) {EXECUTIVE DECISION FOCUS};
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=1.55in,minimum height=0.36in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] at (2.05,0.33) {Priority journeys};
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=1.55in,minimum height=0.36in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] at (4.30,0.33) {Early guidance pilots};
+    \node[draw=NVIAccent,fill=white,rounded corners=2pt,text width=1.55in,minimum height=0.36in,align=center,font=\fontsize{7.0}{8.2}\selectfont\bfseries,text=NVIAccentDark] at (6.55,0.33) {Impact measurement};
+  \end{tikzpicture}%
+  }%
+}
+
+\newcommand{\ReportPageHeader}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-0.46in]current page.north east);
+    \fill[NVIAccent] ([yshift=-0.46in]current page.north west) rectangle ([yshift=-0.49in]current page.north east);
+    \node[anchor=west,text=white,font=\fontsize{8.4}{9.8}\selectfont\bfseries]
+      at ([xshift=0.62in,yshift=-0.23in]current page.north west) {#1};
+    \node[anchor=east,text=white,font=\fontsize{7.4}{8.6}\selectfont]
+      at ([xshift=-0.62in,yshift=-0.23in]current page.north east) {\ReportClient};
+  \end{tikzpicture}
+  \vspace*{0.22in}
+}
+\newcommand{\ReportFooter}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.34in]current page.south east);
+    \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=0.62in,yshift=0.17in]current page.south west) {\NorthvalleyContactLine};
+    \node[anchor=east,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=-0.62in,yshift=0.17in]current page.south east) {\thepage};
+  \end{tikzpicture}
+}
+\newcommand{\ReportSection}[1]{%
+  \vspace{0.10in}
+  {\fontsize{15}{18}\selectfont\bfseries\color{NVIInk}#1}\\[-0.02in]
+  {\color{NVIAccent}\rule{\linewidth}{0.8pt}}
+  \vspace{0.07in}
+}
+\newcommand{\ReportCard}[2]{%
+  \begin{tikzpicture}
+    \node[draw=NVIRule,fill=white,rounded corners=2pt,inner xsep=11pt,inner ysep=9pt,text width=\dimexpr\linewidth-24pt\relax,align=left]
+      {\ReportKicker{#1}\\[0.05in]\ReportBody{#2}};
+  \end{tikzpicture}
+}
+\newcommand{\ReportDarkCard}[2]{%
+  \begin{tikzpicture}
+    \node[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt,inner xsep=12pt,inner ysep=10pt,text width=\dimexpr\linewidth-26pt\relax,align=left]
+      {{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.06in]{\fontsize{10.2}{12.4}\selectfont\color{white}#2}};
+  \end{tikzpicture}
+}
+\newcommand{\MetricCard}[3]{%
+  \begin{tikzpicture}
+    \node[draw=NVIRule,fill=NVIPanel,rounded corners=2pt,inner xsep=9pt,inner ysep=8pt,text width=\dimexpr\linewidth-20pt\relax,minimum height=0.88in,align=left]
+      {\ReportKicker{#1}\\[0.04in]{\fontsize{18}{21}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]\ReportFine{#3}};
+  \end{tikzpicture}
+}
+
+\begin{document}
+\color{NVIInk}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+  \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.05in]current page.north east);
+  \fill[NVIAccent] ([yshift=-1.05in]current page.north west) rectangle ([yshift=-1.10in]current page.north east);
+  \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.45in]current page.south east);
+  \node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries]
+    at ([xshift=0.62in,yshift=-0.52in]current page.north west) {\NorthvalleyBusinessName};
+  \node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont]
+    at ([xshift=-0.62in,yshift=-0.52in]current page.north east) {\ReportDate};
+  \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+    at ([xshift=0.62in,yshift=0.22in]current page.south west) {\NorthvalleyContactLine};
+\end{tikzpicture}
+
+\vspace*{1.08in}
+\begin{minipage}[t]{0.60\linewidth}
+\raggedright
+\ReportKicker{Customer Experience Review}\\[0.12in]
+{\fontsize{31}{36}\selectfont\bfseries\color{NVIInk}\ReportTitle}\par
+\vspace{0.20in}
+{\fontsize{12.1}{14.6}\selectfont\color{NVIInk}\ReportSummary}\par
+\vspace{0.30in}
+{\color{NVIAccent}\rule{2.6in}{0.9pt}}\par
+\vspace{0.18in}
+{\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]
+{\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}\ReportClient}\par
+\vspace{0.08in}
+{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \ReportPreparedBy}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.31\linewidth}
+\centering
+\vspace{0.10in}
+\NorthvalleyLogo[0.88in]\par
+\vspace{0.22in}
+\ReportDarkCard{Primary Readout}{Dress Up already has a strong online boutique shopping foundation. The opportunity is helping shoppers reach the right styles faster and with less effort.}
+\vspace{0.11in}
+\MetricCard{Evidence Base}{Public}{Detailed experiments, methodology, and peer references remain in the appendix.}
+\end{minipage}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\ReportPageHeader{Executive Readout}
+\ReportFooter
+\ReportSection{Executive Readout}
+\begin{minipage}[t]{0.62\linewidth}
+\ReportDarkCard{Customer Buying Experience Opportunity}{Dress Up already provides a broad online boutique experience across dresses, tops, denim, shoes, accessories, seasonal collections, game day, bridal, sale, and city custom paths. The opportunity is to reduce customer effort before shoppers reach the style they intend to buy.}
+\vspace{0.12in}
+\ReportBody{We periodically review regional and online retailers to identify practical opportunities for improving the customer experience. \textbf{Dress Up was selected because it already has a strong ecommerce foundation}. Mature retailers often benefit most from targeted improvements that make shopping faster, easier, and more confidence-building for customers.}\par
+\vspace{0.08in}
+\ReportKicker{Why This Matters}\\[0.03in]
+\ReportBody{Comparable online boutique retailers were reviewed with the same shopper-language examples used for Dress Up. These peer references help show alternative ways customers can be guided during the earliest moments of shopping, while keeping the executive takeaway favorable for Dress Up: shoppers already encounter a strong online boutique foundation. The remaining opportunity is helping more customers reach the right styles faster, with less effort, and with greater confidence to continue toward purchase.}\par
+\vspace{0.05in}
+{\fontsize{7.0}{8.3}\selectfont
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabularx}{\linewidth}{@{}L{0.26\linewidth}N@{}}
+\toprule
+\textbf{Executive question} & \textbf{Customer-experience answer}\\
+\midrule
+Why Dress Up? & Customers already encounter a mature boutique shopping experience, which makes targeted improvements more valuable than a broad redesign.\\
+What can improve? & Customers can receive clearer early guidance when they begin with an occasion, style, color, fit detail, gift idea, team, or bilingual wording.\\
+How should value be measured? & Internal shopping behavior, product-page reach, add-to-cart rate, conversion rate, average order value, and margin can quantify the opportunity.\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.07in}
+\begin{itemize}
+\item \Good{Customers already have a strong shopping foundation.} We observed broad collection paths, seasonal and occasion navigation, sale paths, and public search/suggest evidence.
+\item \Warn{Customers can receive clearer guidance earlier.} Some shoppers may need to work harder than necessary before reaching the style they intend to buy.
+\item \Warn{Customers using occasion, fit, color, or bilingual wording should still feel confident.} The buying journey should support how customers naturally describe apparel.
+\item \Good{Peer analysis supports the recommendations without becoming the headline.} Comparable boutiques help identify options, while the recommendation remains centered on Dress Up's customers.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.31\linewidth}
+\MetricCard{Shopping Foundation}{Strong}{Customers already have useful product-finding paths to build on.}
+\vspace{0.09in}
+\MetricCard{Customer Effort}{Reduce}{The clearest opportunity is making early style finding easier.}
+\vspace{0.09in}
+\MetricCard{Business Value}{Measure}{Use customer journey data, add-to-cart rate, conversion, order value, and margin to estimate impact.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Executive Opportunity}
+\ReportFooter
+\ReportSection{Recommended Growth Path}
+\ReportCard{Short Version}{Dress Up already gives customers a solid online boutique shopping experience. The next growth opportunity is reducing effort early in product finding: a shopper looking for a wedding guest dress, game day outfit, denim, vacation style, bridal shower dress, or Spanish-language equivalent should reach relevant products quickly, confidently, and with as few extra steps as possible.}
+\vspace{0.10in}
+\CustomerEffortVisual
+\vspace{0.08in}
+\begin{minipage}[t]{0.43\linewidth}
+\ReportSection{Business Value Lens}
+{\fontsize{7.85}{9.35}\selectfont
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabularx}{\linewidth}{@{}L{0.36\linewidth}N@{}}
+\toprule
+\textbf{Customer outcome} & Less effort reaching relevant styles.\\
+\textbf{Business signal} & Product-page reach, add-to-cart, conversion, order value, and margin.\\
+\textbf{Decision use} & Prioritize fixes with Dress Up analytics; no public dollar claim.\\
+\bottomrule
+\end{tabularx}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.51\linewidth}
+\ReportSection{90-Day Opportunity Roadmap}
+{\fontsize{7.65}{9.15}\selectfont
+\setlength{\tabcolsep}{3.3pt}
+\begin{tabularx}{\linewidth}{@{}L{0.31\linewidth}L{0.31\linewidth}L{0.31\linewidth}@{}}
+\toprule
+\textbf{0-30 days} & \textbf{31-60 days} & \textbf{61-90 days}\\
+\midrule
+Map customer language across occasion, style, color, fit, team, gift, and bilingual needs. &
+Pilot earlier guidance for priority journeys: brunch outfit, bridal shower dress, mom and me dress. &
+Connect journey analytics to product-page reach, add-to-cart, conversion, order value, and margin.\\
+\bottomrule
+\end{tabularx}
+}
+\end{minipage}
+\vspace{0.14in}
+\ExecutiveDecisionStrip
+
+\newpage
+\ReportPageHeader{Reference: Results}
+\ReportFooter
+\ReportSection{Reference A: Concept Results Summary}
+{\fontsize{7.7}{9.0}\selectfont
+\begin{tabularx}{\linewidth}{@{}L{0.24\linewidth}R{0.13\linewidth}R{0.16\linewidth}R{0.15\linewidth}N@{}}
+\toprule
+\textbf{Concept} & \textbf{Search avg} & \textbf{Auto avg} & \textbf{Uniform} & \textbf{Representative gaps}\\
+\midrule
+Normalization & 93\% & 89\% & 80\% & rompers jumpsuits; game day outfits\\
+Tokenization & 93\% & 83\% & 70\% & off shoulder dress; game day dress\\
+Customer Language & 93\% & 48\% & 30\% & going out top; date night dress; brunch outfit\\
+Ranking And Field Weighting & 98\% & 72\% & 70\% & denim jacket women; georgia game day; tennessee game day\\
+Query Expansion & 83\% & 25\% & 0\% & wedding guest outfit; beach vacation outfit; graduation dress\\
+Product Attribute Coverage & 95\% & 45\% & 40\% & smocked bodice dress; satin midi skirt; vegan leather shorts\\
+Spanish/Bilingual Discovery & 93\% & 0\% & 0\% & vestido blanco; vestido fiesta; vestido boda invitada\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.14in}
+\ReportSection{Reference B: Highest-Priority Early Guidance Gaps}
+{\fontsize{7.6}{8.9}\selectfont
+\begin{longtable}{@{}L{0.21\linewidth}L{0.20\linewidth}R{0.11\linewidth}R{0.11\linewidth}L{0.29\linewidth}@{}}
+\toprule
+\textbf{Concept} & \textbf{Query} & \textbf{Search} & \textbf{Auto} & \textbf{Evidence note}\\
+\midrule
+\endhead
+Customer Language & brunch outfit & 94 & 0 & 215 rendered results; sample: Brunch Poplin Everyday Top; Black / no product, collection, query, or page suggestions\\
+Customer Language & bridal shower dress & 94 & 0 & 262 rendered results; sample: Summer Memories Ivory Floral Maxi Dress; Ivory / no product, collection, query, or page suggestions\\
+Customer Language & mom and me dress & 100 & 0 & 43 rendered results; sample: Rio Muse Magenta Floral Mini Dress; Magenta / no product, collection, query, or page suggestions\\
+Customer Language & faux leather leggings & 94 & 0 & 54 rendered results; sample: FINAL  - Midnight Sleigh Faux Black Leather Jacket; Black / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & denim jacket women & 100 & 0 & 142 rendered results; sample: FINAL  - Easygoing Classic Denim Jacket; Denim / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & georgia game day & 100 & 0 & 137 rendered results; sample: Black Georgia Tailgating Club Cropped Tee; Black / no product, collection, query, or page suggestions\\
+Query Expansion & wedding guest outfit & 100 & 0 & 89 rendered results; sample: Gracefully Yours Cream Floral Maxi Dress; Cream / no product, collection, query, or page suggestions\\
+Query Expansion & teacher outfit & 76 & 0 & 9 rendered results; sample: Blissfully Perfect Light Blue Striped Romper; Light Blue / no product, collection, query, or page suggestions\\
+Query Expansion & summer outfit & 76 & 0 & 354 rendered results; sample: Orchid Breeze Ruffle Shorts; Orchid / no product, collection, query, or page suggestions\\
+Query Expansion & fall transition outfit & 76 & 0 & 5 rendered results; sample: FINAL  - Blushing Layers Quilted Puffer Vest; Blush / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & smocked bodice dress & 100 & 0 & 58 rendered results; sample: Hold This Moment Mocha Smocked Maxi Dress; Mocha / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & satin midi skirt & 100 & 0 & 116 rendered results; sample: FINAL  - Look Around You Leather Midi Skirt; Wine / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & vegan leather shorts & 100 & 0 & 21 rendered results; sample: Easy Motion Washed Lounge Drawstring Shorts; Denim / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & adjustable strap cami & 100 & 0 & 64 rendered results; sample: Seamless Ribbed Padded Cami Tank; Black / no product, collection, query, or page suggestions\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Experiment Data}
+\ReportFooter
+\ReportSection{Reference C: Full Query Dataset}
+\ReportBody{The following table contains all 70 public search/autocomplete experiments. Percentages are experiment readouts, not an overall public-facing grade. They are included here so the recommendations can be traced back to concrete shopper-language tests.}\par
+\vspace{0.06in}
+{\fontsize{6.55}{7.65}\selectfont
+\setlength{\tabcolsep}{1.45pt}
+\begin{longtable}{@{}L{0.16\linewidth}L{0.16\linewidth}L{0.17\linewidth}R{0.08\linewidth}R{0.08\linewidth}L{0.27\linewidth}@{}}
+\toprule
+\textbf{Concept} & \textbf{Query} & \textbf{Intent} & \textbf{Search} & \textbf{Auto} & \textbf{Evidence note}\\
+\midrule
+\endhead
+Normalization & womens dresses & women dresses & 88 & 95 & 1002 rendered results; sample: The Main Attraction Red Mini Dress; Red / products: Sweetest Thing Stripe Midi Dress; Passport Ready Cream Print Midi Dress | collections: Knit Dresses For Women - Sweater Dresses; Cute Black Dresses | Boutique Dresses | Online Women's Dresses\\
+Normalization & wedding guest dresses & wedding guest dresses & 100 & 95 & 213 rendered results; sample: Garden Affair Black Floral Midi Dress; Black / products: Remarkably Her Blue Midi Dress; Sweet Joyride Ruffle Tiered Mini Dress | collections: Wedding Guest Styles | Maxi Dresses | Cocktail Dresses\\
+Normalization & mini dress & mini dresses & 94 & 95 & 360 rendered results; sample: Sweet Joyride Ruffle Tiered Mini Dress; Black / products: Seashell Escape Brown Printed Mini Dress; FINAL SALE - Sweet Moments Flowy Mini Dress | collections: Mini Dresses for Women | Trendy Short Dresses for Every Occasion – Shop Dress Up; White Dresses For Women - White Mini Dresses, White Cocktail Dresses, \& Bridal Party Dresses | queries: mini dress; navy mini dress\\
+Normalization & maxi dresses & maxi dresses & 94 & 95 & 303 rendered results; sample: FINAL  - Seabreeze Smocked Maxi Dress; Taupe / products: Best Dressed Blue Floral Pleated Maxi Dress; Oceanfront Blue Stripe Maxi Dress | collections: Women’s Maxi Dresses | Trendy Long Dresses for Every Occasion |Floral Maxi Dress | Women's Maxi Dress; Wedding Guest Styles | Maxi Dresses | Cocktail Dresses | queries: maxi dresses; blue maxi dresses\\
+Normalization & rompers jumpsuits & rompers and jumpsuits & 94 & 62 & 145 rendered results; sample: Watch The Sunset Ivory Printed Romper; Ivory / collections: New Rompers, Romper Dresses, \& Jumpsuits.; Warehouse Sale Rompers \& Jumpsuits\\
+Normalization & graphic tees & graphic t-shirts & 88 & 95 & 683 rendered results; sample: Burgundy Carolina Graphic Tee; Burgundy / products: Burgundy Carolina Graphic Tee; À La Mer Yellow Graphic Tee | collections: Tees - Graphic Tees, Basic Tees, \& Crop Tees; Savannah - Sweatshirts \& Graphic Tees\\
+Normalization & game day outfits & game day outfits & 76 & 71 & 384 rendered results; sample: Hunter Green Go Team Color Block Embroidered Hat; Hunter Green / products: Hunter Green Go Team Color Block Embroidered Hat; Navy + Red Go Team Color Block Embroidered Hat\\
+Normalization & white dress & white dresses & 94 & 95 & 437 rendered results; sample: Love Story Floral Eyelet White Mini Dress; White / products: French Florals White Printed Midi Dress; Until We Meet Again White Mini Dress | collections: White Dresses For Women - White Mini Dresses, White Cocktail Dresses, \& Bridal Party Dresses | queries: white dress; white dresses\\
+Normalization & denim shorts & denim shorts & 100 & 95 & 211 rendered results; sample: Rebecca Medium Wash Denim Shorts; Medium Wash / products: Slate Season Relaxed Denim Shorts; Rebecca Medium Wash Denim Shorts | collections: Denim Shorts For Women - High-Waisted Denim Shorts; Women’s Athletic Shorts, Denim Shorts \& Dress Shorts | queries: denim shorts; white denim shorts\\
+Normalization & wide leg jeans & wide-leg jeans & 100 & 95 & 219 rendered results; sample: Jesse High Rise Light Wash Tie Waist Palazzo Jeans; Light Wash / products: Olivia Light Wash Wide Leg Jeans; Olivia Light Wash Pinstripe Wide Leg Jeans | collections: Vervet Jeans - Wide Leg Jeans; Boutique Women’s Jeans — Distressed, Flare, Dad, Wide-Leg \& More | queries: wide leg jeans\\
+Tokenization & little black dress & little black dress & 94 & 95 & 333 rendered results; sample: FINAL  - On Repeat Black Ribbed Knit Mini Dress; Black / products: FINAL SALE - On Repeat Black Ribbed Knit Mini Dress; Coastal Style Black Contrast Mini Dress | collections: Little Black Dresses - Short Black Dress, Cocktail Dresses, Formal Dress\\
+Tokenization & puff sleeve dress & puff-sleeve dress & 100 & 95 & 61 rendered results; sample: Watercolor Petals Blue Floral Puff Sleeve Maxi Dress; Blue / products: Watercolor Petals Blue Floral Puff Sleeve Maxi Dress; FINAL SALE - Courtyard Brunch Puff Sleeve Off White Mini Dress | collections: Puff Sleeve Dresses\\
+Tokenization & two piece set & matching set & 70 & 62 & 422 rendered results; sample: Away We Go Printed Wide Leg Pants; Taupe / collections: Women’s Matching Sets | Trendy Lounge \& Two-Piece Outfits – Shop Dress Up\\
+Tokenization & high rise jeans & high-rise jeans & 100 & 90 & 189 rendered results; sample: Jesse High Rise Light Wash Tie Waist Palazzo Jeans; Light Wash / products: Ethereal Medium Wash High-Rise Wide Leg Jeans; Ginny High-Rise Dark Wash Wide Leg Jeans\\
+Tokenization & square neck top & square-neck top & 82 & 90 & 590 rendered results; sample: Taylor Square Neck Long Sleeve Top; Ivory / products: Sophie Everyday White/Black Striped Square Neck Tank; Laura Everyday Square Neck Top\\
+Tokenization & wide leg pants & wide-leg pants & 100 & 95 & 79 rendered results; sample: Palm Paradise Navy Tropical Print Wide Leg Pants; Navy / products: Palm Paradise Navy Tropical Print Wide Leg Pants; Away We Go Printed Wide Leg Pants | collections: Vervet Jeans - Wide Leg Jeans; Cargos Pants For Women - Cargo Joggers, Cargo Wide-Leg Pants \& More. | queries: printed wide leg pants; life leopard wide leg pants\\
+Tokenization & off shoulder dress & off-shoulder dress & 100 & 62 & 225 rendered results; sample: Sweet Staple Off White Mini Dress; Off White / queries: off the shoulder dress\\
+Tokenization & long sleeve mini dress & long-sleeve mini dress & 100 & 85 & 190 rendered results; sample: FINAL  - Simply Ready Purple Mini Dress - DU Deal; Purple / products: FINAL SALE - Simply Ready Purple Mini Dress - DU Deal\\
+Tokenization & button down blouse & button-down blouse & 100 & 90 & 190 rendered results; sample: FINAL  - Classic Ease Button Up Blouse; Lavender / products: FINAL SALE - Classic Ease Button Up Blouse; Made To Wear Natural Blouse\\
+Tokenization & game day dress & game day dress & 88 & 62 & 424 rendered results; sample: FINAL  - Dreaming Heart Lace Detail White Maxi Dress; White / collections: Bandanas | Trendy Women's Game day, Everyday Bandanas \& More! | Dress Up; UGA, Tennessee, Alabama \& Atlanta Game Day Clothing | Dress Up Exclusives\\
+Customer Language & going out top & going-out top & 76 & 71 & 342 rendered results; sample: Looking Up Denim One-Shoulder Tank - DU DEAL; Denim / products: Looking Up Denim One-Shoulder Tank - DU DEAL; Delicate Days Tan Floral Tank\\
+Customer Language & date night dress & date night dress & 100 & 62 & 95 rendered results; sample: Garden Affair Black Floral Midi Dress; Black / collections: Party Dresses - Cocktail Dress - Sparkle Dresses -Date Night Dress\\
+Customer Language & brunch outfit & brunch outfit & 94 & 0 & 215 rendered results; sample: Brunch Poplin Everyday Top; Black / no product, collection, query, or page suggestions\\
+Customer Language & vacation dress & vacation dress & 88 & 95 & 685 rendered results; sample: FINAL  - Tropical Vacation Off White Maxi Dress; Off White / products: FINAL SALE - Tropical Vacation Off White Maxi Dress; Summer Agenda Leaf Print Ivory Maxi Dress | collections: Resort Dress Collection | Trendy Women's Vacation Dresses | Shop Dress Up; Somewhere Sunny Collection | Women’s Dresses, Tops \& Vacation Styles – Shop Dress Up\\
+Customer Language & workwear dress & work dress & 94 & 62 & 327 rendered results; sample: Always Works Navy Button Front Mini Dress; Navy / collections: Workwear Dresses\\
+Customer Language & bridal shower dress & bridal shower dress & 94 & 0 & 262 rendered results; sample: Summer Memories Ivory Floral Maxi Dress; Ivory / no product, collection, query, or page suggestions\\
+Customer Language & mom and me dress & mom and me matching & 100 & 0 & 43 rendered results; sample: Rio Muse Magenta Floral Mini Dress; Magenta / no product, collection, query, or page suggestions\\
+Customer Language & oversized sweater & oversized sweater & 88 & 95 & 546 rendered results; sample: FINAL  - Hold Me Close Collared Knit Sweater; Blue / products: FINAL SALE - Frostline Cream Stripe Sweater; FINAL SALE - Hold Me Close Collared Knit Sweater | collections: Oversized Sweaters; Fall Outfits For Women - Sweater Dress, Cozy Sweaters, Oversized Sweaters | queries: deck the halls oversized sweater; oversized grey sweater\\
+Customer Language & skort & skort & 100 & 95 & 74 rendered results; sample: Lacy Medium Wash Denim Mini Wrap Skort; Medium Wash / products: Ultra Air Soft Mini Skort; Simply You Wrap Linen Skort | queries: skort; white denim skort\\
+Customer Language & faux leather leggings & faux leather leggings & 94 & 0 & 54 rendered results; sample: FINAL  - Midnight Sleigh Faux Black Leather Jacket; Black / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & pink midi dress & pink midi dress & 100 & 90 & 104 rendered results; sample: Catch My Eye Blush Eyelet Midi Dress; Blush / products: Catch My Eye Blush Eyelet Midi Dress; All The Charm Pink Stripe Puff Sleeve Mini Dress\\
+Ranking And Field Weighting & white mini dress & white mini dress & 94 & 95 & 353 rendered results; sample: Love Story Floral Eyelet White Mini Dress; White / products: Garden Grace White Floral Mini Dress; European Market White Fruit Print Mini Dress | collections: White Dresses For Women - White Mini Dresses, White Cocktail Dresses, \& Bridal Party Dresses | queries: white mini dress; white ruffle mini dress\\
+Ranking And Field Weighting & black romper & black romper & 100 & 90 & 45 rendered results; sample: On The Go Stripe Drawstring Romper; Black / products: On The Go Stripe Drawstring Romper; FINAL SALE - Delicate Charm Eyelet Romper\\
+Ranking And Field Weighting & denim jacket women & women denim jacket & 100 & 0 & 142 rendered results; sample: FINAL  - Easygoing Classic Denim Jacket; Denim / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & gold hoop earrings & gold hoop earrings & 94 & 95 & 282 rendered results; sample: Seraphina Gold Hoop Earrings; Gold / products: Waverly Gold Butterfly Hoop Earrings; Seraphina Gold Hoop Earrings | queries: lindsay gold hoop earrings; eden gold hoop earrings\\
+Ranking And Field Weighting & western boots & western boots & 100 & 95 & 14 rendered results; sample: Always A Step Ahead Red Western Boots; Red / products: From Here On Out White Western Boots; Always A Step Ahead Red Western Boots | collections: Western Shoes, Boots \& Booties For Women | Trendy Shoes | Shop Dress Up | queries: white western boots; known white western boots\\
+Ranking And Field Weighting & georgia game day & Georgia game day apparel & 100 & 0 & 137 rendered results; sample: Black Georgia Tailgating Club Cropped Tee; Black / no product, collection, query, or page suggestions\\
+Ranking And Field Weighting & tennessee game day & Tennessee game day apparel & 94 & 62 & 98 rendered results; sample: Heather Grey Tennessee Cropped Tee; Heather Grey / collections: UGA, Tennessee, Alabama \& Atlanta Game Day Clothing | Dress Up Exclusives\\
+Ranking And Field Weighting & floral maxi dress & floral maxi dress & 100 & 95 & 195 rendered results; sample: Coastal Heirloom Blue Floral Maxi Dress; Blue / products: Coastal Romance Floral Maxi Dress; FINAL SALE - Wildflower Fields Yellow Floral Maxi Dress | collections: Floral Dress - Floral Maxi Dress - Floral Dresses For Women; Women’s Maxi Dresses | Trendy Long Dresses for Every Occasion |Floral Maxi Dress | Women's Maxi Dress | queries: floral maxi dress; blue floral maxi dress\\
+Ranking And Field Weighting & blue midi dress & blue midi dress & 94 & 95 & 298 rendered results; sample: Remarkably Her Blue Midi Dress; Blue / products: Remarkably Her Blue Midi Dress; Seabrook Blue Stripe Tiered Midi Dress | queries: coast blue striped midi dress; periwinkle poise blue midi dress\\
+Query Expansion & wedding guest outfit & wedding guest outfit & 100 & 0 & 89 rendered results; sample: Gracefully Yours Cream Floral Maxi Dress; Cream / no product, collection, query, or page suggestions\\
+Query Expansion & beach vacation outfit & beach vacation outfit & 88 & 62 & 348 rendered results; sample: Palm Beach Pink Straw Fedora Wide Brim Hat; Pink / collections: Resort Ready Collection | Resort Wear for Women | Vacation Outfits \& Beach Looks\\
+Query Expansion & graduation dress & graduation dress & 94 & 62 & 251 rendered results; sample: Bluebird Kisses Light Blue Mini Dress; Light Blue / collections: Graduation Dresses for Women | Elegant \& Stylish Gowns \& Dresses – Shop Dress Up | queries: white graduation dress\\
+Query Expansion & teacher outfit & teacher outfit & 76 & 0 & 9 rendered results; sample: Blissfully Perfect Light Blue Striped Romper; Light Blue / no product, collection, query, or page suggestions\\
+Query Expansion & sorority recruitment dress & sorority recruitment dress & -- & 0 & Rendered search was blocked or unverified; do not treat as zero results. / no product, collection, query, or page suggestions\\
+Query Expansion & concert outfit & concert outfit & 76 & 62 & 106 rendered results; sample: FINAL  - Denim Debut Dark Wash Romper; Dark Wash / collections: Country Concert Outfits - Denim Shorts, Crochet, Graphic Tees\\
+Query Expansion & game day accessories & game day accessories & 64 & 0 & 705 rendered results; sample: ATL Star Beaded Purse Strap; White / no product, collection, query, or page suggestions\\
+Query Expansion & summer outfit & summer outfit & 76 & 0 & 354 rendered results; sample: Orchid Breeze Ruffle Shorts; Orchid / no product, collection, query, or page suggestions\\
+Query Expansion & fall transition outfit & fall transition outfit & 76 & 0 & 5 rendered results; sample: FINAL  - Blushing Layers Quilted Puffer Vest; Blush / no product, collection, query, or page suggestions\\
+Query Expansion & gift for her & gift for her & 94 & 62 & 13 rendered results; sample: Dress Up E-Gift Card; Dress Up Gift Card / collections: Gift Ideas For Her; Holiday Shop - Christmas Gifts For Her\\
+Product Attribute Coverage & linen dress & linen dress & 94 & 95 & 275 rendered results; sample: A Little Bit Of Love Linen Maxi Dress; Oatmeal / products: Timeless Touch Oatmeal Linen Midi Dress; A Little Bit Of Love Linen Maxi Dress | collections: Summer Linens - Linen Tops, Dresses, Pants \& Shorts | queries: linen dress; love linen maxi dress\\
+Product Attribute Coverage & smocked bodice dress & smocked bodice dress & 100 & 0 & 58 rendered results; sample: Hold This Moment Mocha Smocked Maxi Dress; Mocha / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & ribbed tank & ribbed tank & 94 & 95 & 174 rendered results; sample: FINAL  - Paradise Plans Ribbed Tank; Yellow / products: FINAL SALE - Paradise Plans Ribbed Tank; Atlanta Script Ribbed Tank | queries: ribbed tank; ribbed tank and sjirt set\\
+Product Attribute Coverage & satin midi skirt & satin midi skirt & 100 & 0 & 116 rendered results; sample: FINAL  - Look Around You Leather Midi Skirt; Wine / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & crochet top & crochet top & 94 & 95 & 496 rendered results; sample: FINAL  - True Self Crochet Knit Tank - DU Deal; Black / products: Coastal Keepsake Natural Crochet Knit Top; Seeking The Sun Natural Crochet Top | collections: Crochet Tops \& Knitwear for Women | Boho Styles \& Layered Looks | queries: crochet top\\
+Product Attribute Coverage & vegan leather shorts & vegan leather shorts & 100 & 0 & 21 rendered results; sample: Easy Motion Washed Lounge Drawstring Shorts; Denim / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & adjustable strap cami & adjustable strap cami & 100 & 0 & 64 rendered results; sample: Seamless Ribbed Padded Cami Tank; Black / no product, collection, query, or page suggestions\\
+Product Attribute Coverage & lightweight cardigan & lightweight cardigan & 82 & 71 & 169 rendered results; sample: Coastal Escape Blue Floral Kimono; Blue / products: Coastal Escape Blue Floral Kimono | collections: Women’s Cardigans \& Kimonos | Lightweight Layers for Every Season | queries: good days lightweight knit cardigan\\
+Product Attribute Coverage & stretchy denim & stretch denim & 94 & 90 & 468 rendered results; sample: Stacey Light Wash Straight Leg Denim Jeans; Light Wash / products: Cortney Light Wash High-Rise Stretch Mom Denim Shorts; Harper Light Wash High-Rise Frayed Stretch Mom Denim Shorts\\
+Product Attribute Coverage & non slip sandals & non-slip sandals & 88 & 0 & 17 rendered results; sample: Coral Coast Starfish Flip Flop; Ivory / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & vestido blanco & white dress in Spanish & 94 & 0 & 259 rendered results; sample: FINAL  - Dreaming Heart Lace Detail White Maxi Dress; White / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & vestido fiesta & party dress in Spanish & 94 & 0 & 251 rendered results; sample: FINAL  - Wildflower Fields Yellow Floral Maxi Dress; Yellow / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & vestido boda invitada & wedding guest dress in Spanish & 100 & 0 & 75 rendered results; sample: Elegant Charm Pleated Brown Maxi Dress; Brown / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & blusa mujer & women blouse in Spanish & 82 & 0 & 222 rendered results; sample: FINAL  - True Self Crochet Knit Tank - DU Deal; Black / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & jeans mujer & women jeans in Spanish & 100 & 0 & 109 rendered results; sample: Bella Mid-Rise Medium Wash Easy Flare Jeans; Medium Wash / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & sandalias mujer & women sandals in Spanish & 100 & 0 & 3 rendered results; sample: Isla Embellished Strap Sandal; Nude / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & botas vaqueras & western boots in Spanish & 100 & 0 & 12 rendered results; sample: Always A Step Ahead Red Western Boots; Red / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & falda negra & black skirt in Spanish & 94 & 0 & 2 rendered results; sample: FINAL  - On Repeat Black Ribbed Knit Mini Dress; Black / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & conjunto dos piezas & two-piece set in Spanish & 76 & 0 & 55 rendered results; sample: Pretty In Gingham Collared Zip Tank; Yellow / no product, collection, query, or page suggestions\\
+Spanish/Bilingual Discovery & regalo mujer & gift for her in Spanish & 94 & 0 & 5 rendered results; sample: Dress Up E-Gift Card; Dress Up Gift Card / no product, collection, query, or page suggestions\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Competitors}
+\ReportFooter
+\ReportSection{Reference D: Same-Query Competitor Benchmark}
+\ReportBody{The same 70 protected shopper-language examples were run against Dress Up and comparable online boutique retailers where rendered access and public suggest responses were available. Dress Up appears first as the current-site baseline. Peer retailers are reference implementations only; this is not a market-share, ad-spend, or competitor-superiority claim.}\par
+\vspace{0.06in}
+{\fontsize{7.3}{8.6}\selectfont
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabularx}{\linewidth}{@{}L{0.24\linewidth}R{0.10\linewidth}R{0.12\linewidth}R{0.12\linewidth}R{0.14\linewidth}R{0.14\linewidth}N@{}}
+\toprule
+\textbf{Site} & \textbf{Queries} & \textbf{Search usable} & \textbf{Search avg} & \textbf{Auto usable} & \textbf{Auto avg} & \textbf{Paid labels visible}\\
+\midrule
+Dress Up & 70 & 69 & 93\% & 70 & 52\% & N/A\\
+Red Dress & 70 & 20 & 93\% & 65 & 46\% & 20\\
+Pink Lily & 70 & 63 & 80\% & 70 & 34\% & 61\\
+Impressions & 70 & 67 & 83\% & 70 & 41\% & 67\\
+\bottomrule
+\end{tabularx}
+}
+\vspace{0.12in}
+\ReportSection{Reference E: Competitor Concept Split}
+{\fontsize{7.35}{8.65}\selectfont
+\setlength{\tabcolsep}{2.0pt}
+\begin{longtable}{@{}L{0.18\linewidth}L{0.24\linewidth}R{0.12\linewidth}R{0.12\linewidth}R{0.12\linewidth}R{0.12\linewidth}@{}}
+\toprule
+\textbf{Site} & \textbf{Concept} & \textbf{Search avg} & \textbf{Auto avg} & \textbf{Search rows} & \textbf{Auto rows}\\
+\midrule
+\endhead
+Dress Up & Normalization & 93\% & 89\% & 10 & 10\\
+Dress Up & Tokenization & 93\% & 83\% & 10 & 10\\
+Dress Up & Customer Language & 93\% & 48\% & 10 & 10\\
+Dress Up & Ranking And Field Weighting & 98\% & 72\% & 10 & 10\\
+Dress Up & Query Expansion & 83\% & 25\% & 9 & 10\\
+Dress Up & Product Attribute Coverage & 95\% & 45\% & 10 & 10\\
+Dress Up & Spanish/Bilingual Discovery & 93\% & 0\% & 10 & 10\\
+Red Dress & Normalization & 94\% & 67\% & 10 & 10\\
+Red Dress & Tokenization & 96\% & 74\% & 5 & 5\\
+Red Dress & Customer Language & 89\% & 56\% & 5 & 10\\
+Red Dress & Ranking And Field Weighting & Unverified & 64\% & 0 & 10\\
+Red Dress & Query Expansion & Unverified & 12\% & 0 & 10\\
+Red Dress & Product Attribute Coverage & Unverified & 62\% & 0 & 10\\
+Red Dress & Spanish/Bilingual Discovery & Unverified & 0\% & 0 & 10\\
+Pink Lily & Normalization & 80\% & 69\% & 8 & 10\\
+Pink Lily & Tokenization & 84\% & 57\% & 9 & 10\\
+Pink Lily & Customer Language & 80\% & 19\% & 9 & 10\\
+Pink Lily & Ranking And Field Weighting & 82\% & 47\% & 10 & 10\\
+Pink Lily & Query Expansion & 79\% & 12\% & 7 & 10\\
+Pink Lily & Product Attribute Coverage & 80\% & 36\% & 10 & 10\\
+Pink Lily & Spanish/Bilingual Discovery & 77\% & 0\% & 10 & 10\\
+Impressions & Normalization & 83\% & 57\% & 10 & 10\\
+Impressions & Tokenization & 84\% & 53\% & 10 & 10\\
+Impressions & Customer Language & 84\% & 47\% & 10 & 10\\
+Impressions & Ranking And Field Weighting & 83\% & 63\% & 10 & 10\\
+Impressions & Query Expansion & 79\% & 21\% & 10 & 10\\
+Impressions & Product Attribute Coverage & 84\% & 44\% & 7 & 10\\
+Impressions & Spanish/Bilingual Discovery & 84\% & 0\% & 10 & 10\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Competitor Dataset}
+\ReportFooter
+\ReportSection{Reference F: Full Competitor Same-Query Dataset}
+\ReportBody{These rows preserve the same-query competitor rerun. The search score is a bounded public-evidence proxy from rendered access, product-like links, query-term matches, and page text. It is not a calibrated relevance judgment or a paid/organic ranking claim.}\par
+\vspace{0.06in}
+{\fontsize{5.95}{7.05}\selectfont
+\setlength{\tabcolsep}{1.25pt}
+\begin{longtable}{@{}L{0.13\linewidth}L{0.15\linewidth}L{0.15\linewidth}R{0.08\linewidth}R{0.08\linewidth}L{0.33\linewidth}@{}}
+\toprule
+\textbf{Site} & \textbf{Concept} & \textbf{Query} & \textbf{Search} & \textbf{Auto} & \textbf{Evidence note}\\
+\midrule
+\endhead
+Red Dress & Normalization & womens dresses & 96 & 0 & 12 product-like links; sample: Love Me Softly Pink Floral Bustier Maxi Dress; Sunlit Simplicity Taupe Stripe Button Back Midi Dress / no product, collection, query, or page suggestions\\
+Red Dress & Normalization & wedding guest dresses & 96 & 95 & 12 product-like links; sample: All The Right Reasons Dusty Pink Satin Lace Trim Maxi Dress; Written in Flowers Coral Pink Floral Tie Strap Maxi Dress / products: Not Even Trying White Cotton Layered Bodice Mini Dress; The Main Event Pink Floral Print Cotton Maxi Shirt Dress / collections: Event Dresses; Fall Event Dresses / queries: dresses for guest wedding\\
+Red Dress & Normalization & mini dress & 96 & 95 & 12 product-like links; sample: Just Around the Corner Ivory Multi Floral Cotton Mini Dress; Pick Me, Please Orange \& Pink Floral Cotton Puff Sleeve Mini Dress / products: Sunset Spritz Pink \& Orange Stripe Mini Dress; Pretty In Presence Pink Organza Mini Dress / collections: Mini Dresses; SHOP THE LOOK - Sunset Spritz Pink \& Orange Stripe Mini Dress / queries: mini dress; mini dresses\\
+Red Dress & Normalization & maxi dresses & 96 & 95 & 12 product-like links; sample: Feeling Like Yourself Rose Pink Floral Print Cotton Maxi Dress; Where the Sun Goes Ivory Multi Floral Paisley Cotton Maxi Dress / products: Catching Dreams Blue Floral Maxi Dress; Prosperina Cecily Hot Pink Ruffle Neck Maxi Dress / collections: Maxi Dresses; Between Now And Then Navy Cotton Sleeveless Maxi Dress / queries: maxi dresses; white maxi dresses\\
+Red Dress & Normalization & rompers jumpsuits & 96 & 0 & 12 product-like links; sample: Say the Word Ivory \& Navy Printed Wide Leg Jumpsuit; Walk To The Beach Blue Multi Tropical Print Romper / no product, collection, query, or page suggestions\\
+Red Dress & Normalization & graphic tees & 96 & 95 & 12 product-like links; sample: FRNCH Elodea Ivory Multi Cotton Graphic T-Shirt; A Taste Of The Coast White Cotton Coastal Graphic Tee / products: A Taste Of The Coast White Cotton Coastal Graphic Tee; That Island Breeze White Cotton Coastal Market Graphic Tee / collections: Graphic Tees / queries: graphic tees\\
+Red Dress & Normalization & game day outfits & 79 & 0 & 12 product-like links; sample: Let It Be Easy Cherry Red Smocked Waist Zip Maxi Dress; Game, Set, Glow Emerald Green Stretch Pleated Mini Skort / no product, collection, query, or page suggestions\\
+Red Dress & Normalization & white dress & 96 & 95 & 12 product-like links; sample: A Dash of Sunshine White Multi Floral Print Bow Accent Strap Midi Dress; Here, In the Moment Ivory Lace Sleeveless Mini Dress / products: Some Kind of Wonderful White Multi Floral Midi Dress; Radiant Reverie White Midi Dress / collections: White Dresses; Little White Dresses / queries: white dress; white dresses\\
+Red Dress & Normalization & denim shorts & 96 & 95 & 12 product-like links; sample: First Things First Medium Wash Cotton Drawstring Denim Shorts; First Things First Light Wash Cotton Drawstring Denim Shorts / products: Long Weekend White Cotton Denim Shorts; Bit of Charm Light Wash Denim Shorts / collections: Denim Shorts / queries: denim shorts; cotton denim shorts\\
+Red Dress & Normalization & wide leg jeans & 96 & 95 & 12 product-like links; sample: Into The Clouds Medium Wash Cropped Wide Leg Jeans; (1 Review) / products: Always In Style White High Rise Wide Leg Jeans; I'll Be Straightforward White Cotton Denim Cropped Wide Leg Jeans / collections: Wide Leg Jeans / queries: wide leg jeans; denim wide leg jeans\\
+Red Dress & Tokenization & little black dress & 96 & -- & 12 product-like links; sample: Tie It Together Black Velvet Draped Tie Panel Strapless Mini Dress; Let It Be Easy Black Smocked Waist Zip Maxi Dress / no product, collection, query, or page suggestions\\
+Red Dress & Tokenization & puff sleeve dress & -- & -- & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Tokenization & two piece set & -- & -- & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Tokenization & high rise jeans & -- & -- & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Tokenization & square neck top & -- & -- & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Tokenization & wide leg pants & -- & 95 & 0 product-like links; sample: none / products: Cool As Can Be Aqua Blue \& Mint Gingham Cotton Wide Leg Pants; Casual Company Light Denim Blue Cotton Wide Leg Pants / queries: andre wide leg pants; black satin wide leg pants\\
+Red Dress & Tokenization & off shoulder dress & 96 & 90 & 12 product-like links; sample: Mint Condition Aqua Blue \& Mint Stripe One Shoulder Maxi Dress; Prosperina Bardot Pink Multi Chinoiserie Cotton Mini Dress / products: Cascade Couture Red Off Shoulder Midi Dress; Cascade Couture White Off Shoulder Midi Dress\\
+Red Dress & Tokenization & long sleeve mini dress & 96 & 95 & 12 product-like links; sample: Always a Classic Ivory Cotton Blend Long Sleeve Mini Shirt Dress; Sheer Bliss Dusty Blue Floral Open Knit Mini Dress / products: Always a Classic Ivory Cotton Blend Long Sleeve Mini Shirt Dress; All The Angles White Cotton Pleated Detail Long Sleeve Button-Up Mini Dress / queries: floral long sleeve mini dress\\
+Red Dress & Tokenization & button down blouse & 96 & 0 & 12 product-like links; sample: Duly Noted White Pleated Back Button-Up Blouse; Tied Up Cute Pink \& Red Cotton Stripe Button Front Top / no product, collection, query, or page suggestions\\
+Red Dress & Tokenization & game day dress & 96 & 90 & 12 product-like links; sample: Let It Be Easy Cherry Red Smocked Waist Zip Maxi Dress; Let It Be Easy Black Smocked Waist Zip Maxi Dress / products: Georgia Eden Green Toile Cotton Midi Dress / collections: Dresses Made In The USA\\
+Red Dress & Customer Language & going out top & 84 & 0 & 12 product-like links; sample: Already on Vacation White Cotton Vacation Club Sleeveless Tee; Already Have Plans Navy Floral Print Puff Sleeve Crop Top / no product, collection, query, or page suggestions\\
+Red Dress & Customer Language & date night dress & 96 & 95 & 12 product-like links; sample: MINKPINK Amelia Soft Pink Halter Midi Dress; Flutter Away Berry Purple Multi Floral Print Mini Dress / products: Daisy Date Night Yellow Floral Cotton Midi Dress; Waterside Date Night Ivory Watercolor Print Vest Top / collections: Party Dresses / queries: date night dress\\
+Red Dress & Customer Language & brunch outfit & 74 & 0 & 12 product-like links; sample: Soft Steps Light Blue Block Heel Sandals; Boardwalk Executive Ivory Linen Blend Tailored Shorts / no product, collection, query, or page suggestions\\
+Red Dress & Customer Language & vacation dress & 96 & 90 & 12 product-like links; sample: Paradisa Siesta Key Pink \& Orange Stripe Linen Blend Convertible Dress; Coastal Rhythm Teal Palm Embroidered Cotton Puff Sleeve Mini Dress / products: Already on Vacation White Cotton Vacation Club Sleeveless Tee / collections: Vacation Dresses / queries: vacation dress\\
+Red Dress & Customer Language & workwear dress & 96 & 0 & 12 product-like links; sample: Let It Be Easy Cherry Red Smocked Waist Zip Maxi Dress; Made to Command Dark Indigo Cotton Denim Button-Front Midi Dress / no product, collection, query, or page suggestions\\
+Red Dress & Customer Language & bridal shower dress & -- & 95 & 0 product-like links; sample: none / products: Not Even Trying White Cotton Layered Bodice Mini Dress; The Main Event Pink Floral Print Cotton Maxi Shirt Dress / collections: Event Dresses; Fall Event Dresses / queries: dress for bridal shower\\
+Red Dress & Customer Language & mom and me dress & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Customer Language & oversized sweater & -- & 95 & 0 product-like links; sample: none / products: Line It Up Ivory Multi Textured Stripe Oversized Sweater; Frilled To Announce Cranberry Red Oversize Ruffle Collar Cardigan Sweater / queries: teddy bear oversized sweater; oversized ivory cable knit sweater\\
+Red Dress & Customer Language & skort & -- & 95 & 0 product-like links; sample: none / products: The Fun Part Butter Yellow Wrap Mini Skort; Bluebird Day Blue Scalloped Hem Mini Skort / collections: Skorts / queries: skort; skirt skort\\
+Red Dress & Customer Language & faux leather leggings & -- & 90 & 0 product-like links; sample: none / products: Spanx Black Faux Leather Leggings; In The Mix Black Faux Leather Wide Leg Pants\\
+Red Dress & Ranking And Field Weighting & pink midi dress & -- & 95 & 0 product-like links; sample: none / products: Blush Garden Pink Multi Floral Lace Midi Dress; The Genevieve Hot Pink Jacquard Strapless Midi Dress / collections: SHOP THE LOOK - Blushing Bouquet Pink \& Orange Floral Midi Dress; SHOP THE LOOK - ASTR The Label Janna Pink Floral Midi Dress / queries: pink floral midi dress; pink jacquard midi dress\\
+Red Dress & Ranking And Field Weighting & white mini dress & -- & 95 & 0 product-like links; sample: none / products: Cool, Calm, Collected Light Blue \& White Stripe Mini Dress; If You Ask Me Green \& White Floral Cotton Puff Sleeve Mini Dress / collections: SHOP THE LOOK - Prosperina Chandler White Multi Cotton Floral Print Mini Dress; SHOP THE LOOK - Porch Swing Pretty Light Blue \& White Gingham Halter Mini Dress / queries: white mini dress; mini white dress\\
+Red Dress & Ranking And Field Weighting & black romper & -- & 90 & 0 product-like links; sample: none / products: Z Supply Rhea Black Romper; Noir Nebula Black Abstract Romper\\
+Red Dress & Ranking And Field Weighting & denim jacket women & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Ranking And Field Weighting & gold hoop earrings & -- & 95 & 0 product-like links; sample: none / products: Stolen Glances Gold Hammered Hoop Earrings; Modern Heirloom Gold Pearl Hoop Statement Earrings / queries: gold hoop earrings; matte gold hoop earrings\\
+Red Dress & Ranking And Field Weighting & western boots & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Ranking And Field Weighting & georgia game day & -- & 76 & 0 product-like links; sample: none / products: Nothing To Explain Dark Wash Cotton Denim Straight Leg Jeans; Simply Stated Dark Wash High Waisted Skinny Jeans / collections: Game Day Ready; Just USA\\
+Red Dress & Ranking And Field Weighting & tennessee game day & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Ranking And Field Weighting & floral maxi dress & -- & 95 & 0 product-like links; sample: none / products: Catching Dreams Blue Floral Maxi Dress; Moonlit Tropics Navy Multi Floral Strapless Maxi Dress / collections: SHOP THE LOOK - Homegrown Happiness Ivory Floral Stripe Cotton Maxi Dress; SHOP THE LOOK - Moonlit Tropics Navy Multi Floral Strapless Maxi Dress / queries: blue floral maxi dress; navy blue floral maxi dress\\
+Red Dress & Ranking And Field Weighting & blue midi dress & -- & 95 & 0 product-like links; sample: none / products: Island Blossom Blue Floral Midi Dress; Knot Too Far Royal Blue Cotton Embroidered Midi Dress / collections: SHOP THE LOOK - Island Blossom Blue Floral Midi Dress; SHOP THE LOOK - Summer Story Red \& Blue Plaid Cotton Midi Dress / queries: blue floral midi dress; blue floral belted midi dress\\
+Red Dress & Query Expansion & wedding guest outfit & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & beach vacation outfit & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & graduation dress & -- & 62 & 0 product-like links; sample: none / queries: white graduation dress\\
+Red Dress & Query Expansion & teacher outfit & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & sorority recruitment dress & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & concert outfit & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & game day accessories & -- & 62 & 0 product-like links; sample: none / collections: Accessories Made in the USA\\
+Red Dress & Query Expansion & summer outfit & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & fall transition outfit & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Query Expansion & gift for her & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Product Attribute Coverage & linen dress & -- & 95 & 0 product-like links; sample: none / products: Courtyard Stroll Ivory \& Red Multi Linen Blend Floral Midi Dress; Along the Coast Blue \& White Floral Pattern Linen Blend Sleeveless Maxi Dress / collections: SHOP THE LOOK - Everything I Imagined Ivory \& Pink Linen Blend Floral Maxi Dress; SHOP THE LOOK - MINKPINK Ines Baby Blue Cotton Linen Square Neck Mini Dress / queries: linen dress; linen dresses\\
+Red Dress & Product Attribute Coverage & smocked bodice dress & -- & 62 & 0 product-like links; sample: none / queries: smocked bodice dress\\
+Red Dress & Product Attribute Coverage & ribbed tank & -- & 95 & 0 product-like links; sample: none / products: Z Supply Boa Lake Blue Cotton Ribbed Tank; Z Supply Rowe White Cotton Rib Scoop Tank / collections: SHOP THE LOOK - Z Supply Boa Black Cotton Ribbed Tank / queries: ribbed tank and skiet; vienna natural ribbed tank\\
+Red Dress & Product Attribute Coverage & satin midi skirt & -- & 90 & 0 product-like links; sample: none / products: Just Call Me Later Powder Blue Satin Lace Trim Midi Skirt; Just Call Me Later Blush Pink Satin Lace Trim Midi Skirt\\
+Red Dress & Product Attribute Coverage & crochet top & -- & 95 & 0 product-like links; sample: none / products: Z Supply Windswept Rainforest Green Crochet Cropped Top; Sunkissed Sorbet Pink \& Orange Stripe Crochet Knit Tank Top / collections: SHOP THE LOOK - MINKPINK Oceane Turquoise Crochet Crop Top\\
+Red Dress & Product Attribute Coverage & vegan leather shorts & -- & 90 & 0 product-like links; sample: none / products: Something to Behold Black Faux Leather Short Sleeve Belted Midi Dress; Something to Behold Brown Faux Leather Short Sleeve Belted Midi Dress\\
+Red Dress & Product Attribute Coverage & adjustable strap cami & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Product Attribute Coverage & lightweight cardigan & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Product Attribute Coverage & stretchy denim & -- & 90 & 0 product-like links; sample: none / products: Stretch Of the Imagination Blue Stripe Cotton Stretch Denim Mini Dress; Jump Out Dark Denim Stretch Flare Jeans\\
+Red Dress & Product Attribute Coverage & non slip sandals & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & vestido blanco & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & vestido fiesta & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & vestido boda invitada & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & blusa mujer & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & jeans mujer & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & sandalias mujer & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & botas vaqueras & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & falda negra & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & conjunto dos piezas & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Red Dress & Spanish/Bilingual Discovery & regalo mujer & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Pink Lily & Normalization & womens dresses & 84 & 0 & 12 product-like links; sample: Gift Cards; Fresh Pace Bubblegum Pink Gingham Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Normalization & wedding guest dresses & 64 & 62 & 2 product-like links; sample: Gift Cards / collections: Wedding Guest Dresses\\
+Pink Lily & Normalization & mini dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Floral Khaki Corset Mini Dress / products: Southernmost Charm Pink Mini Dress; Whitney Blue Plaid Flannel Mini Dress / collections: Mini Dresses / queries: mini dress; waist mini dress\\
+Pink Lily & Normalization & maxi dresses & -- & 95 & 0 product-like links; sample: none / products: Lila Turquiose Floral Maxi Dress; Ashley Blue Floral Maxi Dress / collections: Midi \& Maxi Dresses\\
+Pink Lily & Normalization & rompers jumpsuits & 84 & 62 & 12 product-like links; sample: Gift Cards; Dusk To Denim Pink Strapless Denim Romper / collections: Rompers \& Jumpsuits; New Rompers \& Jumpsuits\\
+Pink Lily & Normalization & graphic tees & 84 & 95 & 12 product-like links; sample: Gift Cards; USA Lace Print Light Pink Comfort Colors Graphic Tee / products: American Flag Red Baby Graphic Tee; America Distressed Navy Oversized Graphic Tee / collections: Summer Graphic Tees; Kids Graphic Tees\\
+Pink Lily & Normalization & game day outfits & 74 & 0 & 12 product-like links; sample: Gift Cards; Mahjong Social Club Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Normalization & white dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Calder White Maxi Dress / products: Calder White Maxi Dress; Mckenzie White Floral Tiered Maxi Dress / collections: White Dresses / queries: white collared dress final; sweet white eyelet mini dress\\
+Pink Lily & Normalization & denim shorts & -- & 95 & 0 product-like links; sample: none / products: Noelle White Distressed Denim Shorts; My Favorite Stretchy White Denim Shorts / collections: Women's Denim Shorts / queries: denim shorts; pink belted denim shorts\\
+Pink Lily & Normalization & wide leg jeans & 84 & 95 & 12 product-like links; sample: Gift Cards; My Favorite Stretchy Medium Wash Wide Leg Jeans / products: Lottie Wide Leg Cropped Tie Jeans FINAL; Malia Lilac Purple High Rise Wide Leg Jeans FINAL / collections: Wide Leg Jeans\\
+Pink Lily & Tokenization & little black dress & 84 & 62 & 12 product-like links; sample: Gift Cards; Fresh Pace Black Gingham Dress / collections: Little Black Dress\\
+Pink Lily & Tokenization & puff sleeve dress & 84 & 90 & 12 product-like links; sample: Gift Cards; Jojo Blue Puff Sleeve Mini Dress / products: Jojo Black Puff Sleeve Mini Dress; Jojo Blue Puff Sleeve Mini Dress\\
+Pink Lily & Tokenization & two piece set & -- & 62 & 0 product-like links; sample: none / collections: Two Piece Sets\\
+Pink Lily & Tokenization & high rise jeans & 84 & 90 & 12 product-like links; sample: Gift Cards; Desiree High Rise Wide Leg Jeans / products: Malia Lilac Purple High Rise Wide Leg Jeans FINAL; Malia White High Rise Wide Leg Jeans\\
+Pink Lily & Tokenization & square neck top & 84 & 0 & 12 product-like links; sample: Gift Cards; Back To Square One Acid Washed Ribbed High Neck Tank / no product, collection, query, or page suggestions\\
+Pink Lily & Tokenization & wide leg pants & 84 & 90 & 12 product-like links; sample: Gift Cards; Banks Pink Wide Leg Pants / products: Vesper Red Pull-On Wide Leg Pants FINAL; Banks Pink Wide Leg Pants\\
+Pink Lily & Tokenization & off shoulder dress & 84 & 90 & 12 product-like links; sample: Gift Cards; Sparks Fly Blue Printed Shift Dress / products: Kenzi Pink Floral Off The Shoulder Mini Dress; Kenzi Black Off The Shoulder Mini Dress FINAL\\
+Pink Lily & Tokenization & long sleeve mini dress & 84 & 90 & 12 product-like links; sample: Gift Cards; My Favorite Stretchy Long Sleeve Denim Pocket Mini Dress / products: My Favorite Stretchy Black Long Sleeve Button Front Mini Dress FINAL; My Favorite Stretchy Long Sleeve Denim Pocket Mini Dress\\
+Pink Lily & Tokenization & button down blouse & 84 & 0 & 12 product-like links; sample: Gift Cards; Ruby Seafoam Green Gauze Flutter Button Back Woven Blouse / no product, collection, query, or page suggestions\\
+Pink Lily & Tokenization & game day dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Active Vibe Black Active Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & going out top & 79 & 0 & 12 product-like links; sample: Gift Cards; Power Hour Bubblegum Pink Contrast Trim Tank / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & date night dress & 79 & 0 & 12 product-like links; sample: Gift Cards; Coralie Blue Romper Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & brunch outfit & 74 & 0 & 12 product-like links; sample: Gift Cards; Floral Khaki Corset Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & vacation dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Floral Khaki Corset Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & workwear dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Sunlit Stripes Gauze Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & bridal shower dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Floral Khaki Corset Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & mom and me dress & 79 & 0 & 12 product-like links; sample: Gift Cards; For The Win White Pleated Tennis Skirt / no product, collection, query, or page suggestions\\
+Pink Lily & Customer Language & oversized sweater & 79 & 95 & 12 product-like links; sample: Gift Cards; Americana Stars And Stripes Oversized Sweater / products: Americana Stars And Stripes Oversized Sweater; Kailynn Oversized Multi-Stripe Sweater / queries: oversized heart pom sweater final\\
+Pink Lily & Customer Language & skort & -- & 95 & 0 product-like links; sample: none / products: Colleen White Eyelet Skort; Madi Blue Patchwork Print Skort / collections: Active Skirts \& Skorts; Boutique Women's Skirts \& Skorts / queries: skort; fleece skort\\
+Pink Lily & Customer Language & faux leather leggings & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Ranking And Field Weighting & pink midi dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Lucky To Have You Pink Sleeveless Maxi Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Ranking And Field Weighting & white mini dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Floral Khaki Corset Mini Dress / products: The Perfect Moment White Flare Denim Mini Dress; Just A Theory White Tiered Mini Dress / queries: sweet white eyelet mini dress; white smocked top mini dress\\
+Pink Lily & Ranking And Field Weighting & black romper & 84 & 95 & 12 product-like links; sample: Gift Cards; Spotlight Moment Black and White Daisy Print Halter Neck Romper / products: Talia Black Floral Romper; Casual Charm Black Button Front Romper / queries: black daisy romper; evie black lace romper\\
+Pink Lily & Ranking And Field Weighting & denim jacket women & 74 & 0 & 12 product-like links; sample: Gift Cards; Strawberry Cropped Sweater Tank / no product, collection, query, or page suggestions\\
+Pink Lily & Ranking And Field Weighting & gold hoop earrings & 84 & 90 & 12 product-like links; sample: Gift Cards; Willow Diamond Dangle Hoop Earrings / products: Lainey Turquoise Hoop Earrings; April Raindrop Dangle Hoop Earrings\\
+Pink Lily & Ranking And Field Weighting & western boots & 84 & 95 & 12 product-like links; sample: Gift Cards; Margo Pink Midi Western Boots / products: Margo Pink Midi Western Boots; Margo Maple Brown Midi Western Boots / queries: white western boots final\\
+Pink Lily & Ranking And Field Weighting & georgia game day & 79 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Ranking And Field Weighting & tennessee game day & 79 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Ranking And Field Weighting & floral maxi dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Lila Turquiose Floral Maxi Dress / products: Ashley Blue Floral Maxi Dress; Lila Turquiose Floral Maxi Dress / queries: floral maxi dress; floral maxi dress final\\
+Pink Lily & Ranking And Field Weighting & blue midi dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Ashley Blue Floral Maxi Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & wedding guest outfit & 79 & 0 & 12 product-like links; sample: Gift Cards; It's My Day Orange Smocked Top Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & beach vacation outfit & 79 & 0 & 12 product-like links; sample: Gift Cards; Sunkissed Beach Club Yellow Trucker Hat / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & graduation dress & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & teacher outfit & -- & 62 & 0 product-like links; sample: none / collections: Boutique Teacher Outfits\\
+Pink Lily & Query Expansion & sorority recruitment dress & 79 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & concert outfit & -- & 62 & 0 product-like links; sample: none / collections: Boutique Concert Outfits\\
+Pink Lily & Query Expansion & game day accessories & 74 & 0 & 12 product-like links; sample: Gift Cards; Mahj Block White/Pink Embroidered Trucker Hat (Copy) / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & summer outfit & 74 & 0 & 12 product-like links; sample: Gift Cards; Floral Khaki Corset Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & fall transition outfit & 74 & 0 & 12 product-like links; sample: Gift Cards; Banks Tan Tank Top / no product, collection, query, or page suggestions\\
+Pink Lily & Query Expansion & gift for her & 91 & 0 & 12 product-like links; sample: Gift Cards; Pink Lily Luxury Tan Luminizing Body Lotion - Bronze Glow (Dark) FINAL / no product, collection, query, or page suggestions\\
+Pink Lily & Product Attribute Coverage & linen dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Lovingly Yours Multi Patchwork Print Midi Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Product Attribute Coverage & smocked bodice dress & 84 & 0 & 12 product-like links; sample: Gift Cards; It's My Day Orange Smocked Top Mini Dress / no product, collection, query, or page suggestions\\
+Pink Lily & Product Attribute Coverage & ribbed tank & 84 & 95 & 12 product-like links; sample: Gift Cards; Simple Navy Ribbed Knit Stripe Tank / products: Hera Taupe Ribbed V-Neck Tank; Simple Ivory and Black Ribbed Knit Stripe Tank / queries: ribbed high neck tank; black ribbed knit stripe tank\\
+Pink Lily & Product Attribute Coverage & satin midi skirt & 79 & 85 & 12 product-like links; sample: Gift Cards; Kaden Black Satin Lace Inset Midi FINAL / products: Kaden Blue Satin Lace Inset Midi Skirt FINAL FINAL\\
+Pink Lily & Product Attribute Coverage & crochet top & 64 & 90 & 1 product-like links; sample: Gift Cards / products: White Crochet Swim Cover-Up Top; Blue Stripe Crochet Cover-Up Top\\
+Pink Lily & Product Attribute Coverage & vegan leather shorts & 74 & 0 & 12 product-like links; sample: Gift Cards; Walli Cases - Berry Bliss Sport Case / no product, collection, query, or page suggestions\\
+Pink Lily & Product Attribute Coverage & adjustable strap cami & 79 & 0 & 12 product-like links; sample: Gift Cards; Anchored Away Ivory and Pink Brushed Knit Floral Cami / no product, collection, query, or page suggestions\\
+Pink Lily & Product Attribute Coverage & lightweight cardigan & 79 & 0 & 12 product-like links; sample: Gift Cards; Iris Ivory Crochet Tie Cardigan Tank / no product, collection, query, or page suggestions\\
+Pink Lily & Product Attribute Coverage & stretchy denim & 84 & 90 & 12 product-like links; sample: Gift Cards; My Favorite Stretchy Light Wash Acid Wash Denim Skort / products: My Favorite Stretchy White Denim Shorts; My Favorite Stretchy Black Acid Wash Denim Skort\\
+Pink Lily & Product Attribute Coverage & non slip sandals & 84 & 0 & 12 product-like links; sample: Gift Cards; Clash Gold Bow Sandal / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & vestido blanco & 79 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & vestido fiesta & 79 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & vestido boda invitada & 79 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & blusa mujer & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & jeans mujer & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & sandalias mujer & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & botas vaqueras & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & falda negra & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & conjunto dos piezas & 74 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Pink Lily & Spanish/Bilingual Discovery & regalo mujer & 91 & 0 & 12 product-like links; sample: Gift Cards; Athletic USA Flag Star Print Navy Comfort Colors Graphic Tee / no product, collection, query, or page suggestions\\
+Impressions & Normalization & womens dresses & 84 & 0 & 12 product-like links; sample: Gift Cards; Chic Style Denim Mini Dress / no product, collection, query, or page suggestions\\
+Impressions & Normalization & wedding guest dresses & 84 & 0 & 12 product-like links; sample: Gift Cards; Bouquet Toss Tulle Maxi Dress / no product, collection, query, or page suggestions\\
+Impressions & Normalization & mini dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Everyday Darling Mini Dress / products: Polished Poise Tweed Mini Dress; Main Attraction Embroidered Mini Dress / collections: Mini Dress; Mini Dresses / queries: mini dress; white mini dress\\
+Impressions & Normalization & maxi dresses & 84 & 95 & 12 product-like links; sample: Gift Cards; Charming Glance Tiered Maxi Dress in Mint Curves / products: Enchanted Bloom Floral Maxi Dress; Watercolor Smiles Tiered Maxi Dress / collections: Maxi Dresses; Sangria Sipping Maxi Dresses / queries: maxi dresses; maxi dresses halter\\
+Impressions & Normalization & rompers jumpsuits & 84 & 0 & 12 product-like links; sample: Gift Cards; Lush Escape Floral Romper / no product, collection, query, or page suggestions\\
+Impressions & Normalization & graphic tees & 84 & 95 & 12 product-like links; sample: Gift Cards; Land Of Freedom Oversized Tee / products: Mallard Mode Oversized Graphic Tee; USA Vintage Graphic Tee / collections: Graphic Tees / queries: graphic tees\\
+Impressions & Normalization & game day outfits & 74 & 0 & 12 product-like links; sample: Gift Cards; School Spirit Sequin Embroidered Mini Dress in Arkansas / no product, collection, query, or page suggestions\\
+Impressions & Normalization & white dress & 79 & 95 & 12 product-like links; sample: Gift Cards; The Ava Grace Tulle Midi / products: Prosecco Sippin' A-Line Midi Dress in White; On Holiday Maxi Dress in White / collections: White Dresses; Little White Dresses / queries: white dress; white dresses\\
+Impressions & Normalization & denim shorts & 84 & 95 & 12 product-like links; sample: Gift Cards; HIDDEN JEAN Bailey High Waist Frayed Shorts / products: Denim Daydream High Waist Shorts in Dark Wash; The Gracie High Waist Denim Shorts in Ivory / queries: denim shorts; distressed denim shorts\\
+Impressions & Normalization & wide leg jeans & 84 & 95 & 12 product-like links; sample: Gift Cards; RISEN Gracelynn Midrise Wide Leg Jean / products: HIDDEN JEANS Ivy High Waist Studded Wide Leg Jean; The Dottie High Waist Wide Leg Jeans / queries: white wide leg jeans; high waist wide leg jeans\\
+Impressions & Tokenization & little black dress & 84 & 62 & 12 product-like links; sample: Gift Cards; Cool Composure Mini Dress in Black / collections: Dresses / Little Black Dress\\
+Impressions & Tokenization & puff sleeve dress & 84 & 62 & 12 product-like links; sample: Gift Cards; Forever Sweethearts Ruffle Mini Dress in Light Blue / queries: puff sleeve dress with zipper; puff sleeve midi dress\\
+Impressions & Tokenization & two piece set & 79 & 62 & 12 product-like links; sample: Gift Cards; Sunday Mornings Knit Two Piece Top / queries: two piece sets\\
+Impressions & Tokenization & high rise jeans & 84 & 90 & 12 product-like links; sample: Gift Cards; RISEN Charmain High Waist Wide Leg Jean / products: RISEN Jolene High Waist Wide Leg Jeans; RISEN Carolina High Waist Barrel Leg Ankle Jean\\
+Impressions & Tokenization & square neck top & 84 & 0 & 12 product-like links; sample: Gift Cards; Conservatory Stroll Floral Jacquard Crop Top / no product, collection, query, or page suggestions\\
+Impressions & Tokenization & wide leg pants & 84 & 95 & 12 product-like links; sample: Gift Cards; The Sally High Waist Cropped Wide Leg Pants / products: The Sally High Waist Cropped Wide Leg Pants; Oasis Escape High Waist Wide Leg Pants / queries: wide leg pants; high waist wide leg pants\\
+Impressions & Tokenization & off shoulder dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Honest Smiles Embellished Maxi Dress Curves / products: Uptown Social Off Shoulder Mini Dress in White; Graceful Intent Off Shoulder Eyelet Midi Dress / queries: off the shoulder dress; off shoulder dress\\
+Impressions & Tokenization & long sleeve mini dress & 84 & 62 & 12 product-like links; sample: Gift Cards; Sweet Embrace Floral Mini Dress / queries: long sleeve mini dress; floral mini long sleeve dress\\
+Impressions & Tokenization & button down blouse & 84 & 0 & 12 product-like links; sample: Gift Cards; Veranda Views Embroidered Button Up / no product, collection, query, or page suggestions\\
+Impressions & Tokenization & game day dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Football Season Sequin Mini Dress in White / no product, collection, query, or page suggestions\\
+Impressions & Customer Language & going out top & 84 & 0 & 12 product-like links; sample: Gift Cards; The Party Goes On Tube Top In Hot Pink / no product, collection, query, or page suggestions\\
+Impressions & Customer Language & date night dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Romantic Feels Floral Mini Dress / products: Vacay Date Night Tiered Mini Dress; Date Night Ready Floral Mini Dress in Pink / queries: daytona date night dress; date night out shift dress\\
+Impressions & Customer Language & brunch outfit & 84 & 0 & 12 product-like links; sample: Gift Cards; Madison Brunch Two Piece Midi Dress in Mocha / no product, collection, query, or page suggestions\\
+Impressions & Customer Language & vacation dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Seaside Breeze Midi Dress / products: Vacation Mode Midi Dress; Sweet On Vacation Floral Maxi Dress / queries: vacation dress; vacation floral maxi dress\\
+Impressions & Customer Language & workwear dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Glistening Smile Floral Jacquard Mini Dress / no product, collection, query, or page suggestions\\
+Impressions & Customer Language & bridal shower dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Romantic Moment Tiered Maxi Dress / no product, collection, query, or page suggestions\\
+Impressions & Customer Language & mom and me dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Metropolitan Muse Denim Mini Dress in Medium Wash / no product, collection, query, or page suggestions\\
+Impressions & Customer Language & oversized sweater & 84 & 95 & 12 product-like links; sample: Gift Cards; Soft Touch Oversized Knit Sweatshirt / products: Cozy Lifestyle Oversized Sweater in Black; Modern Muse Oversized Knit Sweater in Chocolate / queries: oversized knit sweater; modern muse oversized knit sweater\\
+Impressions & Customer Language & skort & 84 & 95 & 12 product-like links; sample: Gift Cards; The Candace High Waist Skort / products: Flirty Forecast Denim Skort; Starry Eyed High Waist Skort / collections: Skort / queries: skort; denim skort\\
+Impressions & Customer Language & faux leather leggings & 84 & 90 & 12 product-like links; sample: Gift Cards; Austin Nights Faux Leather Pants In Army Green / products: The Hazel High Waist Faux Leather Wide Leg Pants in Black; The Hazel High Waist Faux Leather Wide Leg Pants in Martini Olive\\
+Impressions & Ranking And Field Weighting & pink midi dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Stripe Affair Ruffle Midi Dress in Pink / products: French Picnic Gingham Midi Dress in Pink; Easy Grace Eyelet Midi Dress in Pink Curves / queries: pink midi dresses; pink midi dress\\
+Impressions & Ranking And Field Weighting & white mini dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Stay Flirty Corset Mini Dress in White / products: Coastal Flair Eyelet Mini Dress in White; Simple Staple Poplin Mini Dress in White / queries: white mini dress\\
+Impressions & Ranking And Field Weighting & black romper & 84 & 95 & 12 product-like links; sample: Gift Cards; Down By The Lake Romper in Black / products: Uptown Views Romper in Black; Palm House Chic Knit Romper / queries: black romper; sunset romper in black\\
+Impressions & Ranking And Field Weighting & denim jacket women & 84 & 0 & 12 product-like links; sample: Gift Cards; RISEN Millie Denim Jacket / no product, collection, query, or page suggestions\\
+Impressions & Ranking And Field Weighting & gold hoop earrings & 84 & 95 & 12 product-like links; sample: Gift Cards; Enewton Classic Beaded 1.25 inch Post Hoop Earrings in 3mm / products: Enewton Classic Beaded 1.25 inch Post Hoop Earrings in 3mm; Romantic Playlist Hoop Earrings In Gold / queries: gold hoop earrings; hoop earrings in gold\\
+Impressions & Ranking And Field Weighting & western boots & 84 & 62 & 12 product-like links; sample: Gift Cards; The Lorelai Faux Leather Cut-Out Cowboy Boots in Stone / queries: western boots\\
+Impressions & Ranking And Field Weighting & georgia game day & 74 & 0 & 12 product-like links; sample: Gift Cards; Pep Squad High Waist Pleated Skort in Red / no product, collection, query, or page suggestions\\
+Impressions & Ranking And Field Weighting & tennessee game day & 79 & 0 & 12 product-like links; sample: Gift Cards; Tennessee Embroidered Platform Sandal / no product, collection, query, or page suggestions\\
+Impressions & Ranking And Field Weighting & floral maxi dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Stroll Through The Park Floral Maxi Dress in Navy / products: Enchanted Bloom Floral Maxi Dress; Villa Garden Floral Kimono Maxi Dress / queries: meadow song floral maxi dress; floral maxi dress\\
+Impressions & Ranking And Field Weighting & blue midi dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Santorini Stroll Floral Midi Dress in Sky Blue / products: Petal Statement Applique Midi Dress in Sky Blue; Santorini Stroll Floral Midi Dress in Sky Blue / queries: blue midi dress\\
+Impressions & Query Expansion & wedding guest outfit & 79 & 0 & 12 product-like links; sample: Gift Cards; Lovely In Lace Tiered Midi / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & beach vacation outfit & 74 & 0 & 12 product-like links; sample: Gift Cards; Cafe Meetup Oversized Button Up / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & graduation dress & 84 & 62 & 12 product-like links; sample: Gift Cards; Glistening Smile Floral Jacquard Mini Dress / collections: Graduation Dresses\\
+Impressions & Query Expansion & teacher outfit & 74 & 0 & 12 product-like links; sample: Gift Cards; Champagne Courage Crop Top In Dark Rust / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & sorority recruitment dress & 79 & 0 & 12 product-like links; sample: Gift Cards; Chic Sweetheart Embroidered Mini Dress in Iced Mocha / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & concert outfit & 79 & 62 & 12 product-like links; sample: Gift Cards; Sunny With A Chance of Blooms Denim Romper in White / collections: Concert Outfits\\
+Impressions & Query Expansion & game day accessories & 74 & 0 & 12 product-like links; sample: Gift Cards; School Spirit Sequin Embroidered Mini Dress in Arkansas Curves / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & summer outfit & 74 & 0 & 12 product-like links; sample: Gift Cards; Feeling Butterflies Floral Romper in Orchid Curves / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & fall transition outfit & 84 & 0 & 12 product-like links; sample: Gift Cards; Uptown Stroll Floral Romper / no product, collection, query, or page suggestions\\
+Impressions & Query Expansion & gift for her & 91 & 85 & 12 product-like links; sample: Gift Cards; Paris Nights Hoop Earrings / products: Volo Hero Hair Towel in Cloud Pink\\
+Impressions & Product Attribute Coverage & linen dress & 84 & 95 & 12 product-like links; sample: Gift Cards; Chic Couture Linen Mini Dress / products: Shell Coast Reverie Linen-Blend Midi Dress; Sunny Shores Linen-Blend Maxi Dress / queries: linen dress; pink linen dress\\
+Impressions & Product Attribute Coverage & smocked bodice dress & 84 & 0 & 12 product-like links; sample: Gift Cards; Fan Fav Smocked Floral Mini Dress in Lush Meadow / no product, collection, query, or page suggestions\\
+Impressions & Product Attribute Coverage & ribbed tank & 84 & 95 & 12 product-like links; sample: Gift Cards; Not Your Basic Ribbed Top In White / products: Weekend Go-To Ribbed Tank in Light Blue; Weekend Go-To Ribbed Tank in Coral / queries: party perfection ribbed henley tank; calmer days ribbed tank\\
+Impressions & Product Attribute Coverage & satin midi skirt & -- & 95 & 0 product-like links; sample: none / products: Moonlit Lagoon High Waist Satin Midi Skirt in Blue; Feeling Luxurious High Waist Satin Lace Trim Midi Skirt / queries: high waist satin midi skirt\\
+Impressions & Product Attribute Coverage & crochet top & 84 & 95 & 12 product-like links; sample: Gift Cards; Sail The Day Away Front Tie Crochet Top in Hot Pink Curves / products: Flower Pop Crochet Top; Under The Tucson Sun Crochet Top in Ivory / queries: crochet top; crochet top in mustard\\
+Impressions & Product Attribute Coverage & vegan leather shorts & 84 & 0 & 12 product-like links; sample: Gift Cards; Opening Act High Waist Faux Leather Shorts In Black / no product, collection, query, or page suggestions\\
+Impressions & Product Attribute Coverage & adjustable strap cami & -- & 0 & 0 product-like links; sample: none / no product, collection, query, or page suggestions\\
+Impressions & Product Attribute Coverage & lightweight cardigan & -- & 62 & 0 product-like links; sample: none / queries: lightweight knit cardigan\\
+Impressions & Product Attribute Coverage & stretchy denim & 84 & 0 & 12 product-like links; sample: Gift Cards; Judy Blue Rylie High Waist Straight Leg Jean Curves / no product, collection, query, or page suggestions\\
+Impressions & Product Attribute Coverage & non slip sandals & 84 & 0 & 12 product-like links; sample: Gift Cards; Yummy Faux Leather Sandal in Ivory / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & vestido blanco & 84 & 0 & 12 product-like links; sample: Gift Cards; Touch My Soul Eyelet Midi / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & vestido fiesta & 84 & 0 & 12 product-like links; sample: Gift Cards; Sippin' Mai Tais Corset Mini Dress / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & vestido boda invitada & 84 & 0 & 12 product-like links; sample: Gift Cards; The Perfect Day Satin Midi / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & blusa mujer & 84 & 0 & 12 product-like links; sample: Gift Cards; Uptown Muse Top / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & jeans mujer & 84 & 0 & 12 product-like links; sample: Gift Cards; JUDY BLUE Cora High Waist Wide Leg Jean / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & sandalias mujer & 84 & 0 & 12 product-like links; sample: Gift Cards; The Pismo Raffia Woven Platform Sandal in Natural / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & botas vaqueras & 84 & 0 & 12 product-like links; sample: Gift Cards; The Brilee Floral Tapestry Cowboy Boots / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & falda negra & 84 & 0 & 12 product-like links; sample: Gift Cards; Twilight Garden Jacquard Midi Dress in Black / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & conjunto dos piezas & 79 & 0 & 12 product-like links; sample: Gift Cards; Sunday Mornings Knit Two Piece Top / no product, collection, query, or page suggestions\\
+Impressions & Spanish/Bilingual Discovery & regalo mujer & 91 & 0 & 12 product-like links; sample: Gift Cards; Hay Girl Knit Sweater / no product, collection, query, or page suggestions\\
+\bottomrule
+\end{longtable}
+}
+
+\newpage
+\ReportPageHeader{Reference: Evidence Limits}
+\ReportFooter
+\ReportSection{Evidence Limits}
+\begin{itemize}
+\item Public evidence only: no analytics, revenue, customer records, admin data, search logs, checkout completion, or paid-media data.
+\item Autocomplete is measured through public suggest responses, not full visual dropdown QA across every desktop and mobile state.
+\item Competitor checks record visible paid-placement labels only; absence of a label is not proof that results are organic-only.
+\item The query set is a diagnostic boutique-apparel sample, not a calibrated relevance benchmark with expected product-level judgments.
+\item Dollar impact should be estimated using Dress Up search logs, product-page reach, add-to-cart rate, conversion, average order value, and margin data.
+\end{itemize}
+\vspace{0.10in}
+\ReportCard{Recommended Follow-Up}{The next conversation should connect these public findings to actual search usage, product-page reach, add-to-cart rate, conversion rate, average order value, margin, and inventory priorities. That would turn the directional opportunity into a measurable customer-experience roadmap.}
+
+\end{document}

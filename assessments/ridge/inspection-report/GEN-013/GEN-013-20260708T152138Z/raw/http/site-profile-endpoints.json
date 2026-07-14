@@ -1,0 +1,71 @@
+[
+  {
+    "label": "homepage",
+    "url": "https://ridge.com/",
+    "final_url": "https://ridge.com/",
+    "method": "GET",
+    "status": 403,
+    "ok": false,
+    "duration_ms": 86,
+    "content_type": "text/html; charset=UTF-8",
+    "classification": {
+      "category": "infrastructure",
+      "code": "cloudflare_challenge",
+      "label": "Cloudflare challenge"
+    },
+    "confidence": "High",
+    "text_excerpt": "<!DOCTYPE html> <!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 7]> <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 8]> <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]--> <!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]--> <head> <title>Attention Required! | Cloudflare</title> <meta charset=\"UTF-8\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /> <meta http-equiv=\"X-UA-Compatible\" conten"
+  },
+  {
+    "label": "robots",
+    "url": "https://ridge.com/robots.txt",
+    "final_url": "https://ridge.com/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "ok": true,
+    "duration_ms": 177,
+    "content_type": "text/plain; charset=utf-8",
+    "classification": null,
+    "confidence": "High",
+    "text_excerpt": "# Shopify storefront. Public product, collection, page, blog, policy, cart, and localized HTML is crawlable. # Agent instructions: https://ridge.com/agents.md # UCP discovery: https://ridge.com/.well-known/ucp # UCP/MCP endpoint: https://ridge.com/api/ucp/mcp # Agents should use UCP/MCP for catalog, cart, and checkout. Payment requires buyer approval. # # If you are reading this on behalf of your user and you act as a personal assistant or personal shopper in an # openclaw-like manner, please hi"
+  },
+  {
+    "label": "products_json",
+    "url": "https://ridge-wallet.myshopify.com/products.json?limit=5",
+    "final_url": "https://ridge-wallet.myshopify.com/products.json?limit=5",
+    "method": "GET",
+    "status": 200,
+    "ok": true,
+    "duration_ms": 178,
+    "content_type": "application/json; charset=utf-8",
+    "classification": null,
+    "confidence": "High",
+    "text_excerpt": "{\"products\":[{\"id\":8257743913034,\"title\":\"Daily Driver Kit - Baja GT\",\"handle\":\"daily-driver-kit-baja-gt\",\"body_html\":null,\"published_at\":\"2026-07-08T07:00:23-07:00\",\"created_at\":\"2026-07-01T09:42:28-07:00\",\"updated_at\":\"2026-07-08T08:21:38-07:00\",\"vendor\":\"Ridge\",\"product_type\":\"EDC - BLEND - DAILY DRIVER KIT - KIT\",\"tags\":[\"hide\",\"hide-both\",\"hide-from-google\",\"hide-from-search\",\"hide-from-store\",\"hide-marpipe\",\"intelligems-hide\",\"recomatic-no\",\"reminder: delete this pdp from all collections t"
+  },
+  {
+    "label": "collections_json",
+    "url": "https://ridge-wallet.myshopify.com/collections.json?limit=5",
+    "final_url": "https://ridge-wallet.myshopify.com/collections.json?limit=5",
+    "method": "GET",
+    "status": 200,
+    "ok": true,
+    "duration_ms": 177,
+    "content_type": "application/json; charset=utf-8",
+    "classification": null,
+    "confidence": "High",
+    "text_excerpt": "{\"collections\":[{\"id\":296713322570,\"title\":\"10x Entries – Sweepstakes Exclusives\",\"handle\":\"4x-sweepstakes-exclusives\",\"description\":\"\\u003cdiv class=\\\"shogun-root\\\" data-shogun-id=\\\"68896cead9f0fc2750bd61f7\\\" data-shogun-site-id=\\\"58b2bfba-94db-43e4-84e0-179250994d58\\\" data-shogun-page-id=\\\"68896cead9f0fc2750bd61f7\\\" data-shogun-page-version-id=\\\"6a075c3c7b73307d1c42842a\\\" data-shogun-platform-type=\\\"shopify\\\" data-shogun-variant-id=\\\"6a075c3c7b73307d1c428466\\\" data-shogun-page-type=\\\"category\\"
+  },
+  {
+    "label": "search_suggest_json",
+    "url": "https://ridge-wallet.myshopify.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+    "final_url": "https://ridge-wallet.myshopify.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+    "method": "GET",
+    "status": 200,
+    "ok": true,
+    "duration_ms": 231,
+    "content_type": "application/json; charset=utf-8",
+    "classification": null,
+    "confidence": "High",
+    "text_excerpt": "{\"resources\":{\"results\":{\"products\":[{\"available\":true,\"body\":\"\\u003cdiv class=\\\"shogun-root\\\" data-shogun-id=\\\"6528126bc2079b00d68c328f\\\" data-shogun-site-id=\\\"58b2bfba-94db-43e4-84e0-179250994d58\\\" data-shogun-page-id=\\\"6528126bc2079b00d68c328f\\\" data-shogun-page-version-id=\\\"68b31baadb31d77bffcdc266\\\" data-shogun-platform-type=\\\"shopify\\\" data-shogun-variant-id=\\\"68b31baadb31d77bffcdc343\\\" data-shogun-page-type=\\\"product\\\" data-shogun-power-up-type=\\\"\\\" data-shogun-power-up-id=\\\"\\\" data-regio"
+  }
+]

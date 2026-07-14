@@ -1,0 +1,419 @@
+{
+  "schema_version": "inspection-model-v0.1",
+  "inspection_id": "GEN-013-20260708T152138Z",
+  "generated_at": "2026-07-08T16:11:29.038Z",
+  "evaluation_id": "ridge-shopify-baseline",
+  "target_id": "ridge",
+  "platform_detection": {
+    "platform": "shopify",
+    "confidence": "High",
+    "signals": [
+      "Target manifest expects Shopify.",
+      "Products JSON returned a Shopify products payload.",
+      "Collections JSON returned a Shopify collections payload.",
+      "Suggest JSON returned a Shopify predictive-search payload."
+    ]
+  },
+  "dashboard": {
+    "schema_version": "inspection-dashboard-v0.1",
+    "inspection_id": "GEN-013-20260708T152138Z",
+    "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+    "crawl_summary": {
+      "inspection_timestamp": "2026-07-08T15:21:38.329Z",
+      "target_url": "https://ridge.com/",
+      "target_name": "Ridge",
+      "platform_detection": {
+        "platform": "shopify",
+        "confidence": "High",
+        "signals": [
+          "Target manifest expects Shopify.",
+          "Products JSON returned a Shopify products payload.",
+          "Collections JSON returned a Shopify collections payload.",
+          "Suggest JSON returned a Shopify predictive-search payload."
+        ]
+      },
+      "overall_inspection_status": "partial",
+      "inspection_duration_ms": 2990709,
+      "evidence_quality": "limited",
+      "overall_confidence": "Low"
+    },
+    "operational_summary": {
+      "experiments_completed": 1,
+      "blocked_experiments": 1,
+      "warnings": 2,
+      "evidence_files": 2,
+      "screenshot_count": 0,
+      "downstream_report_readiness": "not_ready",
+      "readiness_notes": "Inspection evidence is incomplete for downstream exports."
+    },
+    "crawl_health": [
+      {
+        "component": "Homepage",
+        "status": "FAIL",
+        "confidence": "High",
+        "notes": "Cloudflare challenge"
+      },
+      {
+        "component": "Search",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "0/10 submitted search observations completed."
+      },
+      {
+        "component": "Browse",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+      },
+      {
+        "component": "Autocomplete",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "5/5 autocomplete observations returned suggestions."
+      },
+      {
+        "component": "Product Pages",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+      },
+      {
+        "component": "Facets",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Facet inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Recommendations",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Recommendation inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Mobile",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Mobile rendering is not enabled in this first implementation slice."
+      },
+      {
+        "component": "Competitor Inspection",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Peer inspection is not enabled in this evaluation manifest."
+      }
+    ],
+    "evidence_coverage": {
+      "component_coverage_percent": 33,
+      "plugin_observations": 15,
+      "dataset_rows": 21,
+      "evidence_quality": "limited"
+    },
+    "platform_capability": {
+      "status": "warn",
+      "report_path": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/platform-capability-report.json",
+      "failed_capabilities": [
+        "P008"
+      ]
+    },
+    "artifact_explorer": {
+      "evidence": [
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [],
+      "datasets": [
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds3-search-facet.jsonl",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [],
+      "raw_http": [
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [],
+      "other": [
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/checkpoint.json",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/platform-capability-report.json",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/plugin-dependency-graph.json",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/plugin-state.json",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/run-manifest.json",
+        "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/site-profile.json"
+      ]
+    }
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "Cloudflare challenge"
+    },
+    {
+      "component": "Search",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/10 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "5/5 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+    },
+    {
+      "component": "Facets",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Facet inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Recommendations",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Recommendation inspection is registered in the mission workflow but not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Mobile",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Mobile rendering is not enabled in this first implementation slice."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    }
+  ],
+  "datasets": {
+    "DS1": {
+      "path": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "rows": 5,
+      "status": "generated"
+    },
+    "DS2": {
+      "path": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "rows": 11,
+      "status": "generated"
+    },
+    "DS3": {
+      "path": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds3-search-facet.jsonl",
+      "rows": 3,
+      "status": "generated"
+    },
+    "DS4": {
+      "path": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/datasets/ds4-advanced-retrieval.jsonl",
+      "rows": 2,
+      "status": "generated"
+    }
+  },
+  "plugin_results": [
+    {
+      "plugin_id": "submitted-search",
+      "status": "blocked",
+      "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 10,
+      "completed_observations": 0,
+      "blocked_observations": 10,
+      "confidence": "Low",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-wallet",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=wallet"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-magsafe-wallet",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=magsafe+wallet"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-money-clip",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=money+clip"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-airtag",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=airtag"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-carbon-fiber-wallet",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=carbon+fiber+wallet"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-wallet",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=wallet"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-magsafe-wallet",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=magsafe+wallet"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-money-clip",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=money+clip"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-airtag",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=airtag"
+        },
+        {
+          "code": "cloudflare_challenge",
+          "label": "Cloudflare challenge",
+          "query_id": "edc-carbon-fiber-wallet",
+          "status": 403,
+          "endpoint": "https://ridge.com/search?q=carbon+fiber+wallet"
+        }
+      ]
+    },
+    {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260708T152138Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "observations_with_suggestions": 5,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    }
+  ],
+  "limitations": {
+    "platform_capability_gaps": [
+      {
+        "capability_id": "P008",
+        "name": "Rendered Page Capture",
+        "status": "planned",
+        "classification": "platform_capability_gap",
+        "notes": "Capability is registered but not implemented in this evaluator version."
+      }
+    ],
+    "infrastructure_limitations": [
+      {
+        "category": "infrastructure",
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "url": "https://ridge.com/",
+        "status": 403
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-wallet",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=wallet"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-magsafe-wallet",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=magsafe+wallet"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-money-clip",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=money+clip"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-airtag",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=airtag"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-carbon-fiber-wallet",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=carbon+fiber+wallet"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-wallet",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=wallet"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-magsafe-wallet",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=magsafe+wallet"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-money-clip",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=money+clip"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-airtag",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=airtag"
+      },
+      {
+        "code": "cloudflare_challenge",
+        "label": "Cloudflare challenge",
+        "query_id": "edc-carbon-fiber-wallet",
+        "status": 403,
+        "endpoint": "https://ridge.com/search?q=carbon+fiber+wallet"
+      }
+    ],
+    "commerce_observations": [],
+    "separation_rule": "Platform capability gaps and infrastructure limitations are recorded separately from observed ecommerce behavior."
+  },
+  "evidence_model": {
+    "raw_evidence_is_immutable": true,
+    "confidence_scope": "observation_level",
+    "evidence_quality_scope": "coverage_and_completeness"
+  }
+}

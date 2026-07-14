@@ -1,0 +1,633 @@
+{
+  "evidence_id": "highcountryoutfitters-ir-concept-evidence-2026-07-02",
+  "generated_at": "2026-07-02T22:31:43.693Z",
+  "target": {
+    "url": "https://highcountryoutfitters.com/",
+    "domain": "highcountryoutfitters.com",
+    "platform_indicators": [
+      "Shopify products.json available",
+      "Shopify collections.json available",
+      "Shopify search/suggest.json available"
+    ]
+  },
+  "scope": "Apparel-domain information-retrieval concept tests requested for the High Country Outfitters report.",
+  "scoring_note": "Scores are bounded public-evidence judgments from rendered search pages and browser-context Shopify suggest API responses. They are diagnostic IR concept scores, not replacements for the main report scorecard.",
+  "example_count": 12,
+  "search_example_count": 12,
+  "autocomplete_example_count": 12,
+  "search_average": 99,
+  "autocomplete_average": 85,
+  "concepts": [
+    {
+      "article": "Article 5",
+      "concept": "Normalization",
+      "queries": [
+        "womens rain jacket",
+        "mens patagonia fleece"
+      ],
+      "search_average": 100,
+      "autocomplete_average": 98
+    },
+    {
+      "article": "Article 6",
+      "concept": "Tokenization",
+      "queries": [
+        "long sleeve shirt",
+        "1/4 zip pullover"
+      ],
+      "search_average": 100,
+      "autocomplete_average": 98
+    },
+    {
+      "article": "Article 7",
+      "concept": "Synonyms",
+      "queries": [
+        "rain shell",
+        "puffer jacket"
+      ],
+      "search_average": 100,
+      "autocomplete_average": 78
+    },
+    {
+      "article": "Article 8",
+      "concept": "Field Weighting",
+      "queries": [
+        "patagonia womens jacket",
+        "vuori joggers women"
+      ],
+      "search_average": 100,
+      "autocomplete_average": 95
+    },
+    {
+      "article": "Article 9",
+      "concept": "Query Expansion",
+      "queries": [
+        "sun hoodie",
+        "trail running shirt"
+      ],
+      "search_average": 100,
+      "autocomplete_average": 50
+    },
+    {
+      "article": "Article 10",
+      "concept": "Document Enrichment",
+      "queries": [
+        "UPF shirt women",
+        "fleece pullover women"
+      ],
+      "search_average": 94,
+      "autocomplete_average": 90
+    }
+  ],
+  "examples": [
+    {
+      "article": "Article 5",
+      "concept": "Normalization",
+      "query": "womens rain jacket",
+      "real_world_reason": "Outdoor apparel shoppers often omit apostrophes while searching for women rainwear.",
+      "ir_question": "Does search normalize womens to women/women's and still recover rain jackets?",
+      "relevance_terms": [
+        "women",
+        "jacket",
+        "rain",
+        "torrentshell",
+        "beta",
+        "anorak",
+        "shell"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=womens%20rain%20jacket",
+        "title": "Search: 92 results found for \"womens rain jacket\" – High Country Outfitters",
+        "result_count": 92,
+        "blocked": false,
+        "product_titles": [
+          "Women's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - THI THIN ICE Color THI THIN ICE WOOL WHITE BLK BLACK",
+          "Women's Kisa III Jacket Indyeva $278.00 $278.00Sold Out Color - WHEAT Color WHEAT HEMATITE",
+          "Women's Fineline Stretch Shell Black Diamond $189.00 $189.00Sold Out Color - 0002 BLACK Color 0002 BLACK 3061 AGAVE",
+          "Women's Canyon Insulated Jacket Vuori $150.00 $188.00Sold Out Color - BNE BONE Color BNE BONE",
+          "Women's Torrentshell 3L Pants - Short Patagonia $139.00 $139.00Sold Out Color - BLK BLACK Color BLK BLACK",
+          "Women's Chilled Out Full Zip Vuori $142.00 $178.00Sold Out Color - LAG LAGOON Color LAG LAGOON WBL WASHED BLACK"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Women's Torrentshell 3L Jacket",
+          "Women's Beta Jacket",
+          "Women's Kisa III Jacket",
+          "Women's CFS Hooded Anorak",
+          "Women's Fineline Stretch Shell"
+        ],
+        "collections": [],
+        "queries": [
+          "womens rain jacket"
+        ],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 100,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 92 results; sampled products: Women's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - THI THIN ICE Color THI THIN ICE WOOL WHITE BLK BLACK; Women's Kisa III Jacket Indyeva $278.00 $278.00Sold Out Color - WHEAT Color WHEAT HEMATITE; Women's Fineline Stretch Shell Black Diamond $189.00 $189.00Sold Out Color - 0002 BLACK Color 0002 BLACK 3061 AGAVE.",
+      "observed_autocomplete": "Suggest API returned products: Women's Torrentshell 3L Jacket; Women's Beta Jacket; Women's Kisa III Jacket | queries: womens rain jacket."
+    },
+    {
+      "article": "Article 5",
+      "concept": "Normalization",
+      "query": "mens patagonia fleece",
+      "real_world_reason": "Shoppers commonly omit the apostrophe in men's and combine gender, brand, and material.",
+      "ir_question": "Does search normalize mens to men/men's while preserving Patagonia and fleece intent?",
+      "relevance_terms": [
+        "men",
+        "patagonia",
+        "fleece",
+        "better sweater",
+        "retro pile"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=mens%20patagonia%20fleece",
+        "title": "Search: 57 results found for \"mens patagonia fleece\" – High Country Outfitters",
+        "result_count": 57,
+        "blocked": false,
+        "product_titles": [
+          "Men's Better Sweater 1/4 Zip Fleece Patagonia $139.00 $139.00Sold Out Color - OLGG OLD GROWTH GREEN Color OLGG OLD GROWTH GREEN",
+          "Men's R1® Air Zip Neck Patagonia $145.00 $145.00Sold Out Color - BLK BLACK Color BLK BLACK",
+          "Men's Synchilla Pant Patagonia $129.00 $129.00Sold Out Color - NKL NICKEL Color NKL NICKEL",
+          "Men's Pile Lined Trucker Jacket Patagonia $189.00 $189.00Sold Out Color - SMDB SMOLDER BLUE Color SMDB SMOLDER BLUE",
+          "Men's Nano Puff® Jacket Patagonia $229.00 $229.00Sold Out Color - BLK BLACK Color BLK BLACK",
+          "Men's Nano Puff® Vest Patagonia $199.00 $199.00Sold Out Color - SMDB SMOLDER BLUE Color SMDB SMOLDER BLUE FGE FORGE GREY BLK BLACK"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Men's Better Sweater 1/4 Zip Fleece",
+          "Men's Retro Pile Vest"
+        ],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 95,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 57 results; sampled products: Men's Better Sweater 1/4 Zip Fleece Patagonia $139.00 $139.00Sold Out Color - OLGG OLD GROWTH GREEN Color OLGG OLD GROWTH GREEN; Men's R1® Air Zip Neck Patagonia $145.00 $145.00Sold Out Color - BLK BLACK Color BLK BLACK; Men's Synchilla Pant Patagonia $129.00 $129.00Sold Out Color - NKL NICKEL Color NKL NICKEL.",
+      "observed_autocomplete": "Suggest API returned products: Men's Better Sweater 1/4 Zip Fleece; Men's Retro Pile Vest."
+    },
+    {
+      "article": "Article 6",
+      "concept": "Tokenization",
+      "query": "long sleeve shirt",
+      "real_world_reason": "Long-sleeve tops are a common apparel need and customers type the phrase as separate tokens.",
+      "ir_question": "Does search tokenize the phrase so sleeve and shirt work together instead of independently?",
+      "relevance_terms": [
+        "long sleeve",
+        "shirt",
+        "capilene",
+        "bamboo"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=long%20sleeve%20shirt",
+        "title": "Search: 235 results found for \"long sleeve shirt\" – High Country Outfitters",
+        "result_count": 235,
+        "blocked": false,
+        "product_titles": [
+          "Men's Long Sleeve Ace Button Down Vuori $78.00 $98.00Sold Out Color - INK INK Color INK INK",
+          "Men's Long Sleeve Strato Tech Tee Vuori $47.00 $68.00Sold Out Color - HPB POOL BLUE HEATHER Color HPB POOL BLUE HEATHER NAVY HEATHER CHARCOAL HEATHER",
+          "Men's Long Sleeve Lightweight Fjord Flannel Shirt Patagonia $44.95 $89.00Sold Out Color - FOVB FOGGY| VIRTUALLY BLUE Color FOVB FOGGY| VIRTUALLY BLUE PWSM PAW| SMOLDER BLUE",
+          "Men's Long-Sleeve Capilene® Cool Daily Shirt Patagonia $59.00 $59.00Sold Out Color - BSLX BLUE SAGE - LIGHT BLUE SAGE X-DYE Color BSLX BLUE SAGE - LIGHT BLUE SAGE X-DYE FEA FEATHER GREY",
+          "Men's Bamboo Shade Long Sleeve Free Fly Apparel $68.00 $68.00Sold Out Color - HEATHER SLATE BLUE Color HEATHER SLATE BLUE HEATHER ASPEN GREY HEATHER SEA PINE",
+          "Women's Long Sleeve Guided Sun Shirt Patagonia $99.00 $99.00Sold Out Color - RVGN RIVER ROCK GREEN Color RVGN RIVER ROCK GREEN"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Men's Original Shirt Long Sleeve",
+          "Men's Original Long Sleeve Shirt",
+          "Men's Bamboo Lightweight Long Sleeve",
+          "Men's Cloud Cotton Long Sleeve Henley"
+        ],
+        "collections": [
+          "Long Sleeve Shirts"
+        ],
+        "queries": [
+          "tamiami ii long sleeve shirt"
+        ],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 100,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 235 results; sampled products: Men's Long Sleeve Ace Button Down Vuori $78.00 $98.00Sold Out Color - INK INK Color INK INK; Men's Long Sleeve Strato Tech Tee Vuori $47.00 $68.00Sold Out Color - HPB POOL BLUE HEATHER Color HPB POOL BLUE HEATHER NAVY HEATHER CHARCOAL HEATHER; Men's Long Sleeve Lightweight Fjord Flannel Shirt Patagonia $44.95 $89.00Sold Out Color - FOVB FOGGY| VIRTUALLY BLUE Color FOVB FOGGY| VIRTUALLY BLUE PWSM PAW| SMOLDER BLUE.",
+      "observed_autocomplete": "Suggest API returned products: Men's Original Shirt Long Sleeve; Men's Original Long Sleeve Shirt; Men's Bamboo Lightweight Long Sleeve | collections: Long Sleeve Shirts | queries: tamiami ii long sleeve shirt."
+    },
+    {
+      "article": "Article 6",
+      "concept": "Tokenization",
+      "query": "1/4 zip pullover",
+      "real_world_reason": "Customers use slash notation for quarter-zip pullovers instead of spelling out quarter zip.",
+      "ir_question": "Does search handle punctuation and numeric tokens in 1/4 zip?",
+      "relevance_terms": [
+        "1/4 zip",
+        "quarter zip",
+        "pullover"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=1%2F4%20zip%20pullover",
+        "title": "Search: 19 results found for \"1/4 zip pullover\" – High Country Outfitters",
+        "result_count": 19,
+        "blocked": false,
+        "product_titles": [
+          "Men's Sully 1/4 Zip Pullover johnnie-O $89.95 $138.00Sold Out Color - HELIOS BLUE Color HELIOS BLUE LAGUNA BLUE SEQUOIA PORT",
+          "Men's UGA Sully Quarter Zip Pullover johnnie-O $158.00 $158.00Sold Out Color - HEATHER BLACK Color HEATHER BLACK 4GA-STANDING DAWG|RED1 10GA-GDAWG|LIGHT GRAY",
+          "Men's Georgia Hoppin Ribbed Knit Performance 1/4 Zip Pullover johnnie-O $168.00 $168.00Sold Out Color - 10GA-GDAWG|BLACK Color 10GA-GDAWG|BLACK",
+          "Men's Better Sweater 1/4 Zip Fleece Patagonia $139.00 $139.00Sold Out Color - OLGG OLD GROWTH GREEN Color OLGG OLD GROWTH GREEN",
+          "Men's Waffle Quarter Zip Free Fly Apparel $74.95 $108.00Sold Out Color - SANDSTONE Color SANDSTONE",
+          "Men's Sunwashed Quarter Zip Sweater Faherty $114.95 $228.00Sold Out Color - BLN BLUE NIGHTS Color BLN BLUE NIGHTS"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Men's Sully 1/4 Zip Pullover",
+          "Men's Georgia Hoppin Ribbed Knit Performance 1/4 Zip Pullover"
+        ],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 95,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 19 results; sampled products: Men's Sully 1/4 Zip Pullover johnnie-O $89.95 $138.00Sold Out Color - HELIOS BLUE Color HELIOS BLUE LAGUNA BLUE SEQUOIA PORT; Men's UGA Sully Quarter Zip Pullover johnnie-O $158.00 $158.00Sold Out Color - HEATHER BLACK Color HEATHER BLACK 4GA-STANDING DAWG|RED1 10GA-GDAWG|LIGHT GRAY; Men's Georgia Hoppin Ribbed Knit Performance 1/4 Zip Pullover johnnie-O $168.00 $168.00Sold Out Color - 10GA-GDAWG|BLACK Color 10GA-GDAWG|BLACK.",
+      "observed_autocomplete": "Suggest API returned products: Men's Sully 1/4 Zip Pullover; Men's Georgia Hoppin Ribbed Knit Performance 1/4 Zip Pullover."
+    },
+    {
+      "article": "Article 7",
+      "concept": "Synonyms",
+      "query": "rain shell",
+      "real_world_reason": "Outdoor customers often say shell when they mean a rain jacket or waterproof layer.",
+      "ir_question": "Does search connect shell wording to rain-jacket inventory?",
+      "relevance_terms": [
+        "shell",
+        "rain",
+        "jacket",
+        "fineline"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=rain%20shell",
+        "title": "Search: 70 results found for \"rain shell\" – High Country Outfitters",
+        "result_count": 70,
+        "blocked": false,
+        "product_titles": [
+          "Women's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - THI THIN ICE Color THI THIN ICE WOOL WHITE BLK BLACK",
+          "Men's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - SMDB SMOLDER BLUE Color SMDB SMOLDER BLUE BLK BLACK NGRY NOBLE GREY",
+          "Men's Fineline Stretch Shell Black Diamond $134.95 $189.00Sold Out Color - 4013 INDIGO Color 4013 INDIGO 0002 BLACK 3010 TUNDRA",
+          "Men's Cloudshield Rain Jacket Free Fly Apparel $248.00 $248.00Sold Out Color - HERON BLUE Color HERON BLUE BLACK SAND",
+          "Women's Fineline Stretch Shell Black Diamond $189.00 $189.00Sold Out Color - 0002 BLACK Color 0002 BLACK 3061 AGAVE",
+          "Men's Boulder Fork Rain Jacket Patagonia $239.00 $239.00Sold Out Color - SMDB SMOLDER BLUE Color SMDB SMOLDER BLUE BLSG BLUE SAGE"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Women's Fineline Stretch Shell",
+          "Men's Fineline Stretch Shell"
+        ],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 95,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 70 results; sampled products: Women's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - THI THIN ICE Color THI THIN ICE WOOL WHITE BLK BLACK; Men's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - SMDB SMOLDER BLUE Color SMDB SMOLDER BLUE BLK BLACK NGRY NOBLE GREY; Men's Fineline Stretch Shell Black Diamond $134.95 $189.00Sold Out Color - 4013 INDIGO Color 4013 INDIGO 0002 BLACK 3010 TUNDRA.",
+      "observed_autocomplete": "Suggest API returned products: Women's Fineline Stretch Shell; Men's Fineline Stretch Shell."
+    },
+    {
+      "article": "Article 7",
+      "concept": "Synonyms",
+      "query": "puffer jacket",
+      "real_world_reason": "Puffer is a common consumer synonym for insulated or down jackets.",
+      "ir_question": "Does search and autocomplete bridge puffer to insulated/down jacket language?",
+      "relevance_terms": [
+        "puffer",
+        "nano puff",
+        "down",
+        "jacket",
+        "insulated"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=puffer%20jacket",
+        "title": "Search: 72 results found for \"puffer jacket\" – High Country Outfitters",
+        "result_count": 72,
+        "blocked": false,
+        "product_titles": [
+          "Women's Nano Puff® Jacket Patagonia $229.00 $229.00Sold Out Color - BLK BLACK Color BLK BLACK ELGR ELLWOOD GREEN",
+          "Men's Nano Puff® Jacket Patagonia $229.00 $229.00Sold Out Color - BLK BLACK Color BLK BLACK",
+          "Women's Down With It Jacket Patagonia $229.00 $229.00Sold Out color - BLK BLACK color BLK BLACK NAT NATURAL",
+          "Women's Canyon Insulated Jacket Vuori $150.00 $188.00Sold Out Color - BNE BONE Color BNE BONE",
+          "Women's Down Sweater™ Jacket Patagonia $289.00 $289.00Sold Out Color - BNLB BARNACLE BLUE Color BNLB BARNACLE BLUE BLK BLACK",
+          "Kids' Nano Puff® Brick Quilt Jacket Patagonia $119.00 $119.00Sold Out Color - FYGR FORGE GREY | NOBLE GREY Color FYGR FORGE GREY | NOBLE GREY"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [],
+        "collections": [],
+        "queries": [
+          "patagonia nano puffer jacket"
+        ],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 60,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "partial",
+      "observed_search": "Rendered search showed 72 results; sampled products: Women's Nano Puff® Jacket Patagonia $229.00 $229.00Sold Out Color - BLK BLACK Color BLK BLACK ELGR ELLWOOD GREEN; Men's Nano Puff® Jacket Patagonia $229.00 $229.00Sold Out Color - BLK BLACK Color BLK BLACK; Women's Down With It Jacket Patagonia $229.00 $229.00Sold Out color - BLK BLACK color BLK BLACK NAT NATURAL.",
+      "observed_autocomplete": "Suggest API returned queries: patagonia nano puffer jacket."
+    },
+    {
+      "article": "Article 8",
+      "concept": "Field Weighting",
+      "query": "patagonia womens jacket",
+      "real_world_reason": "A brand-aware shopper may combine vendor, gender, and category in one query.",
+      "ir_question": "Do brand/vendor and gender/category fields rank Patagonia women jacket products first?",
+      "relevance_terms": [
+        "patagonia",
+        "women",
+        "jacket"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=patagonia%20womens%20jacket",
+        "title": "Search: 109 results found for \"patagonia womens jacket\" – High Country Outfitters",
+        "result_count": 109,
+        "blocked": false,
+        "product_titles": [
+          "Women's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - THI THIN ICE Color THI THIN ICE WOOL WHITE BLK BLACK",
+          "Women's Down With It Jacket Patagonia $229.00 $229.00Sold Out color - BLK BLACK color BLK BLACK NAT NATURAL",
+          "Women's Down Sweater™ Jacket Patagonia $289.00 $289.00Sold Out Color - BNLB BARNACLE BLUE Color BNLB BARNACLE BLUE BLK BLACK",
+          "Women's Nano Puff® Jacket Patagonia $229.00 $229.00Sold Out Color - BLK BLACK Color BLK BLACK ELGR ELLWOOD GREEN",
+          "Women's Silent Down Jacket Patagonia $134.95 $269.00Sold Out Color - ELGR ELLWOOD GREEN Color ELGR ELLWOOD GREEN",
+          "Women's Down With It Parka Patagonia $365.00 $365.00Sold Out Color - BLK BLACK Color BLK BLACK"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Women's Nano Puff® Jacket",
+          "Women's Silent Down Jacket",
+          "Women's Down Sweater™ Jacket",
+          "Women's Torrentshell 3L Jacket",
+          "Women's Down With It Jacket"
+        ],
+        "collections": [],
+        "queries": [
+          "womens patagonia jacket"
+        ],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 100,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 109 results; sampled products: Women's Torrentshell 3L Jacket Patagonia $189.00 $189.00Sold Out Color - THI THIN ICE Color THI THIN ICE WOOL WHITE BLK BLACK; Women's Down With It Jacket Patagonia $229.00 $229.00Sold Out color - BLK BLACK color BLK BLACK NAT NATURAL; Women's Down Sweater™ Jacket Patagonia $289.00 $289.00Sold Out Color - BNLB BARNACLE BLUE Color BNLB BARNACLE BLUE BLK BLACK.",
+      "observed_autocomplete": "Suggest API returned products: Women's Nano Puff® Jacket; Women's Silent Down Jacket; Women's Down Sweater™ Jacket | queries: womens patagonia jacket."
+    },
+    {
+      "article": "Article 8",
+      "concept": "Field Weighting",
+      "query": "vuori joggers women",
+      "real_world_reason": "A customer may know the brand and product type but use an informal gender order.",
+      "ir_question": "Do brand and product-type fields outweigh broad text matches enough to surface Vuori women joggers?",
+      "relevance_terms": [
+        "vuori",
+        "women",
+        "jogger"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=vuori%20joggers%20women",
+        "title": "Search: 84 results found for \"vuori joggers women\" – High Country Outfitters",
+        "result_count": 84,
+        "blocked": false,
+        "product_titles": [
+          "Women's Performance Jogger Vuori $87.97 $110.00Sold Out Color - HMD MIDNIGHT HEATHER Color HMD MIDNIGHT HEATHER LZH LILAC BREEZE HEATHER HHB HUCKLEBERRY HEATHER HBK BLACK HEATHER",
+          "Women's Halo Modern Sweatpant Vuori $78.00 $98.00Sold Out Color - FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER AGG AGATE GREEN",
+          "Women's Clementine 2.0 Short 2.5\" Vuori $54.00 $68.00Sold Out Color - REB REGATTA BLUE Color REB REGATTA BLUE CER CERISE BLK BLACK",
+          "Women's Daily Legging Vuori $71.00 $98.00Sold Out Color - SMT SPEARMINT Color SMT SPEARMINT",
+          "Women's Vuori AllTheFeels™ Legging $78.00 $110.00Sold Out Color - MAG MAGENTA Color MAG MAGENTA REB REGATTA BLUE SPK SUNSET PINK BLK BLACK",
+          "Women's Miles Ankle Pant Vuori $42.97 $110.00Sold Out Color - BHR BLUE HERON Color BHR BLUE HERON CER CERISE BCO BLUE COAST BLK BLACK"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Women's Performance Jogger"
+        ],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 90,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 84 results; sampled products: Women's Performance Jogger Vuori $87.97 $110.00Sold Out Color - HMD MIDNIGHT HEATHER Color HMD MIDNIGHT HEATHER LZH LILAC BREEZE HEATHER HHB HUCKLEBERRY HEATHER HBK BLACK HEATHER; Women's Halo Modern Sweatpant Vuori $78.00 $98.00Sold Out Color - FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER AGG AGATE GREEN; Women's Clementine 2.0 Short 2.5\" Vuori $54.00 $68.00Sold Out Color - REB REGATTA BLUE Color REB REGATTA BLUE CER CERISE BLK BLACK.",
+      "observed_autocomplete": "Suggest API returned products: Women's Performance Jogger."
+    },
+    {
+      "article": "Article 9",
+      "concept": "Query Expansion",
+      "query": "sun hoodie",
+      "real_world_reason": "Sun hoodie is a common outdoor phrase for UPF hoodies and sun-protection tops.",
+      "ir_question": "Does search expand hoodie/hoody and sun-protection language into relevant apparel?",
+      "relevance_terms": [
+        "sun",
+        "hoodie",
+        "hoody",
+        "capilene",
+        "bamboo"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=sun%20hoodie",
+        "title": "Search: 194 results found for \"sun hoodie\" – High Country Outfitters",
+        "result_count": 194,
+        "blocked": false,
+        "product_titles": [
+          "Men's Cormac Hoody Arc'teryx $90.00 $90.00Sold Out Color - 019001 HABITAT Color 019001 HABITAT 020142 ARCTIC SILK 018561 FLUIDITY 002291 BLACK",
+          "Men's Capilene® Cool Sun Hoody Patagonia $89.00 $89.00Sold Out Color - TBIX THERMAL BLUE - THIN ICE X-DYE Color TBIX THERMAL BLUE - THIN ICE X-DYE FGNX FORGE GREY - NOBLE GREY X-DYE",
+          "Men's Capilene® Cool Sun Hoody | Fitz Roy Trout Patagonia $99.00 $99.00Sold Out Color - CGSX CRISP GREY - SALT GREY X-DYE Color CGSX CRISP GREY - SALT GREY X-DYE",
+          "Women's Bamboo Shade Hoody II Free Fly Apparel $62.40 $78.00Sold Out Color - BRIGHT WHITE Color BRIGHT WHITE TROPIC SEA",
+          "Women's Capilene® Cool Daily Hoody Patagonia $69.00 $69.00Sold Out Color - TMBX THERMAL BLUE - LIGHT THERMAL BLUE X-DYE Color TMBX THERMAL BLUE - LIGHT THERMAL BLUE X-DYE DYWH DYNO WHITE QVLT QUIET VIOLET",
+          "Men's Bamboo Lightweight Hoodie Free Fly Apparel $74.00 $74.00Sold Out Color - TIDAL FLOW PRINT STORMY SEA Color TIDAL FLOW PRINT STORMY SEA SEASMOKE CAMO - SURF BLUE STORM CLOUD VINTAGE CAMO"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Men's Capilene® Cool Sun Hoody",
+          "Men's Capilene® Cool Sun Hoody | Fitz Roy Trout"
+        ],
+        "collections": [],
+        "queries": [
+          "mens sunday hoodie",
+          "sunwashed slub hoodie"
+        ],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 100,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 194 results; sampled products: Men's Cormac Hoody Arc'teryx $90.00 $90.00Sold Out Color - 019001 HABITAT Color 019001 HABITAT 020142 ARCTIC SILK 018561 FLUIDITY 002291 BLACK; Men's Capilene® Cool Sun Hoody Patagonia $89.00 $89.00Sold Out Color - TBIX THERMAL BLUE - THIN ICE X-DYE Color TBIX THERMAL BLUE - THIN ICE X-DYE FGNX FORGE GREY - NOBLE GREY X-DYE; Men's Capilene® Cool Sun Hoody | Fitz Roy Trout Patagonia $99.00 $99.00Sold Out Color - CGSX CRISP GREY - SALT GREY X-DYE Color CGSX CRISP GREY - SALT GREY X-DYE.",
+      "observed_autocomplete": "Suggest API returned products: Men's Capilene® Cool Sun Hoody; Men's Capilene® Cool Sun Hoody | Fitz Roy Trout | queries: mens sunday hoodie; sunwashed slub hoodie."
+    },
+    {
+      "article": "Article 9",
+      "concept": "Query Expansion",
+      "query": "trail running shirt",
+      "real_world_reason": "Trail runners often search for lightweight technical shirts by activity rather than product title.",
+      "ir_question": "Does search expand activity intent into technical running or performance shirts?",
+      "relevance_terms": [
+        "trail",
+        "running",
+        "cormac",
+        "capilene",
+        "technical",
+        "merino",
+        "shirt"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=trail%20running%20shirt",
+        "title": "Search: 83 results found for \"trail running shirt\" – High Country Outfitters",
+        "result_count": 83,
+        "blocked": false,
+        "product_titles": [
+          "Men's Cormac Crew Short Sleeve Arc'teryx $70.00 $70.00Sold Out Color - 019001 HABITAT Color 019001 HABITAT 022616 ALPINE BLUE 021549 DK STRATUS 002291 BLACK",
+          "Men's Ionia Merino Wool Shirt Arc'teryx $72.00 $90.00Sold Out Color - 018159 SOLITUDE HEATHER Color 018159 SOLITUDE HEATHER 002291 BLACK",
+          "Men's Capilene® Cool Daily Shirt Patagonia $49.00 $49.00Sold Out Color - SHRX SHORE BLUE - LIGHT SHORE BLUE X-DYE Color SHRX SHORE BLUE - LIGHT SHORE BLUE X-DYE AQSX AQUA STONE - LIGHT AQUA STONE X-DYE FEA FEATHER GREY SBLX SMOLDER BLUE - LIGHT SMOLDER BLUE X-DYE",
+          "Men's Original Short Sleeve Poncho Outdoors $84.95 $84.95Sold Out Color - THE ANCHOA | BLUE MICROCHECK Color THE ANCHOA | BLUE MICROCHECK THE SALTY DOG|WHITE THE CHANNEL CAT|BLUE AND GREY PLAID THE ONO|BLUE AND WHITE PLAID",
+          "Men's Long-Sleeve Capilene® Cool Daily Shirt Patagonia $59.00 $59.00Sold Out Color - BSLX BLUE SAGE - LIGHT BLUE SAGE X-DYE Color BSLX BLUE SAGE - LIGHT BLUE SAGE X-DYE FEA FEATHER GREY",
+          "Men's Capilene® Cool Ultra Shirt Patagonia $59.00 $59.00Sold Out Color - AQSX AQUA STONE - LIGHT AQUA STONE X-DYE Color AQSX AQUA STONE - LIGHT AQUA STONE X-DYE BLFX BLACK - FORGE GREY X-DYE"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 0,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "no assistance",
+      "observed_search": "Rendered search showed 83 results; sampled products: Men's Cormac Crew Short Sleeve Arc'teryx $70.00 $70.00Sold Out Color - 019001 HABITAT Color 019001 HABITAT 022616 ALPINE BLUE 021549 DK STRATUS 002291 BLACK; Men's Ionia Merino Wool Shirt Arc'teryx $72.00 $90.00Sold Out Color - 018159 SOLITUDE HEATHER Color 018159 SOLITUDE HEATHER 002291 BLACK; Men's Capilene® Cool Daily Shirt Patagonia $49.00 $49.00Sold Out Color - SHRX SHORE BLUE - LIGHT SHORE BLUE X-DYE Color SHRX SHORE BLUE - LIGHT SHORE BLUE X-DYE AQSX AQUA STONE - LIGHT AQUA STONE X-DYE FEA FEATHER GREY SBLX SMOLDER BLUE - LIGHT SMOLDER BLUE X-DYE.",
+      "observed_autocomplete": "Suggest API returned no product, collection, query, or page suggestions."
+    },
+    {
+      "article": "Article 10",
+      "concept": "Document Enrichment",
+      "query": "UPF shirt women",
+      "real_world_reason": "UPF is a feature-level apparel attribute that may live in tags, descriptions, or product specs.",
+      "ir_question": "Do enriched attributes expose women sun-protection shirts even when UPF is not the main title?",
+      "relevance_terms": [
+        "upf",
+        "women",
+        "shirt",
+        "sun",
+        "bamboo",
+        "performance"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=UPF%20shirt%20women",
+        "title": "Search: 421 results found for \"UPF shirt women\" – High Country Outfitters",
+        "result_count": 421,
+        "blocked": false,
+        "product_titles": [
+          "Women's Energy Top Vuori $43.00 $54.00Sold Out Color - FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER BCO BLUE COAST WHITE BLACK",
+          "Women's Tempo Tank FP Movement $30.00 $30.00Sold Out Color - 4410 BRIGHT BLUE Color 4410 BRIGHT BLUE 3337 WHIPPED LIME 4057 ELECTRIC SHOCK 1100 WHITE 7804 SUNLIT YELLOW 5669 GEM 0010 BLACK 4600 GLOW WAVE 6164 ELECTRIC SUNSET",
+          "Women's Bamboo Lightweight Long Sleeve II Free Fly Apparel $34.95 $58.00Sold Out Color - SLATE Color SLATE",
+          "Women's Bamboo Shade Long Sleeve II Free Fly Apparel $68.00 $68.00Sold Out Color - TROPIC SEA Color TROPIC SEA BRIGHT WHITE",
+          "Everyday Performance Sun Shirt UPF 50+ Dry Lite Solbari $99.00 $99.00Sold Out Color - BEIGE Color BEIGE",
+          "Women's Bamboo Shade Crossover Long Sleeve Free Fly Apparel $59.20 $74.00Sold Out Color - BRIGHT WHITE Color BRIGHT WHITE TROPIC SEA"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Everyday Performance Sun Shirt UPF 50+ Dry Lite"
+        ],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 88,
+      "autocomplete_score": 90,
+      "search_score_band": "usable",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 421 results; sampled products: Women's Energy Top Vuori $43.00 $54.00Sold Out Color - FYH SOFT SKY HEATHER Color FYH SOFT SKY HEATHER BCO BLUE COAST WHITE BLACK; Women's Tempo Tank FP Movement $30.00 $30.00Sold Out Color - 4410 BRIGHT BLUE Color 4410 BRIGHT BLUE 3337 WHIPPED LIME 4057 ELECTRIC SHOCK 1100 WHITE 7804 SUNLIT YELLOW 5669 GEM 0010 BLACK 4600 GLOW WAVE 6164 ELECTRIC SUNSET; Women's Bamboo Lightweight Long Sleeve II Free Fly Apparel $34.95 $58.00Sold Out Color - SLATE Color SLATE.",
+      "observed_autocomplete": "Suggest API returned products: Everyday Performance Sun Shirt UPF 50+ Dry Lite."
+    },
+    {
+      "article": "Article 10",
+      "concept": "Document Enrichment",
+      "query": "fleece pullover women",
+      "real_world_reason": "Fleece and pullover are material/style attributes that can be split across title, tags, and variants.",
+      "ir_question": "Do enriched product fields expose women fleece pullovers instead of only exact-title matches?",
+      "relevance_terms": [
+        "women",
+        "fleece",
+        "pullover",
+        "hoodie",
+        "sweater"
+      ],
+      "search": {
+        "url": "https://highcountryoutfitters.com/search?options%5Bprefix%5D=last&q=fleece%20pullover%20women",
+        "title": "Search: 163 results found for \"fleece pullover women\" – High Country Outfitters",
+        "result_count": 163,
+        "blocked": false,
+        "product_titles": [
+          "Women's Turpin Fleece Snap Pullover Stio $71.20 $89.00Sold Out Color - VINTAGE INDIGO HEATHER Color VINTAGE INDIGO HEATHER",
+          "Women's High Standard Fleece Hoodie Faherty $79.95 $158.00Sold Out Color - LGH LIGHT GREY HEATHER Color LGH LIGHT GREY HEATHER",
+          "Women's Sienna Patriot Sweater Z Supply $54.95 $78.00Sold Out Color - NHE NATURAL HEATHER Color NHE NATURAL HEATHER",
+          "Women's Josephine Stripe Sweater Z Supply $24.95 $79.00Sold Out Color - BLK BLACK Color BLK BLACK",
+          "Women's Jackson Crewneck Sweater Faherty $94.95 $158.00Sold Out Color - LNB ICELAND BLUE Color LNB ICELAND BLUE GYH ICE GREY HEATHER",
+          "Women's Sadira Fluffy Cardigan Z Supply $34.95 $110.00Sold Out Color - WRW WARM WHITE Color WRW WARM WHITE BLK BLACK"
+        ]
+      },
+      "autocomplete": {
+        "status": 200,
+        "ok": true,
+        "products": [
+          "Women's Turpin Fleece Snap Pullover"
+        ],
+        "collections": [],
+        "queries": [],
+        "pages": []
+      },
+      "search_score": 100,
+      "autocomplete_score": 90,
+      "search_score_band": "strong",
+      "autocomplete_score_band": "strong",
+      "observed_search": "Rendered search showed 163 results; sampled products: Women's Turpin Fleece Snap Pullover Stio $71.20 $89.00Sold Out Color - VINTAGE INDIGO HEATHER Color VINTAGE INDIGO HEATHER; Women's High Standard Fleece Hoodie Faherty $79.95 $158.00Sold Out Color - LGH LIGHT GREY HEATHER Color LGH LIGHT GREY HEATHER; Women's Sienna Patriot Sweater Z Supply $54.95 $78.00Sold Out Color - NHE NATURAL HEATHER Color NHE NATURAL HEATHER.",
+      "observed_autocomplete": "Suggest API returned products: Women's Turpin Fleece Snap Pullover."
+    }
+  ]
+}

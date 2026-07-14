@@ -1,0 +1,523 @@
+{
+  "schema_version": "inspection-report-v0.1",
+  "generation": "GEN-013",
+  "target": {
+    "name": "Ridge",
+    "url": "https://ridge.com/",
+    "canonical_shopify_host_observed": "https://ridge-wallet.myshopify.com"
+  },
+  "inspection_window": {
+    "started_at": "2026-07-08T03:54:58Z",
+    "ended_at": "2026-07-08T03:55:34Z",
+    "mode": "manual endpoint inspection",
+    "browser_rendering_performed": false,
+    "competitor_inspection_performed": false
+  },
+  "dashboard": {
+    "platform_detection": {
+      "platform": "Shopify",
+      "confidence": "High",
+      "evidence": [
+        "robots.txt describes the site as a Shopify storefront.",
+        ".well-known/ucp advertises Shopify UCP/MCP shopping services.",
+        "Canonical myshopify host exposes Shopify products.json, collections.json, and search/suggest.json endpoints."
+      ]
+    },
+    "overall_inspection_status": "Partial",
+    "evidence_quality": "Medium",
+    "overall_confidence": "Medium",
+    "primary_limitation": "The branded ridge.com storefront returned Cloudflare 403 challenge pages for homepage, sitemap, product JSON, collection JSON, and autocomplete JSON probes.",
+    "recoverable_evidence": "Catalog and autocomplete evidence was available from the canonical Shopify host ridge-wallet.myshopify.com."
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "GET and HEAD requests to https://ridge.com/ returned HTTP 403 Cloudflare challenge pages."
+    },
+    {
+      "component": "Search",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Branded-domain autocomplete JSON was blocked. Canonical Shopify search/suggest.json returned structured suggestions for representative queries. Submitted search result pages were not rendered."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Canonical Shopify collections.json returned 828 collections. Branded-domain sitemap and rendered browse pages were blocked."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "Canonical Shopify search/suggest.json returned product, collection, query, and page suggestions for inspected prefixes."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Canonical Shopify products.json returned 1,175 products and 1,767 variants. Rendered product detail pages were not inspected."
+    },
+    {
+      "component": "Facets",
+      "status": "WARN",
+      "confidence": "Low",
+      "notes": "Product option names and tags were observed from catalog JSON, but visible storefront facets were not rendered or verified."
+    },
+    {
+      "component": "Recommendations",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "Recommendation endpoints were not inspected. robots.txt disallows /recommendations/products."
+    },
+    {
+      "component": "Mobile",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "Mobile rendering was not performed because direct storefront rendering was blocked in this inspection."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "High",
+      "notes": "No competitor URLs were supplied or inspected for this Ridge report."
+    }
+  ],
+  "site_discovery": {
+    "language": {
+      "value": "Unknown",
+      "confidence": "Low",
+      "notes": "The rendered storefront was blocked. Cloudflare challenge HTML used en-US, but that is not evidence of storefront language."
+    },
+    "currency": {
+      "value": "Unknown",
+      "confidence": "Low",
+      "notes": "Currency was not verified from rendered UI or product variant pricing in this bounded inspection summary."
+    },
+    "authentication_requirements": {
+      "value": "Public catalog endpoints available on canonical Shopify host; branded storefront protected by Cloudflare challenge",
+      "confidence": "High"
+    },
+    "store_selector": {
+      "value": "Not inspected",
+      "confidence": "Unknown"
+    },
+    "personalization": {
+      "value": "Not inspected",
+      "confidence": "Unknown"
+    }
+  },
+  "endpoint_discovery": [
+    {
+      "endpoint": "https://ridge.com/",
+      "method": "GET",
+      "status": 403,
+      "result": "Cloudflare challenge",
+      "confidence": "High",
+      "evidence": "Title observed: Attention Required! | Cloudflare. Server header: cloudflare."
+    },
+    {
+      "endpoint": "https://ridge.com/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "result": "Accessible",
+      "confidence": "High",
+      "evidence": "robots.txt states Shopify storefront, links agents.md, UCP discovery, UCP/MCP endpoint, and sitemap."
+    },
+    {
+      "endpoint": "https://ridge.com/agents.md",
+      "method": "GET",
+      "status": 403,
+      "result": "Cloudflare challenge",
+      "confidence": "High",
+      "evidence": "robots.txt linked the file, but direct fetch returned a Cloudflare challenge."
+    },
+    {
+      "endpoint": "https://ridge.com/.well-known/ucp",
+      "method": "GET",
+      "status": 200,
+      "result": "Accessible UCP discovery JSON",
+      "confidence": "High",
+      "evidence": "UCP version 2026-04-08 advertised canonical ridge-wallet.myshopify.com services."
+    },
+    {
+      "endpoint": "https://ridge.com/sitemap.xml",
+      "method": "GET",
+      "status": 403,
+      "result": "Cloudflare challenge",
+      "confidence": "High",
+      "evidence": "robots.txt advertised sitemap, but direct fetch returned a Cloudflare challenge."
+    },
+    {
+      "endpoint": "https://ridge.com/products.json?limit=10",
+      "method": "GET",
+      "status": 403,
+      "result": "Cloudflare challenge",
+      "confidence": "High",
+      "evidence": "Direct branded-domain Shopify product JSON fetch was blocked."
+    },
+    {
+      "endpoint": "https://ridge.com/collections.json?limit=10",
+      "method": "GET",
+      "status": 403,
+      "result": "Cloudflare challenge",
+      "confidence": "High",
+      "evidence": "Direct branded-domain Shopify collection JSON fetch was blocked."
+    },
+    {
+      "endpoint": "https://ridge.com/search/suggest.json?q=wallet",
+      "method": "GET",
+      "status": 403,
+      "result": "Cloudflare challenge",
+      "confidence": "High",
+      "evidence": "Direct branded-domain Shopify autocomplete JSON fetch was blocked."
+    },
+    {
+      "endpoint": "https://ridge-wallet.myshopify.com/products.json?limit=250&page=N",
+      "method": "GET",
+      "status": 200,
+      "result": "Accessible",
+      "confidence": "High",
+      "evidence": "Five product pages returned counts 250, 250, 250, 250, and 175."
+    },
+    {
+      "endpoint": "https://ridge-wallet.myshopify.com/collections.json?limit=250&page=N",
+      "method": "GET",
+      "status": 200,
+      "result": "Accessible",
+      "confidence": "High",
+      "evidence": "Four collection pages returned counts 250, 250, 250, and 78."
+    },
+    {
+      "endpoint": "https://ridge-wallet.myshopify.com/search/suggest.json",
+      "method": "GET",
+      "status": 200,
+      "result": "Accessible",
+      "confidence": "Medium",
+      "evidence": "Autocomplete responses included products, collections, queries, and pages for representative terms."
+    }
+  ],
+  "catalog_discovery": {
+    "status": "Partial",
+    "confidence": "Medium",
+    "source": "Canonical Shopify products.json and collections.json",
+    "products_observed": 1175,
+    "variants_observed": 1767,
+    "products_with_available_variant_observed": 798,
+    "collections_observed": 828,
+    "products_tagged_hide_from_search": 47,
+    "products_tagged_hide_from_store": 65,
+    "root_product_type_counts": {
+      "EDC": 856,
+      "TECH": 59,
+      "Tech": 76,
+      "Jewelry": 62,
+      "TRAVEL": 74,
+      "EXTRA-NFS": 21,
+      "blank": 8,
+      "other": 19
+    },
+    "top_product_types": [
+      {
+        "type": "EDC - WALLET - RIDGE WALLET - SINGLE",
+        "count": 305
+      },
+      {
+        "type": "EDC - BLEND - DAILY DRIVER KIT - KIT",
+        "count": 192
+      },
+      {
+        "type": "EDC - KEYCASE - RIDGE KEYCASE - SINGLE",
+        "count": 135
+      },
+      {
+        "type": "Tech - Phone Cases - Ridge Phone Case - SINGLE",
+        "count": 51
+      },
+      {
+        "type": "EDC - KNIVES - DAILY SURVIVAL KIT - KIT",
+        "count": 21
+      },
+      {
+        "type": "EXTRA-NFS",
+        "count": 21
+      }
+    ],
+    "observed_option_names": [
+      "Style",
+      "Title",
+      "Type",
+      "Choose Style",
+      "Color",
+      "Size",
+      "ADD BACKPACK (BUNDLE & SAVE)",
+      "Wallet Type",
+      "Model",
+      "Multi-Tool",
+      "Backpack",
+      "Select Amount",
+      "Memo Books",
+      "Black",
+      "Bottle Opener"
+    ],
+    "browse_graph": {
+      "status": "Seed only",
+      "confidence": "Low",
+      "notes": "Collection titles and product type strings were observed. Parent-child browse hierarchy was not reconstructed because rendered navigation and collection-product membership pages were not inspected."
+    }
+  },
+  "autocomplete_inspection": {
+    "status": "Partial",
+    "confidence": "Medium",
+    "source": "Canonical Shopify search/suggest.json",
+    "queries_inspected": [
+      {
+        "query": "wallet",
+        "products": [
+          "Ridge Wallet - Lavender"
+        ],
+        "collections": [
+          "Metal Wallets - The Ridge Wallet"
+        ],
+        "queries": [
+          "ridge wallet with money clip",
+          "magsafe wallet"
+        ],
+        "pages": [
+          "Men's Wallet"
+        ]
+      },
+      {
+        "query": "ring",
+        "products": [
+          "D Ring Attachment"
+        ],
+        "collections": [
+          "Women's Ring Collection"
+        ],
+        "queries": [
+          "silicone rings",
+          "rings"
+        ],
+        "pages": [
+          "Ridge Ring Sets: Men's Rings"
+        ]
+      },
+      {
+        "query": "keycase",
+        "products": [
+          "Ridge KeyCase - GT"
+        ],
+        "collections": [
+          "NFL Aluminum ($85) keycases for Keycase Upsell"
+        ],
+        "queries": [
+          "keycase",
+          "ridge keycase"
+        ],
+        "pages": [
+          "Keycase LP"
+        ]
+      },
+      {
+        "query": "phone case",
+        "products": [
+          "Ridge Phone Case - Carbon - iPhone 16 Pro"
+        ],
+        "collections": [
+          "Phone Cases"
+        ],
+        "queries": [
+          "phone case",
+          "phone case iphone 15"
+        ],
+        "pages": [
+          "RIDGE Official US Website | SUMMER SWEEPSTAKES | iPhone 17 Everyday Phone Case"
+        ]
+      },
+      {
+        "query": "money clip",
+        "products": [
+          "AirTag Money Clip - Black",
+          "Money Clip - Black"
+        ],
+        "collections": [
+          "Money Clip Wallets"
+        ],
+        "queries": [
+          "money clip",
+          "ridge wallet with money clip"
+        ],
+        "pages": []
+      },
+      {
+        "query": "magsafe",
+        "products": [
+          "Ridge Wallet for MagSafe - Hyper Lime"
+        ],
+        "collections": [
+          "MagSafe Cardholders"
+        ],
+        "queries": [
+          "magsafe wallet",
+          "ridge 2.0 magsafe wallets"
+        ],
+        "pages": [
+          "RIDGE Official US Website | SWEEPSTAKES - COMING SOON | MAGSAFE CARDHOLDERS"
+        ]
+      },
+      {
+        "query": "carbon fiber",
+        "products": [
+          "Ridge KeyCase - Carbon Fiber 3k"
+        ],
+        "collections": [
+          "Carbon Fiber"
+        ],
+        "queries": [
+          "carbon fiber",
+          "carbon fiber wallet"
+        ],
+        "pages": [
+          "Carbon Fiber"
+        ]
+      },
+      {
+        "query": "titanium",
+        "products": [
+          "Ridge KeyCase - Stonewashed Titanium"
+        ],
+        "collections": [
+          "Titanium Collection"
+        ],
+        "queries": [
+          "titanium",
+          "ridge burnt titanium"
+        ],
+        "pages": [
+          "NEW! The Titanium Field Watch"
+        ]
+      },
+      {
+        "query": "airtag",
+        "products": [
+          "AirTag Money Clip - Black"
+        ],
+        "collections": [
+          "AirTag Accessories"
+        ],
+        "queries": [
+          "airtag",
+          "airtag cash strap"
+        ],
+        "pages": [
+          "FREE AIRTAG ATTACHMENT"
+        ]
+      },
+      {
+        "query": "gift",
+        "products": [
+          "Holiday Gift Bag"
+        ],
+        "collections": [
+          "Groomsmen Gift Ideas"
+        ],
+        "queries": [
+          "gift",
+          "free gift"
+        ],
+        "pages": [
+          "Groomsmen Gift"
+        ]
+      }
+    ]
+  },
+  "dataset_generation": {
+    "status": "Seed only",
+    "confidence": "Low",
+    "ds1_canonical_search_dataset": {
+      "status": "Partial seed generated from collection titles and product type strings",
+      "sample_terms": [
+        "AirTag Accessories",
+        "AirTag Wallets",
+        "All Luggage",
+        "All Products",
+        "All Ridge Wallets",
+        "All Rings",
+        "Carbon Fiber",
+        "Metal Wallets",
+        "Money Clip Wallets",
+        "Phone Cases",
+        "Ridge Wallet",
+        "Ridge KeyCase",
+        "Titanium Collection",
+        "Travel Essentials"
+      ],
+      "caveat": "Relationships to browse nodes were not verified against rendered navigation."
+    },
+    "ds2_query_normalization_dataset": {
+      "status": "Sample only",
+      "sample_terms": [
+        "wallet",
+        "wallets",
+        "walet",
+        "ridge wallet",
+        "money clip",
+        "magsafe wallet",
+        "carbon-fiber wallet",
+        "carbon fiber wallet"
+      ]
+    },
+    "ds3_search_facet_dataset": {
+      "status": "Sample only",
+      "sample_terms": [
+        "black wallet",
+        "titanium ring",
+        "magsafe wallet",
+        "carbon fiber wallet",
+        "airtag money clip"
+      ],
+      "caveat": "Visible facets were not rendered, so these are generated from observed product attributes and common customer phrasing only."
+    },
+    "ds4_advanced_retrieval_dataset": {
+      "status": "Sample only",
+      "sample_terms": [
+        "gift for someone who loses keys",
+        "slim wallet for front pocket",
+        "durable ring for daily wear",
+        "minimal wallet that works with magsafe",
+        "wallet with airtag tracking"
+      ],
+      "caveat": "Advanced retrieval scenarios were generated as candidate inspection inputs and were not executed against submitted search."
+    }
+  },
+  "phase_status": {
+    "phase_1_site_discovery": "Partial",
+    "phase_2_endpoint_discovery": "Partial",
+    "phase_3_catalog_discovery": "Partial",
+    "phase_4_dataset_generation": "Seed only",
+    "phase_5_search_inspection": "Not run",
+    "phase_6_autocomplete_inspection": "Partial",
+    "phase_7_browse_consistency_inspection": "Not run",
+    "phase_8_facet_inspection": "Not run",
+    "phase_9_advanced_retrieval_inspection": "Not run",
+    "phase_10_competitor_inspection": "Not run"
+  },
+  "limitations": [
+    "Cloudflare challenge blocked direct ridge.com homepage, sitemap, product JSON, collection JSON, autocomplete JSON, and agents.md probes.",
+    "Rendered desktop and mobile storefront UI was not captured.",
+    "Endpoint responses from the canonical Shopify host were not verified against visible UI.",
+    "Collection-product membership and parent-child browse hierarchy were not reconstructed.",
+    "Facets were inferred only from option names and tags; visible facet availability and correctness were not validated.",
+    "Submitted search result pages and ranking were not inspected.",
+    "Recommendation surfaces were not inspected.",
+    "No competitor inspection was performed."
+  ],
+  "inspection_framework_flags": [
+    "The framework needs first-class handling for canonical Shopify hosts when the branded domain is blocked.",
+    "The framework needs a UCP/MCP catalog inspection path because Ridge advertises UCP discovery and catalog capabilities.",
+    "The framework needs explicit status separation between branded-domain rendering evidence and canonical-platform API evidence."
+  ]
+}
