@@ -1,211 +1,173 @@
 {
-  "inventory_id": "BDD-INV-002",
-  "created_on": "2026-06-24",
-  "mission_version": "MISSION-2026-06-24",
-  "status": "generation_3_validated_rendered_public_retail_and_public_wholesale",
+  "inventory_id": "BDD-INV-003",
+  "created_on": "2026-07-14",
+  "supersedes": "BDD-INV-002",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "status": "generation_13_inventory_refresh_for_phase_exit",
+  "refresh_rationale": "BDD-INV-002 was mission-versioned to MISSION-2026-06-24, before the 2026-07-07 inspection-first reframe and the 2026-07-11 local-application charter. This refresh adds inspection-platform scenarios graded against VAL-051/VAL-052/VAL-053 evidence and reclassifies the legacy report-era BDDs as the downstream interpretation set, which per the mission consumes Inspection Reports rather than re-inspecting sites.",
   "summary": {
-    "total": 14,
-    "critical": 5,
-    "high": 7,
-    "medium": 2,
+    "total": 26,
+    "critical": 10,
+    "high": 12,
+    "medium": 4,
     "low": 0,
-    "passing": 13,
+    "passing": 23,
     "failing": 0,
     "not_executed": 0,
-    "deferred": 1
+    "deferred": 3
   },
-  "bdds": [
+  "gen13_inspection_platform_bdds": [
     {
-      "id": "BDD-001",
-      "title": "Reusable assessment rubric covers all mission assessment areas",
+      "id": "BDD-G13-001",
+      "title": "Public URL produces an evidence-first Inspection Report with a one-page dashboard",
+      "severity": "Critical",
+      "category": "Functional Validation",
+      "status": "passed_gen_013",
+      "given": "a public ecommerce URL configured in an Evaluation Manifest",
+      "when": "an inspection runs",
+      "then": "the run produces inspection-report.json/md with a dashboard covering timestamp, target, platform detection, overall status, duration, evidence quality, overall confidence, and crawl health by component",
+      "evidence": "Dress Up GEN-013-20260713T043845Z (100% coverage, Medium confidence) and Ridge GEN-013-20260714T121451Z (partial, Low confidence); both pass node src/evaluator/validation.mjs inspection. VAL-051, VAL-053.",
+      "mission_links": ["Inspection Report Requirements"]
+    },
+    {
+      "id": "BDD-G13-002",
+      "title": "Inspection output contains observation only, never interpretation",
       "severity": "Critical",
       "category": "Mission Coverage Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "a new ecommerce target is selected for assessment",
-      "when": "an evaluator initializes the assessment rubric",
-      "then": "the rubric requires evidence for search, autocomplete, browse navigation, filters/facets, recommendations/related discovery, mobile experience, and realistic product discovery journeys",
-      "mission_links": [
-        "Assessment Areas",
-        "Success Criteria"
-      ]
+      "status": "passed_gen_013",
+      "given": "any generated Inspection Report",
+      "when": "its language and structure are validated",
+      "then": "it contains no recommendations, priorities, business impact, revenue estimates, consulting language, quick wins, or executive summaries",
+      "evidence": "Language-boundary checks in the GEN-013 validation suite pass on all runs. VAL-051, VAL-053.",
+      "mission_links": ["Mission Update: Inspection Report As Primary Deliverable"]
     },
     {
-      "id": "BDD-002",
-      "title": "Every finding is evidence-backed and business-readable",
+      "id": "BDD-G13-003",
+      "title": "Every incomplete inspection states explicit failure reasons",
       "severity": "Critical",
       "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "an evaluator records an assessment finding",
-      "when": "the finding is saved or included in a report",
-      "then": "it must include observation, evidence, severity, customer impact, business impact, and recommendation",
-      "mission_links": [
-        "Detailed Assessment Report",
-        "Business Goal"
-      ]
+      "status": "passed_gen_013",
+      "given": "a target that blocks, rate-limits, or regulates traffic",
+      "when": "the inspection completes partially",
+      "then": "the report records explicit infrastructure limitations (HTTP status, endpoint, classification) and never hides them",
+      "evidence": "Ridge GEN-013-20260714T121451Z: partial status with six recorded infrastructure limitations and readiness not_ready, while Shopify was still detected at High confidence via canonical-host payloads. VAL-053.",
+      "mission_links": ["Evidence, Confidence, And Limitations"]
     },
     {
-      "id": "BDD-003",
-      "title": "Search evaluation tests query understanding, relevance, robustness, recovery, and effort",
+      "id": "BDD-G13-004",
+      "title": "Each inspection generates reusable DS1-DS4 datasets with provenance",
       "severity": "Critical",
       "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "an ecommerce site search experience is assessed",
-      "when": "the evaluator runs the search evaluation",
-      "then": "the evaluation covers exact, partial, multi-word, attribute, category, brand, identifier, and long-tail queries along with precision, recall, ranking, diversity, coverage, typo tolerance, synonyms, abbreviations, zero-result recovery, latency, mobile usability, and interaction friction",
-      "mission_links": [
-        "Search Evaluation",
-        "Information Retrieval Evaluation Model"
-      ]
+      "status": "passed_gen_013_first_slice_breadth",
+      "given": "a completed or partial inspection",
+      "when": "dataset generation runs",
+      "then": "DS1 canonical search, DS2 query normalization, DS3 search+facet, and DS4 advanced retrieval JSONL datasets exist with schema versions, provenance, and rows traceable to observed evidence",
+      "evidence": "Both pilots emit all four datasets validated by schema contracts; rows remain first-slice breadth pending real catalog/browse evidence expansion. VAL-051, VAL-053.",
+      "mission_links": ["Inspection Workflow: Dataset Generation"]
     },
     {
-      "id": "BDD-004",
-      "title": "Boxercraft pilot validates the framework without overfitting it",
+      "id": "BDD-G13-005",
+      "title": "Platform capability gaps are classified as platform work, not retailer findings",
       "severity": "Critical",
-      "category": "Project-Specific External Validation",
-      "status": "passed_gen_003_rendered_draft_with_authenticated_wholesale_access_limits",
-      "given": "Boxercraft is used as the initial validation target",
-      "when": "the pilot assessment is completed",
-      "then": "the output identifies Boxercraft-specific opportunities and records which rubric changes improve reuse for future ecommerce targets",
-      "mission_links": [
-        "Boxercraft Validation Target",
-        "Success Criteria"
-      ]
+      "category": "Mission Coverage Validation",
+      "status": "passed_gen_013",
+      "given": "an inspection blocked by a missing evaluator capability",
+      "when": "limitations are recorded",
+      "then": "the gap carries a capability ID (e.g. P008) separate from ecommerce observations, and downstream surfaces show it as platform work",
+      "evidence": "P008 rendered capture appears in platform_capability_gaps on Ridge and Dress Up runs and in the dashboard Report Readiness panel, now linking to the capability registry record. VAL-052, VAL-053.",
+      "mission_links": ["Long-Term Architecture", "Platform capability classification (VALSTRAT)"]
     },
     {
-      "id": "BDD-005",
-      "title": "Executive report answers leadership questions",
-      "severity": "Critical",
+      "id": "BDD-G13-006",
+      "title": "An engineer can judge inspection success within two minutes",
+      "severity": "High",
       "category": "Usability Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "an assessment report is generated",
-      "when": "an ecommerce, marketing, operations, or technology leader reads it",
-      "then": "the report clearly states key findings, major strengths, major weaknesses, revenue-impacting opportunities, and recommended next steps without requiring technical search implementation knowledge",
-      "mission_links": [
-        "Executive Summary",
-        "Business Goal"
-      ]
+      "status": "passed_gen_013",
+      "given": "a completed inspection",
+      "when": "an engineer opens the operational dashboard",
+      "then": "status, readiness, evidence quality, confidence, coverage, crawl health, limitations, and artifacts are visible without reading raw files",
+      "evidence": "Dashboard hero/metrics/readiness panels validated by npm run validate:dashboard and a live browser walkthrough. VAL-052.",
+      "mission_links": ["Updated Success Criteria #4"]
     },
     {
-      "id": "BDD-006",
-      "title": "Scorecard produces explainable 0-100 product discovery scores",
+      "id": "BDD-G13-007",
+      "title": "Interrupted inspections resume without repeating completed work",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_013",
+      "given": "a run interrupted after at least one completed plugin",
+      "when": "the run is resumed from its checkpoint",
+      "then": "the same inspection ID continues, completed plugins and cached site profiles are reused with recorded reasons, and only pending plugins execute",
+      "evidence": "Resume validation on GEN-013-20260713T044019Z; timeline records reused_shared_cache and reused_run_checkpoint. VAL-051.",
+      "mission_links": ["Checkpoint architecture contract (VALSTRAT)"]
+    },
+    {
+      "id": "BDD-G13-008",
+      "title": "Inspection history supports open, compare, resume, and rerun",
       "severity": "High",
       "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "assessment evidence has been collected",
-      "when": "the Product Discovery Scorecard is produced",
-      "then": "it scores Search, Autocomplete, Browse, Filters, Recommendations, Mobile Experience, and Product Discovery Overall from 0-100 with traceable rationale",
-      "mission_links": [
-        "Product Discovery Scorecard"
-      ]
+      "status": "passed_gen_013",
+      "given": "multiple inspections exist in workspace history",
+      "when": "the operator uses the dashboard",
+      "then": "history rows expose id, target, timestamp, status, confidence, coverage, and readiness, with run/resume/rerun actions and a compare API",
+      "evidence": "Dashboard run list, action endpoints, and /api/compare validated in VAL-050 and revalidated in VAL-052/VAL-053.",
+      "mission_links": ["Inspection History and workspace navigation (VALSTRAT)"]
     },
     {
-      "id": "BDD-007",
-      "title": "Opportunity matrix classifies actionability and impact",
-      "severity": "High",
-      "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "findings have been scored and prioritized",
-      "when": "the opportunity matrix is generated",
-      "then": "each recommendation is classified as Quick Win, Strategic Improvement, or Transformational Opportunity with impact and effort rationale",
-      "mission_links": [
-        "Opportunity Matrix"
-      ]
-    },
-    {
-      "id": "BDD-008",
-      "title": "Autocomplete evaluation measures suggestion quality and discovery support",
-      "severity": "High",
-      "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "an ecommerce autocomplete experience is assessed",
-      "when": "the evaluator types representative customer queries",
-      "then": "the evaluation captures query, product, category, and brand suggestions along with ranking, diversity, coverage, popularity bias, responsiveness, mobile usability, clarity, and discovery support",
-      "mission_links": [
-        "Autocomplete Evaluation"
-      ]
-    },
-    {
-      "id": "BDD-009",
-      "title": "Browse and facet evaluation measures non-search findability",
-      "severity": "High",
-      "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "a customer journey does not use search",
-      "when": "the evaluator navigates categories and filters",
-      "then": "the evaluation captures hierarchy, naming clarity, navigation depth, grouping, completeness, mobile friction, facet relevance, facet organization, multi-select support, dead ends, persistence, and steps to locate products",
-      "mission_links": [
-        "Browse Navigation Evaluation",
-        "Filtering And Faceted Navigation"
-      ]
-    },
-    {
-      "id": "BDD-010",
-      "title": "Recommendation evaluation identifies related discovery opportunities",
-      "severity": "High",
-      "category": "Functional Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "a product, category, or collection page exposes related discovery modules",
-      "when": "the evaluator assesses recommendations",
-      "then": "the evaluation captures relevance, diversity, cross-sell opportunities, similar products, complementary products, seasonal products, and featured products",
-      "mission_links": [
-        "Recommendation And Related Discovery"
-      ]
-    },
-    {
-      "id": "BDD-011",
-      "title": "Journey analysis supports apparel, wholesale, and general retail scenarios",
-      "severity": "High",
-      "category": "Mission Coverage Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "an evaluator prepares realistic customer journeys",
-      "when": "the target vertical is apparel, wholesale, or general retail",
-      "then": "the framework provides scenario templates for known-item search, attribute discovery, category browsing, SKU lookup, unavailable-item alternatives, comparison, and large-catalog navigation",
-      "mission_links": [
-        "Product Discovery Journey Analysis"
-      ]
-    },
-    {
-      "id": "BDD-012",
-      "title": "Independent evaluator calibration produces similar findings",
+      "id": "BDD-G13-009",
+      "title": "Downstream reports consume the Inspection Report instead of re-inspecting",
       "severity": "High",
       "category": "Mission Coverage Validation",
       "status": "deferred",
-      "given": "two evaluators assess the same ecommerce target using the framework",
-      "when": "their findings and severities are compared",
-      "then": "major findings, evidence requirements, and severity classifications are similar enough to support repeatable consulting use or the rubric records the calibration gap",
-      "defer_reason": "Requires a completed pilot assessment and a second evaluator before reusable release.",
-      "mission_links": [
-        "Success Criteria"
-      ]
+      "given": "an executive or competitor report is requested for an inspected site",
+      "when": "the report is generated by the application",
+      "then": "it reads the Inspection Report and Inspection Model without new site inspection",
+      "defer_reason": "Executive-report generation as an application output is the next major slice after GEN-013 phase exit; the boundary rule is enforced in design validations and decision 1A retains the raw evidence that makes it possible. Existing GEN-011/012 reports predate the inspection-first architecture.",
+      "revisit_when": "First application-generated executive report slice.",
+      "mission_links": ["Mission Update: Local Inspection Application As Expected Deliverable"]
     },
     {
-      "id": "BDD-013",
-      "title": "Assessment records data freshness and access limits",
+      "id": "BDD-G13-010",
+      "title": "The operator can inspect the datasets behind an evaluation in-app",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_013",
+      "given": "the operator reviews an inspection in the dashboard",
+      "when": "they open the Datasets tab or a finding's dataset link",
+      "then": "evaluations, targets, query packs, site profiles, platform registries, inspection history, and generated DS1-DS4 records render as searchable, field-filterable tables with per-record detail, without leaving the dashboard",
+      "evidence": "Dataset viewer delegated by stream_mra8o4fq_47ae08ab; validated by extended validate:dashboard assertions and a live browser walkthrough. VAL-052.",
+      "mission_links": ["Mission Update: Local Inspection Application As Expected Deliverable"]
+    },
+    {
+      "id": "BDD-G13-011",
+      "title": "Inspections retain raw evidence by default (decision 1A)",
       "severity": "Medium",
       "category": "Technical Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "assessment evidence is captured from public, authenticated, or client-supplied sources",
-      "when": "evidence is attached to findings",
-      "then": "the assessment records source, date, access context, known limitations, and whether the observation should be verified before client delivery",
-      "mission_links": [
-        "Detailed Assessment Report",
-        "Boxercraft Validation Target"
-      ]
+      "status": "passed_gen_013",
+      "given": "any inspection run",
+      "when": "evidence is captured",
+      "then": "raw HTTP responses, API payloads, and cached evidence are preserved immutably per run so reports can re-render and fixes can be verified without re-inspection",
+      "evidence": "Run directories contain raw/http and evidence trees referenced by artifact-index.json; retention ratified as operator decision 1A on 2026-07-14.",
+      "mission_links": ["Evidence, Confidence, And Limitations", "operator_decisions_2026_07_14 (VALSTRAT)"]
     },
     {
-      "id": "BDD-014",
-      "title": "Client-facing report layout remains readable if PDF output is selected",
+      "id": "BDD-G13-012",
+      "title": "Broad retailer inspections are gated by capability maturity (decision 3A)",
       "severity": "Medium",
-      "category": "UI Standards Validation",
-      "status": "passed_gen_003_rendered_draft",
-      "given": "the project generates a PDF or print-ready report",
-      "when": "the report contains long finding text, tables, screenshots, and recommendations",
-      "then": "text stays within safe margins, tables fit page width, headers and footers do not overlap content, and page breaks preserve readability",
-      "validation_notes": "Northvalley LaTeX report and Beamer deck compiled successfully after rendered browser evidence updates. PDF text extraction found expected headings, page rendering produced non-empty PNG pages, and spot-checked pages were readable with no obvious overlap.",
-      "mission_links": [
-        "Output Artifacts",
-        "Central context pack: PDF Generation"
-      ]
+      "category": "Mission Coverage Validation",
+      "status": "deferred",
+      "given": "a new target is proposed for broad (non-pilot) inspection",
+      "when": "the target's platform type is evaluated against the maturity threshold",
+      "then": "Shopify targets require Level 2 maturity and non-Shopify or heavily rendered storefronts require Level 3 (P008), with bounded pilots allowed below threshold under declared limitations",
+      "defer_reason": "The threshold is ratified policy (decision 3A) recorded in the validation strategy, but automated target-acceptance enforcement is not yet implemented in code.",
+      "revisit_when": "Before the first broad multi-retailer inspection sweep.",
+      "mission_links": ["operator_decisions_2026_07_14 (VALSTRAT)"]
     }
-  ]
+  ],
+  "downstream_interpretation_bdds_carried_from_inv_002": {
+    "note": "BDD-001 through BDD-014 from BDD-INV-002 remain valid for the interpretation layer (rubrics, findings, executive reports, scorecards, opportunity matrices, PDFs) and retain their last validated statuses. Under the GEN-013 architecture these behaviors apply to downstream consumers of Inspection Reports, not to inspection itself.",
+    "ids": ["BDD-001", "BDD-002", "BDD-003", "BDD-004", "BDD-005", "BDD-006", "BDD-007", "BDD-008", "BDD-009", "BDD-010", "BDD-011", "BDD-012", "BDD-013", "BDD-014"],
+    "statuses": "13 passing as of GEN-003 through GEN-012 evidence; BDD-012 (independent evaluator calibration) remains deferred until a second evaluator and completed pilot exist.",
+    "source": "BDD-INV-002 (preserved in git history)"
+  }
 }

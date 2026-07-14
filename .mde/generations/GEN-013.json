@@ -4,8 +4,8 @@
   "mission_version": "MISSION-2026-07-07-inspection-report-primary-deliverable",
   "validation_strategy_version": "VALSTRAT-001-needs-update",
   "started_at": "2026-07-07T00:00:00-0400",
-  "ended_at": null,
-  "record_status": "first_slice_complete_dressup_pilot_parity_validated",
+  "ended_at": "2026-07-14T12:45:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
   "focus": "Reframe the ecommerce evaluation project around a canonical evidence-first Inspection Report generated from any public ecommerce URL.",
   "reason_generation_started": "The operator clarified that the primary deliverable is no longer an executive report. The project must separate inspection from interpretation and make the Inspection Report the authoritative source for downstream artifacts.",
   "primary_deliverable": "Structured ecommerce Inspection Report with one-page Inspection Dashboard, crawl health, endpoint discovery, catalog/browse graph, DS1-DS4 datasets, objective evidence, confidence indicators, and explicit limitations.",
@@ -43,7 +43,12 @@
     "VAL-051 validates the completed first slice: full schema contract set including cache metadata, generalized manifest validation across all evaluations, platform capability checks, and generated-output validation.",
     "Dress Up bounded 5-query pilot GEN-013-20260713T043845Z reached 100 percent evidence coverage and full functional parity with saved GEN-012 rendered-browser evidence on all ten search/autocomplete checks (pilot-parity.json).",
     "Resume validation GEN-013-20260713T044019Z proved interrupted-run resume: reused submitted-search and the cached site profile, reran only pending plugins, and recorded why repeated artifact writes are idempotent (resume-validation.json).",
-    "Site profile cache decisions are now first-class evidence: refreshed_live_discovery, reused_shared_cache, and reused_run_checkpoint were all exercised and recorded in timelines and cache-metadata.json."
+    "Site profile cache decisions are now first-class evidence: refreshed_live_discovery, reused_shared_cache, and reused_run_checkpoint were all exercised and recorded in timelines and cache-metadata.json.",
+    "VAL-052 validates the delegated dashboard dataset viewer (stream_mra8o4fq_47ae08ab) including a live-browser functional walkthrough; it restarted the clean-pass count as pass one.",
+    "Operator decisions 1A/2A/3A (raw evidence retention, timestamp IDs, Level 2 Shopify / Level 3 rendered-capture maturity gate) were ratified 2026-07-14 and recorded in the validation strategy.",
+    "VAL-053 is the second independent clean pass with no implementation changes: bounded Ridge blocked-domain pilot GEN-013-20260714T121451Z (partial, explicit limitations, Shopify High via canonical host), Dress Up rerun GEN-013-20260714T121542Z with full ten-surface GEN-012 parity, and all suites clean.",
+    "BDD inventory refreshed as BDD-INV-003: 26 BDDs, 23 passing, 0 failing, 3 deferred with revisit conditions (BDD-012 calibration, BDD-G13-009 downstream consumption, BDD-G13-012 threshold enforcement).",
+    "Phase exit declared 2026-07-14 after two clean passes plus the BDD refresh; all work pushed to origin/main on operator instruction."
   ],
   "known_gaps_opened": [
     "Rendered page capture is registered as platform capability P008 but remains planned.",

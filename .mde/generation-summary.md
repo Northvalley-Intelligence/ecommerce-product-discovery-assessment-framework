@@ -508,3 +508,22 @@ Repository Governance:
 
 Recommendation:
 - Run the design doc's pilot sequence step two (bounded Ridge run for blocked-domain behavior), then take the second no-change Validation Gate pass and refresh the GEN-013 BDD inventory before phase exit. Ferosh's three clarification decisions remain open.
+
+## GEN-013 Phase Exit (2026-07-14)
+
+Scope Completed:
+- Delegated dashboard dataset viewer (stream_mra8o4fq_47ae08ab): Datasets tab, `/api/datasets` + `/api/dataset` routes, searchable/filterable record tables with detail views, and finding-to-record links (`VAL-052`).
+- Operator decisions ratified: 1A retain all raw evidence, 2A timestamp inspection IDs, 3A Level 2 Shopify / Level 3 rendered-capture maturity gate.
+- Pilot sequence step two: bounded Ridge run `GEN-013-20260714T121451Z` documented blocked-domain behavior honestly (partial, Low confidence, 33% coverage, six explicit infrastructure limitations, Shopify High via canonical host, P008 the only capability gap).
+- Second independent Validation Gate pass (`VAL-053`) with no implementation changes: Dress Up rerun `GEN-013-20260714T121542Z` kept full ten-surface GEN-012 parity; gen13/dashboard/framework suites and `git diff --check` all clean.
+- BDD inventory refreshed as `BDD-INV-003`: 26 BDDs (10 Critical / 12 High / 4 Medium), 23 passing, 0 failing, 3 deferred with explicit revisit conditions.
+
+Validation Result:
+- Gate: two clean passes (`VAL-052`, `VAL-053`) — phase exit requirement met; phase exit declared.
+- Blocking findings: none.
+
+Repository Governance:
+- Keep-local directive (2026-07-13) lifted by operator on 2026-07-14; all commits pushed to `origin/main` (through the phase-exit bookkeeping commit).
+
+Recommendation:
+- Route the next generation. Candidates in priority order: P008 rendered page capture + browse-graph extraction (gates non-Shopify targets per 3A), application-generated executive reports consuming Inspection Reports (BDD-G13-009), maturity-threshold enforcement (BDD-G13-012), and accumulating the 10-20 real Shopify inspections required by the GEN-14 planning gate.

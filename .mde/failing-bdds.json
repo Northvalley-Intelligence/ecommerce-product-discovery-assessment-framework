@@ -1,21 +1,27 @@
 {
-  "updated_on": "2026-07-07",
+  "updated_on": "2026-07-14",
   "current_generation": "GEN-013",
+  "bdd_inventory": "BDD-INV-003",
   "failing_bdds": [],
-  "not_executed_required_bdds": [
-    {
-      "id": "BDD-GEN013-TBD",
-      "severity": "Critical",
-      "reason": "The first GEN-013 implementation slice now validates contracts, manifests, platform capabilities, plugin execution, checkpoint/resume, and generated Inspection Report artifacts, but the full inspection-first BDD inventory has not yet been refreshed for the complete mission workflow.",
-      "revisit_when": "Before declaring GEN-013 phase exit or expanding beyond the bounded Shopify submitted-search/autocomplete pilot."
-    }
-  ],
+  "not_executed_required_bdds": [],
   "deferred_bdds": [
     {
       "id": "BDD-012",
       "severity": "High",
       "reason": "Independent evaluator calibration requires a completed assessment package and a second evaluator.",
       "revisit_when": "Before declaring the framework reusable for client engagements."
+    },
+    {
+      "id": "BDD-G13-009",
+      "severity": "High",
+      "reason": "Application-generated executive reports that consume Inspection Reports are the next major slice after GEN-013 phase exit; the inspection/interpretation boundary is design-enforced and raw evidence retention (decision 1A) preserves the inputs.",
+      "revisit_when": "First application-generated executive report slice."
+    },
+    {
+      "id": "BDD-G13-012",
+      "severity": "Medium",
+      "reason": "The capability maturity threshold (decision 3A) is ratified policy in the validation strategy but automated target-acceptance enforcement is not yet implemented.",
+      "revisit_when": "Before the first broad multi-retailer inspection sweep."
     }
   ],
   "deferred_validation_items": [
@@ -104,5 +110,5 @@
       "revisit_when": "Before making any claim that competitor result ordering is purely organic."
     }
   ],
-  "note": "Generation 11 has no failing required BDDs for the High Country owner-outreach report after the customer-experience executive narrative refinement and final executive page design review. The follow-up used existing same-query evidence only and added validator coverage for High Country-first advisory language, customer product-finding language, qualitative peer-reference framing, page 3 customer-effort visual communication, 90-Day Opportunity Roadmap naming, and rejection of old competitor-ranking or technical-first wording. Broader competitor cohort coverage, visual autocomplete screenshots, checkout/pickup/return workflows, calibrated relevance judgments, revenue analytics, and paid-placement proof remain explicit limitations before stronger external claims."
+  "note": "GEN-013 BDD inventory refresh complete (BDD-INV-003, 2026-07-14): no failing or not-executed required BDDs. Ten of twelve new inspection-platform BDDs pass on VAL-051/VAL-052/VAL-053 evidence; BDD-G13-009 (downstream reports consume Inspection Reports) and BDD-G13-012 (maturity-threshold enforcement per decision 3A) are deferred with revisit conditions as the first post-phase-exit slices. Legacy interpretation-layer BDDs carry forward from BDD-INV-002 with BDD-012 still deferred. Prior GEN-011 limitations on external claims remain recorded under deferred_validation_items."
 }
