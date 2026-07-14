@@ -2,7 +2,31 @@
   "strategy_id": "VALSTRAT-001",
   "strategy_status": "draft_updated_for_generation_13_inspection_platform_architecture_aligned_to_local_application_charter",
   "created_on": "2026-06-24",
-  "updated_on": "2026-07-11",
+  "updated_on": "2026-07-14",
+  "operator_decisions_2026_07_14": {
+    "source": "docs/operations/gen-013-clarification-decisions.md",
+    "decided_by": "Ferosh",
+    "decisions": [
+      {
+        "id": "1A",
+        "topic": "Raw artifact retention defaults",
+        "decision": "Retain everything by default per inspection run: raw HTTP responses, HTML sources, API payloads, screenshots, and cached evidence. Compress raw payloads per run where practical. Revisit with a pruning policy only when disk size becomes a real problem.",
+        "validation_implication": "Inspection output validation should treat retained raw evidence as required per run so downstream executive reports and fix verification never re-inspect sites, and DS1-DS4 dataset claims must map to preserved evidence."
+      },
+      {
+        "id": "2A",
+        "topic": "Inspection ID scheme",
+        "decision": "Ratify the implemented timestamp-based scheme (generation prefix plus UTC timestamp, e.g. GEN-013-20260708T151624Z). No migration of existing runs.",
+        "validation_implication": "Schema contracts and history validation continue to assert the timestamp ID format; no counter-state validation is needed."
+      },
+      {
+        "id": "3A",
+        "topic": "Platform capability maturity threshold for broad retailer inspections",
+        "decision": "Level 2 (Shopify discovery surfaces validated) is required for broad Shopify retailer inspections; Level 3 (P008 rendered capture) is required before non-Shopify or heavily rendered storefront targets.",
+        "validation_implication": "Target acceptance validation should check the declared platform type against the capability maturity threshold before broad sweeps; bounded pilots remain allowed below threshold with declared limitations."
+      }
+    ]
+  },
   "project_type": "reusable ecommerce inspection framework that produces canonical evidence-first Inspection Reports for public ecommerce URLs",
   "charter_alignment_2026_07_11": {
     "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for executive leadership and potential monetization.",

@@ -1,6 +1,6 @@
 {
   "state_version": 1,
-  "updated_on": "2026-07-13",
+  "updated_on": "2026-07-14",
   "project_id": "ecommmerce-eval",
   "project_name": "Ecommerce Evaluation Reports",
   "legacy_project_ids": [
@@ -10,7 +10,7 @@
   "current_generation": "GEN-013",
   "current_phase": "Generation 13 - Inspection Report Framework",
   "phase_goal": "Make the Inspection Report the canonical engineering artifact for ecommerce evaluation: given a public ecommerce URL, inspect observable discovery surfaces, document evidence and limitations, generate DS1-DS4 reusable datasets, and keep downstream executive or competitor reports dependent on the Inspection Report rather than new site inspection.",
-  "status": "generation_13_first_slice_complete_dressup_pilot_parity_validated",
+  "status": "generation_13_first_slice_complete_dataset_viewer_added_to_dashboard",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -18,21 +18,22 @@
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 1,
-    "latest_result": "pass_for_completed_first_slice_and_dressup_pilot",
-    "latest_run_id": "VAL-051",
-    "reason": "The approved design is frozen in git and the Recommended First Implementation Task is complete: schema contracts, platform self-checks, cache metadata, resume validation, and the Dress Up bounded 5-query pilot with full GEN-012 parity all passed in VAL-051. Implementation changed since VAL-050, so the clean-pass count restarts at one; phase exit needs a second independent pass with no implementation changes plus the GEN-013 BDD inventory refresh."
+    "latest_result": "pass_for_dashboard_dataset_viewer_slice",
+    "latest_run_id": "VAL-052",
+    "reason": "The delegated dashboard dataset viewer (Control Center stream stream_mra8o4fq_47ae08ab) is an implementation change after VAL-051, so the clean-pass count restarts: VAL-052 is clean pass one for the current implementation state, covering the extended dashboard validator, the GEN-013 suite, the legacy framework validator, and a live-browser functional check. Phase exit needs a second independent pass with no implementation changes plus the GEN-013 BDD inventory refresh."
   },
   "critical_bdds": 5,
   "high_bdds": 7,
   "medium_bdds": 2,
   "low_bdds": 0,
   "known_blockers": [],
-  "open_clarifications": [
-    "Decide raw artifact retention defaults for HTTP, HTML, API payloads, screenshots, and cached evidence. Charter alignment: the local application must re-render executive reports and support fix verification without re-inspecting sites, which favors retaining raw evidence per inspection.",
-    "Decide whether Inspection IDs should be timestamp-based or sequential within workspace history. Charter alignment: IDs become user-visible in the application's inspection history and report headers; the implemented timestamp scheme sorts naturally and needs no coordination.",
-    "Decide initial Platform Capability maturity threshold required before running broad retailer inspections. Charter alignment: the application promises inspections on different ecommerce websites, so the threshold defines which sites the app can credibly accept per platform type."
-  ],
-  "next_recommended_action": "Still waiting on Ferosh for the three clarification decisions (docs/operations/gen-013-clarification-decisions.md). Next implementation steps per the frozen design pilot sequence: a bounded Ridge run for blocked-domain/canonical-host behavior, then the second independent Validation Gate pass with no implementation changes, then the GEN-013 BDD inventory refresh before phase exit.",
-  "session_router_case": "Existing MDE project - delegated first-slice implementation and pilot completed",
-  "last_prompt_used": "Control Center delegation: freeze the approved evaluator design baseline in git and implement the Recommended First Implementation Task with the Dress Up bounded 5-query pilot"
+  "open_clarifications": [],
+  "operator_decisions": {
+    "decided_on": "2026-07-14",
+    "record": "docs/operations/gen-013-clarification-decisions.md",
+    "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
+  },
+  "next_recommended_action": "All three GEN-013 clarification decisions are resolved (1A/2A/3A). Ferosh directed on 2026-07-13 that the project stays local for now: no GitHub pushes or deploys until he approves. Next implementation steps per the frozen design pilot sequence: a bounded Ridge run for blocked-domain/canonical-host behavior, then the second independent Validation Gate pass with no implementation changes, then the GEN-013 BDD inventory refresh before phase exit. Rendered page capture and browse-graph extraction (P008) remain a separate upcoming delegated step and, per decision 3A, gate non-Shopify targets.",
+  "session_router_case": "Existing MDE project - delegated dashboard dataset viewer completed",
+  "last_prompt_used": "Control Center delegation: add an intelligent in-app dataset viewer to the existing inspection dashboard (stream_mra8o4fq_47ae08ab)"
 }

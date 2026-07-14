@@ -163,3 +163,22 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: User asked to create a similar report for Dress Up, then clarified that the executive summary should mention competitor analysis and that Dress Up scores should appear beside peer scores for comparison.
 - Discovered through: Saved GEN-012 Dress Up public search/autocomplete evidence, same-query peer evidence for Red Dress, Pink Lily, and Impressions, PDF text extraction, rendered page checks, and two clean local validation passes.
 - Impact: `dressup-ecommerce-executive-report.pdf` now mentions same-query peer analysis in the executive narrative, shows Dress Up first as the current-site baseline in the appendix benchmark tables, preserves peer references as non-ranking examples, and removes raw browser-script noise from appendix evidence notes.
+
+## 2026-07-13
+
+- Mission update: Ferosh directed that this project stay local for now.
+- Reason: Operator decision on repository governance — no GitHub pushes, deploys, or other external submissions until he says otherwise.
+- Discovered through: Direct operator instruction ("keep it local for now") in session on 2026-07-13.
+- Impact: The standing rule "after meaningful code changes or two clean Validation Gate passes, submit this project to GitHub or record the blocker locally" resolves to recording locally. `main` remains 4 commits ahead of `origin/main` (GEN-013 baseline freeze, first slice, Dress Up pilot, handoff) intentionally. All validation and implementation work continues locally; pushing resumes only on explicit operator approval.
+
+## 2026-07-14
+
+- Mission update: Added an in-app dataset viewer to the inspection dashboard.
+- Reason: Control Center stream `stream_mra8o4fq_47ae08ab` delegated a dataset viewer so the operator never has to leave the dashboard to inspect the datasets behind an evaluation, consistent with the local-application charter.
+- Discovered through: New `/api/datasets` catalog and `/api/dataset` parsing routes in the dashboard server, a Datasets tab with grouped navigator and record table/detail views, live-browser functional checks against `http://localhost:4173`, and extended `npm run validate:dashboard` assertions recorded in VAL-052.
+- Impact: The dashboard now browses evaluations, targets, query packs, site profiles, platform registries, inspection history, and generated DS1-DS4 run datasets as readable, searchable, field-filterable tables with per-record detail, plus deep links from the Datasets panel, plugin evidence files, and platform capability gaps straight to the underlying records. The change is dependency-light, local-only, and required no build step. As an implementation change after VAL-051, the Validation Gate clean-pass count restarts with VAL-052 as pass one.
+
+- Mission update: Ferosh resolved all three GEN-013 clarification decisions as 1A, 2A, 3A.
+- Reason: Operator decision requested in docs/operations/gen-013-clarification-decisions.md, blocking a clean path to GEN-013 phase exit.
+- Discovered through: Direct operator selection in session on 2026-07-14.
+- Impact: Inspections retain all raw evidence by default (HTTP, HTML, API payloads, screenshots, cached evidence, compressed per run); the implemented timestamp-based Inspection ID scheme is ratified with no migration; and broad retailer inspections are gated at capability maturity Level 2 for Shopify targets while non-Shopify or heavily rendered storefronts wait for Level 3 rendered capture (P008). Recorded in .mde/state.json, .mde/validation-strategy.json, and the decisions doc. No open clarifications remain for GEN-013.

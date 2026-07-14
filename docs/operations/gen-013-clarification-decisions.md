@@ -4,8 +4,10 @@
 
 **Project:** Ecommerce Evaluation Reports (`ecommmerce-eval`)
 **Phase:** Generation 13 — Inspection Report Framework
-**Status:** Awaiting operator decision · Validation Gate at 1 of 2 passes
-**Source:** `.mde/state.json` → `open_clarifications` (updated 2026-07-11)
+**Status:** Decided 2026-07-14 — Ferosh chose **1A, 2A, 3A** (all recommendations ratified)
+**Source:** `.mde/state.json` → `open_clarifications` (updated 2026-07-11; cleared 2026-07-14)
+
+> **Decision record (2026-07-14):** Ferosh confirmed 1A (retain everything by default per inspection run), 2A (keep timestamp-based Inspection IDs), and 3A (Level 2 maturity for broad Shopify inspections; Level 3 rendered capture required before non-Shopify or heavily rendered storefronts). Recorded in `.mde/state.json` (`operator_decisions`), `.mde/validation-strategy.json` (`operator_decisions_2026_07_14`), and `MISSION_UPDATES.md`. The sections below are preserved as the decision context.
 
 > **Charter update (2026-07-11):** Ferosh clarified the expected deliverable for this stream — a **local application** that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potentially monetizable. Each decision below has been re-framed against that deliverable. The recommendations were re-checked and all three still hold — the charter strengthens rather than changes them.
 
