@@ -7,20 +7,20 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-014",
-  "current_phase": "Generation 14 - Full-Cycle Local Application",
-  "phase_goal": "Close the charter loop inside the application: the operator adds an ecommerce site by URL in the dashboard, the platform runs the inspection, and an executive report is generated from the Inspection Report without re-inspecting the site. Shopify sites only until P008 lands, per decision 3A.",
-  "status": "generation_14_phase_exit_complete",
+  "current_generation": "GEN-015",
+  "current_phase": "Generation 15 - Fix-Assist Workflows",
+  "phase_goal": "Help fix the issues the platform finds (charter item 2): executive report issues become a durable, target-level fix plan with machine-verifiable criteria; re-inspections verify each fix automatically, so status changes only through observation.",
+  "status": "generation_15_first_slice_complete_fix_plan_and_verification",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
   "validation_strategy_status": "draft_updated_for_generation_13_inspection_platform_architecture",
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
-    "current_pass_count": 2,
-    "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-058",
-    "reason": "VAL-057 (P008 slice) and VAL-058 (bounded Dress Up rerun with full parity, deterministic rendered Pink Lily rerun, honest-degradation proof on Ridge, all suites) are two independent clean passes with no implementation changes between them, plus the BDD-INV-004 inventory extension. GEN-014 phase exit requirements are met and exit is declared."
+    "current_pass_count": 1,
+    "latest_result": "pass_for_fix_assist_first_slice",
+    "latest_run_id": "VAL-059",
+    "reason": "VAL-059 is the first clean pass on the GEN-015 fix-assist slice: fix plan generation from real Pink Lily findings, honest still_failing verification, temp-root proof of the verified_fixed transition, per-query dropdown findings, dashboard integration, and clean suites. Phase exit needs a second independent no-change pass plus fix-assist BDD additions."
   },
   "critical_bdds": 12,
   "high_bdds": 15,
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-014 phase exit is complete: the full-cycle local application (add site by URL, inspect, curate from catalog, re-inspect, rendered evidence with screenshots, branded executive PDF) is validated with 30 of 32 BDDs passing and pushed to origin. Await routing for the next generation. Candidates in priority order: non-Shopify adapter groundwork (P008 removed the rendered-evidence blocker; decision 3A gates these targets on Level 3 which is now implemented_basic), fix-assist workflows (charter item 2), facet-attribute curation to populate DS3, rendered mobile capture, decision-3A maturity enforcement at onboarding (BDD-G13-012), and accumulating the 10-20 real inspections for the GEN-15 planning gate.",
-  "session_router_case": "Existing MDE project - GEN-014 phase exit declared",
-  "last_prompt_used": "Operator: modify the design so an ecommerce site can be provided through the app, run the inspection, and generate the executive report - close the loop"
+  "next_recommended_action": "GEN-015 fix-assist first slice is live: Pink Lily has a real fix plan with two verifiable items awaiting merchant-side fixes. Next per operator routing: remaining fix-assist depth or the queued refinements (facet-attribute curation for DS3, rendered mobile capture, decision-3A enforcement at onboarding), then non-Shopify adapter groundwork. Second no-change gate pass required before GEN-015 phase exit.",
+  "session_router_case": "Existing MDE project - operator-routed GEN-015 fix-assist slice completed",
+  "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)"
 }

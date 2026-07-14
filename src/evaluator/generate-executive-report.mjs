@@ -240,6 +240,19 @@ function buildFindings(report, scorecard) {
 
   const rendered = scorecard.find((entry) => entry.plugin_id === 'rendered-search');
   if (rendered?.status === 'observed') {
+    const someDropdownsObserved = (rendered.dropdown_observed_count ?? 0) > 0;
+    for (const detail of (rendered.details || []).filter((item) => someDropdownsObserved && item.rendered_ok && (item.visible_suggestion_count ?? 0) === 0)) {
+      findings.push({
+        type: 'issue',
+        surface: 'Rendered Storefront',
+        severity: 'Medium',
+        observation: `Typing "${detail.query}" showed no visible autocomplete suggestions in the browser, although the suggest endpoint responds for this store.`,
+        evidence: rendered.evidence_file,
+        customer_impact: 'Customers typing this query get no type-ahead assistance and must compose the full search themselves.',
+        business_impact: 'Assisted discovery is lost for this query pattern even though the backend could support it.',
+        recommendation: `Check the storefront search app or predictive-search configuration for coverage of "${detail.query}"-style queries.`
+      });
+    }
     if (rendered.score === 100) {
       findings.push({
         type: 'strength',

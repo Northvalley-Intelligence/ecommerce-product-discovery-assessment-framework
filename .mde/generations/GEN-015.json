@@ -1,0 +1,29 @@
+{
+  "generation_id": "GEN-015",
+  "mission_phase": "Generation 15 - Fix-Assist Workflows",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-14T22:30:00Z",
+  "ended_at": null,
+  "record_status": "first_slice_complete_fix_plan_generation_and_verification",
+  "focus": "Charter item 2: help fix the issues the platform finds. Executive report issues become a durable target-level fix plan whose items carry machine-verifiable criteria; re-inspections verify each item automatically, so fix status changes only through observation, never assertion.",
+  "reason_generation_started": "Ferosh routed the post-GEN-014 priorities as fix-assist first, then the smaller refinements (facet curation, rendered mobile, maturity enforcement), then non-Shopify adapter groundwork.",
+  "primary_deliverable": "Fix plan artifact per target (assessments/<target>/fix-plan.json) with typed items, Shopify implementation guidance, verification criteria, and history; dashboard panel with Generate/Update Fix Plan and Verify Against This Run; automatic status transitions open -> verified_fixed / still_failing / regressed.",
+  "scope_notes": [
+    "Issue classification covers the generator's issue types: zero-result queries, failed queries, slow queries, unassisted prefixes, invisible dropdowns (per query), and rendered pages without products.",
+    "Verification matches on query text so curated query-pack evolution does not orphan plan items; unmatched items record not_checked history instead of guessing.",
+    "Items verified fixed that reappear as issues are marked regressed, preserving the full history.",
+    "The executive report generator now emits per-query invisible-dropdown findings when some dropdowns render and others do not."
+  ],
+  "validation_notes": [
+    "VAL-059 validates the first fix-assist slice.",
+    "Live Pink Lily proof: two real invisible-dropdown findings became fix plan items; verification against the current run honestly reports both still_failing with observed values.",
+    "Temp-root API tests prove the full transition: issue -> open item -> still_failing against unfixed evidence -> verified_fixed against fixed evidence, with history recorded."
+  ],
+  "known_gaps_opened": [
+    "Fix plan items are per-query; systemic findings (for example sitewide latency) have no aggregate item type yet.",
+    "Verification requires the query to appear in the verification run; a dedicated verify-only bounded run mode would make verification cheaper than a full inspection.",
+    "Fix guidance is static Shopify text; guided in-app remediation steps are a future slice.",
+    "Priorities after fix-assist per operator routing: facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding, then non-Shopify adapter groundwork."
+  ]
+}

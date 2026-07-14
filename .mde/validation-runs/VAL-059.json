@@ -1,0 +1,45 @@
+{
+  "validation_run_id": "VAL-059",
+  "generation": "GEN-015",
+  "phase": "Generation 15 - Fix-Assist Workflows",
+  "started_at": "2026-07-14T22:30:00Z",
+  "completed_at": "2026-07-14T22:50:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_fix_assist_first_slice",
+  "validations_executed": [
+    {
+      "category": "Fix Plan Generation",
+      "tool": "npm run fixplan -- generate <run>",
+      "result": "pass",
+      "evidence": "Executive report issues are classified into typed fix items with Shopify implementation guidance, machine-verifiable criteria, fingerprint-based merging across regenerations, and regression detection for previously verified items. Live Pink Lily plan holds two real invisible-dropdown items."
+    },
+    {
+      "category": "Fix Verification",
+      "tool": "npm run fixplan -- verify <run>",
+      "result": "pass",
+      "evidence": "Verification evaluates each item's criterion against the run's retained evidence and records history. Pink Lily verification honestly reports both items still_failing with observed visible_suggestion_count=0. Temp-root API tests prove the full transition to verified_fixed when evidence shows the fix, and not_checked handling when a query is absent from the run."
+    },
+    {
+      "category": "Per-Query Dropdown Findings",
+      "tool": "npm run report:executive",
+      "result": "pass",
+      "evidence": "The generator now emits per-query invisible-dropdown issues when some dropdowns render and others do not, guarded against double-reporting with the all-absent aggregate finding. Pink Lily report gained two Medium issues (90's nostalgia, accessorize yourself gift guide)."
+    },
+    {
+      "category": "Dashboard Integration",
+      "tool": "npm run validate:dashboard + live browser",
+      "result": "pass",
+      "evidence": "Fix Plan panel shows open/verified counts, item table with status pills, Update Fix Plan and Verify Against This Run buttons, and an Explore plan link into the dataset viewer. Verified live in Chrome on the Pink Lily run."
+    },
+    {
+      "category": "Suites",
+      "tool": "npm run validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "First clean pass on the GEN-015 fix-assist slice. The charter loop now includes remediation: inspect, report, plan fixes, re-inspect, verify - with statuses that only observation can change. Phase exit needs a second independent no-change pass plus BDD additions for fix-assist scope."
+}

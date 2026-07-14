@@ -1,0 +1,66 @@
+{
+  "schema_version": "fix-plan-v0.1",
+  "target_id": "pinklily",
+  "target_name": "Pinklily",
+  "updated_at": "2026-07-14T22:22:38.798Z",
+  "updated_from_inspection": "GEN-014-20260714T220916Z",
+  "open_items": 2,
+  "verified_items": 0,
+  "items": [
+    {
+      "fingerprint": "invisible_dropdown:90's nostalgia",
+      "type": "invisible_dropdown",
+      "query": "90's nostalgia",
+      "surface": "Rendered Storefront",
+      "severity": "Medium",
+      "observation": "Typing \"90's nostalgia\" showed no visible autocomplete suggestions in the browser, although the suggest endpoint responds for this store.",
+      "recommendation": "Check the storefront search app or predictive-search configuration for coverage of \"90's nostalgia\"-style queries.",
+      "implementation_guidance": "Shopify: the suggest endpoint answers but customers see no dropdown for this query. Check the storefront search app configuration, theme predictive-search integration, and JavaScript errors on the storefront.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the invisible dropdown condition no longer holds for \"90's nostalgia\"."
+      },
+      "status": "still_failing",
+      "first_observed_in": "GEN-014-20260714T220916Z",
+      "last_observed_in": "GEN-014-20260714T220916Z",
+      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/rendered-search.jsonl",
+      "history": [
+        {
+          "inspection_id": "GEN-014-20260714T220916Z",
+          "at": "2026-07-14T22:22:38.797Z",
+          "result": "still_failing",
+          "observed": "visible_suggestion_count=0"
+        }
+      ]
+    },
+    {
+      "fingerprint": "invisible_dropdown:accessorize yourself gift guide",
+      "type": "invisible_dropdown",
+      "query": "accessorize yourself gift guide",
+      "surface": "Rendered Storefront",
+      "severity": "Medium",
+      "observation": "Typing \"accessorize yourself gift guide\" showed no visible autocomplete suggestions in the browser, although the suggest endpoint responds for this store.",
+      "recommendation": "Check the storefront search app or predictive-search configuration for coverage of \"accessorize yourself gift guide\"-style queries.",
+      "implementation_guidance": "Shopify: the suggest endpoint answers but customers see no dropdown for this query. Check the storefront search app configuration, theme predictive-search integration, and JavaScript errors on the storefront.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the invisible dropdown condition no longer holds for \"accessorize yourself gift guide\"."
+      },
+      "status": "still_failing",
+      "first_observed_in": "GEN-014-20260714T220916Z",
+      "last_observed_in": "GEN-014-20260714T220916Z",
+      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/rendered-search.jsonl",
+      "history": [
+        {
+          "inspection_id": "GEN-014-20260714T220916Z",
+          "at": "2026-07-14T22:22:38.798Z",
+          "result": "still_failing",
+          "observed": "visible_suggestion_count=0"
+        }
+      ]
+    }
+  ],
+  "unmappable_findings": [],
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion.",
+  "last_verification_inspection": "GEN-014-20260714T220916Z"
+}

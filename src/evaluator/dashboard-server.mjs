@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
 import { curateQueryPack } from './curate-query-pack.mjs';
+import { generateFixPlan, readFixPlan, verifyFixPlan } from './fix-plan.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
 import { onboardTarget } from './onboard-target.mjs';
 import { latexmkAvailable, renderExecutivePdf } from './render-executive-pdf.mjs';
@@ -134,8 +135,27 @@ function loadRun(rootDir, runDir) {
   const executiveMdPath = path.join(resolvedRunDir, 'executive', 'executive-report.md');
   const executivePdfPath = path.join(resolvedRunDir, 'executive', 'executive-report.pdf');
 
+  const runReport = exists(reportPath) ? readJson(reportPath) : null;
+  const fixPlan = runReport?.target?.target_id ? readFixPlan(rootDir, runReport.target.target_id) : null;
+
   return {
     run_dir: relativeRunDir,
+    fix_plan: fixPlan
+      ? {
+          path: path.relative(rootDir, path.join(rootDir, 'assessments', runReport.target.target_id, 'fix-plan.json')),
+          open_items: fixPlan.open_items,
+          verified_items: fixPlan.verified_items,
+          updated_from_inspection: fixPlan.updated_from_inspection,
+          last_verification_inspection: fixPlan.last_verification_inspection || null,
+          items: (fixPlan.items || []).map((item) => ({
+            status: item.status,
+            severity: item.severity,
+            surface: item.surface,
+            query: item.query,
+            recommendation: item.recommendation
+          }))
+        }
+      : null,
     executive_report: exists(executiveJsonPath)
       ? {
           json_path: path.relative(rootDir, executiveJsonPath),
@@ -143,7 +163,7 @@ function loadRun(rootDir, runDir) {
           pdf_path: exists(executivePdfPath) ? path.relative(rootDir, executivePdfPath) : null
         }
       : null,
-    report: exists(reportPath) ? readJson(reportPath) : null,
+    report: runReport,
     dashboard: exists(dashboardPath) ? readJson(dashboardPath) : null,
     checkpoint: exists(checkpointPath) ? readJson(checkpointPath) : null,
     plugin_state: exists(pluginStatePath) ? readJson(pluginStatePath) : null,
@@ -806,9 +826,9 @@ function dashboardPage() {
 
     function cls(status) {
       const value = String(status || '').toLowerCase();
-      if (['pass', 'complete', 'completed', 'ready', 'bounded'].includes(value)) return 'pass';
-      if (['warn', 'partial', 'limited'].includes(value)) return 'warn';
-      if (['fail', 'failed', 'blocked', 'not_ready'].includes(value)) return 'fail';
+      if (['pass', 'complete', 'completed', 'ready', 'bounded', 'verified_fixed'].includes(value)) return 'pass';
+      if (['warn', 'partial', 'limited', 'open'].includes(value)) return 'warn';
+      if (['fail', 'failed', 'blocked', 'not_ready', 'still_failing', 'regressed'].includes(value)) return 'fail';
       return 'muted-status';
     }
     function pill(status) {
@@ -922,6 +942,14 @@ function dashboardPage() {
             ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0">' + (data.executive_report.pdf_path ? '<a href="' + artifactHref(data.executive_report.pdf_path) + '" target="_blank"><strong>Open PDF</strong></a> · ' : '') + '<a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Markdown</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
             : '<p class="muted" style="margin:0">No executive report generated yet for this inspection.</p>') +
           '</div><div class="readiness-stats"><button id="curateBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Curate Queries from Catalog</button><button id="execReportBtn" data-run="' + escapeHtml(data.run_dir) + '">' + (data.executive_report ? 'Regenerate' : 'Generate Executive Report') + '</button></div></div>') +
+        panel('Fix Plan', 'Findings become verifiable fixes', '<div class="panel-body readiness"><div>' +
+          (data.fix_plan
+            ? '<p class="muted" style="margin:0">' + data.fix_plan.open_items + ' open · ' + data.fix_plan.verified_items + ' verified fixed' + (data.fix_plan.last_verification_inspection ? ' · last verified against ' + escapeHtml(data.fix_plan.last_verification_inspection) : '') + ' · <a href="' + datasetHash(data.fix_plan.path) + '">Explore plan</a></p>'
+            : '<p class="muted" style="margin:0">No fix plan yet for this target. Generate one from an executive report with issues.</p>') +
+          '</div><div class="readiness-stats"><button id="fixPlanBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">' + (data.fix_plan ? 'Update Fix Plan' : 'Generate Fix Plan') + '</button>' + (data.fix_plan ? '<button id="verifyFixesBtn" data-run="' + escapeHtml(data.run_dir) + '">Verify Against This Run</button>' : '') + '</div></div>' +
+          (data.fix_plan && data.fix_plan.items.length
+            ? table(['Status', 'Severity', 'Surface', 'Query', 'Recommended Fix'], data.fix_plan.items, (item) => ['<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.severity) + '</td>', '<td>' + escapeHtml(item.surface) + '</td>', '<td><span class="mono">' + escapeHtml(item.query) + '</span></td>', '<td>' + escapeHtml(item.recommendation) + '</td>'])
+            : '')) +
         panel('Crawl Health', 'Inspection phases', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
         '<div class="two-col">' +
           panel('Plugin State', 'Execution', table(['Plugin', 'Status', 'Observations', 'Evidence'], report.plugin_results || [], (item) => ['<td><strong>' + escapeHtml(item.plugin_id) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.observations || 0) + '</td>', '<td>' + evidenceLinks(item.evidence_file) + '</td>'])) +
@@ -930,6 +958,42 @@ function dashboardPage() {
         panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
         panel('Inspection Timeline', 'Debug trace', table(['Time', 'Event', 'Details'], (data.timeline || []).slice(-30), (item) => { const copy = {...item}; delete copy.at; delete copy.event; delete copy.inspection_id; return ['<td class="mono">' + escapeHtml(item.at) + '</td>', '<td><strong>' + escapeHtml(item.event) + '</strong></td>', '<td><span class="mono">' + escapeHtml(JSON.stringify(copy)) + '</span></td>']; })) +
         panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+      const fixPlanBtn = document.getElementById('fixPlanBtn');
+      if (fixPlanBtn) {
+        fixPlanBtn.addEventListener('click', async () => {
+          fixPlanBtn.disabled = true;
+          try {
+            const result = await api('/api/fix-plan', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ run_dir: fixPlanBtn.dataset.run })
+            });
+            document.getElementById('actionResult').textContent = 'Fix plan updated: ' + result.items + ' item(s), ' + result.open_items + ' open, ' + result.verified_items + ' verified fixed.';
+            await loadInspection(state.selected);
+          } catch (error) {
+            alert(error.message);
+            fixPlanBtn.disabled = false;
+          }
+        });
+      }
+      const verifyFixesBtn = document.getElementById('verifyFixesBtn');
+      if (verifyFixesBtn) {
+        verifyFixesBtn.addEventListener('click', async () => {
+          verifyFixesBtn.disabled = true;
+          try {
+            const result = await api('/api/verify-fixes', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ run_dir: verifyFixesBtn.dataset.run })
+            });
+            document.getElementById('actionResult').textContent = 'Verification against this run: ' + result.verified_this_run + ' newly verified fixed, ' + result.still_failing + ' still failing, ' + result.not_checked + ' not checked in this run.';
+            await loadInspection(state.selected);
+          } catch (error) {
+            alert(error.message);
+            verifyFixesBtn.disabled = false;
+          }
+        });
+      }
       const curateBtn = document.getElementById('curateBtn');
       if (curateBtn) {
         curateBtn.addEventListener('click', async () => {
@@ -1286,6 +1350,28 @@ function routeRequest(rootDir, request, response) {
       .then((body) => {
         const result = onboardTarget(rootDir, { url: body.url, name: body.name });
         sendJson(response, result.created ? 201 : 200, result);
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/fix-plan') {
+    readBody(request)
+      .then((body) => {
+        if (!body.run_dir) throw new Error('run_dir is required.');
+        safeResolve(rootDir, body.run_dir);
+        sendJson(response, 201, generateFixPlan(rootDir, body.run_dir));
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/verify-fixes') {
+    readBody(request)
+      .then((body) => {
+        if (!body.run_dir) throw new Error('run_dir is required.');
+        safeResolve(rootDir, body.run_dir);
+        sendJson(response, 200, verifyFixPlan(rootDir, body.run_dir));
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;

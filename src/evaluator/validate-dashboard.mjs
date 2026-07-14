@@ -242,6 +242,60 @@ async function main() {
         body: JSON.stringify({ run_dir: emptyRun })
       });
       assert(noEvidence.status === 400, 'Curation should refuse when no catalog payloads are retained.');
+
+      const fixRun = path.join('assessments', 'example-boutique', 'inspection-report', 'GEN-014', 'GEN-014-00000000T000002Z');
+      fs.mkdirSync(path.join(scratchRoot, fixRun, 'executive'), { recursive: true });
+      fs.mkdirSync(path.join(scratchRoot, fixRun, 'evidence', 'experiments'), { recursive: true });
+      fs.writeFileSync(
+        path.join(scratchRoot, fixRun, 'inspection-report.json'),
+        JSON.stringify({ inspection_id: 'GEN-014-00000000T000002Z', target: { target_id: 'example-boutique', name: 'Example Boutique' } })
+      );
+      fs.writeFileSync(
+        path.join(scratchRoot, fixRun, 'executive', 'executive-report.json'),
+        JSON.stringify({
+          generated_from_inspection: 'GEN-014-00000000T000002Z',
+          target: { target_id: 'example-boutique', name: 'Example Boutique' },
+          findings: [
+            {
+              type: 'issue',
+              surface: 'Search',
+              severity: 'High',
+              observation: 'The query "linen blazer" returned zero results.',
+              recommendation: 'Check catalog coverage and synonyms for "linen blazer".',
+              evidence: 'x'
+            }
+          ]
+        })
+      );
+      fs.writeFileSync(
+        path.join(scratchRoot, fixRun, 'evidence', 'experiments', 'submitted-search.jsonl'),
+        `${JSON.stringify({ query: 'linen blazer', ok: true, duration_ms: 300, observed: { result_count_hint: 0 } })}\n`
+      );
+      const fixPlan = await fetchJson(`${scratch.url}/api/fix-plan`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ run_dir: fixRun })
+      });
+      assert(fixPlan.items === 1 && fixPlan.open_items === 1, 'Fix plan should contain one open item from the issue.');
+      const failVerify = await fetchJson(`${scratch.url}/api/verify-fixes`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ run_dir: fixRun })
+      });
+      assert(failVerify.still_failing === 1 && failVerify.verified_items === 0, 'Verification against unfixed evidence should report still_failing.');
+      fs.writeFileSync(
+        path.join(scratchRoot, fixRun, 'evidence', 'experiments', 'submitted-search.jsonl'),
+        `${JSON.stringify({ query: 'linen blazer', ok: true, duration_ms: 300, observed: { result_count_hint: 42 } })}\n`
+      );
+      const passVerify = await fetchJson(`${scratch.url}/api/verify-fixes`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ run_dir: fixRun })
+      });
+      assert(passVerify.verified_items === 1 && passVerify.open_items === 0, 'Verification against fixed evidence should flip the item to verified_fixed.');
+      const scratchPlan = readJson(path.join(scratchRoot, 'assessments', 'example-boutique', 'fix-plan.json'));
+      assert(scratchPlan.items[0].status === 'verified_fixed', 'Fix plan item should be verified_fixed after passing verification.');
+      assert(scratchPlan.items[0].history.length === 2, 'Fix plan item should record verification history.');
     } finally {
       await new Promise((resolve) => scratch.server.close(resolve));
       fs.rmSync(scratchRoot, { recursive: true, force: true });
