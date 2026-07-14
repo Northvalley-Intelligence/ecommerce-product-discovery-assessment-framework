@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-056",
+  "generation": "GEN-014",
+  "phase": "Generation 14 - Full-Cycle Local Application",
+  "started_at": "2026-07-14T20:55:00Z",
+  "completed_at": "2026-07-14T21:15:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_executive_pdf_rendering_slice",
+  "validations_executed": [
+    {
+      "category": "Executive PDF Rendering",
+      "tool": "npm run report:executive:pdf + latexmk",
+      "result": "pass",
+      "evidence": "New renderer converts executive-report.json into a Northvalley-branded LaTeX/PDF using the repo's existing brand assets: cover with evidence-basis card, executive summary with scorecard and metric cards, findings with opportunity matrix, and a dedicated What This Report Does Not Claim page with evidence references. Pink Lily and Dress Up PDFs both compile (4 pages, US Letter)."
+    },
+    {
+      "category": "PDF Layout Validation",
+      "tool": "pdfinfo, pdftotext, pdftoppm rendered page review",
+      "result": "pass",
+      "evidence": "Rendered page images reviewed: cover, summary, findings, and limitations pages are non-blank and readable. Two layout defects found and fixed during review: the cover date clipped under the corner accent (moved left) and the summary page columns misaligned on first baseline (lead dark card added). Text extraction confirms title, no-re-inspection statement, limitations section, and brand closeout."
+    },
+    {
+      "category": "Operational Dashboard Validation",
+      "tool": "npm run validate:dashboard",
+      "result": "pass",
+      "evidence": "The executive-report API now renders the PDF when latexmk is available (graceful note when not); validator asserts PDF existence, page count of at least 3, and whitespace-normalized text content. Detail view exposes pdf_path and the artifact route serves application/pdf. Open PDF link verified live in the browser."
+    },
+    {
+      "category": "GEN-013 Suite Validation",
+      "tool": "npm run validate:gen13",
+      "result": "pass",
+      "evidence": "All suites pass; the run validator already excludes downstream executive/ artifacts from the artifact-index check, so PDF and tex artifacts do not disturb inspection validation."
+    },
+    {
+      "category": "Legacy Framework Regression Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Framework validator passes; BDD-012 calibration remains the known deferred warning."
+    },
+    {
+      "category": "Repository Hygiene Validation",
+      "tool": "git diff --check",
+      "result": "pass",
+      "evidence": "No whitespace errors."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Implementation changed after VAL-055, so the GEN-014 clean-pass count restarts: VAL-056 is pass one for the current state. The charter deliverable is now a branded, sendable PDF produced entirely from retained inspection evidence. Content-integrity note: generated PDFs carry only evidence-backed claims and explicit limitations; no invented proof or peer comparisons."
+}

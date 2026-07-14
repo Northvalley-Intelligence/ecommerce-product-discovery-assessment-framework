@@ -14,6 +14,7 @@
     "onboard": "node src/evaluator/onboard-target.mjs",
     "report:executive": "node src/evaluator/generate-executive-report.mjs",
     "curate:queries": "node src/evaluator/curate-query-pack.mjs",
+    "report:executive:pdf": "node src/evaluator/render-executive-pdf.mjs",
     "render:dashboard": "node src/evaluator/render-dashboard.mjs",
     "validate:gen13": "node src/evaluator/validation.mjs all",
     "validate:platform": "node src/evaluator/validation.mjs platform",

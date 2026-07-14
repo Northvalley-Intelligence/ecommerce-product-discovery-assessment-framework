@@ -139,6 +139,28 @@ async function main() {
       assert(markdown.includes('What This Report Does Not Claim'), 'Executive report markdown missing limitations section.');
       const detailWithReport = await fetchJson(`${dashboard.url}/api/inspection/${encodeURIComponent(path.basename(dressUpRun))}`);
       assert(detailWithReport.executive_report?.md_path, 'Inspection detail does not surface the generated executive report.');
+
+      const { spawnSync } = await import('node:child_process');
+      const latexmkPresent = spawnSync('latexmk', ['--version'], { stdio: 'ignore' }).status === 0;
+      if (latexmkPresent) {
+        assert(generated.pdf_path?.endsWith('executive-report.pdf'), 'Executive report generation did not render a PDF despite latexmk being available.');
+        assert(exists(generated.pdf_path), 'Rendered executive PDF file is missing.');
+        const pdfInfo = spawnSync('pdfinfo', [generated.pdf_path], { encoding: 'utf8' });
+        if (pdfInfo.status === 0) {
+          const pages = Number((pdfInfo.stdout.match(/Pages:\s+(\d+)/) || [])[1] || 0);
+          assert(pages >= 3, `Executive PDF should have at least 3 pages, found ${pages}.`);
+        }
+        const pdfText = spawnSync('pdftotext', [generated.pdf_path, '-'], { encoding: 'utf8' });
+        if (pdfText.status === 0) {
+          const flatText = pdfText.stdout.replace(/\s+/g, ' ');
+          assert(flatText.includes('Product Discovery Executive Report'), 'Executive PDF missing report title.');
+          assert(flatText.includes('No new site inspection was performed'), 'Executive PDF missing no-re-inspection statement.');
+          assert(flatText.includes('What This Report Does Not Claim'), 'Executive PDF missing limitations section.');
+          assert(flatText.includes('Northvalley Intelligence'), 'Executive PDF missing brand closeout.');
+        }
+      } else {
+        console.warn('latexmk not available; executive PDF assertions skipped.');
+      }
     }
 
     assert(page.includes("'/api/curate-queries'"), 'Dashboard page missing curation API wiring.');

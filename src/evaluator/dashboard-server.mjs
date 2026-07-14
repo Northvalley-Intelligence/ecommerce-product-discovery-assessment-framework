@@ -9,6 +9,7 @@ import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText }
 import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
 import { onboardTarget } from './onboard-target.mjs';
+import { latexmkAvailable, renderExecutivePdf } from './render-executive-pdf.mjs';
 
 const DEFAULT_HOST = '127.0.0.1';
 const DEFAULT_PORT = 4173;
@@ -85,6 +86,8 @@ function contentType(filePath) {
   if (filePath.endsWith('.json')) return 'application/json; charset=utf-8';
   if (filePath.endsWith('.jsonl')) return 'application/x-ndjson; charset=utf-8';
   if (filePath.endsWith('.md')) return 'text/markdown; charset=utf-8';
+  if (filePath.endsWith('.pdf')) return 'application/pdf';
+  if (filePath.endsWith('.tex')) return 'text/plain; charset=utf-8';
   if (filePath.endsWith('.png')) return 'image/png';
   if (filePath.endsWith('.jpg') || filePath.endsWith('.jpeg')) return 'image/jpeg';
   return 'text/plain; charset=utf-8';
@@ -129,13 +132,15 @@ function loadRun(rootDir, runDir) {
   const runManifestPath = path.join(resolvedRunDir, 'run-manifest.json');
   const executiveJsonPath = path.join(resolvedRunDir, 'executive', 'executive-report.json');
   const executiveMdPath = path.join(resolvedRunDir, 'executive', 'executive-report.md');
+  const executivePdfPath = path.join(resolvedRunDir, 'executive', 'executive-report.pdf');
 
   return {
     run_dir: relativeRunDir,
     executive_report: exists(executiveJsonPath)
       ? {
           json_path: path.relative(rootDir, executiveJsonPath),
-          md_path: path.relative(rootDir, executiveMdPath)
+          md_path: path.relative(rootDir, executiveMdPath),
+          pdf_path: exists(executivePdfPath) ? path.relative(rootDir, executivePdfPath) : null
         }
       : null,
     report: exists(reportPath) ? readJson(reportPath) : null,
@@ -914,7 +919,7 @@ function dashboardPage() {
           table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '', dataset_link: gap.capability_id ? datasetHash('platform/capability-registry.json', gap.capability_id) : '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + (item.dataset_link ? '<a href="' + item.dataset_link + '">' + escapeHtml(item.issue) + '</a>' : escapeHtml(item.issue)) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>'])) +
         panel('Executive Report', 'Generated from this inspection, no re-inspection', '<div class="panel-body readiness"><div>' +
           (data.executive_report
-            ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0"><a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Open report (Markdown)</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
+            ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0">' + (data.executive_report.pdf_path ? '<a href="' + artifactHref(data.executive_report.pdf_path) + '" target="_blank"><strong>Open PDF</strong></a> · ' : '') + '<a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Markdown</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
             : '<p class="muted" style="margin:0">No executive report generated yet for this inspection.</p>') +
           '</div><div class="readiness-stats"><button id="curateBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Curate Queries from Catalog</button><button id="execReportBtn" data-run="' + escapeHtml(data.run_dir) + '">' + (data.executive_report ? 'Regenerate' : 'Generate Executive Report') + '</button></div></div>') +
         panel('Crawl Health', 'Inspection phases', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
@@ -1304,6 +1309,13 @@ function routeRequest(rootDir, request, response) {
         if (!body.run_dir) throw new Error('run_dir is required.');
         safeResolve(rootDir, body.run_dir);
         const result = generateExecutiveReport(rootDir, body.run_dir);
+        if (latexmkAvailable()) {
+          const rendered = renderExecutivePdf(rootDir, body.run_dir);
+          result.pdf_path = rendered.pdf_path;
+        } else {
+          result.pdf_path = null;
+          result.pdf_note = 'latexmk not available; PDF rendering skipped.';
+        }
         sendJson(response, 201, result);
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
