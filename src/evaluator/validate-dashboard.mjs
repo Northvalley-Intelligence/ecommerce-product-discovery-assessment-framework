@@ -73,6 +73,46 @@ async function main() {
       `${dashboard.url}/artifact?path=${encodeURIComponent(path.join(runDir, 'inspection-report.md'))}`
     );
     assert(artifact.includes('Inspection Report: Ridge'), 'Artifact route did not serve Ridge report markdown.');
+
+    assert(page.includes('id="tabDatasets"'), 'Dashboard page missing Datasets tab.');
+    assert(page.includes('id="datasetNav"'), 'Dashboard page missing dataset navigator.');
+    assert(page.includes('id="datasetView"'), 'Dashboard page missing dataset viewer container.');
+    assert(page.includes("'/api/dataset?path='"), 'Dashboard page missing dataset API wiring.');
+
+    const catalog = await fetchJson(`${dashboard.url}/api/datasets`);
+    const groupIds = (catalog.groups || []).map((group) => group.id);
+    for (const expected of ['evaluations', 'targets', 'query-packs', 'site-profiles', 'platform', 'inspection-history', 'run-datasets']) {
+      assert(groupIds.includes(expected), `Dataset catalog missing group: ${expected}`);
+    }
+    const targetsGroup = catalog.groups.find((group) => group.id === 'targets');
+    assert(targetsGroup?.files?.some((file) => file.path === 'targets/ridge.json'), 'Dataset catalog missing targets/ridge.json.');
+    const runGroup = catalog.groups.find((group) => group.id === 'run-datasets');
+    assert(runGroup?.files?.length > 0, 'Dataset catalog has no generated run datasets.');
+    assert(runGroup.files.every((file) => file.inspection_id), 'Run dataset files missing inspection_id linkage.');
+
+    const targetDataset = await fetchJson(`${dashboard.url}/api/dataset?path=${encodeURIComponent('targets/ridge.json')}`);
+    assert(targetDataset.record_count >= 1, 'targets/ridge.json dataset returned no records.');
+    assert(Array.isArray(targetDataset.fields) && targetDataset.fields.includes('target_id'), 'targets/ridge.json dataset missing target_id field.');
+
+    const historyDataset = await fetchJson(`${dashboard.url}/api/dataset?path=${encodeURIComponent('inspection-history/GEN-013.jsonl')}`);
+    assert(historyDataset.format === 'jsonl', 'Inspection history dataset should parse as jsonl.');
+    assert(historyDataset.record_count > 0, 'Inspection history dataset returned no records.');
+    assert(historyDataset.fields.includes('inspection_id'), 'Inspection history dataset missing inspection_id field.');
+
+    const registryDataset = await fetchJson(`${dashboard.url}/api/dataset?path=${encodeURIComponent('platform/capability-registry.json')}`);
+    assert(registryDataset.meta?.record_field === 'capabilities', 'Capability registry dataset should surface the capabilities array as records.');
+    assert(registryDataset.records.some((record) => record.capability_id === 'P001'), 'Capability registry dataset missing P001 record.');
+
+    const runDatasetFile = runGroup.files.find((file) => file.format === 'jsonl');
+    if (runDatasetFile) {
+      const runDataset = await fetchJson(`${dashboard.url}/api/dataset?path=${encodeURIComponent(runDatasetFile.path)}`);
+      assert(runDataset.record_count > 0, `Run dataset ${runDatasetFile.path} returned no records.`);
+    }
+
+    const traversal = await fetch(`${dashboard.url}/api/dataset?path=${encodeURIComponent('../outside.json')}`);
+    assert(traversal.status === 400, 'Dataset route did not reject path traversal.');
+    const badExtension = await fetch(`${dashboard.url}/api/dataset?path=${encodeURIComponent('MISSION.md')}`);
+    assert(badExtension.status === 400, 'Dataset route did not reject non-JSON files.');
   } finally {
     await new Promise((resolve) => dashboard.server.close(resolve));
   }

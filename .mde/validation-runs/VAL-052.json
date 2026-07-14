@@ -1,0 +1,49 @@
+{
+  "validation_run_id": "VAL-052",
+  "generation": "GEN-013",
+  "phase": "Generation 13 - Inspection Report Framework",
+  "started_at": "2026-07-14T04:35:00Z",
+  "completed_at": "2026-07-14T04:50:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_dashboard_dataset_viewer_slice",
+  "delegation": {
+    "stream": "stream_mra8o4fq_47ae08ab",
+    "task": "Add an intelligent in-app dataset viewer to the existing inspection dashboard so the operator never has to leave the dashboard to inspect the datasets behind an evaluation."
+  },
+  "validations_executed": [
+    {
+      "category": "Operational Dashboard Validation",
+      "tool": "npm run validate:dashboard",
+      "result": "pass",
+      "evidence": "All prior dashboard assertions still pass, plus new dataset viewer assertions: page markup for the Datasets tab, navigator, viewer container, and API wiring; catalog groups for evaluations, targets, query-packs, site-profiles, platform, inspection-history, and run-datasets; targets/ridge.json parses with target_id field; inspection-history/GEN-013.jsonl parses as JSONL with inspection_id field; platform/capability-registry.json unwraps its capabilities array with P001 present; a generated run DS JSONL returns records; path traversal and non-JSON files are rejected with HTTP 400."
+    },
+    {
+      "category": "GEN-013 Suite Validation",
+      "tool": "npm run validate:gen13",
+      "result": "pass",
+      "evidence": "Contracts, manifests, platform, and inspection output validation all pass. Known warn-level notice remains: pre-cache-metadata Ridge run GEN-013-20260708T161237Z."
+    },
+    {
+      "category": "Legacy Framework Regression Validation",
+      "tool": "npm run validate",
+      "result": "pass",
+      "evidence": "Existing framework validator passes; BDD-012 evaluator calibration remains a known deferred warning."
+    },
+    {
+      "category": "Functional Browser Validation",
+      "tool": "Chrome against http://127.0.0.1:4173",
+      "result": "pass",
+      "evidence": "Verified in a live browser: Datasets tab switches views, dataset navigator lists all seven groups, deep link #dataset=inspection-history/GEN-013.jsonl&q=dress-up opens the file with the search prefilled and filters 4 of 8 records, clicking a row renders the full key-value record detail, and the DS1 View link on a Dress Up inspection opens the underlying ds1-canonical-search.jsonl records in the viewer. No console errors."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Bounded Ridge live pilot",
+      "reason": "This slice is dashboard-only; no inspection logic changed. The Ridge blocked-domain pilot remains the next step in the frozen design pilot sequence.",
+      "revisit_when": "Next bounded Ridge run."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Dataset viewer is an implementation change after VAL-051, so the Validation Gate clean-pass count restarts: VAL-052 is clean pass one for the current implementation state. Phase exit still requires a second independent clean pass with no implementation changes in between, plus the GEN-013 BDD inventory refresh. Rendered page capture and browse-graph extraction were explicitly excluded from this delegated task."
+}

@@ -5,10 +5,23 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ensureDir, exists, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
+import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
 
 const DEFAULT_HOST = '127.0.0.1';
 const DEFAULT_PORT = 4173;
+
+const DATASET_ROOT_GROUPS = [
+  { id: 'evaluations', label: 'Evaluations', dir: 'evaluations' },
+  { id: 'targets', label: 'Targets', dir: 'targets' },
+  { id: 'query-packs', label: 'Query Packs', dir: 'query-packs' },
+  { id: 'site-profiles', label: 'Site Profiles', dir: 'site-profiles' },
+  { id: 'platform', label: 'Platform Registries', dir: 'platform' },
+  { id: 'inspection-history', label: 'Inspection History', dir: 'inspection-history' }
+];
+const DATASET_EXTENSIONS = new Set(['.json', '.jsonl']);
+const DATASET_MAX_BYTES = 8 * 1024 * 1024;
+const DATASET_RECORD_LIMIT = 1000;
+const DATASET_FIELD_SCAN_LIMIT = 500;
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -134,6 +147,103 @@ function inspections(rootDir) {
   });
 }
 
+function datasetFileEntry(rootDir, filePath) {
+  const stat = fs.statSync(filePath);
+  return {
+    path: path.relative(rootDir, filePath),
+    name: path.basename(filePath),
+    format: filePath.endsWith('.jsonl') ? 'jsonl' : 'json',
+    size_bytes: stat.size,
+    modified_at: stat.mtime.toISOString()
+  };
+}
+
+function datasetFilesIn(rootDir, dirPath) {
+  return listFilesRecursive(dirPath)
+    .filter((file) => DATASET_EXTENSIONS.has(path.extname(file)))
+    .sort()
+    .map((file) => datasetFileEntry(rootDir, file));
+}
+
+function datasetCatalog(rootDir) {
+  const groups = DATASET_ROOT_GROUPS.map((group) => ({
+    id: group.id,
+    label: group.label,
+    files: datasetFilesIn(rootDir, path.join(rootDir, group.dir))
+  }));
+  const runFiles = latestHistoryRows(rootDir).flatMap((row) =>
+    datasetFilesIn(rootDir, path.join(rootDir, row.output_dir, 'evidence', 'datasets')).map((file) => ({
+      ...file,
+      inspection_id: row.inspection_id,
+      target_name: row.target_name
+    }))
+  );
+  groups.push({
+    id: 'run-datasets',
+    label: 'Generated Run Datasets (DS1-DS4)',
+    files: runFiles
+  });
+  return { groups };
+}
+
+function normalizeDatasetRecords(value) {
+  if (Array.isArray(value)) {
+    return { records: value, meta: null };
+  }
+  const arrayFields = Object.entries(value)
+    .filter(([, field]) => Array.isArray(field) && field.length >= 2 && field.every((item) => item && typeof item === 'object'))
+    .sort((left, right) => right[1].length - left[1].length);
+  if (arrayFields.length === 0) {
+    return { records: [value], meta: null };
+  }
+  const [recordField, records] = arrayFields[0];
+  const manifest = Object.fromEntries(Object.entries(value).filter(([key]) => key !== recordField));
+  return { records, meta: { record_field: recordField, manifest } };
+}
+
+function loadDataset(rootDir, requestedPath, limit) {
+  if (!requestedPath) throw new Error('path query parameter is required.');
+  const filePath = safeResolve(rootDir, requestedPath);
+  if (!DATASET_EXTENSIONS.has(path.extname(filePath))) {
+    throw new Error('Dataset viewer only reads .json and .jsonl files.');
+  }
+  if (!exists(filePath) || fs.statSync(filePath).isDirectory()) return null;
+  const stat = fs.statSync(filePath);
+  if (stat.size > DATASET_MAX_BYTES) {
+    throw new Error(`Dataset is larger than ${Math.round(DATASET_MAX_BYTES / (1024 * 1024))} MB; open it through the artifact route instead.`);
+  }
+  const format = filePath.endsWith('.jsonl') ? 'jsonl' : 'json';
+  const { records: rawRecords, meta } = format === 'jsonl'
+    ? { records: readJsonl(filePath), meta: null }
+    : normalizeDatasetRecords(readJson(filePath));
+  const records = rawRecords.map((record) =>
+    record && typeof record === 'object' && !Array.isArray(record) ? record : { value: record }
+  );
+  const fields = [];
+  const seenFields = new Set();
+  for (const record of records.slice(0, DATASET_FIELD_SCAN_LIMIT)) {
+    for (const key of Object.keys(record)) {
+      if (!seenFields.has(key)) {
+        seenFields.add(key);
+        fields.push(key);
+      }
+    }
+  }
+  const recordLimit = Number.isFinite(limit) && limit > 0 ? Math.min(limit, DATASET_RECORD_LIMIT) : DATASET_RECORD_LIMIT;
+  return {
+    path: path.relative(rootDir, filePath),
+    format,
+    size_bytes: stat.size,
+    modified_at: stat.mtime.toISOString(),
+    record_count: records.length,
+    returned_count: Math.min(records.length, recordLimit),
+    truncated: records.length > recordLimit,
+    fields,
+    meta,
+    records: records.slice(0, recordLimit)
+  };
+}
+
 function runChild(rootDir, args, logName) {
   ensureDir(path.join(rootDir, 'tmp', 'dashboard-runs'));
   const logPath = path.join(rootDir, 'tmp', 'dashboard-runs', logName);
@@ -211,6 +321,7 @@ function dashboardPage() {
       --soft-gray: #eef1f5;
     }
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     body {
       margin: 0;
       background: var(--bg);
@@ -520,6 +631,84 @@ function dashboardPage() {
       color: var(--muted);
       padding: 12px 0;
     }
+    .view-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .tab {
+      background: white;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      font-weight: 800;
+    }
+    .tab.active {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+    .dataset-nav {
+      display: grid;
+      gap: 14px;
+    }
+    .dataset-group h3 {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .dataset-group {
+      display: block;
+    }
+    .dataset-files {
+      display: grid;
+      gap: 6px;
+    }
+    .dataset-file {
+      width: 100%;
+      display: grid;
+      gap: 2px;
+      text-align: left;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 9px 11px;
+      font-weight: 400;
+    }
+    .dataset-file.active {
+      border-color: var(--blue);
+      background: var(--soft-blue);
+    }
+    .dataset-file .file-name {
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+    .dataset-file small {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+    .dataset-controls {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 220px;
+      gap: 10px;
+      align-items: end;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .record-detail {
+      border-top: 1px solid var(--line);
+    }
+    .record-detail pre {
+      margin: 0;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    tr.record-row { cursor: pointer; }
+    tr.record-row:hover td { background: var(--soft-blue); }
+    tr.record-row.selected td { background: var(--soft-blue); }
     @media (max-width: 1180px) {
       .shell { grid-template-columns: 1fr; }
       aside { position: static; max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -543,28 +732,47 @@ function dashboardPage() {
         <h1>Ecommerce Inspections</h1>
         <p class="muted">Run, review, debug, compare, and decide report readiness.</p>
       </div>
+      <div class="view-tabs" role="tablist">
+        <button id="tabInspections" class="tab active" role="tab">Inspections</button>
+        <button id="tabDatasets" class="tab" role="tab">Datasets</button>
+      </div>
       <div class="run-list" id="runList"></div>
+      <div class="dataset-nav" id="datasetNav" hidden></div>
     </aside>
     <main>
-      <section class="toolbar" aria-label="Dashboard actions">
-        <div class="field">
-          <label for="evaluationPath">Evaluation Manifest</label>
-          <input id="evaluationPath" value="evaluations/ridge-shopify-baseline.json">
-        </div>
-        <div class="field">
-          <label for="onlyPlugins">Selected Plugins</label>
-          <input id="onlyPlugins" placeholder="submitted-search,autocomplete">
-        </div>
-        <button id="runBtn">Run</button>
-        <button id="resumeBtn" class="secondary">Resume</button>
-        <button id="rerunBtn" class="secondary">Rerun</button>
-      </section>
-      <div id="actionResult" class="muted"></div>
-      <div id="detail"></div>
+      <div id="inspectionView">
+        <section class="toolbar" aria-label="Dashboard actions">
+          <div class="field">
+            <label for="evaluationPath">Evaluation Manifest</label>
+            <input id="evaluationPath" value="evaluations/ridge-shopify-baseline.json">
+          </div>
+          <div class="field">
+            <label for="onlyPlugins">Selected Plugins</label>
+            <input id="onlyPlugins" placeholder="submitted-search,autocomplete">
+          </div>
+          <button id="runBtn">Run</button>
+          <button id="resumeBtn" class="secondary">Resume</button>
+          <button id="rerunBtn" class="secondary">Rerun</button>
+        </section>
+        <div id="actionResult" class="muted"></div>
+        <div id="detail"></div>
+      </div>
+      <div id="datasetView" hidden></div>
     </main>
   </div>
   <script>
-    const state = { inspections: [], selected: null };
+    const state = {
+      inspections: [],
+      selected: null,
+      view: 'inspections',
+      catalog: null,
+      dataset: null,
+      datasetError: null,
+      datasetPath: null,
+      datasetQuery: '',
+      datasetField: '',
+      selectedRecordIndex: -1
+    };
 
     function cls(status) {
       const value = String(status || '').toLowerCase();
@@ -583,6 +791,32 @@ function dashboardPage() {
     }
     function artifactHref(file) {
       return '/artifact?path=' + encodeURIComponent(file);
+    }
+    function datasetHash(file, query) {
+      return '#dataset=' + encodeURIComponent(file) + (query ? '&q=' + encodeURIComponent(query) : '');
+    }
+    function isDatasetFile(file) {
+      return typeof file === 'string' && (file.endsWith('.json') || file.endsWith('.jsonl'));
+    }
+    function evidenceLinks(file) {
+      if (!file) return '';
+      const raw = '<a href="' + artifactHref(file) + '" target="_blank">Raw</a>';
+      return isDatasetFile(file) ? '<a href="' + datasetHash(file) + '">View</a> · ' + raw : raw;
+    }
+    function formatBytes(bytes) {
+      if (!Number.isFinite(bytes)) return '';
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+    function parseHash() {
+      const hash = window.location.hash.replace(/^#/, '');
+      const params = new URLSearchParams(hash);
+      if (params.has('dataset')) {
+        return { view: 'datasets', path: params.get('dataset'), q: params.get('q') || '' };
+      }
+      if (hash.startsWith('datasets')) return { view: 'datasets', path: null, q: '' };
+      return { view: 'inspections', path: null, q: '' };
     }
     async function api(path, options) {
       const response = await fetch(path, options);
@@ -652,15 +886,183 @@ function dashboardPage() {
           metric('Duration', Math.round((summary.inspection_duration_ms || 0) / 1000) + ' sec', 'Run time') +
         '</section>' +
         panel('Report Readiness', 'What should be fixed?', '<div class="panel-body readiness"><div>' + pill(op.downstream_report_readiness) + '<p class="muted">' + escapeHtml(op.readiness_notes || '') + '</p></div><div class="readiness-stats"><span class="chip">' + platformGaps.length + ' platform gaps</span><span class="chip">' + infra.length + ' infrastructure limits</span><span class="chip">' + (op.blocked_experiments || 0) + ' blocked experiments</span></div></div>' +
-          table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + escapeHtml(item.issue) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>'])) +
+          table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '', dataset_link: gap.capability_id ? datasetHash('platform/capability-registry.json', gap.capability_id) : '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + (item.dataset_link ? '<a href="' + item.dataset_link + '">' + escapeHtml(item.issue) + '</a>' : escapeHtml(item.issue)) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>'])) +
         panel('Crawl Health', 'Inspection phases', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
         '<div class="two-col">' +
-          panel('Plugin State', 'Execution', table(['Plugin', 'Status', 'Observations', 'Evidence'], report.plugin_results || [], (item) => ['<td><strong>' + escapeHtml(item.plugin_id) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.observations || 0) + '</td>', '<td><a href="' + artifactHref(item.evidence_file) + '">Open</a></td>'])) +
-          panel('Datasets', 'DS1-DS4', table(['Dataset', 'Rows', 'Status', 'Artifact'], Object.entries(report.datasets || {}).map(([id, dataset]) => ({ id, ...dataset })), (item) => ['<td><strong>' + escapeHtml(item.id) + '</strong></td>', '<td>' + escapeHtml(item.rows) + '</td>', '<td>' + pill(item.status) + '</td>', '<td><a href="' + artifactHref(item.path) + '">Open</a></td>'])) +
+          panel('Plugin State', 'Execution', table(['Plugin', 'Status', 'Observations', 'Evidence'], report.plugin_results || [], (item) => ['<td><strong>' + escapeHtml(item.plugin_id) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.observations || 0) + '</td>', '<td>' + evidenceLinks(item.evidence_file) + '</td>'])) +
+          panel('Datasets', 'DS1-DS4', table(['Dataset', 'Rows', 'Status', 'Records'], Object.entries(report.datasets || {}).map(([id, dataset]) => ({ id, ...dataset })), (item) => ['<td><strong>' + escapeHtml(item.id) + '</strong></td>', '<td>' + escapeHtml(item.rows) + '</td>', '<td>' + pill(item.status) + '</td>', '<td>' + evidenceLinks(item.path) + '</td>'])) +
         '</div>' +
         panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
         panel('Inspection Timeline', 'Debug trace', table(['Time', 'Event', 'Details'], (data.timeline || []).slice(-30), (item) => { const copy = {...item}; delete copy.at; delete copy.event; delete copy.inspection_id; return ['<td class="mono">' + escapeHtml(item.at) + '</td>', '<td><strong>' + escapeHtml(item.event) + '</strong></td>', '<td><span class="mono">' + escapeHtml(JSON.stringify(copy)) + '</span></td>']; })) +
         panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+    }
+    function setView(view) {
+      state.view = view;
+      document.getElementById('tabInspections').classList.toggle('active', view === 'inspections');
+      document.getElementById('tabDatasets').classList.toggle('active', view === 'datasets');
+      document.getElementById('runList').hidden = view !== 'inspections';
+      document.getElementById('datasetNav').hidden = view !== 'datasets';
+      document.getElementById('inspectionView').hidden = view !== 'inspections';
+      document.getElementById('datasetView').hidden = view !== 'datasets';
+    }
+    async function loadCatalog() {
+      state.catalog = await api('/api/datasets');
+      renderDatasetNav();
+    }
+    function renderDatasetNav() {
+      const nav = document.getElementById('datasetNav');
+      if (!state.catalog) {
+        nav.innerHTML = '<div class="empty">Loading datasets...</div>';
+        return;
+      }
+      nav.innerHTML = state.catalog.groups.map((group) => {
+        const files = group.files || [];
+        return '<div class="dataset-group"><h3>' + escapeHtml(group.label) + '</h3><div class="dataset-files">' +
+          (files.length ? files.map((file) =>
+            '<button class="dataset-file' + (file.path === state.datasetPath ? ' active' : '') + '" data-path="' + escapeHtml(file.path) + '">' +
+              '<span class="file-name">' + escapeHtml(file.inspection_id ? (file.target_name || 'Run') + ' · ' + file.name : file.name) + '</span>' +
+              (file.inspection_id ? '<small>' + escapeHtml(file.inspection_id) + '</small>' : '') +
+              '<small>' + escapeHtml(file.format.toUpperCase() + ' · ' + formatBytes(file.size_bytes)) + '</small>' +
+            '</button>').join('') : '<div class="empty">No files.</div>') +
+        '</div></div>';
+      }).join('');
+      for (const button of nav.querySelectorAll('button[data-path]')) {
+        button.addEventListener('click', () => {
+          window.location.hash = datasetHash(button.dataset.path);
+        });
+      }
+    }
+    async function openDataset(file, query) {
+      const samePath = state.datasetPath === file && state.dataset;
+      state.datasetQuery = query || '';
+      state.selectedRecordIndex = -1;
+      if (!samePath) {
+        state.datasetPath = file;
+        state.datasetField = '';
+        state.dataset = null;
+        state.datasetError = null;
+        window.scrollTo(0, 0);
+        renderDatasetNav();
+        renderDatasetView();
+        try {
+          state.dataset = await api('/api/dataset?path=' + encodeURIComponent(file));
+        } catch (error) {
+          state.datasetError = error.message;
+        }
+        renderDatasetNav();
+      }
+      renderDatasetView();
+    }
+    function recordText(record, field) {
+      const value = field ? record[field] : record;
+      if (value === null || value === undefined) return '';
+      return typeof value === 'string' ? value : JSON.stringify(value);
+    }
+    function filteredRecords() {
+      const query = state.datasetQuery.trim().toLowerCase();
+      const rows = state.dataset.records.map((record, index) => ({ record, index }));
+      if (!query) return rows;
+      return rows.filter(({ record }) => recordText(record, state.datasetField).toLowerCase().includes(query));
+    }
+    function displayFields() {
+      const fields = state.dataset.fields;
+      const priority = fields.filter((field) => /(^|_)(id|name|query|title|status|type)$/i.test(field));
+      const rest = fields.filter((field) => !priority.includes(field));
+      return [...priority, ...rest].slice(0, 8);
+    }
+    function cellValue(value) {
+      if (value === null || value === undefined) return '';
+      const text = typeof value === 'string' ? value : JSON.stringify(value);
+      return text.length > 140 ? text.slice(0, 140) + '…' : text;
+    }
+    function renderDatasetView() {
+      const view = document.getElementById('datasetView');
+      if (!state.datasetPath) {
+        view.innerHTML = panel('Dataset Viewer', 'Browse repo datasets', '<div class="panel-body">Select a dataset on the left to inspect its records with search and field filtering. Evaluations, targets, query packs, site profiles, platform registries, inspection history, and generated DS1-DS4 run datasets are all available here.</div>');
+        return;
+      }
+      if (state.datasetError) {
+        view.innerHTML = panel('Dataset Viewer', 'Error', '<div class="panel-body">Could not load ' + escapeHtml(state.datasetPath) + ': ' + escapeHtml(state.datasetError) + '</div>');
+        return;
+      }
+      if (!state.dataset) {
+        view.innerHTML = '<div class="empty">Loading dataset...</div>';
+        return;
+      }
+      const data = state.dataset;
+      const manifest = data.meta && data.meta.manifest ? Object.entries(data.meta.manifest) : [];
+      view.innerHTML =
+        '<section class="hero"><div><p class="eyebrow">Dataset</p><h1>' + escapeHtml(data.path.split('/').pop()) + '</h1>' +
+          '<div class="subline"><span class="mono">' + escapeHtml(data.path) + '</span><span>Modified ' + escapeHtml(data.modified_at) + '</span><span><a href="' + artifactHref(data.path) + '" target="_blank">Open raw file</a></span></div></div>' +
+          '<div>' + pill(data.format) + '<div class="muted" style="margin-top:8px">' + data.record_count + ' records · ' + escapeHtml(formatBytes(data.size_bytes)) + '</div></div></section>' +
+        (manifest.length ? panel('Manifest', data.meta.record_field ? 'Records read from "' + escapeHtml(data.meta.record_field) + '"' : '', table(['Field', 'Value'], manifest, (entry) => ['<td><strong>' + escapeHtml(entry[0]) + '</strong></td>', '<td><span class="mono">' + escapeHtml(cellValue(entry[1])) + '</span></td>'])) : '') +
+        '<section class="panel"><div class="panel-head"><h2>Records</h2><span id="datasetCount"></span></div>' +
+          '<div class="dataset-controls">' +
+            '<div class="field"><label for="datasetSearch">Search</label><input id="datasetSearch" placeholder="Filter records" value="' + escapeHtml(state.datasetQuery) + '"></div>' +
+            '<div class="field"><label for="datasetField">Field</label><select id="datasetField"><option value="">All fields</option>' + data.fields.map((field) => '<option value="' + escapeHtml(field) + '"' + (field === state.datasetField ? ' selected' : '') + '>' + escapeHtml(field) + '</option>').join('') + '</select></div>' +
+          '</div>' +
+          '<div id="datasetRecords"></div>' +
+          '<div class="record-detail" id="recordDetail"></div>' +
+        '</section>';
+      document.getElementById('datasetSearch').addEventListener('input', (event) => {
+        state.datasetQuery = event.target.value;
+        state.selectedRecordIndex = -1;
+        renderDatasetRecords();
+      });
+      document.getElementById('datasetField').addEventListener('change', (event) => {
+        state.datasetField = event.target.value;
+        state.selectedRecordIndex = -1;
+        renderDatasetRecords();
+      });
+      renderDatasetRecords();
+    }
+    function renderDatasetRecords() {
+      const rows = filteredRecords();
+      const counter = document.getElementById('datasetCount');
+      counter.textContent = rows.length + ' of ' + state.dataset.record_count + ' records' + (state.dataset.truncated ? ' (first ' + state.dataset.returned_count + ' loaded)' : '');
+      const fields = displayFields();
+      document.getElementById('datasetRecords').innerHTML = rows.length
+        ? '<div class="table-wrap"><table><thead><tr>' + fields.map((field) => '<th>' + escapeHtml(field) + '</th>').join('') + '</tr></thead><tbody>' +
+          rows.slice(0, 200).map(({ record, index }) =>
+            '<tr class="record-row' + (index === state.selectedRecordIndex ? ' selected' : '') + '" data-index="' + index + '">' +
+              fields.map((field) => '<td>' + escapeHtml(cellValue(record[field])) + '</td>').join('') +
+            '</tr>').join('') +
+          '</tbody></table></div>' +
+          (rows.length > 200 ? '<div class="empty" style="padding:12px 16px">Showing the first 200 matching records; refine the search to narrow further.</div>' : '')
+        : '<div class="empty" style="padding:12px 16px">No records match the current filter.</div>';
+      for (const row of document.querySelectorAll('#datasetRecords tr.record-row')) {
+        row.addEventListener('click', () => {
+          state.selectedRecordIndex = Number(row.dataset.index);
+          renderDatasetRecords();
+        });
+      }
+      renderRecordDetail();
+    }
+    function renderRecordDetail() {
+      const container = document.getElementById('recordDetail');
+      const record = state.dataset.records[state.selectedRecordIndex];
+      if (state.selectedRecordIndex < 0 || !record) {
+        container.innerHTML = '';
+        return;
+      }
+      container.innerHTML = '<div class="panel-body"><h3>Record ' + (state.selectedRecordIndex + 1) + ' of ' + state.dataset.record_count + '</h3>' +
+        '<div class="table-wrap"><table><tbody>' + Object.entries(record).map(([key, value]) =>
+          '<tr><td style="width:220px"><strong>' + escapeHtml(key) + '</strong></td><td><pre class="mono">' + escapeHtml(typeof value === 'string' ? value : JSON.stringify(value, null, 2)) + '</pre></td></tr>').join('') +
+        '</tbody></table></div></div>';
+    }
+    async function applyHash() {
+      const route = parseHash();
+      setView(route.view);
+      if (route.view !== 'datasets') return;
+      if (!state.catalog) loadCatalog().catch((error) => {
+        document.getElementById('datasetNav').innerHTML = '<div class="empty">Dataset catalog failed to load: ' + escapeHtml(error.message) + '</div>';
+      });
+      if (route.path) {
+        await openDataset(route.path, route.q);
+      } else {
+        renderDatasetNav();
+        renderDatasetView();
+      }
     }
     async function runAction(kind) {
       const body = {};
@@ -685,8 +1087,16 @@ function dashboardPage() {
     document.getElementById('runBtn').addEventListener('click', () => runAction('run').catch((error) => alert(error.message)));
     document.getElementById('resumeBtn').addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
     document.getElementById('rerunBtn').addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
+    document.getElementById('tabInspections').addEventListener('click', () => { window.location.hash = '#inspections'; });
+    document.getElementById('tabDatasets').addEventListener('click', () => { window.location.hash = '#datasets'; });
+    window.addEventListener('hashchange', () => applyHash().catch((error) => {
+      document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">Dataset view failed to load: ' + escapeHtml(error.message) + '</div></div>';
+    }));
     refresh().catch((error) => {
       document.getElementById('detail').innerHTML = '<div class="panel"><div class="panel-body">Dashboard failed to load: ' + escapeHtml(error.message) + '</div></div>';
+    });
+    applyHash().catch((error) => {
+      document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">Dataset view failed to load: ' + escapeHtml(error.message) + '</div></div>';
     });
   </script>
 </body>
@@ -723,6 +1133,26 @@ function routeRequest(rootDir, request, response) {
       return;
     }
     sendJson(response, 200, loadRun(rootDir, row.output_dir));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/datasets') {
+    sendJson(response, 200, datasetCatalog(rootDir));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/dataset') {
+    try {
+      const limit = Number(url.searchParams.get('limit'));
+      const dataset = loadDataset(rootDir, url.searchParams.get('path'), limit);
+      if (!dataset) {
+        sendJson(response, 404, { error: 'Dataset not found.' });
+        return;
+      }
+      sendJson(response, 200, dataset);
+    } catch (error) {
+      sendJson(response, 400, { error: error.message });
+    }
     return;
   }
 
