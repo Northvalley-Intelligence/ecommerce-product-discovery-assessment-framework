@@ -1,0 +1,58 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-014-20260714T220916Z",
+  "generated_at": "2026-07-14T22:10:54.019Z",
+  "artifact_count": 33,
+  "groups": {
+    "evidence": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/facets.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/mobile.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/recommendations.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/dashboard.html",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/inspection-report.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-90s-nostalgia.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-a-fall-affair.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-accessorize-yourself.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-cozy-christmas.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-type-graphic-sweatshirt.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-90s-nostalgia.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-a-fall-affair.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-accessorize-yourself.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-cozy-christmas.png",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-type-graphic-sweatshirt.png"
+    ],
+    "raw_http": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/artifact-index.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/cache-metadata.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/dashboard.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/platform-capability-report.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/plugin-dependency-graph.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/plugin-state.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/run-manifest.json",
+      "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/site-profile.json"
+    ]
+  }
+}

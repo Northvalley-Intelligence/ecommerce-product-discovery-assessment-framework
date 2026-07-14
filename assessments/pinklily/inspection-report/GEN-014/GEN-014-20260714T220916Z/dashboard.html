@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinklily Dashboard</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #17202a;
+      --muted: #5d6978;
+      --line: #d9dee6;
+      --blue: #285c9d;
+      --green: #197048;
+      --amber: #9a6500;
+      --red: #b42318;
+      --soft-blue: #e8f1fb;
+      --soft-green: #e7f6ee;
+      --soft-amber: #fff4db;
+      --soft-red: #fde8e5;
+      --soft-gray: #eef1f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 32px 40px 24px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      margin: 0 0 4px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    h2, h3 { letter-spacing: 0; }
+    .subline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .hero-status {
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    main {
+      width: min(1440px, calc(100% - 48px));
+      margin: 24px auto 56px;
+    }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .metric-grid.primary {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .metric-grid.small {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .metric-value {
+      margin-top: 10px;
+      font-size: 24px;
+      line-height: 1.15;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+    .metric-detail {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .metric.status-pass { border-color: #9bd6b6; background: var(--soft-green); }
+    .metric.status-warn { border-color: #e5c46f; background: var(--soft-amber); }
+    .metric.status-fail { border-color: #f0a19a; background: var(--soft-red); }
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfd;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .section-heading span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      text-align: left;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      background: #fbfcfd;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .strong { font-weight: 700; }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+    .nowrap { white-space: nowrap; }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .status-pass { background: var(--soft-green); color: var(--green); border: 1px solid #9bd6b6; }
+    .status-warn { background: var(--soft-amber); color: var(--amber); border: 1px solid #e5c46f; }
+    .status-fail { background: var(--soft-red); color: var(--red); border: 1px solid #f0a19a; }
+    .status-muted { background: var(--soft-gray); color: var(--muted); border: 1px solid var(--line); }
+    .readiness {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .readiness p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    .readiness-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      min-width: 280px;
+    }
+    .readiness-stats span {
+      padding: 7px 10px;
+      background: var(--soft-gray);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .coverage-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 22px 20px 0;
+    }
+    .coverage-meter {
+      height: 18px;
+      border-radius: 999px;
+      background: var(--soft-gray);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .coverage-meter div {
+      height: 100%;
+      background: var(--blue);
+    }
+    .coverage-number {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--blue);
+    }
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+    }
+    .artifact-group {
+      padding: 16px 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 140px;
+    }
+    .artifact-group:nth-child(2n) { border-right: 0; }
+    .artifact-group h3 {
+      margin: 0 0 12px;
+      font-size: 14px;
+    }
+    .artifact-group ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .artifact-group li {
+      display: grid;
+      gap: 2px;
+    }
+    .artifact-group li span {
+      color: var(--muted);
+      font-size: 11px;
+      overflow-wrap: anywhere;
+    }
+    .empty {
+      padding: 18px 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .empty.compact { padding: 0; }
+    footer {
+      padding: 22px 40px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+      background: var(--panel);
+    }
+    @media (max-width: 1050px) {
+      .metric-grid.primary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 720px) {
+      .hero {
+        padding: 24px 18px;
+        flex-direction: column;
+      }
+      .hero-status { align-items: flex-start; }
+      main { width: calc(100% - 24px); margin-top: 14px; }
+      .metric-grid.primary,
+      .metric-grid,
+      .metric-grid.small,
+      .artifact-grid {
+        grid-template-columns: 1fr;
+      }
+      .readiness,
+      .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .readiness-stats { justify-content: flex-start; min-width: 0; }
+      .artifact-group { border-right: 0; }
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Inspection Dashboard</p>
+        <h1>Pinklily</h1>
+        <div class="subline">
+          <span>GEN-014-20260714T220916Z</span>
+          <span>https://pinklily.com/</span>
+          <span>2026-07-14T22:10:54.012Z</span>
+        </div>
+      </div>
+      <div class="hero-status">
+        <span class="status status-warn">PARTIAL</span>
+        <span>bounded</span>
+      </div>
+    </header>
+    <main>
+      <section class="metric-grid primary" aria-label="Inspection status metrics">
+        
+    <article class="metric status-warn">
+      <div class="metric-label">Inspection Status</div>
+      <div class="metric-value">partial</div>
+      <div class="metric-detail">Overall run state</div>
+    </article>
+  
+        
+    <article class="metric status-pass">
+      <div class="metric-label">Report Readiness</div>
+      <div class="metric-value">bounded</div>
+      <div class="metric-detail">Inspection evidence is sufficient for a bounded technical Inspection Report export.</div>
+    </article>
+  
+        
+    <article class="metric status-warn">
+      <div class="metric-label">Evidence Quality</div>
+      <div class="metric-value">partial</div>
+      <div class="metric-detail">Observed evidence completeness</div>
+    </article>
+  
+        
+    <article class="metric status-muted">
+      <div class="metric-label">Overall Confidence</div>
+      <div class="metric-value">Medium</div>
+      <div class="metric-detail">Trust in collected evidence</div>
+    </article>
+  
+        
+    <article class="metric ">
+      <div class="metric-label">Platform</div>
+      <div class="metric-value">shopify</div>
+      <div class="metric-detail">High confidence</div>
+    </article>
+  
+        
+    <article class="metric ">
+      <div class="metric-label">Duration</div>
+      <div class="metric-value">2 min</div>
+      <div class="metric-detail">Inspection runtime</div>
+    </article>
+  
+      </section>
+  
+  
+    <section class="section " id="readiness">
+      <div class="section-heading">
+        <h2>Report Readiness</h2>
+        <span>Can downstream reports be generated?</span>
+      </div>
+      
+      <div class="readiness">
+        <div>
+          <span class="status status-pass">BOUNDED</span>
+          <p>Inspection evidence is sufficient for a bounded technical Inspection Report export.</p>
+        </div>
+        <div class="readiness-stats">
+          <span>0 platform gaps</span>
+          <span>0 infrastructure limitations</span>
+          <span>0 blocked experiments</span>
+        </div>
+      </div>
+      <div class="empty">No blockers recorded.</div>
+    
+    </section>
+  
+  
+    <section class="section " id="coverage">
+      <div class="section-heading">
+        <h2>Evidence Coverage</h2>
+        <span>Collected vs expected surfaces</span>
+      </div>
+      
+      <div class="coverage-layout">
+        <div class="coverage-meter" aria-label="Evidence coverage 90%">
+          <div style="width: 90%"></div>
+        </div>
+        <div class="coverage-number">90%</div>
+      </div>
+      <div class="metric-grid small">
+        
+    <article class="metric ">
+      <div class="metric-label">Plugin Observations</div>
+      <div class="metric-value">28</div>
+      <div class="metric-detail">Rows captured by active plugins</div>
+    </article>
+  
+        
+    <article class="metric ">
+      <div class="metric-label">Dataset Rows</div>
+      <div class="metric-value">33</div>
+      <div class="metric-detail">Generated DS1-DS4 rows</div>
+    </article>
+  
+        
+    <article class="metric ">
+      <div class="metric-label">Evidence Quality</div>
+      <div class="metric-value">partial</div>
+      <div class="metric-detail">Coverage and completeness</div>
+    </article>
+  
+      </div>
+    
+    </section>
+  
+  
+    <section class="section " id="crawl-health">
+      <div class="section-heading">
+        <h2>Crawl Health</h2>
+        <span>Inspection phases</span>
+      </div>
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Surface</th><th>Status</th><th>Confidence</th><th>Evidence Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong">Homepage</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>High</td>
+            <td>Homepage responded.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Search</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Medium</td>
+            <td>8/8 submitted search observations completed.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Browse</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>Medium</td>
+            <td>Collections endpoint responded; full browse graph extraction is not in the first implementation slice.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Autocomplete</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Medium</td>
+            <td>8/8 autocomplete observations returned suggestions.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Product Pages</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>Medium</td>
+            <td>Products endpoint responded; rendered product pages were not captured in this first slice.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Facets</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Medium</td>
+            <td>2/2 facet markup observations completed.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Recommendations</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Medium</td>
+            <td>3/3 recommendations endpoint observations completed.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Mobile</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Medium</td>
+            <td>2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Competitor Inspection</td>
+            <td><span class="status status-muted">NOT_RUN</span></td>
+            <td>Unknown</td>
+            <td>Peer inspection is not enabled in this evaluation manifest.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">Rendered Storefront</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>High</td>
+            <td>5/5 rendered captures completed; 3/5 showed a visible autocomplete dropdown (P008).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    </section>
+  
+  
+    <section class="section " id="experiments">
+      <div class="section-heading">
+        <h2>Experiment Results</h2>
+        <span>Submitted search and autocomplete</span>
+      </div>
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Plugin</th><th>Status</th><th>Observations</th><th>Confidence</th><th>Evidence Quality</th><th>Evidence File</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong">submitted-search</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>8</td>
+            <td>Medium</td>
+            <td>bounded</td>
+            <td><a href="evidence/experiments/submitted-search.jsonl">submitted-search.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">autocomplete</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>8</td>
+            <td>Medium</td>
+            <td>bounded</td>
+            <td><a href="evidence/experiments/autocomplete.jsonl">autocomplete.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">facets</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>2</td>
+            <td>Medium</td>
+            <td>bounded</td>
+            <td><a href="evidence/experiments/facets.jsonl">facets.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">recommendations</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>3</td>
+            <td>Medium</td>
+            <td>bounded</td>
+            <td><a href="evidence/experiments/recommendations.jsonl">recommendations.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">mobile</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>2</td>
+            <td>Medium</td>
+            <td>bounded</td>
+            <td><a href="evidence/experiments/mobile.jsonl">mobile.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">rendered-search</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>5</td>
+            <td>High</td>
+            <td>rendered</td>
+            <td><a href="evidence/experiments/rendered-search.jsonl">rendered-search.jsonl</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    </section>
+  
+  
+    <section class="section " id="datasets">
+      <div class="section-heading">
+        <h2>Datasets</h2>
+        <span>Reusable query evidence</span>
+      </div>
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Dataset</th><th>Status</th><th>Rows</th><th>Artifact</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong">DS1</td>
+            <td><span class="status status-muted">GENERATED</span></td>
+            <td>8</td>
+            <td><a href="evidence/datasets/ds1-canonical-search.jsonl">ds1-canonical-search.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">DS2</td>
+            <td><span class="status status-muted">GENERATED</span></td>
+            <td>23</td>
+            <td><a href="evidence/datasets/ds2-query-normalization.jsonl">ds2-query-normalization.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">DS3</td>
+            <td><span class="status status-muted">EMPTY</span></td>
+            <td>0</td>
+            <td><a href="evidence/datasets/ds3-search-facet.jsonl">ds3-search-facet.jsonl</a></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">DS4</td>
+            <td><span class="status status-muted">GENERATED</span></td>
+            <td>2</td>
+            <td><a href="evidence/datasets/ds4-advanced-retrieval.jsonl">ds4-advanced-retrieval.jsonl</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    </section>
+  
+  
+    <section class="section " id="endpoints">
+      <div class="section-heading">
+        <h2>Endpoint Discovery</h2>
+        <span>Observed access paths</span>
+      </div>
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Endpoint</th><th>Status</th><th>Result</th><th>Confidence</th><th>URL</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong">homepage</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Accessible</td>
+            <td>High</td>
+            <td><span class="mono">https://pinklily.com/</span></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">robots</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Accessible</td>
+            <td>High</td>
+            <td><span class="mono">https://pinklily.com/robots.txt</span></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">products_json</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Accessible</td>
+            <td>High</td>
+            <td><span class="mono">https://pinklily.com/products.json?limit=10</span></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">collections_json</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Accessible</td>
+            <td>High</td>
+            <td><span class="mono">https://pinklily.com/collections.json?limit=20</span></td>
+          </tr>
+        
+          <tr>
+            <td class="strong">search_suggest_json</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>Accessible</td>
+            <td>High</td>
+            <td><span class="mono">https://pinklily.com/search/suggest.json?q=wallet&amp;resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&amp;resources%5Blimit%5D=5</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    </section>
+  
+  
+    <section class="section " id="platform">
+      <div class="section-heading">
+        <h2>Platform Capability</h2>
+        <span>Evaluator status: warn</span>
+      </div>
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Capability</th><th>Status</th><th>Maturity</th><th>Validator</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong">P001 URL Normalization</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>1</td>
+            <td>url-parsing</td>
+            <td>Capability is implemented for the current evaluator version.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P002 HTTPS Handling</td>
+            <td><span class="status status-pass">PASS</span></td>
+            <td>1</td>
+            <td>https-handling</td>
+            <td>Capability is implemented for the current evaluator version.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P003 Redirect Handling</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>1</td>
+            <td>redirect-handling</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P004 Robots Discovery</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>1</td>
+            <td>robots-discovery</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P005 Shopify Discovery</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>shopify-discovery</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P006 Submitted Search Endpoint Inspection</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>submitted-search-endpoint</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P007 Autocomplete Suggest Endpoint Inspection</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>suggest-endpoint</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P008 Rendered Page Capture</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>3</td>
+            <td>rendered-capture</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P009 Block Classification</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>1</td>
+            <td>block-classification</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P010 Request Pacing and Transient Retry</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>1</td>
+            <td>request-pacing</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P011 Facet Markup Inspection</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>facet-inspection</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P012 Recommendations Endpoint Inspection</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>recommendations-endpoint</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P013 Mobile User-Agent Inspection</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>mobile-ua-inspection</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        
+          <tr>
+            <td class="strong">P014 Same-Query Peer Inspection</td>
+            <td><span class="status status-warn">WARN</span></td>
+            <td>2</td>
+            <td>peer-same-query</td>
+            <td>Capability is available as a bounded implementation and may need expansion after real inspections.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    </section>
+  
+  
+    <section class="section " id="timeline">
+      <div class="section-heading">
+        <h2>Inspection Timeline</h2>
+        <span>Chronological run record</span>
+      </div>
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Event</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:38.288Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;autocomplete&quot;,&quot;query_id&quot;:&quot;pinklily-type-striped-shorts&quot;,&quot;status&quot;:200,&quot;suggestion_count&quot;:8,&quot;classification&quot;:null}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:39.701Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;autocomplete&quot;,&quot;query_id&quot;:&quot;pinklily-type-neck-top&quot;,&quot;status&quot;:200,&quot;suggestion_count&quot;:5,&quot;classification&quot;:null}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:41.115Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;autocomplete&quot;,&quot;query_id&quot;:&quot;pinklily-type-striped-tee&quot;,&quot;status&quot;:200,&quot;suggestion_count&quot;:8,&quot;classification&quot;:null}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:41.119Z</td>
+            <td class="strong">Plugin Completed</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;autocomplete&quot;,&quot;status&quot;:&quot;pass&quot;,&quot;observations&quot;:8}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:41.119Z</td>
+            <td class="strong">Plugin Started</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;facets&quot;}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:44.238Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;facets&quot;,&quot;collection_handle&quot;:&quot;10-under-sale&quot;,&quot;status&quot;:200,&quot;facet_markup_present&quot;:false}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:46.146Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;facets&quot;,&quot;collection_handle&quot;:&quot;15-under-sale&quot;,&quot;status&quot;:200,&quot;facet_markup_present&quot;:false}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:46.147Z</td>
+            <td class="strong">Plugin Completed</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;facets&quot;,&quot;status&quot;:&quot;pass&quot;,&quot;observations&quot;:2}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:46.147Z</td>
+            <td class="strong">Plugin Started</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;recommendations&quot;}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:49.107Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;recommendations&quot;,&quot;source_product_id&quot;:7414755754039,&quot;status&quot;:200,&quot;recommended_product_count&quot;:8}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:50.532Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;recommendations&quot;,&quot;source_product_id&quot;:7455629246519,&quot;status&quot;:200,&quot;recommended_product_count&quot;:8}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:52.032Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;recommendations&quot;,&quot;source_product_id&quot;:7455629213751,&quot;status&quot;:200,&quot;recommended_product_count&quot;:8}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:52.034Z</td>
+            <td class="strong">Plugin Completed</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;recommendations&quot;,&quot;status&quot;:&quot;pass&quot;,&quot;observations&quot;:3}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:52.034Z</td>
+            <td class="strong">Plugin Started</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;mobile&quot;}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:53.711Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;mobile&quot;,&quot;probe_id&quot;:&quot;mobile-homepage&quot;,&quot;status&quot;:200}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:55.405Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;mobile&quot;,&quot;probe_id&quot;:&quot;mobile-search&quot;,&quot;status&quot;:200}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:55.408Z</td>
+            <td class="strong">Plugin Completed</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;mobile&quot;,&quot;status&quot;:&quot;pass&quot;,&quot;observations&quot;:2}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:09:55.408Z</td>
+            <td class="strong">Plugin Started</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:10:07.974Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;,&quot;query_id&quot;:&quot;pinklily-col-cozy-christmas&quot;,&quot;rendered_ok&quot;:true,&quot;visible_suggestions&quot;:7}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:10:19.060Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;,&quot;query_id&quot;:&quot;pinklily-col-a-fall-affair&quot;,&quot;rendered_ok&quot;:true,&quot;visible_suggestions&quot;:7}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:10:30.156Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;,&quot;query_id&quot;:&quot;pinklily-col-90s-nostalgia&quot;,&quot;rendered_ok&quot;:true,&quot;visible_suggestions&quot;:0}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:10:42.502Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;,&quot;query_id&quot;:&quot;pinklily-col-accessorize-yourself&quot;,&quot;rendered_ok&quot;:true,&quot;visible_suggestions&quot;:0}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:10:53.962Z</td>
+            <td class="strong">Plugin Observation Recorded</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;,&quot;query_id&quot;:&quot;pinklily-type-graphic-sweatshirt&quot;,&quot;rendered_ok&quot;:true,&quot;visible_suggestions&quot;:7}</span></td>
+          </tr>
+        
+          <tr>
+            <td class="nowrap">2026-07-14T22:10:54.009Z</td>
+            <td class="strong">Plugin Completed</td>
+            <td><span class="mono">{&quot;plugin_id&quot;:&quot;rendered-search&quot;,&quot;status&quot;:&quot;pass&quot;,&quot;observations&quot;:5}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    </section>
+  
+  
+    <section class="section " id="artifacts">
+      <div class="section-heading">
+        <h2>Artifact Explorer</h2>
+        <span>Raw evidence and generated outputs</span>
+      </div>
+      <div class="artifact-grid">
+        <div class="artifact-group">
+          <h3>Evidence</h3>
+          <ul><li><a href="evidence/experiments/autocomplete.jsonl">autocomplete.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/autocomplete.jsonl</span></li><li><a href="evidence/experiments/facets.jsonl">facets.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/facets.jsonl</span></li><li><a href="evidence/experiments/mobile.jsonl">mobile.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/mobile.jsonl</span></li><li><a href="evidence/experiments/recommendations.jsonl">recommendations.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/recommendations.jsonl</span></li><li><a href="evidence/experiments/rendered-search.jsonl">rendered-search.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/rendered-search.jsonl</span></li><li><a href="evidence/experiments/submitted-search.jsonl">submitted-search.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/submitted-search.jsonl</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Reports</h3>
+          <ul><li><a href="dashboard.html">dashboard.html</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/dashboard.html</span></li><li><a href="inspection-report.json">inspection-report.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/inspection-report.json</span></li><li><a href="inspection-report.md">inspection-report.md</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/inspection-report.md</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Datasets</h3>
+          <ul><li><a href="evidence/datasets/ds1-canonical-search.jsonl">ds1-canonical-search.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/datasets/ds1-canonical-search.jsonl</span></li><li><a href="evidence/datasets/ds2-query-normalization.jsonl">ds2-query-normalization.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/datasets/ds2-query-normalization.jsonl</span></li><li><a href="evidence/datasets/ds4-advanced-retrieval.jsonl">ds4-advanced-retrieval.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/datasets/ds4-advanced-retrieval.jsonl</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Screenshots</h3>
+          <ul><li><a href="evidence/screenshots/rendered-autocomplete-pinklily-col-90s-nostalgia.png">rendered-autocomplete-pinklily-col-90s-nostalgia.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-90s-nostalgia.png</span></li><li><a href="evidence/screenshots/rendered-autocomplete-pinklily-col-a-fall-affair.png">rendered-autocomplete-pinklily-col-a-fall-affair.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-a-fall-affair.png</span></li><li><a href="evidence/screenshots/rendered-autocomplete-pinklily-col-accessorize-yourself.png">rendered-autocomplete-pinklily-col-accessorize-yourself.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-accessorize-yourself.png</span></li><li><a href="evidence/screenshots/rendered-autocomplete-pinklily-col-cozy-christmas.png">rendered-autocomplete-pinklily-col-cozy-christmas.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-col-cozy-christmas.png</span></li><li><a href="evidence/screenshots/rendered-autocomplete-pinklily-type-graphic-sweatshirt.png">rendered-autocomplete-pinklily-type-graphic-sweatshirt.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-autocomplete-pinklily-type-graphic-sweatshirt.png</span></li><li><a href="evidence/screenshots/rendered-search-pinklily-col-90s-nostalgia.png">rendered-search-pinklily-col-90s-nostalgia.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-90s-nostalgia.png</span></li><li><a href="evidence/screenshots/rendered-search-pinklily-col-a-fall-affair.png">rendered-search-pinklily-col-a-fall-affair.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-a-fall-affair.png</span></li><li><a href="evidence/screenshots/rendered-search-pinklily-col-accessorize-yourself.png">rendered-search-pinklily-col-accessorize-yourself.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-accessorize-yourself.png</span></li><li><a href="evidence/screenshots/rendered-search-pinklily-col-cozy-christmas.png">rendered-search-pinklily-col-cozy-christmas.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-col-cozy-christmas.png</span></li><li><a href="evidence/screenshots/rendered-search-pinklily-type-graphic-sweatshirt.png">rendered-search-pinklily-type-graphic-sweatshirt.png</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/screenshots/rendered-search-pinklily-type-graphic-sweatshirt.png</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Raw Http</h3>
+          <ul><li><a href="raw/http/site-profile-endpoints.json">site-profile-endpoints.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/raw/http/site-profile-endpoints.json</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Raw Html</h3>
+          <div class="empty compact">No artifacts.</div>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Timeline</h3>
+          <ul><li><a href="evidence/timeline.jsonl">timeline.jsonl</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/timeline.jsonl</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Inspection Model</h3>
+          <ul><li><a href="inspection-model.json">inspection-model.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/inspection-model.json</span></li></ul>
+        </div>
+      
+        <div class="artifact-group">
+          <h3>Other</h3>
+          <ul><li><a href="artifact-index.json">artifact-index.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/artifact-index.json</span></li><li><a href="cache-metadata.json">cache-metadata.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/cache-metadata.json</span></li><li><a href="dashboard.json">dashboard.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/dashboard.json</span></li><li><a href="platform-capability-report.json">platform-capability-report.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/platform-capability-report.json</span></li><li><a href="plugin-dependency-graph.json">plugin-dependency-graph.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/plugin-dependency-graph.json</span></li><li><a href="plugin-state.json">plugin-state.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/plugin-state.json</span></li><li><a href="run-manifest.json">run-manifest.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/run-manifest.json</span></li><li><a href="site-profile.json">site-profile.json</a><span>assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/site-profile.json</span></li></ul>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+  <footer>
+    Inspection evidence artifact: GEN-014-20260714T220916Z. Generated from inspection-report.json.
+  </footer>
+</body>
+</html>

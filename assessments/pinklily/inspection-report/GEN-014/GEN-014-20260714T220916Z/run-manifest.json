@@ -1,0 +1,81 @@
+{
+  "schema_version": "inspection-run-manifest-v0.1",
+  "inspection_id": "GEN-014-20260714T220916Z",
+  "evaluation_manifest_path": "evaluations/pinklily-shopify-baseline.json",
+  "evaluation": {
+    "schema_version": "evaluation-manifest-v0.1",
+    "evaluation_id": "pinklily-shopify-baseline",
+    "evaluation_type": "baseline_inspection",
+    "generation": "GEN-014",
+    "workspace": "workspaces/retail-search-research.json",
+    "target": "targets/pinklily.json",
+    "site_profile": {
+      "mode": "refresh",
+      "path": "site-profiles/pinklily.com.json",
+      "max_age_hours": 168
+    },
+    "query_packs": [
+      "query-packs/pinklily-curated.json"
+    ],
+    "surfaces": [
+      "submitted_search",
+      "autocomplete",
+      "facets",
+      "recommendations",
+      "mobile",
+      "rendered_search"
+    ],
+    "plugins": [
+      "submitted-search",
+      "autocomplete",
+      "facets",
+      "recommendations",
+      "mobile",
+      "rendered-search"
+    ],
+    "competitors": [],
+    "rendering": {
+      "desktop": true,
+      "mobile": false,
+      "screenshots": true
+    },
+    "platform_validation": {
+      "required": true,
+      "minimum_maturity_level": 2
+    },
+    "output": {
+      "base_dir": "assessments/pinklily/inspection-report/GEN-014"
+    }
+  },
+  "target": {
+    "schema_version": "target-manifest-v0.1",
+    "target_id": "pinklily",
+    "name": "Pinklily",
+    "primary_url": "https://pinklily.com/",
+    "domain": "pinklily.com",
+    "platform": {
+      "expected": "shopify",
+      "canonical_platform_host": null,
+      "confidence": "unverified",
+      "source": "Operator onboarded pinklily.com through the dashboard on the Shopify-supported path; the inspection verifies platform detection from observed payloads."
+    },
+    "inspection_defaults": {
+      "respect_robots": true,
+      "timeout_ms": 15000,
+      "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
+    },
+    "known_limitations": [
+      {
+        "type": "infrastructure",
+        "code": "rendered_capture_not_available",
+        "notes": "Rendered UI evidence requires platform capability P008, which is not implemented yet."
+      }
+    ]
+  },
+  "query_packs": [
+    {
+      "query_pack_id": "pinklily-curated",
+      "query_count": 8
+    }
+  ]
+}

@@ -527,3 +527,21 @@ Repository Governance:
 
 Recommendation:
 - Route the next generation. Candidates in priority order: P008 rendered page capture + browse-graph extraction (gates non-Shopify targets per 3A), application-generated executive reports consuming Inspection Reports (BDD-G13-009), maturity-threshold enforcement (BDD-G13-012), and accumulating the 10-20 real Shopify inspections required by the GEN-14 planning gate.
+
+## GEN-014 Phase Exit (2026-07-14)
+
+Scope Completed:
+- Full-cycle local application: Add Site by URL in the dashboard (manifest generation + auto-inspection), executive report generation from retained evidence only, catalog-curated query packs, Northvalley-branded executive PDFs, and P008 rendered page capture with screenshots and visible-versus-API comparison.
+- Operator decisions 1A/2A/3A ratified and applied (full raw payload retention, timestamp IDs, maturity gate).
+- Live proof throughout on pinklily.com, onboarded through the UI: curated re-inspection ran 8/8 store-specific queries with products; rendered runs photographed 5/5 result pages and 3/5 visible dropdowns.
+- Platform: P008 flipped to implemented_basic (registry + timeline); compliant Shopify runs record zero capability gaps; per-generation inspection history.
+
+Validation Result:
+- Gate: two clean passes (`VAL-057`, `VAL-058`) with no implementation changes between; BDD-INV-004 grades 32 BDDs, 30 passing, 0 failing, 2 deferred. Phase exit declared.
+- Blocking findings: none.
+
+Repository Governance:
+- All work committed and pushed to `origin/main` through the phase-exit bookkeeping commit.
+
+Recommendation:
+- Route the next generation. Candidates: non-Shopify adapter groundwork, fix-assist workflows (charter item 2), facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding, and accumulating 10-20 real inspections for the GEN-15 planning gate.

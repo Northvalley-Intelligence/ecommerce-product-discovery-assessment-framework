@@ -1,0 +1,45 @@
+{
+  "validation_run_id": "VAL-058",
+  "generation": "GEN-014",
+  "phase": "Generation 14 - Full-Cycle Local Application",
+  "started_at": "2026-07-14T22:05:00Z",
+  "completed_at": "2026-07-14T22:20:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_as_second_independent_validation_gate_pass_for_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Bounded Dress Up Rerun (second-pass policy)",
+      "tool": "npm run inspect:dressup + validate-pilot-parity",
+      "result": "pass",
+      "evidence": "Run GEN-013-20260714T220827Z reran the bounded evaluation with no implementation changes; all ten surface checks again show full parity with saved GEN-012 evidence."
+    },
+    {
+      "category": "Rendered Pink Lily Rerun (determinism)",
+      "tool": "npm run inspect (rendering enabled)",
+      "result": "pass",
+      "evidence": "Run GEN-014-20260714T220916Z reproduced the prior rendered results with no implementation changes: 5/5 rendered pages with products, 3/5 visible dropdowns, zero platform capability gaps, 90% coverage; run output validates."
+    },
+    {
+      "category": "Honest Degradation Proof (BDD-G14-006)",
+      "tool": "npm run report:executive on the blocked Ridge run",
+      "result": "pass",
+      "evidence": "The Ridge executive report shows blocked Search as not-observed with no score, scores canonical-host Autocomplete on real evidence, and states the coverage gap explicitly."
+    },
+    {
+      "category": "Suites",
+      "tool": "npm run validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass with zero implementation changes since clean pass VAL-057."
+    },
+    {
+      "category": "BDD Inventory Extension",
+      "tool": "BDD-INV-004",
+      "result": "pass",
+      "evidence": "Six GEN-014 full-cycle BDDs added and graded against VAL-054 through VAL-058 evidence: onboarding, evidence-only reports, catalog curation, branded PDFs, rendered capture, and honest degradation. Inventory: 32 BDDs, 30 passing, 0 failing, 2 deferred (BDD-012 calibration, BDD-G13-012 maturity enforcement)."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Second independent clean pass with no implementation changes since VAL-057. Together with the extended BDD inventory, the GEN-014 phase exit requirements are met: the full-cycle local application (add site, inspect, curate, re-inspect, rendered evidence, executive PDF) is validated and pushed."
+}

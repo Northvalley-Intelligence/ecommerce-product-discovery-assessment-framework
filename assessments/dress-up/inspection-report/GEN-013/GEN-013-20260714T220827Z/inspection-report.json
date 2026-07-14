@@ -1,0 +1,704 @@
+{
+  "schema_version": "inspection-report-v0.1",
+  "inspection_id": "GEN-013-20260714T220827Z",
+  "generation": "GEN-013",
+  "generated_at": "2026-07-14T22:09:16.223Z",
+  "target": {
+    "target_id": "dress-up",
+    "name": "Dress Up",
+    "primary_url": "https://shopdressup.com/",
+    "canonical_platform_host": null
+  },
+  "inspection_window": {
+    "started_at": "2026-07-14T22:08:27.671Z",
+    "ended_at": "2026-07-14T22:09:16.223Z",
+    "duration_ms": 48552
+  },
+  "dashboard": {
+    "schema_version": "inspection-dashboard-v0.1",
+    "inspection_id": "GEN-013-20260714T220827Z",
+    "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+    "crawl_summary": {
+      "inspection_timestamp": "2026-07-14T22:08:27.671Z",
+      "target_url": "https://shopdressup.com/",
+      "target_name": "Dress Up",
+      "platform_detection": {
+        "platform": "shopify",
+        "confidence": "High",
+        "signals": [
+          "Target manifest expects Shopify.",
+          "Products JSON returned a Shopify products payload.",
+          "Collections JSON returned a Shopify collections payload.",
+          "Suggest JSON returned a Shopify predictive-search payload."
+        ]
+      },
+      "overall_inspection_status": "partial",
+      "inspection_duration_ms": 48552,
+      "evidence_quality": "partial",
+      "overall_confidence": "Medium"
+    },
+    "operational_summary": {
+      "experiments_completed": 6,
+      "blocked_experiments": 0,
+      "warnings": 2,
+      "evidence_files": 6,
+      "screenshot_count": 0,
+      "downstream_report_readiness": "bounded",
+      "readiness_notes": "Inspection evidence is sufficient for a bounded technical Inspection Report export."
+    },
+    "crawl_health": [
+      {
+        "component": "Homepage",
+        "status": "PASS",
+        "confidence": "High",
+        "notes": "Homepage responded."
+      },
+      {
+        "component": "Search",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "5/5 submitted search observations completed."
+      },
+      {
+        "component": "Browse",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+      },
+      {
+        "component": "Autocomplete",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "5/5 autocomplete observations returned suggestions."
+      },
+      {
+        "component": "Product Pages",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+      },
+      {
+        "component": "Facets",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 facet markup observations completed."
+      },
+      {
+        "component": "Recommendations",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "3/3 recommendations endpoint observations completed."
+      },
+      {
+        "component": "Mobile",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+      },
+      {
+        "component": "Competitor Inspection",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "12/12 same-query peer observations completed."
+      },
+      {
+        "component": "Rendered Storefront",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Rendered capture (P008) is not enabled in this evaluation manifest."
+      }
+    ],
+    "evidence_coverage": {
+      "component_coverage_percent": 90,
+      "plugin_observations": 29,
+      "dataset_rows": 21,
+      "evidence_quality": "partial"
+    },
+    "platform_capability": {
+      "status": "warn",
+      "report_path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/platform-capability-report.json",
+      "failed_capabilities": []
+    },
+    "artifact_explorer": {
+      "evidence": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/competitor-inspection.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/facets.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/mobile.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/recommendations.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/dashboard.html",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/inspection-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/inspection-report.md"
+      ],
+      "datasets": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds3-search-facet.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [],
+      "raw_http": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/inspection-model.json"
+      ],
+      "other": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/artifact-index.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/cache-metadata.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/dashboard.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/platform-capability-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/plugin-dependency-graph.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/plugin-state.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/run-manifest.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/site-profile.json"
+      ]
+    }
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "Homepage responded."
+    },
+    {
+      "component": "Search",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "5/5 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "5/5 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+    },
+    {
+      "component": "Facets",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "3/3 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "12/12 same-query peer observations completed."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Rendered capture (P008) is not enabled in this evaluation manifest."
+    }
+  ],
+  "site_discovery": {
+    "schema_version": "site-profile-v0.1",
+    "discovered_at": "2026-07-13T04:38:52.153Z",
+    "target": {
+      "target_id": "dress-up",
+      "name": "Dress Up",
+      "primary_url": "https://shopdressup.com/",
+      "canonical_platform_host": null
+    },
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "access": {
+      "authentication_required": false,
+      "limitations": []
+    },
+    "endpoint_discovery": [
+      {
+        "label": "homepage",
+        "url": "https://shopdressup.com/",
+        "final_url": "https://shopdressup.com/",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 443,
+        "content_type": "text/html; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "<!doctype html> <!-- BEGIN MerchantWidget Code --> <script async crossorigin fetchpriority=\"high\" src=\"/cdn/shopifycloud/importmap-polyfill/es-modules-shim.2.4.0.js\"></script> <script id='merchantWidgetScript' src=\"https://www.gstatic.com/shopping/merchant/merchantwidget.js\" defer></script> <script type=\"text/javascript\"> merchantWidgetScript.addEventListener('load', function () { merchantwidget.start({ position: 'RIGHT_BOTTOM', sideMargin: 21, bottomMargin: 65, mobileSideMargin: 11, mobileBotto"
+      },
+      {
+        "label": "robots",
+        "url": "https://shopdressup.com/robots.txt",
+        "final_url": "https://shopdressup.com/robots.txt",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 82,
+        "content_type": "text/plain; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "# we use Shopify as our ecommerce platform User-agent: * Disallow: /a/downloads/-/* Disallow: /admin Disallow: /cart Disallow: /orders Disallow: /checkouts/ Disallow: /checkout Disallow: /3390901/checkouts Disallow: /3390901/orders Disallow: /carts Disallow: /account Disallow: /collections/*sort_by* Disallow: /*/collections/*sort_by* Disallow: /collections/*+* Disallow: /collections/*%2B* Disallow: /collections/*%2b* Disallow: /*/collections/*+* Disallow: /*/collections/*%2B* Disallow: /*/collec"
+      },
+      {
+        "label": "products_json",
+        "url": "https://shopdressup.com/products.json?limit=5",
+        "final_url": "https://shopdressup.com/products.json?limit=5",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 129,
+        "content_type": "application/json; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "{\"products\":[{\"id\":7735694983235,\"title\":\"Unapologetically Her Brown Polka Dot Midi Dress\",\"handle\":\"unapologetically-her-brown-polka-dot-midi-dress\",\"body_html\":\"\\u003cp\\u003eSweet, feminine, and effortlessly charming. The Unapologetically Her Brown Polka Dot Midi Dress features a classic polka dot print, flattering plunge neckline, flowy skirt, and adjustable tie-back detail for the perfect fit. Style it with boots for fall or heels for your next special occasion.\\u003c\\/p\\u003e\\n\\u003cul\\u003"
+      },
+      {
+        "label": "collections_json",
+        "url": "https://shopdressup.com/collections.json?limit=5",
+        "final_url": "https://shopdressup.com/collections.json?limit=5",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 246,
+        "content_type": "application/json; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "{\"collections\":[{\"id\":278973546563,\"title\":\"All Up To You Collection\",\"handle\":\"all-up-to-you-collection\",\"description\":\"\\u003ch2\\u003eAll Up To You Collection\\u003c\\/h2\\u003e\\n\\u003cdiv class=\\\"flex-1 overflow-hidden\\\"\\u003e\\n\\u003cdiv class=\\\"react-scroll-to-bottom--css-udpeq-79elbk h-full\\\"\\u003e\\n\\u003cdiv class=\\\"react-scroll-to-bottom--css-udpeq-1n7m0yu\\\"\\u003e\\n\\u003cdiv class=\\\"flex flex-col pb-9 text-sm\\\"\\u003e\\n\\u003cdiv data-testid=\\\"conversation-turn-104\\\" class=\\\"w-full text-token-t"
+      },
+      {
+        "label": "search_suggest_json",
+        "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "final_url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 171,
+        "content_type": "application/json; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "{\"resources\":{\"results\":{\"products\":[],\"collections\":[],\"queries\":[],\"pages\":[]}}}"
+      }
+    ],
+    "catalog_discovery": {
+      "status": "partial",
+      "confidence": "Medium",
+      "products_sampled": 5,
+      "collections_sampled": 5,
+      "source": "Shopify public JSON endpoints"
+    },
+    "autocomplete_discovery": {
+      "status": "available",
+      "confidence": "Medium",
+      "resources_observed": [
+        "products",
+        "collections",
+        "queries",
+        "pages"
+      ]
+    }
+  },
+  "platform_capability_report": {
+    "schema_version": "platform-capability-report-v0.1",
+    "generation": "GEN-013",
+    "target_id": "dress-up",
+    "generated_at": "2026-07-14T22:08:27.673Z",
+    "overall_status": "warn",
+    "evidence_quality": "bounded",
+    "capability_counts": {
+      "pass": 2,
+      "warn": 12,
+      "fail": 0
+    },
+    "changed_capabilities": [],
+    "affected_capabilities": [],
+    "checks": [
+      {
+        "capability_id": "P001",
+        "name": "URL Normalization",
+        "validator": "url-parsing",
+        "status": "pass",
+        "capability_status": "implemented",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is implemented for the current evaluator version."
+      },
+      {
+        "capability_id": "P002",
+        "name": "HTTPS Handling",
+        "validator": "https-handling",
+        "status": "pass",
+        "capability_status": "implemented",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is implemented for the current evaluator version."
+      },
+      {
+        "capability_id": "P003",
+        "name": "Redirect Handling",
+        "validator": "redirect-handling",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P004",
+        "name": "Robots Discovery",
+        "validator": "robots-discovery",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P005",
+        "name": "Shopify Discovery",
+        "validator": "shopify-discovery",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P006",
+        "name": "Submitted Search Endpoint Inspection",
+        "validator": "submitted-search-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P007",
+        "name": "Autocomplete Suggest Endpoint Inspection",
+        "validator": "suggest-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P008",
+        "name": "Rendered Page Capture",
+        "validator": "rendered-capture",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 3,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P009",
+        "name": "Block Classification",
+        "validator": "block-classification",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P010",
+        "name": "Request Pacing and Transient Retry",
+        "validator": "request-pacing",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P011",
+        "name": "Facet Markup Inspection",
+        "validator": "facet-inspection",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P012",
+        "name": "Recommendations Endpoint Inspection",
+        "validator": "recommendations-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P013",
+        "name": "Mobile User-Agent Inspection",
+        "validator": "mobile-ua-inspection",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P014",
+        "name": "Same-Query Peer Inspection",
+        "validator": "peer-same-query",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      }
+    ],
+    "platform_gap_classification_rule": "Capability failures describe evaluator maturity and must not be emitted as ecommerce findings."
+  },
+  "endpoint_discovery": [
+    {
+      "label": "homepage",
+      "url": "https://shopdressup.com/",
+      "final_url": "https://shopdressup.com/",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 443,
+      "content_type": "text/html; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "<!doctype html> <!-- BEGIN MerchantWidget Code --> <script async crossorigin fetchpriority=\"high\" src=\"/cdn/shopifycloud/importmap-polyfill/es-modules-shim.2.4.0.js\"></script> <script id='merchantWidgetScript' src=\"https://www.gstatic.com/shopping/merchant/merchantwidget.js\" defer></script> <script type=\"text/javascript\"> merchantWidgetScript.addEventListener('load', function () { merchantwidget.start({ position: 'RIGHT_BOTTOM', sideMargin: 21, bottomMargin: 65, mobileSideMargin: 11, mobileBotto"
+    },
+    {
+      "label": "robots",
+      "url": "https://shopdressup.com/robots.txt",
+      "final_url": "https://shopdressup.com/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 82,
+      "content_type": "text/plain; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "# we use Shopify as our ecommerce platform User-agent: * Disallow: /a/downloads/-/* Disallow: /admin Disallow: /cart Disallow: /orders Disallow: /checkouts/ Disallow: /checkout Disallow: /3390901/checkouts Disallow: /3390901/orders Disallow: /carts Disallow: /account Disallow: /collections/*sort_by* Disallow: /*/collections/*sort_by* Disallow: /collections/*+* Disallow: /collections/*%2B* Disallow: /collections/*%2b* Disallow: /*/collections/*+* Disallow: /*/collections/*%2B* Disallow: /*/collec"
+    },
+    {
+      "label": "products_json",
+      "url": "https://shopdressup.com/products.json?limit=5",
+      "final_url": "https://shopdressup.com/products.json?limit=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 129,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"products\":[{\"id\":7735694983235,\"title\":\"Unapologetically Her Brown Polka Dot Midi Dress\",\"handle\":\"unapologetically-her-brown-polka-dot-midi-dress\",\"body_html\":\"\\u003cp\\u003eSweet, feminine, and effortlessly charming. The Unapologetically Her Brown Polka Dot Midi Dress features a classic polka dot print, flattering plunge neckline, flowy skirt, and adjustable tie-back detail for the perfect fit. Style it with boots for fall or heels for your next special occasion.\\u003c\\/p\\u003e\\n\\u003cul\\u003"
+    },
+    {
+      "label": "collections_json",
+      "url": "https://shopdressup.com/collections.json?limit=5",
+      "final_url": "https://shopdressup.com/collections.json?limit=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 246,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"collections\":[{\"id\":278973546563,\"title\":\"All Up To You Collection\",\"handle\":\"all-up-to-you-collection\",\"description\":\"\\u003ch2\\u003eAll Up To You Collection\\u003c\\/h2\\u003e\\n\\u003cdiv class=\\\"flex-1 overflow-hidden\\\"\\u003e\\n\\u003cdiv class=\\\"react-scroll-to-bottom--css-udpeq-79elbk h-full\\\"\\u003e\\n\\u003cdiv class=\\\"react-scroll-to-bottom--css-udpeq-1n7m0yu\\\"\\u003e\\n\\u003cdiv class=\\\"flex flex-col pb-9 text-sm\\\"\\u003e\\n\\u003cdiv data-testid=\\\"conversation-turn-104\\\" class=\\\"w-full text-token-t"
+    },
+    {
+      "label": "search_suggest_json",
+      "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "final_url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 171,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"resources\":{\"results\":{\"products\":[],\"collections\":[],\"queries\":[],\"pages\":[]}}}"
+    }
+  ],
+  "datasets": {
+    "DS1": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "rows": 5,
+      "status": "generated"
+    },
+    "DS2": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "rows": 10,
+      "status": "generated"
+    },
+    "DS3": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds3-search-facet.jsonl",
+      "rows": 4,
+      "status": "generated"
+    },
+    "DS4": {
+      "path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds4-advanced-retrieval.jsonl",
+      "rows": 2,
+      "status": "generated"
+    }
+  },
+  "plugin_results": [
+    {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "completed_observations": 5,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "observations_with_suggestions": 5,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "facets",
+      "status": "pass",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "completed_observations": 3,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "competitor-inspection",
+      "status": "pass",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/competitor-inspection.jsonl",
+      "observations": 12,
+      "completed_observations": 12,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    }
+  ],
+  "limitations": {
+    "platform_capability_gaps": [],
+    "infrastructure_limitations": [],
+    "commerce_observations": [],
+    "separation_rule": "Platform capability gaps and infrastructure limitations are recorded separately from observed ecommerce behavior."
+  },
+  "artifact_explorer": {
+    "schema_version": "artifact-index-v0.1",
+    "inspection_id": "GEN-013-20260714T220827Z",
+    "generated_at": "2026-07-14T22:09:16.232Z",
+    "artifact_count": 24,
+    "groups": {
+      "evidence": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/competitor-inspection.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/facets.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/mobile.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/recommendations.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/dashboard.html",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/inspection-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/inspection-report.md"
+      ],
+      "datasets": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds3-search-facet.jsonl",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [],
+      "raw_http": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/inspection-model.json"
+      ],
+      "other": [
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/artifact-index.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/cache-metadata.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/dashboard.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/platform-capability-report.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/plugin-dependency-graph.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/plugin-state.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/run-manifest.json",
+        "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260714T220827Z/site-profile.json"
+      ]
+    }
+  }
+}
