@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-057",
+  "generation": "GEN-014",
+  "phase": "Generation 14 - Full-Cycle Local Application",
+  "started_at": "2026-07-14T21:00:00Z",
+  "completed_at": "2026-07-14T21:20:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_p008_rendered_capture_slice",
+  "validations_executed": [
+    {
+      "category": "P008 Rendered Capture Implementation",
+      "tool": "src/lib/rendered-evidence.mjs + rendered-search plugin",
+      "result": "pass",
+      "evidence": "Playwright-driven capability captures rendered search pages (visible product counts, sample titles, result-count text) and visible autocomplete dropdowns (typed interaction, suggestion extraction with a container fallback for third-party search apps), retaining desktop screenshots per query. Registered as implemented_basic in the capability registry with a timeline event; rendered browse, product-page, and mobile capture remain declared expansions."
+    },
+    {
+      "category": "Live Rendered Inspection",
+      "tool": "npm run inspect (Pink Lily, rendering enabled)",
+      "result": "pass",
+      "evidence": "Run GEN-014-20260714T211320Z: 5/5 rendered search pages showed products (22 to 120 visible tiles) with screenshots retained; 3/5 typed queries showed a visible dropdown with product suggestions extracted via the container fallback; per-query visible-versus-API suggestion comparison recorded. New Rendered Storefront crawl-health component reports PASS at High confidence, and the P008 platform capability gap no longer appears in limitations."
+    },
+    {
+      "category": "Defects Found and Fixed During Validation",
+      "tool": "screenshot review + evidence diffing",
+      "result": "pass",
+      "evidence": "Two real defects caught by exercising the capability: (1) the suggestion extractor missed Pink Lily's third-party search dropdown that the screenshot proved was rendering - fixed with a container-based fallback; (2) the visible-versus-API comparison silently dropped its api_suggestion_count field because suggest.json evidence groups suggestions by resource type rather than as an array - fixed by flattening, verified in re-run evidence."
+    },
+    {
+      "category": "Executive Report Integration",
+      "tool": "npm run report:executive + report:executive:pdf",
+      "result": "pass",
+      "evidence": "Reports now score a sixth surface (Rendered Storefront: rendered pages showing products / captured), add customer-visibility findings (including a dropdown-not-visible issue type when endpoint evidence is unconfirmed), and replace the no-rendered-evidence disclaimer with an accurate rendered-scope statement. Pink Lily PDF recompiled with the new surface present in extracted text."
+    },
+    {
+      "category": "Suites",
+      "tool": "npm run validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass. validation.mjs updated: P008 must now be implemented (basic or full), capability-gap count assert relaxed to array presence since compliant runs now legitimately record zero gaps."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Rendered mobile capture",
+      "reason": "P008 first slice is desktop-only by design; mobile remains HTTP-level evidence.",
+      "revisit_when": "P008 expansion or a mobile-focused slice."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Implementation changed after VAL-056, so the GEN-014 clean-pass count restarts: VAL-057 is pass one for the current state. P008 was the last declared platform gap; compliant Shopify inspections now run gap-free, and non-Shopify targets are unblocked in principle pending a non-Shopify adapter."
+}

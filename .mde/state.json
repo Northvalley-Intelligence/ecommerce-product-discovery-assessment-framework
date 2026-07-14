@@ -10,7 +10,7 @@
   "current_generation": "GEN-014",
   "current_phase": "Generation 14 - Full-Cycle Local Application",
   "phase_goal": "Close the charter loop inside the application: the operator adds an ecommerce site by URL in the dashboard, the platform runs the inspection, and an executive report is generated from the Inspection Report without re-inspecting the site. Shopify sites only until P008 lands, per decision 3A.",
-  "status": "generation_14_executive_pdf_rendering_added",
+  "status": "generation_14_p008_rendered_capture_implemented_basic",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -18,9 +18,9 @@
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 1,
-    "latest_result": "pass_for_executive_pdf_rendering_slice",
-    "latest_run_id": "VAL-056",
-    "reason": "Executive PDF rendering is an implementation change after VAL-055, so the clean-pass count restarts: VAL-056 is clean pass one, covering the Northvalley-branded PDF renderer, rendered-page layout review with two defects fixed, dashboard integration, and all suites. Phase exit needs a second independent pass with no implementation changes."
+    "latest_result": "pass_for_p008_rendered_capture_slice",
+    "latest_run_id": "VAL-057",
+    "reason": "P008 rendered capture is an implementation change after VAL-056, so the clean-pass count restarts: VAL-057 is clean pass one, covering the rendered-capture capability, the live rendered Pink Lily inspection with screenshots and visible-versus-API comparison, two defects found and fixed during validation, executive report integration, and all suites. Phase exit needs a second independent pass with no implementation changes."
   },
   "critical_bdds": 10,
   "high_bdds": 12,
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "The executive report is now a branded, sendable PDF generated entirely from retained inspection evidence, completing the visible charter deliverable chain: add site, inspect, curate, re-inspect, executive PDF. Next: second independent gate pass with no implementation changes toward GEN-014 phase exit, then candidate slices: facet-attribute curation to populate DS3, decision-3A maturity enforcement at onboarding (BDD-G13-012), P008 rendered capture, and fix-assist workflows.",
+  "next_recommended_action": "P008 rendered capture is implemented_basic and proven live: rendered search pages and visible autocomplete dropdowns are captured with screenshots, and inspections now run with zero platform capability gaps on compliant Shopify stores. Next: second independent gate pass with no implementation changes toward GEN-014 phase exit. Candidate slices after: non-Shopify adapter groundwork (P008 unblocked it per decision 3A), facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding, and fix-assist workflows.",
   "session_router_case": "Existing MDE project - operator-routed GEN-014 full-cycle slice completed",
   "last_prompt_used": "Operator: modify the design so an ecommerce site can be provided through the app, run the inspection, and generate the executive report - close the loop"
 }

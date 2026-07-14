@@ -14,7 +14,8 @@ const SURFACE_LABELS = {
   autocomplete: 'Autocomplete',
   facets: 'Filters & Facets',
   recommendations: 'Recommendations',
-  mobile: 'Mobile Experience'
+  mobile: 'Mobile Experience',
+  'rendered-search': 'Rendered Storefront'
 };
 
 const CRAWL_HEALTH_COMPONENTS = {
@@ -22,7 +23,8 @@ const CRAWL_HEALTH_COMPONENTS = {
   autocomplete: 'Autocomplete',
   facets: 'Facets',
   recommendations: 'Recommendations',
-  mobile: 'Mobile'
+  mobile: 'Mobile',
+  'rendered-search': 'Rendered Storefront'
 };
 
 function readEvidence(rootDir, evidenceFile) {
@@ -75,6 +77,28 @@ function scoreAutocomplete(records) {
   };
 }
 
+function scoreRendered(records) {
+  const total = records.length;
+  const renderedOk = records.filter((record) => record.rendered_search?.ok && (record.rendered_search.observed?.visible_product_count ?? 0) > 0).length;
+  const dropdownSeen = records.filter((record) => record.endpoint_comparison?.visible_dropdown_observed).length;
+  return {
+    score: percent(renderedOk, total),
+    formula: 'queries whose rendered page showed products / queries captured',
+    observations: total,
+    details: records.map((record) => ({
+      query: record.query,
+      rendered_ok: record.rendered_search?.ok ?? false,
+      visible_product_count: record.rendered_search?.observed?.visible_product_count ?? null,
+      visible_suggestion_count: record.endpoint_comparison?.visible_suggestion_count ?? 0,
+      screenshot: record.rendered_search?.screenshot || null
+    })),
+    dropdown_observed_count: dropdownSeen,
+    queries_without_visible_products: records
+      .filter((record) => record.rendered_search?.ok && (record.rendered_search.observed?.visible_product_count ?? 0) === 0)
+      .map((record) => record.query)
+  };
+}
+
 function scoreGeneric(records) {
   const total = records.length;
   const ok = records.filter((record) => record.ok).length;
@@ -115,6 +139,7 @@ function buildScorecard(rootDir, report) {
     const scored =
       result.plugin_id === 'submitted-search' ? scoreSearch(records)
       : result.plugin_id === 'autocomplete' ? scoreAutocomplete(records)
+      : result.plugin_id === 'rendered-search' ? scoreRendered(records)
       : scoreGeneric(records);
     scorecard.push({
       surface: label,
@@ -213,6 +238,46 @@ function buildFindings(report, scorecard) {
     }
   }
 
+  const rendered = scorecard.find((entry) => entry.plugin_id === 'rendered-search');
+  if (rendered?.status === 'observed') {
+    if (rendered.score === 100) {
+      findings.push({
+        type: 'strength',
+        surface: 'Rendered Storefront',
+        severity: 'Positive',
+        observation: `Every rendered search page showed products to the customer (${rendered.observations} of ${rendered.observations}), verified in a real browser with screenshots retained.`,
+        evidence: rendered.evidence_file,
+        customer_impact: 'What the search API returns is actually reaching the customer-facing page.',
+        business_impact: 'Endpoint-level results are confirmed as customer-visible, strengthening every search claim in this report.',
+        recommendation: 'Keep rendered capture in the regression loop so theme or search-app changes that break the visible experience are caught.'
+      });
+    }
+    for (const query of rendered.queries_without_visible_products || []) {
+      findings.push({
+        type: 'issue',
+        surface: 'Rendered Storefront',
+        severity: 'High',
+        observation: `The rendered page for "${query}" loaded but showed no products, even though the search endpoint returns results.`,
+        evidence: rendered.evidence_file,
+        customer_impact: 'Customers see an empty or broken results page despite matching inventory existing.',
+        business_impact: 'An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.',
+        recommendation: 'Inspect the storefront theme or search app rendering for this query pattern.'
+      });
+    }
+    if ((rendered.dropdown_observed_count ?? 0) === 0) {
+      findings.push({
+        type: 'issue',
+        surface: 'Rendered Storefront',
+        severity: 'Medium',
+        observation: 'No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions.',
+        evidence: rendered.evidence_file,
+        customer_impact: 'Customers may not be receiving the type-ahead assistance the endpoint evidence implies.',
+        business_impact: 'Autocomplete claims in this report are endpoint-verified but not confirmed as customer-visible.',
+        recommendation: 'Verify whether the storefront uses a third-party search app or a theme that suppresses the native dropdown.'
+      });
+    }
+  }
+
   for (const entry of scorecard.filter((item) => item.status === 'not_observed')) {
     findings.push({
       type: 'coverage_gap',
@@ -267,8 +332,10 @@ export function generateExecutiveReport(rootDir, runDir) {
     ...(report.limitations?.infrastructure_limitations || []).map(
       (limit) => `${limit.label || limit.code || 'Infrastructure limitation'}: ${limit.status || ''} ${limit.url || limit.endpoint || ''}`.trim()
     ),
-    `Scores are directional, computed from ${observedSurfaces.reduce((sum, entry) => sum + (entry.observations || 0), 0)} bounded endpoint observations, not a full catalog benchmark.`,
-    'No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report.'
+    `Scores are directional, computed from ${observedSurfaces.reduce((sum, entry) => sum + (entry.observations || 0), 0)} bounded observations, not a full catalog benchmark.`,
+    ...(scorecard.some((entry) => entry.plugin_id === 'rendered-search' && entry.status === 'observed')
+      ? ['Rendered evidence covers search pages and autocomplete dropdowns on desktop; rendered browse, product-page, and mobile capture are not yet included.']
+      : ['No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report.'])
   ];
 
   const executive = {

@@ -5,6 +5,14 @@
       "generation": "GEN-013",
       "date": "2026-07-08",
       "summary": "Started implementation of the frozen inspection platform architecture with manifest-driven Shopify inspection, platform capability registry, plugin contracts, checkpoints, artifact index, dashboard model, and Inspection Report export."
+    },
+    {
+      "generation": "GEN-014",
+      "date": "2026-07-14",
+      "capability_id": "P008",
+      "change_type": "implemented_basic",
+      "summary": "Implemented rendered page capture as a bounded platform capability: Playwright-driven capture of rendered search result pages and visible autocomplete dropdowns with retained screenshots, exposed through the rendered-search plugin and compared against endpoint evidence.",
+      "motivating_context": "Operator asked to close the rendered-evidence gap that kept every inspection partial and blocked non-Shopify targets per decision 3A."
     }
   ]
 }

@@ -28,7 +28,7 @@ Scores are directional and explainable: each is the stated ratio over the bounde
 ## What This Report Does Not Claim
 
 - Platform capability P008 (Rendered Page Capture) is not implemented; related evidence is unavailable.
-- Scores are directional, computed from 17 bounded endpoint observations, not a full catalog benchmark.
+- Scores are directional, computed from 17 bounded observations, not a full catalog benchmark.
 - No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report.
 
 ## Evidence References

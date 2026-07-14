@@ -54,9 +54,10 @@
     {
       "capability_id": "P008",
       "name": "Rendered Page Capture",
-      "status": "planned",
+      "status": "implemented_basic",
       "maturity_level": 3,
-      "validator": "rendered-capture"
+      "validator": "rendered-capture",
+      "notes": "Bounded first implementation: headless-browser capture of rendered search pages and visible autocomplete dropdowns with screenshots, applied through the rendered-search plugin. Rendered browse, product-page, and mobile capture remain future expansions."
     },
     {
       "capability_id": "P009",

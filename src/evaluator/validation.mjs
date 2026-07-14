@@ -132,7 +132,10 @@ function validatePlatform() {
   }
 
   const rendered = registry.capabilities.find((capability) => capability.capability_id === 'P008');
-  assert(rendered?.status === 'planned', 'Rendered capture should remain a platform capability gap in the first slice.');
+  assert(
+    ['implemented_basic', 'implemented'].includes(rendered?.status),
+    'Rendered capture (P008) should be implemented (basic or full) as of GEN-014.'
+  );
 }
 
 function latestInspectionDir() {
@@ -190,7 +193,7 @@ function validateInspectionRun(runDir = latestInspectionDir()) {
   assert(report.dashboard.purpose_question.includes('trust this inspection'), 'Dashboard purpose question missing trust framing.');
   assert(Array.isArray(report.crawl_health) && report.crawl_health.length >= 9, 'Crawl health must include the mission dashboard components.');
   assert(Object.keys(report.datasets || {}).length === 4, 'Inspection report must include DS1-DS4 dataset summaries.');
-  assert(report.limitations.platform_capability_gaps.length >= 1, 'First slice should record rendered capture as a platform capability gap.');
+  assert(Array.isArray(report.limitations.platform_capability_gaps), 'Inspection report must record platform capability gaps as an array (empty when no capability is missing).');
   assert(Array.isArray(report.limitations.commerce_observations), 'Commerce observations must be separated from infrastructure/platform limitations.');
   assert(platformReport.platform_gap_classification_rule.includes('must not be emitted as ecommerce findings'), 'Platform gap classification rule missing.');
   assert(checkpoint.status === 'complete', 'Checkpoint should be complete after a full run.');

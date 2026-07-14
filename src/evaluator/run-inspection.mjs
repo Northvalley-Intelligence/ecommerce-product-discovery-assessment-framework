@@ -229,6 +229,37 @@ function summarizePluginEvidence(pluginId, outputDir) {
     };
   }
 
+  if (pluginId === 'rendered-search') {
+    const evidenceFile = path.join(outputDir, 'evidence', 'experiments', 'rendered-search.jsonl');
+    const rows = readJsonl(evidenceFile);
+    if (rows.length === 0) return null;
+    const completed = rows.filter((row) => row.rendered_search?.ok).length;
+    const withVisibleDropdown = rows.filter((row) => row.endpoint_comparison?.visible_dropdown_observed).length;
+    const blocked = rows.length - completed;
+    return {
+      plugin_id: 'rendered-search',
+      status: completed > 0 ? (blocked > 0 ? 'warn' : 'pass') : 'blocked',
+      evidence_file: evidenceFile,
+      observations: rows.length,
+      completed_observations: completed,
+      observations_with_visible_dropdown: withVisibleDropdown,
+      blocked_observations: blocked,
+      confidence: completed === rows.length && rows.length > 0 ? 'High' : completed > 0 ? 'Medium' : 'Low',
+      evidence_quality: completed === rows.length && rows.length > 0 ? 'rendered' : 'partial',
+      infrastructure_limitations: rows.flatMap((row) =>
+        [row.rendered_search, row.rendered_autocomplete]
+          .filter((capture) => capture?.classification?.category === 'infrastructure')
+          .map((capture) => ({
+            code: capture.classification.code,
+            label: capture.classification.label,
+            query_id: row.query_id,
+            status: capture.status,
+            endpoint: row.rendered_search?.endpoint
+          }))
+      )
+    };
+  }
+
   if (pluginId === 'autocomplete') {
     const evidenceFile = path.join(outputDir, 'evidence', 'experiments', 'autocomplete.jsonl');
     const rows = readJsonl(evidenceFile);
@@ -311,6 +342,7 @@ function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
   const recommendations = pluginById.get('recommendations');
   const mobile = pluginById.get('mobile');
   const competitorInspection = pluginById.get('competitor-inspection');
+  const renderedSearch = pluginById.get('rendered-search');
 
   return [
     {
@@ -382,6 +414,14 @@ function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
       notes: competitorInspection
         ? `${competitorInspection.completed_observations}/${competitorInspection.observations} same-query peer observations completed.`
         : 'Peer inspection is not enabled in this evaluation manifest.'
+    },
+    {
+      component: 'Rendered Storefront',
+      status: statusToIcon(renderedSearch?.status || 'not_run'),
+      confidence: renderedSearch?.confidence || 'Unknown',
+      notes: renderedSearch
+        ? `${renderedSearch.completed_observations}/${renderedSearch.observations} rendered captures completed; ${renderedSearch.observations_with_visible_dropdown}/${renderedSearch.observations} showed a visible autocomplete dropdown (P008).`
+        : 'Rendered capture (P008) is not enabled in this evaluation manifest.'
     }
   ];
 }

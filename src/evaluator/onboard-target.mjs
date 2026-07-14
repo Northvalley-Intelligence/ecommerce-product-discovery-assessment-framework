@@ -162,13 +162,13 @@ export function onboardTarget(rootDir, { url, name } = {}) {
       max_age_hours: 168
     },
     query_packs: [queryPackPath],
-    surfaces: ['submitted_search', 'autocomplete', 'facets', 'recommendations', 'mobile'],
-    plugins: ['submitted-search', 'autocomplete', 'facets', 'recommendations', 'mobile'],
+    surfaces: ['submitted_search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'rendered_search'],
+    plugins: ['submitted-search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'rendered-search'],
     competitors: [],
     rendering: {
-      desktop: false,
+      desktop: true,
       mobile: false,
-      screenshots: false
+      screenshots: true
     },
     platform_validation: {
       required: true,
