@@ -1,0 +1,39 @@
+{
+  "validation_run_id": "VAL-065",
+  "generation": "GEN-018",
+  "phase": "Generation 18 - Browse Inventory, Product Pages, and Evidence Honesty",
+  "started_at": "2026-07-15T03:30:00Z",
+  "completed_at": "2026-07-15T04:25:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_gen018_first_slice",
+  "validations_executed": [
+    {
+      "category": "Rendered Product Pages (P008 extension)",
+      "tool": "npm run inspect (Pink Lily) + screenshot review",
+      "result": "pass",
+      "evidence": "rendered-product captured product pages with real prices ($48, $38, $36), images, and add-to-cart presence; 3/5 pages hit a Cloudflare bot wall and are correctly classified as bot_challenge capture limitations after screenshot verification. Crawl-health Product Pages now reflects the plugin."
+    },
+    {
+      "category": "Browse Inventory (option a)",
+      "tool": "npm run inspect (Pink Lily)",
+      "result": "pass",
+      "evidence": "browse-graph inventoried 4 customer-facing collections with per-collection membership and wrote browse-graph.json (flat_inventory). Crawl-health Browse now reflects the plugin; hierarchical tree deferred as declared."
+    },
+    {
+      "category": "Store-Finding vs Capture-Limitation Honesty",
+      "tool": "generate-executive-report + fix-plan",
+      "result": "pass",
+      "evidence": "Findings are tagged nature: store_finding vs capture_limitation. '90s nostalgia' (search box found, dropdown empty, API had a match) is a store finding in the fix plan; the 3 bot-wall product pages are capture limitations excluded from the fix plan and shown as infrastructure limits. Fix-plan statuses read 'Still present'/'Fixed (verified)' and the panel states the status describes the store, not the inspection."
+    },
+    {
+      "category": "Suites",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "First GEN-018 slice. A second no-change gate pass and BDD additions (browse inventory, rendered product pages, store/capture nature) remain before phase exit."
+}
