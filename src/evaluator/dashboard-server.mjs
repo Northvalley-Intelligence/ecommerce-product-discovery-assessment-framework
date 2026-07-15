@@ -1115,15 +1115,22 @@ function dashboardPage() {
     function buildAttention(report, data) {
       const items = [];
       for (const plugin of report.plugin_results || []) {
-        if (!['blocked', 'fail', 'warn'].includes(plugin.status)) continue;
+        const hasLimits = (plugin.infrastructure_limitations || []).length > 0;
+        // Surface any plugin that failed, warned, or carries limitations even
+        // while nominally passing — a limitation is a reason that needs a home.
+        if (!['blocked', 'fail', 'warn'].includes(plugin.status) && !hasLimits) continue;
         const limits = (plugin.infrastructure_limitations || []).map((limit) =>
           (limit.query_id ? limit.query_id + ': ' : '') + (limit.label || limit.code || 'issue') +
           (typeof limit.status === 'number' ? ' (HTTP ' + limit.status + ')' : '') +
           (limit.endpoint ? ' — ' + limit.endpoint : ''));
+        const isFail = plugin.status === 'blocked' || plugin.status === 'fail';
+        const headline = isFail
+          ? '<strong>' + escapeHtml(plugin.plugin_id) + '</strong> was ' + escapeHtml(plugin.status)
+          : '<strong>' + escapeHtml(plugin.plugin_id) + '</strong> ' + (limits.length ? 'has ' + limits.length + ' limitation' + (limits.length === 1 ? '' : 's') : 'completed with warnings');
         items.push({
-          severity: plugin.status === 'warn' ? 'warn' : 'fail',
+          severity: isFail ? 'fail' : 'warn',
           tab: 'health',
-          headline: '<strong>' + escapeHtml(plugin.plugin_id) + '</strong> ' + (plugin.status === 'warn' ? 'completed with warnings' : 'was ' + escapeHtml(plugin.status)),
+          headline,
           detail: limits.length ? limits : ['No per-request classification recorded; open the evidence to inspect ' + plugin.observations + ' observation(s).'],
           evidence_file: plugin.evidence_file || null
         });
@@ -1206,6 +1213,7 @@ function dashboardPage() {
         if (event.event === 'plugin_observation_recorded') plugins[event.plugin_id].obs.push(event);
         if (event.event === 'plugin_completed') plugins[event.plugin_id].status = event.status;
       }
+      const resultById = new Map((report?.plugin_results || []).map((result) => [result.plugin_id, result]));
       const lanes = order.map((id) => {
         const lane = plugins[id];
         const cells = lane.obs.map((observation) => {
@@ -1214,7 +1222,26 @@ function dashboardPage() {
         }).join('');
         const errors = lane.obs.filter((observation) => typeof observation.status === 'number' && observation.status >= 400).length;
         const meta = lane.obs.length + ' request' + (lane.obs.length === 1 ? '' : 's') + (errors ? ' · ' + errors + ' error' + (errors === 1 ? '' : 's') : '');
-        return '<div class="tl-lane"><div class="tl-lane-head"><strong>' + escapeHtml(id) + '</strong>' + pill(lane.status || 'not_run') + '</div><div class="tl-cells">' + (cells || '<span class="muted">no requests recorded</span>') + '</div><div class="muted" style="font-size:12px">' + escapeHtml(meta) + '</div></div>';
+        // Show the reason inline for any non-clean lane: the concrete
+        // limitations plus a link to the evidence, so "why WARN?" is answerable
+        // right here without leaving the lane.
+        const result = resultById.get(id);
+        const limits = result?.infrastructure_limitations || [];
+        const laneStatus = result?.status || lane.status;
+        let why = '';
+        if (limits.length || (laneStatus && !['pass', 'not_run'].includes(laneStatus))) {
+          const lines = limits.length
+            ? limits.map((limit) => (limit.query_id ? limit.query_id + ': ' : '') + (limit.label || limit.code || 'issue') + (typeof limit.status === 'number' ? ' (HTTP ' + limit.status + ')' : '') + (limit.endpoint ? ' — ' + limit.endpoint : ''))
+            : ['Completed as ' + laneStatus + '; open the evidence for per-observation detail.'];
+          const link = result?.evidence_file
+            ? ' <a href="' + (isDatasetFile(result.evidence_file) ? datasetHash(result.evidence_file) : artifactHref(result.evidence_file)) + '"' + (isDatasetFile(result.evidence_file) ? '' : ' target="_blank"') + '>view evidence</a>'
+            : '';
+          const summaryText = laneStatus === 'pass'
+            ? lines.length + ' limitation' + (lines.length === 1 ? '' : 's') + ' (did not block this surface)'
+            : 'Why ' + escapeHtml(laneStatus) + '? — ' + lines.length + ' issue' + (lines.length === 1 ? '' : 's');
+          why = '<details class="att-item att-warn" style="margin-top:8px"><summary><span class="att-dot warn"></span>' + summaryText + link + '</summary><ul>' + lines.map((line) => '<li>' + escapeHtml(line) + '</li>').join('') + '</ul></details>';
+        }
+        return '<div class="tl-lane"><div class="tl-lane-head"><strong>' + escapeHtml(id) + '</strong>' + pill(laneStatus || 'not_run') + '</div><div class="tl-cells">' + (cells || '<span class="muted">no HTTP requests recorded (rendered capture)</span>') + '</div><div class="muted" style="font-size:12px">' + escapeHtml(meta) + '</div>' + why + '</div>';
       }).join('');
 
       // Attention: reuse the evidence-backed attention model (plugins/endpoints)

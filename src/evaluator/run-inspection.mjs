@@ -236,9 +236,23 @@ function summarizePluginEvidence(pluginId, outputDir) {
     const completed = rows.filter((row) => row.rendered_search?.ok).length;
     const withVisibleDropdown = rows.filter((row) => row.endpoint_comparison?.visible_dropdown_observed).length;
     const blocked = rows.length - completed;
+    const limitations = rows.flatMap((row) =>
+      [row.rendered_search, row.rendered_autocomplete]
+        .filter((capture) => capture?.classification?.category === 'infrastructure')
+        .map((capture) => ({
+          code: capture.classification.code,
+          label: capture.classification.label,
+          query_id: row.query_id,
+          status: capture.status,
+          endpoint: row.rendered_search?.endpoint
+        }))
+    );
     return {
       plugin_id: 'rendered-search',
-      status: completed > 0 ? (blocked > 0 ? 'warn' : 'pass') : 'blocked',
+      // A rendered page that loaded but whose dropdown/input could not be
+      // observed is a warning, not a clean pass — reflect that in the status
+      // so its reason surfaces in attention and the timeline lane.
+      status: completed > 0 ? (blocked > 0 || limitations.length > 0 ? 'warn' : 'pass') : 'blocked',
       evidence_file: evidenceFile,
       observations: rows.length,
       completed_observations: completed,
@@ -246,17 +260,7 @@ function summarizePluginEvidence(pluginId, outputDir) {
       blocked_observations: blocked,
       confidence: completed === rows.length && rows.length > 0 ? 'High' : completed > 0 ? 'Medium' : 'Low',
       evidence_quality: completed === rows.length && rows.length > 0 ? 'rendered' : 'partial',
-      infrastructure_limitations: rows.flatMap((row) =>
-        [row.rendered_search, row.rendered_autocomplete]
-          .filter((capture) => capture?.classification?.category === 'infrastructure')
-          .map((capture) => ({
-            code: capture.classification.code,
-            label: capture.classification.label,
-            query_id: row.query_id,
-            status: capture.status,
-            endpoint: row.rendered_search?.endpoint
-          }))
-      )
+      infrastructure_limitations: limitations
     };
   }
 
