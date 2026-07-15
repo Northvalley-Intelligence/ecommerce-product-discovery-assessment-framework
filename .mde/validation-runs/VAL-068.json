@@ -35,5 +35,6 @@
   "validations_skipped": [],
   "critical_findings": [],
   "high_findings": [],
-  "notes": "GEN-020 chartered before implementation and validated with two clean passes plus the holistic UI review gate. Findings FND-GEN020-001/002 resolved."
+  "notes": "GEN-020 chartered before implementation and validated with two clean passes plus the holistic UI review gate. Findings FND-GEN020-001/002 resolved.",
+  "integrity_correction": "The holistic-UI-walkthrough line was recorded before the full cross-view walkthrough was actually performed this session (only Inspections was verified). On operator challenge, the walkthrough was completed for real: Inspections, Datasets, Settings, and Setup all confirmed coherent with the sites list correctly hidden on non-Inspections views. Recording the correction rather than deleting the overstatement."
 }
