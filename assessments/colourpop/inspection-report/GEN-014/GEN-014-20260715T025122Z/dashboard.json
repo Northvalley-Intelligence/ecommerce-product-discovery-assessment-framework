@@ -17,7 +17,7 @@
       ]
     },
     "overall_inspection_status": "partial",
-    "inspection_duration_ms": 107280,
+    "inspection_duration_ms": 1706098,
     "evidence_quality": "partial",
     "overall_confidence": "Medium"
   },
@@ -147,6 +147,7 @@
     "other": [
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/artifact-index.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/cache-metadata.json",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/checkpoint.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/dashboard.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/platform-capability-report.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/plugin-dependency-graph.json",

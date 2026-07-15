@@ -1,7 +1,7 @@
 # Inspection Report: ColourPop
 
 Inspection ID: GEN-014-20260715T025309Z
-Generated: 2026-07-15T02:55:13.861Z
+Generated: 2026-07-15T03:20:12.636Z
 Target URL: https://colourpop.com/
 Status: partial
 Evidence quality: partial
@@ -51,5 +51,5 @@ Infrastructure limitations: 5
 - raw_html: 0 artifacts
 - timeline: 1 artifact
 - inspection_model: 1 artifact
-- other: 8 artifacts
+- other: 13 artifacts
 

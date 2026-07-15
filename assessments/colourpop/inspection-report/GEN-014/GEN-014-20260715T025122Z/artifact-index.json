@@ -1,8 +1,8 @@
 {
   "schema_version": "artifact-index-v0.1",
   "inspection_id": "GEN-014-20260715T025122Z",
-  "generated_at": "2026-07-15T02:53:09.614Z",
-  "artifact_count": 33,
+  "generated_at": "2026-07-15T03:19:48.431Z",
+  "artifact_count": 34,
   "groups": {
     "evidence": [
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/autocomplete.jsonl",
@@ -47,6 +47,7 @@
     "other": [
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/artifact-index.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/cache-metadata.json",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/checkpoint.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/dashboard.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/platform-capability-report.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/plugin-dependency-graph.json",

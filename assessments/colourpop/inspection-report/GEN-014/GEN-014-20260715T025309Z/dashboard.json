@@ -17,7 +17,7 @@
       ]
     },
     "overall_inspection_status": "partial",
-    "inspection_duration_ms": 124187,
+    "inspection_duration_ms": 1622962,
     "evidence_quality": "partial",
     "overall_confidence": "Medium"
   },
@@ -147,7 +147,12 @@
     "other": [
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/artifact-index.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/cache-metadata.json",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/checkpoint.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/dashboard.json",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.json",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.md",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.pdf",
+      "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.tex",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/platform-capability-report.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/plugin-dependency-graph.json",
       "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/plugin-state.json",

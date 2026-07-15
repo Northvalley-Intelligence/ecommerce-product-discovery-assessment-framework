@@ -6,6 +6,7 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
+import { previewCleanup, runCleanup } from './cleanup.mjs';
 import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateFixPlan, readFixPlan, verifyFixPlan } from './fix-plan.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
@@ -505,6 +506,21 @@ function dashboardPage() {
       font-weight: 800;
       text-transform: uppercase;
     }
+    .hero-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .storage {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .storage-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
     .hero {
       display: flex;
       justify-content: space-between;
@@ -778,6 +794,19 @@ function dashboardPage() {
       </div>
       <div class="run-list" id="runList"></div>
       <div class="dataset-nav" id="datasetNav" hidden></div>
+      <div class="storage" id="storagePanel">
+        <h3>Storage</h3>
+        <p class="muted" id="storageSummary">Loading…</p>
+        <div class="storage-actions">
+          <select id="cleanupPolicy">
+            <option value="keep-latest-1">Keep latest run per site</option>
+            <option value="keep-latest-3">Keep latest 3 runs per site</option>
+            <option value="all-runs">Delete all inspection runs</option>
+          </select>
+          <button id="cleanupPreviewBtn" class="secondary">Preview cleanup</button>
+        </div>
+        <div id="cleanupResult" class="muted"></div>
+      </div>
     </aside>
     <main>
       <div id="inspectionView">
@@ -878,7 +907,38 @@ function dashboardPage() {
       state.inspections = await api('/api/inspections');
       if (!state.selected && state.inspections.length) state.selected = state.inspections[0].inspection_id;
       renderRuns();
+      updateStorageSummary();
       if (state.selected) await loadInspection(state.selected);
+    }
+    async function updateStorageSummary() {
+      try {
+        const storage = await api('/api/storage');
+        document.getElementById('storageSummary').textContent = storage.total_runs + ' inspection run' + (storage.total_runs === 1 ? '' : 's') + ' stored on disk.';
+      } catch (error) {
+        document.getElementById('storageSummary').textContent = 'Storage info unavailable.';
+      }
+    }
+    async function cleanupFlow() {
+      const policy = document.getElementById('cleanupPolicy').value;
+      const result = document.getElementById('cleanupResult');
+      const preview = await api('/api/cleanup/preview', {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ policy })
+      });
+      if (preview.runs_to_remove === 0) {
+        result.textContent = 'Nothing to remove: ' + preview.runs_kept + ' run(s) already fit this policy.';
+        return;
+      }
+      const ok = window.confirm('Delete ' + preview.runs_to_remove + ' inspection run(s) and free ' + preview.freed_mb + ' MB? This keeps ' + preview.runs_kept + ' run(s) (including any referenced by a fix plan) and cannot be undone. Manifests, query packs, and fix plans are not touched.');
+      if (!ok) {
+        result.textContent = 'Cancelled. ' + preview.runs_to_remove + ' run(s) / ' + preview.freed_mb + ' MB would have been freed.';
+        return;
+      }
+      const applied = await api('/api/cleanup/apply', {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ policy })
+      });
+      result.textContent = 'Removed ' + applied.removed_count + ' run(s), freed ' + applied.freed_mb + ' MB. Kept ' + applied.kept_count + '.';
+      state.selected = null;
+      await refresh();
     }
     function renderRuns() {
       const list = document.getElementById('runList');
@@ -927,7 +987,7 @@ function dashboardPage() {
       const platformGaps = limitations.platform_capability_gaps || [];
       const infra = limitations.infrastructure_limitations || [];
       document.getElementById('detail').innerHTML =
-        '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div></div><div>' + pill(summary.overall_inspection_status) + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>' +
+        '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(summary.target_name || report.target?.name || 'this inspection') + '</button><button id="detailResumeBtn" class="secondary">Resume</button></div></div><div>' + pill(summary.overall_inspection_status) + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>' +
         '<section class="metric-grid">' +
           metric('Status', summary.overall_inspection_status || 'unknown', 'Overall inspection') +
           metric('Readiness', op.downstream_report_readiness || 'unknown', op.readiness_notes || '') +
@@ -959,6 +1019,10 @@ function dashboardPage() {
         panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
         panel('Inspection Timeline', 'Debug trace', table(['Time', 'Event', 'Details'], (data.timeline || []).slice(-30), (item) => { const copy = {...item}; delete copy.at; delete copy.event; delete copy.inspection_id; return ['<td class="mono">' + escapeHtml(item.at) + '</td>', '<td><strong>' + escapeHtml(item.event) + '</strong></td>', '<td><span class="mono">' + escapeHtml(JSON.stringify(copy)) + '</span></td>']; })) +
         panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+      const detailRerunBtn = document.getElementById('detailRerunBtn');
+      if (detailRerunBtn) detailRerunBtn.addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
+      const detailResumeBtn = document.getElementById('detailResumeBtn');
+      if (detailResumeBtn) detailResumeBtn.addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
       const fixPlanBtn = document.getElementById('fixPlanBtn');
       if (fixPlanBtn) {
         fixPlanBtn.addEventListener('click', async () => {
@@ -1267,6 +1331,7 @@ function dashboardPage() {
       document.getElementById('actionResult').innerHTML = 'Started process ' + result.pid + '. Log: <a href="' + artifactHref(result.log_path) + '" target="_blank">' + escapeHtml(result.log_path) + '</a>';
       setTimeout(refresh, 1500);
     }
+    document.getElementById('cleanupPreviewBtn').addEventListener('click', () => cleanupFlow().catch((error) => alert(error.message)));
     document.getElementById('addSiteBtn').addEventListener('click', () => addSite().catch((error) => alert(error.message)));
     document.getElementById('runBtn').addEventListener('click', () => runAction('run').catch((error) => alert(error.message)));
     document.getElementById('resumeBtn').addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
@@ -1287,6 +1352,12 @@ function dashboardPage() {
 </html>`;
 }
 
+function parseCleanupPolicy(raw) {
+  if (raw === 'all-runs') return { policy: 'all-runs' };
+  const match = String(raw || 'keep-latest-1').match(/^keep-latest-(\d+)$/);
+  return { policy: 'keep-latest', keep: match ? Number(match[1]) : 1 };
+}
+
 function routeRequest(rootDir, request, response) {
   const url = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
 
@@ -1301,6 +1372,26 @@ function routeRequest(rootDir, request, response) {
       service: 'ecommerce-inspection-dashboard',
       root_dir: rootDir
     });
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/storage') {
+    const preview = previewCleanup(rootDir, parseCleanupPolicy('keep-latest-1'));
+    sendJson(response, 200, { total_runs: preview.total_runs });
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/cleanup/preview') {
+    readBody(request)
+      .then((body) => sendJson(response, 200, previewCleanup(rootDir, parseCleanupPolicy(body.policy))))
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/cleanup/apply') {
+    readBody(request)
+      .then((body) => sendJson(response, 200, runCleanup(rootDir, parseCleanupPolicy(body.policy))))
+      .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 

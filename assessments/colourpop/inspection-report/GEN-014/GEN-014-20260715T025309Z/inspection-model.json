@@ -1,7 +1,7 @@
 {
   "schema_version": "inspection-model-v0.1",
   "inspection_id": "GEN-014-20260715T025309Z",
-  "generated_at": "2026-07-15T02:55:13.861Z",
+  "generated_at": "2026-07-15T03:20:12.636Z",
   "evaluation_id": "colourpop-shopify-baseline",
   "target_id": "colourpop",
   "platform_detection": {
@@ -33,7 +33,7 @@
         ]
       },
       "overall_inspection_status": "partial",
-      "inspection_duration_ms": 124187,
+      "inspection_duration_ms": 1622962,
       "evidence_quality": "partial",
       "overall_confidence": "Medium"
     },
@@ -128,7 +128,11 @@
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/rendered-search.jsonl",
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/submitted-search.jsonl"
       ],
-      "reports": [],
+      "reports": [
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/dashboard.html",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/inspection-report.json",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/inspection-report.md"
+      ],
       "datasets": [
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/datasets/ds1-canonical-search.jsonl",
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/datasets/ds2-query-normalization.jsonl",
@@ -153,9 +157,18 @@
       "timeline": [
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/timeline.jsonl"
       ],
-      "inspection_model": [],
+      "inspection_model": [
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/inspection-model.json"
+      ],
       "other": [
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/artifact-index.json",
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/cache-metadata.json",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/checkpoint.json",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/dashboard.json",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.json",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.md",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.pdf",
+        "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.tex",
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/platform-capability-report.json",
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/plugin-dependency-graph.json",
         "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/plugin-state.json",

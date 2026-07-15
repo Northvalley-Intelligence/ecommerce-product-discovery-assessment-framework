@@ -15,7 +15,7 @@
       "max_age_hours": 168
     },
     "query_packs": [
-      "query-packs/colourpop-starter.json"
+      "query-packs/colourpop-curated.json"
     ],
     "surfaces": [
       "submitted_search",
@@ -74,8 +74,8 @@
   },
   "query_packs": [
     {
-      "query_pack_id": "colourpop-starter",
-      "query_count": 5
+      "query_pack_id": "colourpop-curated",
+      "query_count": 12
     }
   ]
 }
