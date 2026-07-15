@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-015",
-  "current_phase": "Generation 15 - Fix-Assist Workflows",
-  "phase_goal": "Help fix the issues the platform finds (charter item 2): executive report issues become a durable, target-level fix plan with machine-verifiable criteria; re-inspections verify each fix automatically, so status changes only through observation.",
-  "status": "generation_15_phase_exit_complete",
+  "current_generation": "GEN-016",
+  "current_phase": "Generation 16 - Platform Refinements",
+  "phase_goal": "Operator-routed refinements: decision-3A maturity enforcement at onboarding, facet-attribute curation to populate DS3, rendered mobile capture.",
+  "status": "generation_16_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,14 +19,14 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-061",
-    "reason": "VAL-060 (live verification slice) and VAL-061 (no-change Dress Up rerun with parity, fix-verification determinism, clean suites, BDD-INV-005) are two independent clean passes with no implementation changes between them. GEN-015 phase exit declared."
+    "latest_run_id": "VAL-063",
+    "reason": "VAL-062 (refinements slice) and VAL-063 (no-change pass: Dress Up parity rerun, live-verification determinism, clean suites, BDD-INV-006) meet the two-pass requirement. GEN-016 phase exit declared."
   },
   "critical_bdds": 14,
-  "high_bdds": 16,
+  "high_bdds": 17,
   "medium_bdds": 5,
   "low_bdds": 0,
-  "bdd_inventory": "BDD-INV-005",
+  "bdd_inventory": "BDD-INV-006",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-015 fix-assist phase exit is complete. Per operator routing the next batch is the refinements: facet-attribute curation to populate DS3, rendered mobile capture, and decision-3A maturity enforcement at onboarding (BDD-G13-012); after that, non-Shopify adapter groundwork. Await routing or proceed in that order.",
-  "session_router_case": "Existing MDE project - GEN-015 phase exit declared",
+  "next_recommended_action": "GEN-016 refinements phase exit is complete: the maturity gate is enforced fail-closed at onboarding, DS1-DS4 all generate, and P008 covers desktop and mobile rendering. Per operator routing the final queued item is non-Shopify adapter groundwork. The only deferred BDD in the entire inventory is BDD-012 independent evaluator calibration.",
+  "session_router_case": "Existing MDE project - GEN-016 phase exit declared",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)"
 }

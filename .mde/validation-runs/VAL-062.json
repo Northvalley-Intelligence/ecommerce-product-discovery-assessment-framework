@@ -1,0 +1,39 @@
+{
+  "validation_run_id": "VAL-062",
+  "generation": "GEN-016",
+  "phase": "Generation 16 - Platform Refinements",
+  "started_at": "2026-07-15T02:20:00Z",
+  "completed_at": "2026-07-15T02:40:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_refinements_slice",
+  "validations_executed": [
+    {
+      "category": "Decision-3A Maturity Gate Enforcement (BDD-G13-012)",
+      "tool": "onboard-target currentMaturityLevel + validate:dashboard",
+      "result": "pass",
+      "evidence": "Onboarding computes the achieved maturity level from the capability registry and maturity model, fail-closed (missing platform files mean Level 0). Shopify targets require Level 2; non-Shopify targets pass the Level 3 gate but are refused pending adapter groundwork. Validator proves rejection with a maturity message when a Level 2 capability is downgraded in an isolated registry."
+    },
+    {
+      "category": "Facet-Attribute Curation (DS3)",
+      "tool": "npm run curate:queries + live inspection",
+      "result": "pass",
+      "evidence": "Curation observes attribute words in sampled product titles (fixed lexicon, evidence-only) and attaches up to two attribute relationships to the top collections. Pink Lily curated pack gained grey/black attributes on two collections; the subsequent inspection generated DS3 with 4 rows - the first non-empty DS3 since the dataset was defined."
+    },
+    {
+      "category": "Rendered Mobile Capture (P008 expansion)",
+      "tool": "rendered-search plugin with rendering.mobile",
+      "result": "pass",
+      "evidence": "A second mobile browser context (390x844, iPhone UA, touch) captures each query's search page. Live Pink Lily run: 5/5 mobile captures with visible products (72 tiles on the first query) and 5 retained mobile screenshots showing genuine mobile rendering (mobile nav, filters, product grid). Registry P008 notes updated; executive report limitation text now reflects mobile coverage."
+    },
+    {
+      "category": "Full Pipeline Regression",
+      "tool": "report:executive, report:executive:pdf, fixplan verify, all suites",
+      "result": "pass",
+      "evidence": "Executive report and PDF regenerate against the refined run (3 strengths, 2 issues); fix plan verification remains consistent (2 still_failing); dashboard, gen13, and framework suites pass; no whitespace errors."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "First clean pass on the GEN-016 refinements slice. BDD-G13-012 flips to passing and DS1-DS4 all generate, leaving BDD-012 evaluator calibration as the sole deferred BDD."
+}

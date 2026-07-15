@@ -1,0 +1,148 @@
+{
+  "schema_version": "inspection-dashboard-v0.1",
+  "inspection_id": "GEN-013-20260715T021743Z",
+  "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+  "crawl_summary": {
+    "inspection_timestamp": "2026-07-15T02:17:43.010Z",
+    "target_url": "https://shopdressup.com/",
+    "target_name": "Dress Up",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "inspection_duration_ms": 53681,
+    "evidence_quality": "partial",
+    "overall_confidence": "Medium"
+  },
+  "operational_summary": {
+    "experiments_completed": 6,
+    "blocked_experiments": 0,
+    "warnings": 2,
+    "evidence_files": 6,
+    "screenshot_count": 0,
+    "downstream_report_readiness": "bounded",
+    "readiness_notes": "Inspection evidence is sufficient for a bounded technical Inspection Report export."
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "Homepage responded."
+    },
+    {
+      "component": "Search",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "5/5 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "5/5 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+    },
+    {
+      "component": "Facets",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "3/3 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "12/12 same-query peer observations completed."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Rendered capture (P008) is not enabled in this evaluation manifest."
+    }
+  ],
+  "evidence_coverage": {
+    "component_coverage_percent": 90,
+    "plugin_observations": 29,
+    "dataset_rows": 21,
+    "evidence_quality": "partial"
+  },
+  "platform_capability": {
+    "status": "warn",
+    "report_path": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/platform-capability-report.json",
+    "failed_capabilities": []
+  },
+  "artifact_explorer": {
+    "evidence": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/competitor-inspection.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/facets.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/mobile.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/recommendations.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/dashboard.html",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/inspection-report.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/datasets/ds3-search-facet.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [],
+    "raw_http": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/artifact-index.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/cache-metadata.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/dashboard.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/platform-capability-report.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/plugin-dependency-graph.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/plugin-state.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/run-manifest.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/site-profile.json"
+    ]
+  }
+}

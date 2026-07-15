@@ -32,7 +32,7 @@
   "competitors": [],
   "rendering": {
     "desktop": true,
-    "mobile": false,
+    "mobile": true,
     "screenshots": true
   },
   "platform_validation": {

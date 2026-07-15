@@ -12,6 +12,26 @@ import { exists, readJson, writeJson } from '../lib/fs-json.mjs';
 const MAX_COLLECTION_QUERIES = 8;
 const MAX_PRODUCT_TYPE_QUERIES = 4;
 const MIN_QUERIES = 5;
+const MAX_ATTRIBUTES_PER_COLLECTION = 2;
+
+// Attribute words are only claimed when observed in the store's own sampled
+// product titles, so DS3 rows stay evidence-backed rather than invented.
+const ATTRIBUTE_LEXICON = [
+  'black', 'white', 'red', 'blue', 'navy', 'green', 'yellow', 'pink',
+  'grey', 'gray', 'beige', 'cream', 'brown', 'purple', 'orange', 'ivory',
+  'denim', 'floral', 'striped', 'leather', 'linen', 'knit'
+];
+
+export function observedAttributes(products) {
+  const seen = new Set();
+  for (const product of products || []) {
+    const words = String(product.title || '').toLowerCase().split(/[^a-z]+/);
+    for (const word of words) {
+      if (ATTRIBUTE_LEXICON.includes(word)) seen.add(word);
+    }
+  }
+  return [...seen];
+}
 
 export function cleanCollectionTitle(title) {
   const cleaned = String(title || '')
@@ -63,11 +83,24 @@ export function curateQueryPack(rootDir, runDir) {
     .filter((collection) => collection.title && collection.handle)
     .filter((collection) => !/[%$]|\bsale\b|\bclearance\b|\boff\b|\b20\d\d\b|\bpreview\b/i.test(collection.title))
     .sort((left, right) => (right.products_count || 0) - (left.products_count || 0));
+  const attributes = observedAttributes(products);
+  let collectionIndex = 0;
   for (const collection of rankedCollections) {
     if (queries.length >= MAX_COLLECTION_QUERIES) break;
     const query = cleanCollectionTitle(collection.title);
     if (query.length < 3 || query.length > 40 || seenQueries.has(query)) continue;
     seenQueries.add(query);
+    // Attach observed attribute relationships to the top collections so DS3
+    // (search + facet) rows are generated from evidence-backed combinations.
+    const attributeRelationships =
+      collectionIndex < 2
+        ? attributes.slice(0, MAX_ATTRIBUTES_PER_COLLECTION).map((attribute) => ({
+            type: 'attribute',
+            browse_node: collection.handle,
+            attribute
+          }))
+        : [];
+    collectionIndex += 1;
     queries.push({
       query_id: `${targetId}-col-${slug(collection.handle)}`,
       query,
@@ -76,11 +109,12 @@ export function curateQueryPack(rootDir, runDir) {
         {
           type: 'collection',
           browse_node: collection.handle
-        }
+        },
+        ...attributeRelationships
       ],
       provenance: {
         source: 'catalog-curation',
-        reason: `Derived from observed collection "${collection.title}" (${collection.products_count ?? 'unknown'} products) in inspection ${inspectionId}.`
+        reason: `Derived from observed collection "${collection.title}" (${collection.products_count ?? 'unknown'} products) in inspection ${inspectionId}.${attributeRelationships.length ? ` Attribute relationships (${attributeRelationships.map((rel) => rel.attribute).join(', ')}) observed in sampled product titles.` : ''}`
       }
     });
   }

@@ -562,3 +562,20 @@ Repository Governance:
 
 Recommendation:
 - Per operator routing (2, 3, 1): proceed to the refinements batch - facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding - then non-Shopify adapter groundwork.
+
+## GEN-016 Phase Exit (2026-07-15)
+
+Scope Completed:
+- Decision-3A maturity gate enforced fail-closed at onboarding (BDD-G13-012 passes); non-Shopify onboarding explicitly refused pending adapter groundwork.
+- Facet-attribute curation: curated packs carry attribute relationships observed in sampled product titles; DS3 generated its first rows (Pink Lily: 4).
+- Rendered mobile capture: P008 extended with a mobile browser context; 5/5 mobile search captures with retained screenshots on the live pilot.
+
+Validation Result:
+- Gate: two clean passes (`VAL-062`, `VAL-063`); BDD-INV-006 grades 36 BDDs, 35 passing, 0 failing, 1 deferred (evaluator calibration only). Phase exit declared.
+- Blocking findings: none.
+
+Repository Governance:
+- All work committed and pushed to `origin/main`.
+
+Recommendation:
+- Final routed item: non-Shopify adapter groundwork. Independent evaluator calibration (BDD-012) remains the only deferred behavior across the whole inventory.

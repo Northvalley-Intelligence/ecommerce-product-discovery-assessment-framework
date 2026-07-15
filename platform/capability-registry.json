@@ -57,7 +57,7 @@
       "status": "implemented_basic",
       "maturity_level": 3,
       "validator": "rendered-capture",
-      "notes": "Bounded first implementation: headless-browser capture of rendered search pages and visible autocomplete dropdowns with screenshots, applied through the rendered-search plugin. Rendered browse, product-page, and mobile capture remain future expansions."
+      "notes": "Bounded implementation: headless-browser capture of rendered search pages, visible autocomplete dropdowns, and mobile-viewport search pages with screenshots, via the rendered-search plugin. Rendered browse and product-page capture remain future expansions."
     },
     {
       "capability_id": "P009",

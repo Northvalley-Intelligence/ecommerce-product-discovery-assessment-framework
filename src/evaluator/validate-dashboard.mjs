@@ -169,6 +169,10 @@ async function main() {
     assert(page.includes("'/api/verify-fixes-live'"), 'Dashboard page missing live verification API wiring.');
 
     const scratchRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'onboard-validate-'));
+    fs.mkdirSync(path.join(scratchRoot, 'platform'), { recursive: true });
+    for (const platformFile of ['capability-registry.json', 'capability-maturity.json']) {
+      fs.copyFileSync(path.join('platform', platformFile), path.join(scratchRoot, 'platform', platformFile));
+    }
     const scratch = await createDashboardServer({ port: 0, host: '127.0.0.1', rootDir: scratchRoot });
     try {
       const onboarded = await fetchJson(`${scratch.url}/api/onboard`, {
@@ -199,6 +203,22 @@ async function main() {
       });
       assert(badOnboard.status === 400, 'Onboarding did not reject an invalid URL.');
 
+      const registryPath = path.join(scratchRoot, 'platform', 'capability-registry.json');
+      const scratchRegistry = readJson(registryPath);
+      const p005 = scratchRegistry.capabilities.find((capability) => capability.capability_id === 'P005');
+      const savedStatus = p005.status;
+      p005.status = 'planned';
+      fs.writeFileSync(registryPath, JSON.stringify(scratchRegistry));
+      const gated = await fetch(`${scratch.url}/api/onboard`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ url: 'https://gated-example.com' })
+      });
+      const gatedBody = await gated.json();
+      assert(gated.status === 400 && /maturity/i.test(gatedBody.error || ''), 'Onboarding should enforce the decision-3A maturity gate when Level 2 capabilities are missing.');
+      p005.status = savedStatus;
+      fs.writeFileSync(registryPath, JSON.stringify(scratchRegistry));
+
       const fakeRun = path.join('assessments', 'example-boutique', 'inspection-report', 'GEN-014', 'GEN-014-00000000T000000Z');
       fs.mkdirSync(path.join(scratchRoot, fakeRun), { recursive: true });
       fs.writeFileSync(
@@ -219,7 +239,8 @@ async function main() {
             products: [
               { title: 'Blue Floral Maxi Dress', handle: 'blue-floral', product_type: 'Dresses' },
               { title: 'White Denim Shorts', handle: 'white-denim', product_type: 'Shorts' }
-            ]
+            ],
+            attribute_expectation_note: 'blue, floral, white, denim should be observed as attributes'
           }
         })
       );
@@ -233,6 +254,10 @@ async function main() {
       assert(curatedPack.queries.some((query) => query.expected_relationships?.[0]?.browse_node === 'maxi-dresses'), 'Curated pack missing collection-backed relationship.');
       assert(curatedPack.queries.every((query) => query.query_id && query.query && query.intent && query.provenance), 'Curated queries missing required fields.');
       assert(!curatedPack.queries.some((query) => /\$|clearance/i.test(query.query)), 'Curated queries should clean price/clearance noise from collection titles.');
+      assert(
+        curatedPack.queries.some((query) => query.expected_relationships.some((rel) => rel.type === 'attribute' && rel.attribute)),
+        'Curated pack should carry attribute relationships observed from product titles (DS3 source).'
+      );
       const updatedEvaluation = readJson(path.join(scratchRoot, onboarded.evaluation));
       assert(updatedEvaluation.query_packs[0] === curated.query_pack, 'Curation should point the evaluation manifest at the curated pack.');
       const emptyRun = path.join('assessments', 'example-boutique', 'inspection-report', 'GEN-014', 'GEN-014-00000000T000001Z');

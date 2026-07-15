@@ -50,13 +50,21 @@ export async function run(context) {
   }
 
   const queries = context.queryRows.slice(0, RENDERED_QUERY_LIMIT);
+  const mobileEnabled = context.evaluation.rendering?.mobile === true;
   const rows = [];
   let session;
+  let mobileSession = null;
   try {
     session = await createRenderedSession({
       userAgent: context.target.inspection_defaults?.user_agent,
       timeoutMs: context.target.inspection_defaults?.timeout_ms ? context.target.inspection_defaults.timeout_ms + 10000 : undefined
     });
+    if (mobileEnabled) {
+      mobileSession = await createRenderedSession({
+        mobile: true,
+        timeoutMs: context.target.inspection_defaults?.timeout_ms ? context.target.inspection_defaults.timeout_ms + 10000 : undefined
+      });
+    }
   } catch (error) {
     return {
       plugin_id: 'rendered-search',
@@ -90,6 +98,12 @@ export async function run(context) {
         query.query,
         path.join(screenshotsDir, `rendered-autocomplete-${query.query_id}.png`)
       );
+      const mobileCapture = mobileSession
+        ? await mobileSession.captureSearchPage(
+            searchUrl(context.target.primary_url, query.query),
+            path.join(screenshotsDir, `rendered-mobile-search-${query.query_id}.png`)
+          )
+        : null;
 
       const apiSuggestions = apiSuggestionsByQueryId.get(query.query_id) || [];
       const visibleSuggestions = dropdownCapture.observed?.visible_suggestions || [];
@@ -119,6 +133,17 @@ export async function run(context) {
           observed: dropdownCapture.observed,
           error: dropdownCapture.error || null
         },
+        rendered_mobile: mobileCapture
+          ? {
+              status: mobileCapture.status,
+              ok: mobileCapture.ok,
+              duration_ms: mobileCapture.duration_ms,
+              classification: mobileCapture.classification,
+              screenshot: mobileCapture.screenshot,
+              observed: mobileCapture.observed,
+              error: mobileCapture.error || null
+            }
+          : null,
         endpoint_comparison: {
           api_suggestion_count: apiSuggestions.length,
           visible_suggestion_count: visibleSuggestions.length,
@@ -148,6 +173,7 @@ export async function run(context) {
     }
   } finally {
     await session.close();
+    if (mobileSession) await mobileSession.close();
   }
 
   const completed = rows.filter((row) => row.rendered_search.ok).length;

@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-07-14",
-  "current_generation": "GEN-014",
+  "updated_on": "2026-07-15",
+  "current_generation": "GEN-016",
   "bdd_inventory": "BDD-INV-003",
   "failing_bdds": [],
   "not_executed_required_bdds": [],
@@ -10,12 +10,6 @@
       "severity": "High",
       "reason": "Independent evaluator calibration requires a completed assessment package and a second evaluator.",
       "revisit_when": "Before declaring the framework reusable for client engagements."
-    },
-    {
-      "id": "BDD-G13-012",
-      "severity": "Medium",
-      "reason": "The capability maturity threshold (decision 3A) is ratified policy in the validation strategy but automated target-acceptance enforcement is not yet implemented.",
-      "revisit_when": "Before the first broad multi-retailer inspection sweep."
     }
   ],
   "deferred_validation_items": [
@@ -104,5 +98,5 @@
       "revisit_when": "Before making any claim that competitor result ordering is purely organic."
     }
   ],
-  "note": "GEN-014 first slice: BDD-G13-009 now passes (application-generated executive reports consume the Inspection Report; proven live on Pink Lily in VAL-054). Remaining deferrals: BDD-012 (calibration) and BDD-G13-012 (automated maturity threshold enforcement). Prior GEN-011 limitations on external claims remain under deferred_validation_items."
+  "note": "GEN-016 refinements: BDD-G13-012 now passes (decision-3A maturity gate enforced at onboarding, fail-closed) and DS1-DS4 all generate (DS3 populated from evidence-observed attribute relationships). Sole remaining deferral: BDD-012 independent evaluator calibration. Prior GEN-011 external-claim limitations remain under deferred_validation_items."
 }

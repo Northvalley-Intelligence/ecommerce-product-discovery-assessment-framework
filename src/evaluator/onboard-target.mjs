@@ -66,10 +66,45 @@ function defaultName(targetId) {
     .join(' ');
 }
 
-export function onboardTarget(rootDir, { url, name } = {}) {
+// Decision 3A: broad Shopify inspections require maturity Level 2
+// (Shopify discovery surfaces); non-Shopify or heavily rendered storefronts
+// require Level 3 (rendered capture). Onboarding enforces this fail-closed.
+export function currentMaturityLevel(rootDir) {
+  const registryPath = path.join(rootDir, 'platform', 'capability-registry.json');
+  const maturityPath = path.join(rootDir, 'platform', 'capability-maturity.json');
+  if (!exists(registryPath) || !exists(maturityPath)) return 0;
+  const statusById = new Map(
+    readJson(registryPath).capabilities.map((capability) => [capability.capability_id, capability.status])
+  );
+  const levels = [...readJson(maturityPath).levels].sort((left, right) => left.level - right.level);
+  let achieved = 0;
+  for (const level of levels) {
+    const satisfied = (level.capabilities || []).every((id) =>
+      ['implemented', 'implemented_basic'].includes(statusById.get(id))
+    );
+    if (!satisfied) break;
+    achieved = level.level;
+  }
+  return achieved;
+}
+
+export function onboardTarget(rootDir, { url, name, expected_platform = 'shopify' } = {}) {
   const { primary_url, domain } = normalizeSiteUrl(url);
   const targetId = targetIdFromDomain(domain);
   if (!targetId) throw new Error(`Could not derive a target id from ${domain}.`);
+
+  const maturity = currentMaturityLevel(rootDir);
+  const requiredLevel = expected_platform === 'shopify' ? 2 : 3;
+  if (maturity < requiredLevel) {
+    throw new Error(
+      `Decision 3A maturity gate: ${expected_platform} targets require platform capability maturity Level ${requiredLevel}, but this evaluator is at Level ${maturity}. Resolve the missing capabilities before onboarding.`
+    );
+  }
+  if (expected_platform !== 'shopify') {
+    throw new Error(
+      'Non-Shopify targets pass the Level 3 rendered-capture gate but no non-Shopify adapter exists yet; onboarding stays Shopify-only until adapter groundwork lands.'
+    );
+  }
 
   const targetPath = path.join('targets', `${targetId}.json`);
   const queryPackPath = path.join('query-packs', `${targetId}-starter.json`);
@@ -167,7 +202,7 @@ export function onboardTarget(rootDir, { url, name } = {}) {
     competitors: [],
     rendering: {
       desktop: true,
-      mobile: false,
+      mobile: true,
       screenshots: true
     },
     platform_validation: {

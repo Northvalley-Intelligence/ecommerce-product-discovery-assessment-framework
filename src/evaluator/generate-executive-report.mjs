@@ -81,6 +81,7 @@ function scoreRendered(records) {
   const total = records.length;
   const renderedOk = records.filter((record) => record.rendered_search?.ok && (record.rendered_search.observed?.visible_product_count ?? 0) > 0).length;
   const dropdownSeen = records.filter((record) => record.endpoint_comparison?.visible_dropdown_observed).length;
+  const mobileCaptures = records.filter((record) => record.rendered_mobile?.ok).length;
   return {
     score: percent(renderedOk, total),
     formula: 'queries whose rendered page showed products / queries captured',
@@ -93,6 +94,7 @@ function scoreRendered(records) {
       screenshot: record.rendered_search?.screenshot || null
     })),
     dropdown_observed_count: dropdownSeen,
+    mobile_capture_count: mobileCaptures,
     queries_without_visible_products: records
       .filter((record) => record.rendered_search?.ok && (record.rendered_search.observed?.visible_product_count ?? 0) === 0)
       .map((record) => record.query)
@@ -346,9 +348,13 @@ export function generateExecutiveReport(rootDir, runDir) {
       (limit) => `${limit.label || limit.code || 'Infrastructure limitation'}: ${limit.status || ''} ${limit.url || limit.endpoint || ''}`.trim()
     ),
     `Scores are directional, computed from ${observedSurfaces.reduce((sum, entry) => sum + (entry.observations || 0), 0)} bounded observations, not a full catalog benchmark.`,
-    ...(scorecard.some((entry) => entry.plugin_id === 'rendered-search' && entry.status === 'observed')
-      ? ['Rendered evidence covers search pages and autocomplete dropdowns on desktop; rendered browse, product-page, and mobile capture are not yet included.']
-      : ['No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report.'])
+    ...(() => {
+      const renderedEntry = scorecard.find((entry) => entry.plugin_id === 'rendered-search' && entry.status === 'observed');
+      if (!renderedEntry) return ['No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report.'];
+      return (renderedEntry.mobile_capture_count ?? 0) > 0
+        ? ['Rendered evidence covers desktop search pages, autocomplete dropdowns, and mobile-viewport search pages; rendered browse and product-page capture are not yet included.']
+        : ['Rendered evidence covers search pages and autocomplete dropdowns on desktop; rendered browse, product-page, and mobile capture are not yet included.'];
+    })()
   ];
 
   const executive = {

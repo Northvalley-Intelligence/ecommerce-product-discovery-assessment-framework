@@ -1,0 +1,337 @@
+{
+  "schema_version": "inspection-model-v0.1",
+  "inspection_id": "GEN-014-20260715T021342Z",
+  "generated_at": "2026-07-15T02:15:54.762Z",
+  "evaluation_id": "pinklily-shopify-baseline",
+  "target_id": "pinklily",
+  "platform_detection": {
+    "platform": "shopify",
+    "confidence": "High",
+    "signals": [
+      "Target manifest expects Shopify.",
+      "Products JSON returned a Shopify products payload.",
+      "Collections JSON returned a Shopify collections payload.",
+      "Suggest JSON returned a Shopify predictive-search payload."
+    ]
+  },
+  "dashboard": {
+    "schema_version": "inspection-dashboard-v0.1",
+    "inspection_id": "GEN-014-20260715T021342Z",
+    "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+    "crawl_summary": {
+      "inspection_timestamp": "2026-07-15T02:13:42.580Z",
+      "target_url": "https://pinklily.com/",
+      "target_name": "Pinklily",
+      "platform_detection": {
+        "platform": "shopify",
+        "confidence": "High",
+        "signals": [
+          "Target manifest expects Shopify.",
+          "Products JSON returned a Shopify products payload.",
+          "Collections JSON returned a Shopify collections payload.",
+          "Suggest JSON returned a Shopify predictive-search payload."
+        ]
+      },
+      "overall_inspection_status": "partial",
+      "inspection_duration_ms": 132182,
+      "evidence_quality": "partial",
+      "overall_confidence": "Medium"
+    },
+    "operational_summary": {
+      "experiments_completed": 6,
+      "blocked_experiments": 0,
+      "warnings": 2,
+      "evidence_files": 6,
+      "screenshot_count": 15,
+      "downstream_report_readiness": "bounded",
+      "readiness_notes": "Inspection evidence is sufficient for a bounded technical Inspection Report export."
+    },
+    "crawl_health": [
+      {
+        "component": "Homepage",
+        "status": "PASS",
+        "confidence": "High",
+        "notes": "Homepage responded."
+      },
+      {
+        "component": "Search",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "8/8 submitted search observations completed."
+      },
+      {
+        "component": "Browse",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+      },
+      {
+        "component": "Autocomplete",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "8/8 autocomplete observations returned suggestions."
+      },
+      {
+        "component": "Product Pages",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+      },
+      {
+        "component": "Facets",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 facet markup observations completed."
+      },
+      {
+        "component": "Recommendations",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "3/3 recommendations endpoint observations completed."
+      },
+      {
+        "component": "Mobile",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+      },
+      {
+        "component": "Competitor Inspection",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Peer inspection is not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Rendered Storefront",
+        "status": "PASS",
+        "confidence": "High",
+        "notes": "5/5 rendered captures completed; 3/5 showed a visible autocomplete dropdown (P008)."
+      }
+    ],
+    "evidence_coverage": {
+      "component_coverage_percent": 90,
+      "plugin_observations": 28,
+      "dataset_rows": 37,
+      "evidence_quality": "partial"
+    },
+    "platform_capability": {
+      "status": "warn",
+      "report_path": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/platform-capability-report.json",
+      "failed_capabilities": []
+    },
+    "artifact_explorer": {
+      "evidence": [
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/facets.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/mobile.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/recommendations.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/rendered-search.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [],
+      "datasets": [
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds3-search-facet.jsonl",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-autocomplete-pinklily-col-90s-nostalgia.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-autocomplete-pinklily-col-a-fall-affair.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-autocomplete-pinklily-col-accessorize-yourself.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-autocomplete-pinklily-col-cozy-christmas.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-autocomplete-pinklily-type-graphic-sweatshirt.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-mobile-search-pinklily-col-90s-nostalgia.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-mobile-search-pinklily-col-a-fall-affair.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-mobile-search-pinklily-col-accessorize-yourself.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-mobile-search-pinklily-col-cozy-christmas.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-mobile-search-pinklily-type-graphic-sweatshirt.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-search-pinklily-col-90s-nostalgia.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-search-pinklily-col-a-fall-affair.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-search-pinklily-col-accessorize-yourself.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-search-pinklily-col-cozy-christmas.png",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/screenshots/rendered-search-pinklily-type-graphic-sweatshirt.png"
+      ],
+      "raw_http": [
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [],
+      "other": [
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/cache-metadata.json",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/platform-capability-report.json",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/plugin-dependency-graph.json",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/plugin-state.json",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/run-manifest.json",
+        "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/site-profile.json"
+      ]
+    }
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "Homepage responded."
+    },
+    {
+      "component": "Search",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "8/8 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "8/8 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+    },
+    {
+      "component": "Facets",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "3/3 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "5/5 rendered captures completed; 3/5 showed a visible autocomplete dropdown (P008)."
+    }
+  ],
+  "datasets": {
+    "DS1": {
+      "path": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "rows": 8,
+      "status": "generated"
+    },
+    "DS2": {
+      "path": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "rows": 23,
+      "status": "generated"
+    },
+    "DS3": {
+      "path": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds3-search-facet.jsonl",
+      "rows": 4,
+      "status": "generated"
+    },
+    "DS4": {
+      "path": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/datasets/ds4-advanced-retrieval.jsonl",
+      "rows": 2,
+      "status": "generated"
+    }
+  },
+  "plugin_results": [
+    {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 8,
+      "completed_observations": 8,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 8,
+      "observations_with_suggestions": 8,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "facets",
+      "status": "pass",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "completed_observations": 3,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "rendered-search",
+      "status": "pass",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "completed_observations": 5,
+      "observations_with_visible_dropdown": 3,
+      "blocked_observations": 0,
+      "confidence": "High",
+      "evidence_quality": "rendered",
+      "infrastructure_limitations": []
+    }
+  ],
+  "limitations": {
+    "platform_capability_gaps": [],
+    "infrastructure_limitations": [],
+    "commerce_observations": [],
+    "separation_rule": "Platform capability gaps and infrastructure limitations are recorded separately from observed ecommerce behavior."
+  },
+  "evidence_model": {
+    "raw_evidence_is_immutable": true,
+    "confidence_scope": "observation_level",
+    "evidence_quality_scope": "coverage_and_completeness"
+  }
+}

@@ -229,3 +229,8 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 - Reason: Ferosh said continue; the live-verification slice completed fix-assist depth, and the gate plus BDD requirements were met.
 - Discovered through: One-click live verification (bounded re-inspection of only the surfaces with open fix items, then automatic verification) proven on Pink Lily; a no-change Dress Up rerun with full GEN-012 parity; fix-verification determinism on fresh evidence; clean suites; and BDD-INV-005 grading 35 scenarios with 33 passing and none failing.
 - Impact: The application now finds issues, plans their fixes with concrete guidance, and proves remediation by observation - completing charter item 2. Next per operator routing: the refinements batch (facet curation for DS3, rendered mobile, maturity enforcement), then non-Shopify adapter groundwork.
+
+- Mission update: Completed the GEN-016 refinements batch and declared phase exit.
+- Reason: Ferosh said go on the routed refinements after fix-assist exited.
+- Discovered through: Fail-closed maturity-gate enforcement at onboarding with validator-proven rejection; curated attribute relationships from sampled product titles producing the first-ever DS3 rows on a live inspection; mobile-viewport rendered captures with retained screenshots verified as genuine mobile rendering; full pipeline regression (reports, PDF, fix verification); and VAL-062/VAL-063 with BDD-INV-006.
+- Impact: All four datasets now generate, both viewports render, and the app refuses work it is not mature enough to do - your third decision is now enforced by code, not convention. Thirty-five of thirty-six BDDs pass; the sole deferral is independent evaluator calibration. Remaining routed item: non-Shopify adapter groundwork.

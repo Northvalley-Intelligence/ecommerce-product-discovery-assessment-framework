@@ -1,0 +1,110 @@
+{
+  "schema_version": "checkpoint-v0.1",
+  "inspection_id": "GEN-014-20260715T021837Z",
+  "written_at": "2026-07-15T02:20:11.801Z",
+  "started_at": "2026-07-15T02:18:37.004Z",
+  "output_dir": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z",
+  "status": "complete",
+  "evaluation_manifest": "evaluations/pinklily-shopify-baseline.json",
+  "evaluation_id": "pinklily-shopify-baseline",
+  "target_id": "pinklily",
+  "site_profile": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z/site-profile.json",
+  "plugin_graph": {
+    "schema_version": "plugin-dependency-graph-v0.1",
+    "plugins": [
+      {
+        "plugin_id": "autocomplete",
+        "surface": "autocomplete",
+        "version": "0.1.0",
+        "description": "Fetches Shopify suggest endpoint responses for each query and records suggested products, collections, queries, pages, timing, and limitation evidence.",
+        "depends_on": [],
+        "consumes": [
+          "site_profile",
+          "query_pack",
+          "shopify_adapter"
+        ],
+        "produces": [
+          "autocomplete_evidence"
+        ],
+        "cache": {
+          "enabled": false
+        }
+      },
+      {
+        "plugin_id": "rendered-search",
+        "surface": "rendered_search",
+        "version": "0.1.0",
+        "description": "Captures rendered search result pages and visible autocomplete dropdowns in a real headless browser (platform capability P008), retaining screenshots and comparing what customers see against endpoint evidence.",
+        "depends_on": [
+          "autocomplete"
+        ],
+        "consumes": [
+          "site_profile",
+          "query_pack",
+          "rendered_browser",
+          "autocomplete_evidence"
+        ],
+        "produces": [
+          "rendered_search_evidence",
+          "screenshots"
+        ],
+        "cache": {
+          "enabled": false
+        }
+      }
+    ],
+    "graph": [
+      {
+        "plugin_id": "autocomplete",
+        "depends_on": []
+      },
+      {
+        "plugin_id": "rendered-search",
+        "depends_on": [
+          "autocomplete"
+        ]
+      }
+    ],
+    "execution_order": [
+      "autocomplete",
+      "rendered-search"
+    ]
+  },
+  "plugin_state": {
+    "schema_version": "plugin-state-v0.1",
+    "inspection_id": "GEN-014-20260715T021837Z",
+    "plugins": {
+      "autocomplete": {
+        "plugin_id": "autocomplete",
+        "status": "pass",
+        "started_at": "2026-07-15T02:18:37.010Z",
+        "ended_at": "2026-07-15T02:18:49.590Z",
+        "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z/evidence/experiments/autocomplete.jsonl",
+        "observations": 8,
+        "confidence": "Medium",
+        "evidence_quality": "bounded"
+      },
+      "rendered-search": {
+        "plugin_id": "rendered-search",
+        "status": "pass",
+        "started_at": "2026-07-15T02:18:49.593Z",
+        "ended_at": "2026-07-15T02:20:11.793Z",
+        "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z/evidence/experiments/rendered-search.jsonl",
+        "observations": 5,
+        "confidence": "High",
+        "evidence_quality": "rendered"
+      }
+    }
+  },
+  "completed_phases": [
+    "autocomplete",
+    "rendered-search"
+  ],
+  "failed_phases": [],
+  "pending_phases": [],
+  "evidence_references": [
+    "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z/evidence/experiments/autocomplete.jsonl",
+    "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z/evidence/experiments/rendered-search.jsonl"
+  ],
+  "timeline_reference": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021837Z/evidence/timeline.jsonl"
+}

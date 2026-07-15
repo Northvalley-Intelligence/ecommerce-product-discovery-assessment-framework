@@ -48,13 +48,26 @@ function classifyRenderError(error) {
   return { category: 'infrastructure', code: 'rendering_failure', label: 'Rendering failure' };
 }
 
-export async function createRenderedSession({ userAgent, timeoutMs = DEFAULT_TIMEOUT_MS, pacingMs = DEFAULT_PACING_MS } = {}) {
+const MOBILE_USER_AGENT =
+  'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1';
+
+export async function createRenderedSession({ userAgent, timeoutMs = DEFAULT_TIMEOUT_MS, pacingMs = DEFAULT_PACING_MS, mobile = false } = {}) {
   const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext({
-    userAgent,
-    viewport: { width: 1440, height: 900 }
-  });
+  const context = await browser.newContext(
+    mobile
+      ? {
+          userAgent: MOBILE_USER_AGENT,
+          viewport: { width: 390, height: 844 },
+          deviceScaleFactor: 3,
+          isMobile: true,
+          hasTouch: true
+        }
+      : {
+          userAgent,
+          viewport: { width: 1440, height: 900 }
+        }
+  );
   context.setDefaultTimeout(timeoutMs);
 
   async function withPage(task) {

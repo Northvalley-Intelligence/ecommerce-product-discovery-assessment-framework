@@ -1,0 +1,21 @@
+{
+  "generation_id": "GEN-016",
+  "mission_phase": "Generation 16 - Platform Refinements",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T02:20:00Z",
+  "ended_at": "2026-07-15T02:45:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_extended",
+  "focus": "Operator-routed refinements batch: decision-3A maturity enforcement at onboarding, facet-attribute curation to populate DS3, and rendered mobile capture extending P008.",
+  "reason_generation_started": "Ferosh routed priorities 2-3-1; fix-assist (GEN-015) exited, so the refinements batch is next.",
+  "primary_deliverable": "Onboarding fail-closed on the decision-3A maturity gate; curated query packs carry evidence-observed attribute relationships so DS3 generates; rendered-search captures mobile-viewport search pages with screenshots when rendering.mobile is enabled.",
+  "validation_notes": [
+    "VAL-062 validates the refinements slice.",
+    "VAL-063 is the second independent clean pass: Dress Up parity rerun, live-verification determinism, clean suites, BDD-INV-006 (36 BDDs, 35 passing, 0 failing, 1 deferred). Phase exit declared 2026-07-15."
+  ],
+  "known_gaps_opened": [
+    "Attribute observation uses a fixed lexicon against sampled product titles; facet-markup-derived attributes are a future refinement.",
+    "Mobile capture is search pages only; mobile autocomplete interaction is not captured.",
+    "Non-Shopify onboarding passes the Level 3 gate but is refused pending adapter groundwork (next per routing)."
+  ]
+}

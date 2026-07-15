@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T021342Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-15T02:13:42.586Z",
+      "ended_at": "2026-07-15T02:13:57.332Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 8,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T02:13:57.334Z",
+      "ended_at": "2026-07-15T02:14:14.326Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 8,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-15T02:14:14.328Z",
+      "ended_at": "2026-07-15T02:14:23.461Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T02:14:23.464Z",
+      "ended_at": "2026-07-15T02:14:29.836Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T02:14:29.839Z",
+      "ended_at": "2026-07-15T02:14:33.536Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "pass",
+      "started_at": "2026-07-15T02:14:33.540Z",
+      "ended_at": "2026-07-15T02:15:54.759Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T021342Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "High",
+      "evidence_quality": "rendered"
+    }
+  }
+}

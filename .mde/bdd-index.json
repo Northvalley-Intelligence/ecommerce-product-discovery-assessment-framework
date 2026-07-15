@@ -1,20 +1,20 @@
 {
-  "inventory_id": "BDD-INV-005",
+  "inventory_id": "BDD-INV-006",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-004",
+  "supersedes": "BDD-INV-005",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_15_phase_exit_inventory",
-  "refresh_rationale": "Extends BDD-INV-004 with GEN-015 fix-assist scenarios graded against VAL-059 through VAL-061 evidence.",
+  "status": "generation_16_phase_exit_inventory",
+  "refresh_rationale": "Extends BDD-INV-005 for the GEN-016 refinements: flips BDD-G13-012 (maturity gate enforced) and BDD-G13-004 (all four datasets generating), and adds mobile rendered capture.",
   "summary": {
-    "total": 35,
+    "total": 36,
     "critical": 14,
-    "high": 16,
+    "high": 17,
     "medium": 5,
     "low": 0,
-    "passing": 33,
+    "passing": 35,
     "failing": 0,
     "not_executed": 0,
-    "deferred": 2
+    "deferred": 1
   },
   "gen13_inspection_platform_bdds": [
     {
@@ -64,11 +64,11 @@
       "title": "Each inspection generates reusable DS1-DS4 datasets with provenance",
       "severity": "Critical",
       "category": "Functional Validation",
-      "status": "passed_gen_013_first_slice_breadth",
+      "status": "passed_gen_016_all_four_datasets_generating",
       "given": "a completed or partial inspection",
       "when": "dataset generation runs",
       "then": "DS1 canonical search, DS2 query normalization, DS3 search+facet, and DS4 advanced retrieval JSONL datasets exist with schema versions, provenance, and rows traceable to observed evidence",
-      "evidence": "Both pilots emit all four datasets validated by schema contracts; rows remain first-slice breadth pending real catalog/browse evidence expansion. VAL-051, VAL-053.",
+      "evidence": "Both pilots emit all four datasets validated by schema contracts; rows remain first-slice breadth pending real catalog/browse evidence expansion. VAL-051, VAL-053. DS3 now generates from evidence-observed attribute relationships in curated packs (Pink Lily: 4 rows). VAL-062.",
       "mission_links": [
         "Inspection Workflow: Dataset Generation"
       ]
@@ -178,15 +178,14 @@
       "title": "Broad retailer inspections are gated by capability maturity (decision 3A)",
       "severity": "Medium",
       "category": "Mission Coverage Validation",
-      "status": "deferred",
+      "status": "passed_gen_016",
       "given": "a new target is proposed for broad (non-pilot) inspection",
       "when": "the target's platform type is evaluated against the maturity threshold",
       "then": "Shopify targets require Level 2 maturity and non-Shopify or heavily rendered storefronts require Level 3 (P008), with bounded pilots allowed below threshold under declared limitations",
-      "defer_reason": "The threshold is ratified policy (decision 3A) recorded in the validation strategy, but automated target-acceptance enforcement is not yet implemented in code.",
-      "revisit_when": "Before the first broad multi-retailer inspection sweep.",
       "mission_links": [
         "operator_decisions_2026_07_14 (VALSTRAT)"
-      ]
+      ],
+      "evidence": "Onboarding enforces the decision-3A gate fail-closed: currentMaturityLevel computed from the capability registry and maturity model; Shopify targets require Level 2, non-Shopify Level 3 (plus adapter availability). Validator proves rejection when a Level 2 capability is downgraded. VAL-062."
     }
   ],
   "downstream_interpretation_bdds_carried_from_inv_002": {
@@ -311,6 +310,19 @@
       "when": "the operator runs the verification inspection",
       "then": "a bounded run covering only the plugins the open items need (with dependencies) executes and the plan verifies automatically",
       "evidence": "verify:fixes:live on Pink Lily ran autocomplete + rendered-search only (GEN-014-20260715T015746Z) and updated the plan. VAL-060."
+    }
+  ],
+  "gen16_refinement_bdds": [
+    {
+      "id": "BDD-G16-001",
+      "title": "Mobile-viewport rendered capture with retained screenshots",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_016",
+      "given": "an evaluation with rendering.mobile enabled",
+      "when": "the rendered-search plugin runs",
+      "then": "each query's search page is also captured in a mobile browser context with visible product extraction and a retained screenshot",
+      "evidence": "Live Pink Lily runs: 5/5 mobile captures with products and genuine mobile rendering verified on screenshots. VAL-062, deterministic rerun in VAL-063."
     }
   ]
 }

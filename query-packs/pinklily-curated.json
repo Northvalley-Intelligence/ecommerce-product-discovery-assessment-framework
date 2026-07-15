@@ -4,7 +4,7 @@
   "name": "Pinklily Curated Pack",
   "domain": "pinklily-catalog",
   "generation": "GEN-014",
-  "curated_from_inspection": "GEN-014-20260714T203102Z",
+  "curated_from_inspection": "GEN-014-20260715T015746Z",
   "queries": [
     {
       "query_id": "pinklily-col-cozy-christmas",
@@ -14,11 +14,21 @@
         {
           "type": "collection",
           "browse_node": "cozy-christmas"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "cozy-christmas",
+          "attribute": "grey"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "cozy-christmas",
+          "attribute": "black"
         }
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"A Pink Lily Holiday\" (578 products) in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed collection \"A Pink Lily Holiday\" (578 products) in inspection GEN-014-20260715T015746Z. Attribute relationships (grey, black) observed in sampled product titles."
       }
     },
     {
@@ -29,11 +39,21 @@
         {
           "type": "collection",
           "browse_node": "a-fall-affair"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "a-fall-affair",
+          "attribute": "grey"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "a-fall-affair",
+          "attribute": "black"
         }
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"A Fall Affair\" (335 products) in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed collection \"A Fall Affair\" (335 products) in inspection GEN-014-20260715T015746Z. Attribute relationships (grey, black) observed in sampled product titles."
       }
     },
     {
@@ -48,7 +68,7 @@
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"90's Nostalgia\" (92 products) in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed collection \"90's Nostalgia\" (92 products) in inspection GEN-014-20260715T015746Z."
       }
     },
     {
@@ -63,7 +83,7 @@
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"Accessorize Yourself Gift Guide\" (81 products) in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed collection \"Accessorize Yourself Gift Guide\" (81 products) in inspection GEN-014-20260715T015746Z."
       }
     },
     {
@@ -73,7 +93,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
       }
     },
     {
@@ -83,7 +103,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
       }
     },
     {
@@ -93,7 +113,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
       }
     },
     {
@@ -103,7 +123,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260714T203102Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
       }
     }
   ],
