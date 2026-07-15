@@ -643,6 +643,9 @@ function dashboardPage() {
     .att-item li { font-size: 12px; margin: 3px 0; overflow-wrap: anywhere; }
     .att-item .att-goto { margin-left: auto; font-size: 12px; white-space: nowrap; }
     .retry-capture-btn { padding: 3px 9px; font-size: 11px; font-weight: 700; margin-left: 8px; }
+    .crumb-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .crumb-link { font-weight: 700; font-size: 13px; }
+    .crumb-back { padding: 6px 12px; font-size: 13px; }
     .chip-details { display: inline-block; }
     .chip-details summary { list-style: none; cursor: pointer; }
     .chip-details summary::-webkit-details-marker { display: none; }
@@ -1664,7 +1667,15 @@ function dashboardPage() {
       }
       const data = state.dataset;
       const manifest = data.meta && data.meta.manifest ? Object.entries(data.meta.manifest) : [];
-      view.innerHTML =
+      // If this dataset belongs to an inspection run, offer a direct way back
+      // to that inspection; otherwise a general back to the inspection list.
+      const runId = data.path.split('/').find((seg) => seg.startsWith('GEN-') && seg.endsWith('Z') && seg.length >= 20);
+      const fromInspection = runId && state.inspections.find((run) => run.inspection_id === runId);
+      const backBar = '<div class="crumb-bar">' +
+        '<a href="#inspections" class="crumb-link">← Inspections</a>' +
+        (fromInspection ? '<button class="crumb-back" data-inspection="' + escapeHtml(fromInspection.inspection_id) + '">← Back to ' + escapeHtml(fromInspection.target_name || fromInspection.inspection_id) + '</button>' : '') +
+        '</div>';
+      view.innerHTML = backBar +
         '<section class="hero"><div><p class="eyebrow">Dataset</p><h1>' + escapeHtml(data.path.split('/').pop()) + '</h1>' +
           '<div class="subline"><span class="mono">' + escapeHtml(data.path) + '</span><span>Modified ' + escapeHtml(data.modified_at) + '</span><span><a href="' + artifactHref(data.path) + '" target="_blank">Open raw file</a></span></div></div>' +
           '<div>' + pill(data.format) + '<div class="muted" style="margin-top:8px">' + data.record_count + ' records · ' + escapeHtml(formatBytes(data.size_bytes)) + '</div></div></section>' +
@@ -1677,6 +1688,12 @@ function dashboardPage() {
           '<div id="datasetRecords"></div>' +
           '<div class="record-detail" id="recordDetail"></div>' +
         '</section>';
+      const crumbBack = document.querySelector('.crumb-back');
+      if (crumbBack) crumbBack.addEventListener('click', (event) => {
+        event.preventDefault();
+        state.selected = crumbBack.dataset.inspection;
+        window.location.hash = '#inspections';
+      });
       document.getElementById('datasetSearch').addEventListener('input', (event) => {
         state.datasetQuery = event.target.value;
         state.selectedRecordIndex = -1;
@@ -1730,6 +1747,11 @@ function dashboardPage() {
         return;
       }
       setView(route.view);
+      if (route.view === 'inspections') {
+        renderRuns();
+        if (state.selected) await loadInspection(state.selected);
+        return;
+      }
       if (route.view !== 'datasets') return;
       if (!state.catalog) loadCatalog().catch((error) => {
         document.getElementById('datasetNav').innerHTML = '<div class="empty">Dataset catalog failed to load: ' + escapeHtml(error.message) + '</div>';
