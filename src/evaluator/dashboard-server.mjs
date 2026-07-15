@@ -1178,7 +1178,10 @@ function dashboardPage() {
         result.textContent = 'Nothing to remove: ' + preview.runs_kept + ' run(s) already fit this policy.';
         return;
       }
-      const ok = window.confirm('Delete ' + preview.runs_to_remove + ' inspection run(s) and free ' + preview.freed_mb + ' MB? This keeps ' + preview.runs_kept + ' run(s) (including any referenced by a fix plan) and cannot be undone. Manifests, query packs, and fix plans are not touched.');
+      const refNote = preview.referenced_runs_removed
+        ? ' ' + preview.referenced_runs_removed + ' of these are referenced by a fix plan (its inspection provenance pointer will go stale).'
+        : '';
+      const ok = window.confirm('Delete ' + preview.runs_to_remove + ' inspection run(s) and free ' + preview.freed_mb + ' MB? Keeps ' + preview.runs_kept + ' run(s).' + refNote + ' Cannot be undone. Manifests, query packs, and fix plans are not touched.');
       if (!ok) {
         result.textContent = 'Cancelled. ' + preview.runs_to_remove + ' run(s) / ' + preview.freed_mb + ' MB would have been freed.';
         return;

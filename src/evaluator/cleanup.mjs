@@ -125,8 +125,11 @@ function planRemovals(rootDir, { policy = 'keep-latest', keep = 1 } = {}) {
       const withinKeepWindow = policy === 'keep-latest' && index < Math.max(1, keep);
       const protectedByPlan = protectedIds.has(run.run_id);
       if (policy === 'all-runs') {
-        if (protectedByPlan) kept.push({ ...run, reason: 'referenced by fix plan' });
-        else toRemove.push(run);
+        // "Delete all inspection runs" is an explicit operator intent to wipe
+        // everything, so it removes fix-plan-referenced runs too. The reference
+        // is surfaced in the preview as evidence rather than silently keeping
+        // the run (which would make "delete all" delete nothing).
+        toRemove.push(protectedByPlan ? { ...run, referenced_by_plan: true } : run);
       } else if (withinKeepWindow || protectedByPlan) {
         kept.push({ ...run, reason: withinKeepWindow ? 'within keep window' : 'referenced by fix plan' });
       } else {
@@ -141,15 +144,25 @@ function planRemovals(rootDir, { policy = 'keep-latest', keep = 1 } = {}) {
 
 export function previewCleanup(rootDir, options) {
   const plan = planRemovals(rootDir, options);
+  const remove = plan.remove.map((run) => ({
+    target_id: run.target_id,
+    run_id: run.run_id,
+    rel_path: run.rel_path,
+    size_bytes: run.capture_bytes ?? run.size_bytes,
+    referenced_by_plan: Boolean(run.referenced_by_plan)
+  }));
   return {
     policy: plan.policy,
     keep: plan.keep,
     total_runs: plan.total_runs,
-    runs_to_remove: plan.remove.length,
+    runs_to_remove: remove.length,
     runs_kept: plan.keep_list.length,
+    // Evidence: runs that a fix plan points to. Under "delete all" these are
+    // removed anyway; the operator sees the count so the consequence is explicit.
+    referenced_runs_removed: remove.filter((run) => run.referenced_by_plan).length,
     freed_bytes: plan.freed_bytes,
     freed_mb: Math.round((plan.freed_bytes / (1024 * 1024)) * 10) / 10,
-    remove: plan.remove.map((run) => ({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.capture_bytes ?? run.size_bytes }))
+    remove
   };
 }
 

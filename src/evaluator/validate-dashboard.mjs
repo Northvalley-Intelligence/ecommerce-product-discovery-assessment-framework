@@ -26,9 +26,45 @@ async function fetchText(url) {
   return text;
 }
 
+const RUN_DIR_PATTERN = /^GEN-\d{3}-\d{8}T\d{6}Z$/;
+
+// Pick a run directory to validate against whatever exists on disk. Prefer an
+// explicit arg, then a Ridge GEN-013 run (historical default), then the newest
+// run of any target. The validator must not hard-depend on one specific run
+// existing - the operator cleans and creates runs freely.
+function pickRunDir() {
+  if (process.argv[2]) return process.argv[2];
+  const ridge = latestDirectory('assessments/ridge/inspection-report/GEN-013');
+  if (ridge) return ridge;
+  const assessmentsDir = 'assessments';
+  if (!exists(assessmentsDir)) return null;
+  const runs = [];
+  for (const target of fs.readdirSync(assessmentsDir, { withFileTypes: true })) {
+    if (!target.isDirectory()) continue;
+    const reportRoot = path.join(assessmentsDir, target.name, 'inspection-report');
+    if (!exists(reportRoot)) continue;
+    for (const generation of fs.readdirSync(reportRoot, { withFileTypes: true })) {
+      if (!generation.isDirectory()) continue;
+      const genDir = path.join(reportRoot, generation.name);
+      for (const run of fs.readdirSync(genDir, { withFileTypes: true })) {
+        if (run.isDirectory() && RUN_DIR_PATTERN.test(run.name)) runs.push(path.join(genDir, run.name));
+      }
+    }
+  }
+  runs.sort((left, right) => path.basename(right).localeCompare(path.basename(left)));
+  return runs[0] || null;
+}
+
 async function main() {
-  const runDir = process.argv[2] || latestDirectory('assessments/ridge/inspection-report/GEN-013');
+  const runDir = pickRunDir();
   assert(runDir, 'No inspection run directory found for dashboard validation.');
+  if (!runDir) {
+    console.error('Dashboard validation failed: no inspection run directory on disk.');
+    process.exit(1);
+  }
+  const runReport = readJson(path.join(runDir, 'inspection-report.json'));
+  const targetId = runReport?.target?.target_id;
+  assert(targetId, `Run ${runDir} has no target_id in inspection-report.json.`);
   assert(exists(path.join(runDir, 'dashboard.html')), `Missing static dashboard export: ${path.join(runDir, 'dashboard.html')}`);
 
   const staticHtml = exists(path.join(runDir, 'dashboard.html')) ? await fetchText(`file://${path.resolve(runDir, 'dashboard.html')}`).catch(() => '') : '';
@@ -57,23 +93,24 @@ async function main() {
 
     const inspections = await fetchJson(`${dashboard.url}/api/inspections`);
     assert(Array.isArray(inspections) && inspections.length > 0, 'Dashboard inspections API returned no history rows.');
-    const ridge = inspections.find((row) => row.target_id === 'ridge');
-    assert(ridge, 'Dashboard history does not include Ridge.');
+    const targetRow = inspections.find((row) => row.target_id === targetId);
+    assert(targetRow, `Dashboard history does not include the validated target ${targetId}.`);
 
-    const detail = await fetchJson(`${dashboard.url}/api/inspection/${encodeURIComponent(ridge.inspection_id)}`);
-    assert(detail.report?.target?.target_id === 'ridge', 'Ridge inspection detail did not load.');
-    assert(detail.dashboard?.operational_summary, 'Ridge dashboard detail missing operational summary.');
-    assert(Array.isArray(detail.timeline), 'Ridge inspection detail missing timeline array.');
-    assert(detail.plugin_state?.plugins, 'Ridge inspection detail missing plugin state.');
-    assert(detail.artifact_index?.groups, 'Ridge inspection detail missing artifact index.');
+    const detail = await fetchJson(`${dashboard.url}/api/inspection/${encodeURIComponent(targetRow.inspection_id)}`);
+    assert(detail.report?.target?.target_id === targetId, `${targetId} inspection detail did not load.`);
+    assert(detail.dashboard?.operational_summary, `${targetId} dashboard detail missing operational summary.`);
+    assert(Array.isArray(detail.timeline), `${targetId} inspection detail missing timeline array.`);
+    assert(detail.plugin_state?.plugins, `${targetId} inspection detail missing plugin state.`);
+    assert(detail.artifact_index?.groups, `${targetId} inspection detail missing artifact index.`);
 
-    const report = readJson(path.join(runDir, 'inspection-report.json'));
-    assert(report.dashboard?.operational_summary?.downstream_report_readiness === 'not_ready', 'Ridge readiness should remain not_ready for the current partial inspection.');
+    assert(typeof runReport.dashboard?.operational_summary?.downstream_report_readiness === 'string'
+      && runReport.dashboard.operational_summary.downstream_report_readiness.length > 0,
+      `${targetId} run missing a downstream_report_readiness value.`);
 
     const artifact = await fetchText(
       `${dashboard.url}/artifact?path=${encodeURIComponent(path.join(runDir, 'inspection-report.md'))}`
     );
-    assert(artifact.includes('Inspection Report: Ridge'), 'Artifact route did not serve Ridge report markdown.');
+    assert(artifact.includes('Inspection Report:'), 'Artifact route did not serve inspection report markdown.');
 
     assert(page.includes('id="tabDatasets"'), 'Dashboard page missing Datasets tab.');
     assert(page.includes('id="tabSettings"'), 'Dashboard page missing Settings tab.');
@@ -108,6 +145,15 @@ async function main() {
       method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ policy: 'captures-only' })
     });
     assert(capturePreview.policy === 'captures-only' && typeof capturePreview.freed_mb === 'number', 'Captures-only cleanup preview did not return freed space.');
+    // GEN-022: "Delete all inspection runs" must plan removal of EVERY run,
+    // including runs referenced by a fix plan (which used to be silently kept,
+    // so a full delete deleted nothing). The reference is surfaced as evidence.
+    const allRunsPreview = await fetchJson(`${dashboard.url}/api/cleanup/preview`, {
+      method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ policy: 'all-runs' })
+    });
+    assert(allRunsPreview.runs_kept === 0, 'Delete-all cleanup kept runs; a full delete must remove every run.');
+    assert(allRunsPreview.runs_to_remove === allRunsPreview.total_runs, 'Delete-all cleanup does not plan to remove every run on disk.');
+    assert(typeof allRunsPreview.referenced_runs_removed === 'number', 'Delete-all cleanup preview does not surface fix-plan-referenced runs as evidence.');
     assert(page.includes('id="datasetNav"'), 'Dashboard page missing dataset navigator.');
     assert(page.includes('id="datasetView"'), 'Dashboard page missing dataset viewer container.');
     assert(page.includes("'/api/dataset?path='"), 'Dashboard page missing dataset API wiring.');
@@ -127,7 +173,10 @@ async function main() {
     assert(targetDataset.record_count >= 1, 'targets/ridge.json dataset returned no records.');
     assert(Array.isArray(targetDataset.fields) && targetDataset.fields.includes('target_id'), 'targets/ridge.json dataset missing target_id field.');
 
-    const historyDataset = await fetchJson(`${dashboard.url}/api/dataset?path=${encodeURIComponent('inspection-history/GEN-013.jsonl')}`);
+    // Use the history file for the validated run's generation, since older
+    // generations' history is pruned as their runs are cleaned.
+    const runGeneration = path.basename(path.dirname(runDir));
+    const historyDataset = await fetchJson(`${dashboard.url}/api/dataset?path=${encodeURIComponent('inspection-history/' + runGeneration + '.jsonl')}`);
     assert(historyDataset.format === 'jsonl', 'Inspection history dataset should parse as jsonl.');
     assert(historyDataset.record_count > 0, 'Inspection history dataset returned no records.');
     assert(historyDataset.fields.includes('inspection_id'), 'Inspection history dataset missing inspection_id field.');
