@@ -2,7 +2,7 @@
   "strategy_id": "VALSTRAT-001",
   "strategy_status": "draft_updated_for_generation_13_inspection_platform_architecture_aligned_to_local_application_charter",
   "created_on": "2026-06-24",
-  "updated_on": "2026-07-14",
+  "updated_on": "2026-07-15",
   "operator_decisions_2026_07_14": {
     "source": "docs/operations/gen-013-clarification-decisions.md",
     "decided_by": "Ferosh",
@@ -597,5 +597,10 @@
       "expensive validations with stable prior results",
       "validations not relevant to the current phase"
     ]
+  },
+  "holistic_ui_review_gate": {
+    "added_on": "2026-07-15",
+    "reason": "Operator flagged that per-feature browser checks missed a cross-view sidebar/detail mismatch (run list showing on Settings with dead clicks). Usability validation must include a holistic as-a-user walkthrough, not only per-feature checks.",
+    "requirement": "Before asking the operator to review any UI change, walk every view/tab from a user perspective end to end (Inspections, Datasets, Settings, Setup, queue, detail tabs), confirming the sidebar, right pane, and navigation stay coherent across view switches and that selecting/clicking anything does what a user expects."
   }
 }
