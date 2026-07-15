@@ -543,6 +543,45 @@ function dashboardPage() {
     .checkbox-row input { width: auto; }
     .checkbox-row label { margin: 0; text-transform: none; font-weight: 600; color: var(--text); font-size: 13px; }
     .setup-actions { display: flex; gap: 10px; margin-top: 8px; }
+    .tl-attention {
+      background: var(--soft-red);
+      border: 1px solid #f0a19a;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+    }
+    .tl-attention-title { font-weight: 800; color: var(--red); font-size: 12px; text-transform: uppercase; margin-bottom: 6px; }
+    .tl-attention ul { margin: 0; padding-left: 18px; }
+    .tl-attention li { margin: 3px 0; font-size: 13px; }
+    .tl-clear {
+      background: var(--soft-green);
+      border: 1px solid #9bd6b6;
+      color: var(--green);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .tl-stepper { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin-bottom: 16px; }
+    .tl-step { display: flex; align-items: center; gap: 6px; }
+    .tl-node { width: 12px; height: 12px; border-radius: 999px; display: inline-block; }
+    .tl-node.pass { background: var(--green); }
+    .tl-node.warn { background: var(--amber); }
+    .tl-node.fail { background: var(--red); }
+    .tl-step-label { font-size: 12px; font-weight: 700; color: var(--muted); }
+    .tl-connector { width: 18px; height: 2px; background: var(--line); }
+    .tl-legend { display: flex; gap: 16px; margin-bottom: 14px; font-size: 12px; color: var(--muted); }
+    .tl-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .tl-lanes { display: grid; gap: 12px; }
+    .tl-lane { border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; }
+    .tl-lane-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .tl-cells { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 5px; }
+    .tl-cell { width: 15px; height: 15px; border-radius: 3px; display: inline-block; }
+    .tl-cell.pass { background: var(--green); }
+    .tl-cell.warn { background: var(--amber); }
+    .tl-cell.fail { background: var(--red); }
+    .tl-cell.muted-status { background: var(--line); }
     .storage {
       margin-top: 18px;
       padding-top: 16px;
@@ -991,6 +1030,90 @@ function dashboardPage() {
       const data = await api('/api/inspection/' + encodeURIComponent(id));
       renderDetail(data);
     }
+    function httpClass(status) {
+      if (typeof status !== 'number') return 'muted-status';
+      if (status >= 200 && status < 300) return 'pass';
+      if (status >= 300 && status < 400) return 'warn';
+      return 'fail';
+    }
+    function renderTimeline(timeline) {
+      if (!timeline.length) return panel('Inspection Timeline', 'What happened, step by step', '<div class="panel-body"><div class="empty">No timeline recorded for this run.</div></div>');
+
+      // Lifecycle phases (everything that is not a per-plugin event) as a stepper.
+      const phaseLabels = {
+        inspection_started: 'Started',
+        platform_validation_completed: 'Platform check',
+        site_profile_cache_decision: 'Site profile',
+        site_profile_written: 'Discovery',
+        datasets_generated: 'Datasets',
+        plugin_graph_built: 'Plan',
+        inspection_completed: 'Completed',
+        inspection_interrupted_for_validation: 'Interrupted'
+      };
+      // Collapse to one node per phase type (a resumed or re-run inspection can
+      // record a phase more than once); the most severe state for that phase wins.
+      const severity = { pass: 0, warn: 1, fail: 2 };
+      const phaseOrder = Object.keys(phaseLabels);
+      const phaseState = {};
+      for (const event of timeline) {
+        if (!phaseLabels[event.event]) continue;
+        const status = String(event.status || '').toLowerCase();
+        const state = event.event === 'inspection_interrupted_for_validation' ? 'warn'
+          : status === 'warn' ? 'warn'
+          : status === 'fail' || status === 'blocked' ? 'fail'
+          : 'pass';
+        if (!(event.event in phaseState) || severity[state] > severity[phaseState[event.event]]) phaseState[event.event] = state;
+      }
+      const phases = phaseOrder
+        .filter((event) => event in phaseState)
+        .map((event) => '<div class="tl-step"><span class="tl-node ' + phaseState[event] + '"></span><span class="tl-step-label">' + escapeHtml(phaseLabels[event]) + '</span></div>')
+        .join('<span class="tl-connector"></span>');
+
+      // Per-plugin lanes: each observation is a status-colored cell (a request
+      // heatmap), with the plugin's final status pill and observation counts.
+      const plugins = [];
+      const order = [];
+      for (const event of timeline) {
+        if (!event.plugin_id) continue;
+        if (!plugins[event.plugin_id]) { plugins[event.plugin_id] = { id: event.plugin_id, obs: [], status: null }; order.push(event.plugin_id); }
+        if (event.event === 'plugin_observation_recorded') plugins[event.plugin_id].obs.push(event);
+        if (event.event === 'plugin_completed') plugins[event.plugin_id].status = event.status;
+      }
+      const lanes = order.map((id) => {
+        const lane = plugins[id];
+        const cells = lane.obs.map((observation) => {
+          const label = (observation.query_id || '') + ' → HTTP ' + (observation.status ?? 'n/a');
+          return '<span class="tl-cell ' + httpClass(observation.status) + '" title="' + escapeHtml(label) + '"></span>';
+        }).join('');
+        const errors = lane.obs.filter((observation) => typeof observation.status === 'number' && observation.status >= 400).length;
+        const meta = lane.obs.length + ' request' + (lane.obs.length === 1 ? '' : 's') + (errors ? ' · ' + errors + ' error' + (errors === 1 ? '' : 's') : '');
+        return '<div class="tl-lane"><div class="tl-lane-head"><strong>' + escapeHtml(id) + '</strong>' + pill(lane.status || 'not_run') + '</div><div class="tl-cells">' + (cells || '<span class="muted">no requests recorded</span>') + '</div><div class="muted" style="font-size:12px">' + escapeHtml(meta) + '</div></div>';
+      }).join('');
+
+      // Attention: blocked/warn plugins and any error-status observations.
+      const attention = [];
+      for (const id of order) {
+        const lane = plugins[id];
+        if (lane.status === 'blocked' || lane.status === 'fail') attention.push('<strong>' + escapeHtml(id) + '</strong> was ' + escapeHtml(lane.status) + '.');
+        else if (lane.status === 'warn') attention.push('<strong>' + escapeHtml(id) + '</strong> completed with warnings.');
+        const errs = lane.obs.filter((observation) => typeof observation.status === 'number' && observation.status >= 400);
+        if (errs.length) {
+          const codes = [...new Set(errs.map((observation) => observation.status))].join(', ');
+          attention.push('<strong>' + escapeHtml(id) + '</strong>: ' + errs.length + ' request' + (errs.length === 1 ? '' : 's') + ' returned HTTP ' + escapeHtml(codes) + '.');
+        }
+      }
+      const attentionBlock = attention.length
+        ? '<div class="tl-attention"><div class="tl-attention-title">Needs attention</div><ul>' + attention.map((item) => '<li>' + item + '</li>').join('') + '</ul></div>'
+        : '<div class="tl-clear">No failures recorded — every request and plugin completed cleanly.</div>';
+
+      return panel('Inspection Timeline', 'What happened, step by step',
+        '<div class="panel-body">' +
+          attentionBlock +
+          '<div class="tl-stepper">' + phases + '</div>' +
+          '<div class="tl-legend"><span><span class="tl-cell pass"></span> 2xx OK</span><span><span class="tl-cell warn"></span> 3xx redirect</span><span><span class="tl-cell fail"></span> 4xx/5xx error</span></div>' +
+          '<div class="tl-lanes">' + (lanes || '<div class="empty">No plugin activity recorded.</div>') + '</div>' +
+        '</div>');
+    }
     function renderDetail(data) {
       const report = data.report || {};
       const dashboard = data.dashboard || report.dashboard || {};
@@ -1032,7 +1155,7 @@ function dashboardPage() {
           panel('Datasets', 'DS1-DS4', table(['Dataset', 'Rows', 'Status', 'Records'], Object.entries(report.datasets || {}).map(([id, dataset]) => ({ id, ...dataset })), (item) => ['<td><strong>' + escapeHtml(item.id) + '</strong></td>', '<td>' + escapeHtml(item.rows) + '</td>', '<td>' + pill(item.status) + '</td>', '<td>' + evidenceLinks(item.path) + '</td>'])) +
         '</div>' +
         panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
-        panel('Inspection Timeline', 'Debug trace', table(['Time', 'Event', 'Details'], (data.timeline || []).slice(-30), (item) => { const copy = {...item}; delete copy.at; delete copy.event; delete copy.inspection_id; return ['<td class="mono">' + escapeHtml(item.at) + '</td>', '<td><strong>' + escapeHtml(item.event) + '</strong></td>', '<td><span class="mono">' + escapeHtml(JSON.stringify(copy)) + '</span></td>']; })) +
+        renderTimeline(data.timeline || []) +
         panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
       const detailRerunBtn = document.getElementById('detailRerunBtn');
       if (detailRerunBtn) detailRerunBtn.addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
