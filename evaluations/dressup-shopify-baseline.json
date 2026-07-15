@@ -19,7 +19,9 @@
     "facets",
     "recommendations",
     "mobile",
-    "competitor_inspection"
+    "browse",
+    "rendered_search",
+    "rendered_product"
   ],
   "plugins": [
     "submitted-search",
@@ -27,7 +29,9 @@
     "facets",
     "recommendations",
     "mobile",
-    "competitor-inspection"
+    "browse-graph",
+    "rendered-search",
+    "rendered-product"
   ],
   "competitors": [
     "targets/red-dress.json",

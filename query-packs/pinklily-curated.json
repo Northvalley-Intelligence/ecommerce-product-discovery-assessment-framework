@@ -4,7 +4,7 @@
   "name": "Pinklily Curated Pack",
   "domain": "pinklily-catalog",
   "generation": "GEN-014",
-  "curated_from_inspection": "GEN-014-20260715T015746Z",
+  "curated_from_inspection": "GEN-014-20260715T041828Z",
   "queries": [
     {
       "query_id": "pinklily-col-cozy-christmas",
@@ -28,7 +28,7 @@
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"A Pink Lily Holiday\" (578 products) in inspection GEN-014-20260715T015746Z. Attribute relationships (grey, black) observed in sampled product titles."
+        "reason": "Derived from observed collection \"A Pink Lily Holiday\" (578 products) in inspection GEN-014-20260715T041828Z. Attribute relationships (grey, black) observed in sampled product titles."
       }
     },
     {
@@ -53,7 +53,7 @@
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"A Fall Affair\" (335 products) in inspection GEN-014-20260715T015746Z. Attribute relationships (grey, black) observed in sampled product titles."
+        "reason": "Derived from observed collection \"A Fall Affair\" (335 products) in inspection GEN-014-20260715T041828Z. Attribute relationships (grey, black) observed in sampled product titles."
       }
     },
     {
@@ -68,7 +68,7 @@
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"90's Nostalgia\" (92 products) in inspection GEN-014-20260715T015746Z."
+        "reason": "Derived from observed collection \"90's Nostalgia\" (92 products) in inspection GEN-014-20260715T041828Z."
       }
     },
     {
@@ -83,7 +83,7 @@
       ],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed collection \"Accessorize Yourself Gift Guide\" (81 products) in inspection GEN-014-20260715T015746Z."
+        "reason": "Derived from observed collection \"Accessorize Yourself Gift Guide\" (81 products) in inspection GEN-014-20260715T041828Z."
       }
     },
     {
@@ -93,7 +93,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T041828Z."
       }
     },
     {
@@ -103,7 +103,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T041828Z."
       }
     },
     {
@@ -113,7 +113,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T041828Z."
       }
     },
     {
@@ -123,7 +123,7 @@
       "expected_relationships": [],
       "provenance": {
         "source": "catalog-curation",
-        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T015746Z."
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T041828Z."
       }
     }
   ],

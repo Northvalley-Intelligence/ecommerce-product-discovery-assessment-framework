@@ -1,0 +1,16 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-013-20260715T050949Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "blocked",
+      "started_at": "2026-07-15T05:09:49.052Z",
+      "ended_at": "2026-07-15T05:09:55.243Z",
+      "evidence_file": "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T050949Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    }
+  }
+}

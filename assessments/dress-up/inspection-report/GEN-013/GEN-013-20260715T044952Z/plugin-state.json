@@ -1,0 +1,86 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-013-20260715T044952Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-15T04:49:52.601Z",
+      "ended_at": "2026-07-15T04:50:00.948Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T04:50:00.951Z",
+      "ended_at": "2026-07-15T04:50:08.095Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-15T04:50:08.098Z",
+      "ended_at": "2026-07-15T04:50:12.303Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T04:50:12.306Z",
+      "ended_at": "2026-07-15T04:50:18.999Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T04:50:19.001Z",
+      "ended_at": "2026-07-15T04:50:22.030Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "browse-graph": {
+      "plugin_id": "browse-graph",
+      "status": "blocked",
+      "started_at": "2026-07-15T04:50:22.034Z",
+      "ended_at": "2026-07-15T04:50:22.035Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/browse-graph.jsonl",
+      "observations": 1,
+      "confidence": "Low",
+      "evidence_quality": "limitation_record"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "skipped",
+      "started_at": "2026-07-15T04:50:22.039Z",
+      "ended_at": "2026-07-15T04:50:22.039Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 0,
+      "confidence": "Unknown",
+      "evidence_quality": "not_run"
+    },
+    "rendered-product": {
+      "plugin_id": "rendered-product",
+      "status": "skipped",
+      "started_at": "2026-07-15T04:50:22.041Z",
+      "ended_at": "2026-07-15T04:50:22.042Z",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T044952Z/evidence/experiments/rendered-product.jsonl",
+      "observations": 0,
+      "confidence": "Unknown",
+      "evidence_quality": "not_run"
+    }
+  }
+}

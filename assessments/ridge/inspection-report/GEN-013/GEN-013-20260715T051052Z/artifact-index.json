@@ -1,0 +1,44 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-013-20260715T051052Z",
+  "generated_at": "2026-07-15T05:11:05.164Z",
+  "artifact_count": 20,
+  "groups": {
+    "evidence": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/dashboard.html",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/inspection-report.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/datasets/ds3-search-facet.jsonl",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [],
+    "raw_http": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/artifact-index.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/cache-metadata.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/dashboard.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/platform-capability-report.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/plugin-dependency-graph.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/plugin-state.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/run-manifest.json",
+      "assessments/ridge/inspection-report/GEN-013/GEN-013-20260715T051052Z/site-profile.json"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-013-20260715T045817Z",
+  "generated_at": "2026-07-15T04:59:04.628Z",
+  "artifact_count": 25,
+  "groups": {
+    "evidence": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/experiments/browse-graph.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/experiments/facets.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/experiments/mobile.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/experiments/recommendations.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/dashboard.html",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/inspection-report.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/datasets/ds3-search-facet.jsonl",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [],
+    "raw_http": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/artifact-index.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/cache-metadata.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/dashboard.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/evidence/browse-graph.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/platform-capability-report.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/plugin-dependency-graph.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/plugin-state.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/run-manifest.json",
+      "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T045817Z/site-profile.json"
+    ]
+  }
+}

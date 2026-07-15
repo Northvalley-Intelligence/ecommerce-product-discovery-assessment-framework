@@ -1,0 +1,178 @@
+{
+  "schema_version": "browse-graph-v0.1",
+  "inspection_id": "GEN-013-20260715T045817Z",
+  "generated_at": "2026-07-15T04:59:04.604Z",
+  "hierarchy": "flat_inventory",
+  "hierarchy_note": "Nodes and membership only; parent/child tree from the storefront navigation is a future slice.",
+  "node_count": 8,
+  "nodes": [
+    {
+      "handle": "atlanta",
+      "title": "Atlanta Gameday - Baseball Sweatshirts & Chop Chop Tees",
+      "declared_product_count": 134,
+      "sampled_product_count": 20,
+      "sample_products": [
+        "white-home-runs-hot-dogs-tee",
+        "atlanta-baseball-light-blue-block-letter-tee",
+        "navy-atl-embroidered-baseball-hat",
+        "atlanta-embroidered-large-canvas-tote-bag",
+        "chop-chop-braves-large-canvas-tote-bag",
+        "light-blue-atl-baseball-star-tee",
+        "atlanta-chop-chop-light-blue-tee",
+        "chop-chop-embroidery-light-denim-hat",
+        "classic-atlanta-pinstripe-trucker-hat",
+        "atlanta-star-denim-patch-heather-grey-relaxed-sweatshirt",
+        "red-chop-chop-script-embroidered-pullover",
+        "chop-chop-script-cream-sweater",
+        "ivory-chop-chop-script-sweater-vest",
+        "chop-chop-script-tank",
+        "navy-red-atlanta-tank",
+        "white-chop-chop-script-sweatshirt",
+        "white-atlanta-baseball-bubble-letter-sweatshirt",
+        "navy-atlanta-baseball-sweatshirt-1",
+        "taupe-atlanta-sweatshirt",
+        "white-atlanta-baseball-sweatshirt"
+      ]
+    },
+    {
+      "handle": "american-summer-collection",
+      "title": "American Summer Collection",
+      "declared_product_count": 79,
+      "sampled_product_count": 20,
+      "sample_products": [
+        "forever-yours-lace-tiered-maxi-skirt",
+        "westward-denim-medium-wash-tie-front-vest",
+        "dana-medium-wash-high-rise-denim-shorts",
+        "bright-from-within-blue-maxi-dress",
+        "perfectly-placed-cream-floral-midi-dress",
+        "summer-soiree-blue-stripe-jumper",
+        "destined-for-sun-light-blue-babydoll-mini-dress",
+        "seabrook-blue-stripe-tiered-midi-dress",
+        "summer-stroll-flowy-shorts-du-deal",
+        "summer-stroll-peplum-blouse-du-deal",
+        "americana-star-patch-red-tee",
+        "breezy-beloved-off-white-blouse",
+        "breezy-beloved-off-white-tiered-maxi-skirt",
+        "coastal-mornings-blue-striped-mini-dress",
+        "garden-grace-white-floral-mini-dress",
+        "pretty-picnic-gingham-drawstring-shorts-du-deal",
+        "pretty-picnic-gingham-button-up-top-du-deal",
+        "made-for-smiles-medium-wash-denim-maxi-dress",
+        "all-yours-light-blue-striped-maxi-dress",
+        "an-easy-yes-white-eyelet-mini-dress"
+      ]
+    },
+    {
+      "handle": "american-summer-dresses-collection",
+      "title": "American Summer Dresses Collection",
+      "declared_product_count": 31,
+      "sampled_product_count": 20,
+      "sample_products": [
+        "bright-from-within-blue-maxi-dress",
+        "perfectly-placed-cream-floral-midi-dress",
+        "summer-soiree-blue-stripe-jumper",
+        "destined-for-sun-light-blue-babydoll-mini-dress",
+        "seabrook-blue-stripe-tiered-midi-dress",
+        "coastal-mornings-blue-striped-mini-dress",
+        "garden-grace-white-floral-mini-dress",
+        "made-for-smiles-medium-wash-denim-maxi-dress",
+        "all-yours-light-blue-striped-maxi-dress",
+        "an-easy-yes-white-eyelet-mini-dress",
+        "show-stopper-light-blue-smocked-maxi-dress",
+        "coast-to-coast-blue-striped-midi-dress-du-deal",
+        "stars-in-her-eyes-red-contrast-mini-dress",
+        "until-we-meet-again-white-mini-dress",
+        "bluebird-kisses-light-blue-mini-dress",
+        "summer-harbor-light-blue-striped-midi-dress",
+        "morning-sail-light-blue-striped-mini-dress",
+        "seashell-society-navy-printed-mini-dress",
+        "magnolia-dream-light-blue-floral-maxi-dress",
+        "precious-moments-blue-gingham-midi-dress"
+      ]
+    },
+    {
+      "handle": "american-nights-collection",
+      "title": "American Nights Collection",
+      "declared_product_count": 25,
+      "sampled_product_count": 20,
+      "sample_products": [
+        "cape-escape-heather-grey-lobster-graphic-tee",
+        "catch-of-the-day-lobster-navy-graphic-tank",
+        "oceanfront-blue-stripe-maxi-dress",
+        "american-nights-white-flag-knit-tank",
+        "all-american-navy-flag-kit-top",
+        "southern-belle-red-gingham-maxi-dress",
+        "sweet-magnolia-white-eyelet-tiered-mini-skirt",
+        "always-in-rotation-navy-knit-tank",
+        "harbor-nights-pinstripe-navy-button-front-tank",
+        "precious-moments-blue-gingham-midi-dress",
+        "coastal-chic-beige-platform-heels",
+        "bow-moment-gingham-black-slide-sandals",
+        "bold-energy-tortoise-square-sunglasses",
+        "downtown-edge-gold-oval-sunglasses",
+        "arcadia",
+        "fifth-avenue-tortoise-square-sunglasses",
+        "weekend-escape-brown-square-sunglasses",
+        "presley-americana-red-floral-drop-earrings",
+        "wren-cream-layered-statement-earrings",
+        "hadley-gold-layered-shell-statement-earrings"
+      ]
+    },
+    {
+      "handle": "all-american-summer-collection",
+      "title": "All-American Summer Collection",
+      "declared_product_count": 20,
+      "sampled_product_count": 20,
+      "sample_products": [
+        "freedom-feels-flag-knit-top",
+        "stars-stripes-navy-flag-knit-top",
+        "front-porch-red-gingham-drawstring-shorts",
+        "star-spangled-style-navy-striped-tank",
+        "liberty-lane-knit-tank-top",
+        "sweet-cherry-red-gingham-midi-dress",
+        "blue-jean-nights-denim-button-front-mini-dress",
+        "picnic-stroll-red-gingham-mini-dress",
+        "blue-skies-daisies-navy-mini-dress",
+        "heartland-breeze-gingham-tiered-maxi-skirt",
+        "paloma-textured-gold-stud-earrings",
+        "poppy-gold-star-drop-earrings",
+        "quinn-shell-fan-drop-white-earrings",
+        "margot-gold-seashell-drop-earrings",
+        "maisie-starfish-gold-stud-earrings",
+        "remi-gold-ring-set",
+        "laney-turquoise-stack-bracelet-set",
+        "eden-white-layered-chain-bracelet",
+        "maren-coastal-charm-gold-necklace",
+        "ansley-bandana-costal-charm-red-necklace"
+      ]
+    },
+    {
+      "handle": "amber-afternoons-collection",
+      "title": "Amber Afternoons Collection",
+      "declared_product_count": 18,
+      "sampled_product_count": 1,
+      "sample_products": [
+        "alex-light-wash-high-rise-distressed-straight-leg-jeans"
+      ]
+    },
+    {
+      "handle": "american-dream-collection",
+      "title": "American Dream Collection",
+      "declared_product_count": 18,
+      "sampled_product_count": 2,
+      "sample_products": [
+        "mica-medium-wash-high-rise-bandless-boyfriend-denim-shorts",
+        "bella-light-wash-high-rise-distressed-denim-shorts"
+      ]
+    },
+    {
+      "handle": "autumn-breeze-collection",
+      "title": "Autumn Breeze Collection",
+      "declared_product_count": 18,
+      "sampled_product_count": 1,
+      "sample_products": [
+        "penelope-everyday-cropped-tee-du-deal"
+      ]
+    }
+  ]
+}

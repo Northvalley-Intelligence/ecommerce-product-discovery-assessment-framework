@@ -74,7 +74,40 @@ function latestReferencedRunIds(rootDir) {
   return referenced;
 }
 
+// Captures (screenshots + raw HTTP/HTML dumps) are the heavy part of a run.
+// This policy reclaims that space while keeping the structured evidence,
+// datasets, and reports — so reports still render and fixes still verify.
+const CAPTURE_SUBDIRS = [['evidence', 'screenshots'], ['raw']];
+
+function captureBytes(runDir) {
+  let total = 0;
+  const targets = [];
+  for (const parts of CAPTURE_SUBDIRS) {
+    const dir = path.join(runDir, ...parts);
+    if (exists(dir) && fs.statSync(dir).isDirectory()) {
+      total += dirSize(dir);
+      targets.push(dir);
+    }
+  }
+  return { total, targets };
+}
+
+function planCaptureRemovals(rootDir) {
+  const runs = collectRunDirs(rootDir).map((run) => {
+    const { total, targets } = captureBytes(run.path);
+    return { ...run, capture_bytes: total, capture_targets: targets };
+  }).filter((run) => run.capture_bytes > 0);
+  return {
+    policy: 'captures-only',
+    total_runs: runs.length,
+    remove: runs,
+    keep_list: [],
+    freed_bytes: runs.reduce((sum, run) => sum + run.capture_bytes, 0)
+  };
+}
+
 function planRemovals(rootDir, { policy = 'keep-latest', keep = 1 } = {}) {
+  if (policy === 'captures-only') return planCaptureRemovals(rootDir);
   const runs = collectRunDirs(rootDir);
   const protectedIds = latestReferencedRunIds(rootDir);
   const byTarget = new Map();
@@ -116,7 +149,7 @@ export function previewCleanup(rootDir, options) {
     runs_kept: plan.keep_list.length,
     freed_bytes: plan.freed_bytes,
     freed_mb: Math.round((plan.freed_bytes / (1024 * 1024)) * 10) / 10,
-    remove: plan.remove.map((run) => ({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.size_bytes }))
+    remove: plan.remove.map((run) => ({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.capture_bytes ?? run.size_bytes }))
   };
 }
 
@@ -124,8 +157,14 @@ export function runCleanup(rootDir, options) {
   const plan = planRemovals(rootDir, options);
   const removed = [];
   for (const run of plan.remove) {
-    fs.rmSync(run.path, { recursive: true, force: true });
-    removed.push({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.size_bytes });
+    if (plan.policy === 'captures-only') {
+      // Remove only the capture subdirs, leaving structured evidence intact.
+      for (const dir of run.capture_targets || []) fs.rmSync(dir, { recursive: true, force: true });
+      removed.push({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.capture_bytes });
+    } else {
+      fs.rmSync(run.path, { recursive: true, force: true });
+      removed.push({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.size_bytes });
+    }
   }
   return {
     policy: plan.policy,

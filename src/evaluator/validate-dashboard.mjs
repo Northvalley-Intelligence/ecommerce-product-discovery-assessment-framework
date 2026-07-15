@@ -76,6 +76,17 @@ async function main() {
     assert(artifact.includes('Inspection Report: Ridge'), 'Artifact route did not serve Ridge report markdown.');
 
     assert(page.includes('id="tabDatasets"'), 'Dashboard page missing Datasets tab.');
+    assert(page.includes('id="tabSettings"'), 'Dashboard page missing Settings tab.');
+    assert(page.includes('id="queueStrip"'), 'Dashboard page missing run queue strip.');
+    assert(page.includes('captures-only'), 'Settings cleanup missing captures-only policy.');
+    assert(page.includes("'/api/queue'"), 'Dashboard page missing queue API wiring.');
+
+    const queue = await fetchJson(`${dashboard.url}/api/queue`);
+    assert(queue.counts && Array.isArray(queue.pending) && Array.isArray(queue.recent), 'Queue API did not return the expected shape.');
+    const capturePreview = await fetchJson(`${dashboard.url}/api/cleanup/preview`, {
+      method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ policy: 'captures-only' })
+    });
+    assert(capturePreview.policy === 'captures-only' && typeof capturePreview.freed_mb === 'number', 'Captures-only cleanup preview did not return freed space.');
     assert(page.includes('id="datasetNav"'), 'Dashboard page missing dataset navigator.');
     assert(page.includes('id="datasetView"'), 'Dashboard page missing dataset viewer container.');
     assert(page.includes("'/api/dataset?path='"), 'Dashboard page missing dataset API wiring.');

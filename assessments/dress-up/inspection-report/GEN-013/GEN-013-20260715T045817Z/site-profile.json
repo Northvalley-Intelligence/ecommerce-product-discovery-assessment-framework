@@ -1,0 +1,2526 @@
+{
+  "schema_version": "site-profile-v0.1",
+  "discovered_at": "2026-07-15T04:58:24.213Z",
+  "target": {
+    "target_id": "dress-up",
+    "name": "Dress Up",
+    "primary_url": "https://shopdressup.com/",
+    "canonical_platform_host": null
+  },
+  "platform_detection": {
+    "platform": "shopify",
+    "confidence": "High",
+    "signals": [
+      "Target manifest expects Shopify.",
+      "Products JSON returned a Shopify products payload.",
+      "Collections JSON returned a Shopify collections payload.",
+      "Suggest JSON returned a Shopify predictive-search payload."
+    ]
+  },
+  "access": {
+    "authentication_required": false,
+    "limitations": []
+  },
+  "endpoint_discovery": [
+    {
+      "label": "homepage",
+      "url": "https://shopdressup.com/",
+      "final_url": "https://shopdressup.com/",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 526,
+      "content_type": "text/html; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "<!doctype html> <!-- BEGIN MerchantWidget Code --> <script async crossorigin fetchpriority=\"high\" src=\"/cdn/shopifycloud/importmap-polyfill/es-modules-shim.2.4.0.js\"></script> <script id='merchantWidgetScript' src=\"https://www.gstatic.com/shopping/merchant/merchantwidget.js\" defer></script> <script type=\"text/javascript\"> merchantWidgetScript.addEventListener('load', function () { merchantwidget.start({ position: 'RIGHT_BOTTOM', sideMargin: 21, bottomMargin: 65, mobileSideMargin: 11, mobileBotto",
+      "json_payload": null
+    },
+    {
+      "label": "robots",
+      "url": "https://shopdressup.com/robots.txt",
+      "final_url": "https://shopdressup.com/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 71,
+      "content_type": "text/plain; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "# we use Shopify as our ecommerce platform User-agent: * Disallow: /a/downloads/-/* Disallow: /admin Disallow: /cart Disallow: /orders Disallow: /checkouts/ Disallow: /checkout Disallow: /3390901/checkouts Disallow: /3390901/orders Disallow: /carts Disallow: /account Disallow: /collections/*sort_by* Disallow: /*/collections/*sort_by* Disallow: /collections/*+* Disallow: /collections/*%2B* Disallow: /collections/*%2b* Disallow: /*/collections/*+* Disallow: /*/collections/*%2B* Disallow: /*/collec",
+      "json_payload": null
+    },
+    {
+      "label": "products_json",
+      "url": "https://shopdressup.com/products.json?limit=10",
+      "final_url": "https://shopdressup.com/products.json?limit=10",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 112,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"products\":[{\"id\":7745815511107,\"title\":\"Beige Amen Embroidered Faith Hat\",\"handle\":\"beige-amen-embroidered-faith-hat\",\"body_html\":\"\\u003cp\\u003eWe love the message on the Beige Amen Embroidered Faith Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with \\\"Amen\\\" embroidered on the front!\\u003c\\/p\\u003e\\u003cul\\u003e\\n\\u003cli\\u003e\\u003cp\\u003eAdjustable Strap\\u003c\\/p\\u003e\\u003c\\/li\\u003e\\n\\u003cli\\u003e\\u003cp\\u003e100% Cotton\\u003c\\",
+      "json_payload": {
+        "products": [
+          {
+            "id": 7745815511107,
+            "title": "Beige Amen Embroidered Faith Hat",
+            "handle": "beige-amen-embroidered-faith-hat",
+            "body_html": "<p>We love the message on the Beige Amen Embroidered Faith Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with \"Amen\" embroidered on the front!</p><ul>\n<li><p>Adjustable Strap</p></li>\n<li><p>100% Cotton</p></li>\n<li><p>Spot Clean with Damp Cloth or Sponge</p></li>\n<li><p>One Size Fits Most</p></li>\n</ul><p></p>",
+            "published_at": "2026-07-13T08:33:29-04:00",
+            "created_at": "2026-07-09T07:42:47-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "LCAP5549-TT",
+            "product_type": "DU Exclusive",
+            "tags": [
+              "6/26/2026",
+              "Accessories",
+              "DU Exclusive",
+              "Faith",
+              "Hat"
+            ],
+            "variants": [
+              {
+                "id": 43509352038467,
+                "title": "Beige",
+                "option1": "Beige",
+                "option2": null,
+                "option3": null,
+                "sku": "256768",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36425677406275,
+                  "product_id": 7745815511107,
+                  "position": 1,
+                  "created_at": "2026-07-13T08:31:24-04:00",
+                  "updated_at": "2026-07-13T08:31:27-04:00",
+                  "alt": "A woman wearing a beige baseball cap with 'AMEN' embroidered in brown across the front, photographed against a plain light gray studio background.",
+                  "width": 3257,
+                  "height": 4885,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-4.jpg?v=1783945887",
+                  "variant_ids": [
+                    43509352038467
+                  ]
+                },
+                "available": true,
+                "price": "28.00",
+                "grams": 82,
+                "compare_at_price": "28.00",
+                "position": 1,
+                "product_id": 7745815511107,
+                "created_at": "2026-07-09T07:42:48-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36425677406275,
+                "created_at": "2026-07-13T08:31:24-04:00",
+                "position": 1,
+                "updated_at": "2026-07-13T08:31:27-04:00",
+                "product_id": 7745815511107,
+                "variant_ids": [
+                  43509352038467
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-4.jpg?v=1783945887",
+                "width": 3257,
+                "height": 4885
+              },
+              {
+                "id": 36425677439043,
+                "created_at": "2026-07-13T08:31:24-04:00",
+                "position": 2,
+                "updated_at": "2026-07-13T08:31:27-04:00",
+                "product_id": 7745815511107,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-5.jpg?v=1783945887",
+                "width": 3033,
+                "height": 4549
+              },
+              {
+                "id": 36425677373507,
+                "created_at": "2026-07-13T08:31:24-04:00",
+                "position": 3,
+                "updated_at": "2026-07-13T08:31:27-04:00",
+                "product_id": 7745815511107,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-3.jpg?v=1783945887",
+                "width": 3257,
+                "height": 4885
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Beige"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735678107715,
+            "title": "Yellow Cross Embroidered Hat",
+            "handle": "pray-baseball-hat",
+            "body_html": "<p>We love the message on the Yellow Cross Embroidered Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with a cross embroidered on the front!</p><ul>\n<li><p>Adjustable Strap</p></li>\n<li><p>100% Cotton</p></li>\n<li><p>Spot Clean with Damp Cloth or Sponge</p></li>\n<li><p>One Size Fits Most</p></li>\n</ul><p></p>",
+            "published_at": "2026-07-13T07:57:56-04:00",
+            "created_at": "2026-07-02T13:41:27-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "LCAP6448-YW",
+            "product_type": "DU Exclusive",
+            "tags": [
+              "6/26/2026",
+              "Accessories",
+              "Dad",
+              "DU Exclusive",
+              "Faith",
+              "Hat"
+            ],
+            "variants": [
+              {
+                "id": 43485899817027,
+                "title": "Yellow",
+                "option1": "Yellow",
+                "option2": null,
+                "option3": null,
+                "sku": "256761",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36371645136963,
+                  "product_id": 7735678107715,
+                  "position": 1,
+                  "created_at": "2026-07-09T06:33:41-04:00",
+                  "updated_at": "2026-07-09T06:33:44-04:00",
+                  "alt": "A blonde woman wearing a pale yellow baseball cap with a white cross embroidery and gold-framed aviator sunglasses, posing outdoors in front of a blurred tree trunk.",
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-27_79f92dd4-4580-433d-9e0f-3dc42a42ec6d.jpg?v=1783593224",
+                  "variant_ids": [
+                    43485899817027
+                  ]
+                },
+                "available": true,
+                "price": "24.00",
+                "grams": 82,
+                "compare_at_price": "24.00",
+                "position": 1,
+                "product_id": 7735678107715,
+                "created_at": "2026-07-02T13:41:30-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36371645136963,
+                "created_at": "2026-07-09T06:33:41-04:00",
+                "position": 1,
+                "updated_at": "2026-07-09T06:33:44-04:00",
+                "product_id": 7735678107715,
+                "variant_ids": [
+                  43485899817027
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-27_79f92dd4-4580-433d-9e0f-3dc42a42ec6d.jpg?v=1783593224",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36371600277571,
+                "created_at": "2026-07-09T06:31:42-04:00",
+                "position": 2,
+                "updated_at": "2026-07-09T06:31:45-04:00",
+                "product_id": 7735678107715,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-28_602ea875-f223-4d32-98ba-01e603b1f607.jpg?v=1783593105",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36371600212035,
+                "created_at": "2026-07-09T06:31:42-04:00",
+                "position": 3,
+                "updated_at": "2026-07-09T06:32:28-04:00",
+                "product_id": 7735678107715,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-29_30caa83f-6cfe-4bd8-9d87-700951f7c549.jpg?v=1783593148",
+                "width": 2624,
+                "height": 3936
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Yellow"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735675387971,
+            "title": "Blue Embroidered Cross Hat",
+            "handle": "cross-baseball-hat",
+            "body_html": "<p>We love the message on the Blue Embroidered Cross Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with a cross embroidered on the front! </p><ul>\n<li><p>Adjustable Strap</p></li>\n<li><p>100% Cotton</p></li>\n<li><p>Spot Clean with Damp Cloth or Sponge</p></li>\n<li><p>One Size Fits Most</p></li>\n</ul><p></p>",
+            "published_at": "2026-07-13T07:57:41-04:00",
+            "created_at": "2026-07-02T13:33:12-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "LCAP6448-BL",
+            "product_type": "DU Exclusive",
+            "tags": [
+              "6/26/2026",
+              "Accessories",
+              "Dad",
+              "DU Exclusive",
+              "Faith",
+              "Hat"
+            ],
+            "variants": [
+              {
+                "id": 43485899423811,
+                "title": "Yellow",
+                "option1": "Yellow",
+                "option2": null,
+                "option3": null,
+                "sku": "256762",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36371802128451,
+                  "product_id": 7735675387971,
+                  "position": 3,
+                  "created_at": "2026-07-09T06:43:11-04:00",
+                  "updated_at": "2026-07-09T06:43:13-04:00",
+                  "alt": "A close-up lifestyle shot of a smiling blonde woman wearing a pale yellow baseball cap with a blue embroidered cross on the front, gold-framed sunglasses, and a gray hoodie, with a blurred tree trunk in the background.",
+                  "width": 1365,
+                  "height": 2048,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/AF16ACA9-64A1-4075-A2A1-CAECFF4911E7.jpg?v=1783593793",
+                  "variant_ids": [
+                    43485899423811
+                  ]
+                },
+                "available": true,
+                "price": "24.00",
+                "grams": 82,
+                "compare_at_price": "24.00",
+                "position": 1,
+                "product_id": 7735675387971,
+                "created_at": "2026-07-02T13:41:11-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43485885661251,
+                "title": "White",
+                "option1": "White",
+                "option2": null,
+                "option3": null,
+                "sku": "256763",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36303918628931,
+                  "product_id": 7735675387971,
+                  "position": 1,
+                  "created_at": "2026-07-02T14:23:06-04:00",
+                  "updated_at": "2026-07-02T14:23:08-04:00",
+                  "alt": "A woman outdoors wearing a white baseball cap with a small blue cross on the front, gold-framed aviator sunglasses, and a brown sweatshirt, with a blurred tree trunk in the background.",
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-5_d542e7d0-fe3c-4898-980c-cdefc3cd2bb1.jpg?v=1783016588",
+                  "variant_ids": [
+                    43485885661251
+                  ]
+                },
+                "available": true,
+                "price": "24.00",
+                "grams": 82,
+                "compare_at_price": "24.00",
+                "position": 2,
+                "product_id": 7735675387971,
+                "created_at": "2026-07-02T13:33:13-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36303918628931,
+                "created_at": "2026-07-02T14:23:06-04:00",
+                "position": 1,
+                "updated_at": "2026-07-02T14:23:08-04:00",
+                "product_id": 7735675387971,
+                "variant_ids": [
+                  43485885661251
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-5_d542e7d0-fe3c-4898-980c-cdefc3cd2bb1.jpg?v=1783016588",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36303918661699,
+                "created_at": "2026-07-02T14:23:06-04:00",
+                "position": 2,
+                "updated_at": "2026-07-02T14:23:08-04:00",
+                "product_id": 7735675387971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-6_6b395a21-82e7-4030-97cb-872119900265.jpg?v=1783016588",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36371802128451,
+                "created_at": "2026-07-09T06:43:11-04:00",
+                "position": 3,
+                "updated_at": "2026-07-09T06:43:13-04:00",
+                "product_id": 7735675387971,
+                "variant_ids": [
+                  43485899423811
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/AF16ACA9-64A1-4075-A2A1-CAECFF4911E7.jpg?v=1783593793",
+                "width": 1365,
+                "height": 2048
+              },
+              {
+                "id": 36303914008643,
+                "created_at": "2026-07-02T14:22:44-04:00",
+                "position": 4,
+                "updated_at": "2026-07-02T14:22:46-04:00",
+                "product_id": 7735675387971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-25_4c07f567-8d56-40e1-8187-29cdf0db6861.jpg?v=1783016566",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36303919677507,
+                "created_at": "2026-07-02T14:23:10-04:00",
+                "position": 5,
+                "updated_at": "2026-07-02T14:23:12-04:00",
+                "product_id": 7735675387971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-7_ab7ead4b-0ced-4e8e-8103-4ee006950922.jpg?v=1783016592",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36303916630083,
+                "created_at": "2026-07-02T14:22:54-04:00",
+                "position": 6,
+                "updated_at": "2026-07-09T06:38:00-04:00",
+                "product_id": 7735675387971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-29_ade610f4-d5bd-4c88-ae0c-5c7903f3fb15.jpg?v=1783593480",
+                "width": 2469,
+                "height": 3703
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Yellow",
+                  "White"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735694983235,
+            "title": "Unapologetically Her Brown Polka Dot Midi Dress",
+            "handle": "unapologetically-her-brown-polka-dot-midi-dress",
+            "body_html": "<p>Sweet, feminine, and effortlessly charming. The Unapologetically Her Brown Polka Dot Midi Dress features a classic polka dot print, flattering plunge neckline, flowy skirt, and adjustable tie-back detail for the perfect fit. Style it with boots for fall or heels for your next special occasion.</p>\n<ul>\n  <li>Shiny Lightweight Satin-Like Fabrication</li>\n  <li>Brown Polka Dot Print </li>\n  <li>V-Neckline</li>\n  <li>Sleeveless</li>\n  <li>Functional Back Zipper</li>\n  <li>A-line Fit</li>\n  <li>Maxi Length</li>\n  <li>Self: 100% Polyester</li>\n  <li>Lining: 100% Polyester</li>\n  <li>Hand Wash Cold, Dry Flat</li>\n  <li>Model is 5'10\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 30” | Waist 26” | Hips 38” | Length 54”<br>\nMedium | Bust 32” | Waist 28” | Hips 40” | Length 54.5”<br>\nLarge | Bust 34” | Waist 30” | Hips 42” | Length 55”</p>",
+            "published_at": "2026-07-12T19:50:09-04:00",
+            "created_at": "2026-07-02T14:13:44-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "DZ25E063",
+            "product_type": "Dress",
+            "tags": [
+              "7/10/2026",
+              "Brown",
+              "Dress",
+              "Midi",
+              "New",
+              "Print",
+              "Sunday",
+              "Vacation",
+              "Wedding"
+            ],
+            "variants": [
+              {
+                "id": 43486178213955,
+                "title": "Brown / Small",
+                "option1": "Brown",
+                "option2": "Small",
+                "option3": null,
+                "sku": "257131",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419017965635,
+                  "product_id": 7735694983235,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:50:26-04:00",
+                  "updated_at": "2026-07-12T17:50:28-04:00",
+                  "alt": null,
+                  "width": 736,
+                  "height": 1104,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
+                  "variant_ids": [
+                    43486178213955,
+                    43486178246723,
+                    43486178279491
+                  ]
+                },
+                "available": true,
+                "price": "42.00",
+                "grams": 181,
+                "compare_at_price": "42.00",
+                "position": 1,
+                "product_id": 7735694983235,
+                "created_at": "2026-07-02T14:13:46-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486178246723,
+                "title": "Brown / Medium",
+                "option1": "Brown",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "257132",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419017965635,
+                  "product_id": 7735694983235,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:50:26-04:00",
+                  "updated_at": "2026-07-12T17:50:28-04:00",
+                  "alt": null,
+                  "width": 736,
+                  "height": 1104,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
+                  "variant_ids": [
+                    43486178213955,
+                    43486178246723,
+                    43486178279491
+                  ]
+                },
+                "available": true,
+                "price": "42.00",
+                "grams": 184,
+                "compare_at_price": "42.00",
+                "position": 2,
+                "product_id": 7735694983235,
+                "created_at": "2026-07-02T14:13:46-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486178279491,
+                "title": "Brown / Large",
+                "option1": "Brown",
+                "option2": "Large",
+                "option3": null,
+                "sku": "257133",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419017965635,
+                  "product_id": 7735694983235,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:50:26-04:00",
+                  "updated_at": "2026-07-12T17:50:28-04:00",
+                  "alt": null,
+                  "width": 736,
+                  "height": 1104,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
+                  "variant_ids": [
+                    43486178213955,
+                    43486178246723,
+                    43486178279491
+                  ]
+                },
+                "available": true,
+                "price": "42.00",
+                "grams": 203,
+                "compare_at_price": "42.00",
+                "position": 3,
+                "product_id": 7735694983235,
+                "created_at": "2026-07-02T14:13:46-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36419017965635,
+                "created_at": "2026-07-12T17:50:26-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T17:50:28-04:00",
+                "product_id": 7735694983235,
+                "variant_ids": [
+                  43486178213955,
+                  43486178246723,
+                  43486178279491
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
+                "width": 736,
+                "height": 1104
+              },
+              {
+                "id": 36419017932867,
+                "created_at": "2026-07-12T17:50:26-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T17:50:28-04:00",
+                "product_id": 7735694983235,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F796DA0D-B95B-4560-A540-63000A2F5E12.jpg?v=1783893028",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419017900099,
+                "created_at": "2026-07-12T17:50:26-04:00",
+                "position": 3,
+                "updated_at": "2026-07-12T17:50:28-04:00",
+                "product_id": 7735694983235,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/9358C671-A1CC-42EF-9233-0E92FDD81378.jpg?v=1783893028",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361349824579,
+                "created_at": "2026-07-08T10:24:16-04:00",
+                "position": 4,
+                "updated_at": "2026-07-09T10:22:44-04:00",
+                "product_id": 7735694983235,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_polka_dot_midi-8.jpg?v=1783606964",
+                "width": 2643,
+                "height": 3963
+              },
+              {
+                "id": 36361349693507,
+                "created_at": "2026-07-08T10:24:16-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T10:24:19-04:00",
+                "product_id": 7735694983235,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_polka_dot_midi-4.jpg?v=1783520659",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Brown"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735694917699,
+            "title": "Paris After Dark Cream Polka Dot Blouse",
+            "handle": "paris-after-dark-cream-polka-dot-blouse",
+            "body_html": "<p>The Paris After Dark Cream Polka Dot Blouse has a timeless appeal. Featuring a playful polka dot print, collared neckline, button-front design, and feminine ruffle hem, this top brings instant sophistication to any outfit. Pair it with denim for brunch or tailored trousers for an elevated office look. </p><ul>\n<li><p>Lightweight Woven Knit Fabrication</p></li>\n<li><p>Polka Dot Print</p></li>\n<li><p>Collared Neckline</p></li>\n<li><p>Functional Button Front</p></li>\n<li><p>Long Sleeves </p></li>\n<li><p>Flowy Fit</p></li>\n<li><p>Ruffle Bottom</p></li>\n<li><p>100% Polyester</p></li>\n<li><p>Hand Wash Cold, Hang or Line Dry</p></li>\n<li><p>Model is 5'10\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 50” | Waist 50\" | Length 23”<br>Medium | Bust 52” | Waist 52” | Length 23”<br>Large | Bust 54” | Waist 54” | Length 23”</p>",
+            "published_at": "2026-07-12T19:50:08-04:00",
+            "created_at": "2026-07-02T14:13:00-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "IT4873G-02",
+            "product_type": "Top",
+            "tags": [
+              "7/10/2026",
+              "Blouse",
+              "New",
+              "Sunday",
+              "Top",
+              "Vacation",
+              "Workwear"
+            ],
+            "variants": [
+              {
+                "id": 43486177919043,
+                "title": "Cream / Small",
+                "option1": "Cream",
+                "option2": "Small",
+                "option3": null,
+                "sku": "256930",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36418928508995,
+                  "product_id": 7735694917699,
+                  "position": 1,
+                  "created_at": "2026-07-12T16:42:46-04:00",
+                  "updated_at": "2026-07-12T16:42:48-04:00",
+                  "alt": null,
+                  "width": 718,
+                  "height": 1077,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                  "variant_ids": [
+                    43486177919043,
+                    43486177951811,
+                    43486177984579
+                  ]
+                },
+                "available": true,
+                "price": "42.00",
+                "grams": 266,
+                "compare_at_price": "42.00",
+                "position": 1,
+                "product_id": 7735694917699,
+                "created_at": "2026-07-02T14:13:02-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486177951811,
+                "title": "Cream / Medium",
+                "option1": "Cream",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "256931",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36418928508995,
+                  "product_id": 7735694917699,
+                  "position": 1,
+                  "created_at": "2026-07-12T16:42:46-04:00",
+                  "updated_at": "2026-07-12T16:42:48-04:00",
+                  "alt": null,
+                  "width": 718,
+                  "height": 1077,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                  "variant_ids": [
+                    43486177919043,
+                    43486177951811,
+                    43486177984579
+                  ]
+                },
+                "available": true,
+                "price": "42.00",
+                "grams": 278,
+                "compare_at_price": "42.00",
+                "position": 2,
+                "product_id": 7735694917699,
+                "created_at": "2026-07-02T14:13:02-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486177984579,
+                "title": "Cream / Large",
+                "option1": "Cream",
+                "option2": "Large",
+                "option3": null,
+                "sku": "256932",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36418928508995,
+                  "product_id": 7735694917699,
+                  "position": 1,
+                  "created_at": "2026-07-12T16:42:46-04:00",
+                  "updated_at": "2026-07-12T16:42:48-04:00",
+                  "alt": null,
+                  "width": 718,
+                  "height": 1077,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                  "variant_ids": [
+                    43486177919043,
+                    43486177951811,
+                    43486177984579
+                  ]
+                },
+                "available": true,
+                "price": "42.00",
+                "grams": 288,
+                "compare_at_price": "42.00",
+                "position": 3,
+                "product_id": 7735694917699,
+                "created_at": "2026-07-02T14:13:02-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36418928508995,
+                "created_at": "2026-07-12T16:42:46-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T16:42:48-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [
+                  43486177919043,
+                  43486177951811,
+                  43486177984579
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                "width": 718,
+                "height": 1077
+              },
+              {
+                "id": 36418928476227,
+                "created_at": "2026-07-12T16:42:46-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T16:42:48-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F2827F6B-DA50-4F0D-A84B-C4800F7E0564.jpg?v=1783888968",
+                "width": 725,
+                "height": 1087
+              },
+              {
+                "id": 36418928443459,
+                "created_at": "2026-07-12T16:42:46-04:00",
+                "position": 3,
+                "updated_at": "2026-07-12T16:42:48-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B74E8AC0-B09A-4233-8106-682AFEA023AD.jpg?v=1783888968",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361305620547,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 4,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-6.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305751619,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-2.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305587779,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 6,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-5.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305784387,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 7,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-3.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305555011,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 8,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-4.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305653315,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 9,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-7.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305718851,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 10,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361305686083,
+                "created_at": "2026-07-08T10:21:04-04:00",
+                "position": 11,
+                "updated_at": "2026-07-08T10:21:06-04:00",
+                "product_id": 7735694917699,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-8.jpg?v=1783520466",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Cream"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735694622787,
+            "title": "Wherever You Go Black Textured Maxi Dress",
+            "handle": "wherever-you-go-black-textured-maxi-dress",
+            "body_html": "<p>The definition of timeless elegance. The Wherever You Go Black Textured Maxi Dress features a sleek sleeveless silhouette, flattering drape, and versatile design that's easy to dress up or down. Add heels for an evening out or sneakers and a denim jacket for an effortlessly chic daytime look.</p><ul>\n<li><p>Lightweight Blend Fabrication</p></li>\n<li><p>Rounded Neckline</p></li>\n<li><p>Sleeveless</p></li>\n<li><p>Fitted</p></li>\n<li><p>A-Line Fit</p></li>\n<li><p>Maxi Length</p></li>\n<li><p>95% Polyester, 5% Spandex</p></li>\n<li><p>Hand Wash Cold, Line Dry</p></li>\n<li><p>Model is 5'3.5\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 30\" | Waist 26\" | Length 54\"<br>Medium | Bust 32\" | Waist 28\" | Length 54\"<br>Large | Bust 34\" | Waist 30\" | Length 54\" </p>",
+            "published_at": "2026-07-12T19:50:07-04:00",
+            "created_at": "2026-07-02T14:12:21-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "HF26C177",
+            "product_type": "Dress",
+            "tags": [
+              "7/10/2026",
+              "Black",
+              "Brunch",
+              "Bump",
+              "Casual",
+              "Dress",
+              "Maxi",
+              "New",
+              "Sunday",
+              "Vacation",
+              "Wedding"
+            ],
+            "variants": [
+              {
+                "id": 43486176804931,
+                "title": "Black / Small",
+                "option1": "Black",
+                "option2": "Small",
+                "option3": null,
+                "sku": "257114",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419014721603,
+                  "product_id": 7735694622787,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:46:21-04:00",
+                  "updated_at": "2026-07-12T17:46:23-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
+                  "variant_ids": [
+                    43486176804931,
+                    43486176837699,
+                    43486176870467
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 251,
+                "compare_at_price": "38.00",
+                "position": 1,
+                "product_id": 7735694622787,
+                "created_at": "2026-07-02T14:12:23-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486176837699,
+                "title": "Black / Medium",
+                "option1": "Black",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "257115",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419014721603,
+                  "product_id": 7735694622787,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:46:21-04:00",
+                  "updated_at": "2026-07-12T17:46:23-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
+                  "variant_ids": [
+                    43486176804931,
+                    43486176837699,
+                    43486176870467
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 266,
+                "compare_at_price": "38.00",
+                "position": 2,
+                "product_id": 7735694622787,
+                "created_at": "2026-07-02T14:12:23-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486176870467,
+                "title": "Black / Large",
+                "option1": "Black",
+                "option2": "Large",
+                "option3": null,
+                "sku": "257116",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419014721603,
+                  "product_id": 7735694622787,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:46:21-04:00",
+                  "updated_at": "2026-07-12T17:46:23-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
+                  "variant_ids": [
+                    43486176804931,
+                    43486176837699,
+                    43486176870467
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 288,
+                "compare_at_price": "38.00",
+                "position": 3,
+                "product_id": 7735694622787,
+                "created_at": "2026-07-02T14:12:23-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36419014721603,
+                "created_at": "2026-07-12T17:46:21-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T17:46:23-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [
+                  43486176804931,
+                  43486176837699,
+                  43486176870467
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419014656067,
+                "created_at": "2026-07-12T17:46:21-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T17:46:23-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/DFB4F3F8-0BC1-4F7D-9A1A-BA4DAA0DC4F4.jpg?v=1783892783",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419014688835,
+                "created_at": "2026-07-12T17:46:21-04:00",
+                "position": 3,
+                "updated_at": "2026-07-12T17:46:23-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B1341FA1-B7E0-4E18-92AD-C6DA199A4D2B.jpg?v=1783892783",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361243033667,
+                "created_at": "2026-07-08T10:15:42-04:00",
+                "position": 4,
+                "updated_at": "2026-07-08T10:17:14-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-2.jpg?v=1783520234",
+                "width": 2453,
+                "height": 3679
+              },
+              {
+                "id": 36361242968131,
+                "created_at": "2026-07-08T10:15:42-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T10:15:45-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-7.jpg?v=1783520145",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361243066435,
+                "created_at": "2026-07-08T10:15:42-04:00",
+                "position": 6,
+                "updated_at": "2026-07-08T10:15:44-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-3.jpg?v=1783520144",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361243099203,
+                "created_at": "2026-07-08T10:15:42-04:00",
+                "position": 7,
+                "updated_at": "2026-07-08T10:15:44-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-4.jpg?v=1783520144",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361242935363,
+                "created_at": "2026-07-08T10:15:42-04:00",
+                "position": 8,
+                "updated_at": "2026-07-08T10:15:44-04:00",
+                "product_id": 7735694622787,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-6.jpg?v=1783520144",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Black"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735691903043,
+            "title": "Keep It Simple Charcoal Textured Pants",
+            "handle": "keep-it-simple-charcoal-textured-pants",
+            "body_html": "<p>Comfort meets sophistication in these effortlessly chic Keep It Simple Charcoal Textured Pants. Designed with a comfortable elastic waistband, relaxed wide-leg fit, and soft textured fabric, they're perfect for everything from travel days to cozy evenings. Pair with the matching sweater vest for an elevated set.</p><ul>\n<li><p>Soft + Stretchy Blend Fabrication</p></li>\n<li><p>Elastic Waistband with Functional Tie Waist</p></li>\n<li><p>High-Waisted</p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>98% Polyester, 2% Spandex</p></li>\n<li><p>Hand Wash Cold</p></li>\n<li><p>Model is 5'3.5\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Waist 26” (Stretches up to 36\") | Hips 38” | Length 40” | Inseam 31”<br>Medium | Waist 28” (Stretches up to 38\") | Hips 40” | Length 40” | Inseam 31”<br>Large | Waist 30” (Stretches up to 40\") | Hips 42\" | Length 40” | Inseam 31”</p>",
+            "published_at": "2026-07-12T19:50:07-04:00",
+            "created_at": "2026-07-02T14:05:11-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "S26126",
+            "product_type": "Bottom",
+            "tags": [
+              "7/10/2026",
+              "Bottom",
+              "Loungewear",
+              "Matching Set",
+              "New",
+              "Pants",
+              "Set",
+              "Sunday",
+              "Vacation"
+            ],
+            "variants": [
+              {
+                "id": 43486171004995,
+                "title": "Charcoal / Small",
+                "option1": "Charcoal",
+                "option2": "Small",
+                "option3": null,
+                "sku": "256864",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015999555,
+                  "product_id": 7735691903043,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:49:44-04:00",
+                  "updated_at": "2026-07-12T17:49:45-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                  "variant_ids": [
+                    43486171004995,
+                    43486171037763,
+                    43486171070531
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 264,
+                "compare_at_price": "38.00",
+                "position": 1,
+                "product_id": 7735691903043,
+                "created_at": "2026-07-02T14:05:14-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486171037763,
+                "title": "Charcoal / Medium",
+                "option1": "Charcoal",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "256865",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015999555,
+                  "product_id": 7735691903043,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:49:44-04:00",
+                  "updated_at": "2026-07-12T17:49:45-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                  "variant_ids": [
+                    43486171004995,
+                    43486171037763,
+                    43486171070531
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 268,
+                "compare_at_price": "38.00",
+                "position": 2,
+                "product_id": 7735691903043,
+                "created_at": "2026-07-02T14:05:14-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486171070531,
+                "title": "Charcoal / Large",
+                "option1": "Charcoal",
+                "option2": "Large",
+                "option3": null,
+                "sku": "256866",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015999555,
+                  "product_id": 7735691903043,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:49:44-04:00",
+                  "updated_at": "2026-07-12T17:49:45-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                  "variant_ids": [
+                    43486171004995,
+                    43486171037763,
+                    43486171070531
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 298,
+                "compare_at_price": "38.00",
+                "position": 3,
+                "product_id": 7735691903043,
+                "created_at": "2026-07-02T14:05:14-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36419015999555,
+                "created_at": "2026-07-12T17:49:44-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T17:49:45-04:00",
+                "product_id": 7735691903043,
+                "variant_ids": [
+                  43486171004995,
+                  43486171037763,
+                  43486171070531
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419015966787,
+                "created_at": "2026-07-12T17:49:44-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T17:49:45-04:00",
+                "product_id": 7735691903043,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/948540EF-65CA-429D-A84C-002830E87E42.jpg?v=1783892985",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361058058307,
+                "created_at": "2026-07-08T09:53:19-04:00",
+                "position": 3,
+                "updated_at": "2026-07-08T09:53:21-04:00",
+                "product_id": 7735691903043,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants-5.jpg?v=1783518801",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361234251843,
+                "created_at": "2026-07-08T10:14:45-04:00",
+                "position": 4,
+                "updated_at": "2026-07-08T10:14:47-04:00",
+                "product_id": 7735691903043,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants_8572ce0f-ca85-4ecb-a9c9-fb4eb81e4bc5.jpg?v=1783520087",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361234317379,
+                "created_at": "2026-07-08T10:14:45-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T10:14:47-04:00",
+                "product_id": 7735691903043,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants-3_0abc2cfa-f4dd-41bb-8ba4-53ade1ef5bc0.jpg?v=1783520087",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361234284611,
+                "created_at": "2026-07-08T10:14:45-04:00",
+                "position": 6,
+                "updated_at": "2026-07-08T10:14:47-04:00",
+                "product_id": 7735691903043,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants-2_da21c488-543b-4251-ab6a-7fd9ad854e96.jpg?v=1783520087",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Charcoal"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735691870275,
+            "title": "Keep It Simple Charcoal Textured Vest",
+            "handle": "keep-it-simple-charcoal-textured-vest",
+            "body_html": "<p>Timeless layers start here. The Keep It Simple Charcoal Textured Vest features a soft knit fabric, functional button-front closure, and relaxed fit that makes styling simple. Wear it buttoned as a top or layered over a fitted long sleeve for the perfect transitional outfit. </p><ul>\n<li><p>Lightweight + Stretchy Knit Fabrication</p></li>\n<li><p>V-Neckline</p></li>\n<li><p>Functional Button Front </p></li>\n<li><p>Sleeveless</p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>98% Polyester, 2% Spandex</p></li>\n<li><p>Hand Wash Cold </p></li>\n<li><p>Model is 5'3.5\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 30\" | Waist 26\" | Length 23\"<br>Medium | Bust 32\" | Waist 28\" | Length 23.5\"<br>Large | Bust 34\" | Waist 30\" | Length 24\"</p>",
+            "published_at": "2026-07-12T19:50:06-04:00",
+            "created_at": "2026-07-02T14:04:43-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "S26125",
+            "product_type": "Outerwear",
+            "tags": [
+              "7/10/2026",
+              "Matching Set",
+              "New",
+              "Resort",
+              "Set",
+              "Sunday",
+              "Tank",
+              "Top",
+              "Vacation",
+              "Vest"
+            ],
+            "variants": [
+              {
+                "id": 43486170775619,
+                "title": "Charcoal / Small",
+                "option1": "Charcoal",
+                "option2": "Small",
+                "option3": null,
+                "sku": "256861",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015278659,
+                  "product_id": 7735691870275,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:47:45-04:00",
+                  "updated_at": "2026-07-12T17:47:47-04:00",
+                  "alt": "A woman wearing a sleeveless black textured knit vest with a button-front closure and drawstring waist, styled with sunglasses and bracelets against a light gray background.",
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
+                  "variant_ids": [
+                    43486170775619,
+                    43486170808387,
+                    43486170841155
+                  ]
+                },
+                "available": true,
+                "price": "34.00",
+                "grams": 116,
+                "compare_at_price": "34.00",
+                "position": 1,
+                "product_id": 7735691870275,
+                "created_at": "2026-07-02T14:04:44-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486170808387,
+                "title": "Charcoal / Medium",
+                "option1": "Charcoal",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "256862",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015278659,
+                  "product_id": 7735691870275,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:47:45-04:00",
+                  "updated_at": "2026-07-12T17:47:47-04:00",
+                  "alt": "A woman wearing a sleeveless black textured knit vest with a button-front closure and drawstring waist, styled with sunglasses and bracelets against a light gray background.",
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
+                  "variant_ids": [
+                    43486170775619,
+                    43486170808387,
+                    43486170841155
+                  ]
+                },
+                "available": true,
+                "price": "34.00",
+                "grams": 113,
+                "compare_at_price": "34.00",
+                "position": 2,
+                "product_id": 7735691870275,
+                "created_at": "2026-07-02T14:04:44-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486170841155,
+                "title": "Charcoal / Large",
+                "option1": "Charcoal",
+                "option2": "Large",
+                "option3": null,
+                "sku": "256863",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015278659,
+                  "product_id": 7735691870275,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:47:45-04:00",
+                  "updated_at": "2026-07-12T17:47:47-04:00",
+                  "alt": "A woman wearing a sleeveless black textured knit vest with a button-front closure and drawstring waist, styled with sunglasses and bracelets against a light gray background.",
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
+                  "variant_ids": [
+                    43486170775619,
+                    43486170808387,
+                    43486170841155
+                  ]
+                },
+                "available": true,
+                "price": "34.00",
+                "grams": 139,
+                "compare_at_price": "34.00",
+                "position": 3,
+                "product_id": 7735691870275,
+                "created_at": "2026-07-02T14:04:44-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36419015278659,
+                "created_at": "2026-07-12T17:47:45-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T17:47:47-04:00",
+                "product_id": 7735691870275,
+                "variant_ids": [
+                  43486170775619,
+                  43486170808387,
+                  43486170841155
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419015245891,
+                "created_at": "2026-07-12T17:47:45-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T17:47:47-04:00",
+                "product_id": 7735691870275,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/79900A86-C454-421A-AEF3-ADE4CCB81F7F.jpg?v=1783892867",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361044623427,
+                "created_at": "2026-07-08T09:48:52-04:00",
+                "position": 3,
+                "updated_at": "2026-07-09T10:28:06-04:00",
+                "product_id": 7735691870275,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_vest-2.jpg?v=1783607286",
+                "width": 2495,
+                "height": 3742
+              },
+              {
+                "id": 36361044590659,
+                "created_at": "2026-07-08T09:48:52-04:00",
+                "position": 4,
+                "updated_at": "2026-07-08T09:48:54-04:00",
+                "product_id": 7735691870275,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_vest.jpg?v=1783518534",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361044787267,
+                "created_at": "2026-07-08T09:48:52-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T09:48:55-04:00",
+                "product_id": 7735691870275,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_vest-7.jpg?v=1783518535",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Charcoal"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735691771971,
+            "title": "Off To The Hamptons Brown Textured Maxi Skirt",
+            "handle": "off-to-the-hamptons-brown-textured-maxi-skirt",
+            "body_html": "<p>Classic with a cozy twist. This textured Off To The Hamptons Brown Textured Maxi Skirt features a comfortable elastic waistband and an easy straight silhouette that creates a flattering, effortless look. Complete the outfit with the matching Cinnamon Spice Sweater Tank or style it with your favorite sweater for fall. </p><ul>\n<li><p>Soft + Stretchy Woven Knit Fabrication</p></li>\n<li><p>Mid-Waisted</p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>Maxi Length</p></li>\n<li><p>Self: 97% Polyester, 3% Spandex</p></li>\n<li><p>Lining: 97% Polyester, 3% Spandex</p></li>\n<li><p>Hand Wash Cold</p></li>\n<li><p>Model is 5'10\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Waist 27\" | Hips 30\" | Length 38\"<br>Medium | Waist 28\" | Hips 32\" | Length 38\"<br>Large | Waist 29\" | Hips 34\" | Length 38\" </p>",
+            "published_at": "2026-07-12T19:50:05-04:00",
+            "created_at": "2026-07-02T14:04:15-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "S25589",
+            "product_type": "Bottom",
+            "tags": [
+              "7/10/2026",
+              "Bottom",
+              "Matching Set",
+              "New",
+              "Resort",
+              "Set",
+              "Skirt",
+              "Sunday",
+              "Vacation",
+              "Workwear"
+            ],
+            "variants": [
+              {
+                "id": 43486170579011,
+                "title": "Brown / Small",
+                "option1": "Brown",
+                "option2": "Small",
+                "option3": null,
+                "sku": "256858",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015573571,
+                  "product_id": 7735691771971,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:49:07-04:00",
+                  "updated_at": "2026-07-12T17:49:09-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
+                  "variant_ids": [
+                    43486170579011,
+                    43486170611779,
+                    43486170644547
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 320,
+                "compare_at_price": "38.00",
+                "position": 1,
+                "product_id": 7735691771971,
+                "created_at": "2026-07-02T14:04:17-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486170611779,
+                "title": "Brown / Medium",
+                "option1": "Brown",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "256859",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015573571,
+                  "product_id": 7735691771971,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:49:07-04:00",
+                  "updated_at": "2026-07-12T17:49:09-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
+                  "variant_ids": [
+                    43486170579011,
+                    43486170611779,
+                    43486170644547
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 343,
+                "compare_at_price": "38.00",
+                "position": 2,
+                "product_id": 7735691771971,
+                "created_at": "2026-07-02T14:04:17-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486170644547,
+                "title": "Brown / Large",
+                "option1": "Brown",
+                "option2": "Large",
+                "option3": null,
+                "sku": "256860",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015573571,
+                  "product_id": 7735691771971,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:49:07-04:00",
+                  "updated_at": "2026-07-12T17:49:09-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
+                  "variant_ids": [
+                    43486170579011,
+                    43486170611779,
+                    43486170644547
+                  ]
+                },
+                "available": true,
+                "price": "38.00",
+                "grams": 366,
+                "compare_at_price": "38.00",
+                "position": 3,
+                "product_id": 7735691771971,
+                "created_at": "2026-07-02T14:04:17-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36419015573571,
+                "created_at": "2026-07-12T17:49:07-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T17:49:09-04:00",
+                "product_id": 7735691771971,
+                "variant_ids": [
+                  43486170579011,
+                  43486170611779,
+                  43486170644547
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419015540803,
+                "created_at": "2026-07-12T17:49:07-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T17:49:09-04:00",
+                "product_id": 7735691771971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/FE296386-A216-4A87-AACE-54E2511284CA.jpg?v=1783892949",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361036005443,
+                "created_at": "2026-07-08T09:45:22-04:00",
+                "position": 3,
+                "updated_at": "2026-07-08T09:45:25-04:00",
+                "product_id": 7735691771971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt-4.jpg?v=1783518325",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361035907139,
+                "created_at": "2026-07-08T09:45:22-04:00",
+                "position": 4,
+                "updated_at": "2026-07-08T09:45:25-04:00",
+                "product_id": 7735691771971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt.jpg?v=1783518325",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361035972675,
+                "created_at": "2026-07-08T09:45:22-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T09:45:25-04:00",
+                "product_id": 7735691771971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt-3.jpg?v=1783518325",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361035939907,
+                "created_at": "2026-07-08T09:45:22-04:00",
+                "position": 6,
+                "updated_at": "2026-07-08T09:45:25-04:00",
+                "product_id": 7735691771971,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt-2.jpg?v=1783518325",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Brown"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7735691575363,
+            "title": "Off To The Hamptons Textured Brown Tank",
+            "handle": "off-to-the-hamptons-textured-brown-tank",
+            "body_html": "<p>An elevated everyday essential you'll wear on repeat. The Off To The Hamptons Textured Brown Tank features a soft textured knit, flattering V-neckline, and an easy sleeveless silhouette that layers beautifully or stands on its own. Pair it with the matching skirt for an effortlessly polished set.</p><ul>\n<li><p>Lightweight Woven Knit Fabrication</p></li>\n<li><p>V-Neckline</p></li>\n<li><p>Sleeveless </p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>97% Polyester, 3% Spandex </p></li>\n<li><p>Hand Wash Cold</p></li>\n<li><p>Model is 5'10\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 30” (Stretches up to 40\")| Waist 26\" (Stretches up to 32\")| Length 22”<br>Medium | Bust 32” (Stretches up to 42\")| Waist 28” (Stretches up to 34\")| Length 22”<br>Large | Bust 34” (Stretches up to 44\")| Waist 30” (Stretches up to \"36)| Length 22”</p>",
+            "published_at": "2026-07-12T19:50:04-04:00",
+            "created_at": "2026-07-02T14:03:36-04:00",
+            "updated_at": "2026-07-15T00:58:20-04:00",
+            "vendor": "S25588",
+            "product_type": "Outerwear",
+            "tags": [
+              "7/10/2026",
+              "Matching Set",
+              "New",
+              "Resort",
+              "Set",
+              "Sunday",
+              "Tank",
+              "Top",
+              "Vacation"
+            ],
+            "variants": [
+              {
+                "id": 43486159634499,
+                "title": "Brown / Small",
+                "option1": "Brown",
+                "option2": "Small",
+                "option3": null,
+                "sku": "256855",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015442499,
+                  "product_id": 7735691575363,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:48:39-04:00",
+                  "updated_at": "2026-07-12T17:48:41-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                  "variant_ids": [
+                    43486159634499,
+                    43486159667267,
+                    43486159700035
+                  ]
+                },
+                "available": true,
+                "price": "26.00",
+                "grams": 89,
+                "compare_at_price": "26.00",
+                "position": 1,
+                "product_id": 7735691575363,
+                "created_at": "2026-07-02T14:03:37-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486159667267,
+                "title": "Brown / Medium",
+                "option1": "Brown",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "256856",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015442499,
+                  "product_id": 7735691575363,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:48:39-04:00",
+                  "updated_at": "2026-07-12T17:48:41-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                  "variant_ids": [
+                    43486159634499,
+                    43486159667267,
+                    43486159700035
+                  ]
+                },
+                "available": true,
+                "price": "26.00",
+                "grams": 94,
+                "compare_at_price": "26.00",
+                "position": 2,
+                "product_id": 7735691575363,
+                "created_at": "2026-07-02T14:03:37-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              },
+              {
+                "id": 43486159700035,
+                "title": "Brown / Large",
+                "option1": "Brown",
+                "option2": "Large",
+                "option3": null,
+                "sku": "256857",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 36419015442499,
+                  "product_id": 7735691575363,
+                  "position": 1,
+                  "created_at": "2026-07-12T17:48:39-04:00",
+                  "updated_at": "2026-07-12T17:48:41-04:00",
+                  "alt": null,
+                  "width": 832,
+                  "height": 1248,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                  "variant_ids": [
+                    43486159634499,
+                    43486159667267,
+                    43486159700035
+                  ]
+                },
+                "available": true,
+                "price": "26.00",
+                "grams": 103,
+                "compare_at_price": "26.00",
+                "position": 3,
+                "product_id": 7735691575363,
+                "created_at": "2026-07-02T14:03:37-04:00",
+                "updated_at": "2026-07-15T00:58:20-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 36419015442499,
+                "created_at": "2026-07-12T17:48:39-04:00",
+                "position": 1,
+                "updated_at": "2026-07-12T17:48:41-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [
+                  43486159634499,
+                  43486159667267,
+                  43486159700035
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419015409731,
+                "created_at": "2026-07-12T17:48:39-04:00",
+                "position": 2,
+                "updated_at": "2026-07-12T17:48:41-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0ED83CE3-5141-4C02-B750-F31BDE27FA62.jpg?v=1783892921",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36419015376963,
+                "created_at": "2026-07-12T17:48:39-04:00",
+                "position": 3,
+                "updated_at": "2026-07-12T17:48:41-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/E780A60C-57FF-4953-B44E-B0E74093177E.jpg?v=1783892921",
+                "width": 832,
+                "height": 1248
+              },
+              {
+                "id": 36361031581763,
+                "created_at": "2026-07-08T09:42:29-04:00",
+                "position": 4,
+                "updated_at": "2026-07-08T09:42:31-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank-3.jpg?v=1783518151",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361031516227,
+                "created_at": "2026-07-08T09:42:29-04:00",
+                "position": 5,
+                "updated_at": "2026-07-08T09:42:32-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank.jpg?v=1783518152",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361031647299,
+                "created_at": "2026-07-08T09:42:29-04:00",
+                "position": 6,
+                "updated_at": "2026-07-08T09:42:32-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank-5.jpg?v=1783518152",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 36361031680067,
+                "created_at": "2026-07-08T09:42:29-04:00",
+                "position": 7,
+                "updated_at": "2026-07-08T09:42:32-04:00",
+                "product_id": 7735691575363,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank-6.jpg?v=1783518152",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Brown"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "collections_json",
+      "url": "https://shopdressup.com/collections.json?limit=20",
+      "final_url": "https://shopdressup.com/collections.json?limit=20",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 152,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"collections\":[{\"id\":278973546563,\"title\":\"All Up To You Collection\",\"handle\":\"all-up-to-you-collection\",\"description\":\"\\u003ch2\\u003eAll Up To You Collection\\u003c\\/h2\\u003e\\n\\u003cdiv class=\\\"flex-1 overflow-hidden\\\"\\u003e\\n\\u003cdiv class=\\\"react-scroll-to-bottom--css-udpeq-79elbk h-full\\\"\\u003e\\n\\u003cdiv class=\\\"react-scroll-to-bottom--css-udpeq-1n7m0yu\\\"\\u003e\\n\\u003cdiv class=\\\"flex flex-col pb-9 text-sm\\\"\\u003e\\n\\u003cdiv data-testid=\\\"conversation-turn-104\\\" class=\\\"w-full text-token-t",
+      "json_payload": {
+        "collections": [
+          {
+            "id": 278973546563,
+            "title": "All Up To You Collection",
+            "handle": "all-up-to-you-collection",
+            "description": "<h2>All Up To You Collection</h2>\n<div class=\"flex-1 overflow-hidden\">\n<div class=\"react-scroll-to-bottom--css-udpeq-79elbk h-full\">\n<div class=\"react-scroll-to-bottom--css-udpeq-1n7m0yu\">\n<div class=\"flex flex-col pb-9 text-sm\">\n<div data-testid=\"conversation-turn-104\" class=\"w-full text-token-text-primary\">\n<div class=\"px-4 py-2 justify-center text-base md:gap-6 m-auto\">\n<div class=\"flex flex-1 text-base mx-auto gap-3 md:px-5 lg:px-1 xl:px-5 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem] group final-completion\">\n<div class=\"relative flex w-full flex-col lg:w-[calc(100%-115px)] agent-turn\">\n<div class=\"flex-col gap-1 md:gap-3\">\n<div class=\"flex flex-grow flex-col max-w-full\">\n<div class=\"min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto\" data-message-id=\"1708767d-c8e6-4321-9f09-40044b19f154\" data-message-author-role=\"assistant\">\n<div class=\"markdown prose w-full break-words dark:prose-invert dark\">\n<p>Seize the spotlight with Dress Up's \"All Up to You\" Collection – a meticulously curated ensemble that empowers you to take charge of your style journey. This collection features trendy utility jeans and wide-leg jeans, paired with casual lightweight knit tops, and introduces a show-stopping ribbed knit matching set. This set includes flare pants and a bell-sleeve button-up blouse, allowing you to express your unique fashion sense with confidence.</p>\n<p><strong>1. Trendy Utility Jeans and Wide Leg Jeans:</strong> Step into the spotlight with the \"All Up to You\" Collection's trendy utility jeans and wide-leg jeans. Whether you're drawn to the utilitarian charm or the sweeping silhouette, these jeans are designed to make a statement and give you the freedom to create a fashion narrative that's all up to you.</p>\n<p><strong>2. Casual Lightweight Knit Tops:</strong> Elevate your everyday wardrobe with casual lightweight knit tops that effortlessly combine comfort and style. From classic solids to playful prints, these tops serve as the perfect complement to the bold denim styles, ensuring your ensemble reflects your unique fashion persona.</p>\n<p><strong>3. Ribbed Knit Matching Set:</strong> Make a bold statement with the star of the \"All Up to You\" Collection – the ribbed knit matching set. This trendy ensemble includes flare pants and a bell-sleeve button-up blouse, offering a modern twist on a classic silhouette. The ribbed texture adds a touch of sophistication, making this set a versatile choice for both casual and elevated occasions.</p>\n<p><strong>4. Effortless Coordination:</strong> The \"All Up to You\" Collection is designed for effortless coordination. Mix and match the trendy utility jeans and wide-leg jeans with the lightweight knit tops, or opt for the complete ribbed knit matching set for a cohesive and fashion-forward look. The versatility of these pieces ensures that your style choices are all up to you.</p>\n<p><strong>5. Quality Craftsmanship:</strong> Dress Up's commitment to quality craftsmanship is evident in every detail of the \"All Up to You\" Collection. From the precise stitching of the denim to the softness of the knit tops and the intricate ribbed texture of the matching set, each piece is crafted to provide enduring comfort and style.</p>\n<p>With Dress Up's \"All Up to You\" Collection, the spotlight is yours. Whether you're expressing yourself through trendy utility jeans, embracing the wide-leg silhouette, keeping it casual with lightweight knit tops, or making a bold statement with the ribbed knit matching set, this collection empowers you to take control of your style journey. Explore the freedom to mix and match, create unique ensembles, and showcase your individuality – because with Dress Up, it's all up to you.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>",
+            "published_at": "2024-01-21T12:16:00-05:00",
+            "updated_at": "2026-07-08T19:41:54-04:00",
+            "image": {
+              "id": 1606273925187,
+              "created_at": "2024-01-21T12:17:50-05:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/6Y9A7103.jpg?v=1705857470",
+              "alt": "model wearing a trendy 2 piece matching set"
+            },
+            "products_count": 8
+          },
+          {
+            "id": 276305084483,
+            "title": "All You Can See Collection - Cute Sweaters For Women",
+            "handle": "all-you-can-see-collection",
+            "description": "<meta charset=\"utf-8\">\n<h2 data-mce-fragment=\"1\">All You Can See Collection</h2>\n<p data-mce-fragment=\"1\">Introducing the \"All You Can See\" Collection by Dress Up – where fashion becomes a canvas, and every piece tells a story. This eclectic collection invites you to explore the limitless possibilities of self-expression, offering cozy sweaters, flowy fall dresses, and new denim styles that are as versatile as they are stylish.</p>\n<p data-mce-fragment=\"1\">As the temperatures drop, our cozy sweaters take center stage in the \"All You Can See\" Collection. Crafted from sumptuously soft fabrics that envelop you in warmth, these sweaters are not just garments; they're a comforting hug on chilly days. With a range of textures, from chunky knits to sleek lightweight blends, you'll find the perfect sweater to snuggle up in.</p>\n<p data-mce-fragment=\"1\">Our flowy fall dresses are designed to capture the spirit of autumn in their effortless grace. They sway with the changing leaves and capture the essence of this transitional season. From romantic maxi dresses adorned with rich, earthy tones to playful A-line dresses with delicate prints, these pieces are perfect for embracing the beauty of fall.</p>\n<p data-mce-fragment=\"1\">Denim takes on a new dimension in the \"All You Can See\" Collection. We've introduced fresh denim styles that effortlessly blend comfort and style. Our denim pieces are the canvas upon which you can paint your unique fashion story.</p>\n<p data-mce-fragment=\"1\">The beauty of the \"All You Can See\" Collection lies in its versatility. Mix and match cozy sweaters with denim for a laid-back yet chic look, or pair a flowy fall dress with your favorite boots for a graceful autumn ensemble. These pieces are designed to be the foundation of your wardrobe, allowing you to create countless outfits that reflect your personality and mood.</p>\n<p data-mce-fragment=\"1\">\"All You Can See\" is not just a collection; it's an invitation to express yourself freely through fashion. Whether you choose to envelop yourself in cozy comfort, embrace the flowing elegance of fall, or experiment with new denim classics, Dress Up empowers you to curate a wardrobe that is uniquely \"you.\"</p>\n<p data-mce-fragment=\"1\">In the \"All You Can See\" Collection, Dress Up celebrates the art of self-expression through fashion. Unleash your creativity, embrace the changing seasons, and let your style be as limitless as the world around you. Discover, create, and make every outfit a canvas for your personal narrative.</p>",
+            "published_at": "2023-09-29T11:20:01-04:00",
+            "updated_at": "2026-07-08T19:38:43-04:00",
+            "image": {
+              "id": 1605663719491,
+              "created_at": "2023-09-29T11:25:51-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/6Y9A5534.jpg?v=1698339577",
+              "alt": "models wearing cozy fall sweaters.  Cute Sweaters For Women. online boutique"
+            },
+            "products_count": 13
+          },
+          {
+            "id": 282039287875,
+            "title": "All You Could Ever Want Collection",
+            "handle": "all-you-could-ever-want-collection",
+            "description": "<h2>All You Could Ever Want Collection</h2>\n<p>Introducing Dress Up's \"All You Could Ever Want\" Collection – a vibrant and stylish selection that brings a burst of color and fun to your wardrobe. This collection features an array of bright and colorful blouses, chic linen tops, a unique knit fringe midi skirt, and adorable rompers that are perfect for any occasion.</p>\n<p><strong>1. Bright and Colorful Blouses:</strong> Add a pop of color to your wardrobe with our bright and colorful blouses. These blouses are designed to stand out, featuring bold hues and eye-catching patterns that are perfect for making a statement. Pair them with your favorite jeans or skirts for a look that's both playful and chic.</p>\n<p><strong>2. Chic Linen Tops:</strong> Stay cool and stylish with our collection of chic linen tops. Perfect for warmer weather, these tops offer a breezy and comfortable fit while exuding effortless elegance. Whether you're dressing up for a brunch date or keeping it casual, our linen tops are a versatile addition to any outfit.</p>\n<p><strong>3. Knit Fringe Midi Skirt:</strong> Embrace unique style with our knit fringe midi skirt. This skirt is a standout piece, featuring intricate knit details and playful fringe that adds movement and flair to your look. Perfect for both casual and dressy occasions, this skirt can be paired with simple tops for a balanced and stylish ensemble.</p>\n<p><strong>4. Adorable Rompers:</strong> Effortlessly chic and easy to wear, our adorable rompers are a must-have for any fashion-forward wardrobe. These rompers are perfect for on-the-go days and casual outings, offering a stylish and comfortable one-piece solution. From playful prints to solid colors, find the perfect romper for any occasion.</p>\n<p><strong>5. Versatility Meets Style:</strong> The \"All You Could Ever Want\" Collection is designed with versatility in mind. Each piece can be mixed and matched to create a variety of looks, ensuring you have the perfect outfit for any event. From vibrant blouses to chic linen tops and unique skirts, this collection offers endless styling possibilities.</p>\n<p><strong>6. Effortless Elegance:</strong> Embrace effortless elegance with pieces that are as functional as they are fashionable. Whether you're dressing up for a special event or keeping it casual for a day out, the \"All You Could Ever Want\" Collection provides the perfect balance of style and comfort.</p>\n<p>Discover the beauty and vibrancy of Dress Up's \"All You Could Ever Want\" Collection. With bright and colorful blouses, chic linen tops, a knit fringe midi skirt, and cute rompers, this collection has everything you need to refresh your wardrobe with style and flair. Embrace the colors, embrace the style, and find all you could ever want with Dress Up.</p>\n<!---->",
+            "published_at": "2024-05-19T19:16:19-04:00",
+            "updated_at": "2026-07-08T19:45:54-04:00",
+            "image": {
+              "id": 1607730200643,
+              "created_at": "2024-05-19T19:18:59-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/2P4A3549.jpg?v=1716160740",
+              "alt": "models wearing bright colored outfits"
+            },
+            "products_count": 8
+          },
+          {
+            "id": 304952082499,
+            "title": "All-American Summer Collection",
+            "handle": "all-american-summer-collection",
+            "description": "<h2 data-start=\"0\" data-end=\"38\"><span role=\"text\">All-American Summer Collection</span></h2>\n<p data-start=\"40\" data-end=\"449\">The All-American Summer Collection is your go-to lineup for everything warm-weather and effortlessly on-trend. Inspired by classic red, white, and blue tones with a modern twist, this collection blends timeless Americana with the easy, laid-back style of summer days. Think breezy gingham dresses, lightweight denim, relaxed matching sets, and statement knits that bring a fun, nostalgic feel to every outfit.</p>\n<p data-start=\"451\" data-end=\"825\">Designed for everything from backyard barbecues and beach trips to weekend getaways and holiday celebrations, each piece is made with lightweight, comfortable fabrics and flattering silhouettes you’ll want to wear on repeat. Whether you’re dressing it up with wedges or keeping it casual with sneakers, these styles make it easy to look put-together without overthinking it.</p>\n<p data-start=\"827\" data-end=\"947\" data-is-last-node=\"\" data-is-only-node=\"\">Classic, playful, and effortlessly cool—the All-American Summer Collection is all about celebrating the season in style.</p>",
+            "published_at": "2026-05-05T09:27:05-04:00",
+            "updated_at": "2026-07-13T07:01:13-04:00",
+            "image": {
+              "id": 1611255414851,
+              "created_at": "2026-05-05T09:27:04-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/shopdressup_FRI-4_1.jpg?v=1777987625",
+              "alt": "All-American Summer Collection"
+            },
+            "products_count": 20
+          },
+          {
+            "id": 276493238339,
+            "title": "Along For The Ride Collection",
+            "handle": "along-for-the-ride-collection",
+            "description": "<meta charset=\"utf-8\">\n<h2 data-mce-fragment=\"1\">Along For The Ride Collection</h2>\n<p data-mce-fragment=\"1\">Introducing the \"Along for the Ride Collection\" by Dress Up – a journey through the world of casual fashion where comfort, style, and adventure intersect. This collection features a range of casual graphic tees, pullovers, new wide-leg jeans, cozy sweaters, and trendy shackets and vests, perfect for those who are ready to embrace life's adventures in style.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Casual Graphic Tees and Pullovers:</strong> This collection begins with a sense of playfulness, featuring casual graphic tees and pullovers that tell a story. From whimsical designs that evoke wanderlust to witty slogans that capture your spirit, these pieces are the perfect companions for your journey.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">New Wide-Leg Jeans:</strong> Wide-leg jeans make a statement, and our new additions to the collection are no exception. They offer a refreshing twist on classic denim, with a relaxed, contemporary fit that's both comfortable and stylish. These jeans are ready to take you along for the ride in absolute confidence.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Cozy Sweaters:</strong> Embrace the coziness of the season with our collection of cozy sweaters. From oversized, chunky knits that make you feel like you're wrapped in a warm hug to soft, lightweight sweaters perfect for layering, these pieces are your ideal partners for any adventure, big or small.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Trendy Shackets and Vests:</strong> Shackets and vests are the embodiment of versatile style, and this collection has them in abundance. Layer them over your graphic tees, pullovers, or sweaters to create the perfect autumn ensemble. They're just the ticket for staying warm and stylish as you explore the world.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Effortless Pairings:</strong> The \"Along for the Ride Collection\" is designed for easy pairings. Mix and match your graphic tees with wide-leg jeans for a laid-back, fashion-forward look. Layer sweaters with shackets or vests to add a touch of rugged charm to your style.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Earth Tones and Bold Colors:</strong> Our color palette takes inspiration from the earthy hues of nature and is punctuated by bold colors that resonate with the spirit of adventure. From deep forest greens to rich terracottas, the colors in this collection reflect the beauty of the outdoors.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Details that Speak:</strong> Attention to detail is our hallmark, and you'll find it in the thoughtful designs and finishes of our pieces. Look for decorative stitching on wide-leg jeans, cozy knits with intricate patterns, and versatile shackets and vests with handy pockets and functional features.</p>\n<p data-mce-fragment=\"1\"><strong data-mce-fragment=\"1\">Ready for the Next Journey:</strong> The \"Along for the Ride Collection\" is more than a selection of garments; it's a declaration of your readiness to embrace life's adventures in style. It's a tribute to those who aren't just passengers but active participants in the journey of life.</p>\n<p data-mce-fragment=\"1\">Whether you're setting out on a road trip, hiking through the wilderness, or simply exploring the world right outside your door, Dress Up's \"Along for the Ride Collection\" is your ultimate fashion companion. Take every step with confidence, style, and the spirit of adventure. The world is yours, and you're along for the ride – dress for it!</p>",
+            "published_at": "2023-10-12T10:36:04-04:00",
+            "updated_at": "2026-07-08T19:39:03-04:00",
+            "image": {
+              "id": 1605695701059,
+              "created_at": "2023-10-12T15:40:21-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/0R4A7254.jpg?v=1697139621",
+              "alt": "models wearing plaid shackets"
+            },
+            "products_count": 12
+          },
+          {
+            "id": 272946593859,
+            "title": "Alpharetta",
+            "handle": "alpharetta",
+            "description": "<h2>DU Exclusive Alpharetta Customs</h2>\n<p data-start=\"240\" data-end=\"657\">Alpharetta is one of our favorite cities, which is why we created the <strong data-start=\"310\" data-end=\"397\"><a data-start=\"312\" data-end=\"395\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/du-exclusive\">DU Exclusive Alpharetta Customs </a></strong>collection—an assortment of locally inspired tees and accessories designed just for this community. Whether you’re visiting for the day or call Alpharetta home, these exclusive pieces make it easy to show your love for one of Georgia’s most vibrant downtowns.</p>\n<h3 data-start=\"659\" data-end=\"702\">Exclusive Alpharetta Tees &amp; Pullovers</h3>\n<p data-start=\"703\" data-end=\"1142\">Shop <a href=\"https://shopdressup.com/collections/alpharetta\"><strong data-start=\"708\" data-end=\"737\">exclusive Alpharetta tees</strong></a> and cozy pullovers designed in-house and available only at Dress Up. Featuring comfortable fits and easy, everyday designs, these styles are perfect for casual outings, local events, or everyday wear. Browse our <strong data-start=\"950\" data-end=\"1018\"><a data-start=\"952\" data-end=\"1016\" class=\"decorated-link\" rel=\"noopener\" href=\"https://shopdressup.com/collections/graphic-tees\">graphic tees </a></strong>and <strong data-start=\"1023\" data-end=\"1095\"><a href=\"https://shopdressup.com/collections/alpharetta\">sweaters &amp; pullovers</a><a data-start=\"1025\" data-end=\"1093\" class=\"decorated-link cursor-pointer\" rel=\"noopener\"> </a></strong>for versatile favorites you’ll wear on repeat.</p>\n<h3 data-start=\"1144\" data-end=\"1184\">Hats, Totes &amp; Everyday Accessories</h3>\n<p data-start=\"1185\" data-end=\"1498\">Complete your look with <strong data-start=\"1209\" data-end=\"1273\"><a data-start=\"1211\" data-end=\"1271\" class=\"decorated-link\" rel=\"noopener\" href=\"https://shopdressup.com/collections/hats\">embroidered hats </a></strong>and <strong data-start=\"1278\" data-end=\"1335\"><a href=\"https://shopdressup.com/collections/alpharetta\">tote bags</a><a data-start=\"1280\" data-end=\"1333\" class=\"decorated-link cursor-pointer\" rel=\"noopener\"> - </a></strong>perfect for running errands, traveling, or matching with your bestie. These accessories add a simple, local touch to any outfit and make great souvenirs or gifts.</p>\n<p data-start=\"1500\" data-end=\"1748\">The <a href=\"https://shopdressup.com/collections/alpharetta\"><strong data-start=\"1504\" data-end=\"1539\">DU Exclusive Alpharetta Customs</strong></a> collection celebrates the charm and community of downtown Alpharetta with pieces you won’t find anywhere else. Designed to be worn, loved, and lived in, these styles are perfect for locals and visitors alike.</p>\n<h3 data-start=\"1750\" data-end=\"1787\">Visit Us in Downtown Alpharetta</h3>\n<p data-start=\"1788\" data-end=\"2010\">Stop by the <strong data-start=\"1800\" data-end=\"1829\">Dress Up Alpharetta store</strong>, located in the heart of downtown Alpharetta, to shop these exclusive styles in person. Don’t forget to tag us on Instagram so we can see how you style your favorite DU Exclusives.</p>\n<p data-start=\"2012\" data-end=\"2095\"><em data-start=\"2012\" data-end=\"2095\">Please note: All DU Exclusive items are excluded from all coupons and promotions.</em></p>",
+            "published_at": "2023-07-05T21:37:41-04:00",
+            "updated_at": "2026-07-08T19:59:36-04:00",
+            "image": {
+              "id": 1607856128067,
+              "created_at": "2024-06-18T15:02:16-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/alpharetta.jpg?v=1718737337",
+              "alt": null
+            },
+            "products_count": 6
+          },
+          {
+            "id": 296320106563,
+            "title": "Amber Afternoons Collection",
+            "handle": "amber-afternoons-collection",
+            "description": "<h2>Amber Afternoons Collection</h2>\n<p><meta charset=\"utf-8\">Soak in the golden glow of the season with our <em data-start=\"145\" data-end=\"174\">Amber Afternoons Collection</em>—a dreamy mix of fall styles perfect for crisp days and cozy evenings. From soft knits and flowy blouses to flattering denim and layered must-haves, these pieces capture the warmth of autumn in every detail. Rich amber tones, timeless textures, and effortless fits make this collection ideal for everything from pumpkin patch outings to golden hour strolls.</p>",
+            "published_at": "2025-09-11T11:16:27-04:00",
+            "updated_at": "2026-07-08T20:01:41-04:00",
+            "image": {
+              "id": 1610123608131,
+              "created_at": "2025-09-11T11:16:26-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/5C9260AD-BB92-42E9-97D8-4DECC1DDD7AE.jpg?v=1757603787",
+              "alt": "cute fall outfits"
+            },
+            "products_count": 18
+          },
+          {
+            "id": 296710340675,
+            "title": "Amber Dreams Collection",
+            "handle": "amber-dreams-collection",
+            "description": "<h2>Amber Dreams Collection</h2>\n<p><meta charset=\"utf-8\">Step into the glow of the season with our <em data-start=\"143\" data-end=\"168\">Amber Dreams Collection</em>—a cozy-chic mix of fall outfits designed to capture autumn’s golden charm. From soft knits and layered essentials to flowy blouses and flattering denim, these pieces bring warmth, comfort, and effortless style to your everyday looks. With rich amber tones, timeless textures, and dreamy details, this collection is perfect for coffee dates, pumpkin patch strolls, and crisp evening adventures.</p>",
+            "published_at": "2025-09-25T11:33:25-04:00",
+            "updated_at": "2026-07-08T20:02:24-04:00",
+            "image": {
+              "id": 1610179182659,
+              "created_at": "2025-09-25T11:33:24-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/F501FAE8-0CB3-45AB-A579-5437B325D8F7.jpg?v=1758814405",
+              "alt": "fall outfits"
+            },
+            "products_count": 7
+          },
+          {
+            "id": 296506884163,
+            "title": "Amber Skies Collection",
+            "handle": "amber-skies-collection",
+            "description": "<h2>Amber Skies Collection</h2>\n<p><meta charset=\"utf-8\">Bask in the golden glow of autumn with our <em data-start=\"140\" data-end=\"164\">Amber Skies Collection</em>—a timeless mix of fall outfits inspired by cozy evenings and crisp air. From soft sweaters and chic blouses to flattering denim and layered essentials, these pieces capture the warmth of the season in every detail. With rich amber tones, soft textures, and effortless fits, this collection is perfect for pumpkin patch days, golden hour strolls, and everything in between.</p>",
+            "published_at": "2025-09-17T20:03:23-04:00",
+            "updated_at": "2026-07-08T20:02:04-04:00",
+            "image": {
+              "id": 1610149331011,
+              "created_at": "2025-09-17T20:03:22-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/F69F0965-EB39-4259-B15A-1C01815070D4.jpg?v=1758153803",
+              "alt": null
+            },
+            "products_count": 4
+          },
+          {
+            "id": 292950605891,
+            "title": "American Dream Collection",
+            "handle": "american-dream-collection",
+            "description": "<h2>American Dream Collection</h2>\n<p><meta charset=\"utf-8\">Celebrate summer in stars, stripes, and style with the <strong data-start=\"55\" data-end=\"73\">American Dream</strong> Collection! This festive collection features red, white, and blue styles perfect for all your patriotic plans—think backyard BBQs, firework shows, and long weekends in the sun. From star-spangled tops and breezy dresses to matching sets in bold Americana hues, these outfits are made for making memories. Get ready to show off your spirit in the cutest way!</p>",
+            "published_at": "2025-05-29T15:48:34-04:00",
+            "updated_at": "2026-07-08T19:57:38-04:00",
+            "image": {
+              "id": 1609566781507,
+              "created_at": "2025-05-29T15:48:33-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/3D1BFAF0-7977-4DB4-8F77-C4A314BDBBF0.jpg?v=1748548113",
+              "alt": null
+            },
+            "products_count": 18
+          },
+          {
+            "id": 305208688707,
+            "title": "American Nights Collection",
+            "handle": "american-nights-collection",
+            "description": "<h2>American Nights Collection</h2>\n<p>The American Nights Collection is made for sunshine-filled weekends, backyard barbecues, lake days, and fireworks under the stars. Featuring patriotic knits, playful gingham prints, breezy stripes, and coastal-inspired graphics, this collection blends classic Americana charm with trendy summer style. From statement flag sweaters to easy denim staples and feminine dresses, every piece is designed to keep you looking effortlessly cute all season long. Style these looks for Memorial Day, the Fourth of July, beach vacations, and every all-American moment in between!</p>",
+            "published_at": "2026-05-12T07:26:28-04:00",
+            "updated_at": "2026-07-14T07:01:52-04:00",
+            "image": {
+              "id": 1611307778115,
+              "created_at": "2026-05-12T07:32:07-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/shopdressup_friday-24.jpg?v=1778585527",
+              "alt": "american nights collection"
+            },
+            "products_count": 25
+          },
+          {
+            "id": 305525325891,
+            "title": "American Summer Collection",
+            "handle": "american-summer-collection",
+            "description": "<h2>American Summer Collection</h2>\n<p data-start=\"40\" data-end=\"449\">The All-American Summer Collection is your go-to lineup for everything warm-weather and effortlessly on-trend. Inspired by classic red, white, and blue tones with a modern twist, this collection blends timeless Americana with the easy, laid-back style of summer days. Think breezy gingham dresses, lightweight denim, relaxed matching sets, and statement knits that bring a fun, nostalgic feel to every outfit.</p>\n<p data-start=\"451\" data-end=\"825\">Designed for everything from backyard barbecues and beach trips to weekend getaways and holiday celebrations, each piece is made with lightweight, comfortable fabrics and flattering silhouettes you’ll want to wear on repeat. Whether you’re dressing it up with wedges or keeping it casual with sneakers, these styles make it easy to look put-together without overthinking it.</p>\n<p data-start=\"827\" data-end=\"947\" data-is-last-node=\"\" data-is-only-node=\"\">Classic, playful, and effortlessly cool—the All-American Summer Collection is all about celebrating the season in style.</p>",
+            "published_at": "2026-05-19T11:40:30-04:00",
+            "updated_at": "2026-07-14T07:01:50-04:00",
+            "image": {
+              "id": 1611343659075,
+              "created_at": "2026-05-19T11:40:29-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/12.jpg?v=1779370590",
+              "alt": null
+            },
+            "products_count": 79
+          },
+          {
+            "id": 306240225347,
+            "title": "American Summer Dresses Collection",
+            "handle": "american-summer-dresses-collection",
+            "description": "<h2>American Summer Dresses Collection</h2>\n<p>Celebrate summer in style with the American Dresses Collection. Featuring festive reds, crisp whites, and classic blues, these effortlessly chic dresses are perfect for Fourth of July celebrations, backyard barbecues, lake weekends, and fireworks under the stars. From playful prints to timeless silhouettes, each piece is designed to keep you looking polished, patriotic, and ready for every summer memory.</p>",
+            "published_at": "2026-06-08T14:37:52-04:00",
+            "updated_at": "2026-07-14T07:01:50-04:00",
+            "image": {
+              "id": 1611444224067,
+              "created_at": "2026-06-08T14:37:51-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/HERO_Images_Collection_Release_21_ac6f8019-7cf5-42cc-b677-07bafd64c6c9.jpg?v=1780943872",
+              "alt": "American Summer Dresses Collection"
+            },
+            "products_count": 31
+          },
+          {
+            "id": 293602623555,
+            "title": "Americana Collection",
+            "handle": "americana-collection",
+            "description": "<h2>Americana Collection</h2>\n<p><meta charset=\"utf-8\">Celebrate in style with Dress Up’s <em data-start=\"94\" data-end=\"105\">Americana</em> Collection — a festive lineup of red, white, and blue outfits perfect for the 4th of July and all your summer plans. From star-spangled sets and breezy dresses to patriotic prints and casual-cute tops, these pieces are made for fireworks, BBQs, and beach days. Whether you're keeping it classic or adding a playful twist, the <em data-start=\"432\" data-end=\"443\">Americana</em> Collection has everything you need to show off your stars and stripes in the cutest way possible. Let freedom (and fashion) ring!</p>",
+            "published_at": "2025-06-19T12:33:15-04:00",
+            "updated_at": "2026-07-08T19:58:37-04:00",
+            "image": {
+              "id": 1609669607491,
+              "created_at": "2025-06-19T12:33:14-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/AB478ADB-AA72-4276-882A-EA4EFF80FB7F.jpg?v=1750350807",
+              "alt": "4th of july outfits"
+            },
+            "products_count": 3
+          },
+          {
+            "id": 268103745603,
+            "title": "Atlanta Gameday - Baseball Sweatshirts & Chop Chop Tees",
+            "handle": "atlanta",
+            "description": "<h2>DU Exclusive Atlanta Customs</h2>\n<p data-start=\"301\" data-end=\"684\">Looking for cute baseball game outfits or wondering what to wear to an Atlanta baseball game? Shop Dress Up’s <a href=\"https://shopdressup.com/collections/atlanta\"><strong data-start=\"411\" data-end=\"453\">DU Exclusive Atlanta Baseball Game Day</strong></a> collection for the best women’s game day tees, pullovers, long sleeve tops, hats, stickers, and accessories. Designed for true Atlanta fans, these styles make it easy to rep your team on game day—and wear them again all week long.</p>\n<p data-start=\"686\" data-end=\"1235\">From crowd-favorite <a href=\"https://shopdressup.com/collections/atlanta\"><strong data-start=\"706\" data-end=\"724\">Chop Chop tees</strong></a> to elevated graphic designs, this collection blends team pride with everyday wearability. Whether you’re heading to Truist Park or styling your look for casual plans, these pieces deliver comfort, versatility, and effortless game day style. Explore must-have pieces from our <strong data-start=\"1000\" data-end=\"1068\"><a data-start=\"1002\" data-end=\"1066\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/graphic-tees\">graphic tees,</a></strong> cozy <strong data-start=\"1075\" data-end=\"1147\"><a href=\"https://shopdressup.com/collections/atlanta\">sweaters &amp; pullovers</a><a data-start=\"1077\" data-end=\"1145\" rel=\"noopener\" class=\"decorated-link cursor-pointer\">,</a></strong> and game day–ready <strong data-start=\"1168\" data-end=\"1234\"><a data-start=\"1170\" data-end=\"1232\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/accessories\">accessories.<span aria-hidden=\"true\" class=\"ms-0.5 inline-block align-middle leading-none\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" aria-hidden=\"true\" data-rtl-flip=\"\" class=\"block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]\"><use fill=\"currentColor\" href=\"/cdn/assets/sprites-core-dy5p747x.svg#304883\"></use></svg></span></a></strong></p>\n<h2 data-start=\"1242\" data-end=\"1276\">Dress Up at The Battery Atlanta</h2>\n<p data-start=\"1278\" data-end=\"1660\">Cheer on your team in style at Truist Park with our <a href=\"https://shopdressup.com/collections/atlanta\"><strong data-start=\"1330\" data-end=\"1355\">Atlanta baseball tees</strong></a>, available exclusively at Dress Up. Pair your favorite tee with denim and sneakers for a comfortable, cute game day outfit that keeps up from first pitch to final inning. Add a <strong data-start=\"1533\" data-end=\"1593\"><a data-start=\"1535\" data-end=\"1591\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/hats\">baseball hat </a></strong>or tote to complete your look and rep Atlanta beyond the ballpark.</p>\n<p data-start=\"1662\" data-end=\"2096\">Visit <strong data-start=\"1668\" data-end=\"1703\">Dress Up at The Battery Atlanta</strong> and experience shopping in one of the city’s most exciting destinations. From fashion-forward boutiques to top dining and entertainment, The Battery offers the perfect backdrop for a full game day experience. Stop by our store to shop <strong data-start=\"1939\" data-end=\"2007\"><a data-start=\"1941\" data-end=\"2005\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/new-arrivals\">new arrivals, </a></strong>exclusive Atlanta baseball styles, and everyday favorites you won’t find anywhere else.</p>\n<p data-start=\"2098\" data-end=\"2273\">Whether you’re a lifelong Atlanta fan or visiting for a game, Dress Up has everything you need to create a baseball game outfit that’s stylish, comfortable, and team-spirited.</p>",
+            "published_at": "2022-08-05T12:26:34-04:00",
+            "updated_at": "2026-07-14T14:39:27-04:00",
+            "image": {
+              "id": 1605579145283,
+              "created_at": "2023-08-21T16:08:24-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/0R4A0583.jpg?v=1718737387",
+              "alt": "Two models wearing Atlanta baseball pullovers "
+            },
+            "products_count": 134
+          },
+          {
+            "id": 286132731971,
+            "title": "Autumn Allure Collection",
+            "handle": "autumn-allure-collection",
+            "description": "<h2>Autumn Allure Collection</h2>\n<p>Step into the season with Dress Up’s <strong>\"Autumn Allure\"</strong> collection, featuring enchanting styles that capture the essence of fall. From pretty dresses to chic layers, this collection is filled with pieces that are perfect for cozy autumn days and crisp nights.</p>\n<p><strong>Pretty Fall Dresses:</strong> Embrace the beauty of the season with our pretty fall dresses, available in rich colors and flattering silhouettes. Perfect for day outings or evening gatherings, these dresses bring warmth and charm to your fall wardrobe.</p>\n<p><strong>White Denim Jacket:</strong> Add a fresh, crisp layer to your fall look with our white denim jacket. This versatile piece is ideal for layering over dresses or pairing with skirts and jeans, bringing a chic edge to any outfit.</p>\n<p><strong>Flowy Brown Maxi Skirt:</strong> Get swept away in the effortless elegance of our flowy brown maxi skirt. Designed in a warm, earthy tone, it pairs beautifully with blouses or knits for a laid-back yet polished autumn look.</p>\n<p><strong>Cute Blouses:</strong> Our selection of cute blouses completes the collection, with flowy fabrics and pretty details perfect for pairing with skirts, jeans, or layering under jackets.</p>\n<p>Capture the magic of the season with the <strong>\"Autumn Allure\"</strong> collection from Dress Up—filled with timeless pieces that make fall fashion feel effortlessly elegant!</p>",
+            "published_at": "2024-10-04T16:26:10-04:00",
+            "updated_at": "2026-07-08T19:50:38-04:00",
+            "image": {
+              "id": 1608394309699,
+              "created_at": "2024-10-04T16:28:24-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/2P4A6509.jpg?v=1728073704",
+              "alt": "models wearing cute fall dresses"
+            },
+            "products_count": 7
+          },
+          {
+            "id": 295264157763,
+            "title": "Autumn Aura Collection",
+            "handle": "autumn-aura-collection",
+            "description": "<h2>Autumn Aura Collection</h2>\n<p><meta charset=\"utf-8\">Wrap yourself in the warmth of the season with Dress Up’s <em data-start=\"121\" data-end=\"134\">Autumn Aura</em> Collection — a stunning lineup of fall styles in rich, earthy tones and effortlessly chic silhouettes. From soft knits and flowy dresses to versatile layers and timeless textures, these pieces are perfect for crisp mornings, golden afternoons, and cozy evenings. The <em data-start=\"402\" data-end=\"415\">Autumn Aura</em> Collection captures the magic of fall — warm, inviting, and made to make every moment feel special.</p>",
+            "published_at": "2025-08-13T15:45:28-04:00",
+            "updated_at": "2026-07-08T20:00:47-04:00",
+            "image": {
+              "id": 1609993650243,
+              "created_at": "2025-08-13T15:45:27-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/0B0AA10A-3D08-42FB-9B1C-A1FCB5AF14CE.jpg?v=1755114327",
+              "alt": null
+            },
+            "products_count": 11
+          },
+          {
+            "id": 295060144195,
+            "title": "Autumn Awaits Collection",
+            "handle": "autumn-awaits-collection",
+            "description": "<h2>Autumn Awaits Collection</h2>\n<p><meta charset=\"utf-8\">Step confidently into the new season with Dress Up’s <em data-start=\"127\" data-end=\"142\">Autumn Awaits</em> Collection — a curated mix of pre-fall styles designed for those first crisp days. Featuring flowy dresses, soft knits, and easy layering pieces in warm, earthy hues, these looks are perfect for transitioning your wardrobe from summer to fall. The <em data-start=\"391\" data-end=\"406\">Autumn Awaits</em> Collection captures the charm of the season ahead — timeless, cozy, and effortlessly chic.</p>",
+            "published_at": "2025-08-06T11:15:19-04:00",
+            "updated_at": "2026-07-08T20:00:29-04:00",
+            "image": {
+              "id": 1609958686787,
+              "created_at": "2025-08-06T11:15:18-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/995D9CFC-8C08-4D0A-BAA0-A7D034546FF0.jpg?v=1754493318",
+              "alt": "cute sweaters"
+            },
+            "products_count": 17
+          },
+          {
+            "id": 285131210819,
+            "title": "Autumn Breeze Collection",
+            "handle": "autumn-breeze-collection",
+            "description": "<h2>Autumn Breeze Collection</h2>\n<p>Welcome the cozy charm of fall with Dress Up's \"Autumn Breeze\" collection, featuring an effortlessly stylish mix of wardrobe staples perfect for the season. This collection brings together basic cropped tees, classic flannels, and versatile denim pieces, ensuring you're ready to embrace the crisp air and changing leaves with flair.</p>\n<p><strong>Basic Cropped Tees:</strong> Start your fall layering game with our essential cropped tees. These basics are perfect for pairing with high-waisted jeans or skirts, offering a simple yet chic foundation for any outfit. Available in a variety of colors, they’re the ultimate go-to for casual days out or relaxed weekends at home.</p>\n<p><strong>Classic Flannels:</strong> Add a cozy layer to your fall wardrobe with our selection of classic flannels. Soft, warm, and versatile, these flannels are perfect for throwing over a tee or tying around your waist for an effortlessly cool look. They come in an array of autumnal hues and patterns, adding a rustic vibe to any ensemble.</p>\n<p><strong>Versatile Denim Jacket:</strong> No fall wardrobe is complete without a denim jacket, and ours is the perfect choice for layering. Whether you're wearing it over a dress or pairing it with your favorite graphic sweatshirt, this versatile piece adds a timeless touch to your autumn outfits.</p>\n<p><strong>Graphic Sweatshirt:</strong> Stay stylish and comfortable with our cozy graphic sweatshirts. Featuring unique designs and soft fabrics, these sweatshirts are perfect for chilly days when you want to stay warm without sacrificing style. Pair them with jeans or a flowy skirt for a laid-back look that's both fashionable and functional.</p>\n<p><strong>Denim Jumpsuit:</strong> Make a statement with our trendy denim jumpsuit, a must-have piece for any fall wardrobe. With its flattering fit and easygoing style, this jumpsuit is perfect for everything from weekend outings to casual gatherings. Dress it up with accessories or keep it simple for a relaxed, effortless vibe.</p>\n<p><strong>Cute Tops:</strong> Elevate your fall style with our range of cute tops, perfect for pairing with jeans, skirts, or layering under jackets and flannels. From pretty blouses to versatile knits, these tops are designed to mix and match for endless outfit possibilities.</p>\n<p><strong>Flowy Skirts:</strong> Add a touch of femininity to your fall wardrobe with our flowy skirts. Perfect for pairing with chunky knits or cropped tees, these skirts offer a soft, romantic feel that moves beautifully with every step. Choose from a variety of lengths and prints to find your perfect match.</p>\n<p>Step into the season with Dress Up's \"Autumn Breeze\" collection and embrace the beauty of fall fashion. Shop now to find your new favorite pieces that will carry you through the season in style!</p>",
+            "published_at": "2024-08-29T15:33:55-04:00",
+            "updated_at": "2026-07-08T19:49:23-04:00",
+            "image": {
+              "id": 1608228569155,
+              "created_at": "2024-08-29T15:33:54-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/2P4A9150.jpg?v=1724960035",
+              "alt": "models wearing cute fall outfits"
+            },
+            "products_count": 18
+          },
+          {
+            "id": 276279885891,
+            "title": "Autumn Charm Collection",
+            "handle": "autumn-charm-collection",
+            "description": "<meta charset=\"utf-8\">\n<h2 data-mce-fragment=\"1\">Autumn Charm Collection</h2>\n<p data-mce-fragment=\"1\">Introducing the \"Autumn Charm\" Collection at Dress Up. As the leaves start to paint the world in shades of gold and crimson, Dress Up proudly unveils our \"Autumn Charm\" Collection—a celebration of the breathtaking beauty and cozy elegance that defines the fall season. Embrace the essence of autumn in style with this enchanting collection that captures the warmth, comfort, and timeless charm of the season.</p>\n<p data-mce-fragment=\"1\">At Dress Up, we understand that fashion is not just about clothing; it's about expressing your unique personality and embracing the changing seasons with grace. The \"Autumn Charm\" Collection is a manifestation of this philosophy, featuring pieces that effortlessly blend fashion-forward design with the cozy vibes of fall.</p>\n<p data-mce-fragment=\"1\">At Dress Up, we believe that the changing seasons are a reminder to embrace life's transitions with open arms and a sense of wonder. The \"Autumn Charm\" Collection invites you to relish in the simple pleasures of the season, to create cherished memories, and to savor the charm of autumn's embrace.</p>\n<p data-mce-fragment=\"1\">Step into fall with style, confidence, and grace with the \"Autumn Charm\" Collection at Dress Up. Let your wardrobe reflect the beauty of the season, and embark on a journey filled with cozy elegance and timeless allure. Embrace the charm of autumn, one outfit at a time.</p>",
+            "published_at": "2023-09-23T14:24:52-04:00",
+            "updated_at": "2026-07-08T19:38:38-04:00",
+            "image": {
+              "id": 1605653037123,
+              "created_at": "2023-09-23T14:28:35-04:00",
+              "src": "https://cdn.shopify.com/s/files/1/0339/0901/collections/6Y9A8510.jpg?v=1695493716",
+              "alt": "models wearing trendy outfits for fall"
+            },
+            "products_count": 8
+          }
+        ]
+      }
+    },
+    {
+      "label": "search_suggest_json",
+      "url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "final_url": "https://shopdressup.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 151,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"resources\":{\"results\":{\"products\":[],\"collections\":[],\"queries\":[],\"pages\":[]}}}",
+      "json_payload": {
+        "resources": {
+          "results": {
+            "products": [],
+            "collections": [],
+            "queries": [],
+            "pages": []
+          }
+        }
+      }
+    }
+  ],
+  "catalog_discovery": {
+    "status": "partial",
+    "confidence": "Medium",
+    "products_sampled": 10,
+    "collections_sampled": 20,
+    "source": "Shopify public JSON endpoints",
+    "collections": [
+      {
+        "title": "All Up To You Collection",
+        "handle": "all-up-to-you-collection",
+        "products_count": 8
+      },
+      {
+        "title": "All You Can See Collection - Cute Sweaters For Women",
+        "handle": "all-you-can-see-collection",
+        "products_count": 13
+      },
+      {
+        "title": "All You Could Ever Want Collection",
+        "handle": "all-you-could-ever-want-collection",
+        "products_count": 8
+      },
+      {
+        "title": "All-American Summer Collection",
+        "handle": "all-american-summer-collection",
+        "products_count": 20
+      },
+      {
+        "title": "Along For The Ride Collection",
+        "handle": "along-for-the-ride-collection",
+        "products_count": 12
+      },
+      {
+        "title": "Alpharetta",
+        "handle": "alpharetta",
+        "products_count": 6
+      },
+      {
+        "title": "Amber Afternoons Collection",
+        "handle": "amber-afternoons-collection",
+        "products_count": 18
+      },
+      {
+        "title": "Amber Dreams Collection",
+        "handle": "amber-dreams-collection",
+        "products_count": 7
+      },
+      {
+        "title": "Amber Skies Collection",
+        "handle": "amber-skies-collection",
+        "products_count": 4
+      },
+      {
+        "title": "American Dream Collection",
+        "handle": "american-dream-collection",
+        "products_count": 18
+      },
+      {
+        "title": "American Nights Collection",
+        "handle": "american-nights-collection",
+        "products_count": 25
+      },
+      {
+        "title": "American Summer Collection",
+        "handle": "american-summer-collection",
+        "products_count": 79
+      },
+      {
+        "title": "American Summer Dresses Collection",
+        "handle": "american-summer-dresses-collection",
+        "products_count": 31
+      },
+      {
+        "title": "Americana Collection",
+        "handle": "americana-collection",
+        "products_count": 3
+      },
+      {
+        "title": "Atlanta Gameday - Baseball Sweatshirts & Chop Chop Tees",
+        "handle": "atlanta",
+        "products_count": 134
+      },
+      {
+        "title": "Autumn Allure Collection",
+        "handle": "autumn-allure-collection",
+        "products_count": 7
+      },
+      {
+        "title": "Autumn Aura Collection",
+        "handle": "autumn-aura-collection",
+        "products_count": 11
+      },
+      {
+        "title": "Autumn Awaits Collection",
+        "handle": "autumn-awaits-collection",
+        "products_count": 17
+      },
+      {
+        "title": "Autumn Breeze Collection",
+        "handle": "autumn-breeze-collection",
+        "products_count": 18
+      },
+      {
+        "title": "Autumn Charm Collection",
+        "handle": "autumn-charm-collection",
+        "products_count": 8
+      }
+    ],
+    "products": [
+      {
+        "title": "Beige Amen Embroidered Faith Hat",
+        "handle": "beige-amen-embroidered-faith-hat",
+        "product_type": "DU Exclusive"
+      },
+      {
+        "title": "Yellow Cross Embroidered Hat",
+        "handle": "pray-baseball-hat",
+        "product_type": "DU Exclusive"
+      },
+      {
+        "title": "Blue Embroidered Cross Hat",
+        "handle": "cross-baseball-hat",
+        "product_type": "DU Exclusive"
+      },
+      {
+        "title": "Unapologetically Her Brown Polka Dot Midi Dress",
+        "handle": "unapologetically-her-brown-polka-dot-midi-dress",
+        "product_type": "Dress"
+      },
+      {
+        "title": "Paris After Dark Cream Polka Dot Blouse",
+        "handle": "paris-after-dark-cream-polka-dot-blouse",
+        "product_type": "Top"
+      },
+      {
+        "title": "Wherever You Go Black Textured Maxi Dress",
+        "handle": "wherever-you-go-black-textured-maxi-dress",
+        "product_type": "Dress"
+      },
+      {
+        "title": "Keep It Simple Charcoal Textured Pants",
+        "handle": "keep-it-simple-charcoal-textured-pants",
+        "product_type": "Bottom"
+      },
+      {
+        "title": "Keep It Simple Charcoal Textured Vest",
+        "handle": "keep-it-simple-charcoal-textured-vest",
+        "product_type": "Outerwear"
+      },
+      {
+        "title": "Off To The Hamptons Brown Textured Maxi Skirt",
+        "handle": "off-to-the-hamptons-brown-textured-maxi-skirt",
+        "product_type": "Bottom"
+      },
+      {
+        "title": "Off To The Hamptons Textured Brown Tank",
+        "handle": "off-to-the-hamptons-textured-brown-tank",
+        "product_type": "Outerwear"
+      }
+    ]
+  },
+  "autocomplete_discovery": {
+    "status": "available",
+    "confidence": "Medium",
+    "resources_observed": [
+      "products",
+      "collections",
+      "queries",
+      "pages"
+    ]
+  }
+}

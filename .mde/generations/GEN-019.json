@@ -1,0 +1,32 @@
+{
+  "generation_id": "GEN-019",
+  "mission_phase": "Generation 19 - Operational Controls: Run Queue and Data Management",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T05:20:00Z",
+  "ended_at": null,
+  "record_status": "chartered_before_implementation",
+  "phase_goal": "Give the operator operational control: (1) a persistent single-at-a-time inspection run queue with transparency and management, and (2) a discoverable data-management settings area with cleanup including screenshot/capture reclamation.",
+  "reason_generation_started": "Operator observed that Add Site & Inspect, Rerun, Resume, and Run Verification each spawn independent child processes with no concurrency control, risking rate-limits (the 429s we have been fighting) and hiding what is in flight. Requested a single-at-a-time queue with transparency and basic management, persisted across restarts.",
+  "validation_strategy": {
+    "functional": [
+      "N enqueued runs execute strictly one at a time (no two run-inspection children concurrently).",
+      "Queue state persists to disk and is reloaded on dashboard restart; a run interrupted by a restart is reconciled (not left as 'running').",
+      "Cancel removes a pending item, and stops a running item; clear empties pending; the running item is never silently dropped.",
+      "Every run-spawning dashboard action enqueues instead of spawning directly.",
+      "Cleanup offers a captures-only policy that removes screenshots/raw from runs while keeping structured evidence and reports; preview shows bytes freed."
+    ],
+    "usability": [
+      "The dashboard shows the running item and the ordered pending list with enqueue reasons/labels, plus cancel/clear controls.",
+      "Live browser walkthrough: enqueue several runs, observe one running and the rest pending, cancel one, confirm order.",
+      "Data-management/cleanup is reachable from a discoverable Settings location, not buried below the run list."
+    ],
+    "technical": [
+      "npm run validate:dashboard extended with queue API assertions (enqueue, list, single-runner, cancel, persistence reconcile).",
+      "npm run validate, validate:gen13 remain green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [],
+  "known_gaps_opened": [],
+  "scope_addendum": "Expanded 2026-07-15 to also resolve FND-GEN019-002 (data-management discoverability + capture cleanup) alongside the chartered queue (FND-GEN019-003)."
+}

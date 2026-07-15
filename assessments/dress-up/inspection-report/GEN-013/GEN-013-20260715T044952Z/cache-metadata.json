@@ -1,0 +1,10 @@
+{
+  "schema_version": "cache-metadata-v0.1",
+  "cache_key": "site-profile:targets/dress-up.json",
+  "artifact_path": "site-profiles/shopdressup.com.json",
+  "created_at": "2026-07-13T04:38:52.153Z",
+  "max_age_hours": 168,
+  "decision": "reused_shared_cache",
+  "age_hours": 48.18,
+  "reason": "Shared site profile is 48.18 hours old, within the 168 hour freshness window."
+}

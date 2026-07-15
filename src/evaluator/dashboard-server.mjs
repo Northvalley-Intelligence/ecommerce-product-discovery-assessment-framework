@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
 import { previewCleanup, runCleanup } from './cleanup.mjs';
+import { InspectionQueue } from './inspection-queue.mjs';
 import { retryCapture } from './retry-capture.mjs';
 import { loadInspectionConfig, saveInspectionConfig } from './inspection-config.mjs';
 import { curateQueryPack } from './curate-query-pack.mjs';
@@ -832,10 +833,26 @@ function dashboardPage() {
     }
     .view-tabs {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 6px;
       margin-bottom: 14px;
     }
+    .queue-strip {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .queue-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .queue-head strong { font-size: 13px; }
+    .queue-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 0; border-top: 1px solid var(--line); font-size: 13px;
+    }
+    .queue-row .q-label { flex: 1; overflow-wrap: anywhere; }
+    .queue-cancel { padding: 3px 9px; font-size: 11px; font-weight: 700; }
+    .spin { display: inline-block; width: 9px; height: 9px; border-radius: 999px; background: var(--blue); }
     .tab {
       background: white;
       color: var(--muted);
@@ -934,22 +951,10 @@ function dashboardPage() {
       <div class="view-tabs" role="tablist">
         <button id="tabInspections" class="tab active" role="tab">Inspections</button>
         <button id="tabDatasets" class="tab" role="tab">Datasets</button>
+        <button id="tabSettings" class="tab" role="tab">Settings</button>
       </div>
       <div class="run-list" id="runList"></div>
       <div class="dataset-nav" id="datasetNav" hidden></div>
-      <div class="storage" id="storagePanel">
-        <h3>Storage</h3>
-        <p class="muted" id="storageSummary">Loading…</p>
-        <div class="storage-actions">
-          <select id="cleanupPolicy">
-            <option value="keep-latest-1">Keep latest run per site</option>
-            <option value="keep-latest-3">Keep latest 3 runs per site</option>
-            <option value="all-runs">Delete all inspection runs</option>
-          </select>
-          <button id="cleanupPreviewBtn" class="secondary">Preview cleanup</button>
-        </div>
-        <div id="cleanupResult" class="muted"></div>
-      </div>
     </aside>
     <main>
       <div id="inspectionView">
@@ -957,11 +962,13 @@ function dashboardPage() {
           <button id="newInspectionBtn">+ New Inspection</button>
           <span class="muted">Add a Shopify store, or select an inspection to review, rerun, or edit its setup.</span>
         </section>
+        <div id="queueStrip" class="queue-strip" hidden></div>
         <div id="actionResult" class="muted"></div>
         <div id="detail"></div>
       </div>
       <div id="datasetView" hidden></div>
       <div id="setupView" hidden></div>
+      <div id="settingsView" hidden></div>
     </main>
   </div>
   <script>
@@ -1023,6 +1030,7 @@ function dashboardPage() {
       if (hash.startsWith('datasets')) return { view: 'datasets', path: null, q: '' };
       if (params.has('setup')) return { view: 'setup', target: params.get('setup') || null };
       if (hash === 'setup') return { view: 'setup', target: null };
+      if (hash === 'settings') return { view: 'settings' };
       return { view: 'inspections', path: null, q: '' };
     }
     async function api(path, options) {
@@ -1034,16 +1042,7 @@ function dashboardPage() {
       state.inspections = await api('/api/inspections');
       if (!state.selected && state.inspections.length) state.selected = state.inspections[0].inspection_id;
       renderRuns();
-      updateStorageSummary();
       if (state.selected) await loadInspection(state.selected);
-    }
-    async function updateStorageSummary() {
-      try {
-        const storage = await api('/api/storage');
-        document.getElementById('storageSummary').textContent = storage.total_runs + ' inspection run' + (storage.total_runs === 1 ? '' : 's') + ' stored on disk.';
-      } catch (error) {
-        document.getElementById('storageSummary').textContent = 'Storage info unavailable.';
-      }
     }
     async function cleanupFlow() {
       const policy = document.getElementById('cleanupPolicy').value;
@@ -1522,11 +1521,69 @@ function dashboardPage() {
       state.view = view;
       document.getElementById('tabInspections').classList.toggle('active', view === 'inspections' || view === 'setup');
       document.getElementById('tabDatasets').classList.toggle('active', view === 'datasets');
+      document.getElementById('tabSettings').classList.toggle('active', view === 'settings');
       document.getElementById('runList').hidden = view === 'datasets';
       document.getElementById('datasetNav').hidden = view !== 'datasets';
       document.getElementById('inspectionView').hidden = view !== 'inspections';
       document.getElementById('datasetView').hidden = view !== 'datasets';
       document.getElementById('setupView').hidden = view !== 'setup';
+      document.getElementById('settingsView').hidden = view !== 'settings';
+    }
+    async function renderSettings() {
+      setView('settings');
+      const view = document.getElementById('settingsView');
+      let total = '?';
+      try { total = (await api('/api/storage')).total_runs; } catch (error) { /* ignore */ }
+      view.innerHTML =
+        '<section class="hero"><div><p class="eyebrow">Settings</p><h1>Data Management</h1><div class="subline"><span>' + total + ' inspection run' + (total === 1 ? '' : 's') + ' stored on disk</span></div></div></section>' +
+        panel('Storage Cleanup', 'Reclaim disk space', '<div class="panel-body">' +
+          '<div class="field" style="max-width:420px"><label for="cleanupPolicy">Cleanup policy</label><select id="cleanupPolicy">' +
+            '<option value="captures-only">Delete only screenshots &amp; raw captures (keep evidence &amp; reports)</option>' +
+            '<option value="keep-latest-1">Keep latest run per site (delete older runs)</option>' +
+            '<option value="keep-latest-3">Keep latest 3 runs per site</option>' +
+            '<option value="all-runs">Delete all inspection runs</option>' +
+          '</select></div>' +
+          '<div class="setup-actions"><button id="cleanupPreviewBtn">Preview cleanup</button></div>' +
+          '<p class="muted" id="cleanupResult" style="margin-top:10px"></p>' +
+          '<p class="muted" style="margin-top:8px;font-size:12px">Cleanup only ever removes run artifacts (timestamped run directories or their captures). Target manifests, query packs, fix plans, and runs referenced by a fix plan are never touched.</p>' +
+        '</div>');
+      document.getElementById('cleanupPreviewBtn').addEventListener('click', () => cleanupFlow().catch((error) => alert(error.message)));
+    }
+    function renderQueue(data) {
+      const strip = document.getElementById('queueStrip');
+      if (!strip) return;
+      const active = (data.running ? 1 : 0) + data.pending.length;
+      if (active === 0) { strip.hidden = true; strip.innerHTML = ''; return; }
+      strip.hidden = false;
+      const row = (item, running) => '<div class="queue-row">' + (running ? '<span class="spin"></span>' : '<span class="muted">#' + '</span>') +
+        '<span class="q-label">' + escapeHtml(item.label) + (running ? ' — running' : ' — queued') + '</span>' +
+        '<button class="queue-cancel secondary" data-id="' + escapeHtml(item.id) + '">Cancel</button></div>';
+      strip.innerHTML =
+        '<div class="queue-head"><strong>Run queue</strong><span class="muted">' + (data.running ? '1 running' : 'idle') + ' · ' + data.pending.length + ' queued</span>' +
+        (data.pending.length ? '<button id="queueClearBtn" class="secondary" style="margin-left:auto;padding:3px 9px;font-size:11px">Clear queued</button>' : '') + '</div>' +
+        (data.running ? row(data.running, true) : '') +
+        data.pending.map((item) => row(item, false)).join('');
+      for (const btn of strip.querySelectorAll('.queue-cancel')) {
+        btn.addEventListener('click', async () => {
+          try { await api('/api/queue/cancel', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: btn.dataset.id }) }); await pollQueue(); } catch (error) { alert(error.message); }
+        });
+      }
+      const clearBtn = document.getElementById('queueClearBtn');
+      if (clearBtn) clearBtn.addEventListener('click', async () => {
+        try { await api('/api/queue/clear', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' }); await pollQueue(); } catch (error) { alert(error.message); }
+      });
+    }
+    async function pollQueue() {
+      try {
+        const data = await api('/api/queue');
+        renderQueue(data);
+        // When the running set changes, refresh the inspection list so new runs appear.
+        const signature = (data.running ? data.running.id + data.running.status : '') + data.pending.length;
+        if (state.lastQueueSignature !== undefined && state.lastQueueSignature !== signature && state.view === 'inspections') {
+          refresh().catch(() => {});
+        }
+        state.lastQueueSignature = signature;
+      } catch (error) { /* ignore poll errors */ }
     }
     async function renderSetup(targetId) {
       setView('setup');
@@ -1746,6 +1803,10 @@ function dashboardPage() {
         await renderSetup(route.target);
         return;
       }
+      if (route.view === 'settings') {
+        await renderSettings();
+        return;
+      }
       setView(route.view);
       if (route.view === 'inspections') {
         renderRuns();
@@ -1775,19 +1836,21 @@ function dashboardPage() {
       document.getElementById('actionResult').innerHTML = 'Started process ' + result.pid + '. Log: <a href="' + artifactHref(result.log_path) + '" target="_blank">' + escapeHtml(result.log_path) + '</a>';
       setTimeout(refresh, 1500);
     }
-    document.getElementById('cleanupPreviewBtn').addEventListener('click', () => cleanupFlow().catch((error) => alert(error.message)));
     document.getElementById('newInspectionBtn').addEventListener('click', () => { window.location.hash = '#setup'; });
     document.getElementById('tabInspections').addEventListener('click', () => { window.location.hash = '#inspections'; });
     document.getElementById('tabDatasets').addEventListener('click', () => { window.location.hash = '#datasets'; });
+    document.getElementById('tabSettings').addEventListener('click', () => { window.location.hash = '#settings'; });
     window.addEventListener('hashchange', () => applyHash().catch((error) => {
-      document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">Dataset view failed to load: ' + escapeHtml(error.message) + '</div></div>';
+      document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">View failed to load: ' + escapeHtml(error.message) + '</div></div>';
     }));
     refresh().catch((error) => {
       document.getElementById('detail').innerHTML = '<div class="panel"><div class="panel-body">Dashboard failed to load: ' + escapeHtml(error.message) + '</div></div>';
     });
     applyHash().catch((error) => {
-      document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">Dataset view failed to load: ' + escapeHtml(error.message) + '</div></div>';
+      document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">View failed to load: ' + escapeHtml(error.message) + '</div></div>';
     });
+    pollQueue();
+    setInterval(pollQueue, 4000);
   </script>
 </body>
 </html>`;
@@ -1795,11 +1858,12 @@ function dashboardPage() {
 
 function parseCleanupPolicy(raw) {
   if (raw === 'all-runs') return { policy: 'all-runs' };
+  if (raw === 'captures-only') return { policy: 'captures-only' };
   const match = String(raw || 'keep-latest-1').match(/^keep-latest-(\d+)$/);
   return { policy: 'keep-latest', keep: match ? Number(match[1]) : 1 };
 }
 
-function routeRequest(rootDir, request, response) {
+function routeRequest(rootDir, request, response, queue) {
   const url = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
 
   if (request.method === 'GET' && url.pathname === '/') {
@@ -1830,8 +1894,8 @@ function routeRequest(rootDir, request, response) {
       .then((body) => {
         const saved = saveInspectionConfig(rootDir, body);
         if (body.run !== false) {
-          const run = runChild(rootDir, ['src/evaluator/run-inspection.mjs', '--evaluation', saved.evaluation], `setup-run-${Date.now()}.log`);
-          sendJson(response, 202, { ...saved, ...run, running: true });
+          const queued = queue.enqueue({ kind: 'inspect', label: 'Inspect: ' + (body.name || saved.target_id), argv: ['src/evaluator/run-inspection.mjs', '--evaluation', saved.evaluation] });
+          sendJson(response, 202, { ...saved, ...queued, queued: true });
         } else {
           sendJson(response, 200, { ...saved, running: false });
         }
@@ -1945,14 +2009,29 @@ function routeRequest(rootDir, request, response) {
     readBody(request)
       .then((body) => {
         if (!body.target_id) throw new Error('target_id is required.');
-        const result = runChild(
-          rootDir,
-          ['src/evaluator/verify-fixes-live.mjs', body.target_id],
-          `verify-live-${Date.now()}.log`
-        );
-        sendJson(response, 202, result);
+        sendJson(response, 202, queue.enqueue({ kind: 'verify', label: 'Verify fixes: ' + body.target_id, argv: ['src/evaluator/verify-fixes-live.mjs', body.target_id] }));
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/queue') {
+    sendJson(response, 200, queue.list());
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/queue/cancel') {
+    readBody(request)
+      .then((body) => {
+        if (!body.id) throw new Error('id is required.');
+        sendJson(response, 200, queue.cancel(body.id));
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/queue/clear') {
+    readBody(request).then(() => sendJson(response, 200, queue.clearPending())).catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 
@@ -2013,10 +2092,10 @@ function routeRequest(rootDir, request, response) {
   if (request.method === 'POST' && url.pathname === '/api/run') {
     readBody(request)
       .then((body) => {
-        const args = ['src/evaluator/run-inspection.mjs', '--evaluation', body.evaluation || 'evaluations/ridge-shopify-baseline.json'];
+        const evaluation = body.evaluation || 'evaluations/ridge-shopify-baseline.json';
+        const args = ['src/evaluator/run-inspection.mjs', '--evaluation', evaluation];
         if (body.only) args.push('--only', body.only);
-        const result = runChild(rootDir, args, `run-${Date.now()}.log`);
-        sendJson(response, 202, result);
+        sendJson(response, 202, queue.enqueue({ kind: 'inspect', label: 'Inspect: ' + evaluation.split('/').pop(), argv: args }));
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
@@ -2027,8 +2106,7 @@ function routeRequest(rootDir, request, response) {
       .then((body) => {
         if (!body.run_dir) throw new Error('run_dir is required.');
         safeResolve(rootDir, body.run_dir);
-        const result = runChild(rootDir, ['src/evaluator/run-inspection.mjs', '--resume', body.run_dir], `resume-${Date.now()}.log`);
-        sendJson(response, 202, result);
+        sendJson(response, 202, queue.enqueue({ kind: 'resume', label: 'Resume: ' + body.run_dir.split('/').slice(-1)[0], argv: ['src/evaluator/run-inspection.mjs', '--resume', body.run_dir] }));
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
@@ -2041,8 +2119,8 @@ function routeRequest(rootDir, request, response) {
         const run = loadRun(rootDir, body.run_dir);
         const evaluation = run.checkpoint?.evaluation_manifest || run.run_manifest?.evaluation_manifest_path;
         if (!evaluation) throw new Error('Could not determine evaluation manifest for selected run.');
-        const result = runChild(rootDir, ['src/evaluator/run-inspection.mjs', '--evaluation', evaluation], `rerun-${Date.now()}.log`);
-        sendJson(response, 202, result);
+        const targetName = run.report?.target?.name || evaluation.split('/').pop();
+        sendJson(response, 202, queue.enqueue({ kind: 'rerun', label: 'Rerun: ' + targetName, argv: ['src/evaluator/run-inspection.mjs', '--evaluation', evaluation] }));
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
@@ -2055,9 +2133,10 @@ export function createDashboardServer(options = {}) {
   const rootDir = path.resolve(options.rootDir || process.cwd());
   const host = options.host || DEFAULT_HOST;
   const port = Number.isFinite(options.port) ? options.port : DEFAULT_PORT;
+  const queue = new InspectionQueue(rootDir);
   const server = http.createServer((request, response) => {
     try {
-      routeRequest(rootDir, request, response);
+      routeRequest(rootDir, request, response, queue);
     } catch (error) {
       sendJson(response, 500, { error: error.message });
     }
