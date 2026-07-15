@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-066",
+  "generation": "GEN-018",
+  "phase": "Consolidation - exit GEN-017 and GEN-018",
+  "started_at": "2026-07-15T04:40:00Z",
+  "completed_at": "2026-07-15T05:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_as_second_independent_gate_pass_for_gen017_gen018_consolidation",
+  "validations_executed": [
+    {
+      "category": "GEN-012 Parity Regression",
+      "tool": "npm run inspect:dressup + validate-pilot-parity",
+      "result": "pass",
+      "evidence": "No-change Dress Up rerun holds full ten-surface GEN-012 parity."
+    },
+    {
+      "category": "GEN-017 Curation Hardening (deterministic)",
+      "tool": "npm run curate:queries",
+      "result": "pass",
+      "evidence": "Re-curation of Pink Lily produces clean customer-facing queries with no promo/operational/taxonomy leak."
+    },
+    {
+      "category": "GEN-018 Capabilities (deterministic)",
+      "tool": "npm run inspect (rendered Pink Lily)",
+      "result": "pass",
+      "evidence": "Browse/Product Pages/Rendered Storefront PASS, browse-graph.json 4 nodes, DS1-DS4 generate; run validates."
+    },
+    {
+      "category": "Per-URL Retry",
+      "tool": "node src/evaluator/retry-capture.mjs",
+      "result": "pass",
+      "evidence": "Retry of a transient 429 product URL cleared the warning, patched evidence to a real price, dropped limitations 3->2, and regenerated the executive report."
+    },
+    {
+      "category": "Suites",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass with no implementation changes since the last commit."
+    },
+    {
+      "category": "BDD Inventory Refresh",
+      "tool": "BDD-INV-007",
+      "result": "pass",
+      "evidence": "45 BDDs (9 new for GEN-017/018), 43 passing, 0 failing, 2 deferred (evaluator calibration, hierarchical browse tree)."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Consolidation pass restoring MDE discipline: reconciled state.json (was stale at GEN-016), refreshed the BDD inventory, and formally exited GEN-017 and GEN-018 with two independent clean gate passes each."
+}

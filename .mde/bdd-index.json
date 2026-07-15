@@ -1,20 +1,20 @@
 {
-  "inventory_id": "BDD-INV-006",
+  "inventory_id": "BDD-INV-007",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-005",
+  "supersedes": "BDD-INV-006",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_16_phase_exit_inventory",
-  "refresh_rationale": "Extends BDD-INV-005 for the GEN-016 refinements: flips BDD-G13-012 (maturity gate enforced) and BDD-G13-004 (all four datasets generating), and adds mobile rendered capture.",
+  "status": "generation_18_consolidation_inventory",
+  "refresh_rationale": "Consolidation refresh (2026-07-15): covers behaviors built across GEN-017 (Shopify shakedown + curation hardening) and GEN-018 (browse inventory, rendered product pages, evidence honesty, retry, and the dashboard usability layer) that BDD-INV-006 predated.",
   "summary": {
-    "total": 36,
-    "critical": 14,
-    "high": 17,
-    "medium": 5,
+    "total": 45,
+    "critical": 15,
+    "high": 23,
+    "medium": 6,
     "low": 0,
-    "passing": 35,
+    "passing": 43,
     "failing": 0,
     "not_executed": 0,
-    "deferred": 1
+    "deferred": 2
   },
   "gen13_inspection_platform_bdds": [
     {
@@ -323,6 +323,80 @@
       "when": "the rendered-search plugin runs",
       "then": "each query's search page is also captured in a mobile browser context with visible product extraction and a retained screenshot",
       "evidence": "Live Pink Lily runs: 5/5 mobile captures with products and genuine mobile rendering verified on screenshots. VAL-062, deterministic rerun in VAL-063."
+    }
+  ],
+  "gen17_gen18_bdds": [
+    {
+      "id": "BDD-G17-001",
+      "title": "Curation excludes operational/back-end collections and taxonomy-path product types",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "status": "passed_gen_017",
+      "evidence": "GEN-017 shakedown across 5 verticals; re-curation cleaned Allbirds/Brooklinen/Gymshark; deterministic re-check in VAL-066. FND-GEN017-001."
+    },
+    {
+      "id": "BDD-G18-001",
+      "title": "Browse inventory records per-collection membership (browse graph nodes)",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_018",
+      "evidence": "Pink Lily browse-graph.json with 4 nodes and membership; crawl-health Browse reflects it. VAL-065, VAL-066."
+    },
+    {
+      "id": "BDD-G18-002",
+      "title": "Rendered product pages captured with price/availability and screenshots",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_018",
+      "evidence": "Pink Lily rendered-product captured real prices, images, add-to-cart; crawl-health Product Pages reflects it. VAL-065, VAL-066."
+    },
+    {
+      "id": "BDD-G18-003",
+      "title": "Findings distinguish store findings from capture limitations",
+      "severity": "Critical",
+      "category": "Mission Coverage Validation",
+      "status": "passed_gen_018",
+      "evidence": "The 90s-nostalgia dropdown gap is tagged store_finding (input found, dropdown empty, API had a match); bot-wall product pages are tagged capture_limitation and excluded from the fix plan. VAL-065."
+    },
+    {
+      "id": "BDD-G18-004",
+      "title": "Bot/anti-automation walls are classified, not counted as clean renders",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "status": "passed_gen_018",
+      "evidence": "Three Pink Lily product pages correctly classified bot_challenge after screenshot verification. VAL-065."
+    },
+    {
+      "id": "BDD-G18-005",
+      "title": "Transient capture walls are retried automatically and per-URL",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_018",
+      "evidence": "Per-URL retry on the operator-supplied URL cleared a 429 to a real price, rendered-product limitations dropped 3 to 2, and the executive report regenerated. VAL-066."
+    },
+    {
+      "id": "BDD-G18-006",
+      "title": "Every non-clean status is traceable to its evidence in the dashboard",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_018",
+      "evidence": "Live-browser verification on Bombas/ColourPop/Pink Lily; expandable attention items, chips, and per-plugin why with view-evidence links. VAL-066."
+    },
+    {
+      "id": "BDD-G18-007",
+      "title": "Operator can create/edit an inspection via a form and manage storage",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_018",
+      "evidence": "Live-browser verification of the setup form (create + edit) and cleanup preview/apply with fix-plan-referenced runs protected. VAL-066."
+    },
+    {
+      "id": "BDD-G18-008",
+      "title": "Fix-plan status describes the store issue lifecycle, not the inspection",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_018",
+      "evidence": "Fix Plan panel wording (Still present / Fixed (verified)) verified live on Pink Lily. VAL-065."
     }
   ]
 }

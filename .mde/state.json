@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-016",
-  "current_phase": "Generation 16 - Platform Refinements",
-  "phase_goal": "Operator-routed refinements: decision-3A maturity enforcement at onboarding, facet-attribute curation to populate DS3, rendered mobile capture.",
-  "status": "generation_16_phase_exit_complete",
+  "current_generation": "GEN-018",
+  "current_phase": "Generation 18 - Browse Inventory, Product Pages, and Evidence Honesty (exited)",
+  "phase_goal": "Close the browse-graph and rendered product-page deferrals, make findings honest about store-vs-capture, and add transient-wall retry. Exited 2026-07-15.",
+  "status": "gen017_and_gen018_consolidated_and_exited",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -18,15 +18,15 @@
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
-    "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-063",
-    "reason": "VAL-062 (refinements slice) and VAL-063 (no-change pass: Dress Up parity rerun, live-verification determinism, clean suites, BDD-INV-006) meet the two-pass requirement. GEN-016 phase exit declared."
+    "latest_result": "consolidation_second_independent_pass_clean",
+    "latest_run_id": "VAL-066",
+    "reason": "Consolidation on 2026-07-15 reconciled state to reality and formally exited GEN-017 and GEN-018. VAL-065 was the first pass; VAL-066 is the second independent clean pass with no implementation changes (deterministic reruns of curation, Dress Up parity, and the rendered Pink Lily browse/product/retry capabilities, plus all suites), and the BDD inventory was refreshed to BDD-INV-007 covering all GEN-017/018 behaviors."
   },
-  "critical_bdds": 14,
-  "high_bdds": 17,
-  "medium_bdds": 5,
+  "critical_bdds": 15,
+  "high_bdds": 23,
+  "medium_bdds": 6,
   "low_bdds": 0,
-  "bdd_inventory": "BDD-INV-006",
+  "bdd_inventory": "BDD-INV-007",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-016 refinements phase exit is complete: the maturity gate is enforced fail-closed at onboarding, DS1-DS4 all generate, and P008 covers desktop and mobile rendering. Per operator routing the final queued item is non-Shopify adapter groundwork. The only deferred BDD in the entire inventory is BDD-012 independent evaluator calibration.",
-  "session_router_case": "Existing MDE project - GEN-016 phase exit declared",
+  "next_recommended_action": "MDE discipline restored. Both generations are exited with two clean gate passes and a refreshed BDD inventory. Going forward: charter the phase goal and refresh the validation strategy BEFORE implementing, classify findings Critical/High/Medium/Low, keep state.json in sync, and report summary-first. Candidate next phases: non-Shopify adapter groundwork, hierarchical browse-tree extraction, or accumulating the 10-20 real inspections the planning gate wants before new architecture.",
+  "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)"
 }

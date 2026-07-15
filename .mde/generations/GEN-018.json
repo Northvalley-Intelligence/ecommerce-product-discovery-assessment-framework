@@ -4,8 +4,8 @@
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-15T03:30:00Z",
-  "ended_at": null,
-  "record_status": "capabilities_landed_and_evidence_honesty_hardened",
+  "ended_at": "2026-07-15T05:00:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
   "focus": "Close the two long-standing first-slice deferrals (browse graph, rendered product pages) now that P008 exists, and make findings honest about whether a gap is the store's or our tooling's.",
   "reason_generation_started": "Operator asked whether there was any blocker to full browse graph extraction and rendered product page capture ('I think it is time'), chose browse graph option (a) flat inventory, and separately flagged that 'STILL_FAILING' and empty results conflated store problems with capture limitations.",
   "delivered": [
@@ -18,7 +18,8 @@
   "validation_notes": [
     "VAL-065 records the GEN-018 capabilities and the store/capture evidence-honesty change.",
     "Live Pink Lily run GEN-014-20260715T041828Z: browse inventory of 4 collections with membership; 2/5 product pages captured with real prices, 3/5 correctly classified as Cloudflare bot challenges (capture limitations, excluded from the fix plan).",
-    "'90's nostalgia' confirmed as a genuine store finding (search box found, dropdown empty, API had a match) and remains a fix-plan item worded 'Still present'."
+    "'90's nostalgia' confirmed as a genuine store finding (search box found, dropdown empty, API had a match) and remains a fix-plan item worded 'Still present'.",
+    "VAL-066 (consolidation) is the second independent clean pass: rendered Pink Lily rerun deterministic (Browse/Product Pages/Rendered Storefront PASS, browse-graph 4 nodes, DS1-DS4 generate), per-URL retry proven, all suites clean, BDD inventory refreshed to BDD-INV-007. Phase exit declared."
   ],
   "known_gaps_opened": [
     "browse-graph is a flat inventory; hierarchical parent/child tree from the storefront nav is a future slice.",

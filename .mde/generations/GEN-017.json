@@ -4,8 +4,8 @@
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-15T02:50:00Z",
-  "ended_at": null,
-  "record_status": "shakedown_complete_curation_hardened_backlog_triaged",
+  "ended_at": "2026-07-15T05:00:00Z",
+  "record_status": "phase_exit_complete_shakedown_curation_hardened",
   "focus": "Before any non-Shopify expansion, prove the platform does a good job on Shopify: run the complete cycle (onboard, inspect, curate, re-inspect, executive report/PDF, fix plan) across real Shopify retailers in different verticals and honestly collect what works and what breaks.",
   "reason_generation_started": "Ferosh directed consolidation on Shopify quality before going further. This also satisfies the standing planning gate: architecture expands only after real inspections produce observed capability gaps.",
   "primary_deliverable": "A shakedown record across five verticals (footwear, home goods, athletic apparel, socks/basics, beauty) with per-store cycle outcomes, observed capability gaps, curation quality notes, and a hardening backlog derived from evidence rather than speculation.",
@@ -20,7 +20,8 @@
     "VAL-064 records the five-store shakedown and the first hardening fix.",
     "Pipeline robustness confirmed across five verticals; no crashes, honest degradation throughout.",
     "Platform detected Shopify High on Allbirds, Brooklinen, Gymshark, ColourPop; Bombas fell to unknown (public JSON endpoints 404).",
-    "Dominant finding FND-GEN017-001 (operational-collection leakage in curation) fixed and proven by re-curation from retained evidence."
+    "Dominant finding FND-GEN017-001 (operational-collection leakage in curation) fixed and proven by re-curation from retained evidence.",
+    "VAL-066 (consolidation) is the second independent clean pass: curation hardening re-verified deterministic (no promo/ops leak), Dress Up GEN-012 parity held, all suites clean with no implementation changes since the last commit."
   ],
   "known_gaps_opened": [
     "FND-GEN017-002: Shopify stores that disable public JSON endpoints (Bombas) are not detected or curated; adapter needs a fallback or the report needs clearer framing.",
