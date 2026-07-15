@@ -77,6 +77,17 @@ async function main() {
 
     assert(page.includes('id="tabDatasets"'), 'Dashboard page missing Datasets tab.');
     assert(page.includes('id="tabSettings"'), 'Dashboard page missing Settings tab.');
+    assert(page.includes('id="sitesList"'), 'Dashboard page missing persistent sites list.');
+    assert(page.includes("'/api/sites'"), 'Dashboard page missing sites API wiring.');
+
+    const sites = await fetchJson(`${dashboard.url}/api/sites`);
+    assert(Array.isArray(sites) && sites.length > 0, 'Sites API returned no identified sites.');
+    assert(sites.every((site) => site.target_id && site.name && site.evaluation), 'Sites API entries missing required fields.');
+    const ridgeSite = sites.find((site) => site.target_id === 'ridge');
+    assert(ridgeSite, 'Sites API does not include the Ridge target.');
+
+    const inspectionRows = await fetchJson(`${dashboard.url}/api/inspections`);
+    assert(inspectionRows.every((row) => exists(path.join(process.cwd(), row.output_dir))), 'Inspection list contains a phantom run whose directory no longer exists.');
     assert(page.includes('id="queueStrip"'), 'Dashboard page missing run queue strip.');
     assert(page.includes('captures-only'), 'Settings cleanup missing captures-only policy.');
     assert(page.includes("'/api/queue'"), 'Dashboard page missing queue API wiring.');

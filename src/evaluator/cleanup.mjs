@@ -153,9 +153,33 @@ export function previewCleanup(rootDir, options) {
   };
 }
 
+// Removing a run directory must also drop its inspection-history row, or the
+// dashboard shows the deleted run as a phantom entry.
+function pruneHistory(rootDir, removedRunIds) {
+  if (removedRunIds.size === 0) return;
+  const historyDir = path.join(rootDir, 'inspection-history');
+  if (!exists(historyDir)) return;
+  for (const file of fs.readdirSync(historyDir).filter((name) => name.endsWith('.jsonl'))) {
+    const filePath = path.join(historyDir, file);
+    const kept = fs
+      .readFileSync(filePath, 'utf8')
+      .split('\n')
+      .filter(Boolean)
+      .filter((line) => {
+        try {
+          return !removedRunIds.has(JSON.parse(line).inspection_id);
+        } catch {
+          return true;
+        }
+      });
+    fs.writeFileSync(filePath, kept.length ? kept.join('\n') + '\n' : '');
+  }
+}
+
 export function runCleanup(rootDir, options) {
   const plan = planRemovals(rootDir, options);
   const removed = [];
+  const removedRunIds = new Set();
   for (const run of plan.remove) {
     if (plan.policy === 'captures-only') {
       // Remove only the capture subdirs, leaving structured evidence intact.
@@ -163,9 +187,11 @@ export function runCleanup(rootDir, options) {
       removed.push({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.capture_bytes });
     } else {
       fs.rmSync(run.path, { recursive: true, force: true });
+      removedRunIds.add(run.run_id);
       removed.push({ target_id: run.target_id, run_id: run.run_id, rel_path: run.rel_path, size_bytes: run.size_bytes });
     }
   }
+  pruneHistory(rootDir, removedRunIds);
   return {
     policy: plan.policy,
     keep: plan.keep,

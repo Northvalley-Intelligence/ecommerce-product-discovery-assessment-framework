@@ -121,8 +121,41 @@ function latestHistoryRows(rootDir) {
   const historyDir = path.join(rootDir, 'inspection-history');
   const rows = listFilesRecursive(historyDir)
     .filter((file) => file.endsWith('.jsonl'))
-    .flatMap((file) => readJsonl(file));
+    .flatMap((file) => readJsonl(file))
+    // A run whose directory was removed by cleanup must not appear as a
+    // phantom entry; the index can lag disk, so gate on the run existing.
+    .filter((row) => row.output_dir && exists(path.join(rootDir, row.output_dir)));
   return rows.sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
+}
+
+// Identified sites are target manifests that have an evaluation. They persist
+// through run cleanup, so the operator keeps their Shopify site list even with
+// zero runs, and can re-inspect any of them.
+function listSites(rootDir) {
+  const targetsDir = path.join(rootDir, 'targets');
+  const evaluationsDir = path.join(rootDir, 'evaluations');
+  if (!exists(targetsDir) || !exists(evaluationsDir)) return [];
+  const evaluations = fs.readdirSync(evaluationsDir).filter((name) => name.endsWith('.json'))
+    .map((name) => ({ file: name, ...readJson(path.join(evaluationsDir, name)) }));
+  const historyRows = latestHistoryRows(rootDir);
+  const sites = [];
+  for (const file of fs.readdirSync(targetsDir).filter((name) => name.endsWith('.json'))) {
+    const target = readJson(path.join(targetsDir, file));
+    const evaluation = evaluations.find((entry) => entry.target === path.join('targets', file));
+    if (!evaluation) continue;
+    const latest = historyRows.find((row) => row.target_id === target.target_id) || null;
+    sites.push({
+      target_id: target.target_id,
+      name: target.name,
+      url: target.primary_url,
+      platform: target.platform?.expected || 'shopify',
+      evaluation: path.join('evaluations', evaluation.file),
+      latest_run_id: latest?.inspection_id || null,
+      latest_status: latest?.status || null,
+      latest_timestamp: latest?.timestamp || null
+    });
+  }
+  return sites.sort((left, right) => left.name.localeCompare(right.name));
 }
 
 function loadRun(rootDir, runDir) {
@@ -456,6 +489,12 @@ function dashboardPage() {
       display: grid;
       gap: 8px;
     }
+    .sites-list { display: grid; gap: 6px; margin-bottom: 10px; }
+    .list-head { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted); margin: 6px 0 2px; }
+    .site-item { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: white; }
+    .site-main { flex: 1; display: grid; gap: 2px; cursor: pointer; min-width: 0; }
+    .site-name { font-weight: 800; overflow-wrap: anywhere; }
+    .site-inspect { padding: 4px 10px; font-size: 11px; font-weight: 700; flex: none; }
     .run-item {
       width: 100%;
       display: grid;
@@ -953,6 +992,7 @@ function dashboardPage() {
         <button id="tabDatasets" class="tab" role="tab">Datasets</button>
         <button id="tabSettings" class="tab" role="tab">Settings</button>
       </div>
+      <div id="sitesList" class="sites-list"></div>
       <div class="run-list" id="runList"></div>
       <div class="dataset-nav" id="datasetNav" hidden></div>
     </aside>
@@ -1041,8 +1081,38 @@ function dashboardPage() {
     async function refresh() {
       state.inspections = await api('/api/inspections');
       if (!state.selected && state.inspections.length) state.selected = state.inspections[0].inspection_id;
+      renderSites().catch(() => {});
       renderRuns();
       if (state.selected) await loadInspection(state.selected);
+    }
+    async function renderSites() {
+      const el = document.getElementById('sitesList');
+      const sites = await api('/api/sites');
+      state.sites = sites;
+      if (!sites.length) { el.innerHTML = ''; return; }
+      el.innerHTML = '<div class="list-head">Your Shopify sites (' + sites.length + ')</div>' +
+        sites.map((site) =>
+          '<div class="site-item"><div class="site-main" data-target="' + escapeHtml(site.target_id) + '" data-run="' + escapeHtml(site.latest_run_id || '') + '">' +
+            '<span class="site-name">' + escapeHtml(site.name) + '</span>' +
+            '<span class="muted">' + (site.latest_status ? escapeHtml(site.latest_status) + ' · last ' + escapeHtml((site.latest_timestamp || '').slice(0, 10)) : 'not yet inspected') + '</span>' +
+          '</div><button class="site-inspect" data-eval="' + escapeHtml(site.evaluation) + '" data-name="' + escapeHtml(site.name) + '">Inspect</button></div>'
+        ).join('') + '<div class="list-head">Runs</div>';
+      for (const main of el.querySelectorAll('.site-main')) {
+        main.addEventListener('click', async () => {
+          if (main.dataset.run) { state.selected = main.dataset.run; renderRuns(); await loadInspection(state.selected); }
+          else document.querySelector('.site-inspect[data-eval="' + (state.sites.find((s) => s.target_id === main.dataset.target)?.evaluation || '') + '"]')?.click();
+        });
+      }
+      for (const btn of el.querySelectorAll('.site-inspect')) {
+        btn.addEventListener('click', async (event) => {
+          event.stopPropagation();
+          try {
+            await api('/api/run', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ evaluation: btn.dataset.eval }) });
+            document.getElementById('actionResult').textContent = 'Queued an inspection of ' + btn.dataset.name + '. Watch the run queue above.';
+            pollQueue();
+          } catch (error) { alert(error.message); }
+        });
+      }
     }
     async function cleanupFlow() {
       const policy = document.getElementById('cleanupPolicy').value;
@@ -1524,6 +1594,7 @@ function dashboardPage() {
       document.getElementById('tabDatasets').classList.toggle('active', view === 'datasets');
       document.getElementById('tabSettings').classList.toggle('active', view === 'settings');
       document.getElementById('runList').hidden = view !== 'inspections';
+      document.getElementById('sitesList').hidden = view !== 'inspections';
       document.getElementById('datasetNav').hidden = view !== 'datasets';
       document.getElementById('inspectionView').hidden = view !== 'inspections';
       document.getElementById('datasetView').hidden = view !== 'datasets';
@@ -1922,6 +1993,11 @@ function routeRequest(rootDir, request, response, queue) {
     readBody(request)
       .then((body) => sendJson(response, 200, runCleanup(rootDir, parseCleanupPolicy(body.policy))))
       .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/sites') {
+    sendJson(response, 200, listSites(rootDir));
     return;
   }
 
