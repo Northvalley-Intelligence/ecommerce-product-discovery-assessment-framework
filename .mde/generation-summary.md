@@ -545,3 +545,20 @@ Repository Governance:
 
 Recommendation:
 - Route the next generation. Candidates: non-Shopify adapter groundwork, fix-assist workflows (charter item 2), facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding, and accumulating 10-20 real inspections for the GEN-15 planning gate.
+
+## GEN-015 Phase Exit (2026-07-15)
+
+Scope Completed:
+- Fix-assist workflows (charter item 2): executive report issues become per-target fix plans with typed items, Shopify implementation guidance, and machine-verifiable criteria; verification runs evaluate criteria against retained re-inspection evidence with full history; regressions of previously verified items are detected.
+- One-click live verification: a bounded re-inspection of only the surfaces with open items (dependency-aware plugin selection) followed by automatic verification (`npm run verify:fixes:live`, dashboard button).
+- Per-query invisible-dropdown findings added to the report generator; live Pink Lily fix plan holds two real items, honestly still_failing across three verification runs.
+
+Validation Result:
+- Gate: two clean passes (`VAL-060`, `VAL-061`); BDD-INV-005 grades 35 BDDs, 33 passing, 0 failing, 2 deferred. Phase exit declared.
+- Blocking findings: none.
+
+Repository Governance:
+- All work committed and pushed to `origin/main`.
+
+Recommendation:
+- Per operator routing (2, 3, 1): proceed to the refinements batch - facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding - then non-Shopify adapter groundwork.

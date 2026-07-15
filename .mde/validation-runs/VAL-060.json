@@ -1,0 +1,33 @@
+{
+  "validation_run_id": "VAL-060",
+  "generation": "GEN-015",
+  "phase": "Generation 15 - Fix-Assist Workflows",
+  "started_at": "2026-07-15T01:50:00Z",
+  "completed_at": "2026-07-15T02:05:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_live_verification_slice",
+  "validations_executed": [
+    {
+      "category": "Live Fix Verification",
+      "tool": "npm run verify:fixes:live -- pinklily",
+      "result": "pass",
+      "evidence": "One command derived the plugins needed by the open fix items (autocomplete + rendered-search, honoring the dependency graph), ran a bounded re-inspection GEN-014-20260715T015746Z of only those surfaces, and verified the plan automatically: both items honestly still_failing with fresh observed values and history entries."
+    },
+    {
+      "category": "Dashboard Integration",
+      "tool": "npm run validate:dashboard",
+      "result": "pass",
+      "evidence": "Run Verification Inspection button starts the live verification as a background process with a log link; page assertions cover fix-plan, verify-fixes, and verify-fixes-live API wiring."
+    },
+    {
+      "category": "Suites",
+      "tool": "npm run validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Implementation changed after VAL-059, so the clean-pass count restarts: VAL-060 is pass one for the current GEN-015 state."
+}

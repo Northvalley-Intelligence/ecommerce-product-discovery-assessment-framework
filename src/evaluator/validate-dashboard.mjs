@@ -164,6 +164,9 @@ async function main() {
     }
 
     assert(page.includes("'/api/curate-queries'"), 'Dashboard page missing curation API wiring.');
+    assert(page.includes("'/api/fix-plan'"), 'Dashboard page missing fix plan API wiring.');
+    assert(page.includes("'/api/verify-fixes'"), 'Dashboard page missing fix verification API wiring.');
+    assert(page.includes("'/api/verify-fixes-live'"), 'Dashboard page missing live verification API wiring.');
 
     const scratchRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'onboard-validate-'));
     const scratch = await createDashboardServer({ port: 0, host: '127.0.0.1', rootDir: scratchRoot });

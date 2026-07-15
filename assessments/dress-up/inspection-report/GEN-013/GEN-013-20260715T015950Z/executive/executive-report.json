@@ -1,0 +1,235 @@
+{
+  "schema_version": "executive-report-v0.1",
+  "report_type": "application_generated_executive_report",
+  "generated_from_inspection": "GEN-013-20260715T015950Z",
+  "inspection_run_dir": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z",
+  "target": {
+    "name": "Dress Up",
+    "target_id": "dress-up",
+    "url": "https://shopdressup.com/"
+  },
+  "inspection_context": {
+    "inspected_at": "2026-07-15T02:00:41.261Z",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "overall_confidence": "Medium",
+    "evidence_quality": "partial",
+    "component_coverage_percent": 90
+  },
+  "evidence_basis": "Generated entirely from the referenced Inspection Report and its retained evidence. No new site inspection was performed.",
+  "scorecard": [
+    {
+      "surface": "Search",
+      "plugin_id": "submitted-search",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/submitted-search.jsonl",
+      "score": 100,
+      "formula": "queries returning at least one result / queries attempted",
+      "observations": 5,
+      "details": [
+        {
+          "query": "wedding guest dresses",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 194,
+          "response_ms": 742
+        },
+        {
+          "query": "maxi dresses",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 175,
+          "response_ms": 446
+        },
+        {
+          "query": "game day outfits",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 129,
+          "response_ms": 562
+        },
+        {
+          "query": "white dress",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 160,
+          "response_ms": 698
+        },
+        {
+          "query": "denim shorts",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 151,
+          "response_ms": 483
+        }
+      ],
+      "zero_result_queries": [],
+      "failed_queries": []
+    },
+    {
+      "surface": "Autocomplete",
+      "plugin_id": "autocomplete",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/autocomplete.jsonl",
+      "score": 100,
+      "formula": "typed prefixes receiving at least one suggestion / prefixes attempted",
+      "observations": 5,
+      "details": [
+        {
+          "typed_prefix": "wedding guest dresses",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 232
+        },
+        {
+          "typed_prefix": "maxi dresses",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 371
+        },
+        {
+          "typed_prefix": "game day outfits",
+          "ok": true,
+          "suggestion_count": 4,
+          "response_ms": 373
+        },
+        {
+          "typed_prefix": "white dress",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 367
+        },
+        {
+          "typed_prefix": "denim shorts",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 227
+        }
+      ],
+      "unassisted_prefixes": []
+    },
+    {
+      "surface": "Filters & Facets",
+      "plugin_id": "facets",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/facets.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://shopdressup.com/collections/all-up-to-you-collection",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 453
+        },
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://shopdressup.com/collections/all-you-can-see-collection",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 497
+        }
+      ]
+    },
+    {
+      "surface": "Recommendations",
+      "plugin_id": "recommendations",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/recommendations.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 3,
+      "details": [
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://shopdressup.com/recommendations/products.json?product_id=7745815511107&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 210
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://shopdressup.com/recommendations/products.json?product_id=7735678107715&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 257
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://shopdressup.com/recommendations/products.json?product_id=7735675387971&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 269
+        }
+      ]
+    },
+    {
+      "surface": "Mobile Experience",
+      "plugin_id": "mobile",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/mobile.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "mobile-homepage",
+          "endpoint": "https://shopdressup.com/",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 292
+        },
+        {
+          "observation": "mobile-search",
+          "endpoint": "https://shopdressup.com/search?q=wedding+guest+dresses",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 452
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "type": "strength",
+      "surface": "Search",
+      "severity": "Positive",
+      "observation": "Every attempted search query returned products (5 of 5).",
+      "evidence": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/submitted-search.jsonl",
+      "customer_impact": "Customers searching Dress Up with these query styles reach product results instead of dead ends.",
+      "business_impact": "Search is carrying discovery traffic to sellable inventory for the observed query set.",
+      "recommendation": "Protect this behavior with a regression query set and broaden coverage beyond the starter queries."
+    },
+    {
+      "type": "strength",
+      "surface": "Autocomplete",
+      "severity": "Positive",
+      "observation": "Every typed prefix received suggestions (5 of 5).",
+      "evidence": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T015950Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers get guidance before submitting a search, reducing typing effort and misses.",
+      "business_impact": "Assisted queries convert better than unassisted ones.",
+      "recommendation": "Verify the visible dropdown matches the API suggestions once rendered capture (P008) lands."
+    }
+  ],
+  "opportunities": [],
+  "limitations": [
+    "Scores are directional, computed from 17 bounded observations, not a full catalog benchmark.",
+    "No rendered-UI evidence was captured; visible layout, imagery, and interaction quality are out of scope for this report."
+  ]
+}

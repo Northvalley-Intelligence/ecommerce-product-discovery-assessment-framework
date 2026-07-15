@@ -2,7 +2,7 @@
   "schema_version": "fix-plan-v0.1",
   "target_id": "pinklily",
   "target_name": "Pinklily",
-  "updated_at": "2026-07-14T22:22:38.798Z",
+  "updated_at": "2026-07-15T02:00:41.512Z",
   "updated_from_inspection": "GEN-014-20260714T220916Z",
   "open_items": 2,
   "verified_items": 0,
@@ -28,6 +28,18 @@
         {
           "inspection_id": "GEN-014-20260714T220916Z",
           "at": "2026-07-14T22:22:38.797Z",
+          "result": "still_failing",
+          "observed": "visible_suggestion_count=0"
+        },
+        {
+          "inspection_id": "GEN-014-20260715T015746Z",
+          "at": "2026-07-15T01:58:57.456Z",
+          "result": "still_failing",
+          "observed": "visible_suggestion_count=0"
+        },
+        {
+          "inspection_id": "GEN-014-20260715T015746Z",
+          "at": "2026-07-15T02:00:41.512Z",
           "result": "still_failing",
           "observed": "visible_suggestion_count=0"
         }
@@ -56,11 +68,23 @@
           "at": "2026-07-14T22:22:38.798Z",
           "result": "still_failing",
           "observed": "visible_suggestion_count=0"
+        },
+        {
+          "inspection_id": "GEN-014-20260715T015746Z",
+          "at": "2026-07-15T01:58:57.457Z",
+          "result": "still_failing",
+          "observed": "visible_suggestion_count=0"
+        },
+        {
+          "inspection_id": "GEN-014-20260715T015746Z",
+          "at": "2026-07-15T02:00:41.512Z",
+          "result": "still_failing",
+          "observed": "visible_suggestion_count=0"
         }
       ]
     }
   ],
   "unmappable_findings": [],
   "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion.",
-  "last_verification_inspection": "GEN-014-20260714T220916Z"
+  "last_verification_inspection": "GEN-014-20260715T015746Z"
 }

@@ -16,6 +16,7 @@
     "curate:queries": "node src/evaluator/curate-query-pack.mjs",
     "report:executive:pdf": "node src/evaluator/render-executive-pdf.mjs",
     "fixplan": "node src/evaluator/fix-plan.mjs",
+    "verify:fixes:live": "node src/evaluator/verify-fixes-live.mjs",
     "render:dashboard": "node src/evaluator/render-dashboard.mjs",
     "validate:gen13": "node src/evaluator/validation.mjs all",
     "validate:platform": "node src/evaluator/validation.mjs platform",

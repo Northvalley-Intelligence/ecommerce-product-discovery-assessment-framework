@@ -142,6 +142,7 @@ function loadRun(rootDir, runDir) {
     run_dir: relativeRunDir,
     fix_plan: fixPlan
       ? {
+          target_id: runReport.target.target_id,
           path: path.relative(rootDir, path.join(rootDir, 'assessments', runReport.target.target_id, 'fix-plan.json')),
           open_items: fixPlan.open_items,
           verified_items: fixPlan.verified_items,
@@ -946,7 +947,7 @@ function dashboardPage() {
           (data.fix_plan
             ? '<p class="muted" style="margin:0">' + data.fix_plan.open_items + ' open · ' + data.fix_plan.verified_items + ' verified fixed' + (data.fix_plan.last_verification_inspection ? ' · last verified against ' + escapeHtml(data.fix_plan.last_verification_inspection) : '') + ' · <a href="' + datasetHash(data.fix_plan.path) + '">Explore plan</a></p>'
             : '<p class="muted" style="margin:0">No fix plan yet for this target. Generate one from an executive report with issues.</p>') +
-          '</div><div class="readiness-stats"><button id="fixPlanBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">' + (data.fix_plan ? 'Update Fix Plan' : 'Generate Fix Plan') + '</button>' + (data.fix_plan ? '<button id="verifyFixesBtn" data-run="' + escapeHtml(data.run_dir) + '">Verify Against This Run</button>' : '') + '</div></div>' +
+          '</div><div class="readiness-stats"><button id="fixPlanBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">' + (data.fix_plan ? 'Update Fix Plan' : 'Generate Fix Plan') + '</button>' + (data.fix_plan ? '<button id="verifyFixesBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Verify Against This Run</button><button id="verifyLiveBtn" data-target="' + escapeHtml(data.fix_plan.target_id) + '">Run Verification Inspection</button>' : '') + '</div></div>' +
           (data.fix_plan && data.fix_plan.items.length
             ? table(['Status', 'Severity', 'Surface', 'Query', 'Recommended Fix'], data.fix_plan.items, (item) => ['<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.severity) + '</td>', '<td>' + escapeHtml(item.surface) + '</td>', '<td><span class="mono">' + escapeHtml(item.query) + '</span></td>', '<td>' + escapeHtml(item.recommendation) + '</td>'])
             : '')) +
@@ -991,6 +992,24 @@ function dashboardPage() {
           } catch (error) {
             alert(error.message);
             verifyFixesBtn.disabled = false;
+          }
+        });
+      }
+      const verifyLiveBtn = document.getElementById('verifyLiveBtn');
+      if (verifyLiveBtn) {
+        verifyLiveBtn.addEventListener('click', async () => {
+          verifyLiveBtn.disabled = true;
+          try {
+            const result = await api('/api/verify-fixes-live', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ target_id: verifyLiveBtn.dataset.target })
+            });
+            document.getElementById('actionResult').innerHTML = 'Verification inspection started (process ' + result.pid + '). Only the surfaces with open fix items are re-inspected; the plan updates automatically when it completes. Log: <a href="' + artifactHref(result.log_path) + '" target="_blank">' + escapeHtml(result.log_path) + '</a>';
+            for (const delay of [15000, 45000, 90000, 180000]) setTimeout(refresh, delay);
+          } catch (error) {
+            alert(error.message);
+            verifyLiveBtn.disabled = false;
           }
         });
       }
@@ -1361,6 +1380,21 @@ function routeRequest(rootDir, request, response) {
         if (!body.run_dir) throw new Error('run_dir is required.');
         safeResolve(rootDir, body.run_dir);
         sendJson(response, 201, generateFixPlan(rootDir, body.run_dir));
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/verify-fixes-live') {
+    readBody(request)
+      .then((body) => {
+        if (!body.target_id) throw new Error('target_id is required.');
+        const result = runChild(
+          rootDir,
+          ['src/evaluator/verify-fixes-live.mjs', body.target_id],
+          `verify-live-${Date.now()}.log`
+        );
+        sendJson(response, 202, result);
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;

@@ -1,6 +1,6 @@
 {
   "state_version": 1,
-  "updated_on": "2026-07-14",
+  "updated_on": "2026-07-15",
   "project_id": "ecommmerce-eval",
   "project_name": "Ecommerce Evaluation Reports",
   "legacy_project_ids": [
@@ -10,23 +10,23 @@
   "current_generation": "GEN-015",
   "current_phase": "Generation 15 - Fix-Assist Workflows",
   "phase_goal": "Help fix the issues the platform finds (charter item 2): executive report issues become a durable, target-level fix plan with machine-verifiable criteria; re-inspections verify each fix automatically, so status changes only through observation.",
-  "status": "generation_15_first_slice_complete_fix_plan_and_verification",
+  "status": "generation_15_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
   "validation_strategy_status": "draft_updated_for_generation_13_inspection_platform_architecture",
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
-    "current_pass_count": 1,
-    "latest_result": "pass_for_fix_assist_first_slice",
-    "latest_run_id": "VAL-059",
-    "reason": "VAL-059 is the first clean pass on the GEN-015 fix-assist slice: fix plan generation from real Pink Lily findings, honest still_failing verification, temp-root proof of the verified_fixed transition, per-query dropdown findings, dashboard integration, and clean suites. Phase exit needs a second independent no-change pass plus fix-assist BDD additions."
+    "current_pass_count": 2,
+    "latest_result": "second_independent_pass_clean",
+    "latest_run_id": "VAL-061",
+    "reason": "VAL-060 (live verification slice) and VAL-061 (no-change Dress Up rerun with parity, fix-verification determinism, clean suites, BDD-INV-005) are two independent clean passes with no implementation changes between them. GEN-015 phase exit declared."
   },
-  "critical_bdds": 12,
-  "high_bdds": 15,
+  "critical_bdds": 14,
+  "high_bdds": 16,
   "medium_bdds": 5,
   "low_bdds": 0,
-  "bdd_inventory": "BDD-INV-004",
+  "bdd_inventory": "BDD-INV-005",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-015 fix-assist first slice is live: Pink Lily has a real fix plan with two verifiable items awaiting merchant-side fixes. Next per operator routing: remaining fix-assist depth or the queued refinements (facet-attribute curation for DS3, rendered mobile capture, decision-3A enforcement at onboarding), then non-Shopify adapter groundwork. Second no-change gate pass required before GEN-015 phase exit.",
-  "session_router_case": "Existing MDE project - operator-routed GEN-015 fix-assist slice completed",
+  "next_recommended_action": "GEN-015 fix-assist phase exit is complete. Per operator routing the next batch is the refinements: facet-attribute curation to populate DS3, rendered mobile capture, and decision-3A maturity enforcement at onboarding (BDD-G13-012); after that, non-Shopify adapter groundwork. Await routing or proceed in that order.",
+  "session_router_case": "Existing MDE project - GEN-015 phase exit declared",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)"
 }

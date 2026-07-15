@@ -1,0 +1,61 @@
+{
+  "schema_version": "plugin-dependency-graph-v0.1",
+  "plugins": [
+    {
+      "plugin_id": "autocomplete",
+      "surface": "autocomplete",
+      "version": "0.1.0",
+      "description": "Fetches Shopify suggest endpoint responses for each query and records suggested products, collections, queries, pages, timing, and limitation evidence.",
+      "depends_on": [],
+      "consumes": [
+        "site_profile",
+        "query_pack",
+        "shopify_adapter"
+      ],
+      "produces": [
+        "autocomplete_evidence"
+      ],
+      "cache": {
+        "enabled": false
+      }
+    },
+    {
+      "plugin_id": "rendered-search",
+      "surface": "rendered_search",
+      "version": "0.1.0",
+      "description": "Captures rendered search result pages and visible autocomplete dropdowns in a real headless browser (platform capability P008), retaining screenshots and comparing what customers see against endpoint evidence.",
+      "depends_on": [
+        "autocomplete"
+      ],
+      "consumes": [
+        "site_profile",
+        "query_pack",
+        "rendered_browser",
+        "autocomplete_evidence"
+      ],
+      "produces": [
+        "rendered_search_evidence",
+        "screenshots"
+      ],
+      "cache": {
+        "enabled": false
+      }
+    }
+  ],
+  "graph": [
+    {
+      "plugin_id": "autocomplete",
+      "depends_on": []
+    },
+    {
+      "plugin_id": "rendered-search",
+      "depends_on": [
+        "autocomplete"
+      ]
+    }
+  ],
+  "execution_order": [
+    "autocomplete",
+    "rendered-search"
+  ]
+}

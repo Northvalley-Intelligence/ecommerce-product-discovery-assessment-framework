@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-004",
+  "inventory_id": "BDD-INV-005",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-003",
+  "supersedes": "BDD-INV-004",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_14_phase_exit_inventory",
-  "refresh_rationale": "Extends BDD-INV-003 with GEN-014 full-cycle application scenarios graded against VAL-054 through VAL-058 evidence: in-app onboarding, evidence-only report generation, catalog curation, branded PDF rendering, rendered capture (P008), and honest degradation for blocked stores.",
+  "status": "generation_15_phase_exit_inventory",
+  "refresh_rationale": "Extends BDD-INV-004 with GEN-015 fix-assist scenarios graded against VAL-059 through VAL-061 evidence.",
   "summary": {
-    "total": 32,
-    "critical": 12,
-    "high": 15,
+    "total": 35,
+    "critical": 14,
+    "high": 16,
     "medium": 5,
     "low": 0,
-    "passing": 30,
+    "passing": 33,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -276,6 +276,41 @@
       "when": "the executive report is generated",
       "then": "unobserved surfaces carry no scores or claims, observed surfaces still score, and coverage gaps are stated",
       "evidence": "Ridge executive report: blocked Search shows not-observed with no score while canonical-host Autocomplete scores; coverage gap stated. VAL-058."
+    }
+  ],
+  "gen15_fix_assist_bdds": [
+    {
+      "id": "BDD-G15-001",
+      "title": "Report issues become a durable fix plan with verifiable criteria",
+      "severity": "Critical",
+      "category": "Functional Validation",
+      "status": "passed_gen_015",
+      "given": "an executive report containing issues",
+      "when": "the operator generates or updates the fix plan",
+      "then": "each issue becomes a typed item with implementation guidance and a machine-verifiable criterion, merged by fingerprint across regenerations with regression detection",
+      "evidence": "Live Pink Lily plan from two real invisible-dropdown findings; temp-root tests for creation and merging. VAL-059."
+    },
+    {
+      "id": "BDD-G15-002",
+      "title": "Fix status changes only through observed re-inspection evidence",
+      "severity": "Critical",
+      "category": "Mission Coverage Validation",
+      "status": "passed_gen_015",
+      "given": "a fix plan with open items",
+      "when": "verification runs against an inspection",
+      "then": "items flip to verified_fixed only when the criterion passes on retained evidence, otherwise still_failing with the observed value, with full history and not_checked handling for absent queries",
+      "evidence": "Pink Lily items honestly still_failing across three verification runs; temp-root proof of the verified_fixed transition. VAL-059, VAL-060."
+    },
+    {
+      "id": "BDD-G15-003",
+      "title": "Live verification re-inspects only the affected surfaces",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_015",
+      "given": "a fix plan with open items",
+      "when": "the operator runs the verification inspection",
+      "then": "a bounded run covering only the plugins the open items need (with dependencies) executes and the plan verifies automatically",
+      "evidence": "verify:fixes:live on Pink Lily ran autocomplete + rendered-search only (GEN-014-20260715T015746Z) and updated the plan. VAL-060."
     }
   ]
 }

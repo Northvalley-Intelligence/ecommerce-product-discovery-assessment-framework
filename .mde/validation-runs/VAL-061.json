@@ -1,0 +1,39 @@
+{
+  "validation_run_id": "VAL-061",
+  "generation": "GEN-015",
+  "phase": "Generation 15 - Fix-Assist Workflows",
+  "started_at": "2026-07-15T01:58:00Z",
+  "completed_at": "2026-07-15T02:10:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_as_second_independent_validation_gate_pass_for_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Bounded Dress Up Rerun (second-pass policy)",
+      "tool": "npm run inspect:dressup + validate-pilot-parity",
+      "result": "pass",
+      "evidence": "Run GEN-013-20260715T015950Z reran with no implementation changes; all ten surface checks show full GEN-012 parity."
+    },
+    {
+      "category": "Fix Verification Determinism",
+      "tool": "npm run fixplan -- verify (fresh bounded run)",
+      "result": "pass",
+      "evidence": "Re-verification against the live-verification run reproduces both Pink Lily items as still_failing with consistent observed values and appended history."
+    },
+    {
+      "category": "Suites",
+      "tool": "npm run validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass with zero implementation changes since clean pass VAL-060."
+    },
+    {
+      "category": "BDD Inventory Extension",
+      "tool": "BDD-INV-005",
+      "result": "pass",
+      "evidence": "Three GEN-015 fix-assist BDDs added and graded: 35 BDDs total, 33 passing, 0 failing, 2 deferred (BDD-012 calibration, BDD-G13-012 maturity enforcement)."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Second independent clean pass with no implementation changes since VAL-060, plus the BDD inventory extension. GEN-015 phase exit requirements are met: fix-assist (charter item 2) is delivered as plan generation, observation-only verification, and one-click bounded live verification."
+}
