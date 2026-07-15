@@ -24,7 +24,7 @@
   ],
   "known_gaps_opened": [
     "Fix plan items are per-query; systemic findings (for example sitewide latency) have no aggregate item type yet.",
-    "Verification requires the query to appear in the verification run; a dedicated verify-only bounded run mode would make verification cheaper than a full inspection.",
+    "Live verification reuses the standard inspection runner with --only plugin selection; a still-cheaper single-query probe mode remains possible future work.",
     "Fix guidance is static Shopify text; guided in-app remediation steps are a future slice.",
     "Priorities after fix-assist per operator routing: facet-attribute curation (DS3), rendered mobile capture, decision-3A enforcement at onboarding, then non-Shopify adapter groundwork."
   ]
