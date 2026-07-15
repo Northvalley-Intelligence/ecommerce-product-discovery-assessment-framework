@@ -582,6 +582,65 @@ function dashboardPage() {
     .tl-cell.warn { background: var(--amber); }
     .tl-cell.fail { background: var(--red); }
     .tl-cell.muted-status { background: var(--line); }
+    .detail-tabs {
+      display: flex;
+      gap: 4px;
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .detail-tab {
+      background: transparent;
+      border: 0;
+      border-bottom: 3px solid transparent;
+      border-radius: 0;
+      color: var(--muted);
+      font-weight: 800;
+      padding: 10px 14px;
+      margin-bottom: -2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .detail-tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .tab-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      color: white;
+    }
+    .tab-badge.fail { background: var(--red); }
+    .tab-badge.warn { background: var(--amber); }
+    .status-link { cursor: pointer; border: 0; }
+    .att-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+      background: white;
+    }
+    .att-item[open] { background: #fbfcfd; }
+    .att-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .att-item summary::-webkit-details-marker { display: none; }
+    .att-dot { width: 9px; height: 9px; border-radius: 999px; flex: none; }
+    .att-dot.fail { background: var(--red); }
+    .att-dot.warn { background: var(--amber); }
+    .att-item ul { margin: 8px 0 2px; padding-left: 26px; }
+    .att-item li { font-size: 12px; margin: 3px 0; overflow-wrap: anywhere; }
+    .att-item .att-goto { margin-left: auto; font-size: 12px; white-space: nowrap; }
     .storage {
       margin-top: 18px;
       padding-top: 16px;
@@ -903,7 +962,8 @@ function dashboardPage() {
       datasetPath: null,
       datasetQuery: '',
       datasetField: '',
-      selectedRecordIndex: -1
+      selectedRecordIndex: -1,
+      detailTab: 'overview'
     };
 
     function cls(status) {
@@ -1036,7 +1096,60 @@ function dashboardPage() {
       if (status >= 300 && status < 400) return 'warn';
       return 'fail';
     }
-    function renderTimeline(timeline) {
+    function activateDetailTab(tab) {
+      state.detailTab = tab;
+      for (const button of document.querySelectorAll('.detail-tab')) button.classList.toggle('active', button.dataset.tab === tab);
+      for (const panel of document.querySelectorAll('.detail-tabpanel')) panel.hidden = panel.dataset.tab !== tab;
+    }
+    // Every non-clean status becomes an attention item carrying the concrete
+    // evidence behind it (query, HTTP status, endpoint) and a link to the raw
+    // file. The only claim allowed without evidence is "everything worked".
+    function buildAttention(report, data) {
+      const items = [];
+      for (const plugin of report.plugin_results || []) {
+        if (!['blocked', 'fail', 'warn'].includes(plugin.status)) continue;
+        const limits = (plugin.infrastructure_limitations || []).map((limit) =>
+          (limit.query_id ? limit.query_id + ': ' : '') + (limit.label || limit.code || 'issue') +
+          (typeof limit.status === 'number' ? ' (HTTP ' + limit.status + ')' : '') +
+          (limit.endpoint ? ' — ' + limit.endpoint : ''));
+        items.push({
+          severity: plugin.status === 'warn' ? 'warn' : 'fail',
+          tab: 'health',
+          headline: '<strong>' + escapeHtml(plugin.plugin_id) + '</strong> ' + (plugin.status === 'warn' ? 'completed with warnings' : 'was ' + escapeHtml(plugin.status)),
+          detail: limits.length ? limits : ['No per-request classification recorded; open the evidence to inspect ' + plugin.observations + ' observation(s).'],
+          evidence_file: plugin.evidence_file || null
+        });
+      }
+      for (const endpoint of report.endpoint_discovery || []) {
+        if (endpoint.ok) continue;
+        items.push({
+          severity: 'fail',
+          tab: 'health',
+          headline: '<strong>' + escapeHtml(endpoint.label) + '</strong> endpoint ' + escapeHtml(endpoint.classification?.label || 'unavailable'),
+          detail: ['HTTP ' + (endpoint.status ?? 'n/a') + ' — ' + (endpoint.url || '')],
+          evidence_file: null
+        });
+      }
+      for (const item of (data.fix_plan?.items || []).filter((entry) => ['open', 'still_failing', 'regressed'].includes(entry.status))) {
+        items.push({
+          severity: item.severity === 'High' ? 'fail' : 'warn',
+          tab: 'findings',
+          headline: '<strong>Open fix</strong> [' + escapeHtml(item.severity) + '] ' + escapeHtml(item.surface) + ': ' + escapeHtml(item.query),
+          detail: [item.recommendation],
+          evidence_file: null
+        });
+      }
+      return items;
+    }
+    function attentionItem(item) {
+      const link = item.evidence_file
+        ? ' <a href="' + (isDatasetFile(item.evidence_file) ? datasetHash(item.evidence_file) : artifactHref(item.evidence_file)) + '"' + (isDatasetFile(item.evidence_file) ? '' : ' target="_blank"') + '>view evidence</a>'
+        : '';
+      const goto = item.tab ? ' <a href="#" data-goto-tab="' + item.tab + '" class="att-goto">go to ' + item.tab + '</a>' : '';
+      return '<details class="att-item att-' + item.severity + '"><summary><span class="att-dot ' + item.severity + '"></span>' + item.headline + goto + link + '</summary><ul>' +
+        item.detail.map((line) => '<li>' + escapeHtml(line) + '</li>').join('') + '</ul></details>';
+    }
+    function renderTimeline(timeline, report) {
       if (!timeline.length) return panel('Inspection Timeline', 'What happened, step by step', '<div class="panel-body"><div class="empty">No timeline recorded for this run.</div></div>');
 
       // Lifecycle phases (everything that is not a per-plugin event) as a stepper.
@@ -1090,20 +1203,11 @@ function dashboardPage() {
         return '<div class="tl-lane"><div class="tl-lane-head"><strong>' + escapeHtml(id) + '</strong>' + pill(lane.status || 'not_run') + '</div><div class="tl-cells">' + (cells || '<span class="muted">no requests recorded</span>') + '</div><div class="muted" style="font-size:12px">' + escapeHtml(meta) + '</div></div>';
       }).join('');
 
-      // Attention: blocked/warn plugins and any error-status observations.
-      const attention = [];
-      for (const id of order) {
-        const lane = plugins[id];
-        if (lane.status === 'blocked' || lane.status === 'fail') attention.push('<strong>' + escapeHtml(id) + '</strong> was ' + escapeHtml(lane.status) + '.');
-        else if (lane.status === 'warn') attention.push('<strong>' + escapeHtml(id) + '</strong> completed with warnings.');
-        const errs = lane.obs.filter((observation) => typeof observation.status === 'number' && observation.status >= 400);
-        if (errs.length) {
-          const codes = [...new Set(errs.map((observation) => observation.status))].join(', ');
-          attention.push('<strong>' + escapeHtml(id) + '</strong>: ' + errs.length + ' request' + (errs.length === 1 ? '' : 's') + ' returned HTTP ' + escapeHtml(codes) + '.');
-        }
-      }
+      // Attention: reuse the evidence-backed attention model (plugins/endpoints)
+      // so each item expands to its concrete records and links to the raw file.
+      const attention = report ? buildAttention(report, {}).filter((item) => item.tab === 'health') : [];
       const attentionBlock = attention.length
-        ? '<div class="tl-attention"><div class="tl-attention-title">Needs attention</div><ul>' + attention.map((item) => '<li>' + item + '</li>').join('') + '</ul></div>'
+        ? '<div class="tl-attention"><div class="tl-attention-title">Needs attention</div>' + attention.map(attentionItem).join('') + '</div>'
         : '<div class="tl-clear">No failures recorded — every request and plugin completed cleanly.</div>';
 
       return panel('Inspection Timeline', 'What happened, step by step',
@@ -1124,8 +1228,26 @@ function dashboardPage() {
       const groups = data.artifact_index?.groups || dashboard.artifact_explorer || {};
       const platformGaps = limitations.platform_capability_gaps || [];
       const infra = limitations.infrastructure_limitations || [];
-      document.getElementById('detail').innerHTML =
-        '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(summary.target_name || report.target?.name || 'this inspection') + '</button><button id="detailResumeBtn" class="secondary">Resume</button><button id="detailEditBtn" class="secondary" data-target="' + escapeHtml(report.target?.target_id || '') + '">Edit setup</button></div></div><div>' + pill(summary.overall_inspection_status) + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>' +
+
+      // Evidence-backed attention model: every non-clean status expands to the
+      // concrete records behind it. Nothing here is asserted without evidence.
+      const attention = buildAttention(report, data);
+      const healthAttention = attention.filter((item) => item.tab === 'health');
+      const findingsAttention = attention.filter((item) => item.tab === 'findings');
+      const healthFail = healthAttention.filter((item) => item.severity === 'fail').length;
+      const healthWarn = healthAttention.filter((item) => item.severity === 'warn').length;
+
+      const statusState = cls(summary.overall_inspection_status);
+      const statusPill = '<button class="status ' + statusState + ' status-link" data-tab="health" title="See what is incomplete">' + escapeHtml(String(summary.overall_inspection_status || 'unknown').toUpperCase()) + '</button>';
+
+      const heroSection = '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(summary.target_name || report.target?.name || 'this inspection') + '</button><button id="detailResumeBtn" class="secondary">Resume</button><button id="detailEditBtn" class="secondary" data-target="' + escapeHtml(report.target?.target_id || '') + '">Edit setup</button></div></div><div style="text-align:right">' + statusPill + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>';
+
+      const attentionSummary = attention.length
+        ? '<div class="tl-attention"><div class="tl-attention-title">Needs attention — ' + attention.length + ' item' + (attention.length === 1 ? '' : 's') + '</div>' + attention.map(attentionItem).join('') + '</div>'
+        : '<div class="tl-clear">Everything worked — every request, plugin, and endpoint completed cleanly, with no open fixes.</div>';
+
+      const overviewTab =
+        attentionSummary +
         '<section class="metric-grid">' +
           metric('Status', summary.overall_inspection_status || 'unknown', 'Overall inspection') +
           metric('Readiness', op.downstream_report_readiness || 'unknown', op.readiness_notes || '') +
@@ -1135,7 +1257,9 @@ function dashboardPage() {
           metric('Duration', Math.round((summary.inspection_duration_ms || 0) / 1000) + ' sec', 'Run time') +
         '</section>' +
         panel('Report Readiness', 'What should be fixed?', '<div class="panel-body readiness"><div>' + pill(op.downstream_report_readiness) + '<p class="muted">' + escapeHtml(op.readiness_notes || '') + '</p></div><div class="readiness-stats"><span class="chip">' + platformGaps.length + ' platform gaps</span><span class="chip">' + infra.length + ' infrastructure limits</span><span class="chip">' + (op.blocked_experiments || 0) + ' blocked experiments</span></div></div>' +
-          table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '', dataset_link: gap.capability_id ? datasetHash('platform/capability-registry.json', gap.capability_id) : '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + (item.dataset_link ? '<a href="' + item.dataset_link + '">' + escapeHtml(item.issue) + '</a>' : escapeHtml(item.issue)) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>'])) +
+          table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '', dataset_link: gap.capability_id ? datasetHash('platform/capability-registry.json', gap.capability_id) : '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + (item.dataset_link ? '<a href="' + item.dataset_link + '">' + escapeHtml(item.issue) + '</a>' : escapeHtml(item.issue)) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>']));
+
+      const findingsTab =
         panel('Executive Report', 'Generated from this inspection, no re-inspection', '<div class="panel-body readiness"><div>' +
           (data.executive_report
             ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0">' + (data.executive_report.pdf_path ? '<a href="' + artifactHref(data.executive_report.pdf_path) + '" target="_blank"><strong>Open PDF</strong></a> · ' : '') + '<a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Markdown</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
@@ -1148,15 +1272,51 @@ function dashboardPage() {
           '</div><div class="readiness-stats"><button id="fixPlanBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">' + (data.fix_plan ? 'Update Fix Plan' : 'Generate Fix Plan') + '</button>' + (data.fix_plan ? '<button id="verifyFixesBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Verify Against This Run</button><button id="verifyLiveBtn" data-target="' + escapeHtml(data.fix_plan.target_id) + '">Run Verification Inspection</button>' : '') + '</div></div>' +
           (data.fix_plan && data.fix_plan.items.length
             ? table(['Status', 'Severity', 'Surface', 'Query', 'Recommended Fix'], data.fix_plan.items, (item) => ['<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.severity) + '</td>', '<td>' + escapeHtml(item.surface) + '</td>', '<td><span class="mono">' + escapeHtml(item.query) + '</span></td>', '<td>' + escapeHtml(item.recommendation) + '</td>'])
-            : '')) +
-        panel('Crawl Health', 'Inspection phases', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
+            : ''));
+
+      const healthTab =
+        panel('Crawl Health', 'Status by component — non-passing rows link to evidence', table(['Surface', 'Status', 'Confidence', 'Notes'], report.crawl_health || [], (item) => ['<td><strong>' + escapeHtml(item.component) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.confidence) + '</td>', '<td>' + escapeHtml(item.notes) + '</td>'])) +
+        panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
+        renderTimeline(data.timeline || [], report);
+
+      const dataTab =
         '<div class="two-col">' +
           panel('Plugin State', 'Execution', table(['Plugin', 'Status', 'Observations', 'Evidence'], report.plugin_results || [], (item) => ['<td><strong>' + escapeHtml(item.plugin_id) + '</strong></td>', '<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.observations || 0) + '</td>', '<td>' + evidenceLinks(item.evidence_file) + '</td>'])) +
           panel('Datasets', 'DS1-DS4', table(['Dataset', 'Rows', 'Status', 'Records'], Object.entries(report.datasets || {}).map(([id, dataset]) => ({ id, ...dataset })), (item) => ['<td><strong>' + escapeHtml(item.id) + '</strong></td>', '<td>' + escapeHtml(item.rows) + '</td>', '<td>' + pill(item.status) + '</td>', '<td>' + evidenceLinks(item.path) + '</td>'])) +
-        '</div>' +
-        panel('Endpoint Debugging', 'Adapter output', table(['Endpoint', 'Status', 'Result', 'URL'], report.endpoint_discovery || [], (item) => ['<td><strong>' + escapeHtml(item.label) + '</strong></td>', '<td>' + pill(item.ok ? 'pass' : 'fail') + '</td>', '<td>' + escapeHtml(item.classification?.label || (item.ok ? 'Accessible' : 'Unavailable')) + '</td>', '<td><span class="mono">' + escapeHtml(item.url) + '</span></td>'])) +
-        renderTimeline(data.timeline || []) +
-        panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+        '</div>';
+
+      const artifactsTab = panel('Artifact Explorer', 'Open evidence', '<div class="panel-body"><div class="artifacts">' + Object.entries(groups).map(([group, files]) => '<div class="artifact-group"><h3>' + escapeHtml(group.replaceAll('_', ' ')) + '</h3>' + ((files || []).length ? '<ul>' + files.map((file) => '<li><a href="' + artifactHref(file) + '" target="_blank">' + escapeHtml(file.split('/').pop()) + '</a><small>' + escapeHtml(file) + '</small></li>').join('') + '</ul>' : '<div class="empty">No artifacts.</div>') + '</div>').join('') + '</div></div>');
+
+      function badge(count, kind) {
+        return count > 0 ? '<span class="tab-badge ' + kind + '">' + count + '</span>' : '';
+      }
+      const tabBar = '<div class="detail-tabs">' +
+        '<button class="detail-tab" data-tab="overview">Overview' + badge(attention.length, attention.some((item) => item.severity === 'fail') ? 'fail' : 'warn') + '</button>' +
+        '<button class="detail-tab" data-tab="findings">Findings' + badge((data.fix_plan?.open_items) || 0, 'warn') + '</button>' +
+        '<button class="detail-tab" data-tab="health">Health' + (healthFail ? badge(healthFail, 'fail') : badge(healthWarn, 'warn')) + '</button>' +
+        '<button class="detail-tab" data-tab="data">Data</button>' +
+        '<button class="detail-tab" data-tab="artifacts">Artifacts</button>' +
+        '</div>';
+
+      document.getElementById('detail').innerHTML =
+        heroSection + tabBar +
+        '<div class="detail-tabpanel" data-tab="overview">' + overviewTab + '</div>' +
+        '<div class="detail-tabpanel" data-tab="findings">' + findingsTab + '</div>' +
+        '<div class="detail-tabpanel" data-tab="health">' + healthTab + '</div>' +
+        '<div class="detail-tabpanel" data-tab="data">' + dataTab + '</div>' +
+        '<div class="detail-tabpanel" data-tab="artifacts">' + artifactsTab + '</div>';
+
+      activateDetailTab(state.detailTab || 'overview');
+      for (const tabButton of document.querySelectorAll('.detail-tab')) {
+        tabButton.addEventListener('click', () => activateDetailTab(tabButton.dataset.tab));
+      }
+      for (const link of document.querySelectorAll('.status-link, [data-goto-tab]')) {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          activateDetailTab(link.dataset.tab || link.dataset.gotoTab);
+        });
+      }
       const detailRerunBtn = document.getElementById('detailRerunBtn');
       if (detailRerunBtn) detailRerunBtn.addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
       const detailResumeBtn = document.getElementById('detailResumeBtn');
