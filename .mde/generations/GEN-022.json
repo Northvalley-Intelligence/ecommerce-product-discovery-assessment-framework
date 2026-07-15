@@ -1,0 +1,36 @@
+{
+  "generation_id": "GEN-022",
+  "mission_phase": "Generation 22 - Cleanup correctness: Delete all means all",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T17:00:00Z",
+  "ended_at": "2026-07-15T17:45:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Make 'Delete all inspection runs' actually delete every run, and make the cleanup preview show evidence of any run referenced by a fix plan so the operator understands the consequence before applying. Fix-plan protection stays only for the keep-latest/keep-N policies, where accidental pruning is the risk.",
+  "reason_generation_started": "Operator found run GEN-014-20260715T023352Z (allbirds, PARTIAL) still present after 'Delete all inspection runs'. Root cause: cleanup protects every run referenced by a fix plan via updated_from_inspection (provenance), so every run that produced a fix plan is un-deletable and 'Delete all' silently keeps everything (preview: 0 remove / 6 kept) with no explanation.",
+  "standing_directive": "OPERATOR DIRECTIVE (2026-07-15): do NOT trigger inspection runs, and do NOT apply a destructive cleanup on the operator's data. Validate the delete-all PLAN via the read-only preview; the operator applies the actual delete via the UI. Recorded as FND-GEN021-000.",
+  "validation_strategy": {
+    "functional": [
+      "'Delete all inspection runs' plans removal of EVERY run on disk, including runs referenced by a fix plan (runs_to_remove === total_runs, runs_kept === 0).",
+      "keep-latest and keep-N policies still protect fix-plan-referenced runs from accidental pruning (unchanged).",
+      "The cleanup preview surfaces which runs are referenced by a fix plan, so deleting them is an informed choice (evidence for everything)."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user, no runs triggered, no destructive apply): Settings -> 'Delete all inspection runs' -> Preview lists all runs for removal and flags the fix-plan-referenced ones; other views stay coherent.",
+      "Confirm no inspection is triggered and no delete is applied during testing."
+    ],
+    "technical": [
+      "validate:dashboard asserts all-runs preview marks every on-disk run for removal even when fix plans reference them; validate:gen13 and validate stay green; git diff --check clean; no run-inspection process and no cleanup apply spawned during validation."
+    ]
+  },
+  "validation_notes": [
+    "VAL-070 two clean passes: validate:dashboard (now robust to any run on disk + asserting delete-all removes every run), validate:gen13, validate all green; pass 2 after commit with no implementation changes.",
+    "Delete-all correctness proven read-only via the cleanup preview (shares the apply path plan): removes 6/6, keeps 0, flags 6 referenced. keep-latest protection unchanged.",
+    "Destructive apply intentionally NOT performed (operator applies via UI); no inspection run triggered.",
+    "BDD inventory refreshed to BDD-INV-011 (59 BDDs, 4 new for GEN-022, 57 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Deleting a fix-plan-referenced run leaves the fix plan's updated_from_inspection/last_verification_inspection pointer dangling (provenance goes stale); surfaced to the operator but not auto-repaired.",
+    "Datasets view is still a flat repo-wide listing that does not group a site's data (evaluation, manifest, query pack, site profile, run datasets, history) under the site — operator raised this as the next mission update (site-scoped, connection-preserving data view)."
+  ]
+}

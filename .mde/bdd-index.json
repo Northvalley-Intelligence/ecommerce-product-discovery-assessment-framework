@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-010",
+  "inventory_id": "BDD-INV-011",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-009",
+  "supersedes": "BDD-INV-010",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_21_site_centric_ui_inventory",
-  "refresh_rationale": "Adds GEN-021 behaviors: the dashboard is organized Site>Run>Results, runs are grouped under their site, and every results view traces back to its site and run via a breadcrumb.",
+  "status": "generation_22_cleanup_correctness_inventory",
+  "refresh_rationale": "Adds GEN-022 behaviors: 'Delete all inspection runs' removes every run (fix-plan-referenced runs included, surfaced as evidence), keep-latest still protects them, and the dashboard validator no longer hard-depends on a Ridge run.",
   "summary": {
-    "total": 55,
+    "total": 59,
     "critical": 15,
-    "high": 30,
-    "medium": 10,
+    "high": 31,
+    "medium": 13,
     "low": 0,
-    "passing": 53,
+    "passing": 57,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -483,6 +483,40 @@
       "category": "Technical Validation",
       "status": "passed_gen_021",
       "evidence": "Selecting sites/runs and switching views spawns no run-inspection process; the queue strip shows no new work. Honors operator no-auto-run directive (FND-GEN021-000). VAL-069."
+    }
+  ],
+  "gen22_bdds": [
+    {
+      "id": "BDD-G22-001",
+      "title": "'Delete all inspection runs' removes every run on disk",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_022",
+      "evidence": "all-runs preview: runs_to_remove === total_runs, runs_kept === 0, even when every run is referenced by a fix plan. Validator asserts this. VAL-070. Resolves FND-GEN022-001."
+    },
+    {
+      "id": "BDD-G22-002",
+      "title": "Cleanup surfaces fix-plan-referenced runs as evidence",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_022",
+      "evidence": "Preview returns referenced_runs_removed and the apply confirmation names the consequence (stale provenance pointer). No run is silently kept or deleted. VAL-070."
+    },
+    {
+      "id": "BDD-G22-003",
+      "title": "keep-latest/keep-N still protect fix-plan-referenced runs",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_022",
+      "evidence": "keep-latest-1 keeps referenced runs; protection is scoped to the pruning policies, not the explicit delete-all. VAL-070."
+    },
+    {
+      "id": "BDD-G22-004",
+      "title": "Dashboard validator runs against any run on disk",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_022",
+      "evidence": "Validator picks a run (preferring Ridge, else newest), derives target/generation, and no longer crashes when no Ridge run exists. VAL-070."
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "validation_run_id": "VAL-070",
+  "generation": "GEN-022",
+  "phase": "Generation 22 - Cleanup correctness: Delete all means all",
+  "started_at": "2026-07-15T17:00:00Z",
+  "completed_at": "2026-07-15T17:45:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen022_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Delete-all removes every run (functional)",
+      "tool": "previewCleanup + /api/cleanup/preview",
+      "result": "pass",
+      "evidence": "all-runs preview reports runs_to_remove=6, runs_kept=0, referenced_runs_removed=6 against the 6 runs on disk (all referenced by a fix plan via updated_from_inspection). Before the fix it reported 0 remove / 6 kept. Reproduces and resolves FND-GEN022-001."
+    },
+    {
+      "category": "keep-latest protection unchanged",
+      "tool": "previewCleanup",
+      "result": "pass",
+      "evidence": "keep-latest-1 preview keeps all 6 (each site's only run is its latest); fix-plan protection still applies for keep-latest/keep-N so accidental pruning is prevented."
+    },
+    {
+      "category": "Evidence surfaced (no silent keep/delete)",
+      "tool": "preview payload + confirm copy",
+      "result": "pass",
+      "evidence": "Preview now returns referenced_runs_removed; the apply confirmation states how many of the deleted runs are referenced by a fix plan and that their provenance pointer goes stale. No run is silently kept or silently deleted."
+    },
+    {
+      "category": "Validator robustness (no hard Ridge dependency)",
+      "tool": "validate:dashboard",
+      "result": "pass",
+      "evidence": "The validator crashed when no Ridge run existed on disk. It now picks any run (preferring Ridge), derives target/generation from the picked run, and asserts delete-all plans removal of every run. Validated against the current on-disk runs (allbirds GEN-014)."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit, no implementation changes). git diff --check clean."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Destructive apply of delete-all in the browser",
+      "reason": "Applying the delete would erase the operator's inspection runs; deleting the operator's data unprompted is out of bounds. The operator applies it via the UI. The removal PLAN was validated read-only via the preview, which shares the same plan the apply path uses. The window.confirm dialog was intentionally not triggered."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-022 chartered before implementation. Delete-all correctness validated via the read-only preview (which shares the apply path's plan) plus two clean suite passes. No inspection run triggered and no destructive delete applied (FND-GEN021-000 honored). Resolves FND-GEN022-001 and the long-standing validator hard-Ridge-dependency gap."
+}

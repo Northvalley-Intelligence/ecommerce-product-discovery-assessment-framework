@@ -619,6 +619,24 @@
       "summary": "The dashboard shows a flat list of runs and reports; it should present the real hierarchy (Site > Run > Results) with the connection always visible so every result traces to its inspection and site.",
       "affected_workflow_or_component": "dashboard information architecture",
       "status": "resolved_gen021_site_centric_ui_shipped"
+    },
+    {
+      "finding_id": "FND-GEN022-001",
+      "severity": "High",
+      "category": "Technical Validation",
+      "title": "'Delete all inspection runs' deletes nothing when every run is referenced by a fix plan",
+      "summary": "cleanup protects both last_verification_inspection and updated_from_inspection; every run that produced a fix plan is un-deletable, so all-runs preview shows 0 remove / 6 kept with no explanation. Operator still sees runs after a full delete.",
+      "status": "resolved_gen022_delete_all_removes_every_run",
+      "discovered_on": "2026-07-15"
+    },
+    {
+      "finding_id": "FND-GEN023-001",
+      "severity": "High",
+      "category": "Usability Validation",
+      "title": "Datasets view is a flat listing that ignores site connections",
+      "summary": "Operator: datasets for a Shopify site are shown as a standalone flat repo-wide list; all details for a given site (evaluation, manifest, query pack, site profile, run datasets, inspection history, runs) should be shown together under the site so internal connections are preserved (evidence principle). Sectors may later warrant shared datasets; for now everything is per-site.",
+      "status": "charter_candidate_gen023_site_scoped_data",
+      "discovered_on": "2026-07-15"
     }
   ],
   "lifecycle_states": [
