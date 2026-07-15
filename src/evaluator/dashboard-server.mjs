@@ -641,6 +641,14 @@ function dashboardPage() {
     .att-item ul { margin: 8px 0 2px; padding-left: 26px; }
     .att-item li { font-size: 12px; margin: 3px 0; overflow-wrap: anywhere; }
     .att-item .att-goto { margin-left: auto; font-size: 12px; white-space: nowrap; }
+    .chip-details { display: inline-block; }
+    .chip-details summary { list-style: none; cursor: pointer; }
+    .chip-details summary::-webkit-details-marker { display: none; }
+    .chip-details summary.chip-active { background: var(--soft-amber); color: var(--amber); border-color: #e5c46f; }
+    .chip-details[open] { display: block; width: 100%; }
+    .chip-body { margin-top: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fbfcfd; }
+    .chip-body ul { margin: 0 0 6px; padding-left: 20px; }
+    .chip-body li { font-size: 12px; margin: 3px 0; overflow-wrap: anywhere; }
     .storage {
       margin-top: 18px;
       padding-top: 16px;
@@ -1141,6 +1149,12 @@ function dashboardPage() {
       }
       return items;
     }
+    function expandableChip(count, label, lines, evidenceHref) {
+      if (!count) return '<span class="chip">0 ' + escapeHtml(label) + '</span>';
+      const link = evidenceHref ? ' <a href="' + evidenceHref + '">view evidence</a>' : '';
+      return '<details class="chip-details"><summary class="chip chip-active">' + count + ' ' + escapeHtml(label) + '</summary><div class="chip-body"><ul>' +
+        lines.map((line) => '<li>' + escapeHtml(line) + '</li>').join('') + '</ul>' + link + '</div></details>';
+    }
     function attentionItem(item) {
       const link = item.evidence_file
         ? ' <a href="' + (isDatasetFile(item.evidence_file) ? datasetHash(item.evidence_file) : artifactHref(item.evidence_file)) + '"' + (isDatasetFile(item.evidence_file) ? '' : ' target="_blank"') + '>view evidence</a>'
@@ -1256,7 +1270,10 @@ function dashboardPage() {
           metric('Coverage', (coverage.component_coverage_percent ?? 0) + '%', 'Observed components') +
           metric('Duration', Math.round((summary.inspection_duration_ms || 0) / 1000) + ' sec', 'Run time') +
         '</section>' +
-        panel('Report Readiness', 'What should be fixed?', '<div class="panel-body readiness"><div>' + pill(op.downstream_report_readiness) + '<p class="muted">' + escapeHtml(op.readiness_notes || '') + '</p></div><div class="readiness-stats"><span class="chip">' + platformGaps.length + ' platform gaps</span><span class="chip">' + infra.length + ' infrastructure limits</span><span class="chip">' + (op.blocked_experiments || 0) + ' blocked experiments</span></div></div>' +
+        panel('Report Readiness', 'What should be fixed?', '<div class="panel-body readiness"><div>' + pill(op.downstream_report_readiness) + '<p class="muted">' + escapeHtml(op.readiness_notes || '') + '</p></div><div class="readiness-stats">' +
+          expandableChip(platformGaps.length, 'platform gaps', platformGaps.map((gap) => (gap.capability_id ? gap.capability_id + ' ' : '') + (gap.name || '') + (gap.notes ? ' — ' + gap.notes : '')), datasetHash('platform/capability-registry.json')) +
+          expandableChip(infra.length, 'infrastructure limits', infra.map((limit) => (limit.query_id ? limit.query_id + ': ' : '') + (limit.label || limit.code || 'limitation') + (typeof limit.status === 'number' ? ' (HTTP ' + limit.status + ')' : '') + ((limit.endpoint || limit.url) ? ' — ' + (limit.endpoint || limit.url) : ''))) +
+          '<span class="chip">' + (op.blocked_experiments || 0) + ' blocked experiments</span></div></div>' +
           table(['Category', 'Issue', 'Evidence'], [...platformGaps.map((gap) => ({ category: 'Platform', issue: (gap.capability_id || '') + ' ' + (gap.name || ''), evidence: gap.notes || '', dataset_link: gap.capability_id ? datasetHash('platform/capability-registry.json', gap.capability_id) : '' })), ...infra.map((limit) => ({ category: 'Infrastructure', issue: limit.label || limit.code || 'Limitation', evidence: (limit.status || '') + ' ' + (limit.url || limit.endpoint || limit.query_id || '') }))], (item) => ['<td>' + escapeHtml(item.category) + '</td>', '<td>' + (item.dataset_link ? '<a href="' + item.dataset_link + '">' + escapeHtml(item.issue) + '</a>' : escapeHtml(item.issue)) + '</td>', '<td>' + escapeHtml(item.evidence) + '</td>']));
 
       const findingsTab =

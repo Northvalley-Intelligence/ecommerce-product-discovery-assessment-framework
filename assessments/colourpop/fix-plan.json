@@ -2,7 +2,7 @@
   "schema_version": "fix-plan-v0.1",
   "target_id": "colourpop",
   "target_name": "ColourPop",
-  "updated_at": "2026-07-15T02:55:15.708Z",
+  "updated_at": "2026-07-15T03:58:23.942Z",
   "updated_from_inspection": "GEN-014-20260715T025309Z",
   "open_items": 1,
   "verified_items": 0,
@@ -20,15 +20,23 @@
         "method": "automatic_reinspection",
         "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"back to school\"."
       },
-      "status": "open",
+      "status": "still_failing",
       "first_observed_in": "GEN-014-20260715T025309Z",
       "last_observed_in": "GEN-014-20260715T025309Z",
       "evidence": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/submitted-search.jsonl",
-      "history": []
+      "history": [
+        {
+          "inspection_id": "GEN-014-20260715T025309Z",
+          "at": "2026-07-15T03:58:23.942Z",
+          "result": "still_failing",
+          "observed": "ok=true, result_count_hint=0"
+        }
+      ]
     }
   ],
   "unmappable_findings": [
     "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions."
   ],
-  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion.",
+  "last_verification_inspection": "GEN-014-20260715T025309Z"
 }
