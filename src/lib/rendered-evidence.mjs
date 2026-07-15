@@ -48,6 +48,16 @@ function classifyRenderError(error) {
   return { category: 'infrastructure', code: 'rendering_failure', label: 'Rendering failure' };
 }
 
+// A page can return HTTP 200 while serving a bot/anti-automation wall instead
+// of real content. Detecting it keeps "rendered OK" honest.
+function botChallengeClassification(title, bodyText) {
+  const haystack = `${title || ''} ${bodyText || ''}`.toLowerCase();
+  if (/verify you are human|needs to be verified before you can proceed|checking your browser|attention required|cloudflare/.test(haystack)) {
+    return { category: 'infrastructure', code: 'bot_challenge', label: 'Bot verification challenge (content not observable)' };
+  }
+  return null;
+}
+
 const MOBILE_USER_AGENT =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1';
 
@@ -121,6 +131,80 @@ export async function createRenderedSession({ userAgent, timeoutMs = DEFAULT_TIM
             final_url: page.url(),
             duration_ms: Date.now() - startedAt,
             classification: null,
+            observed,
+            screenshot: screenshotPath ? path.basename(screenshotPath) : null
+          };
+        });
+      } catch (error) {
+        return {
+          ok: false,
+          status: null,
+          final_url: null,
+          duration_ms: Date.now() - startedAt,
+          classification: classifyRenderError(error),
+          observed: null,
+          screenshot: null,
+          error: String(error?.message || error).slice(0, 300)
+        };
+      }
+    },
+
+    async captureProductPage(url, screenshotPath) {
+      const startedAt = Date.now();
+      try {
+        return await withPage(async (page) => {
+          const response = await page.goto(url, { waitUntil: 'domcontentloaded' });
+          await sleep(SETTLE_MS);
+          const bodySnippet = await page.evaluate(() => document.body.innerText.slice(0, 400));
+          const challenge = botChallengeClassification(await page.title(), bodySnippet);
+          const observed = await page.evaluate(() => {
+            const text = (selectorList) => {
+              for (const selector of selectorList) {
+                const node = document.querySelector(selector);
+                const value = node && (node.getAttribute('content') || node.innerText || '').replace(/\s+/g, ' ').trim();
+                if (value) return value;
+              }
+              return null;
+            };
+            // Prefer structured data (JSON-LD / Open Graph) then visible DOM.
+            let jsonLdPrice = null;
+            let jsonLdAvailability = null;
+            for (const script of document.querySelectorAll('script[type="application/ld+json"]')) {
+              try {
+                const parsed = JSON.parse(script.textContent);
+                const nodes = Array.isArray(parsed) ? parsed : [parsed];
+                for (const node of nodes) {
+                  const offers = node.offers && (Array.isArray(node.offers) ? node.offers[0] : node.offers);
+                  if (offers?.price != null) jsonLdPrice = String(offers.price);
+                  if (offers?.availability) jsonLdAvailability = String(offers.availability);
+                }
+              } catch {
+                // ignore malformed JSON-LD
+              }
+            }
+            const priceText = text(['meta[property="og:price:amount"]', '[itemprop="price"]', '.price__current', '.price-item--regular', '.product__price', '.price']);
+            const addToCart = !!document.querySelector('button[name="add"], [type="submit"][name="add"], button[data-add-to-cart], form[action*="/cart/add"] button');
+            const variantOptions = document.querySelectorAll('select[name*="option" i], [data-option-index], fieldset[data-product-option], .product-form__input input[type="radio"]').length;
+            return {
+              page_title: document.title,
+              product_title: text(['meta[property="og:title"]', 'h1', '.product__title', '.product-single__title']),
+              price: jsonLdPrice || priceText || null,
+              availability: jsonLdAvailability || (addToCart ? 'AddToCartPresent' : null),
+              image_count: document.querySelectorAll('.product__media img, .product-single__photo img, [class*="product"] img, meta[property="og:image"]').length,
+              variant_option_count: variantOptions,
+              add_to_cart_present: addToCart
+            };
+          });
+          if (screenshotPath) {
+            ensureParent(screenshotPath);
+            await page.screenshot({ path: screenshotPath, fullPage: false });
+          }
+          return {
+            ok: !challenge,
+            status: response?.status() ?? null,
+            final_url: page.url(),
+            duration_ms: Date.now() - startedAt,
+            classification: challenge,
             observed,
             screenshot: screenshotPath ? path.basename(screenshotPath) : null
           };

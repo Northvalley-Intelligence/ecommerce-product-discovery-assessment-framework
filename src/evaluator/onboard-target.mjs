@@ -197,8 +197,8 @@ export function onboardTarget(rootDir, { url, name, expected_platform = 'shopify
       max_age_hours: 168
     },
     query_packs: [queryPackPath],
-    surfaces: ['submitted_search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'rendered_search'],
-    plugins: ['submitted-search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'rendered-search'],
+    surfaces: ['submitted_search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'browse', 'rendered_search', 'rendered_product'],
+    plugins: ['submitted-search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'browse-graph', 'rendered-search', 'rendered-product'],
     competitors: [],
     rendering: {
       desktop: true,

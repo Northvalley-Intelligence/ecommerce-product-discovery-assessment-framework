@@ -19,7 +19,9 @@
     "facets",
     "recommendations",
     "mobile",
-    "rendered_search"
+    "rendered_search",
+    "browse",
+    "rendered_product"
   ],
   "plugins": [
     "submitted-search",
@@ -27,7 +29,9 @@
     "facets",
     "recommendations",
     "mobile",
-    "rendered-search"
+    "rendered-search",
+    "browse-graph",
+    "rendered-product"
   ],
   "competitors": [],
   "rendering": {

@@ -13,12 +13,14 @@ const PLUGIN_LABELS = {
   facets: 'Filters & Facets',
   recommendations: 'Recommendations',
   mobile: 'Mobile (HTTP)',
-  'rendered-search': 'Rendered Storefront (browser + screenshots)'
+  'browse-graph': 'Browse Inventory',
+  'rendered-search': 'Rendered Storefront (browser + screenshots)',
+  'rendered-product': 'Rendered Product Pages (browser + screenshots)'
 };
 
 // Plugins offered in the form, in display order. competitor-inspection is
 // omitted: it needs a competitor set the simple form does not collect.
-const FORM_PLUGINS = ['submitted-search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'rendered-search'];
+const FORM_PLUGINS = ['submitted-search', 'autocomplete', 'facets', 'recommendations', 'mobile', 'browse-graph', 'rendered-search', 'rendered-product'];
 
 function pluginSurface(rootDir, pluginId) {
   const metaPath = path.join(rootDir, 'src', 'plugins', pluginId, 'plugin.json');

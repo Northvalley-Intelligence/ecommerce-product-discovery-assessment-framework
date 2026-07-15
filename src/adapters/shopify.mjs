@@ -166,6 +166,10 @@ export function createShopifyAdapter(target) {
       return get(joinUrl(canonicalBase, `/products.json?limit=${limit}`), { accept: 'application/json,*/*' });
     },
 
+    async fetchCollectionProducts(handle, limit = 20) {
+      return get(joinUrl(canonicalBase, `/collections/${handle}/products.json?limit=${limit}`), { accept: 'application/json,*/*' });
+    },
+
     async fetchRecommendations(productId, limit = 8) {
       const url = `${joinUrl(canonicalBase, '/recommendations/products.json')}?${new URLSearchParams({
         product_id: String(productId),

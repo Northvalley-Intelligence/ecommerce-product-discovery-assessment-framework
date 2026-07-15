@@ -1,0 +1,18 @@
+{
+  "plugin_id": "rendered-product",
+  "surface": "rendered_product",
+  "version": "0.1.0",
+  "description": "Captures rendered product pages in a real headless browser (platform capability P008): title, price, availability, image and variant counts, and add-to-cart presence, with retained screenshots of what the customer sees.",
+  "depends_on": [],
+  "consumes": [
+    "site_profile",
+    "rendered_browser"
+  ],
+  "produces": [
+    "rendered_product_evidence",
+    "screenshots"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}

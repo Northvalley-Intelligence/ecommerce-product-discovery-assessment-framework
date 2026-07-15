@@ -264,6 +264,50 @@ function summarizePluginEvidence(pluginId, outputDir) {
     };
   }
 
+  if (pluginId === 'rendered-product') {
+    const evidenceFile = path.join(outputDir, 'evidence', 'experiments', 'rendered-product.jsonl');
+    const rows = readJsonl(evidenceFile);
+    if (rows.length === 0) return null;
+    const completed = rows.filter((row) => row.ok).length;
+    const withPrice = rows.filter((row) => row.completeness?.has_price).length;
+    const blocked = rows.length - completed;
+    return {
+      plugin_id: 'rendered-product',
+      status: completed > 0 ? (blocked > 0 ? 'warn' : 'pass') : 'blocked',
+      evidence_file: evidenceFile,
+      observations: rows.length,
+      completed_observations: completed,
+      products_with_price: withPrice,
+      blocked_observations: blocked,
+      confidence: completed === rows.length && rows.length > 0 ? 'High' : completed > 0 ? 'Medium' : 'Low',
+      evidence_quality: completed === rows.length && rows.length > 0 ? 'rendered' : 'partial',
+      infrastructure_limitations: rows
+        .filter((row) => row.classification?.category === 'infrastructure')
+        .map((row) => ({ code: row.classification.code, label: row.classification.label, query_id: row.product_handle, status: row.status, endpoint: row.endpoint }))
+    };
+  }
+
+  if (pluginId === 'browse-graph') {
+    const evidenceFile = path.join(outputDir, 'evidence', 'experiments', 'browse-graph.jsonl');
+    const rows = readJsonl(evidenceFile);
+    if (rows.length === 0) return null;
+    const completed = rows.filter((row) => row.ok).length;
+    const blocked = rows.length - completed;
+    return {
+      plugin_id: 'browse-graph',
+      status: completed > 0 ? (blocked > 0 ? 'warn' : 'pass') : 'blocked',
+      evidence_file: evidenceFile,
+      observations: rows.length,
+      completed_observations: completed,
+      blocked_observations: blocked,
+      confidence: completed > 0 ? 'Medium' : 'Low',
+      evidence_quality: completed === rows.length && rows.length > 0 ? 'bounded' : 'partial',
+      infrastructure_limitations: rows
+        .filter((row) => row.classification?.category === 'infrastructure')
+        .map((row) => ({ code: row.classification.code, label: row.classification.label, query_id: row.collection_handle, status: row.status, endpoint: row.endpoint }))
+    };
+  }
+
   if (pluginId === 'autocomplete') {
     const evidenceFile = path.join(outputDir, 'evidence', 'experiments', 'autocomplete.jsonl');
     const rows = readJsonl(evidenceFile);
@@ -347,6 +391,8 @@ function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
   const mobile = pluginById.get('mobile');
   const competitorInspection = pluginById.get('competitor-inspection');
   const renderedSearch = pluginById.get('rendered-search');
+  const renderedProduct = pluginById.get('rendered-product');
+  const browseGraph = pluginById.get('browse-graph');
 
   return [
     {
@@ -365,11 +411,13 @@ function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
     },
     {
       component: 'Browse',
-      status: collections?.ok ? 'WARN' : 'FAIL',
-      confidence: siteProfile.catalog_discovery?.confidence || 'Low',
-      notes: collections?.ok
-        ? 'Collections endpoint responded; full browse graph extraction is not in the first implementation slice.'
-        : collections?.classification?.label || 'Collections endpoint was not observed.'
+      status: browseGraph ? statusToIcon(browseGraph.status) : collections?.ok ? 'WARN' : 'FAIL',
+      confidence: browseGraph?.confidence || siteProfile.catalog_discovery?.confidence || 'Low',
+      notes: browseGraph
+        ? `${browseGraph.completed_observations}/${browseGraph.observations} collections inventoried with membership; flat browse graph (hierarchical tree from storefront nav is a future slice).`
+        : collections?.ok
+          ? 'Collections endpoint responded; browse inventory is not enabled in this evaluation manifest.'
+          : collections?.classification?.label || 'Collections endpoint was not observed.'
     },
     {
       component: 'Autocomplete',
@@ -381,11 +429,13 @@ function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
     },
     {
       component: 'Product Pages',
-      status: products?.ok ? 'WARN' : 'FAIL',
-      confidence: siteProfile.catalog_discovery?.confidence || 'Low',
-      notes: products?.ok
-        ? 'Products endpoint responded; rendered product pages were not captured in this first slice.'
-        : products?.classification?.label || 'Products endpoint was not observed.'
+      status: renderedProduct ? statusToIcon(renderedProduct.status) : products?.ok ? 'WARN' : 'FAIL',
+      confidence: renderedProduct?.confidence || siteProfile.catalog_discovery?.confidence || 'Low',
+      notes: renderedProduct
+        ? `${renderedProduct.completed_observations}/${renderedProduct.observations} product pages rendered; ${renderedProduct.products_with_price}/${renderedProduct.observations} showed a price (P008).`
+        : products?.ok
+          ? 'Products endpoint responded; rendered product capture is not enabled in this evaluation manifest.'
+          : products?.classification?.label || 'Products endpoint was not observed.'
     },
     {
       component: 'Facets',

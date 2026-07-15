@@ -1,0 +1,18 @@
+{
+  "plugin_id": "browse-graph",
+  "surface": "browse",
+  "version": "0.1.0",
+  "description": "Builds a browse inventory from observed collections: for each collection, records product count and membership from the public per-collection products endpoint. A flat inventory (option a); hierarchical browse-tree extraction from the storefront nav is a future slice.",
+  "depends_on": [],
+  "consumes": [
+    "site_profile",
+    "shopify_adapter"
+  ],
+  "produces": [
+    "browse_inventory_evidence",
+    "browse_graph"
+  ],
+  "cache": {
+    "enabled": false
+  }
+}
