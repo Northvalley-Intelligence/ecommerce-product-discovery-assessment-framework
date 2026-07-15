@@ -1,0 +1,962 @@
+{
+  "schema_version": "inspection-report-v0.1",
+  "inspection_id": "GEN-014-20260715T024951Z",
+  "generation": "GEN-014",
+  "generated_at": "2026-07-15T02:51:20.450Z",
+  "target": {
+    "target_id": "bombas",
+    "name": "Bombas",
+    "primary_url": "https://bombas.com/",
+    "canonical_platform_host": null
+  },
+  "inspection_window": {
+    "started_at": "2026-07-15T02:49:51.348Z",
+    "ended_at": "2026-07-15T02:51:20.450Z",
+    "duration_ms": 89102
+  },
+  "dashboard": {
+    "schema_version": "inspection-dashboard-v0.1",
+    "inspection_id": "GEN-014-20260715T024951Z",
+    "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+    "crawl_summary": {
+      "inspection_timestamp": "2026-07-15T02:49:51.348Z",
+      "target_url": "https://bombas.com/",
+      "target_name": "Bombas",
+      "platform_detection": {
+        "platform": "unknown",
+        "confidence": "Medium",
+        "signals": [
+          "Target manifest expects Shopify."
+        ]
+      },
+      "overall_inspection_status": "partial",
+      "inspection_duration_ms": 89102,
+      "evidence_quality": "limited",
+      "overall_confidence": "Low"
+    },
+    "operational_summary": {
+      "experiments_completed": 3,
+      "blocked_experiments": 3,
+      "warnings": 0,
+      "evidence_files": 6,
+      "screenshot_count": 10,
+      "downstream_report_readiness": "not_ready",
+      "readiness_notes": "Inspection evidence is incomplete for downstream exports."
+    },
+    "crawl_health": [
+      {
+        "component": "Homepage",
+        "status": "PASS",
+        "confidence": "High",
+        "notes": "Homepage responded."
+      },
+      {
+        "component": "Search",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "5/5 submitted search observations completed."
+      },
+      {
+        "component": "Browse",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "HTTP error"
+      },
+      {
+        "component": "Autocomplete",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "0/5 autocomplete observations returned suggestions."
+      },
+      {
+        "component": "Product Pages",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "HTTP error"
+      },
+      {
+        "component": "Facets",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "0/1 facet markup observations completed."
+      },
+      {
+        "component": "Recommendations",
+        "status": "FAIL",
+        "confidence": "Low",
+        "notes": "0/1 recommendations endpoint observations completed."
+      },
+      {
+        "component": "Mobile",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+      },
+      {
+        "component": "Competitor Inspection",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Peer inspection is not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Rendered Storefront",
+        "status": "PASS",
+        "confidence": "High",
+        "notes": "5/5 rendered captures completed; 0/5 showed a visible autocomplete dropdown (P008)."
+      }
+    ],
+    "evidence_coverage": {
+      "component_coverage_percent": 40,
+      "plugin_observations": 19,
+      "dataset_rows": 14,
+      "evidence_quality": "limited"
+    },
+    "platform_capability": {
+      "status": "warn",
+      "report_path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/platform-capability-report.json",
+      "failed_capabilities": []
+    },
+    "artifact_explorer": {
+      "evidence": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/facets.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/mobile.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/recommendations.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/rendered-search.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/dashboard.html",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-report.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-report.md"
+      ],
+      "datasets": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-best-sellers.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-black.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-gift.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-new-arrivals.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-sale.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-best-sellers.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-black.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-gift.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-new-arrivals.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-sale.png"
+      ],
+      "raw_http": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-model.json"
+      ],
+      "other": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/artifact-index.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/cache-metadata.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/dashboard.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/platform-capability-report.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/plugin-dependency-graph.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/plugin-state.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/run-manifest.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/site-profile.json"
+      ]
+    }
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "Homepage responded."
+    },
+    {
+      "component": "Search",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "5/5 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "HTTP error"
+    },
+    {
+      "component": "Autocomplete",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/5 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "HTTP error"
+    },
+    {
+      "component": "Facets",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/1 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/1 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "5/5 rendered captures completed; 0/5 showed a visible autocomplete dropdown (P008)."
+    }
+  ],
+  "site_discovery": {
+    "schema_version": "site-profile-v0.1",
+    "discovered_at": "2026-07-15T02:49:59.152Z",
+    "target": {
+      "target_id": "bombas",
+      "name": "Bombas",
+      "primary_url": "https://bombas.com/",
+      "canonical_platform_host": null
+    },
+    "platform_detection": {
+      "platform": "unknown",
+      "confidence": "Medium",
+      "signals": [
+        "Target manifest expects Shopify."
+      ]
+    },
+    "access": {
+      "authentication_required": false,
+      "limitations": [
+        {
+          "category": "infrastructure",
+          "code": "http_error",
+          "label": "HTTP error",
+          "url": "https://bombas.com/products.json?limit=10",
+          "status": 404
+        },
+        {
+          "category": "infrastructure",
+          "code": "http_error",
+          "label": "HTTP error",
+          "url": "https://bombas.com/collections.json?limit=20",
+          "status": 404
+        },
+        {
+          "category": "infrastructure",
+          "code": "http_error",
+          "label": "HTTP error",
+          "url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+          "status": 404
+        }
+      ]
+    },
+    "endpoint_discovery": [
+      {
+        "label": "homepage",
+        "url": "https://bombas.com/",
+        "final_url": "https://bombas.com/",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 1523,
+        "content_type": "text/html; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"https://assets.bombas.com/image/fetch/c_crop,h_359,w_1012/b_rgb:ffffff,c_scale,w_1000/f_auto,q_auto/https://images.ctfassets.net/09hbx69ra4p2/7gNgbaeCWKZ6rX3nRNSM1t/a560759254792e71d5e1f24ecac958f9/1_Tablet.png\"/><link rel=\"preload\" as=\"image\" href=\"https://images.ctfassets.net/09hbx69ra4p2/6ibQ",
+        "json_payload": null
+      },
+      {
+        "label": "robots",
+        "url": "https://bombas.com/robots.txt",
+        "final_url": "https://bombas.com/robots.txt",
+        "method": "GET",
+        "status": 200,
+        "ok": true,
+        "duration_ms": 35,
+        "content_type": "text/plain; charset=utf-8",
+        "classification": null,
+        "confidence": "High",
+        "text_excerpt": "# we use Shopify as our ecommerce platform User-agent: * Disallow: /a/downloads/-/* Disallow: /admin Disallow: /cart Disallow: /orders Disallow: /checkouts/ Disallow: /checkout Disallow: /11195850/checkouts Disallow: /11195850/orders Disallow: /carts Disallow: /account Disallow: *page-status Disallow: /blogs/*+* Disallow: /blogs/*%2B* Disallow: /blogs/*%2b* Disallow: /*/blogs/*+* Disallow: /*/blogs/*%2B* Disallow: /*/blogs/*%2b* Disallow: /*?*oseid=* Disallow: /*preview_theme_id* Disallow: /*pre",
+        "json_payload": null
+      },
+      {
+        "label": "products_json",
+        "url": "https://bombas.com/products.json?limit=10",
+        "final_url": "https://bombas.com/products.json?limit=10",
+        "method": "GET",
+        "status": 404,
+        "ok": false,
+        "duration_ms": 64,
+        "content_type": "text/html; charset=utf-8",
+        "classification": {
+          "category": "infrastructure",
+          "code": "http_error",
+          "label": "HTTP error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+        "json_payload": null
+      },
+      {
+        "label": "collections_json",
+        "url": "https://bombas.com/collections.json?limit=20",
+        "final_url": "https://bombas.com/collections.json?limit=20",
+        "method": "GET",
+        "status": 404,
+        "ok": false,
+        "duration_ms": 93,
+        "content_type": "text/html; charset=utf-8",
+        "classification": {
+          "category": "infrastructure",
+          "code": "http_error",
+          "label": "HTTP error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+        "json_payload": null
+      },
+      {
+        "label": "search_suggest_json",
+        "url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "final_url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "method": "GET",
+        "status": 404,
+        "ok": false,
+        "duration_ms": 69,
+        "content_type": "text/html; charset=utf-8",
+        "classification": {
+          "category": "infrastructure",
+          "code": "http_error",
+          "label": "HTTP error"
+        },
+        "confidence": "High",
+        "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+        "json_payload": null
+      }
+    ],
+    "catalog_discovery": {
+      "status": "not_available",
+      "confidence": "Low",
+      "products_sampled": null,
+      "collections_sampled": null,
+      "source": "Shopify public JSON endpoints",
+      "collections": [],
+      "products": []
+    },
+    "autocomplete_discovery": {
+      "status": "blocked_or_unavailable",
+      "confidence": "Low",
+      "resources_observed": []
+    }
+  },
+  "platform_capability_report": {
+    "schema_version": "platform-capability-report-v0.1",
+    "generation": "GEN-014",
+    "target_id": "bombas",
+    "generated_at": "2026-07-15T02:49:51.349Z",
+    "overall_status": "warn",
+    "evidence_quality": "bounded",
+    "capability_counts": {
+      "pass": 2,
+      "warn": 12,
+      "fail": 0
+    },
+    "changed_capabilities": [],
+    "affected_capabilities": [],
+    "checks": [
+      {
+        "capability_id": "P001",
+        "name": "URL Normalization",
+        "validator": "url-parsing",
+        "status": "pass",
+        "capability_status": "implemented",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is implemented for the current evaluator version."
+      },
+      {
+        "capability_id": "P002",
+        "name": "HTTPS Handling",
+        "validator": "https-handling",
+        "status": "pass",
+        "capability_status": "implemented",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is implemented for the current evaluator version."
+      },
+      {
+        "capability_id": "P003",
+        "name": "Redirect Handling",
+        "validator": "redirect-handling",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P004",
+        "name": "Robots Discovery",
+        "validator": "robots-discovery",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P005",
+        "name": "Shopify Discovery",
+        "validator": "shopify-discovery",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P006",
+        "name": "Submitted Search Endpoint Inspection",
+        "validator": "submitted-search-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P007",
+        "name": "Autocomplete Suggest Endpoint Inspection",
+        "validator": "suggest-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P008",
+        "name": "Rendered Page Capture",
+        "validator": "rendered-capture",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 3,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P009",
+        "name": "Block Classification",
+        "validator": "block-classification",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P010",
+        "name": "Request Pacing and Transient Retry",
+        "validator": "request-pacing",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 1,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P011",
+        "name": "Facet Markup Inspection",
+        "validator": "facet-inspection",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P012",
+        "name": "Recommendations Endpoint Inspection",
+        "validator": "recommendations-endpoint",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P013",
+        "name": "Mobile User-Agent Inspection",
+        "validator": "mobile-ua-inspection",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      },
+      {
+        "capability_id": "P014",
+        "name": "Same-Query Peer Inspection",
+        "validator": "peer-same-query",
+        "status": "warn",
+        "capability_status": "implemented_basic",
+        "maturity_level": 2,
+        "affected_by_change": false,
+        "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+      }
+    ],
+    "platform_gap_classification_rule": "Capability failures describe evaluator maturity and must not be emitted as ecommerce findings."
+  },
+  "endpoint_discovery": [
+    {
+      "label": "homepage",
+      "url": "https://bombas.com/",
+      "final_url": "https://bombas.com/",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 1523,
+      "content_type": "text/html; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"https://assets.bombas.com/image/fetch/c_crop,h_359,w_1012/b_rgb:ffffff,c_scale,w_1000/f_auto,q_auto/https://images.ctfassets.net/09hbx69ra4p2/7gNgbaeCWKZ6rX3nRNSM1t/a560759254792e71d5e1f24ecac958f9/1_Tablet.png\"/><link rel=\"preload\" as=\"image\" href=\"https://images.ctfassets.net/09hbx69ra4p2/6ibQ",
+      "json_payload": null
+    },
+    {
+      "label": "robots",
+      "url": "https://bombas.com/robots.txt",
+      "final_url": "https://bombas.com/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 35,
+      "content_type": "text/plain; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "# we use Shopify as our ecommerce platform User-agent: * Disallow: /a/downloads/-/* Disallow: /admin Disallow: /cart Disallow: /orders Disallow: /checkouts/ Disallow: /checkout Disallow: /11195850/checkouts Disallow: /11195850/orders Disallow: /carts Disallow: /account Disallow: *page-status Disallow: /blogs/*+* Disallow: /blogs/*%2B* Disallow: /blogs/*%2b* Disallow: /*/blogs/*+* Disallow: /*/blogs/*%2B* Disallow: /*/blogs/*%2b* Disallow: /*?*oseid=* Disallow: /*preview_theme_id* Disallow: /*pre",
+      "json_payload": null
+    },
+    {
+      "label": "products_json",
+      "url": "https://bombas.com/products.json?limit=10",
+      "final_url": "https://bombas.com/products.json?limit=10",
+      "method": "GET",
+      "status": 404,
+      "ok": false,
+      "duration_ms": 64,
+      "content_type": "text/html; charset=utf-8",
+      "classification": {
+        "category": "infrastructure",
+        "code": "http_error",
+        "label": "HTTP error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+      "json_payload": null
+    },
+    {
+      "label": "collections_json",
+      "url": "https://bombas.com/collections.json?limit=20",
+      "final_url": "https://bombas.com/collections.json?limit=20",
+      "method": "GET",
+      "status": 404,
+      "ok": false,
+      "duration_ms": 93,
+      "content_type": "text/html; charset=utf-8",
+      "classification": {
+        "category": "infrastructure",
+        "code": "http_error",
+        "label": "HTTP error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+      "json_payload": null
+    },
+    {
+      "label": "search_suggest_json",
+      "url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "final_url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "method": "GET",
+      "status": 404,
+      "ok": false,
+      "duration_ms": 69,
+      "content_type": "text/html; charset=utf-8",
+      "classification": {
+        "category": "infrastructure",
+        "code": "http_error",
+        "label": "HTTP error"
+      },
+      "confidence": "High",
+      "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+      "json_payload": null
+    }
+  ],
+  "datasets": {
+    "DS1": {
+      "path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "rows": 5,
+      "status": "generated"
+    },
+    "DS2": {
+      "path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "rows": 7,
+      "status": "generated"
+    },
+    "DS3": {
+      "path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds3-search-facet.jsonl",
+      "rows": 0,
+      "status": "empty"
+    },
+    "DS4": {
+      "path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds4-advanced-retrieval.jsonl",
+      "rows": 2,
+      "status": "generated"
+    }
+  },
+  "plugin_results": [
+    {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "completed_observations": 5,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "autocomplete",
+      "status": "blocked",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "observations_with_suggestions": 0,
+      "blocked_observations": 5,
+      "confidence": "Low",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "query_id": "bombas-new-arrivals",
+          "status": 404,
+          "endpoint": "https://bombas.com/search/suggest.json?q=new+arrivals&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "query_id": "bombas-best-sellers",
+          "status": 404,
+          "endpoint": "https://bombas.com/search/suggest.json?q=best+sellers&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "query_id": "bombas-sale",
+          "status": 404,
+          "endpoint": "https://bombas.com/search/suggest.json?q=sale&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "query_id": "bombas-gift",
+          "status": 404,
+          "endpoint": "https://bombas.com/search/suggest.json?q=gift&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        },
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "query_id": "bombas-black",
+          "status": 404,
+          "endpoint": "https://bombas.com/search/suggest.json?q=black&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+        }
+      ]
+    },
+    {
+      "plugin_id": "facets",
+      "status": "blocked",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/facets.jsonl",
+      "observations": 1,
+      "completed_observations": 0,
+      "blocked_observations": 1,
+      "confidence": "Low",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "status": 404,
+          "endpoint": "https://bombas.com/collections.json?limit=5"
+        }
+      ]
+    },
+    {
+      "plugin_id": "recommendations",
+      "status": "blocked",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/recommendations.jsonl",
+      "observations": 1,
+      "completed_observations": 0,
+      "blocked_observations": 1,
+      "confidence": "Low",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "http_error",
+          "label": "HTTP error",
+          "status": 404,
+          "endpoint": "https://bombas.com/products.json?limit=3"
+        }
+      ]
+    },
+    {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "rendered-search",
+      "status": "pass",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "completed_observations": 5,
+      "observations_with_visible_dropdown": 0,
+      "blocked_observations": 0,
+      "confidence": "High",
+      "evidence_quality": "rendered",
+      "infrastructure_limitations": [
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "bombas-new-arrivals",
+          "status": 200,
+          "endpoint": "https://bombas.com/search?q=new%20arrivals"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "bombas-best-sellers",
+          "status": 200,
+          "endpoint": "https://bombas.com/search?q=best%20sellers"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "bombas-sale",
+          "status": 200,
+          "endpoint": "https://bombas.com/search?q=sale"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "bombas-gift",
+          "status": 200,
+          "endpoint": "https://bombas.com/search?q=gift"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "bombas-black",
+          "status": 200,
+          "endpoint": "https://bombas.com/search?q=black"
+        }
+      ]
+    }
+  ],
+  "limitations": {
+    "platform_capability_gaps": [],
+    "infrastructure_limitations": [
+      {
+        "category": "infrastructure",
+        "code": "http_error",
+        "label": "HTTP error",
+        "url": "https://bombas.com/products.json?limit=10",
+        "status": 404
+      },
+      {
+        "category": "infrastructure",
+        "code": "http_error",
+        "label": "HTTP error",
+        "url": "https://bombas.com/collections.json?limit=20",
+        "status": 404
+      },
+      {
+        "category": "infrastructure",
+        "code": "http_error",
+        "label": "HTTP error",
+        "url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+        "status": 404
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "query_id": "bombas-new-arrivals",
+        "status": 404,
+        "endpoint": "https://bombas.com/search/suggest.json?q=new+arrivals&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "query_id": "bombas-best-sellers",
+        "status": 404,
+        "endpoint": "https://bombas.com/search/suggest.json?q=best+sellers&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "query_id": "bombas-sale",
+        "status": 404,
+        "endpoint": "https://bombas.com/search/suggest.json?q=sale&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "query_id": "bombas-gift",
+        "status": 404,
+        "endpoint": "https://bombas.com/search/suggest.json?q=gift&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "query_id": "bombas-black",
+        "status": 404,
+        "endpoint": "https://bombas.com/search/suggest.json?q=black&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=8"
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "status": 404,
+        "endpoint": "https://bombas.com/collections.json?limit=5"
+      },
+      {
+        "code": "http_error",
+        "label": "HTTP error",
+        "status": 404,
+        "endpoint": "https://bombas.com/products.json?limit=3"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "bombas-new-arrivals",
+        "status": 200,
+        "endpoint": "https://bombas.com/search?q=new%20arrivals"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "bombas-best-sellers",
+        "status": 200,
+        "endpoint": "https://bombas.com/search?q=best%20sellers"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "bombas-sale",
+        "status": 200,
+        "endpoint": "https://bombas.com/search?q=sale"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "bombas-gift",
+        "status": 200,
+        "endpoint": "https://bombas.com/search?q=gift"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "bombas-black",
+        "status": 200,
+        "endpoint": "https://bombas.com/search?q=black"
+      }
+    ],
+    "commerce_observations": [],
+    "separation_rule": "Platform capability gaps and infrastructure limitations are recorded separately from observed ecommerce behavior."
+  },
+  "artifact_explorer": {
+    "schema_version": "artifact-index-v0.1",
+    "inspection_id": "GEN-014-20260715T024951Z",
+    "generated_at": "2026-07-15T02:51:20.455Z",
+    "artifact_count": 33,
+    "groups": {
+      "evidence": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/facets.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/mobile.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/recommendations.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/rendered-search.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/dashboard.html",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-report.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-report.md"
+      ],
+      "datasets": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-best-sellers.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-black.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-gift.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-new-arrivals.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-sale.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-best-sellers.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-black.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-gift.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-new-arrivals.png",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-sale.png"
+      ],
+      "raw_http": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-model.json"
+      ],
+      "other": [
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/artifact-index.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/cache-metadata.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/dashboard.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/platform-capability-report.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/plugin-dependency-graph.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/plugin-state.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/run-manifest.json",
+        "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/site-profile.json"
+      ]
+    }
+  }
+}

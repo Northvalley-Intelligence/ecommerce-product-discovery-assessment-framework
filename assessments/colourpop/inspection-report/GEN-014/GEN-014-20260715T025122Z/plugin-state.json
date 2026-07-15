@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T025122Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-15T02:51:29.691Z",
+      "ended_at": "2026-07-15T02:51:39.731Z",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T02:51:39.733Z",
+      "ended_at": "2026-07-15T02:51:46.854Z",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-15T02:51:46.856Z",
+      "ended_at": "2026-07-15T02:51:52.554Z",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T02:51:52.557Z",
+      "ended_at": "2026-07-15T02:51:58.926Z",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T02:51:58.929Z",
+      "ended_at": "2026-07-15T02:52:02.840Z",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "warn",
+      "started_at": "2026-07-15T02:52:02.845Z",
+      "ended_at": "2026-07-15T02:53:09.606Z",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "High",
+      "evidence_quality": "rendered"
+    }
+  }
+}

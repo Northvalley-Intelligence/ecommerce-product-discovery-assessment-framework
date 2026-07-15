@@ -1,0 +1,79 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "brooklinen-starter",
+  "name": "Brooklinen Starter Pack",
+  "domain": "generic-retail-starter",
+  "generation": "GEN-014",
+  "queries": [
+    {
+      "query_id": "brooklinen-new-arrivals",
+      "query": "new arrivals",
+      "intent": "freshness_discovery",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "onboarding starter pack",
+        "reason": "Broadly applicable retail query used until catalog-derived queries are curated for this store."
+      }
+    },
+    {
+      "query_id": "brooklinen-best-sellers",
+      "query": "best sellers",
+      "intent": "popularity_discovery",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "onboarding starter pack",
+        "reason": "Broadly applicable retail query used until catalog-derived queries are curated for this store."
+      }
+    },
+    {
+      "query_id": "brooklinen-sale",
+      "query": "sale",
+      "intent": "price_discovery",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "onboarding starter pack",
+        "reason": "Broadly applicable retail query used until catalog-derived queries are curated for this store."
+      }
+    },
+    {
+      "query_id": "brooklinen-gift",
+      "query": "gift",
+      "intent": "occasion_discovery",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "onboarding starter pack",
+        "reason": "Broadly applicable retail query used until catalog-derived queries are curated for this store."
+      }
+    },
+    {
+      "query_id": "brooklinen-black",
+      "query": "black",
+      "intent": "attribute_discovery",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "onboarding starter pack",
+        "reason": "Broadly applicable retail query used until catalog-derived queries are curated for this store."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "brooklinen-gift-under-50",
+      "query": "gift under $50",
+      "intent": "functional_intent",
+      "provenance": {
+        "source": "onboarding starter pack",
+        "rule": "generic-advanced-retrieval-starter"
+      }
+    },
+    {
+      "scenario_id": "brooklinen-something-for-summer",
+      "query": "something for summer",
+      "intent": "lifestyle_intent",
+      "provenance": {
+        "source": "onboarding starter pack",
+        "rule": "generic-advanced-retrieval-starter"
+      }
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "brooklinen-curated",
+  "name": "Brooklinen Curated Pack",
+  "domain": "brooklinen-catalog",
+  "generation": "GEN-014",
+  "curated_from_inspection": "GEN-014-20260715T024207Z",
+  "queries": [
+    {
+      "query_id": "brooklinen-col-sheets-bedding",
+      "query": "bedding",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "sheets-bedding"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"All Bedding\" (128 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-bath-1",
+      "query": "bath",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "bath-1"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"All Bath\" (33 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-bed-blankets-1",
+      "query": "bed blankets",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "bed-blankets-1"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Bed Blankets\" (32 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-brooklinen-dabito",
+      "query": "brooklinen dabito",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "brooklinen-dabito"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Brooklinen | Dabito\" (27 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-brooklinen-kule",
+      "query": "brooklinen kule",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "brooklinen-kule"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Brooklinen | KULE\" (26 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-best-sellers-shop",
+      "query": "best sellers",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "best-sellers-shop"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Best Sellers\" (25 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-classic-percale-sheets-1",
+      "query": "classic percale sheets",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "classic-percale-sheets-1"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Classic Percale Sheets\" (19 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-col-baby-kids",
+      "query": "baby and kids",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "baby-kids"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Baby & Kids\" (17 products) in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-type-pillow-covers",
+      "query": "pillow covers",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T024207Z."
+      }
+    },
+    {
+      "query_id": "brooklinen-type-sheets",
+      "query": "sheets",
+      "intent": "product_type",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "sheets-bedding"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T024207Z."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "brooklinen-adv-sheets-bedding",
+      "query": "something from bedding",
+      "intent": "conversational_search",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-conversational-expansion"
+      }
+    },
+    {
+      "scenario_id": "brooklinen-adv-gift",
+      "query": "gift idea bedding",
+      "intent": "occasion_based",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-occasion-expansion"
+      }
+    }
+  ]
+}

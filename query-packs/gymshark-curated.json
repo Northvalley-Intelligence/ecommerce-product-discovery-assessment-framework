@@ -1,0 +1,180 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "gymshark-curated",
+  "name": "Gymshark Curated Pack",
+  "domain": "gymshark-catalog",
+  "generation": "GEN-014",
+  "curated_from_inspection": "GEN-014-20260715T024800Z",
+  "queries": [
+    {
+      "query_id": "gymshark-col-5-inch",
+      "query": "5 inch shorts",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "5-inch"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "5-inch",
+          "attribute": "black"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "5-inch",
+          "attribute": "grey"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"5 Inch Shorts\" (1183 products) in inspection GEN-014-20260715T024800Z. Attribute relationships (black, grey) observed in sampled product titles."
+      }
+    },
+    {
+      "query_id": "gymshark-col-4-inch",
+      "query": "4 inch",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "4-inch"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "4-inch",
+          "attribute": "black"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "4-inch",
+          "attribute": "grey"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"4 Inch\" (433 products) in inspection GEN-014-20260715T024800Z. Attribute relationships (black, grey) observed in sampled product titles."
+      }
+    },
+    {
+      "query_id": "gymshark-col-3-inch",
+      "query": "3 inch",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "3-inch"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"3 Inch\" (355 products) in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-col-2-in-1-shorts",
+      "query": "2 in 1 shorts",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "2-in-1-shorts"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"2 in 1 Shorts\" (135 products) in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-col-315",
+      "query": "315",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "315"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"315\" (96 products) in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-col-2-inch",
+      "query": "2 inch",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "2-inch"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"2 Inch\" (57 products) in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-type-womens-ss-tops",
+      "query": "womens ss tops",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-type-womens-ls-tops",
+      "query": "womens ls tops",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-type-hoodie",
+      "query": "hoodie",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T024800Z."
+      }
+    },
+    {
+      "query_id": "gymshark-type-t-shirt",
+      "query": "t shirt",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T024800Z."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "gymshark-adv-5-inch",
+      "query": "something from 5 inch shorts",
+      "intent": "conversational_search",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-conversational-expansion"
+      }
+    },
+    {
+      "scenario_id": "gymshark-adv-gift",
+      "query": "gift idea 5 inch shorts",
+      "intent": "occasion_based",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-occasion-expansion"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-014-20260715T024951Z",
+  "generated_at": "2026-07-15T02:51:20.455Z",
+  "artifact_count": 33,
+  "groups": {
+    "evidence": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/facets.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/mobile.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/recommendations.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/dashboard.html",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-report.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-best-sellers.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-black.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-gift.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-new-arrivals.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-mobile-search-bombas-sale.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-best-sellers.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-black.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-gift.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-new-arrivals.png",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/screenshots/rendered-search-bombas-sale.png"
+    ],
+    "raw_http": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/artifact-index.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/cache-metadata.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/dashboard.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/platform-capability-report.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/plugin-dependency-graph.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/plugin-state.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/run-manifest.json",
+      "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/site-profile.json"
+    ]
+  }
+}

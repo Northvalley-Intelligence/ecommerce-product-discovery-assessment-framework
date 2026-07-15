@@ -1,0 +1,34 @@
+{
+  "schema_version": "fix-plan-v0.1",
+  "target_id": "colourpop",
+  "target_name": "ColourPop",
+  "updated_at": "2026-07-15T02:55:15.708Z",
+  "updated_from_inspection": "GEN-014-20260715T025309Z",
+  "open_items": 1,
+  "verified_items": 0,
+  "items": [
+    {
+      "fingerprint": "zero_result_query:back to school",
+      "type": "zero_result_query",
+      "query": "back to school",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"back to school\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"back to school\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"back to school\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T025309Z",
+      "last_observed_in": "GEN-014-20260715T025309Z",
+      "evidence": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    }
+  ],
+  "unmappable_findings": [
+    "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions."
+  ],
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
+}

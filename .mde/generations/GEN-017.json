@@ -1,0 +1,59 @@
+{
+  "generation_id": "GEN-017",
+  "mission_phase": "Generation 17 - Shopify Hardening via Real-Store Shakedown",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T02:50:00Z",
+  "ended_at": null,
+  "record_status": "shakedown_complete_curation_hardened_backlog_triaged",
+  "focus": "Before any non-Shopify expansion, prove the platform does a good job on Shopify: run the complete cycle (onboard, inspect, curate, re-inspect, executive report/PDF, fix plan) across real Shopify retailers in different verticals and honestly collect what works and what breaks.",
+  "reason_generation_started": "Ferosh directed consolidation on Shopify quality before going further. This also satisfies the standing planning gate: architecture expands only after real inspections produce observed capability gaps.",
+  "primary_deliverable": "A shakedown record across five verticals (footwear, home goods, athletic apparel, socks/basics, beauty) with per-store cycle outcomes, observed capability gaps, curation quality notes, and a hardening backlog derived from evidence rather than speculation.",
+  "shakedown_targets": [
+    "allbirds.com (footwear)",
+    "brooklinen.com (home goods)",
+    "gymshark.com (athletic apparel)",
+    "bombas.com (socks/basics)",
+    "colourpop.com (beauty)"
+  ],
+  "validation_notes": [
+    "VAL-064 records the five-store shakedown and the first hardening fix.",
+    "Pipeline robustness confirmed across five verticals; no crashes, honest degradation throughout.",
+    "Platform detected Shopify High on Allbirds, Brooklinen, Gymshark, ColourPop; Bombas fell to unknown (public JSON endpoints 404).",
+    "Dominant finding FND-GEN017-001 (operational-collection leakage in curation) fixed and proven by re-curation from retained evidence."
+  ],
+  "known_gaps_opened": [
+    "FND-GEN017-002: Shopify stores that disable public JSON endpoints (Bombas) are not detected or curated; adapter needs a fallback or the report needs clearer framing.",
+    "FND-GEN017-003: curated queries can lower coverage vs the starter run with no guard.",
+    "FND-GEN017-004: report issue emission does not weight query confidence (mitigated by the curation fix).",
+    "FND-GEN017-005: DS3 attribute lexicon is apparel-biased; home-goods/beauty yield no attribute rows."
+  ],
+  "shakedown_results": {
+    "allbirds": {
+      "platform": "shopify/High",
+      "coverage_starter": 90,
+      "coverage_curated": 70,
+      "note": "coverage regressed on bad curated queries (FND-GEN017-003), now hardened"
+    },
+    "brooklinen": {
+      "platform": "shopify/High",
+      "coverage_curated": 80,
+      "note": "11 false issues from garbage autocomplete queries; queries clean after fix"
+    },
+    "gymshark": {
+      "platform": "shopify/High",
+      "coverage_curated": 90,
+      "note": "taxonomy-path product_types leaked; cleaned to leaves"
+    },
+    "bombas": {
+      "platform": "unknown/Medium",
+      "coverage_starter": 40,
+      "note": "public JSON endpoints 404; no curation (FND-GEN017-002)"
+    },
+    "colourpop": {
+      "platform": "shopify/High",
+      "coverage_curated": 90,
+      "note": "cleanest run; curated queries all real beauty collections"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T024800Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-15T02:48:00.633Z",
+      "ended_at": "2026-07-15T02:48:16.820Z",
+      "evidence_file": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 10,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T02:48:16.824Z",
+      "ended_at": "2026-07-15T02:48:31.061Z",
+      "evidence_file": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 10,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-15T02:48:31.064Z",
+      "ended_at": "2026-07-15T02:48:35.316Z",
+      "evidence_file": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T02:48:35.318Z",
+      "ended_at": "2026-07-15T02:48:42.224Z",
+      "evidence_file": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T02:48:42.227Z",
+      "ended_at": "2026-07-15T02:48:45.174Z",
+      "evidence_file": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "warn",
+      "started_at": "2026-07-15T02:48:45.178Z",
+      "ended_at": "2026-07-15T02:49:49.445Z",
+      "evidence_file": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "High",
+      "evidence_quality": "rendered"
+    }
+  }
+}

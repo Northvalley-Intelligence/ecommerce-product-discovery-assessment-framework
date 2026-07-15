@@ -1,0 +1,530 @@
+{
+  "schema_version": "inspection-model-v0.1",
+  "inspection_id": "GEN-014-20260715T024207Z",
+  "generated_at": "2026-07-15T02:45:42.440Z",
+  "evaluation_id": "brooklinen-shopify-baseline",
+  "target_id": "brooklinen",
+  "platform_detection": {
+    "platform": "shopify",
+    "confidence": "High",
+    "signals": [
+      "Target manifest expects Shopify.",
+      "Products JSON returned a Shopify products payload.",
+      "Collections JSON returned a Shopify collections payload.",
+      "Suggest JSON returned a Shopify predictive-search payload."
+    ]
+  },
+  "dashboard": {
+    "schema_version": "inspection-dashboard-v0.1",
+    "inspection_id": "GEN-014-20260715T024207Z",
+    "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+    "crawl_summary": {
+      "inspection_timestamp": "2026-07-15T02:42:07.422Z",
+      "target_url": "https://brooklinen.com/",
+      "target_name": "Brooklinen",
+      "platform_detection": {
+        "platform": "shopify",
+        "confidence": "High",
+        "signals": [
+          "Target manifest expects Shopify.",
+          "Products JSON returned a Shopify products payload.",
+          "Collections JSON returned a Shopify collections payload.",
+          "Suggest JSON returned a Shopify predictive-search payload."
+        ]
+      },
+      "overall_inspection_status": "partial",
+      "inspection_duration_ms": 215018,
+      "evidence_quality": "partial",
+      "overall_confidence": "Medium"
+    },
+    "operational_summary": {
+      "experiments_completed": 6,
+      "blocked_experiments": 0,
+      "warnings": 3,
+      "evidence_files": 6,
+      "screenshot_count": 10,
+      "downstream_report_readiness": "bounded",
+      "readiness_notes": "Inspection evidence is sufficient for a bounded technical Inspection Report export."
+    },
+    "crawl_health": [
+      {
+        "component": "Homepage",
+        "status": "FAIL",
+        "confidence": "High",
+        "notes": "Rate limited"
+      },
+      {
+        "component": "Search",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "3/11 submitted search observations completed."
+      },
+      {
+        "component": "Browse",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+      },
+      {
+        "component": "Autocomplete",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "6/11 autocomplete observations returned suggestions."
+      },
+      {
+        "component": "Product Pages",
+        "status": "WARN",
+        "confidence": "Medium",
+        "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+      },
+      {
+        "component": "Facets",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 facet markup observations completed."
+      },
+      {
+        "component": "Recommendations",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "3/3 recommendations endpoint observations completed."
+      },
+      {
+        "component": "Mobile",
+        "status": "PASS",
+        "confidence": "Medium",
+        "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+      },
+      {
+        "component": "Competitor Inspection",
+        "status": "NOT_RUN",
+        "confidence": "Unknown",
+        "notes": "Peer inspection is not enabled in this evaluation manifest."
+      },
+      {
+        "component": "Rendered Storefront",
+        "status": "PASS",
+        "confidence": "High",
+        "notes": "5/5 rendered captures completed; 0/5 showed a visible autocomplete dropdown (P008)."
+      }
+    ],
+    "evidence_coverage": {
+      "component_coverage_percent": 80,
+      "plugin_observations": 34,
+      "dataset_rows": 34,
+      "evidence_quality": "partial"
+    },
+    "platform_capability": {
+      "status": "warn",
+      "report_path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/platform-capability-report.json",
+      "failed_capabilities": []
+    },
+    "artifact_explorer": {
+      "evidence": [
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/facets.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/mobile.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/recommendations.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/submitted-search.jsonl"
+      ],
+      "reports": [],
+      "datasets": [
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds1-canonical-search.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds2-query-normalization.jsonl",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+      ],
+      "screenshots": [
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-all-sheets-2-0.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-allow-discounts-no-last-call.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-allow-discounts.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-bath-1.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-sheets-bedding.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-all-sheets-2-0.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-allow-discounts-no-last-call.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-allow-discounts.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-bath-1.png",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-sheets-bedding.png"
+      ],
+      "raw_http": [
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/raw/http/site-profile-endpoints.json"
+      ],
+      "raw_html": [],
+      "timeline": [
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/timeline.jsonl"
+      ],
+      "inspection_model": [],
+      "other": [
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/cache-metadata.json",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/platform-capability-report.json",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/plugin-dependency-graph.json",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/plugin-state.json",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/run-manifest.json",
+        "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/site-profile.json"
+      ]
+    }
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "Rate limited"
+    },
+    {
+      "component": "Search",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "3/11 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "6/11 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+    },
+    {
+      "component": "Facets",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "3/3 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "5/5 rendered captures completed; 0/5 showed a visible autocomplete dropdown (P008)."
+    }
+  ],
+  "datasets": {
+    "DS1": {
+      "path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "rows": 11,
+      "status": "generated"
+    },
+    "DS2": {
+      "path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "rows": 21,
+      "status": "generated"
+    },
+    "DS3": {
+      "path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds3-search-facet.jsonl",
+      "rows": 0,
+      "status": "empty"
+    },
+    "DS4": {
+      "path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds4-advanced-retrieval.jsonl",
+      "rows": 2,
+      "status": "generated"
+    }
+  },
+  "plugin_results": [
+    {
+      "plugin_id": "submitted-search",
+      "status": "warn",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 11,
+      "completed_observations": 3,
+      "blocked_observations": 8,
+      "confidence": "Medium",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": [
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-allow-discounts",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=allow+discounts"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-allow-discounts-no-last-call",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=allow+discounts+no+last+call"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-all-sheets-2-0",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=sheets+2+0"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-sheets-bedding",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=bedding"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-bath-1",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=bath"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-bed-blankets-1",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=bed+blankets"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-brooklinen-dabito",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=brooklinen+dabito"
+        },
+        {
+          "code": "rate_limited",
+          "label": "Rate limited",
+          "query_id": "brooklinen-col-brooklinen-kule",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=brooklinen+kule"
+        }
+      ]
+    },
+    {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 11,
+      "observations_with_suggestions": 6,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "partial",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "facets",
+      "status": "pass",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "completed_observations": 3,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "completed_observations": 2,
+      "blocked_observations": 0,
+      "confidence": "Medium",
+      "evidence_quality": "bounded",
+      "infrastructure_limitations": []
+    },
+    {
+      "plugin_id": "rendered-search",
+      "status": "pass",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "completed_observations": 5,
+      "observations_with_visible_dropdown": 0,
+      "blocked_observations": 0,
+      "confidence": "High",
+      "evidence_quality": "rendered",
+      "infrastructure_limitations": [
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "brooklinen-col-allow-discounts",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=allow%20discounts"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "brooklinen-col-allow-discounts-no-last-call",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=allow%20discounts%20no%20last%20call"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "brooklinen-col-all-sheets-2-0",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=sheets%202%200"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "brooklinen-col-sheets-bedding",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=bedding"
+        },
+        {
+          "code": "search_input_not_found",
+          "label": "Visible search input not found",
+          "query_id": "brooklinen-col-bath-1",
+          "status": 429,
+          "endpoint": "https://brooklinen.com/search?q=bath"
+        }
+      ]
+    }
+  ],
+  "limitations": {
+    "platform_capability_gaps": [],
+    "infrastructure_limitations": [
+      {
+        "category": "infrastructure",
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "url": "https://brooklinen.com/",
+        "status": 429
+      },
+      {
+        "category": "infrastructure",
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "url": "https://brooklinen.com/robots.txt",
+        "status": 429
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-allow-discounts",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=allow+discounts"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-allow-discounts-no-last-call",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=allow+discounts+no+last+call"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-all-sheets-2-0",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=sheets+2+0"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-sheets-bedding",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=bedding"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-bath-1",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=bath"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-bed-blankets-1",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=bed+blankets"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-brooklinen-dabito",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=brooklinen+dabito"
+      },
+      {
+        "code": "rate_limited",
+        "label": "Rate limited",
+        "query_id": "brooklinen-col-brooklinen-kule",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=brooklinen+kule"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "brooklinen-col-allow-discounts",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=allow%20discounts"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "brooklinen-col-allow-discounts-no-last-call",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=allow%20discounts%20no%20last%20call"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "brooklinen-col-all-sheets-2-0",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=sheets%202%200"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "brooklinen-col-sheets-bedding",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=bedding"
+      },
+      {
+        "code": "search_input_not_found",
+        "label": "Visible search input not found",
+        "query_id": "brooklinen-col-bath-1",
+        "status": 429,
+        "endpoint": "https://brooklinen.com/search?q=bath"
+      }
+    ],
+    "commerce_observations": [],
+    "separation_rule": "Platform capability gaps and infrastructure limitations are recorded separately from observed ecommerce behavior."
+  },
+  "evidence_model": {
+    "raw_evidence_is_immutable": true,
+    "confidence_scope": "observation_level",
+    "evidence_quality_scope": "coverage_and_completeness"
+  }
+}

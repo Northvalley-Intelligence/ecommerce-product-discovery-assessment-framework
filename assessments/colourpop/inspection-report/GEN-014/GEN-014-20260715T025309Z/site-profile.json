@@ -1,0 +1,1776 @@
+{
+  "schema_version": "site-profile-v0.1",
+  "discovered_at": "2026-07-15T02:51:29.675Z",
+  "target": {
+    "target_id": "colourpop",
+    "name": "ColourPop",
+    "primary_url": "https://colourpop.com/",
+    "canonical_platform_host": null
+  },
+  "platform_detection": {
+    "platform": "shopify",
+    "confidence": "High",
+    "signals": [
+      "Target manifest expects Shopify.",
+      "Products JSON returned a Shopify products payload.",
+      "Collections JSON returned a Shopify collections payload.",
+      "Suggest JSON returned a Shopify predictive-search payload."
+    ]
+  },
+  "access": {
+    "authentication_required": false,
+    "limitations": []
+  },
+  "endpoint_discovery": [
+    {
+      "label": "homepage",
+      "url": "https://colourpop.com/",
+      "final_url": "https://colourpop.com/",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 713,
+      "content_type": "text/html; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "<!doctype html> <html class='no-js' lang='en'> <head><script type='speculationrules'> { \"prerender\": [ { \"where\": { \"href_matches\": \"/*\" }, \"eagerness\": \"moderate\" } ] } </script> <meta charset='utf-8' data-svg-sprite-path='//colourpop.com/cdn/shop/t/1267/assets/icons.svg?v=40595822187560632071783718228'> <meta http-equiv='X-UA-Compatible' content='IE=edge'> <meta name='viewport' content='width=device-width,initial-scale=1'> <meta name='theme-color' content=''> <link rel='canonical' href='https:",
+      "json_payload": null
+    },
+    {
+      "label": "robots",
+      "url": "https://colourpop.com/robots.txt",
+      "final_url": "https://colourpop.com/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 96,
+      "content_type": "text/plain; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "# Shopify storefront. Public product, collection, page, blog, policy, cart, and localized HTML is crawlable. # Agent instructions: https://colourpop.com/agents.md # UCP discovery: https://colourpop.com/.well-known/ucp # UCP/MCP endpoint: https://colourpop.com/api/ucp/mcp # Agents should use UCP/MCP for catalog, cart, and checkout. Payment requires buyer approval. # # If you are reading this on behalf of your user and you act as a personal assistant or personal shopper in an # openclaw-like manne",
+      "json_payload": null
+    },
+    {
+      "label": "products_json",
+      "url": "https://colourpop.com/products.json?limit=10",
+      "final_url": "https://colourpop.com/products.json?limit=10",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 144,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"products\":[{\"id\":7596888358994,\"title\":\"Balm Besties\",\"handle\":\"balm-besties\",\"body_html\":\"\\u003cp class=\\\"csg-p\\\"\\u003eAll three custom-color balms, together in one obsession-worthy set. Clear to custom in a swipe. This colour-changing formula reacts to your natural pH levels to create the perfect custom pink shade that's made just for U. Swipe it on clear and watch the colour bloom. Multi-pearl flakes add shine and reflective dimension while the lightweight conditioning balm wraps lips in gl",
+      "json_payload": {
+        "products": [
+          {
+            "id": 7596888358994,
+            "title": "Balm Besties",
+            "handle": "balm-besties",
+            "body_html": "<p class=\"csg-p\">All three custom-color balms, together in one obsession-worthy set. Clear to custom in a swipe. This colour-changing formula reacts to your natural pH levels to create the perfect custom pink shade that's made just for U. Swipe it on clear and watch the colour bloom. Multi-pearl flakes add shine and reflective dimension while the lightweight conditioning balm wraps lips in glossy moisture for a soft, comfortable feel.</p>\n<p class=\"csg-p\">Available in 3 shades: crystal clear, sheer pink, or holographic blue. All three transform into your own perfect custom pink flush. Infused with pH-reactive pigments for personalised colour and a conditioning balm base for smooth, comfortable wear.<br><span class=\"csg-mark-strong\"></span></p>\n<p class=\"csg-p\"><span class=\"csg-mark-strong\">Bundle Includes:<br></span>- Clearly Cute: Custom crystal clear<br>- Pink Mood: Custom sheer pink<br>- Holo Bestie: Custom holographic blue</p>",
+            "published_at": "2026-07-01T11:44:57-07:00",
+            "created_at": "2026-06-30T13:41:47-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "pH Lip Balm",
+            "tags": [
+              "061826",
+              "event:PH Lip Balms 2026",
+              "Lip Balm",
+              "Lips",
+              "LipSingles",
+              "Lipstick",
+              "productline:ColourPop",
+              "productsize:full",
+              "producttype:pH Lipstick",
+              "subcategory:Lip Balm",
+              "unitnumber:3",
+              "value_sets"
+            ],
+            "variants": [
+              {
+                "id": 42466502967378,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Bundle-BalmBesties",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "27.00",
+                "grams": 33,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7596888358994,
+                "created_at": "2026-06-30T13:41:47-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 34040734482514,
+                "created_at": "2026-06-30T14:16:42-07:00",
+                "position": 1,
+                "updated_at": "2026-06-30T14:16:43-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_HoloBestie_ECOM_65e4d6aa-8807-4f5a-b64f-65be974decdd.jpg?v=1782854203",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941373485138,
+                "created_at": "2026-06-12T14:27:08-07:00",
+                "position": 2,
+                "updated_at": "2026-06-12T14:27:10-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_ClearyCute_Model_Macro_Lip_Grid_Swatch.jpg?v=1781299630",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941373255762,
+                "created_at": "2026-06-12T14:27:07-07:00",
+                "position": 3,
+                "updated_at": "2026-06-12T14:27:10-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_PinkMood_Model_Macro_Lip_Grid_Swatch.jpg?v=1781299630",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941372207186,
+                "created_at": "2026-06-12T14:26:54-07:00",
+                "position": 4,
+                "updated_at": "2026-06-12T14:26:56-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_HoloBestie_Model_Macro_Lip_Grid_Swatch.jpg?v=1781299616",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941373124690,
+                "created_at": "2026-06-12T14:27:07-07:00",
+                "position": 5,
+                "updated_at": "2026-06-12T14:27:09-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_PinkMood_Infographic_1.jpg?v=1781299629",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941372174418,
+                "created_at": "2026-06-12T14:26:54-07:00",
+                "position": 6,
+                "updated_at": "2026-06-12T14:26:56-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_HoloBestie_Model_FullFace.jpg?v=1781299616",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941373157458,
+                "created_at": "2026-06-12T14:27:07-07:00",
+                "position": 7,
+                "updated_at": "2026-06-12T14:27:09-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_PinkMood_Infographic_2.jpg?v=1781299629",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33941372141650,
+                "created_at": "2026-06-12T14:26:54-07:00",
+                "position": 8,
+                "updated_at": "2026-06-12T14:26:56-07:00",
+                "product_id": 7596888358994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/PHLipBalm_HoloBestie_Infographic_3.jpg?v=1781299616",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587818045522,
+            "title": "Double Kiss",
+            "handle": "double-kiss-lip-kit-duo",
+            "body_html": "<p dir=\"ltr\"><span>Can’t choose between Hannah and Miley? Get both lip kits in one set. Bold and pearlized for your pop star side, soft and creamy for your everyday life — the best of both worlds on your pout.<br></span><span></span><span>Set Includes:<br></span><span>- Rock Sensation Lippie Kit<br></span><span>   - Lippie Pencil in Rock Out The Show: Auburn<br></span><span>   - Lippie Stix in Smooth Talkin’ (Pearlized): Warm peach with silver <br></span><span>- Malibu Dreaming Lippie Kit<br></span><span>   - Lippie Pencil : Take It Slow: Rich rose<br></span><span>   - Lippie Stix: This Is the Life (Creme): Warm rose</span></p>",
+            "published_at": "2026-06-25T09:59:40-07:00",
+            "created_at": "2026-06-09T10:37:12-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Lip Kits Duo",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life",
+              "value_sets"
+            ],
+            "variants": [
+              {
+                "id": 42440334311506,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Bundle-DoubleKiss",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "28.00",
+                "grams": 57,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587818045522,
+                "created_at": "2026-06-09T10:37:12-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 33963728175186,
+                "created_at": "2026-06-17T10:39:29-07:00",
+                "position": 1,
+                "updated_at": "2026-06-17T10:39:32-07:00",
+                "product_id": 7587818045522,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxLipKitDuo_DoubleKiss_ProductStylized.jpg?v=1781717972",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963728076882,
+                "created_at": "2026-06-17T10:39:29-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:39:31-07:00",
+                "product_id": 7587818045522,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxLipKitDuo_DoubleKiss_ECOM.jpg?v=1781717971",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963728142418,
+                "created_at": "2026-06-17T10:39:29-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:39:32-07:00",
+                "product_id": 7587818045522,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxLipKitDuo_DoubleKiss_Model_FullFace.jpg?v=1781717972",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963728011346,
+                "created_at": "2026-06-17T10:39:29-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:39:32-07:00",
+                "product_id": 7587818045522,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_DoubleKiss_MalibuDreaming_MacroLip_Grid_Swatch.jpg?v=1781717972",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963728109650,
+                "created_at": "2026-06-17T10:39:29-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:39:32-07:00",
+                "product_id": 7587818045522,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxLipKitDuo_DoubleKiss_Model_FullFace_Fair.jpg?v=1781717972",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963728044114,
+                "created_at": "2026-06-17T10:39:29-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:39:32-07:00",
+                "product_id": 7587818045522,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_DoubleKiss_RockSensation_MacroLip_Grid_Swatch.jpg?v=1781717972",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587815718994,
+            "title": "Rock Sensation",
+            "handle": "rock-sensation-lip-kit",
+            "body_html": "<p dir=\"ltr\"><span>Rock out the show in Hannah's signature lip combo. This limited-edition warm peachy-nude kit is inspired by the pop star herself. Our bestselling Lippie Pencil defines lips with a creamy, long-lasting formula, while our Lippie Stix delivers rich Pearlized pigment in one swipe. <br><br></span><span>Lippie Pencil  – Define (or overline) your lips with our creamy, long-lasting formula that creates the cleanest lines and minimizes feathering. Plus, it’s sharpenable!<br></span><span>Lippie Stix - Get a flawless pout with our long-lasting Matte  formula for rich pigment in one swipe! Infused with Vitamin E, Mango, Avocado, and Shea Butter for a moisturizing boost + comfy feel.<br><meta charset=\"utf-8\"> <meta charset=\"utf-8\"></span></p>\n<p dir=\"ltr\"><span>Kit Includes:<br></span><span>- Lippie Pencil in Rock Out The Show: Auburn<br></span><span>- Lippie Stix in Smooth Talkin’ (Pearlized): Warm peach with silver </span></p>\n<p dir=\"ltr\"><span><b id=\"docs-internal-guid-08a54aa9-7fff-6a54-fc20-0520182537cd\"></b> </span></p>",
+            "published_at": "2026-06-25T09:59:36-07:00",
+            "created_at": "2026-06-09T10:30:48-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Lippie Pencil & Stix Kit",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life"
+            ],
+            "variants": [
+              {
+                "id": 42440327659602,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Kit-RockSensation",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "16.00",
+                "grams": 28,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587815718994,
+                "created_at": "2026-06-09T10:30:49-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 33963736072274,
+                "created_at": "2026-06-17T10:45:02-07:00",
+                "position": 1,
+                "updated_at": "2026-06-17T10:45:08-07:00",
+                "product_id": 7587815718994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_RockSensation_ProductStylized.jpg?v=1781718308",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735908434,
+                "created_at": "2026-06-17T10:45:02-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:45:04-07:00",
+                "product_id": 7587815718994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_RockSensation_ECOM.jpg?v=1781718304",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963736006738,
+                "created_at": "2026-06-17T10:45:02-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:45:04-07:00",
+                "product_id": 7587815718994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_RockSensation_Model_FullFace_Fair.jpg?v=1781718304",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735941202,
+                "created_at": "2026-06-17T10:45:02-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:45:04-07:00",
+                "product_id": 7587815718994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_RockSensation_MacroLip_Grid_Swatch.jpg?v=1781718304",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963736039506,
+                "created_at": "2026-06-17T10:45:02-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:45:04-07:00",
+                "product_id": 7587815718994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_RockSensation_Model_FullFace_Medium_04bdcc51-4d03-420a-8fe6-92cdf9ff3d72.jpg?v=1781718304",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735973970,
+                "created_at": "2026-06-17T10:45:02-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:45:05-07:00",
+                "product_id": 7587815718994,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_RockSensation_Model_FullFace_Deep.jpg?v=1781718305",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587815587922,
+            "title": "Malibu Dreaming",
+            "handle": "malibu-dreaming-lip-kit",
+            "body_html": "<p dir=\"ltr\"><span>Stay lowkey gorgeous as Miley with this warm rose lip combo. This limited-edition kit is inspired by Miley’s laid-back Malibu vibe. Our bestselling Lippie Pencil defines lips with a creamy, long-lasting formula, while our Lippie Stix delivers rich Creme pigment in one swipe.<br><br></span><span>Lippie Pencil  – Define (or overline) your lips with our creamy, long-lasting formula that creates the cleanest lines and minimizes feathering. Plus, it’s sharpenable!<br></span><span>Lippie Stix - Get a flawless pout with our long-lasting Matte formula for rich pigment in one swipe! Infused with Vitamin E, Mango, Avocado, and Shea Butter for a moisturizing boost + comfy feel</span><span>!<br><br></span><span>Kit Includes:<br></span><span>- Lippie Pencil : Take It Slow: Rich rose<br></span><span>- Lippie Stix: This Is the Life (Creme): Warm rose</span></p>\n<p dir=\"ltr\"> </p>",
+            "published_at": "2026-06-25T09:59:33-07:00",
+            "created_at": "2026-06-09T10:30:38-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Lippie Pencil & Stix Kit",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life"
+            ],
+            "variants": [
+              {
+                "id": 42440326938706,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Kit-MalibuDreaming",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "16.00",
+                "grams": 28,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587815587922,
+                "created_at": "2026-06-09T10:30:39-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 33963735875666,
+                "created_at": "2026-06-17T10:44:50-07:00",
+                "position": 1,
+                "updated_at": "2026-06-17T10:44:52-07:00",
+                "product_id": 7587815587922,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_MalibuDreaming_ProductStylized.jpg?v=1781718292",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735711826,
+                "created_at": "2026-06-17T10:44:50-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:44:52-07:00",
+                "product_id": 7587815587922,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_MalibuDreaming_ECOM.jpg?v=1781718292",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735777362,
+                "created_at": "2026-06-17T10:44:50-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:44:53-07:00",
+                "product_id": 7587815587922,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_MalibuDreaming_Model_FullFace_Deep.jpg?v=1781718293",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735744594,
+                "created_at": "2026-06-17T10:44:50-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:44:52-07:00",
+                "product_id": 7587815587922,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_MalibuDreaming_MacroLip_Grid_Swatch.jpg?v=1781718292",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735842898,
+                "created_at": "2026-06-17T10:44:50-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:44:53-07:00",
+                "product_id": 7587815587922,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_MalibuDreaming_Model_FullFace_Medium_04ef9203-605a-4a77-9bbe-7cd9ebd0cb85.jpg?v=1781718293",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963735810130,
+                "created_at": "2026-06-17T10:44:50-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:44:52-07:00",
+                "product_id": 7587815587922,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipKit_MalibuDreaming_Model_FullFace_Fair.jpg?v=1781718292",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587667935314,
+            "title": "Best of Both Worlds",
+            "handle": "best-of-both-worlds-shadow-palette",
+            "body_html": "<p dir=\"ltr\"><span>Say whaaaat? This limited-edition palette celebrates 20 years of the Disney series that defined a generation! Choose your side with 16 ultra-pigmented shades in two halves: bold brights inspired by Hannah Montana's pop star persona on the left, everyday neutrals inspired by Miley Stewart's ordinary girl life on the right. Our ultra-pigmented pressed powder formula is long-lasting, applies evenly and blends like a dream for effortless application.<br><br></span><span>Features 5 finishes: Matte, Metallic, Matte Sparkle, Pearlescent Glitter and NEW Chrome Metallic.<br><br></span><span>Shade Descriptions:</span><span><br></span><span>- Parade of Diamonds: White silver<br></span><span>- Backstage Pass: Baby pink<br></span><span>- Sweet Niblets!: Mint green<br></span><span>- Ordinary Girl: Warm beige<br></span><span>- Find Your Way: Warm lilac<br></span><span>- Lilly: Golden metallic<br></span><span>- Seaview High: Saddle brown<br></span><span>- Miles: Seafoam green<br></span><span>- Secret Identity: Pinky magenta<br></span><span>- Guitar Cutie: Hot pink<br></span><span>- Ollipop: Rich blue<br></span><span>- Nashville: Cocoa brown<br></span><span>- Sold-Out Tour: Pinky violet<br></span><span>- #1 Hits: Smoky gunmetal<br></span><span>- Robby Ray: Blackened brown<br></span><span>- Two Lives: Matte teal</span></p>",
+            "published_at": "2026-06-25T09:59:29-07:00",
+            "created_at": "2026-06-08T14:47:23-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Shadow Palette",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life"
+            ],
+            "variants": [
+              {
+                "id": 42439263060050,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "EyePalette-BestOfBothWorlds",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "26.00",
+                "grams": 150,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587667935314,
+                "created_at": "2026-06-08T14:47:24-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 33963727421522,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 1,
+                "updated_at": "2026-06-17T10:39:28-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_ProductStylized.jpg?v=1781717968",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727224914,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:39:27-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_ECOM.jpg?v=1781717967",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727388754,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:39:28-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_Model_FullFace_Fair.jpg?v=1781717968",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727290450,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:39:28-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_Macro_Eye_Fair.jpg?v=1781717968",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727323218,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:39:28-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_Macro_Eye_Medium_e374ecc6-483e-47bd-9455-538d4a5d8546.jpg?v=1781717968",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727257682,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:39:28-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_Macro_Eye_Deep.jpg?v=1781717968",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727192146,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 7,
+                "updated_at": "2026-06-17T10:39:27-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_ArmSwatch.jpg?v=1781717967",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963727355986,
+                "created_at": "2026-06-17T10:39:25-07:00",
+                "position": 8,
+                "updated_at": "2026-06-17T10:39:28-07:00",
+                "product_id": 7587667935314,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_EyeshadowPalete_BestofBothWorlds_Model_FullFace_Deep.jpg?v=1781717968",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587820535890,
+            "title": "Secret Superstar",
+            "handle": "secret-superstar-lip-gloss-keychain",
+            "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\">Keep your pout pop star-ready, wherever you go. Our ALL-NEW two-tone shimmering lip gloss that hydrates lips and goes on clear to create a multidimensional hi-shine finish that's collection-worthy. The star-shaped keychain keeps it with you always, at home or away on tour. Infused with Jojoba Oil, Argan Oil, and Vitamin E to hydrate and condition lips all day.</p>",
+            "published_at": "2026-06-25T09:58:42-07:00",
+            "created_at": "2026-06-09T10:43:51-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Lip Gloss",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life"
+            ],
+            "variants": [
+              {
+                "id": 42440341258322,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "LipGlossKeychain-SecretSuperstar",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "12.00",
+                "grams": 47,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587820535890,
+                "created_at": "2026-06-09T10:43:51-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 33964293554258,
+                "created_at": "2026-06-17T14:53:35-07:00",
+                "position": 1,
+                "updated_at": "2026-06-17T14:53:37-07:00",
+                "product_id": 7587820535890,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipOil_SecretSuperstar_ProductStylized.jpg?v=1781733217",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964293423186,
+                "created_at": "2026-06-17T14:53:35-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T14:53:36-07:00",
+                "product_id": 7587820535890,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipOil_SecretSuperstar_ECOM.jpg?v=1781733216",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964293488722,
+                "created_at": "2026-06-17T14:53:35-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T14:53:37-07:00",
+                "product_id": 7587820535890,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipOil_SecretSuperstar_Macro_Lip_Fair.jpg?v=1781733217",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964293521490,
+                "created_at": "2026-06-17T14:53:35-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T14:53:37-07:00",
+                "product_id": 7587820535890,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipOil_SecretSuperstar_Macro_Lip_Medium_80d7b2f8-12c9-40c8-9773-87bc93f85355.jpg?v=1781733217",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964293455954,
+                "created_at": "2026-06-17T14:53:35-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T14:53:37-07:00",
+                "product_id": 7587820535890,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipOil_SecretSuperstar_Macro_Lip_Deep.jpg?v=1781733217",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964293587026,
+                "created_at": "2026-06-17T14:53:35-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T14:53:37-07:00",
+                "product_id": 7587820535890,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_LipOil_SecretSuperstar_VariationSwatch.jpg?v=1781733217",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587818569810,
+            "title": "A Girl Like Me",
+            "handle": "a-girl-like-me-miley-collection",
+            "body_html": "<p dir=\"ltr\"><span>Miley’s everyday lip look in one set. The Keeping It Real gloss and Malibu Dreaming lip kit for soft, effortlessly beautiful pout energy — because just an ordinary girl can look anything but.<br></span><span>Set Includes:<br></span><span>- Shimmer Lip Gloss Keychain in Keeping It Real: clear with aqua + violet shimmer<br></span><span>- Malibu Dreaming Lippie Kit<br></span><span>   - Lippie Pencil in Take It Slow: Rich rose<br></span><span>   - Lippie Stix in This Is the Life (Creme): Warm rose</span></p>",
+            "published_at": "2026-06-25T09:58:40-07:00",
+            "created_at": "2026-06-09T10:38:27-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Gloss Keychain + Lip Kit",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life",
+              "value_sets"
+            ],
+            "variants": [
+              {
+                "id": 42440335556690,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Bundle-GirlLikeMe",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "26.00",
+                "grams": 75,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587818569810,
+                "created_at": "2026-06-09T10:38:28-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 34010487914578,
+                "created_at": "2026-06-25T10:17:46-07:00",
+                "position": 1,
+                "updated_at": "2026-06-25T10:17:48-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeMe_ProductStylized_7db492d3-6740-4b61-97e3-a76b79e0bfa0.jpg?v=1782407868",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963709988946,
+                "created_at": "2026-06-17T10:29:24-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:29:26-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeMe_ECOM.jpg?v=1781717366",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710120018,
+                "created_at": "2026-06-17T10:29:24-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:29:27-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeMe_Model_FullFace_Fair.jpg?v=1781717367",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710054482,
+                "created_at": "2026-06-17T10:29:24-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:29:27-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeMe_LipOil_MacroLip_Grid.jpg?v=1781717367",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710021714,
+                "created_at": "2026-06-17T10:29:24-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:29:27-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeMe_LipOil_KeepingitReal_VariationSwatch.jpg?v=1781717367",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710185554,
+                "created_at": "2026-06-17T10:29:24-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:29:27-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeYou_ModelFullFace_Deep.jpg?v=1781717367",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710087250,
+                "created_at": "2026-06-17T10:29:24-07:00",
+                "position": 7,
+                "updated_at": "2026-06-17T10:29:27-07:00",
+                "product_id": 7587818569810,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_AGirlLikeMe_MacroLip_Grid_Swatch.jpg?v=1781717367",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587818504274,
+            "title": "Being Hannah",
+            "handle": "being-hannah-lip-collection",
+            "body_html": "<p dir=\"ltr\"><span>Hannah Montana’s signature lip look in one set. The Secret Superstar gloss and Rock Sensation lip kit for full pop star pout energy — pearlized, pigmented, and completely obsession-worthy.<br></span><span>Set Includes:<br></span><span>- Shimmer Lip Gloss Keychain in Secret Superstar: clear with silver + pink shimmer<br></span><span>- Rock Sensation Lippie Kit<br></span><span>   - Lippie Pencil in Rock Out The Show: Auburn<br></span><span>   - Lippie Stix in Smooth Talkin’ (Pearlized): Warm peachy nude with silvery pearl</span></p>\n<p> </p>",
+            "published_at": "2026-06-25T09:58:37-07:00",
+            "created_at": "2026-06-09T10:38:17-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Gloss Keychain + Lip Kit",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life",
+              "value_sets"
+            ],
+            "variants": [
+              {
+                "id": 42440335491154,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Bundle-BeingHannah",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "26.00",
+                "grams": 75,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587818504274,
+                "created_at": "2026-06-09T10:38:18-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 34010487095378,
+                "created_at": "2026-06-25T10:16:26-07:00",
+                "position": 1,
+                "updated_at": "2026-06-25T10:16:29-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_ProductStylized_3ae8b9fd-8e85-4688-b18d-d6c257eabbe1.jpg?v=1782407789",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710316626,
+                "created_at": "2026-06-17T10:29:37-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:29:40-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_ECOM.jpg?v=1781717380",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710480466,
+                "created_at": "2026-06-17T10:29:37-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:29:40-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_Model_FullFace_Medium_271bcfc4-8cc2-4dfc-a1e7-de12e8090dd9.jpg?v=1781717380",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710349394,
+                "created_at": "2026-06-17T10:29:37-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:29:40-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_LipOil_MacroLip_Grid.jpg?v=1781717380",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710382162,
+                "created_at": "2026-06-17T10:29:37-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:29:39-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_LipOil_SecretSuperstar_VariationSwatch.jpg?v=1781717379",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710447698,
+                "created_at": "2026-06-17T10:29:37-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:29:40-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_ModelFullFace_Fair.jpg?v=1781717380",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963710414930,
+                "created_at": "2026-06-17T10:29:37-07:00",
+                "position": 7,
+                "updated_at": "2026-06-17T10:29:40-07:00",
+                "product_id": 7587818504274,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_BeingHannah_MacroLip_Grid_Swatch.jpg?v=1781717380",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587818438738,
+            "title": "Just An Ordinary Girl",
+            "handle": "just-an-ordinary-girl-miley-collection",
+            "body_html": "<p dir=\"ltr\"><span>Channel your inner Miley with this everyday-glam set. The palette, gloss, and lip kit for a softer, more lowkey look — proof that ordinary girls are anything but ordinary.<br><br></span><span>Set Includes:<br></span><span>- Best of Both Worlds Eyeshadow Palette<br></span><span>- Shimmer Lip Gloss Keychain in Keeping It Real: clear with aqua + violet shimmer<br></span><span>- Malibu Dreaming Lippie Kit<br></span><span>   - Lippie Pencil in Take It Slow: Rich rose<br></span><span>   - Lippie Stix in This Is the Life (Creme): Warm rose</span></p>\n<p> </p>",
+            "published_at": "2026-06-25T09:58:34-07:00",
+            "created_at": "2026-06-09T10:38:05-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Miley Collection",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life",
+              "value_sets"
+            ],
+            "variants": [
+              {
+                "id": 42440335425618,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Bundle-OrdinaryGirl",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "48.00",
+                "grams": 179,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587818438738,
+                "created_at": "2026-06-09T10:38:06-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 34010479329362,
+                "created_at": "2026-06-25T10:08:52-07:00",
+                "position": 1,
+                "updated_at": "2026-06-25T10:08:54-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_ProductStylized_fe5e0cbf-df17-4b9f-87c4-3081f20e745f.jpg?v=1782407334",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963734761554,
+                "created_at": "2026-06-17T10:44:29-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T10:44:32-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_ECOM.jpg?v=1781718272",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963734794322,
+                "created_at": "2026-06-17T10:44:29-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T10:44:32-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_EyeshadowPalette_ModelFullFace.jpg?v=1781718272",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963734728786,
+                "created_at": "2026-06-17T10:44:29-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T10:44:32-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_ArmSwatch.jpg?v=1781718272",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963734859858,
+                "created_at": "2026-06-17T10:44:29-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T10:44:32-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_MacroLip_Grid_Swatch.jpg?v=1781718272",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963734892626,
+                "created_at": "2026-06-17T10:44:29-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T10:44:32-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_Model_FullFace.jpg?v=1781718272",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33963734827090,
+                "created_at": "2026-06-17T10:44:29-07:00",
+                "position": 7,
+                "updated_at": "2026-06-17T10:44:32-07:00",
+                "product_id": 7587818438738,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_JustanOrdinaryGirl_LipOil_KeepingItReal_MacroLip_Grid_VariationSwatch.jpg?v=1781718272",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7587818307666,
+            "title": "Star on Stage",
+            "handle": "star-on-stage-collection",
+            "body_html": "<p dir=\"ltr\"><span>Live your best Hannah Montana life with this show-stopping set. Everything you need to rock out the show in full pop star style — the palette, gloss, lip kit, and body glitter that’ll have you shining like stage lights from every angle.<br><br></span><span>Set Includes:<br></span><span>- Best of Both Worlds Eyeshadow Palette<br></span><span>- Shimmer Lip Gloss Keychain in Secret Superstar: clear with silver + pink shimmer<br></span><span>- Rock Sensation Lippie Kit<br></span><span>   - Lippie Pencil in Rock Out The Show: Auburn<br></span><span>   - Lippie Stix in Smooth Talkin’ (Pearlized): Warm peach with silver <br></span><span>- Roll-On Body Glitter in Stage Lights: Opal pink shift </span></p>\n<p> </p>",
+            "published_at": "2026-06-25T09:58:31-07:00",
+            "created_at": "2026-06-09T10:37:53-07:00",
+            "updated_at": "2026-07-14T19:51:25-07:00",
+            "vendor": "ColourPop",
+            "product_type": "Hannah Collection",
+            "tags": [
+              "#.limit:5",
+              "#.shipping:disney-restrict",
+              "062526",
+              "collab:Disney",
+              "event:Hannah Montana 2026",
+              "Hannah Montana",
+              "SKULifecycle:Limited Life",
+              "value_sets"
+            ],
+            "variants": [
+              {
+                "id": 42440335294546,
+                "title": "Default Title",
+                "option1": "Default Title",
+                "option2": null,
+                "option3": null,
+                "sku": "Bundle-StarOnStage",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": null,
+                "available": true,
+                "price": "60.00",
+                "grams": 293,
+                "compare_at_price": "0.00",
+                "position": 1,
+                "product_id": 7587818307666,
+                "created_at": "2026-06-09T10:37:54-07:00",
+                "updated_at": "2026-07-14T19:51:25-07:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 34010470744146,
+                "created_at": "2026-06-25T10:02:10-07:00",
+                "position": 1,
+                "updated_at": "2026-06-25T10:02:12-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_ProductStylized_ed980bd8-b663-4342-b0b3-c3b6e61b1b67.jpg?v=1782406932",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964294864978,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 2,
+                "updated_at": "2026-06-17T14:54:01-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_ECOM.jpg?v=1781733241",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964294963282,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 3,
+                "updated_at": "2026-06-17T14:54:02-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_Model_FullFace.jpg?v=1781733242",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964294832210,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 4,
+                "updated_at": "2026-06-17T14:54:02-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_ArmSwatch.jpg?v=1781733242",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964294930514,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 5,
+                "updated_at": "2026-06-17T14:54:02-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_MacroLip_Grid_Swatch.jpg?v=1781733242",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964295028818,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 6,
+                "updated_at": "2026-06-17T14:54:02-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_RockSensationLipKit_Model_FullFace.jpg?v=1781733242",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964294897746,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 7,
+                "updated_at": "2026-06-17T14:54:02-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_LipOil_SecretSuperstar_MacroLip_Grid_VariationSwatch.jpg?v=1781733242",
+                "width": 3000,
+                "height": 3000
+              },
+              {
+                "id": 33964295061586,
+                "created_at": "2026-06-17T14:54:00-07:00",
+                "position": 8,
+                "updated_at": "2026-06-17T14:54:02-07:00",
+                "product_id": 7587818307666,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/1338/0845/files/HannahMontanaxColourpop_Bundle_StaronStage_RollOnBodyGlitter_Model_FullFace.jpg?v=1781733242",
+                "width": 3000,
+                "height": 3000
+              }
+            ],
+            "options": [
+              {
+                "name": "Title",
+                "position": 1,
+                "values": [
+                  "Default Title"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "collections_json",
+      "url": "https://colourpop.com/collections.json?limit=20",
+      "final_url": "https://colourpop.com/collections.json?limit=20",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 171,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"collections\":[{\"id\":167417610322,\"title\":\"\\\"No Makeup\\\" Makeup\",\"handle\":\"no-makeup-makeup\",\"description\":\"\\u003ca href=\\\"\\\" class=\\\"hideAt500\\\"\\u003e\\u003cimg src=\\\"https:\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/1338\\/0845\\/files\\/NO_MAKEUP_COLLECTION_DESKTOP.jpg?v=1594921969\\\" alt=\\\"No Makeup Makeup\\\"\\u003e\\u003c\\/a\\u003e\\u003ca href=\\\"\\\" class=\\\"showAt500\\\"\\u003e\\u003cimg src=\\\"https:\\/\\/cdn.shopify.com\\/s\\/files\\/1\\/1338\\/0845\\/files\\/NO_MAKEUP_COLLECTION_MOBILE.jpg?v=1594921969\\\" alt=\\\"No Makeup",
+      "json_payload": {
+        "collections": [
+          {
+            "id": 167417610322,
+            "title": "\"No Makeup\" Makeup",
+            "handle": "no-makeup-makeup",
+            "description": "<a href=\"\" class=\"hideAt500\"><img src=\"https://cdn.shopify.com/s/files/1/1338/0845/files/NO_MAKEUP_COLLECTION_DESKTOP.jpg?v=1594921969\" alt=\"No Makeup Makeup\"></a><a href=\"\" class=\"showAt500\"><img src=\"https://cdn.shopify.com/s/files/1/1338/0845/files/NO_MAKEUP_COLLECTION_MOBILE.jpg?v=1594921969\" alt=\"No Makeup Makeup\"></a>",
+            "published_at": "2025-07-17T17:09:17-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 43
+          },
+          {
+            "id": 292621910098,
+            "title": "$5 Best Sellers",
+            "handle": "5-best-sellers",
+            "description": "",
+            "published_at": "2025-12-03T17:54:50-08:00",
+            "updated_at": "2026-07-14T15:16:12-07:00",
+            "image": null,
+            "products_count": 26
+          },
+          {
+            "id": 292120002642,
+            "title": "$5 Creme Gel Liners",
+            "handle": "5-creme-gel-liners",
+            "description": "",
+            "published_at": "2025-11-15T00:09:00-08:00",
+            "updated_at": "2026-07-14T04:04:08-07:00",
+            "image": null,
+            "products_count": 38
+          },
+          {
+            "id": 285010329682,
+            "title": "$9 9 pans",
+            "handle": "9-9-pans",
+            "description": "",
+            "published_at": "2025-11-19T14:24:57-08:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 72
+          },
+          {
+            "id": 143547301970,
+            "title": "9-Pan Palettes",
+            "handle": "9-pan-palettes",
+            "description": "",
+            "published_at": "2026-03-27T12:12:41-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 57
+          },
+          {
+            "id": 285224730706,
+            "title": "A Shadow of Secrets",
+            "handle": "a-shadow-of-secrets",
+            "description": "",
+            "published_at": "2025-09-10T09:25:20-07:00",
+            "updated_at": "2026-07-14T04:04:13-07:00",
+            "image": null,
+            "products_count": 13
+          },
+          {
+            "id": 169602154578,
+            "title": "Back In Stock",
+            "handle": "back-in-stock",
+            "description": "",
+            "published_at": "2020-10-20T23:31:10-07:00",
+            "updated_at": "2026-07-14T04:04:17-07:00",
+            "image": null,
+            "products_count": 35
+          },
+          {
+            "id": 57931006034,
+            "title": "Back To School",
+            "handle": "back-to-school",
+            "description": "",
+            "published_at": "2025-07-30T10:24:23-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 47
+          },
+          {
+            "id": 295353909330,
+            "title": "Beige",
+            "handle": "beige",
+            "description": "",
+            "published_at": "2026-04-15T03:23:24-07:00",
+            "updated_at": "2026-07-14T04:04:08-07:00",
+            "image": null,
+            "products_count": 14
+          },
+          {
+            "id": 285024976978,
+            "title": "Best of NLD",
+            "handle": "best-of-nld",
+            "description": "",
+            "published_at": "2025-07-14T09:36:52-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 79
+          },
+          {
+            "id": 285029859410,
+            "title": "Best of Sitewide",
+            "handle": "best-of-sitewide",
+            "description": "",
+            "published_at": "2025-06-26T13:21:39-07:00",
+            "updated_at": "2026-07-14T15:07:27-07:00",
+            "image": null,
+            "products_count": 146
+          },
+          {
+            "id": 285028253778,
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "description": "",
+            "published_at": "2025-01-06T10:32:55-08:00",
+            "updated_at": "2026-07-14T15:16:37-07:00",
+            "image": null,
+            "products_count": 78
+          },
+          {
+            "id": 285004333138,
+            "title": "Birthday",
+            "handle": "birthday",
+            "description": "",
+            "published_at": "2026-04-28T11:53:36-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 50
+          },
+          {
+            "id": 295353942098,
+            "title": "Black",
+            "handle": "black",
+            "description": "",
+            "published_at": "2026-04-15T03:23:47-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 41
+          },
+          {
+            "id": 295353974866,
+            "title": "Blue",
+            "handle": "blue",
+            "description": "",
+            "published_at": "2026-04-15T03:24:07-07:00",
+            "updated_at": "2026-07-14T04:04:17-07:00",
+            "image": null,
+            "products_count": 40
+          },
+          {
+            "id": 286863360082,
+            "title": "Blue Jean Baby",
+            "handle": "colour-of-the-month-blue-jean-baby",
+            "description": "",
+            "published_at": "2025-04-01T00:02:44-07:00",
+            "updated_at": "2026-07-14T04:04:17-07:00",
+            "image": null,
+            "products_count": 12
+          },
+          {
+            "id": 283452047442,
+            "title": "Blush",
+            "handle": "blush",
+            "description": "<p>The blush that makes everything click.</p><p>ColourPop blush comes in every formula your routine needs — buildable liquid blush that blends like a dream, long-lasting powder blush with zero-fallout pigment, and blush sticks for the most effortless flush of color. For a subtle glow or a full glow-up, the pigment never lies.</p><p>Starting under $10. Free shipping on orders $30+.</p>",
+            "published_at": "2024-10-30T11:29:10-07:00",
+            "updated_at": "2026-07-14T04:04:17-07:00",
+            "image": {
+              "id": 1626067828818,
+              "created_at": "2024-10-24T09:23:09-07:00",
+              "src": "https://cdn.shopify.com/s/files/1/1338/0845/collections/banner-2_35c9abb5-e779-4578-867d-1ec003016c39.jpg?v=1729786990",
+              "alt": null
+            },
+            "products_count": 40
+          },
+          {
+            "id": 269525483602,
+            "title": "Blush Stix",
+            "handle": "blush-stix",
+            "description": null,
+            "published_at": "2026-03-16T13:55:35-07:00",
+            "updated_at": "2026-07-14T04:04:17-07:00",
+            "image": null,
+            "products_count": 59
+          },
+          {
+            "id": 285027565650,
+            "title": "Body",
+            "handle": "body",
+            "description": "",
+            "published_at": "2025-01-06T10:32:51-08:00",
+            "updated_at": "2026-07-14T15:15:24-07:00",
+            "image": null,
+            "products_count": 32
+          },
+          {
+            "id": 295354007634,
+            "title": "Bronze",
+            "handle": "bronze",
+            "description": "",
+            "published_at": "2026-04-15T03:24:24-07:00",
+            "updated_at": "2026-07-14T04:04:18-07:00",
+            "image": null,
+            "products_count": 41
+          }
+        ]
+      }
+    },
+    {
+      "label": "search_suggest_json",
+      "url": "https://colourpop.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "final_url": "https://colourpop.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+      "method": "GET",
+      "status": 200,
+      "ok": true,
+      "duration_ms": 207,
+      "content_type": "application/json; charset=utf-8",
+      "classification": null,
+      "confidence": "High",
+      "text_excerpt": "{\"resources\":{\"results\":{\"products\":[],\"collections\":[],\"queries\":[],\"pages\":[]}}}",
+      "json_payload": {
+        "resources": {
+          "results": {
+            "products": [],
+            "collections": [],
+            "queries": [],
+            "pages": []
+          }
+        }
+      }
+    }
+  ],
+  "catalog_discovery": {
+    "status": "partial",
+    "confidence": "Medium",
+    "products_sampled": 10,
+    "collections_sampled": 20,
+    "source": "Shopify public JSON endpoints",
+    "collections": [
+      {
+        "title": "\"No Makeup\" Makeup",
+        "handle": "no-makeup-makeup",
+        "products_count": 43
+      },
+      {
+        "title": "$5 Best Sellers",
+        "handle": "5-best-sellers",
+        "products_count": 26
+      },
+      {
+        "title": "$5 Creme Gel Liners",
+        "handle": "5-creme-gel-liners",
+        "products_count": 38
+      },
+      {
+        "title": "$9 9 pans",
+        "handle": "9-9-pans",
+        "products_count": 72
+      },
+      {
+        "title": "9-Pan Palettes",
+        "handle": "9-pan-palettes",
+        "products_count": 57
+      },
+      {
+        "title": "A Shadow of Secrets",
+        "handle": "a-shadow-of-secrets",
+        "products_count": 13
+      },
+      {
+        "title": "Back In Stock",
+        "handle": "back-in-stock",
+        "products_count": 35
+      },
+      {
+        "title": "Back To School",
+        "handle": "back-to-school",
+        "products_count": 47
+      },
+      {
+        "title": "Beige",
+        "handle": "beige",
+        "products_count": 14
+      },
+      {
+        "title": "Best of NLD",
+        "handle": "best-of-nld",
+        "products_count": 79
+      },
+      {
+        "title": "Best of Sitewide",
+        "handle": "best-of-sitewide",
+        "products_count": 146
+      },
+      {
+        "title": "Best Sellers",
+        "handle": "best-sellers",
+        "products_count": 78
+      },
+      {
+        "title": "Birthday",
+        "handle": "birthday",
+        "products_count": 50
+      },
+      {
+        "title": "Black",
+        "handle": "black",
+        "products_count": 41
+      },
+      {
+        "title": "Blue",
+        "handle": "blue",
+        "products_count": 40
+      },
+      {
+        "title": "Blue Jean Baby",
+        "handle": "colour-of-the-month-blue-jean-baby",
+        "products_count": 12
+      },
+      {
+        "title": "Blush",
+        "handle": "blush",
+        "products_count": 40
+      },
+      {
+        "title": "Blush Stix",
+        "handle": "blush-stix",
+        "products_count": 59
+      },
+      {
+        "title": "Body",
+        "handle": "body",
+        "products_count": 32
+      },
+      {
+        "title": "Bronze",
+        "handle": "bronze",
+        "products_count": 41
+      }
+    ],
+    "products": [
+      {
+        "title": "Balm Besties",
+        "handle": "balm-besties",
+        "product_type": "pH Lip Balm"
+      },
+      {
+        "title": "Double Kiss",
+        "handle": "double-kiss-lip-kit-duo",
+        "product_type": "Lip Kits Duo"
+      },
+      {
+        "title": "Rock Sensation",
+        "handle": "rock-sensation-lip-kit",
+        "product_type": "Lippie Pencil & Stix Kit"
+      },
+      {
+        "title": "Malibu Dreaming",
+        "handle": "malibu-dreaming-lip-kit",
+        "product_type": "Lippie Pencil & Stix Kit"
+      },
+      {
+        "title": "Best of Both Worlds",
+        "handle": "best-of-both-worlds-shadow-palette",
+        "product_type": "Shadow Palette"
+      },
+      {
+        "title": "Secret Superstar",
+        "handle": "secret-superstar-lip-gloss-keychain",
+        "product_type": "Lip Gloss"
+      },
+      {
+        "title": "A Girl Like Me",
+        "handle": "a-girl-like-me-miley-collection",
+        "product_type": "Gloss Keychain + Lip Kit"
+      },
+      {
+        "title": "Being Hannah",
+        "handle": "being-hannah-lip-collection",
+        "product_type": "Gloss Keychain + Lip Kit"
+      },
+      {
+        "title": "Just An Ordinary Girl",
+        "handle": "just-an-ordinary-girl-miley-collection",
+        "product_type": "Miley Collection"
+      },
+      {
+        "title": "Star on Stage",
+        "handle": "star-on-stage-collection",
+        "product_type": "Hannah Collection"
+      }
+    ]
+  },
+  "autocomplete_discovery": {
+    "status": "available",
+    "confidence": "Medium",
+    "resources_observed": [
+      "products",
+      "collections",
+      "queries",
+      "pages"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-014-20260715T024800Z",
+  "generated_at": "2026-07-15T02:49:49.455Z",
+  "artifact_count": 34,
+  "groups": {
+    "evidence": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/facets.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/mobile.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/recommendations.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/dashboard.html",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/inspection-report.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/datasets/ds3-search-facet.jsonl",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-mobile-search-gymshark-col-2-in-1-shorts.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-mobile-search-gymshark-col-3-inch.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-mobile-search-gymshark-col-315.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-mobile-search-gymshark-col-4-inch.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-mobile-search-gymshark-col-5-inch.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-search-gymshark-col-2-in-1-shorts.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-search-gymshark-col-3-inch.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-search-gymshark-col-315.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-search-gymshark-col-4-inch.png",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/screenshots/rendered-search-gymshark-col-5-inch.png"
+    ],
+    "raw_http": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/artifact-index.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/cache-metadata.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/dashboard.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/platform-capability-report.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/plugin-dependency-graph.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/plugin-state.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/run-manifest.json",
+      "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/site-profile.json"
+    ]
+  }
+}

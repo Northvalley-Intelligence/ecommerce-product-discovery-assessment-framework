@@ -1,0 +1,58 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-014-20260715T023207Z",
+  "generated_at": "2026-07-15T02:33:52.142Z",
+  "artifact_count": 33,
+  "groups": {
+    "evidence": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/experiments/facets.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/experiments/mobile.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/experiments/recommendations.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/dashboard.html",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/inspection-report.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-mobile-search-allbirds-best-sellers.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-mobile-search-allbirds-black.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-mobile-search-allbirds-gift.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-mobile-search-allbirds-new-arrivals.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-mobile-search-allbirds-sale.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-search-allbirds-best-sellers.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-search-allbirds-black.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-search-allbirds-gift.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-search-allbirds-new-arrivals.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/screenshots/rendered-search-allbirds-sale.png"
+    ],
+    "raw_http": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/artifact-index.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/cache-metadata.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/dashboard.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/platform-capability-report.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/plugin-dependency-graph.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/plugin-state.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/run-manifest.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z/site-profile.json"
+    ]
+  }
+}

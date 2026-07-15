@@ -1,0 +1,190 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "colourpop-curated",
+  "name": "ColourPop Curated Pack",
+  "domain": "colourpop-catalog",
+  "generation": "GEN-014",
+  "curated_from_inspection": "GEN-014-20260715T025309Z",
+  "queries": [
+    {
+      "query_id": "colourpop-col-best-of-sitewide",
+      "query": "best of sitewide",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "best-of-sitewide"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Best of Sitewide\" (146 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-best-of-nld",
+      "query": "best of nld",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "best-of-nld"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Best of NLD\" (79 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-best-sellers",
+      "query": "best sellers",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "best-sellers"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Best Sellers\" (78 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-blush-stix",
+      "query": "blush stix",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "blush-stix"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Blush Stix\" (59 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-9-pan-palettes",
+      "query": "9-pan palettes",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "9-pan-palettes"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"9-Pan Palettes\" (57 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-birthday",
+      "query": "birthday",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "birthday"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Birthday\" (50 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-back-to-school",
+      "query": "back to school",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "back-to-school"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Back To School\" (47 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-col-no-makeup-makeup",
+      "query": "no makeup makeup",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "no-makeup-makeup"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"\"No Makeup\" Makeup\" (43 products) in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-type-ph-lip-balm",
+      "query": "ph lip balm",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-type-lip-kits-duo",
+      "query": "lip kits duo",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-type-lippie-pencil-stix-kit",
+      "query": "lippie pencil & stix kit",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T025309Z."
+      }
+    },
+    {
+      "query_id": "colourpop-type-shadow-palette",
+      "query": "shadow palette",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T025309Z."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "colourpop-adv-best-of-sitewide",
+      "query": "something from best of sitewide",
+      "intent": "conversational_search",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-conversational-expansion"
+      }
+    },
+    {
+      "scenario_id": "colourpop-adv-gift",
+      "query": "gift idea best of sitewide",
+      "intent": "occasion_based",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-occasion-expansion"
+      }
+    }
+  ]
+}

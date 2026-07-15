@@ -1,0 +1,58 @@
+{
+  "schema_version": "artifact-index-v0.1",
+  "inspection_id": "GEN-014-20260715T023811Z",
+  "generated_at": "2026-07-15T02:42:07.365Z",
+  "artifact_count": 33,
+  "groups": {
+    "evidence": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/experiments/facets.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/experiments/mobile.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/experiments/recommendations.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/dashboard.html",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/inspection-report.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-mobile-search-brooklinen-best-sellers.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-mobile-search-brooklinen-black.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-mobile-search-brooklinen-gift.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-mobile-search-brooklinen-new-arrivals.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-mobile-search-brooklinen-sale.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-search-brooklinen-best-sellers.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-search-brooklinen-black.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-search-brooklinen-gift.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-search-brooklinen-new-arrivals.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/screenshots/rendered-search-brooklinen-sale.png"
+    ],
+    "raw_http": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/artifact-index.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/cache-metadata.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/dashboard.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/platform-capability-report.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/plugin-dependency-graph.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/plugin-state.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/run-manifest.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z/site-profile.json"
+    ]
+  }
+}

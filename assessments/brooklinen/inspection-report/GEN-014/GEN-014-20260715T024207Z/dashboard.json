@@ -1,0 +1,158 @@
+{
+  "schema_version": "inspection-dashboard-v0.1",
+  "inspection_id": "GEN-014-20260715T024207Z",
+  "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+  "crawl_summary": {
+    "inspection_timestamp": "2026-07-15T02:42:07.422Z",
+    "target_url": "https://brooklinen.com/",
+    "target_name": "Brooklinen",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "inspection_duration_ms": 215018,
+    "evidence_quality": "partial",
+    "overall_confidence": "Medium"
+  },
+  "operational_summary": {
+    "experiments_completed": 6,
+    "blocked_experiments": 0,
+    "warnings": 3,
+    "evidence_files": 6,
+    "screenshot_count": 10,
+    "downstream_report_readiness": "bounded",
+    "readiness_notes": "Inspection evidence is sufficient for a bounded technical Inspection Report export."
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "FAIL",
+      "confidence": "High",
+      "notes": "Rate limited"
+    },
+    {
+      "component": "Search",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "3/11 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; full browse graph extraction is not in the first implementation slice."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "6/11 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product pages were not captured in this first slice."
+    },
+    {
+      "component": "Facets",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "3/3 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "2/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "5/5 rendered captures completed; 0/5 showed a visible autocomplete dropdown (P008)."
+    }
+  ],
+  "evidence_coverage": {
+    "component_coverage_percent": 80,
+    "plugin_observations": 34,
+    "dataset_rows": 34,
+    "evidence_quality": "partial"
+  },
+  "platform_capability": {
+    "status": "warn",
+    "report_path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/platform-capability-report.json",
+    "failed_capabilities": []
+  },
+  "artifact_explorer": {
+    "evidence": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/facets.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/mobile.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/recommendations.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/dashboard.html",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/inspection-report.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-all-sheets-2-0.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-allow-discounts-no-last-call.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-allow-discounts.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-bath-1.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-mobile-search-brooklinen-col-sheets-bedding.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-all-sheets-2-0.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-allow-discounts-no-last-call.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-allow-discounts.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-bath-1.png",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/screenshots/rendered-search-brooklinen-col-sheets-bedding.png"
+    ],
+    "raw_http": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/artifact-index.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/cache-metadata.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/dashboard.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/platform-capability-report.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/plugin-dependency-graph.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/plugin-state.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/run-manifest.json",
+      "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/site-profile.json"
+    ]
+  }
+}

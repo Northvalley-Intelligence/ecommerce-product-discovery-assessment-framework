@@ -1,0 +1,41 @@
+{
+  "validation_run_id": "VAL-064",
+  "generation": "GEN-017",
+  "phase": "Generation 17 - Shopify Hardening via Real-Store Shakedown",
+  "started_at": "2026-07-15T02:50:00Z",
+  "completed_at": "2026-07-15T03:20:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_for_shakedown_and_first_hardening_fix",
+  "validations_executed": [
+    {
+      "category": "Real-Store Shakedown (5 verticals)",
+      "tool": "scripts/shopify-shakedown.mjs",
+      "result": "pass_with_findings",
+      "evidence": "Allbirds (footwear), Brooklinen (home goods), Gymshark (athletic apparel), Bombas (socks), ColourPop (beauty) each ran the full cycle. Pipeline robust: every stage succeeded or degraded honestly, no crashes. Platform detected Shopify at High confidence on 4/5; Bombas fell to unknown because its public JSON endpoints 404. Six findings recorded (FND-GEN017-001..006)."
+    },
+    {
+      "category": "Curation Quality Hardening (FND-GEN017-001)",
+      "tool": "curate-query-pack.mjs operational filter + taxonomy leaf extraction",
+      "result": "pass",
+      "evidence": "Expanded the operational/back-end collection blocklist (tier, msrp, price, discount(s), protection, package, content, all-products, add-on, version tags, commas) applied to both collection titles/handles and product_type values, plus taxonomy-path leaf extraction. Re-curation from retained evidence (no site contact) cleaned Brooklinen and ColourPop fully and Gymshark's taxonomy paths; two minor edge leaks remain, intentionally not over-tuned on five stores."
+    },
+    {
+      "category": "Suites",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All pass after the curation change, including the dashboard validator's curation attribute-relationship assertion."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Second no-change gate pass",
+      "reason": "GEN-017 remains open; the endpoint-fallback and coverage-guard findings (FND-GEN017-002, -003) are still backlog. Phase exit deferred until the hardening backlog is triaged.",
+      "revisit_when": "After the operator prioritizes the remaining shakedown findings."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    "FND-GEN017-001 curation operational-collection leakage (fixed in this run)"
+  ],
+  "notes": "Shakedown delivered its purpose: it found real weaknesses that boutique-only testing never would. The dominant one (curation quality) is fixed; the rest are triaged as backlog for operator prioritization before GEN-017 phase exit."
+}

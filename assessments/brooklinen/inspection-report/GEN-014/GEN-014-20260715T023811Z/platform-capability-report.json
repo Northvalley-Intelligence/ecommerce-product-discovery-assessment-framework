@@ -1,0 +1,158 @@
+{
+  "schema_version": "platform-capability-report-v0.1",
+  "generation": "GEN-014",
+  "target_id": "brooklinen",
+  "generated_at": "2026-07-15T02:38:11.622Z",
+  "overall_status": "warn",
+  "evidence_quality": "bounded",
+  "capability_counts": {
+    "pass": 2,
+    "warn": 12,
+    "fail": 0
+  },
+  "changed_capabilities": [],
+  "affected_capabilities": [],
+  "checks": [
+    {
+      "capability_id": "P001",
+      "name": "URL Normalization",
+      "validator": "url-parsing",
+      "status": "pass",
+      "capability_status": "implemented",
+      "maturity_level": 1,
+      "affected_by_change": false,
+      "notes": "Capability is implemented for the current evaluator version."
+    },
+    {
+      "capability_id": "P002",
+      "name": "HTTPS Handling",
+      "validator": "https-handling",
+      "status": "pass",
+      "capability_status": "implemented",
+      "maturity_level": 1,
+      "affected_by_change": false,
+      "notes": "Capability is implemented for the current evaluator version."
+    },
+    {
+      "capability_id": "P003",
+      "name": "Redirect Handling",
+      "validator": "redirect-handling",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 1,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P004",
+      "name": "Robots Discovery",
+      "validator": "robots-discovery",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 1,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P005",
+      "name": "Shopify Discovery",
+      "validator": "shopify-discovery",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P006",
+      "name": "Submitted Search Endpoint Inspection",
+      "validator": "submitted-search-endpoint",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P007",
+      "name": "Autocomplete Suggest Endpoint Inspection",
+      "validator": "suggest-endpoint",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P008",
+      "name": "Rendered Page Capture",
+      "validator": "rendered-capture",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 3,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P009",
+      "name": "Block Classification",
+      "validator": "block-classification",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 1,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P010",
+      "name": "Request Pacing and Transient Retry",
+      "validator": "request-pacing",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 1,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P011",
+      "name": "Facet Markup Inspection",
+      "validator": "facet-inspection",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P012",
+      "name": "Recommendations Endpoint Inspection",
+      "validator": "recommendations-endpoint",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P013",
+      "name": "Mobile User-Agent Inspection",
+      "validator": "mobile-ua-inspection",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    },
+    {
+      "capability_id": "P014",
+      "name": "Same-Query Peer Inspection",
+      "validator": "peer-same-query",
+      "status": "warn",
+      "capability_status": "implemented_basic",
+      "maturity_level": 2,
+      "affected_by_change": false,
+      "notes": "Capability is available as a bounded implementation and may need expansion after real inspections."
+    }
+  ],
+  "platform_gap_classification_rule": "Capability failures describe evaluator maturity and must not be emitted as ecommerce findings."
+}

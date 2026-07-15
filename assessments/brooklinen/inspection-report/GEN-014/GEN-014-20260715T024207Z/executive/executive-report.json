@@ -1,0 +1,475 @@
+{
+  "schema_version": "executive-report-v0.1",
+  "report_type": "application_generated_executive_report",
+  "generated_from_inspection": "GEN-014-20260715T024207Z",
+  "inspection_run_dir": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z",
+  "target": {
+    "name": "Brooklinen",
+    "target_id": "brooklinen",
+    "url": "https://brooklinen.com/"
+  },
+  "inspection_context": {
+    "inspected_at": "2026-07-15T02:45:42.440Z",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "overall_confidence": "Medium",
+    "evidence_quality": "partial",
+    "component_coverage_percent": 80
+  },
+  "evidence_basis": "Generated entirely from the referenced Inspection Report and its retained evidence. No new site inspection was performed.",
+  "scorecard": [
+    {
+      "surface": "Search",
+      "plugin_id": "submitted-search",
+      "score": null,
+      "status": "not_observed",
+      "reason": "3/11 submitted search observations completed.",
+      "confidence": "Medium",
+      "observations": 11
+    },
+    {
+      "surface": "Autocomplete",
+      "plugin_id": "autocomplete",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "score": 55,
+      "formula": "typed prefixes receiving at least one suggestion / prefixes attempted",
+      "observations": 11,
+      "details": [
+        {
+          "typed_prefix": "allow discounts",
+          "ok": true,
+          "suggestion_count": 0,
+          "response_ms": 194
+        },
+        {
+          "typed_prefix": "allow discounts no last call",
+          "ok": true,
+          "suggestion_count": 0,
+          "response_ms": 197
+        },
+        {
+          "typed_prefix": "sheets 2 0",
+          "ok": true,
+          "suggestion_count": 0,
+          "response_ms": 274
+        },
+        {
+          "typed_prefix": "bedding",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 159
+        },
+        {
+          "typed_prefix": "bath",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 278
+        },
+        {
+          "typed_prefix": "bed blankets",
+          "ok": true,
+          "suggestion_count": 7,
+          "response_ms": 213
+        },
+        {
+          "typed_prefix": "brooklinen dabito",
+          "ok": true,
+          "suggestion_count": 0,
+          "response_ms": 164
+        },
+        {
+          "typed_prefix": "brooklinen kule",
+          "ok": true,
+          "suggestion_count": 0,
+          "response_ms": 166
+        },
+        {
+          "typed_prefix": "content",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 127
+        },
+        {
+          "typed_prefix": "pillow covers",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 195
+        },
+        {
+          "typed_prefix": "sheets",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 267
+        }
+      ],
+      "unassisted_prefixes": [
+        "allow discounts",
+        "allow discounts no last call",
+        "sheets 2 0",
+        "brooklinen dabito",
+        "brooklinen kule"
+      ]
+    },
+    {
+      "surface": "Filters & Facets",
+      "plugin_id": "facets",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/facets.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://brooklinen.com/collections/bath-1",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 807
+        },
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://brooklinen.com/collections/all-bed-comforters",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 519
+        }
+      ]
+    },
+    {
+      "surface": "Recommendations",
+      "plugin_id": "recommendations",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/recommendations.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 3,
+      "details": [
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://brooklinen.com/recommendations/products.json?product_id=8020615397466&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 578
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://brooklinen.com/recommendations/products.json?product_id=8019762020442&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 582
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://brooklinen.com/recommendations/products.json?product_id=7948680265818&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 919
+        }
+      ]
+    },
+    {
+      "surface": "Mobile Experience",
+      "plugin_id": "mobile",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/mobile.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "mobile-homepage",
+          "endpoint": "https://brooklinen.com/",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 486
+        },
+        {
+          "observation": "mobile-search",
+          "endpoint": "https://brooklinen.com/search?q=allow+discounts",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 719
+        }
+      ]
+    },
+    {
+      "surface": "Rendered Storefront",
+      "plugin_id": "rendered-search",
+      "status": "observed",
+      "confidence": "High",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "score": 0,
+      "formula": "queries whose rendered page showed products / queries captured",
+      "observations": 5,
+      "details": [
+        {
+          "query": "allow discounts",
+          "rendered_ok": true,
+          "visible_product_count": 0,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-brooklinen-col-allow-discounts.png"
+        },
+        {
+          "query": "allow discounts no last call",
+          "rendered_ok": true,
+          "visible_product_count": 0,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-brooklinen-col-allow-discounts-no-last-call.png"
+        },
+        {
+          "query": "sheets 2 0",
+          "rendered_ok": true,
+          "visible_product_count": 0,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-brooklinen-col-all-sheets-2-0.png"
+        },
+        {
+          "query": "bedding",
+          "rendered_ok": true,
+          "visible_product_count": 0,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-brooklinen-col-sheets-bedding.png"
+        },
+        {
+          "query": "bath",
+          "rendered_ok": true,
+          "visible_product_count": 0,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-brooklinen-col-bath-1.png"
+        }
+      ],
+      "dropdown_observed_count": 0,
+      "mobile_capture_count": 5,
+      "queries_without_visible_products": [
+        "allow discounts",
+        "allow discounts no last call",
+        "sheets 2 0",
+        "bedding",
+        "bath"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "type": "issue",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"allow discounts\" produced no suggestions.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers typing this get no assistance and must compose the full query themselves.",
+      "business_impact": "Unassisted journeys have higher effort and higher abandonment risk.",
+      "recommendation": "Review suggestion coverage for \"allow discounts\" and similar prefixes."
+    },
+    {
+      "type": "issue",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"allow discounts no last call\" produced no suggestions.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers typing this get no assistance and must compose the full query themselves.",
+      "business_impact": "Unassisted journeys have higher effort and higher abandonment risk.",
+      "recommendation": "Review suggestion coverage for \"allow discounts no last call\" and similar prefixes."
+    },
+    {
+      "type": "issue",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"sheets 2 0\" produced no suggestions.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers typing this get no assistance and must compose the full query themselves.",
+      "business_impact": "Unassisted journeys have higher effort and higher abandonment risk.",
+      "recommendation": "Review suggestion coverage for \"sheets 2 0\" and similar prefixes."
+    },
+    {
+      "type": "issue",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"brooklinen dabito\" produced no suggestions.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers typing this get no assistance and must compose the full query themselves.",
+      "business_impact": "Unassisted journeys have higher effort and higher abandonment risk.",
+      "recommendation": "Review suggestion coverage for \"brooklinen dabito\" and similar prefixes."
+    },
+    {
+      "type": "issue",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"brooklinen kule\" produced no suggestions.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers typing this get no assistance and must compose the full query themselves.",
+      "business_impact": "Unassisted journeys have higher effort and higher abandonment risk.",
+      "recommendation": "Review suggestion coverage for \"brooklinen kule\" and similar prefixes."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"allow discounts\" loaded but showed no products, even though the search endpoint returns results.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers see an empty or broken results page despite matching inventory existing.",
+      "business_impact": "An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"allow discounts no last call\" loaded but showed no products, even though the search endpoint returns results.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers see an empty or broken results page despite matching inventory existing.",
+      "business_impact": "An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"sheets 2 0\" loaded but showed no products, even though the search endpoint returns results.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers see an empty or broken results page despite matching inventory existing.",
+      "business_impact": "An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"bedding\" loaded but showed no products, even though the search endpoint returns results.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers see an empty or broken results page despite matching inventory existing.",
+      "business_impact": "An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"bath\" loaded but showed no products, even though the search endpoint returns results.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers see an empty or broken results page despite matching inventory existing.",
+      "business_impact": "An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "Medium",
+      "observation": "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions.",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers may not be receiving the type-ahead assistance the endpoint evidence implies.",
+      "business_impact": "Autocomplete claims in this report are endpoint-verified but not confirmed as customer-visible.",
+      "recommendation": "Verify whether the storefront uses a third-party search app or a theme that suppresses the native dropdown."
+    },
+    {
+      "type": "coverage_gap",
+      "surface": "Search",
+      "severity": "Informational",
+      "observation": "Search could not be observed: 3/11 submitted search observations completed.",
+      "evidence": null,
+      "customer_impact": "Unknown — this report makes no claims about this surface.",
+      "business_impact": "Unknown until the surface is inspected.",
+      "recommendation": "Resolve the inspection limitation before drawing conclusions about this surface."
+    }
+  ],
+  "opportunities": [
+    {
+      "surface": "Autocomplete",
+      "opportunity": "Review suggestion coverage for \"allow discounts\" and similar prefixes.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    },
+    {
+      "surface": "Autocomplete",
+      "opportunity": "Review suggestion coverage for \"allow discounts no last call\" and similar prefixes.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    },
+    {
+      "surface": "Autocomplete",
+      "opportunity": "Review suggestion coverage for \"sheets 2 0\" and similar prefixes.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    },
+    {
+      "surface": "Autocomplete",
+      "opportunity": "Review suggestion coverage for \"brooklinen dabito\" and similar prefixes.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    },
+    {
+      "surface": "Autocomplete",
+      "opportunity": "Review suggestion coverage for \"brooklinen kule\" and similar prefixes.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "classification": "Quick Win",
+      "rationale": "Directly observed dead end or failure on a live customer path; fixing it recovers demand that already exists."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "classification": "Quick Win",
+      "rationale": "Directly observed dead end or failure on a live customer path; fixing it recovers demand that already exists."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "classification": "Quick Win",
+      "rationale": "Directly observed dead end or failure on a live customer path; fixing it recovers demand that already exists."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "classification": "Quick Win",
+      "rationale": "Directly observed dead end or failure on a live customer path; fixing it recovers demand that already exists."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "classification": "Quick Win",
+      "rationale": "Directly observed dead end or failure on a live customer path; fixing it recovers demand that already exists."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Verify whether the storefront uses a third-party search app or a theme that suppresses the native dropdown.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    }
+  ],
+  "limitations": [
+    "Rate limited: 429 https://brooklinen.com/",
+    "Rate limited: 429 https://brooklinen.com/robots.txt",
+    "Rate limited: 429 https://brooklinen.com/search?q=allow+discounts",
+    "Rate limited: 429 https://brooklinen.com/search?q=allow+discounts+no+last+call",
+    "Rate limited: 429 https://brooklinen.com/search?q=sheets+2+0",
+    "Rate limited: 429 https://brooklinen.com/search?q=bedding",
+    "Rate limited: 429 https://brooklinen.com/search?q=bath",
+    "Rate limited: 429 https://brooklinen.com/search?q=bed+blankets",
+    "Rate limited: 429 https://brooklinen.com/search?q=brooklinen+dabito",
+    "Rate limited: 429 https://brooklinen.com/search?q=brooklinen+kule",
+    "Visible search input not found: 429 https://brooklinen.com/search?q=allow%20discounts",
+    "Visible search input not found: 429 https://brooklinen.com/search?q=allow%20discounts%20no%20last%20call",
+    "Visible search input not found: 429 https://brooklinen.com/search?q=sheets%202%200",
+    "Visible search input not found: 429 https://brooklinen.com/search?q=bedding",
+    "Visible search input not found: 429 https://brooklinen.com/search?q=bath",
+    "Scores are directional, computed from 23 bounded observations, not a full catalog benchmark.",
+    "Rendered evidence covers desktop search pages, autocomplete dropdowns, and mobile-viewport search pages; rendered browse and product-page capture are not yet included."
+  ]
+}

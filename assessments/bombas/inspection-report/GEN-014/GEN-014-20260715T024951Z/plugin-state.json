@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T024951Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-15T02:49:59.166Z",
+      "ended_at": "2026-07-15T02:50:05.586Z",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "blocked",
+      "started_at": "2026-07-15T02:50:05.589Z",
+      "ended_at": "2026-07-15T02:50:12.002Z",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 5,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "blocked",
+      "started_at": "2026-07-15T02:50:12.006Z",
+      "ended_at": "2026-07-15T02:50:13.259Z",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/facets.jsonl",
+      "observations": 1,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "blocked",
+      "started_at": "2026-07-15T02:50:13.262Z",
+      "ended_at": "2026-07-15T02:50:14.544Z",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/recommendations.jsonl",
+      "observations": 1,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T02:50:14.548Z",
+      "ended_at": "2026-07-15T02:50:18.169Z",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "warn",
+      "started_at": "2026-07-15T02:50:18.174Z",
+      "ended_at": "2026-07-15T02:51:20.448Z",
+      "evidence_file": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "High",
+      "evidence_quality": "rendered"
+    }
+  }
+}

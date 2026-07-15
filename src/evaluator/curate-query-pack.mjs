@@ -77,11 +77,15 @@ export function curateQueryPack(rootDir, runDir) {
   const queries = [];
   const seenQueries = new Set();
 
-  // Promo-machinery collections ("$25 & Under Sale", "40% Off ...") are how
-  // stores merchandise, not how customers search; exclude them from curation.
+  // Promo-machinery and back-end collections are how stores merchandise and
+  // operate, not how customers search; exclude them from curation. The
+  // operational vocabulary here was collected from the GEN-017 shakedown
+  // (Allbirds, Brooklinen, Gymshark leaked "tier 2-4 products", "msrp
+  // products", "allow discounts", "return,package_protection", etc.).
+  const OPERATIONAL = /[%$,]|\b(sale|clearance|off|preview|tier|msrp|price|discount|protection|package|wholesale|backend|internal|hidden|draft|test|content|catalog|feed|product|add[- ]?on|last[- ]?call|gift[- ]?card|final)s?\b|\ball[- ]?products?\b|\b20\d\d\b|\bv?\d+[._]\d+\b/i;
   const rankedCollections = [...collections]
     .filter((collection) => collection.title && collection.handle)
-    .filter((collection) => !/[%$]|\bsale\b|\bclearance\b|\boff\b|\b20\d\d\b|\bpreview\b/i.test(collection.title))
+    .filter((collection) => !OPERATIONAL.test(collection.title) && !OPERATIONAL.test(collection.handle))
     .sort((left, right) => (right.products_count || 0) - (left.products_count || 0));
   const attributes = observedAttributes(products);
   let collectionIndex = 0;
@@ -121,10 +125,25 @@ export function curateQueryPack(rootDir, runDir) {
 
   // Prefer declared product_type; fall back to product-title endings ("...
   // Graphic Sweatshirt" -> "graphic sweatshirt") when the store leaves it blank.
-  const declaredTypes = products.map((product) => String(product.product_type || '').trim().toLowerCase()).filter((type) => type.length >= 3);
+  // Some stores (observed in the GEN-017 shakedown) set product_type to a
+  // taxonomy path ("mens>apparel>ss tops>t_shirt") or an operational label;
+  // take the leaf of any path and drop operational/non-searchable values.
+  const cleanType = (raw) => {
+    const leaf = String(raw || '')
+      .split(/[>/|]/)
+      .pop()
+      .replace(/[_-]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    if (leaf.length < 3 || leaf.length > 30) return null;
+    if (OPERATIONAL.test(leaf)) return null;
+    return leaf;
+  };
+  const declaredTypes = products.map((product) => cleanType(product.product_type)).filter(Boolean);
   const titleEndings = products
     .map((product) => String(product.title || '').replace(/[^a-zA-Z\s]/g, ' ').trim().toLowerCase().split(/\s+/).slice(-2).join(' '))
-    .filter((ending) => ending.length >= 5);
+    .filter((ending) => ending.length >= 5 && !OPERATIONAL.test(ending));
   const productTypes = [...new Set(declaredTypes.length > 0 ? declaredTypes : titleEndings)];
   for (const productType of productTypes.slice(0, MAX_PRODUCT_TYPE_QUERIES)) {
     if (seenQueries.has(productType)) continue;

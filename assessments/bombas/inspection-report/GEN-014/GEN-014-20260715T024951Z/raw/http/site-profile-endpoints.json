@@ -1,0 +1,84 @@
+[
+  {
+    "label": "homepage",
+    "url": "https://bombas.com/",
+    "final_url": "https://bombas.com/",
+    "method": "GET",
+    "status": 200,
+    "ok": true,
+    "duration_ms": 1523,
+    "content_type": "text/html; charset=utf-8",
+    "classification": null,
+    "confidence": "High",
+    "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"https://assets.bombas.com/image/fetch/c_crop,h_359,w_1012/b_rgb:ffffff,c_scale,w_1000/f_auto,q_auto/https://images.ctfassets.net/09hbx69ra4p2/7gNgbaeCWKZ6rX3nRNSM1t/a560759254792e71d5e1f24ecac958f9/1_Tablet.png\"/><link rel=\"preload\" as=\"image\" href=\"https://images.ctfassets.net/09hbx69ra4p2/6ibQ",
+    "json_payload": null
+  },
+  {
+    "label": "robots",
+    "url": "https://bombas.com/robots.txt",
+    "final_url": "https://bombas.com/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "ok": true,
+    "duration_ms": 35,
+    "content_type": "text/plain; charset=utf-8",
+    "classification": null,
+    "confidence": "High",
+    "text_excerpt": "# we use Shopify as our ecommerce platform User-agent: * Disallow: /a/downloads/-/* Disallow: /admin Disallow: /cart Disallow: /orders Disallow: /checkouts/ Disallow: /checkout Disallow: /11195850/checkouts Disallow: /11195850/orders Disallow: /carts Disallow: /account Disallow: *page-status Disallow: /blogs/*+* Disallow: /blogs/*%2B* Disallow: /blogs/*%2b* Disallow: /*/blogs/*+* Disallow: /*/blogs/*%2B* Disallow: /*/blogs/*%2b* Disallow: /*?*oseid=* Disallow: /*preview_theme_id* Disallow: /*pre",
+    "json_payload": null
+  },
+  {
+    "label": "products_json",
+    "url": "https://bombas.com/products.json?limit=10",
+    "final_url": "https://bombas.com/products.json?limit=10",
+    "method": "GET",
+    "status": 404,
+    "ok": false,
+    "duration_ms": 64,
+    "content_type": "text/html; charset=utf-8",
+    "classification": {
+      "category": "infrastructure",
+      "code": "http_error",
+      "label": "HTTP error"
+    },
+    "confidence": "High",
+    "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+    "json_payload": null
+  },
+  {
+    "label": "collections_json",
+    "url": "https://bombas.com/collections.json?limit=20",
+    "final_url": "https://bombas.com/collections.json?limit=20",
+    "method": "GET",
+    "status": 404,
+    "ok": false,
+    "duration_ms": 93,
+    "content_type": "text/html; charset=utf-8",
+    "classification": {
+      "category": "infrastructure",
+      "code": "http_error",
+      "label": "HTTP error"
+    },
+    "confidence": "High",
+    "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+    "json_payload": null
+  },
+  {
+    "label": "search_suggest_json",
+    "url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+    "final_url": "https://bombas.com/search/suggest.json?q=wallet&resources%5Btype%5D=product%2Ccollection%2Cquery%2Cpage&resources%5Blimit%5D=5",
+    "method": "GET",
+    "status": 404,
+    "ok": false,
+    "duration_ms": 69,
+    "content_type": "text/html; charset=utf-8",
+    "classification": {
+      "category": "infrastructure",
+      "code": "http_error",
+      "label": "HTTP error"
+    },
+    "confidence": "High",
+    "text_excerpt": "<!DOCTYPE html><html lang=\"en\" data-bombas-site-theme=\"2025-rebrand\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"//images.ctfassets.net/09hbx69ra4p2/6qV0kgBKml5HuLDgYs3LI/cdb805a252c1e34bdeff1ae30baf7069/404.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0rnho8pb2nnky.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/0~nutl4l8nhlp.js\"/><scr",
+    "json_payload": null
+  }
+]

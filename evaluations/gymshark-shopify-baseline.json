@@ -1,0 +1,45 @@
+{
+  "schema_version": "evaluation-manifest-v0.1",
+  "evaluation_id": "gymshark-shopify-baseline",
+  "evaluation_type": "baseline_inspection",
+  "generation": "GEN-014",
+  "workspace": "workspaces/retail-search-research.json",
+  "target": "targets/gymshark.json",
+  "site_profile": {
+    "mode": "refresh",
+    "path": "site-profiles/gymshark.com.json",
+    "max_age_hours": 168
+  },
+  "query_packs": [
+    "query-packs/gymshark-curated.json"
+  ],
+  "surfaces": [
+    "submitted_search",
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile",
+    "rendered_search"
+  ],
+  "plugins": [
+    "submitted-search",
+    "autocomplete",
+    "facets",
+    "recommendations",
+    "mobile",
+    "rendered-search"
+  ],
+  "competitors": [],
+  "rendering": {
+    "desktop": true,
+    "mobile": true,
+    "screenshots": true
+  },
+  "platform_validation": {
+    "required": true,
+    "minimum_maturity_level": 2
+  },
+  "output": {
+    "base_dir": "assessments/gymshark/inspection-report/GEN-014"
+  }
+}

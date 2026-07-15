@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-07-13",
-  "current_generation": "GEN-013",
+  "updated_on": "2026-07-15",
+  "current_generation": "GEN-017",
   "findings": [
     {
       "finding_id": "FND-GEN013-001",
@@ -493,6 +493,60 @@
       "last_seen_generation": "GEN-011",
       "status": "resolved",
       "resolution_notes": "Reviewed pages 1-3 as executive slides. Page 3 now includes a before/after Customer Effort Reduction Model focused on reducing customer effort early in product finding, a Business Value Lens, a renamed 90-Day Opportunity Roadmap, and an Executive Decision Focus strip. The change uses visual communication rather than adding paragraphs, keeps High Country as the hero, and leaves technical evidence in the reference appendix."
+    },
+    {
+      "finding_id": "FND-GEN017-001",
+      "source_validator": "GEN-017 Shopify shakedown (5 real stores)",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "summary": "Catalog curation leaked operational/back-end collections and product_type values as customer queries on larger stores (Allbirds tier/msrp, Brooklinen allow-discounts/content, Gymshark taxonomy-path product_types), cascading into false report issues and a coverage regression.",
+      "affected_workflow_or_component": "curate-query-pack.mjs",
+      "status": "fixed_gen017_hardened_operational_filter_and_taxonomy_leaf_extraction"
+    },
+    {
+      "finding_id": "FND-GEN017-002",
+      "source_validator": "GEN-017 Shopify shakedown (5 real stores)",
+      "severity": "Medium",
+      "category": "Platform Capability",
+      "summary": "Bombas is Shopify but returns 404 on /products.json, /collections.json, and /suggest.json (public JSON endpoints disabled), so platform detection fell to unknown and catalog discovery/curation were unavailable. The Shopify adapter assumes public JSON endpoints on the primary domain.",
+      "affected_workflow_or_component": "shopify.mjs adapter / site discovery",
+      "status": "open_backlog_needs_endpoint_fallback_or_clearer_report_framing"
+    },
+    {
+      "finding_id": "FND-GEN017-003",
+      "source_validator": "GEN-017 Shopify shakedown (5 real stores)",
+      "severity": "Medium",
+      "category": "Evidence Quality",
+      "summary": "Curated queries can regress coverage versus the starter run (Allbirds 90%->70%) when curated queries perform worse; the app has no guard to prevent a worse curated pack from lowering a store's standing.",
+      "affected_workflow_or_component": "curate-query-pack.mjs / run comparison",
+      "status": "open_backlog_consider_keeping_better_of_starter_vs_curated"
+    },
+    {
+      "finding_id": "FND-GEN017-004",
+      "source_validator": "GEN-017 Shopify shakedown (5 real stores)",
+      "severity": "Medium",
+      "category": "Evidence Quality",
+      "summary": "Report emits customer-facing search/autocomplete issues for curated queries without weighting query confidence; garbage queries produced false zero-result and no-suggestion findings. Largely mitigated by FND-GEN017-001 but a query-confidence signal would harden it.",
+      "affected_workflow_or_component": "generate-executive-report.mjs",
+      "status": "partially_mitigated_by_fnd_gen017_001"
+    },
+    {
+      "finding_id": "FND-GEN017-005",
+      "source_validator": "GEN-017 Shopify shakedown (5 real stores)",
+      "severity": "Low",
+      "category": "Evidence Quality",
+      "summary": "DS3 attribute observation is apparel-lexicon-biased; home-goods (Brooklinen) and beauty (ColourPop) product titles yielded zero attribute rows. Facet-markup-derived attributes would generalize DS3 across verticals.",
+      "affected_workflow_or_component": "curate-query-pack.mjs observedAttributes",
+      "status": "open_backlog_low_priority"
+    },
+    {
+      "finding_id": "FND-GEN017-006",
+      "source_validator": "GEN-017 Shopify shakedown (5 real stores)",
+      "severity": "Positive",
+      "category": "Functional Validation",
+      "summary": "Pipeline robustness confirmed: across five real stores in five verticals, every cycle stage either succeeded or degraded honestly with no crashes; the one aborted stage (Bombas curation) failed with a clear, correct reason.",
+      "affected_workflow_or_component": "end-to-end cycle",
+      "status": "confirmed"
     }
   ],
   "lifecycle_states": [

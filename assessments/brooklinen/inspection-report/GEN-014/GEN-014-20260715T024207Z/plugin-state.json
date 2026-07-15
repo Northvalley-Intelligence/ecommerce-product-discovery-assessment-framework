@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T024207Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "warn",
+      "started_at": "2026-07-15T02:42:07.428Z",
+      "ended_at": "2026-07-15T02:44:14.575Z",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 11,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T02:44:14.580Z",
+      "ended_at": "2026-07-15T02:44:30.041Z",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 11,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-15T02:44:30.044Z",
+      "ended_at": "2026-07-15T02:44:35.123Z",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T02:44:35.128Z",
+      "ended_at": "2026-07-15T02:44:42.157Z",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T02:44:42.160Z",
+      "ended_at": "2026-07-15T02:44:45.790Z",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "warn",
+      "started_at": "2026-07-15T02:44:45.796Z",
+      "ended_at": "2026-07-15T02:45:42.436Z",
+      "evidence_file": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "High",
+      "evidence_quality": "rendered"
+    }
+  }
+}

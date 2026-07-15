@@ -1,0 +1,150 @@
+{
+  "schema_version": "query-pack-v0.1",
+  "query_pack_id": "allbirds-curated",
+  "name": "Allbirds Curated Pack",
+  "domain": "allbirds-catalog",
+  "generation": "GEN-014",
+  "curated_from_inspection": "GEN-014-20260715T023352Z",
+  "queries": [
+    {
+      "query_id": "allbirds-col-all-shoes-mens-and-womens",
+      "query": "shoes - men's and women's",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "all-shoes-mens-and-womens"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "all-shoes-mens-and-womens",
+          "attribute": "blue"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "all-shoes-mens-and-womens",
+          "attribute": "white"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"All Shoes - Men's and Women's\" (3056 products) in inspection GEN-014-20260715T023352Z. Attribute relationships (blue, white) observed in sampled product titles."
+      }
+    },
+    {
+      "query_id": "allbirds-col-all-shoes-search",
+      "query": "shoes - search",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "all-shoes-search"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "all-shoes-search",
+          "attribute": "blue"
+        },
+        {
+          "type": "attribute",
+          "browse_node": "all-shoes-search",
+          "attribute": "white"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"All Shoes - Search\" (1322 products) in inspection GEN-014-20260715T023352Z. Attribute relationships (blue, white) observed in sampled product titles."
+      }
+    },
+    {
+      "query_id": "allbirds-col-all-apparel-excluding-face-masks",
+      "query": "apparel - excluding face masks",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "all-apparel-excluding-face-masks"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"All Apparel - Excluding Face Masks\" (529 products) in inspection GEN-014-20260715T023352Z."
+      }
+    },
+    {
+      "query_id": "allbirds-col-all-underwear",
+      "query": "underwear",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "all-underwear"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"All Underwear\" (102 products) in inspection GEN-014-20260715T023352Z."
+      }
+    },
+    {
+      "query_id": "allbirds-col-womens-accessories",
+      "query": "accessories",
+      "intent": "category",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "womens-accessories"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed collection \"Accessories\" (28 products) in inspection GEN-014-20260715T023352Z."
+      }
+    },
+    {
+      "query_id": "allbirds-type-shoes",
+      "query": "shoes",
+      "intent": "product_type",
+      "expected_relationships": [
+        {
+          "type": "collection",
+          "browse_node": "all-shoes-mens-and-womens"
+        }
+      ],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T023352Z."
+      }
+    },
+    {
+      "query_id": "allbirds-type-socks",
+      "query": "socks",
+      "intent": "product_type",
+      "expected_relationships": [],
+      "provenance": {
+        "source": "catalog-curation",
+        "reason": "Derived from observed product_type on sampled products in inspection GEN-014-20260715T023352Z."
+      }
+    }
+  ],
+  "advanced_scenarios": [
+    {
+      "scenario_id": "allbirds-adv-all-shoes-mens-and-womens",
+      "query": "something from shoes - men's and women's",
+      "intent": "conversational_search",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-conversational-expansion"
+      }
+    },
+    {
+      "scenario_id": "allbirds-adv-gift",
+      "query": "gift idea shoes - men's and women's",
+      "intent": "occasion_based",
+      "provenance": {
+        "source": "catalog-curation",
+        "rule": "top-collection-occasion-expansion"
+      }
+    }
+  ]
+}

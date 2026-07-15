@@ -1,0 +1,416 @@
+{
+  "schema_version": "executive-report-v0.1",
+  "report_type": "application_generated_executive_report",
+  "generated_from_inspection": "GEN-014-20260715T025309Z",
+  "inspection_run_dir": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z",
+  "target": {
+    "name": "ColourPop",
+    "target_id": "colourpop",
+    "url": "https://colourpop.com/"
+  },
+  "inspection_context": {
+    "inspected_at": "2026-07-15T02:55:13.861Z",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "overall_confidence": "Medium",
+    "evidence_quality": "partial",
+    "component_coverage_percent": 90
+  },
+  "evidence_basis": "Generated entirely from the referenced Inspection Report and its retained evidence. No new site inspection was performed.",
+  "scorecard": [
+    {
+      "surface": "Search",
+      "plugin_id": "submitted-search",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/submitted-search.jsonl",
+      "score": 92,
+      "formula": "queries returning at least one result / queries attempted",
+      "observations": 12,
+      "details": [
+        {
+          "query": "best of sitewide",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 2,
+          "response_ms": 942
+        },
+        {
+          "query": "best of nld",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 5,
+          "response_ms": 984
+        },
+        {
+          "query": "best sellers",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 159,
+          "response_ms": 855
+        },
+        {
+          "query": "blush stix",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 141,
+          "response_ms": 1149
+        },
+        {
+          "query": "9-pan palettes",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 60,
+          "response_ms": 1237
+        },
+        {
+          "query": "birthday",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 4,
+          "response_ms": 878
+        },
+        {
+          "query": "back to school",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 0,
+          "response_ms": 1021
+        },
+        {
+          "query": "no makeup makeup",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 727,
+          "response_ms": 795
+        },
+        {
+          "query": "ph lip balm",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 354,
+          "response_ms": 885
+        },
+        {
+          "query": "lip kits duo",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 218,
+          "response_ms": 730
+        },
+        {
+          "query": "lippie pencil & stix kit",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 160,
+          "response_ms": 826
+        },
+        {
+          "query": "shadow palette",
+          "ok": true,
+          "http_status": 200,
+          "result_count_hint": 255,
+          "response_ms": 819
+        }
+      ],
+      "zero_result_queries": [
+        "back to school"
+      ],
+      "failed_queries": []
+    },
+    {
+      "surface": "Autocomplete",
+      "plugin_id": "autocomplete",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/autocomplete.jsonl",
+      "score": 100,
+      "formula": "typed prefixes receiving at least one suggestion / prefixes attempted",
+      "observations": 12,
+      "details": [
+        {
+          "typed_prefix": "best of sitewide",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 217
+        },
+        {
+          "typed_prefix": "best of nld",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 324
+        },
+        {
+          "typed_prefix": "best sellers",
+          "ok": true,
+          "suggestion_count": 3,
+          "response_ms": 185
+        },
+        {
+          "typed_prefix": "blush stix",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 266
+        },
+        {
+          "typed_prefix": "9-pan palettes",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 187
+        },
+        {
+          "typed_prefix": "birthday",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 210
+        },
+        {
+          "typed_prefix": "back to school",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 281
+        },
+        {
+          "typed_prefix": "no makeup makeup",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 302
+        },
+        {
+          "typed_prefix": "ph lip balm",
+          "ok": true,
+          "suggestion_count": 7,
+          "response_ms": 297
+        },
+        {
+          "typed_prefix": "lip kits duo",
+          "ok": true,
+          "suggestion_count": 1,
+          "response_ms": 249
+        },
+        {
+          "typed_prefix": "lippie pencil & stix kit",
+          "ok": true,
+          "suggestion_count": 2,
+          "response_ms": 280
+        },
+        {
+          "typed_prefix": "shadow palette",
+          "ok": true,
+          "suggestion_count": 8,
+          "response_ms": 417
+        }
+      ],
+      "unassisted_prefixes": []
+    },
+    {
+      "surface": "Filters & Facets",
+      "plugin_id": "facets",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/facets.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://colourpop.com/collections/no-makeup-makeup",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 965
+        },
+        {
+          "observation": "collection_page_facet_markup",
+          "endpoint": "https://colourpop.com/collections/5-best-sellers",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 156
+        }
+      ]
+    },
+    {
+      "surface": "Recommendations",
+      "plugin_id": "recommendations",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/recommendations.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 3,
+      "details": [
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://colourpop.com/recommendations/products.json?product_id=7596888358994&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 567
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://colourpop.com/recommendations/products.json?product_id=7587818045522&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 94
+        },
+        {
+          "observation": "product_recommendations_endpoint",
+          "endpoint": "https://colourpop.com/recommendations/products.json?product_id=7587815718994&limit=8",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 122
+        }
+      ]
+    },
+    {
+      "surface": "Mobile Experience",
+      "plugin_id": "mobile",
+      "status": "observed",
+      "confidence": "Medium",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/mobile.jsonl",
+      "score": 100,
+      "formula": "successful probes / probes attempted",
+      "observations": 2,
+      "details": [
+        {
+          "observation": "mobile-homepage",
+          "endpoint": "https://colourpop.com/",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 269
+        },
+        {
+          "observation": "mobile-search",
+          "endpoint": "https://colourpop.com/search?q=best+of+sitewide",
+          "ok": true,
+          "http_status": 200,
+          "response_ms": 993
+        }
+      ]
+    },
+    {
+      "surface": "Rendered Storefront",
+      "plugin_id": "rendered-search",
+      "status": "observed",
+      "confidence": "High",
+      "evidence_file": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/rendered-search.jsonl",
+      "score": 100,
+      "formula": "queries whose rendered page showed products / queries captured",
+      "observations": 5,
+      "details": [
+        {
+          "query": "best of sitewide",
+          "rendered_ok": true,
+          "visible_product_count": 34,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-colourpop-col-best-of-sitewide.png"
+        },
+        {
+          "query": "best of nld",
+          "rendered_ok": true,
+          "visible_product_count": 34,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-colourpop-col-best-of-nld.png"
+        },
+        {
+          "query": "best sellers",
+          "rendered_ok": true,
+          "visible_product_count": 36,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-colourpop-col-best-sellers.png"
+        },
+        {
+          "query": "blush stix",
+          "rendered_ok": true,
+          "visible_product_count": 52,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-colourpop-col-blush-stix.png"
+        },
+        {
+          "query": "9-pan palettes",
+          "rendered_ok": true,
+          "visible_product_count": 50,
+          "visible_suggestion_count": 0,
+          "screenshot": "rendered-search-colourpop-col-9-pan-palettes.png"
+        }
+      ],
+      "dropdown_observed_count": 0,
+      "mobile_capture_count": 5,
+      "queries_without_visible_products": []
+    }
+  ],
+  "findings": [
+    {
+      "type": "issue",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"back to school\" returned zero results.",
+      "evidence": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/submitted-search.jsonl",
+      "customer_impact": "Customers using this wording hit a dead end and must guess new terms or leave.",
+      "business_impact": "Zero-result searches are directly abandoned demand.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"back to school\", and design the zero-result page to offer recovery paths."
+    },
+    {
+      "type": "strength",
+      "surface": "Autocomplete",
+      "severity": "Positive",
+      "observation": "Every typed prefix received suggestions (12 of 12).",
+      "evidence": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/autocomplete.jsonl",
+      "customer_impact": "Customers get guidance before submitting a search, reducing typing effort and misses.",
+      "business_impact": "Assisted queries convert better than unassisted ones.",
+      "recommendation": "Verify the visible dropdown matches the API suggestions once rendered capture (P008) lands."
+    },
+    {
+      "type": "strength",
+      "surface": "Rendered Storefront",
+      "severity": "Positive",
+      "observation": "Every rendered search page showed products to the customer (5 of 5), verified in a real browser with screenshots retained.",
+      "evidence": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "What the search API returns is actually reaching the customer-facing page.",
+      "business_impact": "Endpoint-level results are confirmed as customer-visible, strengthening every search claim in this report.",
+      "recommendation": "Keep rendered capture in the regression loop so theme or search-app changes that break the visible experience are caught."
+    },
+    {
+      "type": "issue",
+      "surface": "Rendered Storefront",
+      "severity": "Medium",
+      "observation": "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions.",
+      "evidence": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/evidence/experiments/rendered-search.jsonl",
+      "customer_impact": "Customers may not be receiving the type-ahead assistance the endpoint evidence implies.",
+      "business_impact": "Autocomplete claims in this report are endpoint-verified but not confirmed as customer-visible.",
+      "recommendation": "Verify whether the storefront uses a third-party search app or a theme that suppresses the native dropdown."
+    }
+  ],
+  "opportunities": [
+    {
+      "surface": "Search",
+      "opportunity": "Check catalog coverage, synonyms, and normalization for \"back to school\", and design the zero-result page to offer recovery paths.",
+      "classification": "Quick Win",
+      "rationale": "Directly observed dead end or failure on a live customer path; fixing it recovers demand that already exists."
+    },
+    {
+      "surface": "Rendered Storefront",
+      "opportunity": "Verify whether the storefront uses a third-party search app or a theme that suppresses the native dropdown.",
+      "classification": "Strategic Improvement",
+      "rationale": "Observed friction that compounds across sessions; worth scheduling rather than firefighting."
+    }
+  ],
+  "limitations": [
+    "Visible search input not found: 200 https://colourpop.com/search?q=best%20of%20sitewide",
+    "Visible search input not found: 200 https://colourpop.com/search?q=best%20of%20nld",
+    "Visible search input not found: 200 https://colourpop.com/search?q=best%20sellers",
+    "Visible search input not found: 200 https://colourpop.com/search?q=blush%20stix",
+    "Visible search input not found: 200 https://colourpop.com/search?q=9-pan%20palettes",
+    "Scores are directional, computed from 36 bounded observations, not a full catalog benchmark.",
+    "Rendered evidence covers desktop search pages, autocomplete dropdowns, and mobile-viewport search pages; rendered browse and product-page capture are not yet included."
+  ]
+}

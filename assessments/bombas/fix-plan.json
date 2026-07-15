@@ -1,0 +1,110 @@
+{
+  "schema_version": "fix-plan-v0.1",
+  "target_id": "bombas",
+  "target_name": "Bombas",
+  "updated_at": "2026-07-15T02:51:22.282Z",
+  "updated_from_inspection": "GEN-014-20260715T024951Z",
+  "open_items": 5,
+  "verified_items": 0,
+  "items": [
+    {
+      "fingerprint": "zero_result_query:new arrivals",
+      "type": "zero_result_query",
+      "query": "new arrivals",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"new arrivals\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"new arrivals\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"new arrivals\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024951Z",
+      "last_observed_in": "GEN-014-20260715T024951Z",
+      "evidence": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:best sellers",
+      "type": "zero_result_query",
+      "query": "best sellers",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"best sellers\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"best sellers\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"best sellers\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024951Z",
+      "last_observed_in": "GEN-014-20260715T024951Z",
+      "evidence": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:sale",
+      "type": "zero_result_query",
+      "query": "sale",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"sale\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"sale\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"sale\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024951Z",
+      "last_observed_in": "GEN-014-20260715T024951Z",
+      "evidence": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:gift",
+      "type": "zero_result_query",
+      "query": "gift",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"gift\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"gift\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"gift\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024951Z",
+      "last_observed_in": "GEN-014-20260715T024951Z",
+      "evidence": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:black",
+      "type": "zero_result_query",
+      "query": "black",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"black\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"black\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"black\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024951Z",
+      "last_observed_in": "GEN-014-20260715T024951Z",
+      "evidence": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    }
+  ],
+  "unmappable_findings": [
+    "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions."
+  ],
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
+}

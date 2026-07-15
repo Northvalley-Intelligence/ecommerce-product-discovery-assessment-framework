@@ -1,0 +1,205 @@
+{
+  "schema_version": "fix-plan-v0.1",
+  "target_id": "brooklinen",
+  "target_name": "Brooklinen",
+  "updated_at": "2026-07-15T02:45:44.332Z",
+  "updated_from_inspection": "GEN-014-20260715T024207Z",
+  "open_items": 10,
+  "verified_items": 0,
+  "items": [
+    {
+      "fingerprint": "unassisted_prefix:allow discounts",
+      "type": "unassisted_prefix",
+      "query": "allow discounts",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"allow discounts\" produced no suggestions.",
+      "recommendation": "Review suggestion coverage for \"allow discounts\" and similar prefixes.",
+      "implementation_guidance": "Shopify: check predictive search settings (or the search app’s suggestion index) for this prefix; ensure suggestions are enabled for products, collections, and queries.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the unassisted prefix condition no longer holds for \"allow discounts\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "unassisted_prefix:allow discounts no last call",
+      "type": "unassisted_prefix",
+      "query": "allow discounts no last call",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"allow discounts no last call\" produced no suggestions.",
+      "recommendation": "Review suggestion coverage for \"allow discounts no last call\" and similar prefixes.",
+      "implementation_guidance": "Shopify: check predictive search settings (or the search app’s suggestion index) for this prefix; ensure suggestions are enabled for products, collections, and queries.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the unassisted prefix condition no longer holds for \"allow discounts no last call\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "unassisted_prefix:sheets 2 0",
+      "type": "unassisted_prefix",
+      "query": "sheets 2 0",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"sheets 2 0\" produced no suggestions.",
+      "recommendation": "Review suggestion coverage for \"sheets 2 0\" and similar prefixes.",
+      "implementation_guidance": "Shopify: check predictive search settings (or the search app’s suggestion index) for this prefix; ensure suggestions are enabled for products, collections, and queries.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the unassisted prefix condition no longer holds for \"sheets 2 0\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "unassisted_prefix:brooklinen dabito",
+      "type": "unassisted_prefix",
+      "query": "brooklinen dabito",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"brooklinen dabito\" produced no suggestions.",
+      "recommendation": "Review suggestion coverage for \"brooklinen dabito\" and similar prefixes.",
+      "implementation_guidance": "Shopify: check predictive search settings (or the search app’s suggestion index) for this prefix; ensure suggestions are enabled for products, collections, and queries.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the unassisted prefix condition no longer holds for \"brooklinen dabito\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "unassisted_prefix:brooklinen kule",
+      "type": "unassisted_prefix",
+      "query": "brooklinen kule",
+      "surface": "Autocomplete",
+      "severity": "Medium",
+      "observation": "Typing \"brooklinen kule\" produced no suggestions.",
+      "recommendation": "Review suggestion coverage for \"brooklinen kule\" and similar prefixes.",
+      "implementation_guidance": "Shopify: check predictive search settings (or the search app’s suggestion index) for this prefix; ensure suggestions are enabled for products, collections, and queries.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the unassisted prefix condition no longer holds for \"brooklinen kule\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/autocomplete.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "rendered_no_products:allow discounts",
+      "type": "rendered_no_products",
+      "query": "allow discounts",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"allow discounts\" loaded but showed no products, even though the search endpoint returns results.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "implementation_guidance": "Shopify: the search endpoint returns results but the rendered page shows no product tiles. Check the theme search template and any search app’s frontend rendering for this query pattern.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the rendered no products condition no longer holds for \"allow discounts\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "rendered_no_products:allow discounts no last call",
+      "type": "rendered_no_products",
+      "query": "allow discounts no last call",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"allow discounts no last call\" loaded but showed no products, even though the search endpoint returns results.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "implementation_guidance": "Shopify: the search endpoint returns results but the rendered page shows no product tiles. Check the theme search template and any search app’s frontend rendering for this query pattern.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the rendered no products condition no longer holds for \"allow discounts no last call\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "rendered_no_products:sheets 2 0",
+      "type": "rendered_no_products",
+      "query": "sheets 2 0",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"sheets 2 0\" loaded but showed no products, even though the search endpoint returns results.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "implementation_guidance": "Shopify: the search endpoint returns results but the rendered page shows no product tiles. Check the theme search template and any search app’s frontend rendering for this query pattern.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the rendered no products condition no longer holds for \"sheets 2 0\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "rendered_no_products:bedding",
+      "type": "rendered_no_products",
+      "query": "bedding",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"bedding\" loaded but showed no products, even though the search endpoint returns results.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "implementation_guidance": "Shopify: the search endpoint returns results but the rendered page shows no product tiles. Check the theme search template and any search app’s frontend rendering for this query pattern.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the rendered no products condition no longer holds for \"bedding\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "rendered_no_products:bath",
+      "type": "rendered_no_products",
+      "query": "bath",
+      "surface": "Rendered Storefront",
+      "severity": "High",
+      "observation": "The rendered page for \"bath\" loaded but showed no products, even though the search endpoint returns results.",
+      "recommendation": "Inspect the storefront theme or search app rendering for this query pattern.",
+      "implementation_guidance": "Shopify: the search endpoint returns results but the rendered page shows no product tiles. Check the theme search template and any search app’s frontend rendering for this query pattern.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the rendered no products condition no longer holds for \"bath\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024207Z",
+      "last_observed_in": "GEN-014-20260715T024207Z",
+      "evidence": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/evidence/experiments/rendered-search.jsonl",
+      "history": []
+    }
+  ],
+  "unmappable_findings": [
+    "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions."
+  ],
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
+}

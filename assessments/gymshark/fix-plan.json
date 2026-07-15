@@ -1,0 +1,205 @@
+{
+  "schema_version": "fix-plan-v0.1",
+  "target_id": "gymshark",
+  "target_name": "Gymshark",
+  "updated_at": "2026-07-15T02:49:51.300Z",
+  "updated_from_inspection": "GEN-014-20260715T024800Z",
+  "open_items": 10,
+  "verified_items": 0,
+  "items": [
+    {
+      "fingerprint": "zero_result_query:5 inch shorts",
+      "type": "zero_result_query",
+      "query": "5 inch shorts",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"5 inch shorts\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"5 inch shorts\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"5 inch shorts\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:4 inch",
+      "type": "zero_result_query",
+      "query": "4 inch",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"4 inch\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"4 inch\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"4 inch\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:3 inch",
+      "type": "zero_result_query",
+      "query": "3 inch",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"3 inch\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"3 inch\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"3 inch\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:2 in 1 shorts",
+      "type": "zero_result_query",
+      "query": "2 in 1 shorts",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"2 in 1 shorts\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"2 in 1 shorts\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"2 in 1 shorts\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:315",
+      "type": "zero_result_query",
+      "query": "315",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"315\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"315\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"315\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:2 inch",
+      "type": "zero_result_query",
+      "query": "2 inch",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"2 inch\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"2 inch\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"2 inch\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:womens ss tops",
+      "type": "zero_result_query",
+      "query": "womens ss tops",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"womens ss tops\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"womens ss tops\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"womens ss tops\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:womens ls tops",
+      "type": "zero_result_query",
+      "query": "womens ls tops",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"womens ls tops\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"womens ls tops\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"womens ls tops\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:mens>apparel>pullovers>hoodie",
+      "type": "zero_result_query",
+      "query": "mens>apparel>pullovers>hoodie",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"mens>apparel>pullovers>hoodie\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"mens>apparel>pullovers>hoodie\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"mens>apparel>pullovers>hoodie\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    },
+    {
+      "fingerprint": "zero_result_query:mens>apparel>ss tops>t_shirt",
+      "type": "zero_result_query",
+      "query": "mens>apparel>ss tops>t_shirt",
+      "surface": "Search",
+      "severity": "High",
+      "observation": "The query \"mens>apparel>ss tops>t_shirt\" returned zero results.",
+      "recommendation": "Check catalog coverage, synonyms, and normalization for \"mens>apparel>ss tops>t_shirt\", and design the zero-result page to offer recovery paths.",
+      "implementation_guidance": "Shopify: check whether matching products exist and are published to the Online Store channel; add the phrase to product titles/tags or configure a synonym in the storefront search app; design the zero-result page to suggest alternatives.",
+      "verification": {
+        "method": "automatic_reinspection",
+        "criterion": "Re-inspect and confirm the zero result query condition no longer holds for \"mens>apparel>ss tops>t_shirt\"."
+      },
+      "status": "open",
+      "first_observed_in": "GEN-014-20260715T024800Z",
+      "last_observed_in": "GEN-014-20260715T024800Z",
+      "evidence": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/evidence/experiments/submitted-search.jsonl",
+      "history": []
+    }
+  ],
+  "unmappable_findings": [
+    "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions."
+  ],
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
+}

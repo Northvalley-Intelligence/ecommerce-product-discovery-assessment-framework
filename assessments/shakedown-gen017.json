@@ -1,0 +1,489 @@
+{
+  "schema_version": "shakedown-summary-v0.1",
+  "generation": "GEN-017",
+  "ran_at": "2026-07-15T02:55:15.709Z",
+  "stores": [
+    {
+      "store": "https://www.allbirds.com",
+      "stages": {
+        "onboard": {
+          "ok": true,
+          "created": true,
+          "target_id": "allbirds",
+          "name": "Allbirds",
+          "domain": "allbirds.com",
+          "target": "targets/allbirds.json",
+          "query_pack": "query-packs/allbirds-starter.json",
+          "evaluation": "evaluations/allbirds-shopify-baseline.json"
+        },
+        "inspect_starter": {
+          "ok": true,
+          "run_dir": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023207Z",
+          "inspection_id": "GEN-014-20260715T023207Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 90,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 5,
+          "datasets": {
+            "DS1": 5,
+            "DS2": 7,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "curate": {
+          "ok": true,
+          "curated_from_inspection": "GEN-014-20260715T023207Z",
+          "query_pack": "query-packs/allbirds-curated.json",
+          "queries": 11,
+          "collection_queries": 8,
+          "product_type_queries": 3,
+          "advanced_scenarios": 2,
+          "evaluation": "evaluations/allbirds-shopify-baseline.json"
+        },
+        "inspect_curated": {
+          "ok": true,
+          "run_dir": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023352Z",
+          "inspection_id": "GEN-014-20260715T023352Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 70,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 15,
+          "datasets": {
+            "DS1": 11,
+            "DS2": 17,
+            "DS3": 4,
+            "DS4": 2
+          }
+        },
+        "executive_report": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T023352Z",
+          "json_path": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023352Z/executive/executive-report.json",
+          "md_path": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023352Z/executive/executive-report.md",
+          "surfaces_scored": 3,
+          "strengths": 2,
+          "issues": 1,
+          "coverage_gaps": 3
+        },
+        "executive_pdf": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T023352Z",
+          "tex_path": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023352Z/executive/executive-report.tex",
+          "pdf_path": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023352Z/executive/executive-report.pdf"
+        },
+        "fix_plan": {
+          "ok": true,
+          "fix_plan": "assessments/allbirds/fix-plan.json",
+          "target_id": "allbirds",
+          "items": 0,
+          "open_items": 0,
+          "verified_items": 0,
+          "unmappable_findings": 1
+        }
+      },
+      "target_id": "allbirds",
+      "final_run": {
+        "run_dir": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T023352Z",
+        "inspection_id": "GEN-014-20260715T023352Z",
+        "status": "partial",
+        "confidence": "Medium",
+        "coverage": 70,
+        "platform": "shopify",
+        "platform_confidence": "High",
+        "infra_limitations": 15,
+        "datasets": {
+          "DS1": 11,
+          "DS2": 17,
+          "DS3": 4,
+          "DS4": 2
+        }
+      }
+    },
+    {
+      "store": "https://www.brooklinen.com",
+      "stages": {
+        "onboard": {
+          "ok": true,
+          "created": true,
+          "target_id": "brooklinen",
+          "name": "Brooklinen",
+          "domain": "brooklinen.com",
+          "target": "targets/brooklinen.json",
+          "query_pack": "query-packs/brooklinen-starter.json",
+          "evaluation": "evaluations/brooklinen-shopify-baseline.json"
+        },
+        "inspect_starter": {
+          "ok": true,
+          "run_dir": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T023811Z",
+          "inspection_id": "GEN-014-20260715T023811Z",
+          "status": "partial",
+          "confidence": "Low",
+          "coverage": 50,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 16,
+          "datasets": {
+            "DS1": 5,
+            "DS2": 7,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "curate": {
+          "ok": true,
+          "curated_from_inspection": "GEN-014-20260715T023811Z",
+          "query_pack": "query-packs/brooklinen-curated.json",
+          "queries": 11,
+          "collection_queries": 8,
+          "product_type_queries": 3,
+          "advanced_scenarios": 2,
+          "evaluation": "evaluations/brooklinen-shopify-baseline.json"
+        },
+        "inspect_curated": {
+          "ok": true,
+          "run_dir": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z",
+          "inspection_id": "GEN-014-20260715T024207Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 80,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 15,
+          "datasets": {
+            "DS1": 11,
+            "DS2": 21,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "executive_report": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T024207Z",
+          "json_path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/executive/executive-report.json",
+          "md_path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/executive/executive-report.md",
+          "surfaces_scored": 5,
+          "strengths": 0,
+          "issues": 11,
+          "coverage_gaps": 1
+        },
+        "executive_pdf": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T024207Z",
+          "tex_path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/executive/executive-report.tex",
+          "pdf_path": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z/executive/executive-report.pdf"
+        },
+        "fix_plan": {
+          "ok": true,
+          "fix_plan": "assessments/brooklinen/fix-plan.json",
+          "target_id": "brooklinen",
+          "items": 10,
+          "open_items": 10,
+          "verified_items": 0,
+          "unmappable_findings": 1
+        }
+      },
+      "target_id": "brooklinen",
+      "final_run": {
+        "run_dir": "assessments/brooklinen/inspection-report/GEN-014/GEN-014-20260715T024207Z",
+        "inspection_id": "GEN-014-20260715T024207Z",
+        "status": "partial",
+        "confidence": "Medium",
+        "coverage": 80,
+        "platform": "shopify",
+        "platform_confidence": "High",
+        "infra_limitations": 15,
+        "datasets": {
+          "DS1": 11,
+          "DS2": 21,
+          "DS3": 0,
+          "DS4": 2
+        }
+      }
+    },
+    {
+      "store": "https://www.gymshark.com",
+      "stages": {
+        "onboard": {
+          "ok": true,
+          "created": true,
+          "target_id": "gymshark",
+          "name": "Gymshark",
+          "domain": "gymshark.com",
+          "target": "targets/gymshark.json",
+          "query_pack": "query-packs/gymshark-starter.json",
+          "evaluation": "evaluations/gymshark-shopify-baseline.json"
+        },
+        "inspect_starter": {
+          "ok": true,
+          "run_dir": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024544Z",
+          "inspection_id": "GEN-014-20260715T024544Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 90,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 5,
+          "datasets": {
+            "DS1": 5,
+            "DS2": 7,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "curate": {
+          "ok": true,
+          "curated_from_inspection": "GEN-014-20260715T024544Z",
+          "query_pack": "query-packs/gymshark-curated.json",
+          "queries": 10,
+          "collection_queries": 6,
+          "product_type_queries": 4,
+          "advanced_scenarios": 2,
+          "evaluation": "evaluations/gymshark-shopify-baseline.json"
+        },
+        "inspect_curated": {
+          "ok": true,
+          "run_dir": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z",
+          "inspection_id": "GEN-014-20260715T024800Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 90,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 5,
+          "datasets": {
+            "DS1": 10,
+            "DS2": 22,
+            "DS3": 4,
+            "DS4": 2
+          }
+        },
+        "executive_report": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T024800Z",
+          "json_path": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/executive/executive-report.json",
+          "md_path": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/executive/executive-report.md",
+          "surfaces_scored": 6,
+          "strengths": 2,
+          "issues": 11,
+          "coverage_gaps": 0
+        },
+        "executive_pdf": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T024800Z",
+          "tex_path": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/executive/executive-report.tex",
+          "pdf_path": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z/executive/executive-report.pdf"
+        },
+        "fix_plan": {
+          "ok": true,
+          "fix_plan": "assessments/gymshark/fix-plan.json",
+          "target_id": "gymshark",
+          "items": 10,
+          "open_items": 10,
+          "verified_items": 0,
+          "unmappable_findings": 1
+        }
+      },
+      "target_id": "gymshark",
+      "final_run": {
+        "run_dir": "assessments/gymshark/inspection-report/GEN-014/GEN-014-20260715T024800Z",
+        "inspection_id": "GEN-014-20260715T024800Z",
+        "status": "partial",
+        "confidence": "Medium",
+        "coverage": 90,
+        "platform": "shopify",
+        "platform_confidence": "High",
+        "infra_limitations": 5,
+        "datasets": {
+          "DS1": 10,
+          "DS2": 22,
+          "DS3": 4,
+          "DS4": 2
+        }
+      }
+    },
+    {
+      "store": "https://bombas.com",
+      "stages": {
+        "onboard": {
+          "ok": true,
+          "created": true,
+          "target_id": "bombas",
+          "name": "Bombas",
+          "domain": "bombas.com",
+          "target": "targets/bombas.json",
+          "query_pack": "query-packs/bombas-starter.json",
+          "evaluation": "evaluations/bombas-shopify-baseline.json"
+        },
+        "inspect_starter": {
+          "ok": true,
+          "run_dir": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z",
+          "inspection_id": "GEN-014-20260715T024951Z",
+          "status": "partial",
+          "confidence": "Low",
+          "coverage": 40,
+          "platform": "unknown",
+          "platform_confidence": "Medium",
+          "infra_limitations": 15,
+          "datasets": {
+            "DS1": 5,
+            "DS2": 7,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "curate": {
+          "ok": false,
+          "error": "This run retains no catalog payloads (it predates catalog evidence retention). Rerun the inspection first, then curate."
+        },
+        "executive_report": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T024951Z",
+          "json_path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/executive/executive-report.json",
+          "md_path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/executive/executive-report.md",
+          "surfaces_scored": 3,
+          "strengths": 1,
+          "issues": 6,
+          "coverage_gaps": 3
+        },
+        "executive_pdf": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T024951Z",
+          "tex_path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/executive/executive-report.tex",
+          "pdf_path": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z/executive/executive-report.pdf"
+        },
+        "fix_plan": {
+          "ok": true,
+          "fix_plan": "assessments/bombas/fix-plan.json",
+          "target_id": "bombas",
+          "items": 5,
+          "open_items": 5,
+          "verified_items": 0,
+          "unmappable_findings": 1
+        }
+      },
+      "target_id": "bombas",
+      "final_run": {
+        "run_dir": "assessments/bombas/inspection-report/GEN-014/GEN-014-20260715T024951Z",
+        "inspection_id": "GEN-014-20260715T024951Z",
+        "status": "partial",
+        "confidence": "Low",
+        "coverage": 40,
+        "platform": "unknown",
+        "platform_confidence": "Medium",
+        "infra_limitations": 15,
+        "datasets": {
+          "DS1": 5,
+          "DS2": 7,
+          "DS3": 0,
+          "DS4": 2
+        }
+      }
+    },
+    {
+      "store": "https://colourpop.com",
+      "stages": {
+        "onboard": {
+          "ok": true,
+          "created": true,
+          "target_id": "colourpop",
+          "name": "ColourPop",
+          "domain": "colourpop.com",
+          "target": "targets/colourpop.json",
+          "query_pack": "query-packs/colourpop-starter.json",
+          "evaluation": "evaluations/colourpop-shopify-baseline.json"
+        },
+        "inspect_starter": {
+          "ok": true,
+          "run_dir": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025122Z",
+          "inspection_id": "GEN-014-20260715T025122Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 90,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 5,
+          "datasets": {
+            "DS1": 5,
+            "DS2": 7,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "curate": {
+          "ok": true,
+          "curated_from_inspection": "GEN-014-20260715T025122Z",
+          "query_pack": "query-packs/colourpop-curated.json",
+          "queries": 12,
+          "collection_queries": 8,
+          "product_type_queries": 4,
+          "advanced_scenarios": 2,
+          "evaluation": "evaluations/colourpop-shopify-baseline.json"
+        },
+        "inspect_curated": {
+          "ok": true,
+          "run_dir": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z",
+          "inspection_id": "GEN-014-20260715T025309Z",
+          "status": "partial",
+          "confidence": "Medium",
+          "coverage": 90,
+          "platform": "shopify",
+          "platform_confidence": "High",
+          "infra_limitations": 5,
+          "datasets": {
+            "DS1": 12,
+            "DS2": 32,
+            "DS3": 0,
+            "DS4": 2
+          }
+        },
+        "executive_report": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T025309Z",
+          "json_path": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.json",
+          "md_path": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.md",
+          "surfaces_scored": 6,
+          "strengths": 2,
+          "issues": 2,
+          "coverage_gaps": 0
+        },
+        "executive_pdf": {
+          "ok": true,
+          "inspection_id": "GEN-014-20260715T025309Z",
+          "tex_path": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.tex",
+          "pdf_path": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z/executive/executive-report.pdf"
+        },
+        "fix_plan": {
+          "ok": true,
+          "fix_plan": "assessments/colourpop/fix-plan.json",
+          "target_id": "colourpop",
+          "items": 1,
+          "open_items": 1,
+          "verified_items": 0,
+          "unmappable_findings": 1
+        }
+      },
+      "target_id": "colourpop",
+      "final_run": {
+        "run_dir": "assessments/colourpop/inspection-report/GEN-014/GEN-014-20260715T025309Z",
+        "inspection_id": "GEN-014-20260715T025309Z",
+        "status": "partial",
+        "confidence": "Medium",
+        "coverage": 90,
+        "platform": "shopify",
+        "platform_confidence": "High",
+        "infra_limitations": 5,
+        "datasets": {
+          "DS1": 12,
+          "DS2": 32,
+          "DS3": 0,
+          "DS4": 2
+        }
+      }
+    }
+  ]
+}

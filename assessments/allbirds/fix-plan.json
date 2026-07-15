@@ -1,0 +1,14 @@
+{
+  "schema_version": "fix-plan-v0.1",
+  "target_id": "allbirds",
+  "target_name": "Allbirds",
+  "updated_at": "2026-07-15T02:38:11.571Z",
+  "updated_from_inspection": "GEN-014-20260715T023352Z",
+  "open_items": 0,
+  "verified_items": 0,
+  "items": [],
+  "unmappable_findings": [
+    "No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions."
+  ],
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
+}
