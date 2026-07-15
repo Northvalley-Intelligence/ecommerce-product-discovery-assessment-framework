@@ -1,0 +1,39 @@
+{
+  "validation_run_id": "VAL-068",
+  "generation": "GEN-020",
+  "phase": "Generation 20 - Sites First-Class + History Hygiene",
+  "started_at": "2026-07-15T06:20:00Z",
+  "completed_at": "2026-07-15T15:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen020_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Persistent sites list",
+      "tool": "browser + /api/sites",
+      "result": "pass",
+      "evidence": "Your Shopify Sites list shows all 8 identified sites (including not-yet-inspected ones) after all runs were cleaned; each has an Inspect action that enqueues a run."
+    },
+    {
+      "category": "Phantom-run hygiene",
+      "tool": "cleanup prune + /api/inspections filter + validator",
+      "result": "pass",
+      "evidence": "Cleanup prunes inspection-history rows for removed runs; the inspection list filters to existing runs; validator asserts no listed run points to a missing directory. Pruned 46 phantom rows down to 6 real."
+    },
+    {
+      "category": "Holistic UI walkthrough (new gate)",
+      "tool": "as-a-user browser pass across all views",
+      "result": "pass",
+      "evidence": "Inspections (sites + runs + detail), Datasets, Settings, Setup all coherent; cleaning runs keeps sites; no dead clicks."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 and on pass 2 with no implementation changes after the commit."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-020 chartered before implementation and validated with two clean passes plus the holistic UI review gate. Findings FND-GEN020-001/002 resolved."
+}

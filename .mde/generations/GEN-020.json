@@ -1,0 +1,33 @@
+{
+  "generation_id": "GEN-020",
+  "mission_phase": "Generation 20 - Sites as First-Class + History Hygiene",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T06:20:00Z",
+  "ended_at": "2026-07-15T15:00:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Make identified Shopify sites a persistent, always-visible list that survives run cleanup and can be re-inspected, and stop deleted runs from appearing as phantom entries by keeping the inspection-history index consistent with runs on disk.",
+  "reason_generation_started": "Operator cleaned all inspection runs but (1) wants the list of already-identified Shopify sites to persist and be visible, and (2) still sees deleted runs in the left panel because cleanup removed run directories without pruning the inspection-history index.",
+  "validation_strategy": {
+    "functional": [
+      "The inspection list never shows a run whose directory no longer exists.",
+      "Cleanup prunes inspection-history rows for removed runs so the index matches disk.",
+      "A Sites list is derived from target manifests that have an evaluation, persists through run cleanup, and each site can be inspected (enqueues a run)."
+    ],
+    "usability": [
+      "Holistic as-a-user walkthrough: after cleaning all runs, identified sites remain visible and inspectable; no phantom runs appear; selecting a site behaves sensibly."
+    ],
+    "technical": [
+      "validate:dashboard extended with sites API + phantom-filter assertions; all suites green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-068 two clean passes: sites API + persistent list, phantom-run filtering + history pruning, all suites green; second pass with no implementation changes after the commit.",
+    "Holistic UI walkthrough (new gate): after cleaning all runs, 8 identified sites remain visible and inspectable; the Runs section sits below with no phantom entries; selecting a run updates the right pane.",
+    "BDD inventory refreshed to BDD-INV-009 (52 BDDs, 2 new for GEN-020, 50 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "The dashboard validator hard-depends on a Ridge GEN-013 run existing; cleaning all runs breaks it until one is restored (validator robustness, logged not fixed).",
+    "Site cards show only the latest run status; per-site run history is still browsed via the Runs list, not grouped under the site."
+  ]
+}

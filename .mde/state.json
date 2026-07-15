@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-019",
-  "current_phase": "Generation 19 - Operational Controls (exited)",
+  "current_generation": "GEN-020",
+  "current_phase": "Generation 20 - Sites First-Class + History Hygiene (exited)",
   "phase_goal": "Serialize inspection runs (one at a time) with a persistent, transparent, operator-manageable queue.",
-  "status": "gen019_phase_exit_complete",
+  "status": "gen020_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,14 +19,14 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-067",
-    "reason": "GEN-019 (persistent run queue + discoverable data management + site-profile cache-schema fix) validated with two independent clean passes (VAL-067) and BDD inventory refreshed to BDD-INV-008. Phase exit declared."
+    "latest_run_id": "VAL-068",
+    "reason": "GEN-020 (persistent sites list + phantom-run history hygiene) validated with two independent clean passes (VAL-068) and BDD inventory refreshed to BDD-INV-009. Phase exit declared."
   },
   "critical_bdds": 15,
-  "high_bdds": 27,
-  "medium_bdds": 8,
+  "high_bdds": 28,
+  "medium_bdds": 9,
   "low_bdds": 0,
-  "bdd_inventory": "BDD-INV-008",
+  "bdd_inventory": "BDD-INV-009",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-019 exited. Open backlog/candidates: queue reordering, non-Shopify adapter groundwork, hierarchical browse-tree extraction, and accumulating the 10-20 real inspections the GEN planning gate wants. Charter phase goal + validation strategy before implementing the next one.",
+  "next_recommended_action": "GEN-020 exited. Candidates: non-Shopify adapter groundwork, hierarchical browse tree, grouping runs under their site, validator robustness when no runs exist, and accumulating real inspections toward the planning gate. Charter phase goal + validation strategy before implementing the next one; run the holistic UI review gate before requesting review.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)"
 }

@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-07-15",
-  "current_generation": "GEN-019",
+  "current_generation": "GEN-020",
   "findings": [
     {
       "finding_id": "FND-GEN013-001",
@@ -583,6 +583,24 @@
       "summary": "The dataset viewer was a navigation dead end with no way back to the originating inspection.",
       "affected_workflow_or_component": "dataset viewer",
       "status": "fixed_breadcrumb_back_navigation"
+    },
+    {
+      "finding_id": "FND-GEN020-001",
+      "source_validator": "Operator observation",
+      "severity": "High",
+      "category": "Technical Validation",
+      "summary": "Cleanup removed run directories but left inspection-history rows, so the inspection list showed deleted runs as phantom entries (46 rows, 6 real runs).",
+      "affected_workflow_or_component": "cleanup + inspection-history + /api/inspections",
+      "status": "resolved_gen020_history_pruning_and_phantom_filter"
+    },
+    {
+      "finding_id": "FND-GEN020-002",
+      "source_validator": "Operator observation",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "summary": "Identified Shopify sites (target manifests) persist through cleanup but have no UI list, so cleaning all runs makes the sites disappear from view; sites should be first-class and re-inspectable.",
+      "affected_workflow_or_component": "dashboard sites list",
+      "status": "resolved_gen020_persistent_sites_list"
     }
   ],
   "lifecycle_states": [
