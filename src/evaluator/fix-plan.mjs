@@ -117,7 +117,10 @@ export function generateFixPlan(rootDir, runDir) {
   const existing = exists(planPath) ? readJson(planPath) : null;
   const existingByFingerprint = new Map((existing?.items || []).map((item) => [fingerprint(item), item]));
 
-  const issues = (executive.findings || []).filter((finding) => finding.type === 'issue');
+  // Only store findings (the store's actual customer experience) become fixable
+  // items. Capture limitations are our tooling's coverage gaps, not store
+  // defects, and never belong in a fix plan sent to the ecommerce team.
+  const issues = (executive.findings || []).filter((finding) => finding.type === 'issue' && (finding.nature || 'store_finding') === 'store_finding');
   const items = [];
   const unmappable = [];
   for (const finding of issues) {

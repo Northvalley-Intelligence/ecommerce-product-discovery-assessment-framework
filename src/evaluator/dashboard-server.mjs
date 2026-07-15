@@ -981,8 +981,8 @@ function dashboardPage() {
       if (['fail', 'failed', 'blocked', 'not_ready', 'still_failing', 'regressed'].includes(value)) return 'fail';
       return 'muted-status';
     }
-    function pill(status) {
-      return '<span class="status ' + cls(status) + '">' + escapeHtml(String(status || 'unknown').toUpperCase()) + '</span>';
+    function pill(status, label) {
+      return '<span class="status ' + cls(status) + '">' + escapeHtml((label != null ? label : String(status || 'unknown')).toUpperCase()) + '</span>';
     }
     function escapeHtml(value) {
       return String(value ?? '').replace(/[&<>"']/g, (char) => ({
@@ -1103,6 +1103,18 @@ function dashboardPage() {
       if (status >= 200 && status < 300) return 'pass';
       if (status >= 300 && status < 400) return 'warn';
       return 'fail';
+    }
+    // Fix-plan statuses describe the STORE issue's lifecycle, not our
+    // inspection. Present them in store language so nothing reads as "our
+    // inspection failed".
+    function fixStatusLabel(status) {
+      return ({
+        open: 'Present',
+        still_failing: 'Still present',
+        verified_fixed: 'Fixed (verified)',
+        regressed: 'Regressed',
+        not_checked: 'Not re-checked'
+      })[status] || status;
     }
     function activateDetailTab(tab) {
       state.detailTab = tab;
@@ -1309,13 +1321,13 @@ function dashboardPage() {
             ? '<p class="muted" style="margin:0 0 8px">An executive report exists for this inspection.</p><p style="margin:0">' + (data.executive_report.pdf_path ? '<a href="' + artifactHref(data.executive_report.pdf_path) + '" target="_blank"><strong>Open PDF</strong></a> · ' : '') + '<a href="' + artifactHref(data.executive_report.md_path) + '" target="_blank">Markdown</a> · <a href="' + datasetHash(data.executive_report.json_path) + '">Explore report data</a></p>'
             : '<p class="muted" style="margin:0">No executive report generated yet for this inspection.</p>') +
           '</div><div class="readiness-stats"><button id="curateBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Curate Queries from Catalog</button><button id="execReportBtn" data-run="' + escapeHtml(data.run_dir) + '">' + (data.executive_report ? 'Regenerate' : 'Generate Executive Report') + '</button></div></div>') +
-        panel('Fix Plan', 'Findings become verifiable fixes', '<div class="panel-body readiness"><div>' +
+        panel('Fix Plan', 'Store issues to fix — status describes the store, not this inspection', '<div class="panel-body readiness"><div>' +
           (data.fix_plan
-            ? '<p class="muted" style="margin:0">' + data.fix_plan.open_items + ' open · ' + data.fix_plan.verified_items + ' verified fixed' + (data.fix_plan.last_verification_inspection ? ' · last verified against ' + escapeHtml(data.fix_plan.last_verification_inspection) : '') + ' · <a href="' + datasetHash(data.fix_plan.path) + '">Explore plan</a></p>'
-            : '<p class="muted" style="margin:0">No fix plan yet for this target. Generate one from an executive report with issues.</p>') +
+            ? '<p class="muted" style="margin:0">' + data.fix_plan.open_items + ' still present · ' + data.fix_plan.verified_items + ' fixed (verified)' + (data.fix_plan.last_verification_inspection ? ' · last re-checked against ' + escapeHtml(data.fix_plan.last_verification_inspection) : '') + ' · <a href="' + datasetHash(data.fix_plan.path) + '">Explore plan</a></p><p class="muted" style="margin:6px 0 0;font-size:12px">These are the store\\'s discovery issues to send to the ecommerce team. Our inspection succeeded; "still present" means the store issue is not yet resolved.</p>'
+            : '<p class="muted" style="margin:0">No fix plan yet for this target. Generate one from an executive report with store findings.</p>') +
           '</div><div class="readiness-stats"><button id="fixPlanBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">' + (data.fix_plan ? 'Update Fix Plan' : 'Generate Fix Plan') + '</button>' + (data.fix_plan ? '<button id="verifyFixesBtn" class="secondary" data-run="' + escapeHtml(data.run_dir) + '">Verify Against This Run</button><button id="verifyLiveBtn" data-target="' + escapeHtml(data.fix_plan.target_id) + '">Run Verification Inspection</button>' : '') + '</div></div>' +
           (data.fix_plan && data.fix_plan.items.length
-            ? table(['Status', 'Severity', 'Surface', 'Query', 'Recommended Fix'], data.fix_plan.items, (item) => ['<td>' + pill(item.status) + '</td>', '<td>' + escapeHtml(item.severity) + '</td>', '<td>' + escapeHtml(item.surface) + '</td>', '<td><span class="mono">' + escapeHtml(item.query) + '</span></td>', '<td>' + escapeHtml(item.recommendation) + '</td>'])
+            ? table(['Store Issue', 'Severity', 'Surface', 'Query', 'Recommended Fix'], data.fix_plan.items, (item) => ['<td>' + pill(item.status, fixStatusLabel(item.status)) + '</td>', '<td>' + escapeHtml(item.severity) + '</td>', '<td>' + escapeHtml(item.surface) + '</td>', '<td><span class="mono">' + escapeHtml(item.query) + '</span></td>', '<td>' + escapeHtml(item.recommendation) + '</td>'])
             : ''));
 
       const healthTab =

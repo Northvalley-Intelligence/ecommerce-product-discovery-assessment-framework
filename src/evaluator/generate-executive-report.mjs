@@ -91,7 +91,12 @@ function scoreRendered(records) {
       rendered_ok: record.rendered_search?.ok ?? false,
       visible_product_count: record.rendered_search?.observed?.visible_product_count ?? null,
       visible_suggestion_count: record.endpoint_comparison?.visible_suggestion_count ?? 0,
-      screenshot: record.rendered_search?.screenshot || null
+      screenshot: record.rendered_search?.screenshot || null,
+      // Was the customer-facing surface actually observable? If the search box
+      // couldn't be found or a bot wall blocked us, an empty result is OUR
+      // limitation, not a store finding.
+      search_capture_blocked: !!record.rendered_search?.classification,
+      dropdown_capture_blocked: !!record.rendered_autocomplete?.classification
     })),
     dropdown_observed_count: dropdownSeen,
     mobile_capture_count: mobileCaptures,
@@ -245,14 +250,23 @@ function buildFindings(report, scorecard) {
     const someDropdownsObserved = (rendered.dropdown_observed_count ?? 0) > 0;
     for (const detail of (rendered.details || []).filter((item) => someDropdownsObserved && item.rendered_ok && (item.visible_suggestion_count ?? 0) === 0)) {
       findings.push({
-        type: 'issue',
+        type: detail.dropdown_capture_blocked ? 'coverage_gap' : 'issue',
+        nature: detail.dropdown_capture_blocked ? 'capture_limitation' : 'store_finding',
         surface: 'Rendered Storefront',
-        severity: 'Medium',
-        observation: `Typing "${detail.query}" showed no visible autocomplete suggestions in the browser, although the suggest endpoint responds for this store.`,
+        severity: detail.dropdown_capture_blocked ? 'Informational' : 'Medium',
+        observation: detail.dropdown_capture_blocked
+          ? `Could not observe the autocomplete dropdown for "${detail.query}" (the search box was blocked or not found), so no claim is made about it.`
+          : `Typing "${detail.query}" showed no visible autocomplete suggestions in the browser, although the suggest endpoint responds for this store.`,
         evidence: rendered.evidence_file,
-        customer_impact: 'Customers typing this query get no type-ahead assistance and must compose the full search themselves.',
-        business_impact: 'Assisted discovery is lost for this query pattern even though the backend could support it.',
-        recommendation: `Check the storefront search app or predictive-search configuration for coverage of "${detail.query}"-style queries.`
+        customer_impact: detail.dropdown_capture_blocked
+          ? 'Unknown — our tooling could not observe this surface.'
+          : 'Customers typing this query get no type-ahead assistance and must compose the full search themselves.',
+        business_impact: detail.dropdown_capture_blocked
+          ? 'No business claim — this is an inspection coverage gap, not a store issue.'
+          : 'Assisted discovery is lost for this query pattern even though the backend could support it.',
+        recommendation: detail.dropdown_capture_blocked
+          ? 'Improve rendered-capture coverage for this storefront; do not report to the store team as a defect.'
+          : `Check the storefront search app or predictive-search configuration for coverage of "${detail.query}"-style queries.`
       });
     }
     if (rendered.score === 100) {
@@ -267,28 +281,31 @@ function buildFindings(report, scorecard) {
         recommendation: 'Keep rendered capture in the regression loop so theme or search-app changes that break the visible experience are caught.'
       });
     }
-    for (const query of rendered.queries_without_visible_products || []) {
+    for (const detail of (rendered.details || []).filter((item) => item.rendered_ok && (item.visible_product_count ?? 0) === 0 && !item.search_capture_blocked)) {
       findings.push({
         type: 'issue',
+        nature: 'store_finding',
         surface: 'Rendered Storefront',
         severity: 'High',
-        observation: `The rendered page for "${query}" loaded but showed no products, even though the search endpoint returns results.`,
+        observation: `The rendered page for "${detail.query}" loaded but showed no products, even though the search endpoint returns results.`,
         evidence: rendered.evidence_file,
         customer_impact: 'Customers see an empty or broken results page despite matching inventory existing.',
         business_impact: 'An API-only view would miss this; the customer-facing experience is losing demand the backend could serve.',
         recommendation: 'Inspect the storefront theme or search app rendering for this query pattern.'
       });
     }
-    if ((rendered.dropdown_observed_count ?? 0) === 0) {
+    const allDropdownsBlocked = (rendered.details || []).length > 0 && (rendered.details || []).every((item) => item.dropdown_capture_blocked);
+    if ((rendered.dropdown_observed_count ?? 0) === 0 && allDropdownsBlocked) {
       findings.push({
-        type: 'issue',
+        type: 'coverage_gap',
+        nature: 'capture_limitation',
         surface: 'Rendered Storefront',
-        severity: 'Medium',
-        observation: 'No visible autocomplete dropdown was captured for any typed query, while the suggest endpoint returns suggestions.',
+        severity: 'Informational',
+        observation: 'The visible autocomplete dropdown could not be observed for any query on this storefront (search box blocked or not found), so no autocomplete claim is made from rendered evidence.',
         evidence: rendered.evidence_file,
-        customer_impact: 'Customers may not be receiving the type-ahead assistance the endpoint evidence implies.',
-        business_impact: 'Autocomplete claims in this report are endpoint-verified but not confirmed as customer-visible.',
-        recommendation: 'Verify whether the storefront uses a third-party search app or a theme that suppresses the native dropdown.'
+        customer_impact: 'Unknown — our tooling could not observe this surface.',
+        business_impact: 'No business claim — this is an inspection coverage gap, not a store issue.',
+        recommendation: 'Improve rendered-capture coverage for this storefront theme/search app.'
       });
     }
   }
@@ -306,6 +323,12 @@ function buildFindings(report, scorecard) {
     });
   }
 
+  // Every finding is either about the store's customer experience (actionable —
+  // send to the ecommerce team) or an inspection coverage gap (our tooling
+  // could not observe it — not the store's fault). Default by type.
+  for (const finding of findings) {
+    if (!finding.nature) finding.nature = finding.type === 'coverage_gap' ? 'capture_limitation' : 'store_finding';
+  }
   return findings;
 }
 
