@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
 import { previewCleanup, runCleanup } from './cleanup.mjs';
+import { loadInspectionConfig, saveInspectionConfig } from './inspection-config.mjs';
 import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateFixPlan, readFixPlan, verifyFixPlan } from './fix-plan.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
@@ -511,6 +512,37 @@ function dashboardPage() {
       gap: 8px;
       margin-top: 12px;
     }
+    .page-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .setup-form {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      max-width: 640px;
+    }
+    .setup-form .field { margin-bottom: 16px; }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .checkbox-row input { width: auto; }
+    .checkbox-row label { margin: 0; text-transform: none; font-weight: 600; color: var(--text); font-size: 13px; }
+    .setup-actions { display: flex; gap: 10px; margin-top: 8px; }
     .storage {
       margin-top: 18px;
       padding-top: 16px;
@@ -810,34 +842,15 @@ function dashboardPage() {
     </aside>
     <main>
       <div id="inspectionView">
-        <section class="toolbar" aria-label="Add a site">
-          <div class="field">
-            <label for="siteUrl">Add Ecommerce Site (Shopify supported)</label>
-            <input id="siteUrl" placeholder="https://yourstore.com">
-          </div>
-          <div class="field">
-            <label for="siteName">Display Name (optional)</label>
-            <input id="siteName" placeholder="Your Store">
-          </div>
-          <button id="addSiteBtn">Add Site &amp; Inspect</button>
-        </section>
-        <section class="toolbar" aria-label="Dashboard actions">
-          <div class="field">
-            <label for="evaluationPath">Evaluation Manifest</label>
-            <input id="evaluationPath" value="evaluations/ridge-shopify-baseline.json">
-          </div>
-          <div class="field">
-            <label for="onlyPlugins">Selected Plugins</label>
-            <input id="onlyPlugins" placeholder="submitted-search,autocomplete">
-          </div>
-          <button id="runBtn">Run</button>
-          <button id="resumeBtn" class="secondary">Resume</button>
-          <button id="rerunBtn" class="secondary">Rerun</button>
+        <section class="page-actions">
+          <button id="newInspectionBtn">+ New Inspection</button>
+          <span class="muted">Add a Shopify store, or select an inspection to review, rerun, or edit its setup.</span>
         </section>
         <div id="actionResult" class="muted"></div>
         <div id="detail"></div>
       </div>
       <div id="datasetView" hidden></div>
+      <div id="setupView" hidden></div>
     </main>
   </div>
   <script>
@@ -896,6 +909,8 @@ function dashboardPage() {
         return { view: 'datasets', path: params.get('dataset'), q: params.get('q') || '' };
       }
       if (hash.startsWith('datasets')) return { view: 'datasets', path: null, q: '' };
+      if (params.has('setup')) return { view: 'setup', target: params.get('setup') || null };
+      if (hash === 'setup') return { view: 'setup', target: null };
       return { view: 'inspections', path: null, q: '' };
     }
     async function api(path, options) {
@@ -987,7 +1002,7 @@ function dashboardPage() {
       const platformGaps = limitations.platform_capability_gaps || [];
       const infra = limitations.infrastructure_limitations || [];
       document.getElementById('detail').innerHTML =
-        '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(summary.target_name || report.target?.name || 'this inspection') + '</button><button id="detailResumeBtn" class="secondary">Resume</button></div></div><div>' + pill(summary.overall_inspection_status) + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>' +
+        '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(summary.target_name || report.target?.name || 'this inspection') + '</button><button id="detailResumeBtn" class="secondary">Resume</button><button id="detailEditBtn" class="secondary" data-target="' + escapeHtml(report.target?.target_id || '') + '">Edit setup</button></div></div><div>' + pill(summary.overall_inspection_status) + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>' +
         '<section class="metric-grid">' +
           metric('Status', summary.overall_inspection_status || 'unknown', 'Overall inspection') +
           metric('Readiness', op.downstream_report_readiness || 'unknown', op.readiness_notes || '') +
@@ -1023,6 +1038,8 @@ function dashboardPage() {
       if (detailRerunBtn) detailRerunBtn.addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
       const detailResumeBtn = document.getElementById('detailResumeBtn');
       if (detailResumeBtn) detailResumeBtn.addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
+      const detailEditBtn = document.getElementById('detailEditBtn');
+      if (detailEditBtn) detailEditBtn.addEventListener('click', () => { if (detailEditBtn.dataset.target) window.location.hash = '#setup=' + encodeURIComponent(detailEditBtn.dataset.target); });
       const fixPlanBtn = document.getElementById('fixPlanBtn');
       if (fixPlanBtn) {
         fixPlanBtn.addEventListener('click', async () => {
@@ -1119,38 +1136,68 @@ function dashboardPage() {
         });
       }
     }
-    async function addSite() {
-      const url = document.getElementById('siteUrl').value.trim();
-      if (!url) {
-        alert('Enter the site URL first.');
-        return;
-      }
-      const name = document.getElementById('siteName').value;
-      const status = document.getElementById('actionResult');
-      status.textContent = 'Onboarding ' + url + '...';
-      const onboarded = await api('/api/onboard', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ url, name })
-      });
-      document.getElementById('evaluationPath').value = onboarded.evaluation;
-      status.textContent = (onboarded.created ? 'Created manifests for ' : 'Reusing existing manifests for ') + onboarded.name + '. Starting inspection...';
-      const run = await api('/api/run', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ evaluation: onboarded.evaluation })
-      });
-      status.innerHTML = 'Inspection started for ' + escapeHtml(onboarded.name) + ' (process ' + run.pid + '). Log: <a href="' + artifactHref(run.log_path) + '" target="_blank">' + escapeHtml(run.log_path) + '</a>. The run appears in the list when it completes.';
-      for (const delay of [5000, 20000, 60000, 120000]) setTimeout(refresh, delay);
-    }
     function setView(view) {
       state.view = view;
-      document.getElementById('tabInspections').classList.toggle('active', view === 'inspections');
+      document.getElementById('tabInspections').classList.toggle('active', view === 'inspections' || view === 'setup');
       document.getElementById('tabDatasets').classList.toggle('active', view === 'datasets');
-      document.getElementById('runList').hidden = view !== 'inspections';
+      document.getElementById('runList').hidden = view === 'datasets';
       document.getElementById('datasetNav').hidden = view !== 'datasets';
       document.getElementById('inspectionView').hidden = view !== 'inspections';
       document.getElementById('datasetView').hidden = view !== 'datasets';
+      document.getElementById('setupView').hidden = view !== 'setup';
+    }
+    async function renderSetup(targetId) {
+      setView('setup');
+      const container = document.getElementById('setupView');
+      container.innerHTML = '<div class="empty">Loading setup…</div>';
+      let config;
+      try {
+        config = await api('/api/inspection-config' + (targetId ? '?target_id=' + encodeURIComponent(targetId) : ''));
+      } catch (error) {
+        container.innerHTML = '<div class="panel"><div class="panel-body">Could not load setup: ' + escapeHtml(error.message) + '</div></div>';
+        return;
+      }
+      const editing = config.mode === 'edit';
+      container.innerHTML =
+        '<section class="hero"><div><p class="eyebrow">' + (editing ? 'Edit Inspection Setup' : 'New Inspection') + '</p><h1>' + escapeHtml(editing ? config.name : 'Add a Shopify Store') + '</h1>' +
+          '<div class="subline"><span>' + (editing ? escapeHtml(config.url) : 'Enter a store URL and choose what to inspect.') + '</span></div></div></section>' +
+        '<div class="setup-form">' +
+          '<div class="field"><label for="setupUrl">Store URL</label><input id="setupUrl" value="' + escapeHtml(config.url) + '" placeholder="https://yourstore.com"' + (editing ? ' readonly' : '') + '></div>' +
+          '<div class="field"><label for="setupName">Display Name</label><input id="setupName" value="' + escapeHtml(config.name) + '" placeholder="Your Store"></div>' +
+          '<div class="field"><label>Surfaces to Inspect</label><div class="checkbox-grid">' +
+            config.plugins.map((plugin) => '<div class="checkbox-row"><input type="checkbox" id="pl-' + plugin.id + '"' + (plugin.selected ? ' checked' : '') + '><label for="pl-' + plugin.id + '">' + escapeHtml(plugin.label) + '</label></div>').join('') +
+          '</div></div>' +
+          '<div class="field"><label>Rendered Capture</label><div class="checkbox-grid">' +
+            '<div class="checkbox-row"><input type="checkbox" id="render-desktop"' + (config.rendering.desktop ? ' checked' : '') + '><label for="render-desktop">Desktop browser + screenshots</label></div>' +
+            '<div class="checkbox-row"><input type="checkbox" id="render-mobile"' + (config.rendering.mobile ? ' checked' : '') + '><label for="render-mobile">Mobile browser + screenshots</label></div>' +
+          '</div><p class="muted" style="margin-top:6px">Rendered capture needs the Rendered Storefront surface and observes what customers actually see.</p></div>' +
+          '<div class="setup-actions"><button id="setupSubmit">' + (editing ? 'Save & Re-inspect' : 'Create & Inspect') + '</button><button id="setupCancel" class="secondary">Cancel</button></div>' +
+        '</div>';
+      document.getElementById('setupCancel').addEventListener('click', () => { window.location.hash = '#inspections'; });
+      document.getElementById('setupSubmit').addEventListener('click', async () => {
+        const submit = document.getElementById('setupSubmit');
+        submit.disabled = true;
+        submit.textContent = 'Starting…';
+        try {
+          const plugins = config.plugins.filter((plugin) => document.getElementById('pl-' + plugin.id).checked).map((plugin) => plugin.id);
+          const body = {
+            target_id: editing ? config.target_id : undefined,
+            url: document.getElementById('setupUrl').value.trim(),
+            name: document.getElementById('setupName').value.trim(),
+            plugins,
+            rendering: { desktop: document.getElementById('render-desktop').checked, mobile: document.getElementById('render-mobile').checked },
+            run: true
+          };
+          const result = await api('/api/inspection-config', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+          window.location.hash = '#inspections';
+          document.getElementById('actionResult').innerHTML = 'Inspection started for ' + escapeHtml(result.target_id) + ' (process ' + result.pid + '). It appears in the list when it completes. Log: <a href="' + artifactHref(result.log_path) + '" target="_blank">' + escapeHtml(result.log_path) + '</a>';
+          for (const delay of [8000, 30000, 90000, 180000]) setTimeout(refresh, delay);
+        } catch (error) {
+          alert(error.message);
+          submit.disabled = false;
+          submit.textContent = editing ? 'Save & Re-inspect' : 'Create & Inspect';
+        }
+      });
     }
     async function loadCatalog() {
       state.catalog = await api('/api/datasets');
@@ -1299,6 +1346,10 @@ function dashboardPage() {
     }
     async function applyHash() {
       const route = parseHash();
+      if (route.view === 'setup') {
+        await renderSetup(route.target);
+        return;
+      }
       setView(route.view);
       if (route.view !== 'datasets') return;
       if (!state.catalog) loadCatalog().catch((error) => {
@@ -1312,16 +1363,8 @@ function dashboardPage() {
       }
     }
     async function runAction(kind) {
-      const body = {};
       const selected = state.inspections.find((run) => run.inspection_id === state.selected);
-      if (kind === 'run') {
-        body.evaluation = document.getElementById('evaluationPath').value;
-        body.only = document.getElementById('onlyPlugins').value;
-      } else if (kind === 'resume') {
-        body.run_dir = selected?.output_dir;
-      } else if (kind === 'rerun') {
-        body.run_dir = selected?.output_dir;
-      }
+      const body = { run_dir: selected?.output_dir };
       document.getElementById('actionResult').textContent = 'Starting ' + kind + '...';
       const result = await api('/api/' + kind, {
         method: 'POST',
@@ -1332,10 +1375,7 @@ function dashboardPage() {
       setTimeout(refresh, 1500);
     }
     document.getElementById('cleanupPreviewBtn').addEventListener('click', () => cleanupFlow().catch((error) => alert(error.message)));
-    document.getElementById('addSiteBtn').addEventListener('click', () => addSite().catch((error) => alert(error.message)));
-    document.getElementById('runBtn').addEventListener('click', () => runAction('run').catch((error) => alert(error.message)));
-    document.getElementById('resumeBtn').addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
-    document.getElementById('rerunBtn').addEventListener('click', () => runAction('rerun').catch((error) => alert(error.message)));
+    document.getElementById('newInspectionBtn').addEventListener('click', () => { window.location.hash = '#setup'; });
     document.getElementById('tabInspections').addEventListener('click', () => { window.location.hash = '#inspections'; });
     document.getElementById('tabDatasets').addEventListener('click', () => { window.location.hash = '#datasets'; });
     window.addEventListener('hashchange', () => applyHash().catch((error) => {
@@ -1372,6 +1412,30 @@ function routeRequest(rootDir, request, response) {
       service: 'ecommerce-inspection-dashboard',
       root_dir: rootDir
     });
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/inspection-config') {
+    try {
+      sendJson(response, 200, loadInspectionConfig(rootDir, url.searchParams.get('target_id') || null));
+    } catch (error) {
+      sendJson(response, 400, { error: error.message });
+    }
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/inspection-config') {
+    readBody(request)
+      .then((body) => {
+        const saved = saveInspectionConfig(rootDir, body);
+        if (body.run !== false) {
+          const run = runChild(rootDir, ['src/evaluator/run-inspection.mjs', '--evaluation', saved.evaluation], `setup-run-${Date.now()}.log`);
+          sendJson(response, 202, { ...saved, ...run, running: true });
+        } else {
+          sendJson(response, 200, { ...saved, running: false });
+        }
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 

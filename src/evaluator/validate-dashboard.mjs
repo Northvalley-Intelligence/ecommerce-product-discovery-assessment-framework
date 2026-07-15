@@ -51,10 +51,9 @@ async function main() {
     const page = await fetchText(`${dashboard.url}/`);
     assert(page.includes('Operational Dashboard'), 'Dashboard page missing operational title.');
     assert(page.includes('Run, review, debug, compare'), 'Dashboard page missing mission-aligned purpose copy.');
-    assert(page.includes('id="runBtn"'), 'Dashboard page missing Run control.');
-    assert(page.includes('id="resumeBtn"'), 'Dashboard page missing Resume control.');
-    assert(page.includes('id="rerunBtn"'), 'Dashboard page missing Rerun control.');
-    assert(page.includes("'/api/' + kind"), 'Dashboard page missing action API wiring.');
+    assert(page.includes('id="newInspectionBtn"'), 'Dashboard page missing New Inspection control.');
+    assert(page.includes("'/api/' + kind"), 'Dashboard page missing rerun/resume action API wiring.');
+    assert(page.includes('renderSetup'), 'Dashboard page missing the inspection setup view.');
 
     const inspections = await fetchJson(`${dashboard.url}/api/inspections`);
     assert(Array.isArray(inspections) && inspections.length > 0, 'Dashboard inspections API returned no history rows.');
@@ -116,8 +115,7 @@ async function main() {
     const badExtension = await fetch(`${dashboard.url}/api/dataset?path=${encodeURIComponent('MISSION.md')}`);
     assert(badExtension.status === 400, 'Dataset route did not reject non-JSON files.');
 
-    assert(page.includes('id="addSiteBtn"'), 'Dashboard page missing Add Site control.');
-    assert(page.includes("'/api/onboard'"), 'Dashboard page missing onboarding API wiring.');
+    assert(page.includes("'/api/inspection-config'"), 'Dashboard page missing inspection setup API wiring.');
     assert(page.includes("'/api/executive-report'"), 'Dashboard page missing executive report API wiring.');
 
     const dressUpRun = latestDirectory('assessments/dress-up/inspection-report/GEN-013');
