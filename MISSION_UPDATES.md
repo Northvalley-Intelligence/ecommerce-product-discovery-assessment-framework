@@ -2,6 +2,13 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-15
+
+- Mission update: Restructured the dashboard around the real hierarchy — a Shopify site has inspection runs, and each run has results/evidence — so the operator navigates Site → Run → Results with the connection always visible, instead of a flat list of runs and reports (GEN-021). Also recorded two standing operator directives: the assistant must not trigger inspection runs (the operator runs them via the UI), and every bug/command is a mission update that requires rerunning the full validation before returning.
+- Reason: Operator: "each run is tied to a Shopify site and the results are from an inspection — show all those connections in the UI, instead of showing a bunch of runs and reports. Remember evidence for everything. Don't run anything unless I specifically request through the UI."
+- Discovered through: Direct operator mission updates; site-centric sidebar + per-site run cards + Site → Run → Results breadcrumb implemented (commit a936b2a); interactive holistic UI walkthrough across all views with no inspection triggered; two independent clean Validation Gate passes (VAL-069); BDD inventory refreshed to BDD-INV-010 (3 new GEN-021 BDDs).
+- Impact: The dashboard now presents inspections through their site → run → results lineage with breadcrumb traceability, and navigation never spawns a run. The no-auto-run directive (FND-GEN021-000) and the bug-as-mission-update protocol are recorded in `.mde` and in memory. GEN-021 exited cleanly; the operator runs inspections via the UI as needed.
+
 ## 2026-07-13
 
 - Mission update: Froze the approved evaluator design baseline and completed the GEN-013 first implementation slice with a successful Dress Up pilot.

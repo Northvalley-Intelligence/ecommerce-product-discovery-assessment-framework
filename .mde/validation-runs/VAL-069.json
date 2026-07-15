@@ -1,0 +1,45 @@
+{
+  "validation_run_id": "VAL-069",
+  "generation": "GEN-021",
+  "phase": "Generation 21 - Connected Site>Run>Results UI",
+  "started_at": "2026-07-15T15:40:00Z",
+  "completed_at": "2026-07-15T16:30:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen021_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Site-centric hierarchy (functional)",
+      "tool": "browser + /api/sites + /api/inspections",
+      "result": "pass",
+      "evidence": "Left panel lists Shopify sites (site-nav), not a flat run list; selecting Allbirds shows the site hero with its inspection runs under \"Each run is one inspection of this site\"; opening a run shows results with breadcrumb \"Allbirds > Run 2026-07-15 02:38 — results below trace to this run\"; the breadcrumb site link returns to the site view."
+    },
+    {
+      "category": "Cross-site navigation",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Clicking Gymshark from Allbirds navigates site-to-site; the right pane and sidebar highlight stay in sync."
+    },
+    {
+      "category": "No-auto-run directive honored during test",
+      "tool": "browser (queue strip observed)",
+      "result": "pass",
+      "evidence": "No navigation action triggered an inspection; the run queue strip never showed a new running/pending item. No npm run inspect* process spawned during validation."
+    },
+    {
+      "category": "Holistic UI walkthrough (as-a-user, all views)",
+      "tool": "browser across Inspections/Datasets/Settings",
+      "result": "pass",
+      "evidence": "Inspections (site-nav + run cards + detail tabs + breadcrumb), Datasets (viewer prompt; sites list correctly hidden), Settings (Data Management + Storage Cleanup; sites list correctly hidden) all coherent; no dead clicks or leaked run list across view switches."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit a936b2a) and pass 2 (after commit, no implementation changes). Dashboard validator now asserts the GEN-021 site-nav, run-card, renderSiteView, and crumbSite breadcrumb elements. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-021 chartered before implementation (Site>Run>Results restructure) and validated with two independent clean passes plus the holistic UI review gate. Every validation record here reflects browser interactions actually performed this session. No inspection runs were triggered (FND-GEN021-000 honored). Resolves FND-GEN021-001."
+}

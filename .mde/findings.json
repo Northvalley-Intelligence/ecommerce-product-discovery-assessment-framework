@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-07-15",
-  "current_generation": "GEN-020",
+  "current_generation": "GEN-021",
   "findings": [
     {
       "finding_id": "FND-GEN013-001",
@@ -601,6 +601,24 @@
       "summary": "Identified Shopify sites (target manifests) persist through cleanup but have no UI list, so cleaning all runs makes the sites disappear from view; sites should be first-class and re-inspectable.",
       "affected_workflow_or_component": "dashboard sites list",
       "status": "resolved_gen020_persistent_sites_list"
+    },
+    {
+      "finding_id": "FND-GEN021-000",
+      "source_validator": "Operator directive",
+      "severity": "High",
+      "category": "Process",
+      "summary": "Operator directive: the assistant must not trigger inspection runs; only the operator runs inspections via the UI. Validation must use existing runs on disk and never spawn a run.",
+      "affected_workflow_or_component": "run triggering / validation practice",
+      "status": "standing_directive_recorded"
+    },
+    {
+      "finding_id": "FND-GEN021-001",
+      "source_validator": "Operator directive",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "summary": "The dashboard shows a flat list of runs and reports; it should present the real hierarchy (Site > Run > Results) with the connection always visible so every result traces to its inspection and site.",
+      "affected_workflow_or_component": "dashboard information architecture",
+      "status": "resolved_gen021_site_centric_ui_shipped"
     }
   ],
   "lifecycle_states": [

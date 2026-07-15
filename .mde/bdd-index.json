@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-009",
+  "inventory_id": "BDD-INV-010",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-008",
+  "supersedes": "BDD-INV-009",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_20_sites_and_history_hygiene_inventory",
-  "refresh_rationale": "Adds GEN-020 behaviors: identified sites are first-class and persist through run cleanup, and the inspection list stays consistent with runs on disk (no phantom entries).",
+  "status": "generation_21_site_centric_ui_inventory",
+  "refresh_rationale": "Adds GEN-021 behaviors: the dashboard is organized Site>Run>Results, runs are grouped under their site, and every results view traces back to its site and run via a breadcrumb.",
   "summary": {
-    "total": 52,
+    "total": 55,
     "critical": 15,
-    "high": 28,
-    "medium": 9,
+    "high": 30,
+    "medium": 10,
     "low": 0,
-    "passing": 50,
+    "passing": 53,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -457,6 +457,32 @@
       "category": "Technical Validation",
       "status": "passed_gen_020",
       "evidence": "Cleanup prunes inspection-history rows for removed runs and the inspection list filters to runs that exist on disk; a validator assertion confirms no listed run points to a missing directory. VAL-068. Resolves FND-GEN020-001."
+    }
+  ],
+  "gen21_bdds": [
+    {
+      "id": "BDD-G21-001",
+      "title": "Dashboard is organized Site > Run > Results, not a flat run list",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_021",
+      "evidence": "Left panel is a site-nav of Shopify sites; selecting one shows the site with its inspection runs grouped beneath it. Verified live across Allbirds and Gymshark. VAL-069. Resolves FND-GEN021-001."
+    },
+    {
+      "id": "BDD-G21-002",
+      "title": "Every results view traces back to its site and run via breadcrumb",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_021",
+      "evidence": "Opening a run renders a \"Site > Run <timestamp> — results below trace to this run\" breadcrumb whose site link returns to the site view. Dashboard validator asserts crumbSite + run-card + renderSiteView presence. VAL-069."
+    },
+    {
+      "id": "BDD-G21-003",
+      "title": "Navigation never triggers an inspection run",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_021",
+      "evidence": "Selecting sites/runs and switching views spawns no run-inspection process; the queue strip shows no new work. Honors operator no-auto-run directive (FND-GEN021-000). VAL-069."
     }
   ]
 }

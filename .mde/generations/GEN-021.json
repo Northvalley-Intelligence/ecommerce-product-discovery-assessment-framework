@@ -1,0 +1,36 @@
+{
+  "generation_id": "GEN-021",
+  "mission_phase": "Generation 21 - Connected Site to Run to Results UI",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T15:30:00Z",
+  "ended_at": "2026-07-15T16:30:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Restructure the dashboard around the real hierarchy - a Shopify site has inspection runs, and each run has results/evidence - so the operator navigates Site to Run to Results with the connection always visible (breadcrumbs), instead of a flat list of runs and reports.",
+  "reason_generation_started": "Operator: each run is tied to a Shopify site and results come from an inspection; the UI should show those connections (evidence for everything) rather than a bunch of runs and reports.",
+  "standing_directive": "OPERATOR DIRECTIVE (2026-07-15): do NOT trigger inspection runs. Only the operator runs inspections via the UI. Validate using runs already on disk; never spawn a run for testing. Recorded as FND-GEN021-000.",
+  "validation_strategy": {
+    "functional": [
+      "The left panel is site-centric; runs are grouped under their site, not shown as a flat top-level list.",
+      "Selecting a site shows the site with its inspection runs; selecting a run shows that run's results with a breadcrumb Site > Run > Results.",
+      "Every results view traces back to its site and run via visible breadcrumb navigation."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user, no runs triggered): navigate Sites, drill into a site, open a run's results, use breadcrumbs to go back, switch views - all coherent with the sidebar and right pane in sync.",
+      "Confirm no inspection is triggered by any navigation action during testing."
+    ],
+    "technical": [
+      "validate:dashboard, validate:gen13, validate all green against existing runs on disk; git diff --check clean; no new run-inspection processes spawned during validation."
+    ]
+  },
+  "validation_notes": [
+    "VAL-069 two clean passes: validate:dashboard (now asserting site-nav/run-card/renderSiteView/crumbSite), validate:gen13, validate all green; pass 2 after commit a936b2a with no implementation changes.",
+    "Holistic UI walkthrough: site-centric sidebar, per-site runs, run results with breadcrumb, and cross-site navigation all coherent; Datasets and Settings keep the sites list correctly hidden; no dead clicks.",
+    "No inspection run was triggered during validation (FND-GEN021-000 honored) — validated entirely against runs already on disk.",
+    "BDD inventory refreshed to BDD-INV-010 (55 BDDs, 3 new for GEN-021, 53 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Site cards surface run status per run but do not yet summarize per-site health (last-clean date, open findings count) at the site level.",
+    "The dashboard validator still hard-depends on a Ridge run existing on disk (carried from GEN-020); cleaning all runs would break it until one is restored."
+  ]
+}
