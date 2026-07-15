@@ -79,6 +79,16 @@ async function main() {
     assert(page.includes('id="tabSettings"'), 'Dashboard page missing Settings tab.');
     assert(page.includes('id="sitesList"'), 'Dashboard page missing persistent sites list.');
     assert(page.includes("'/api/sites'"), 'Dashboard page missing sites API wiring.');
+    // GEN-021 site-centric hierarchy: sidebar lists sites, selecting one shows its
+    // runs, opening a run traces back to the site via a breadcrumb.
+    assert(page.includes('function renderSitesNav'), 'Dashboard page missing site-centric sidebar (renderSitesNav).');
+    assert(page.includes('function renderSiteView'), 'Dashboard page missing per-site view (renderSiteView).');
+    assert(page.includes('function selectSite'), 'Dashboard page missing site selection (selectSite).');
+    assert(page.includes('function openRun'), 'Dashboard page missing run opener (openRun).');
+    assert(page.includes('class="site-nav'), 'Dashboard page missing site-nav sidebar entries.');
+    assert(page.includes('class="run-card'), 'Dashboard page missing run cards under a site.');
+    assert(page.includes('Each run is one inspection of this site'), 'Dashboard page missing site→run framing copy.');
+    assert(page.includes('id="crumbSite"'), 'Dashboard page missing run→site breadcrumb link.');
 
     const sites = await fetchJson(`${dashboard.url}/api/sites`);
     assert(Array.isArray(sites) && sites.length > 0, 'Sites API returned no identified sites.');

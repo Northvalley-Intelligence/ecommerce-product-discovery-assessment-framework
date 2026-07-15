@@ -491,10 +491,15 @@ function dashboardPage() {
     }
     .sites-list { display: grid; gap: 6px; margin-bottom: 10px; }
     .list-head { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted); margin: 6px 0 2px; }
-    .site-item { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: white; }
-    .site-main { flex: 1; display: grid; gap: 2px; cursor: pointer; min-width: 0; }
+    .site-nav { width: 100%; text-align: left; display: grid; gap: 2px; border: 1px solid var(--line); background: white; color: var(--text); border-radius: 8px; padding: 9px 11px; }
+    .site-nav.active { border-color: var(--blue); background: var(--soft-blue); }
     .site-name { font-weight: 800; overflow-wrap: anywhere; }
-    .site-inspect { padding: 4px 10px; font-size: 11px; font-weight: 700; flex: none; }
+    .run-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+    .run-card { text-align: left; display: grid; gap: 4px; border: 1px solid var(--line); background: white; color: var(--text); border-radius: 8px; padding: 11px 12px; }
+    .run-card:hover { border-color: var(--blue); background: var(--soft-blue); }
+    .run-card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .crumb-current { font-weight: 700; font-size: 13px; }
+    .crumb-sep { color: var(--muted); margin: 0 6px; }
     .run-item {
       width: 100%;
       display: grid;
@@ -1023,7 +1028,8 @@ function dashboardPage() {
       datasetQuery: '',
       datasetField: '',
       selectedRecordIndex: -1,
-      detailTab: 'overview'
+      detailTab: 'overview',
+      selectedSite: null
     };
 
     function cls(status) {
@@ -1078,41 +1084,89 @@ function dashboardPage() {
       if (!response.ok) throw new Error(await response.text());
       return response.json();
     }
+    // Site-centric navigation: a Shopify site has inspection runs, and each run
+    // has results. The sidebar lists sites; picking a site shows its runs;
+    // picking a run shows its results — with a breadcrumb keeping the chain
+    // (Sites > Site > Run) visible so every result traces to its inspection.
     async function refresh() {
       state.inspections = await api('/api/inspections');
-      if (!state.selected && state.inspections.length) state.selected = state.inspections[0].inspection_id;
-      renderSites().catch(() => {});
-      renderRuns();
-      if (state.selected) await loadInspection(state.selected);
+      state.sites = await api('/api/sites');
+      renderSitesNav();
+      document.getElementById('runList').innerHTML = '';
+      if (state.selected && state.inspections.some((run) => run.inspection_id === state.selected)) {
+        await openRun(state.selected);
+      } else if (state.selectedSite && state.sites.some((site) => site.target_id === state.selectedSite)) {
+        renderSiteView(state.selectedSite);
+      } else if (state.sites.length) {
+        selectSite(state.sites[0].target_id);
+      } else {
+        document.getElementById('detail').innerHTML = '<div class="panel"><div class="panel-body">No Shopify sites yet. Use New Inspection to add one.</div></div>';
+      }
     }
-    async function renderSites() {
+    async function renderSites() { state.sites = await api('/api/sites'); renderSitesNav(); }
+    function inspectionCount(targetId) {
+      return state.inspections.filter((run) => run.target_id === targetId).length;
+    }
+    function renderSitesNav() {
       const el = document.getElementById('sitesList');
-      const sites = await api('/api/sites');
-      state.sites = sites;
+      const sites = state.sites || [];
       if (!sites.length) { el.innerHTML = ''; return; }
       el.innerHTML = '<div class="list-head">Your Shopify sites (' + sites.length + ')</div>' +
-        sites.map((site) =>
-          '<div class="site-item"><div class="site-main" data-target="' + escapeHtml(site.target_id) + '" data-run="' + escapeHtml(site.latest_run_id || '') + '">' +
+        sites.map((site) => {
+          const count = inspectionCount(site.target_id);
+          return '<button class="site-nav' + (site.target_id === state.selectedSite ? ' active' : '') + '" data-target="' + escapeHtml(site.target_id) + '">' +
             '<span class="site-name">' + escapeHtml(site.name) + '</span>' +
-            '<span class="muted">' + (site.latest_status ? escapeHtml(site.latest_status) + ' · last ' + escapeHtml((site.latest_timestamp || '').slice(0, 10)) : 'not yet inspected') + '</span>' +
-          '</div><button class="site-inspect" data-eval="' + escapeHtml(site.evaluation) + '" data-name="' + escapeHtml(site.name) + '">Inspect</button></div>'
-        ).join('') + '<div class="list-head">Runs</div>';
-      for (const main of el.querySelectorAll('.site-main')) {
-        main.addEventListener('click', async () => {
-          if (main.dataset.run) { state.selected = main.dataset.run; renderRuns(); await loadInspection(state.selected); }
-          else document.querySelector('.site-inspect[data-eval="' + (state.sites.find((s) => s.target_id === main.dataset.target)?.evaluation || '') + '"]')?.click();
-        });
-      }
-      for (const btn of el.querySelectorAll('.site-inspect')) {
-        btn.addEventListener('click', async (event) => {
-          event.stopPropagation();
-          try {
-            await api('/api/run', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ evaluation: btn.dataset.eval }) });
-            document.getElementById('actionResult').textContent = 'Queued an inspection of ' + btn.dataset.name + '. Watch the run queue above.';
-            pollQueue();
-          } catch (error) { alert(error.message); }
-        });
-      }
+            '<span class="muted">' + (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected') + '</span>' +
+          '</button>';
+        }).join('');
+      for (const btn of el.querySelectorAll('.site-nav')) btn.addEventListener('click', () => selectSite(btn.dataset.target));
+    }
+    function highlightSite(targetId) {
+      for (const btn of document.querySelectorAll('.site-nav')) btn.classList.toggle('active', btn.dataset.target === targetId);
+    }
+    function selectSite(targetId) {
+      state.selectedSite = targetId;
+      state.selected = null;
+      highlightSite(targetId);
+      renderSiteView(targetId);
+    }
+    function renderSiteView(targetId) {
+      const site = (state.sites || []).find((entry) => entry.target_id === targetId);
+      if (!site) return;
+      const runs = state.inspections.filter((run) => run.target_id === targetId)
+        .sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
+      document.getElementById('detail').innerHTML =
+        '<div class="crumb-bar"><span class="crumb-current">Sites › ' + escapeHtml(site.name) + '</span></div>' +
+        '<section class="hero"><div><p class="eyebrow">Shopify Site</p><h1>' + escapeHtml(site.name) + '</h1>' +
+          '<div class="subline"><span>' + escapeHtml(site.url) + '</span><span>' + escapeHtml(site.platform) + '</span><span>' + runs.length + ' inspection run' + (runs.length === 1 ? '' : 's') + '</span></div>' +
+          '<div class="hero-actions"><button id="siteInspectBtn" data-eval="' + escapeHtml(site.evaluation) + '" data-name="' + escapeHtml(site.name) + '">Inspect ' + escapeHtml(site.name) + '</button>' +
+          '<button id="siteEditBtn" class="secondary" data-target="' + escapeHtml(targetId) + '">Edit setup</button></div>' +
+        '</div></section>' +
+        panel('Inspection Runs', 'Each run is one inspection of this site; open one to see its results', runs.length
+          ? '<div class="panel-body"><div class="run-cards">' + runs.map((run) =>
+              '<button class="run-card" data-id="' + escapeHtml(run.inspection_id) + '">' +
+                '<div class="run-card-top"><strong>' + escapeHtml((run.timestamp || '').slice(0, 16).replace('T', ' ')) + '</strong>' + pill(run.status) + '</div>' +
+                '<div class="muted mono">' + escapeHtml(run.inspection_id) + '</div>' +
+                '<div class="muted">Readiness: ' + escapeHtml(run.readiness) + ' · Coverage: ' + escapeHtml(run.evidence_coverage) + '%</div>' +
+              '</button>').join('') + '</div></div>'
+          : '<div class="panel-body"><div class="empty">No inspections yet for this site. Click Inspect ' + escapeHtml(site.name) + ' to run one.</div></div>');
+      const inspectBtn = document.getElementById('siteInspectBtn');
+      if (inspectBtn) inspectBtn.addEventListener('click', async () => {
+        try {
+          await api('/api/run', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ evaluation: inspectBtn.dataset.eval }) });
+          document.getElementById('actionResult').textContent = 'Queued an inspection of ' + inspectBtn.dataset.name + '. Watch the run queue above.';
+          pollQueue();
+        } catch (error) { alert(error.message); }
+      });
+      const editBtn = document.getElementById('siteEditBtn');
+      if (editBtn) editBtn.addEventListener('click', () => { window.location.hash = '#setup=' + encodeURIComponent(editBtn.dataset.target); });
+      for (const card of document.querySelectorAll('.run-card')) card.addEventListener('click', () => openRun(card.dataset.id));
+    }
+    async function openRun(runId) {
+      state.selected = runId;
+      const run = state.inspections.find((entry) => entry.inspection_id === runId);
+      if (run) { state.selectedSite = run.target_id; highlightSite(run.target_id); }
+      await loadInspection(runId);
     }
     async function cleanupFlow() {
       const policy = document.getElementById('cleanupPolicy').value;
@@ -1135,25 +1189,6 @@ function dashboardPage() {
       result.textContent = 'Removed ' + applied.removed_count + ' run(s), freed ' + applied.freed_mb + ' MB. Kept ' + applied.kept_count + '.';
       state.selected = null;
       await refresh();
-    }
-    function renderRuns() {
-      const list = document.getElementById('runList');
-      list.innerHTML = state.inspections.map((run) => {
-        return '<button class="run-item ' + (run.inspection_id === state.selected ? 'active' : '') + '" data-id="' + escapeHtml(run.inspection_id) + '">' +
-          '<span class="run-top"><span class="run-title">' + escapeHtml(run.target_name) + '</span>' + pill(run.status) + '</span>' +
-          '<span class="muted">' + escapeHtml(run.inspection_id) + '</span>' +
-          '<span class="muted">' + escapeHtml(run.timestamp) + '</span>' +
-          '<span class="muted">Readiness: ' + escapeHtml(run.readiness) + ' | Coverage: ' + escapeHtml(run.evidence_coverage) + '%</span>' +
-        '</button>';
-      }).join('') || '<div class="empty">No inspection history found.</div>';
-      for (const button of list.querySelectorAll('button[data-id]')) {
-        button.addEventListener('click', async () => {
-          state.selected = button.dataset.id;
-          if (state.view !== 'inspections') { window.location.hash = '#inspections'; return; }
-          renderRuns();
-          await loadInspection(state.selected);
-        });
-      }
     }
     function rows(items, cells) {
       if (!items || !items.length) return '<div class="empty">No records.</div>';
@@ -1383,7 +1418,10 @@ function dashboardPage() {
       const statusState = cls(summary.overall_inspection_status);
       const statusPill = '<button class="status ' + statusState + ' status-link" data-tab="health" title="See what is incomplete">' + escapeHtml(String(summary.overall_inspection_status || 'unknown').toUpperCase()) + '</button>';
 
-      const heroSection = '<section class="hero"><div><p class="eyebrow">Selected Inspection</p><h1>' + escapeHtml(summary.target_name || report.target?.name || 'Inspection') + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(summary.target_name || report.target?.name || 'this inspection') + '</button><button id="detailResumeBtn" class="secondary">Resume</button><button id="detailEditBtn" class="secondary" data-target="' + escapeHtml(report.target?.target_id || '') + '">Edit setup</button></div></div><div style="text-align:right">' + statusPill + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>';
+      const siteName = summary.target_name || report.target?.name || 'Site';
+      const runLabel = (report.generated_at || report.inspection_id || '').slice(0, 16).replace('T', ' ');
+      const breadcrumb = '<div class="crumb-bar"><a href="#" class="crumb-link" id="crumbSite" data-target="' + escapeHtml(report.target?.target_id || '') + '">' + escapeHtml(siteName) + '</a><span class="crumb-sep">›</span><span class="crumb-current">Run ' + escapeHtml(runLabel) + '</span><span class="muted" style="margin-left:6px">— results below trace to this run</span></div>';
+      const heroSection = breadcrumb + '<section class="hero"><div><p class="eyebrow">Inspection Run</p><h1>' + escapeHtml(siteName) + '</h1><div class="subline"><span>' + escapeHtml(report.inspection_id || '') + '</span><span>' + escapeHtml(summary.target_url || '') + '</span><span>' + escapeHtml(report.generated_at || '') + '</span></div><div class="hero-actions"><button id="detailRerunBtn">Rerun ' + escapeHtml(siteName) + '</button><button id="detailResumeBtn" class="secondary">Resume</button><button id="detailEditBtn" class="secondary" data-target="' + escapeHtml(report.target?.target_id || '') + '">Edit setup</button></div></div><div style="text-align:right">' + statusPill + '<div class="muted" style="margin-top:8px">Readiness: ' + escapeHtml(op.downstream_report_readiness || 'unknown') + '</div></div></section>';
 
       const attentionSummary = attention.length
         ? '<div class="tl-attention"><div class="tl-attention-title">Needs attention — ' + attention.length + ' item' + (attention.length === 1 ? '' : 's') + '</div>' + attention.map(attentionItem).join('') + '</div>'
@@ -1469,6 +1507,8 @@ function dashboardPage() {
       if (detailResumeBtn) detailResumeBtn.addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
       const detailEditBtn = document.getElementById('detailEditBtn');
       if (detailEditBtn) detailEditBtn.addEventListener('click', () => { if (detailEditBtn.dataset.target) window.location.hash = '#setup=' + encodeURIComponent(detailEditBtn.dataset.target); });
+      const crumbSite = document.getElementById('crumbSite');
+      if (crumbSite) crumbSite.addEventListener('click', (event) => { event.preventDefault(); state.selected = null; selectSite(crumbSite.dataset.target); });
       for (const retryBtn of document.querySelectorAll('.retry-capture-btn')) {
         retryBtn.addEventListener('click', async (event) => {
           event.preventDefault();
@@ -1881,8 +1921,10 @@ function dashboardPage() {
       }
       setView(route.view);
       if (route.view === 'inspections') {
-        renderRuns();
-        if (state.selected) await loadInspection(state.selected);
+        renderSitesNav();
+        if (state.selected && state.inspections.some((run) => run.inspection_id === state.selected)) await openRun(state.selected);
+        else if (state.selectedSite) renderSiteView(state.selectedSite);
+        else if (state.sites && state.sites.length) selectSite(state.sites[0].target_id);
         return;
       }
       if (route.view !== 'datasets') return;
