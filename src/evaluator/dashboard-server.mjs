@@ -1079,6 +1079,7 @@ function dashboardPage() {
       for (const button of list.querySelectorAll('button[data-id]')) {
         button.addEventListener('click', async () => {
           state.selected = button.dataset.id;
+          if (state.view !== 'inspections') { window.location.hash = '#inspections'; return; }
           renderRuns();
           await loadInspection(state.selected);
         });
@@ -1522,7 +1523,7 @@ function dashboardPage() {
       document.getElementById('tabInspections').classList.toggle('active', view === 'inspections' || view === 'setup');
       document.getElementById('tabDatasets').classList.toggle('active', view === 'datasets');
       document.getElementById('tabSettings').classList.toggle('active', view === 'settings');
-      document.getElementById('runList').hidden = view === 'datasets';
+      document.getElementById('runList').hidden = view !== 'inspections';
       document.getElementById('datasetNav').hidden = view !== 'datasets';
       document.getElementById('inspectionView').hidden = view !== 'inspections';
       document.getElementById('datasetView').hidden = view !== 'datasets';
