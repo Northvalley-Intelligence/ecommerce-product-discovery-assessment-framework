@@ -2,8 +2,8 @@
   "schema_version": "fix-plan-v0.1",
   "target_id": "pinklily",
   "target_name": "Pinklily",
-  "updated_at": "2026-07-15T02:20:11.814Z",
-  "updated_from_inspection": "GEN-014-20260714T220916Z",
+  "updated_at": "2026-07-15T04:25:46.304Z",
+  "updated_from_inspection": "GEN-014-20260715T041828Z",
   "open_items": 2,
   "verified_items": 0,
   "items": [
@@ -22,8 +22,8 @@
       },
       "status": "still_failing",
       "first_observed_in": "GEN-014-20260714T220916Z",
-      "last_observed_in": "GEN-014-20260714T220916Z",
-      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/rendered-search.jsonl",
+      "last_observed_in": "GEN-014-20260715T041828Z",
+      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/rendered-search.jsonl",
       "history": [
         {
           "inspection_id": "GEN-014-20260714T220916Z",
@@ -72,8 +72,8 @@
       },
       "status": "still_failing",
       "first_observed_in": "GEN-014-20260714T220916Z",
-      "last_observed_in": "GEN-014-20260714T220916Z",
-      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260714T220916Z/evidence/experiments/rendered-search.jsonl",
+      "last_observed_in": "GEN-014-20260715T041828Z",
+      "evidence": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/rendered-search.jsonl",
       "history": [
         {
           "inspection_id": "GEN-014-20260714T220916Z",
@@ -109,6 +109,5 @@
     }
   ],
   "unmappable_findings": [],
-  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion.",
-  "last_verification_inspection": "GEN-014-20260715T021837Z"
+  "rule": "Every item carries a machine-verifiable criterion; statuses change only through verification runs, never by assertion."
 }

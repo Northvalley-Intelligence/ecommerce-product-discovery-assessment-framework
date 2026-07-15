@@ -1,0 +1,86 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T041828Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "pass",
+      "started_at": "2026-07-15T04:18:28.159Z",
+      "ended_at": "2026-07-15T04:18:41.363Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 8,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T04:18:41.367Z",
+      "ended_at": "2026-07-15T04:18:52.466Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 8,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "pass",
+      "started_at": "2026-07-15T04:18:52.469Z",
+      "ended_at": "2026-07-15T04:18:57.517Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T04:18:57.520Z",
+      "ended_at": "2026-07-15T04:19:03.123Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "pass",
+      "started_at": "2026-07-15T04:19:03.126Z",
+      "ended_at": "2026-07-15T04:19:06.308Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "pass",
+      "started_at": "2026-07-15T04:19:06.314Z",
+      "ended_at": "2026-07-15T04:20:24.715Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "High",
+      "evidence_quality": "rendered"
+    },
+    "browse-graph": {
+      "plugin_id": "browse-graph",
+      "status": "pass",
+      "started_at": "2026-07-15T04:20:24.717Z",
+      "ended_at": "2026-07-15T04:20:30.002Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/browse-graph.jsonl",
+      "observations": 4,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "rendered-product": {
+      "plugin_id": "rendered-product",
+      "status": "warn",
+      "started_at": "2026-07-15T04:20:30.006Z",
+      "ended_at": "2026-07-15T04:20:48.815Z",
+      "evidence_file": "assessments/pinklily/inspection-report/GEN-014/GEN-014-20260715T041828Z/evidence/experiments/rendered-product.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    }
+  }
+}

@@ -10,6 +10,29 @@ import { ensureParent } from './fs-json.mjs';
 const DEFAULT_TIMEOUT_MS = 25000;
 const DEFAULT_PACING_MS = 1500;
 const SETTLE_MS = 1800;
+const DEFAULT_MAX_RETRIES = 2;
+const RETRY_BACKOFF_MS = [4000, 10000];
+
+// A rendered capture is worth retrying when it hit a transient wall: a bot
+// challenge (often a 429 rate-limit that clears on a paced retry) or a timeout.
+function isRetryableCapture(result) {
+  const code = result?.classification?.code;
+  const status = result?.status;
+  return code === 'bot_challenge' || code === 'browser_timeout' || status === 429 || (typeof status === 'number' && status >= 500);
+}
+
+async function withCaptureRetry(attempt, maxRetries = DEFAULT_MAX_RETRIES) {
+  let result = await attempt();
+  let tries = 1;
+  while (isRetryableCapture(result) && tries <= maxRetries) {
+    await new Promise((resolve) => setTimeout(resolve, RETRY_BACKOFF_MS[Math.min(tries - 1, RETRY_BACKOFF_MS.length - 1)]));
+    const retried = await attempt();
+    retried.retry_attempts = tries;
+    result = retried;
+    tries += 1;
+  }
+  return result;
+}
 
 const SEARCH_TOGGLE_SELECTORS = [
   'button[aria-label*="search" i]',
@@ -115,22 +138,25 @@ export async function createRenderedSession({ userAgent, timeoutMs = DEFAULT_TIM
 
   return {
     async captureSearchPage(url, screenshotPath) {
+      return withCaptureRetry(async () => {
       const startedAt = Date.now();
       try {
         return await withPage(async (page) => {
           const response = await page.goto(url, { waitUntil: 'domcontentloaded' });
           await sleep(SETTLE_MS);
+          const bodySnippet = await page.evaluate(() => document.body.innerText.slice(0, 400));
+          const challenge = botChallengeClassification(await page.title(), bodySnippet);
           const observed = await extractSearchResults(page);
           if (screenshotPath) {
             ensureParent(screenshotPath);
             await page.screenshot({ path: screenshotPath, fullPage: false });
           }
           return {
-            ok: true,
+            ok: !challenge,
             status: response?.status() ?? null,
             final_url: page.url(),
             duration_ms: Date.now() - startedAt,
-            classification: null,
+            classification: challenge,
             observed,
             screenshot: screenshotPath ? path.basename(screenshotPath) : null
           };
@@ -147,9 +173,11 @@ export async function createRenderedSession({ userAgent, timeoutMs = DEFAULT_TIM
           error: String(error?.message || error).slice(0, 300)
         };
       }
+      });
     },
 
     async captureProductPage(url, screenshotPath) {
+      return withCaptureRetry(async () => {
       const startedAt = Date.now();
       try {
         return await withPage(async (page) => {
@@ -221,6 +249,7 @@ export async function createRenderedSession({ userAgent, timeoutMs = DEFAULT_TIM
           error: String(error?.message || error).slice(0, 300)
         };
       }
+      });
     },
 
     async captureAutocomplete(homepageUrl, query, screenshotPath) {

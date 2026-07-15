@@ -1,0 +1,62 @@
+{
+  "schema_version": "browse-graph-v0.1",
+  "inspection_id": "GEN-014-20260715T041828Z",
+  "generated_at": "2026-07-15T04:20:30.001Z",
+  "hierarchy": "flat_inventory",
+  "hierarchy_note": "Nodes and membership only; parent/child tree from the storefront navigation is a future slice.",
+  "node_count": 4,
+  "nodes": [
+    {
+      "handle": "cozy-christmas",
+      "title": "A Pink Lily Holiday",
+      "declared_product_count": 578,
+      "sampled_product_count": 20,
+      "sample_products": [
+        "haylie-black-quilted-weekender",
+        "devin-winter-white-striped-lounge-tank",
+        "devin-pink-striped-lounge-tank",
+        "brooke-mauve-corduroy-skort",
+        "brooke-cream-corduroy-skort",
+        "jules-mauve-corduroy-mini-skirt",
+        "my-favorite-dark-wash-denim-skort-1",
+        "my-favorite-light-wash-acid-wash-denim-skort-1",
+        "dottie-pink-cropped-v-neck-sweater",
+        "alexia-red-mini-dress",
+        "my-favorite-black-acid-wash-denim-skort-1",
+        "my-favorite-light-wash-side-slit-denim-skort",
+        "shania-blue-boots",
+        "shania-pink-boots",
+        "my-favorite-medium-wash-wide-leg-jeans",
+        "my-favorite-light-wash-wide-leg-jeans",
+        "through-the-garden-black-lace-mini-skort",
+        "teresa-pink-midi-skirt-amber-massey-x-pink-lily",
+        "ever-sage-hoodie-lounge-sweater",
+        "everest-medium-wash-bootcut-jeans"
+      ]
+    },
+    {
+      "handle": "a-fall-affair",
+      "title": "A Fall Affair",
+      "declared_product_count": 335,
+      "sampled_product_count": 2,
+      "sample_products": [
+        "through-the-garden-black-lace-mini-skort",
+        "wild-things-leopard-wide-leg-pants"
+      ]
+    },
+    {
+      "handle": "90s-nostalgia",
+      "title": "90's Nostalgia",
+      "declared_product_count": 92,
+      "sampled_product_count": 0,
+      "sample_products": []
+    },
+    {
+      "handle": "accessorize-yourself",
+      "title": "Accessorize Yourself Gift Guide",
+      "declared_product_count": 81,
+      "sampled_product_count": 0,
+      "sample_products": []
+    }
+  ]
+}

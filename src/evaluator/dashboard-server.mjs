@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ensureDir, exists, listFilesRecursive, readJson, readJsonl, writeText } from '../lib/fs-json.mjs';
 import { previewCleanup, runCleanup } from './cleanup.mjs';
+import { retryCapture } from './retry-capture.mjs';
 import { loadInspectionConfig, saveInspectionConfig } from './inspection-config.mjs';
 import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateFixPlan, readFixPlan, verifyFixPlan } from './fix-plan.mjs';
@@ -641,6 +642,7 @@ function dashboardPage() {
     .att-item ul { margin: 8px 0 2px; padding-left: 26px; }
     .att-item li { font-size: 12px; margin: 3px 0; overflow-wrap: anywhere; }
     .att-item .att-goto { margin-left: auto; font-size: 12px; white-space: nowrap; }
+    .retry-capture-btn { padding: 3px 9px; font-size: 11px; font-weight: 700; margin-left: 8px; }
     .chip-details { display: inline-block; }
     .chip-details summary { list-style: none; cursor: pointer; }
     .chip-details summary::-webkit-details-marker { display: none; }
@@ -1126,15 +1128,23 @@ function dashboardPage() {
     // file. The only claim allowed without evidence is "everything worked".
     function buildAttention(report, data) {
       const items = [];
+      const RETRYABLE_PLUGINS = ['rendered-product', 'rendered-search'];
+      const TRANSIENT_CODES = ['bot_challenge', 'browser_timeout', 'server_error', 'rate_limited'];
       for (const plugin of report.plugin_results || []) {
         const hasLimits = (plugin.infrastructure_limitations || []).length > 0;
         // Surface any plugin that failed, warned, or carries limitations even
         // while nominally passing — a limitation is a reason that needs a home.
         if (!['blocked', 'fail', 'warn'].includes(plugin.status) && !hasLimits) continue;
-        const limits = (plugin.infrastructure_limitations || []).map((limit) =>
-          (limit.query_id ? limit.query_id + ': ' : '') + (limit.label || limit.code || 'issue') +
-          (typeof limit.status === 'number' ? ' (HTTP ' + limit.status + ')' : '') +
-          (limit.endpoint ? ' — ' + limit.endpoint : ''));
+        const limits = (plugin.infrastructure_limitations || []).map((limit) => {
+          const text = (limit.query_id ? limit.query_id + ': ' : '') + (limit.label || limit.code || 'issue') +
+            (typeof limit.status === 'number' ? ' (HTTP ' + limit.status + ')' : '') +
+            (limit.endpoint ? ' — ' + limit.endpoint : '');
+          // A transient wall (429 / bot challenge / timeout) on a rendered
+          // plugin can be retried per-URL to clear the warning.
+          const retryable = RETRYABLE_PLUGINS.includes(plugin.plugin_id) && limit.query_id &&
+            (TRANSIENT_CODES.includes(limit.code) || limit.status === 429 || (typeof limit.status === 'number' && limit.status >= 500));
+          return retryable ? { text, retry: { plugin_id: plugin.plugin_id, key: limit.query_id } } : { text };
+        });
         const isFail = plugin.status === 'blocked' || plugin.status === 'fail';
         const headline = isFail
           ? '<strong>' + escapeHtml(plugin.plugin_id) + '</strong> was ' + escapeHtml(plugin.status)
@@ -1143,8 +1153,9 @@ function dashboardPage() {
           severity: isFail ? 'fail' : 'warn',
           tab: 'health',
           headline,
-          detail: limits.length ? limits : ['No per-request classification recorded; open the evidence to inspect ' + plugin.observations + ' observation(s).'],
-          evidence_file: plugin.evidence_file || null
+          detail: limits.length ? limits : [{ text: 'No per-request classification recorded; open the evidence to inspect ' + plugin.observations + ' observation(s).' }],
+          evidence_file: plugin.evidence_file || null,
+          run_dir: data.run_dir
         });
       }
       for (const endpoint of report.endpoint_discovery || []) {
@@ -1180,7 +1191,13 @@ function dashboardPage() {
         : '';
       const goto = item.tab ? ' <a href="#" data-goto-tab="' + item.tab + '" class="att-goto">go to ' + item.tab + '</a>' : '';
       return '<details class="att-item att-' + item.severity + '"><summary><span class="att-dot ' + item.severity + '"></span>' + item.headline + goto + link + '</summary><ul>' +
-        item.detail.map((line) => '<li>' + escapeHtml(line) + '</li>').join('') + '</ul></details>';
+        item.detail.map((line) => {
+          const text = typeof line === 'string' ? line : line.text;
+          const retryBtn = (typeof line === 'object' && line.retry && item.run_dir)
+            ? ' <button class="retry-capture-btn" data-run="' + escapeHtml(item.run_dir) + '" data-plugin="' + escapeHtml(line.retry.plugin_id) + '" data-key="' + escapeHtml(line.retry.key) + '">Retry this URL</button>'
+            : '';
+          return '<li>' + escapeHtml(text) + retryBtn + '</li>';
+        }).join('') + '</ul></details>';
     }
     function renderTimeline(timeline, report) {
       if (!timeline.length) return panel('Inspection Timeline', 'What happened, step by step', '<div class="panel-body"><div class="empty">No timeline recorded for this run.</div></div>');
@@ -1379,6 +1396,29 @@ function dashboardPage() {
       if (detailResumeBtn) detailResumeBtn.addEventListener('click', () => runAction('resume').catch((error) => alert(error.message)));
       const detailEditBtn = document.getElementById('detailEditBtn');
       if (detailEditBtn) detailEditBtn.addEventListener('click', () => { if (detailEditBtn.dataset.target) window.location.hash = '#setup=' + encodeURIComponent(detailEditBtn.dataset.target); });
+      for (const retryBtn of document.querySelectorAll('.retry-capture-btn')) {
+        retryBtn.addEventListener('click', async (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          retryBtn.disabled = true;
+          retryBtn.textContent = 'Retrying…';
+          try {
+            const result = await api('/api/retry-capture', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ run_dir: retryBtn.dataset.run, plugin_id: retryBtn.dataset.plugin, key: retryBtn.dataset.key })
+            });
+            document.getElementById('actionResult').textContent = result.warning_cleared
+              ? 'Retry succeeded for ' + result.key + ' — warning cleared and the report was updated' + (result.executive_report_regenerated ? ' (executive report regenerated).' : '.')
+              : 'Retry for ' + result.key + ' still returned ' + result.status + '. Left as a limitation.';
+            await loadInspection(state.selected);
+          } catch (error) {
+            alert(error.message);
+            retryBtn.disabled = false;
+            retryBtn.textContent = 'Retry this URL';
+          }
+        });
+      }
       const fixPlanBtn = document.getElementById('fixPlanBtn');
       if (fixPlanBtn) {
         fixPlanBtn.addEventListener('click', async () => {
@@ -1900,6 +1940,18 @@ function routeRequest(rootDir, request, response) {
         if (!body.run_dir) throw new Error('run_dir is required.');
         safeResolve(rootDir, body.run_dir);
         sendJson(response, 200, verifyFixPlan(rootDir, body.run_dir));
+      })
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/retry-capture') {
+    readBody(request)
+      .then(async (body) => {
+        if (!body.run_dir || !body.plugin_id || !body.key) throw new Error('run_dir, plugin_id, and key are required.');
+        safeResolve(rootDir, body.run_dir);
+        const result = await retryCapture(rootDir, body);
+        sendJson(response, 200, result);
       })
       .catch((error) => sendJson(response, 400, { error: error.message }));
     return;

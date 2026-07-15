@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createShopifyAdapter } from '../adapters/shopify.mjs';
 import {
   appendJsonl,
@@ -202,7 +203,7 @@ function summarizeExistingDatasets(outputDir) {
   );
 }
 
-function summarizePluginEvidence(pluginId, outputDir) {
+export function summarizePluginEvidence(pluginId, outputDir) {
   if (pluginId === 'submitted-search') {
     const evidenceFile = path.join(outputDir, 'evidence', 'experiments', 'submitted-search.jsonl');
     const rows = readJsonl(evidenceFile);
@@ -378,7 +379,7 @@ function statusToIcon(status) {
   return 'NOT_RUN';
 }
 
-function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
+export function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
   const endpointByLabel = new Map((siteProfile.endpoint_discovery || []).map((entry) => [entry.label, entry]));
   const pluginById = new Map(pluginResults.map((result) => [result.plugin_id, result]));
   const homepage = endpointByLabel.get('homepage');
@@ -480,7 +481,7 @@ function buildCrawlHealth({ siteProfile, pluginResults, evaluation }) {
   ];
 }
 
-function collectLimitations({ siteProfile, pluginResults, platformReport }) {
+export function collectLimitations({ siteProfile, pluginResults, platformReport }) {
   const platformCapabilityGaps = (platformReport.checks || [])
     .filter((check) => check.status === 'fail')
     .map((check) => ({
@@ -505,7 +506,7 @@ function collectLimitations({ siteProfile, pluginResults, platformReport }) {
   };
 }
 
-function evidenceCoverage({ crawlHealth, datasetSummary, pluginResults }) {
+export function evidenceCoverage({ crawlHealth, datasetSummary, pluginResults }) {
   const components = crawlHealth.length;
   const observedComponents = crawlHealth.filter((entry) => entry.status === 'PASS' || entry.status === 'WARN').length;
   const pluginObservations = pluginResults.reduce((sum, result) => sum + (result.observations || 0), 0);
@@ -1086,7 +1087,11 @@ async function main() {
   console.log(`Inspection complete: ${outputDir}`);
 }
 
-main().catch((error) => {
-  console.error(error.stack || error.message);
-  process.exit(1);
-});
+// Only run the inspection when invoked directly, so the module's exported
+// helpers can be imported (e.g. by retry-capture) without executing a run.
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error.stack || error.message);
+    process.exit(1);
+  });
+}

@@ -214,7 +214,8 @@
       "evidence": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/submitted-search.jsonl",
       "customer_impact": "Customers searching Dress Up with these query styles reach product results instead of dead ends.",
       "business_impact": "Search is carrying discovery traffic to sellable inventory for the observed query set.",
-      "recommendation": "Protect this behavior with a regression query set and broaden coverage beyond the starter queries."
+      "recommendation": "Protect this behavior with a regression query set and broaden coverage beyond the starter queries.",
+      "nature": "store_finding"
     },
     {
       "type": "strength",
@@ -224,7 +225,8 @@
       "evidence": "assessments/dress-up/inspection-report/GEN-013/GEN-013-20260715T021743Z/evidence/experiments/autocomplete.jsonl",
       "customer_impact": "Customers get guidance before submitting a search, reducing typing effort and misses.",
       "business_impact": "Assisted queries convert better than unassisted ones.",
-      "recommendation": "Verify the visible dropdown matches the API suggestions once rendered capture (P008) lands."
+      "recommendation": "Verify the visible dropdown matches the API suggestions once rendered capture (P008) lands.",
+      "nature": "store_finding"
     }
   ],
   "opportunities": [],
