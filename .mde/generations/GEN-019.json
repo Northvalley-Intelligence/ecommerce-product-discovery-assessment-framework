@@ -4,8 +4,8 @@
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-15T05:20:00Z",
-  "ended_at": null,
-  "record_status": "chartered_before_implementation",
+  "ended_at": "2026-07-15T05:55:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
   "phase_goal": "Give the operator operational control: (1) a persistent single-at-a-time inspection run queue with transparency and management, and (2) a discoverable data-management settings area with cleanup including screenshot/capture reclamation.",
   "reason_generation_started": "Operator observed that Add Site & Inspect, Rerun, Resume, and Run Verification each spawn independent child processes with no concurrency control, risking rate-limits (the 429s we have been fighting) and hiding what is in flight. Requested a single-at-a-time queue with transparency and basic management, persisted across restarts.",
   "validation_strategy": {
@@ -26,7 +26,15 @@
       "npm run validate, validate:gen13 remain green; git diff --check clean."
     ]
   },
-  "validation_notes": [],
-  "known_gaps_opened": [],
+  "validation_notes": [
+    "VAL-067 first clean pass: queue single-runner, persistence/reconcile, cancel/clear, captures-only cleanup, and the site-profile cache-schema fix all validated; suites green.",
+    "VAL-067 second independent pass: no implementation changes since the commit; suites green and the single-runner behavior reproduced (1 running child, N pending).",
+    "BDD inventory refreshed to BDD-INV-008 (50 BDDs, 5 new for GEN-019, 48 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Queue reordering of pending items is not exposed yet (cancel/clear only).",
+    "A run orphaned by a restart is reconciled as interrupted but its orphaned child process is not force-killed.",
+    "Captures-only cleanup removes screenshots/raw for all runs at once; per-run capture cleanup is not offered."
+  ],
   "scope_addendum": "Expanded 2026-07-15 to also resolve FND-GEN019-002 (data-management discoverability + capture cleanup) alongside the chartered queue (FND-GEN019-003)."
 }

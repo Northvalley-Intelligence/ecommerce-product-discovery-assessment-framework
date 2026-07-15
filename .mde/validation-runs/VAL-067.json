@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-067",
+  "generation": "GEN-019",
+  "phase": "Generation 19 - Operational Controls",
+  "started_at": "2026-07-15T05:30:00Z",
+  "completed_at": "2026-07-15T05:55:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen019_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Queue single-runner (functional)",
+      "tool": "live enqueue via /api/run",
+      "result": "pass",
+      "evidence": "Enqueuing multiple runs yields exactly one run-inspection child at a time; the rest pending."
+    },
+    {
+      "category": "Queue persistence + restart reconcile",
+      "tool": "restart dashboard mid-run",
+      "result": "pass",
+      "evidence": "Queue persists to tmp/inspection-queue.json; after restart the running item is marked interrupted and the next pending run resumes."
+    },
+    {
+      "category": "Queue management",
+      "tool": "browser + /api/queue/cancel,clear",
+      "result": "pass",
+      "evidence": "Live queue strip shows running + pending with Cancel and Clear queued; cancel removes a pending item."
+    },
+    {
+      "category": "Data-management discoverability + capture cleanup",
+      "tool": "browser Settings tab + captures-only preview",
+      "result": "pass",
+      "evidence": "Settings tab surfaces Data Management + Storage Cleanup; captures-only preview reports reclaimable space (~154 MB across runs)."
+    },
+    {
+      "category": "Site-profile cache-schema fix",
+      "tool": "fresh Dress Up run",
+      "result": "pass",
+      "evidence": "Browse PASS with 8/8 collections after schema-version cache invalidation; stale pre-GEN-018 profile no longer silently fails browse."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "All green on pass 1 and on pass 2 with no implementation changes after the commit."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-019 chartered before implementation, validated with two clean passes, BDD inventory refreshed (BDD-INV-008). Findings FND-GEN019-001/003/004 resolved; FND-GEN019-002 resolved by the Settings surface."
+}

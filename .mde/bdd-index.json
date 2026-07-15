@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-007",
+  "inventory_id": "BDD-INV-008",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-006",
+  "supersedes": "BDD-INV-007",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_18_consolidation_inventory",
-  "refresh_rationale": "Consolidation refresh (2026-07-15): covers behaviors built across GEN-017 (Shopify shakedown + curation hardening) and GEN-018 (browse inventory, rendered product pages, evidence honesty, retry, and the dashboard usability layer) that BDD-INV-006 predated.",
+  "status": "generation_19_operational_controls_inventory",
+  "refresh_rationale": "Adds GEN-019 operational-control behaviors: persistent single-at-a-time run queue and discoverable data-management settings including capture cleanup, plus the FND-GEN019-001 site-profile cache-schema fix.",
   "summary": {
-    "total": 45,
+    "total": 50,
     "critical": 15,
-    "high": 23,
-    "medium": 6,
+    "high": 27,
+    "medium": 8,
     "low": 0,
-    "passing": 43,
+    "passing": 48,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -397,6 +397,48 @@
       "category": "Usability Validation",
       "status": "passed_gen_018",
       "evidence": "Fix Plan panel wording (Still present / Fixed (verified)) verified live on Pink Lily. VAL-065."
+    }
+  ],
+  "gen19_bdds": [
+    {
+      "id": "BDD-G19-001",
+      "title": "Inspection runs execute one at a time via a queue",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_019",
+      "evidence": "Enqueuing several runs yields exactly one run-inspection child at a time with the rest pending; verified live (1 running, N pending). VAL-067."
+    },
+    {
+      "id": "BDD-G19-002",
+      "title": "The queue persists across dashboard restarts and reconciles interrupted runs",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_019",
+      "evidence": "Queue state persists to disk; after a restart a mid-flight run is marked interrupted (not stuck running) and the next pending run resumes. VAL-067."
+    },
+    {
+      "id": "BDD-G19-003",
+      "title": "The operator sees what is running and next and can cancel/clear",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_019",
+      "evidence": "Live queue strip shows running + ordered pending with per-item Cancel and Clear queued; verified in browser. VAL-067."
+    },
+    {
+      "id": "BDD-G19-004",
+      "title": "Data management is discoverable and can reclaim capture space",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_019",
+      "evidence": "A Settings tab surfaces Data Management + Storage Cleanup with a captures-only policy that removes screenshots/raw while keeping evidence and reports; preview reports reclaimable MB. VAL-067. Resolves FND-GEN019-002."
+    },
+    {
+      "id": "BDD-G19-005",
+      "title": "Cached site profiles are invalidated when the discovery schema changes",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "status": "passed_gen_019",
+      "evidence": "Site profile bumped to v0.2; cache reuse now requires a matching schema version, so a pre-GEN-018 profile is re-discovered instead of silently failing browse inventory. Fresh Dress Up run: Browse PASS, 8 nodes. VAL-067. Resolves FND-GEN019-001."
     }
   ]
 }

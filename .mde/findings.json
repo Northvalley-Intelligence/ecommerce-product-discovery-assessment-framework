@@ -564,7 +564,7 @@
       "category": "Usability Validation",
       "summary": "The Storage / data-management (cleanup) panel exists in the sidebar but is buried below the inspection list, so the operator could not find it; it should be a discoverable settings location and cover screenshot/capture cleanup explicitly.",
       "affected_workflow_or_component": "dashboard sidebar storagePanel",
-      "status": "open_backlog_make_data_management_discoverable"
+      "status": "resolved_gen019_settings_data_management_and_capture_cleanup"
     },
     {
       "finding_id": "FND-GEN019-003",
@@ -573,7 +573,7 @@
       "category": "Technical Validation",
       "summary": "Inspection runs are spawned independently with no concurrency control, risking rate-limit (429) collisions and hiding what is in flight.",
       "affected_workflow_or_component": "run-triggering endpoints",
-      "status": "chartered_as_gen019_persistent_queue"
+      "status": "resolved_gen019_persistent_run_queue"
     },
     {
       "finding_id": "FND-GEN019-004",
