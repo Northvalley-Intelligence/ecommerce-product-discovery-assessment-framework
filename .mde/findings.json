@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-07-15",
-  "current_generation": "GEN-017",
+  "current_generation": "GEN-019",
   "findings": [
     {
       "finding_id": "FND-GEN013-001",
@@ -547,6 +547,42 @@
       "summary": "Pipeline robustness confirmed: across five real stores in five verticals, every cycle stage either succeeded or degraded honestly with no crashes; the one aborted stage (Bombas curation) failed with a clear, correct reason.",
       "affected_workflow_or_component": "end-to-end cycle",
       "status": "confirmed"
+    },
+    {
+      "finding_id": "FND-GEN019-001",
+      "source_validator": "Operator observation during GEN-019 session",
+      "severity": "High",
+      "category": "Evidence Quality",
+      "summary": "Cached site profiles were reused by age only, so a profile captured before a discovery-schema change (pre-GEN-018, missing catalog_discovery.collections) silently degraded browse inventory to FAIL on Dress Up though the store was fine.",
+      "affected_workflow_or_component": "resolveSiteProfile / site profile cache",
+      "status": "fixed_gen019_schema_version_gate_on_cache_reuse (bumped site-profile to v0.2; reuse now requires matching schema)"
+    },
+    {
+      "finding_id": "FND-GEN019-002",
+      "source_validator": "Operator observation during GEN-019 session",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "summary": "The Storage / data-management (cleanup) panel exists in the sidebar but is buried below the inspection list, so the operator could not find it; it should be a discoverable settings location and cover screenshot/capture cleanup explicitly.",
+      "affected_workflow_or_component": "dashboard sidebar storagePanel",
+      "status": "open_backlog_make_data_management_discoverable"
+    },
+    {
+      "finding_id": "FND-GEN019-003",
+      "source_validator": "Operator observation during GEN-019 session",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "summary": "Inspection runs are spawned independently with no concurrency control, risking rate-limit (429) collisions and hiding what is in flight.",
+      "affected_workflow_or_component": "run-triggering endpoints",
+      "status": "chartered_as_gen019_persistent_queue"
+    },
+    {
+      "finding_id": "FND-GEN019-004",
+      "source_validator": "Operator observation during GEN-019 session",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "summary": "The dataset viewer was a navigation dead end with no way back to the originating inspection.",
+      "affected_workflow_or_component": "dataset viewer",
+      "status": "fixed_breadcrumb_back_navigation"
     }
   ],
   "lifecycle_states": [

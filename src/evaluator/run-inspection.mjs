@@ -719,11 +719,14 @@ function writeCheckpoint({
 // a resumed run keeps its own profile, a fresh run may reuse the shared
 // profile at site_profile.path while it is younger than max_age_hours,
 // and every decision is recorded as cache metadata evidence.
+const CURRENT_SITE_PROFILE_SCHEMA = 'site-profile-v0.2';
+
 async function resolveSiteProfile({ outputDir, evaluation, adapter }) {
   const runProfilePath = path.join(outputDir, 'site-profile.json');
   const sharedProfilePath = evaluation.site_profile?.path || null;
   const maxAgeHours = evaluation.site_profile?.max_age_hours ?? 0;
   const cacheKey = `site-profile:${evaluation.target}`;
+  let timelineNote = null;
 
   const metadata = (decision, { ageHours = null, reason, createdAt }) => ({
     schema_version: 'cache-metadata-v0.1',
@@ -750,7 +753,12 @@ async function resolveSiteProfile({ outputDir, evaluation, adapter }) {
   if (sharedProfilePath && maxAgeHours > 0 && exists(sharedProfilePath)) {
     const sharedProfile = readJson(sharedProfilePath);
     const ageHours = (Date.now() - new Date(sharedProfile.discovered_at).getTime()) / 3600000;
-    if (Number.isFinite(ageHours) && ageHours >= 0 && ageHours <= maxAgeHours) {
+    const withinAge = Number.isFinite(ageHours) && ageHours >= 0 && ageHours <= maxAgeHours;
+    // A cached profile from an older discovery schema is stale regardless of
+    // age: reusing it silently degrades downstream plugins (e.g. a pre-GEN-018
+    // profile lacks catalog_discovery.collections, failing browse inventory).
+    const schemaCurrent = sharedProfile.schema_version === CURRENT_SITE_PROFILE_SCHEMA;
+    if (withinAge && schemaCurrent) {
       return {
         siteProfile: sharedProfile,
         cacheMetadata: metadata('reused_shared_cache', {
@@ -759,6 +767,10 @@ async function resolveSiteProfile({ outputDir, evaluation, adapter }) {
           reason: `Shared site profile is ${Math.round(ageHours * 100) / 100} hours old, within the ${maxAgeHours} hour freshness window.`
         })
       };
+    }
+    if (withinAge && !schemaCurrent) {
+      // fall through to fresh discovery below; record why the cache was not reused
+      timelineNote = `Shared site profile schema ${sharedProfile.schema_version || 'unknown'} is older than ${CURRENT_SITE_PROFILE_SCHEMA}; re-discovering.`;
     }
   }
 
@@ -772,9 +784,10 @@ async function resolveSiteProfile({ outputDir, evaluation, adapter }) {
     cacheMetadata: metadata('refreshed_live_discovery', {
       ageHours: 0,
       createdAt: siteProfile.discovered_at,
-      reason: sharedProfilePath
-        ? 'No fresh shared site profile existed, so discovery ran live and refreshed the shared cache.'
-        : 'Evaluation manifest declares no shared site profile path, so discovery ran live for this run only.'
+      reason: timelineNote
+        || (sharedProfilePath
+          ? 'No fresh shared site profile existed, so discovery ran live and refreshed the shared cache.'
+          : 'Evaluation manifest declares no shared site profile path, so discovery ran live for this run only.')
     })
   };
 }

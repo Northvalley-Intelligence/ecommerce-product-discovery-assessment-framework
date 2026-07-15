@@ -86,7 +86,7 @@ export function createShopifyAdapter(target) {
       ].filter(Boolean);
 
       return {
-        schema_version: 'site-profile-v0.1',
+        schema_version: 'site-profile-v0.2',
         discovered_at: new Date().toISOString(),
         target: {
           target_id: target.target_id,
