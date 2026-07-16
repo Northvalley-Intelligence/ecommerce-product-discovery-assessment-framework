@@ -366,6 +366,51 @@ function sharedData(rootDir) {
   };
 }
 
+function sectorView(rootDir, sectorId) {
+  const sectorPath = path.join(rootDir, 'sectors', `${sectorSlug(sectorId)}.json`);
+  if (!exists(sectorPath)) return null;
+  const sector = readJson(sectorPath);
+  const packs = (sector.shared_query_packs || [])
+    .filter((rel) => exists(path.join(rootDir, rel)))
+    .map((rel) => datasetFileEntry(rootDir, path.join(rootDir, rel)));
+  const sites = listSites(rootDir);
+  const inspectionRows = inspections(rootDir);
+  // One comparison row per member site, from its latest run on disk (or null).
+  const members = (sector.member_sites || []).map((targetId) => {
+    const site = sites.find((entry) => entry.target_id === targetId);
+    const runs = inspectionRows
+      .filter((row) => row.target_id === targetId)
+      .sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
+    const latest = runs[0] || null;
+    return {
+      target_id: targetId,
+      name: site?.name || targetId,
+      url: site?.url || null,
+      run_count: runs.length,
+      latest_run: latest
+        ? {
+            inspection_id: latest.inspection_id,
+            timestamp: latest.timestamp,
+            status: latest.status,
+            readiness: latest.readiness,
+            coverage: latest.evidence_coverage,
+            failed_components: latest.failed_components,
+            warning_components: latest.warning_components,
+            platform: latest.platform
+          }
+        : null
+    };
+  });
+  return {
+    sector_id: sector.sector_id,
+    name: sector.name,
+    description: sector.description || '',
+    query_pack_files: packs,
+    member_count: members.length,
+    members
+  };
+}
+
 function writeSector(rootDir, sector) {
   const dir = path.join(rootDir, 'sectors');
   if (!exists(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -1226,6 +1271,7 @@ function dashboardPage() {
       if (params.has('dataset')) {
         return { view: 'dataset', path: params.get('dataset'), from: params.get('from') || 'shared' };
       }
+      if (params.has('sector')) return { view: 'sector', id: params.get('sector') };
       if (hash === 'shared' || hash.startsWith('shared')) return { view: 'shared' };
       if (params.has('setup')) return { view: 'setup', target: params.get('setup') || null };
       if (hash === 'setup') return { view: 'setup', target: null };
@@ -1347,7 +1393,8 @@ function dashboardPage() {
         : '';
       const membership = data.sector_membership.length
         ? '<div class="data-group"><h3>Sector data this site uses</h3>' + data.sector_membership.map((sector) =>
-            '<div class="sector-row"><strong>' + escapeHtml(sector.name) + '</strong> ' + dataFileButtons(sector.query_pack_files, 'shared') + '</div>').join('') + '</div>'
+            '<div class="sector-row"><strong>' + escapeHtml(sector.name) + '</strong> ' + dataFileButtons(sector.query_pack_files, 'shared') +
+            ' <button class="link-btn sector-open" data-sector="' + escapeHtml(sector.sector_id) + '">Compare sites in this sector →</button></div>').join('') + '</div>'
         : '';
       const available = data.sectors_available.length
         ? '<div class="data-group"><h3>Sector data available to use</h3>' + data.sectors_available.map((sector) =>
@@ -1367,6 +1414,9 @@ function dashboardPage() {
           '<div class="panel-body">' + groupBlocks + runBlocks + membership + available + promoteForm + '</div>');
       for (const btn of document.querySelectorAll('#siteData .data-file, #siteData .sector-row .data-file')) {
         btn.addEventListener('click', () => { window.location.hash = datasetHash(btn.dataset.path, btn.dataset.origin); });
+      }
+      for (const btn of document.querySelectorAll('#siteData .sector-open')) {
+        btn.addEventListener('click', () => { window.location.hash = '#sector=' + encodeURIComponent(btn.dataset.sector); });
       }
       for (const btn of document.querySelectorAll('#siteData .adopt-sector')) {
         btn.addEventListener('click', async () => {
@@ -1859,9 +1909,9 @@ function dashboardPage() {
     }
     function setView(view) {
       state.view = view;
-      const dataView = view === 'shared' || view === 'dataset';
+      const dataView = view === 'shared' || view === 'dataset' || view === 'sector';
       document.getElementById('tabInspections').classList.toggle('active', view === 'inspections' || view === 'setup');
-      document.getElementById('tabShared').classList.toggle('active', view === 'shared');
+      document.getElementById('tabShared').classList.toggle('active', view === 'shared' || view === 'sector');
       document.getElementById('tabSettings').classList.toggle('active', view === 'settings');
       document.getElementById('runList').hidden = view !== 'inspections';
       document.getElementById('sitesList').hidden = view !== 'inspections';
@@ -1996,7 +2046,8 @@ function dashboardPage() {
         dataFileButtons(shared.platform, 'shared') + '</div>';
       const sectorBlocks = shared.sectors.length
         ? shared.sectors.map((sector) =>
-            '<div class="data-group"><h3>' + escapeHtml(sector.name) + ' <span class="muted" style="font-weight:400">sector</span></h3>' +
+            '<div class="data-group"><h3>' + escapeHtml(sector.name) + ' <span class="muted" style="font-weight:400">sector</span>' +
+              ' <button class="link-btn sector-open" data-sector="' + escapeHtml(sector.sector_id) + '">View comparison →</button></h3>' +
             '<div class="muted" style="font-size:12px;margin-bottom:6px">' + escapeHtml(sector.description || '') +
               ' · ' + (sector.member_sites.length ? 'used by ' + sector.member_sites.map(escapeHtml).join(', ') : 'not used by any site yet') + '</div>' +
             dataFileButtons(sector.query_pack_files, 'shared') + '</div>').join('')
@@ -2008,6 +2059,58 @@ function dashboardPage() {
         panel('Not tied to any site', 'Platform capability model and sector datasets that sites can reuse', '<div class="panel-body">' + platformBlock + sectorBlocks + '</div>');
       for (const btn of view.querySelectorAll('.data-file')) {
         btn.addEventListener('click', () => { window.location.hash = datasetHash(btn.dataset.path, btn.dataset.origin); });
+      }
+      for (const btn of view.querySelectorAll('.sector-open')) {
+        btn.addEventListener('click', () => { window.location.hash = '#sector=' + encodeURIComponent(btn.dataset.sector); });
+      }
+    }
+    async function renderSectorView(sectorId) {
+      setView('sector');
+      const view = document.getElementById('datasetView');
+      view.innerHTML = '<div class="empty">Loading sector…</div>';
+      let sector;
+      try {
+        sector = await api('/api/sector?id=' + encodeURIComponent(sectorId));
+      } catch (error) {
+        view.innerHTML = '<div class="crumb-bar"><a href="#shared" class="crumb-link">Shared</a></div>' +
+          panel('Sector', 'Error', '<div class="panel-body">Could not load sector: ' + escapeHtml(error.message) + '</div>');
+        return;
+      }
+      const compareRows = sector.members.length
+        ? sector.members.map((member) => {
+            const run = member.latest_run;
+            const cells = run
+              ? pill(run.status) + '</td>' +
+                '<td>' + pill(run.readiness) + '</td>' +
+                '<td>' + escapeHtml(String(run.coverage ?? '')) + '%</td>' +
+                '<td>' + escapeHtml(String(run.warning_components ?? 0)) + '</td>' +
+                '<td>' + escapeHtml(String(run.failed_components ?? 0)) + '</td>' +
+                '<td class="muted mono">' + escapeHtml((run.timestamp || '').slice(0, 16).replace('T', ' '))
+              : '<span class="muted">not yet inspected</span></td><td></td><td></td><td></td><td></td><td';
+            return '<tr><td><button class="link-btn sector-site" data-target="' + escapeHtml(member.target_id) + '">' + escapeHtml(member.name) + '</button>' +
+              '<div class="muted" style="font-size:11px">' + escapeHtml(member.url || '') + '</div></td>' +
+              '<td>' + cells + '</td></tr>';
+          }).join('')
+        : '<tr><td colspan="7" class="muted">No member sites yet. Add sites from a site\\'s “Use for …” action.</td></tr>';
+      view.innerHTML =
+        '<div class="crumb-bar"><a href="#shared" class="crumb-link">Shared</a><span class="crumb-sep">›</span>' +
+          '<span class="crumb-current">' + escapeHtml(sector.name) + '</span></div>' +
+        '<section class="hero"><div><p class="eyebrow">Sector</p><h1>' + escapeHtml(sector.name) + '</h1>' +
+          '<div class="subline"><span>' + sector.member_count + ' member site(s)</span><span>' + sector.query_pack_files.length + ' shared query pack(s)</span></div>' +
+          (sector.description ? '<p class="muted" style="margin:8px 0 0">' + escapeHtml(sector.description) + '</p>' : '') + '</div></section>' +
+        panel('Shared query packs', 'Reused by every member site', '<div class="panel-body">' + dataFileButtons(sector.query_pack_files, 'shared') + '</div>') +
+        panel('Cross-site comparison', 'Latest inspection of each member site',
+          '<div class="table-wrap"><table><thead><tr><th>Site</th><th>Status</th><th>Readiness</th><th>Coverage</th><th>Warnings</th><th>Failures</th><th>Latest run</th></tr></thead><tbody>' +
+          compareRows + '</tbody></table></div>');
+      for (const btn of view.querySelectorAll('.data-file')) {
+        btn.addEventListener('click', () => { window.location.hash = datasetHash(btn.dataset.path, btn.dataset.origin); });
+      }
+      for (const btn of view.querySelectorAll('.sector-site')) {
+        btn.addEventListener('click', () => {
+          state.selected = null;
+          state.selectedSite = btn.dataset.target;
+          window.location.hash = '#inspections';
+        });
       }
     }
     async function openDataset(file, from) {
@@ -2167,6 +2270,10 @@ function dashboardPage() {
         await renderShared();
         return;
       }
+      if (route.view === 'sector') {
+        await renderSectorView(route.id);
+        return;
+      }
       if (route.view === 'dataset') {
         await openDataset(route.path, route.from);
         return;
@@ -2317,6 +2424,16 @@ function routeRequest(rootDir, request, response, queue) {
 
   if (request.method === 'GET' && url.pathname === '/api/shared') {
     sendJson(response, 200, sharedData(rootDir));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/sector') {
+    const view = sectorView(rootDir, url.searchParams.get('id'));
+    if (!view) {
+      sendJson(response, 404, { error: `Sector not found: ${url.searchParams.get('id')}` });
+      return;
+    }
+    sendJson(response, 200, view);
     return;
   }
 

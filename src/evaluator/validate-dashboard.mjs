@@ -196,6 +196,20 @@ async function main() {
     });
     assert(badPromote.status === 400, 'Promote endpoint should reject a non-query-pack dataset.');
 
+    // GEN-024: a sector has its own view with a cross-site comparison of its
+    // member sites (latest-run metrics), reachable from Shared and from a site.
+    assert(page.includes('function renderSectorView'), 'Dashboard page missing the sector view.');
+    assert(page.includes("'/api/sector?id='"), 'Dashboard page missing sector API wiring.');
+    assert(page.includes('Cross-site comparison'), 'Sector view missing the cross-site comparison table.');
+    assert(page.includes('class="link-btn sector-open'), 'Shared/site views missing a link into the sector view.');
+    const sectorViewData = await fetchJson(`${dashboard.url}/api/sector?id=${encodeURIComponent(memberedSector.sector_id)}`);
+    assert(Array.isArray(sectorViewData.members) && sectorViewData.member_count === sectorViewData.members.length, 'Sector view did not return its member sites.');
+    assert(sectorViewData.members.some((member) => member.target_id === memberSiteId), 'Sector view comparison is missing a known member site.');
+    assert(Array.isArray(sectorViewData.query_pack_files) && sectorViewData.query_pack_files.length > 0, 'Sector view missing its shared query packs.');
+    assert(sectorViewData.members.every((member) => 'latest_run' in member && 'run_count' in member), 'Sector member rows missing comparison fields.');
+    const missingSector = await fetch(`${dashboard.url}/api/sector?id=no-such-sector`);
+    assert(missingSector.status === 404, 'Sector API should 404 for an unknown sector.');
+
     const catalog = await fetchJson(`${dashboard.url}/api/datasets`);
     const groupIds = (catalog.groups || []).map((group) => group.id);
     for (const expected of ['evaluations', 'targets', 'query-packs', 'site-profiles', 'platform', 'inspection-history', 'run-datasets']) {
