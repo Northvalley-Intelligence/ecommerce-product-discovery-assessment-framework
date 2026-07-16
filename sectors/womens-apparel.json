@@ -1,0 +1,13 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "womens-apparel",
+  "name": "Women's Apparel",
+  "description": "Shared discovery query pack for women's apparel storefronts. Not tied to any single site; member sites reuse it as a parity baseline.",
+  "shared_query_packs": [
+    "query-packs/boutique-womens-apparel.json"
+  ],
+  "member_sites": [
+    "dress-up"
+  ],
+  "created_from": null
+}

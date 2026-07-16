@@ -1,0 +1,11 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "everyday-carry",
+  "name": "Everyday Carry",
+  "description": "Shared discovery query pack for everyday-carry / everyday-essentials storefronts. Not tied to any single site; available for sites to adopt.",
+  "shared_query_packs": [
+    "query-packs/everyday-carry.json"
+  ],
+  "member_sites": [],
+  "created_from": null
+}

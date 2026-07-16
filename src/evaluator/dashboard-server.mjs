@@ -263,6 +263,144 @@ function datasetCatalog(rootDir) {
   return { groups };
 }
 
+// --- Site-scoped data (GEN-023) -------------------------------------------
+// Every dataset traces to a site except the platform capability model and
+// sector datasets, which are shared. These helpers group a site's data
+// together (manifest, evaluation, query packs, site profile, per-run DS1-DS4)
+// and expose the shared/sector layer separately, so connections stay visible.
+
+function siteDomain(target) {
+  try {
+    return new URL(target.primary_url).hostname.replace(/^www\./, '');
+  } catch {
+    return null;
+  }
+}
+
+function sectorSlug(name) {
+  return String(name || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'sector';
+}
+
+function listSectors(rootDir) {
+  const dir = path.join(rootDir, 'sectors');
+  if (!exists(dir)) return [];
+  return fs.readdirSync(dir).filter((name) => name.endsWith('.json')).sort().map((name) => {
+    const sector = readJson(path.join(dir, name));
+    const packs = (sector.shared_query_packs || [])
+      .filter((rel) => exists(path.join(rootDir, rel)))
+      .map((rel) => datasetFileEntry(rootDir, path.join(rootDir, rel)));
+    return { ...sector, path: path.join('sectors', name), query_pack_files: packs };
+  });
+}
+
+function siteDatasets(rootDir, targetId) {
+  const targetPath = path.join(rootDir, 'targets', `${targetId}.json`);
+  if (!exists(targetPath)) return null;
+  const target = readJson(targetPath);
+  const domain = siteDomain(target);
+
+  const groups = [];
+  const pushGroup = (id, label, files) => { if (files.length) groups.push({ id, label, files }); };
+
+  pushGroup('manifest', 'Target manifest', [datasetFileEntry(rootDir, targetPath)]);
+
+  const evaluationsDir = path.join(rootDir, 'evaluations');
+  const evaluationFiles = exists(evaluationsDir)
+    ? fs.readdirSync(evaluationsDir).filter((name) => name.endsWith('.json'))
+        .filter((name) => {
+          const evaluation = readJson(path.join(evaluationsDir, name));
+          return evaluation.target === path.join('targets', `${targetId}.json`);
+        })
+        .map((name) => datasetFileEntry(rootDir, path.join(evaluationsDir, name)))
+    : [];
+  pushGroup('evaluation', 'Evaluation baseline', evaluationFiles);
+
+  const packsDir = path.join(rootDir, 'query-packs');
+  const packFiles = exists(packsDir)
+    ? fs.readdirSync(packsDir).filter((name) => name.endsWith('.json'))
+        .filter((name) => {
+          if (name === `${targetId}.json` || name.startsWith(`${targetId}-`)) return true;
+          const pack = readJson(path.join(packsDir, name));
+          return domain && pack.domain === domain;
+        })
+        .map((name) => datasetFileEntry(rootDir, path.join(packsDir, name)))
+    : [];
+  pushGroup('query-packs', 'Query packs', packFiles);
+
+  const profileFiles = [];
+  if (domain) {
+    for (const candidate of [`${domain}.json`, `www.${domain}.json`]) {
+      const profilePath = path.join(rootDir, 'site-profiles', candidate);
+      if (exists(profilePath)) profileFiles.push(datasetFileEntry(rootDir, profilePath));
+    }
+  }
+  pushGroup('site-profile', 'Site profile', profileFiles);
+
+  const runs = latestHistoryRows(rootDir)
+    .filter((row) => row.target_id === targetId)
+    .map((row) => ({
+      inspection_id: row.inspection_id,
+      timestamp: row.timestamp,
+      status: row.status,
+      datasets: datasetFilesIn(rootDir, path.join(rootDir, row.output_dir, 'evidence', 'datasets'))
+    }))
+    .sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
+
+  const sectors = listSectors(rootDir);
+  return {
+    target_id: targetId,
+    name: target.name,
+    domain,
+    groups,
+    runs,
+    sector_membership: sectors.filter((sector) => (sector.member_sites || []).includes(targetId)),
+    sectors_available: sectors.filter((sector) => !(sector.member_sites || []).includes(targetId))
+  };
+}
+
+function sharedData(rootDir) {
+  const platformDir = path.join(rootDir, 'platform');
+  return {
+    platform: exists(platformDir) ? datasetFilesIn(rootDir, platformDir) : [],
+    sectors: listSectors(rootDir)
+  };
+}
+
+function writeSector(rootDir, sector) {
+  const dir = path.join(rootDir, 'sectors');
+  if (!exists(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, `${sector.sector_id}.json`), JSON.stringify(sector, null, 2) + '\n');
+  return sector;
+}
+
+function promoteToSector(rootDir, { target_id, dataset_path, sector_name }) {
+  if (!target_id || !dataset_path || !sector_name) throw new Error('target_id, dataset_path, and sector_name are required.');
+  // Only query packs are reusable across sites; manifests, profiles, and run
+  // datasets are intrinsically site-specific and are not promotable.
+  const normalized = path.relative(rootDir, safeResolve(rootDir, dataset_path));
+  if (!normalized.startsWith('query-packs' + path.sep) && normalized !== path.join('query-packs')) {
+    throw new Error('Only query packs can be promoted to sector data.');
+  }
+  if (!exists(path.join(rootDir, normalized))) throw new Error(`Dataset not found: ${dataset_path}`);
+  const slug = sectorSlug(sector_name);
+  const sectorPath = path.join(rootDir, 'sectors', `${slug}.json`);
+  const sector = exists(sectorPath)
+    ? readJson(sectorPath)
+    : { schema_version: 'sector-v0.1', sector_id: slug, name: sector_name, shared_query_packs: [], member_sites: [], created_from: { target_id, dataset: normalized } };
+  sector.shared_query_packs = Array.from(new Set([...(sector.shared_query_packs || []), normalized]));
+  sector.member_sites = Array.from(new Set([...(sector.member_sites || []), target_id]));
+  return writeSector(rootDir, sector);
+}
+
+function adoptSector(rootDir, { target_id, sector_id }) {
+  if (!target_id || !sector_id) throw new Error('target_id and sector_id are required.');
+  const sectorPath = path.join(rootDir, 'sectors', `${sectorSlug(sector_id)}.json`);
+  if (!exists(sectorPath)) throw new Error(`Sector not found: ${sector_id}`);
+  const sector = readJson(sectorPath);
+  sector.member_sites = Array.from(new Set([...(sector.member_sites || []), target_id]));
+  return writeSector(rootDir, sector);
+}
+
 function normalizeDatasetRecords(value) {
   if (Array.isArray(value)) {
     return { records: value, meta: null };
@@ -500,6 +638,18 @@ function dashboardPage() {
     .run-card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
     .crumb-current { font-weight: 700; font-size: 13px; }
     .crumb-sep { color: var(--muted); margin: 0 6px; }
+    .data-group { margin: 0 0 16px; }
+    .data-group h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .data-files { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+    .data-file { text-align: left; display: grid; gap: 2px; border: 1px solid var(--line); background: white; color: var(--text); border-radius: 8px; padding: 8px 10px; cursor: pointer; }
+    .data-file:hover { border-color: var(--blue); background: var(--soft-blue); }
+    .data-file .file-name { font-weight: 600; font-size: 13px; word-break: break-word; }
+    .data-file small { color: var(--muted); font-size: 11px; }
+    .data-run { margin: 0 0 10px; }
+    .sector-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 8px; }
+    .promote-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .promote-row select, .promote-row input { padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+    .link-btn { background: none; border: none; color: var(--blue); cursor: pointer; padding: 0; font: inherit; text-decoration: underline; }
     .run-item {
       width: 100%;
       display: grid;
@@ -993,8 +1143,8 @@ function dashboardPage() {
         <p class="muted">Run, review, debug, compare, and decide report readiness.</p>
       </div>
       <div class="view-tabs" role="tablist">
-        <button id="tabInspections" class="tab active" role="tab">Inspections</button>
-        <button id="tabDatasets" class="tab" role="tab">Datasets</button>
+        <button id="tabInspections" class="tab active" role="tab">Sites</button>
+        <button id="tabShared" class="tab" role="tab">Shared</button>
         <button id="tabSettings" class="tab" role="tab">Settings</button>
       </div>
       <div id="sitesList" class="sites-list"></div>
@@ -1050,8 +1200,11 @@ function dashboardPage() {
     function artifactHref(file) {
       return '/artifact?path=' + encodeURIComponent(file);
     }
-    function datasetHash(file, query) {
-      return '#dataset=' + encodeURIComponent(file) + (query ? '&q=' + encodeURIComponent(query) : '');
+    function datasetHash(file, origin) {
+      // origin keeps the connection visible in the viewer breadcrumb:
+      // 'site:<targetId>' when opened from a site, 'shared' from the Shared view.
+      const from = origin || (state.selectedSite ? 'site:' + state.selectedSite : 'shared');
+      return '#dataset=' + encodeURIComponent(file) + '&from=' + encodeURIComponent(from);
     }
     function isDatasetFile(file) {
       return typeof file === 'string' && (file.endsWith('.json') || file.endsWith('.jsonl'));
@@ -1071,13 +1224,13 @@ function dashboardPage() {
       const hash = window.location.hash.replace(/^#/, '');
       const params = new URLSearchParams(hash);
       if (params.has('dataset')) {
-        return { view: 'datasets', path: params.get('dataset'), q: params.get('q') || '' };
+        return { view: 'dataset', path: params.get('dataset'), from: params.get('from') || 'shared' };
       }
-      if (hash.startsWith('datasets')) return { view: 'datasets', path: null, q: '' };
+      if (hash === 'shared' || hash.startsWith('shared')) return { view: 'shared' };
       if (params.has('setup')) return { view: 'setup', target: params.get('setup') || null };
       if (hash === 'setup') return { view: 'setup', target: null };
       if (hash === 'settings') return { view: 'settings' };
-      return { view: 'inspections', path: null, q: '' };
+      return { view: 'inspections', path: null };
     }
     async function api(path, options) {
       const response = await fetch(path, options);
@@ -1149,7 +1302,9 @@ function dashboardPage() {
                 '<div class="muted mono">' + escapeHtml(run.inspection_id) + '</div>' +
                 '<div class="muted">Readiness: ' + escapeHtml(run.readiness) + ' · Coverage: ' + escapeHtml(run.evidence_coverage) + '%</div>' +
               '</button>').join('') + '</div></div>'
-          : '<div class="panel-body"><div class="empty">No inspections yet for this site. Click Inspect ' + escapeHtml(site.name) + ' to run one.</div></div>');
+          : '<div class="panel-body"><div class="empty">No inspections yet for this site. Click Inspect ' + escapeHtml(site.name) + ' to run one.</div></div>') +
+        '<div id="siteData"><div class="empty">Loading data connected to this site…</div></div>';
+      loadSiteData(targetId);
       const inspectBtn = document.getElementById('siteInspectBtn');
       if (inspectBtn) inspectBtn.addEventListener('click', async () => {
         try {
@@ -1161,6 +1316,77 @@ function dashboardPage() {
       const editBtn = document.getElementById('siteEditBtn');
       if (editBtn) editBtn.addEventListener('click', () => { window.location.hash = '#setup=' + encodeURIComponent(editBtn.dataset.target); });
       for (const card of document.querySelectorAll('.run-card')) card.addEventListener('click', () => openRun(card.dataset.id));
+    }
+    function dataFileButtons(files, origin) {
+      return '<div class="data-files">' + files.map((file) =>
+        '<button class="data-file" data-path="' + escapeHtml(file.path) + '" data-origin="' + escapeHtml(origin) + '">' +
+          '<span class="file-name">' + escapeHtml(file.name) + '</span>' +
+          '<small>' + escapeHtml(file.format.toUpperCase() + ' · ' + formatBytes(file.size_bytes)) + '</small>' +
+        '</button>').join('') + '</div>';
+    }
+    async function loadSiteData(targetId) {
+      let data;
+      try {
+        data = await api('/api/site-data?target=' + encodeURIComponent(targetId));
+      } catch (error) {
+        const el = document.getElementById('siteData');
+        if (el) el.innerHTML = '<div class="empty">Could not load site data: ' + escapeHtml(error.message) + '</div>';
+        return;
+      }
+      if (state.selectedSite !== targetId) return; // navigated away while loading
+      const origin = 'site:' + targetId;
+      const promotable = new Set((data.groups.find((group) => group.id === 'query-packs')?.files || []).map((file) => file.path));
+      const groupBlocks = data.groups.map((group) =>
+        '<div class="data-group"><h3>' + escapeHtml(group.label) + '</h3>' + dataFileButtons(group.files, origin) +
+          (group.id === 'query-packs' ? '<div class="muted" style="font-size:12px;margin-top:4px">Use “Promote to sector” on a query pack to share it with other sites.</div>' : '') +
+        '</div>').join('');
+      const runBlocks = data.runs.length
+        ? '<div class="data-group"><h3>Run datasets (DS1–DS4)</h3>' + data.runs.map((run) =>
+            '<div class="data-run"><div class="muted mono">' + escapeHtml((run.timestamp || '').slice(0, 16).replace('T', ' ')) + ' · ' + escapeHtml(run.inspection_id) + '</div>' +
+            dataFileButtons(run.datasets, origin) + '</div>').join('') + '</div>'
+        : '';
+      const membership = data.sector_membership.length
+        ? '<div class="data-group"><h3>Sector data this site uses</h3>' + data.sector_membership.map((sector) =>
+            '<div class="sector-row"><strong>' + escapeHtml(sector.name) + '</strong> ' + dataFileButtons(sector.query_pack_files, 'shared') + '</div>').join('') + '</div>'
+        : '';
+      const available = data.sectors_available.length
+        ? '<div class="data-group"><h3>Sector data available to use</h3>' + data.sectors_available.map((sector) =>
+            '<div class="sector-row"><strong>' + escapeHtml(sector.name) + '</strong> <span class="muted">' + (sector.member_sites.length ? sector.member_sites.length + ' site(s) use this' : 'not used yet') + '</span>' +
+            ' <button class="link-btn adopt-sector" data-sector="' + escapeHtml(sector.sector_id) + '">Use for ' + escapeHtml(data.name) + '</button></div>').join('') + '</div>'
+        : '';
+      const promoteForm = promotable.size
+        ? '<div class="data-group"><h3>Promote a query pack to sector data</h3>' +
+            '<div class="promote-row"><select id="promotePack">' + Array.from(promotable).map((packPath) =>
+              '<option value="' + escapeHtml(packPath) + '">' + escapeHtml(packPath.split('/').pop()) + '</option>').join('') + '</select>' +
+            '<input id="promoteSector" placeholder="Sector name (e.g. Women\\'s Apparel)">' +
+            '<button id="promoteBtn">Promote to sector</button></div>' +
+            '<p class="muted" id="promoteResult" style="font-size:12px;margin-top:6px"></p></div>'
+        : '';
+      document.getElementById('siteData').innerHTML =
+        panel('Data connected to this site', 'Every dataset tied to ' + escapeHtml(data.name) + ' — open any to inspect its records',
+          '<div class="panel-body">' + groupBlocks + runBlocks + membership + available + promoteForm + '</div>');
+      for (const btn of document.querySelectorAll('#siteData .data-file, #siteData .sector-row .data-file')) {
+        btn.addEventListener('click', () => { window.location.hash = datasetHash(btn.dataset.path, btn.dataset.origin); });
+      }
+      for (const btn of document.querySelectorAll('#siteData .adopt-sector')) {
+        btn.addEventListener('click', async () => {
+          try {
+            await api('/api/sector/adopt', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ target_id: targetId, sector_id: btn.dataset.sector }) });
+            loadSiteData(targetId);
+          } catch (error) { document.getElementById('promoteResult') && (document.getElementById('promoteResult').textContent = error.message); }
+        });
+      }
+      const promoteBtn = document.getElementById('promoteBtn');
+      if (promoteBtn) promoteBtn.addEventListener('click', async () => {
+        const result = document.getElementById('promoteResult');
+        const sectorName = document.getElementById('promoteSector').value.trim();
+        if (!sectorName) { result.textContent = 'Enter a sector name first.'; return; }
+        try {
+          const sector = await api('/api/sector/promote', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ target_id: targetId, dataset_path: document.getElementById('promotePack').value, sector_name: sectorName }) });
+          result.textContent = 'Promoted to sector “' + sector.name + '”. It is now shared and other sites can use it.';
+          loadSiteData(targetId);
+        } catch (error) { result.textContent = error.message; }
+      });
     }
     async function openRun(runId) {
       state.selected = runId;
@@ -1633,14 +1859,15 @@ function dashboardPage() {
     }
     function setView(view) {
       state.view = view;
+      const dataView = view === 'shared' || view === 'dataset';
       document.getElementById('tabInspections').classList.toggle('active', view === 'inspections' || view === 'setup');
-      document.getElementById('tabDatasets').classList.toggle('active', view === 'datasets');
+      document.getElementById('tabShared').classList.toggle('active', view === 'shared');
       document.getElementById('tabSettings').classList.toggle('active', view === 'settings');
       document.getElementById('runList').hidden = view !== 'inspections';
       document.getElementById('sitesList').hidden = view !== 'inspections';
-      document.getElementById('datasetNav').hidden = view !== 'datasets';
+      document.getElementById('datasetNav').hidden = true;
       document.getElementById('inspectionView').hidden = view !== 'inspections';
-      document.getElementById('datasetView').hidden = view !== 'datasets';
+      document.getElementById('datasetView').hidden = !dataView;
       document.getElementById('setupView').hidden = view !== 'setup';
       document.getElementById('settingsView').hidden = view !== 'settings';
     }
@@ -1753,51 +1980,54 @@ function dashboardPage() {
         }
       });
     }
-    async function loadCatalog() {
-      state.catalog = await api('/api/datasets');
-      renderDatasetNav();
-    }
-    function renderDatasetNav() {
-      const nav = document.getElementById('datasetNav');
-      if (!state.catalog) {
-        nav.innerHTML = '<div class="empty">Loading datasets...</div>';
+    async function renderShared() {
+      setView('shared');
+      const view = document.getElementById('datasetView');
+      view.innerHTML = '<div class="empty">Loading shared data…</div>';
+      let shared;
+      try {
+        shared = await api('/api/shared');
+      } catch (error) {
+        view.innerHTML = panel('Shared data', 'Error', '<div class="panel-body">Could not load shared data: ' + escapeHtml(error.message) + '</div>');
         return;
       }
-      nav.innerHTML = state.catalog.groups.map((group) => {
-        const files = group.files || [];
-        return '<div class="dataset-group"><h3>' + escapeHtml(group.label) + '</h3><div class="dataset-files">' +
-          (files.length ? files.map((file) =>
-            '<button class="dataset-file' + (file.path === state.datasetPath ? ' active' : '') + '" data-path="' + escapeHtml(file.path) + '">' +
-              '<span class="file-name">' + escapeHtml(file.inspection_id ? (file.target_name || 'Run') + ' · ' + file.name : file.name) + '</span>' +
-              (file.inspection_id ? '<small>' + escapeHtml(file.inspection_id) + '</small>' : '') +
-              '<small>' + escapeHtml(file.format.toUpperCase() + ' · ' + formatBytes(file.size_bytes)) + '</small>' +
-            '</button>').join('') : '<div class="empty">No files.</div>') +
-        '</div></div>';
-      }).join('');
-      for (const button of nav.querySelectorAll('button[data-path]')) {
-        button.addEventListener('click', () => {
-          window.location.hash = datasetHash(button.dataset.path);
-        });
+      const platformBlock = '<div class="data-group"><h3>Platform capability model</h3>' +
+        '<div class="muted" style="font-size:12px;margin-bottom:6px">The inspection platform\\'s own capability data — not tied to any site.</div>' +
+        dataFileButtons(shared.platform, 'shared') + '</div>';
+      const sectorBlocks = shared.sectors.length
+        ? shared.sectors.map((sector) =>
+            '<div class="data-group"><h3>' + escapeHtml(sector.name) + ' <span class="muted" style="font-weight:400">sector</span></h3>' +
+            '<div class="muted" style="font-size:12px;margin-bottom:6px">' + escapeHtml(sector.description || '') +
+              ' · ' + (sector.member_sites.length ? 'used by ' + sector.member_sites.map(escapeHtml).join(', ') : 'not used by any site yet') + '</div>' +
+            dataFileButtons(sector.query_pack_files, 'shared') + '</div>').join('')
+        : '<div class="empty">No sector data yet. Promote a site\\'s query pack to create one.</div>';
+      view.innerHTML =
+        '<div class="crumb-bar"><span class="crumb-current">Shared data</span><span class="muted">— platform + sector datasets, not tied to a single site</span></div>' +
+        '<section class="hero"><div><p class="eyebrow">Shared</p><h1>Shared data</h1>' +
+          '<div class="subline"><span>' + shared.platform.length + ' platform file(s)</span><span>' + shared.sectors.length + ' sector(s)</span></div></div></section>' +
+        panel('Not tied to any site', 'Platform capability model and sector datasets that sites can reuse', '<div class="panel-body">' + platformBlock + sectorBlocks + '</div>');
+      for (const btn of view.querySelectorAll('.data-file')) {
+        btn.addEventListener('click', () => { window.location.hash = datasetHash(btn.dataset.path, btn.dataset.origin); });
       }
     }
-    async function openDataset(file, query) {
+    async function openDataset(file, from) {
+      setView('dataset');
       const samePath = state.datasetPath === file && state.dataset;
-      state.datasetQuery = query || '';
+      state.dataFrom = from || 'shared';
       state.selectedRecordIndex = -1;
       if (!samePath) {
         state.datasetPath = file;
         state.datasetField = '';
+        state.datasetQuery = '';
         state.dataset = null;
         state.datasetError = null;
         window.scrollTo(0, 0);
-        renderDatasetNav();
         renderDatasetView();
         try {
           state.dataset = await api('/api/dataset?path=' + encodeURIComponent(file));
         } catch (error) {
           state.datasetError = error.message;
         }
-        renderDatasetNav();
       }
       renderDatasetView();
     }
@@ -1839,14 +2069,23 @@ function dashboardPage() {
       }
       const data = state.dataset;
       const manifest = data.meta && data.meta.manifest ? Object.entries(data.meta.manifest) : [];
-      // If this dataset belongs to an inspection run, offer a direct way back
-      // to that inspection; otherwise a general back to the inspection list.
-      const runId = data.path.split('/').find((seg) => seg.startsWith('GEN-') && seg.endsWith('Z') && seg.length >= 20);
-      const fromInspection = runId && state.inspections.find((run) => run.inspection_id === runId);
-      const backBar = '<div class="crumb-bar">' +
-        '<a href="#inspections" class="crumb-link">← Inspections</a>' +
-        (fromInspection ? '<button class="crumb-back" data-inspection="' + escapeHtml(fromInspection.inspection_id) + '">← Back to ' + escapeHtml(fromInspection.target_name || fromInspection.inspection_id) + '</button>' : '') +
-        '</div>';
+      // Breadcrumb traces the dataset back to where it was opened from: a site
+      // (Sites > Site > Data) or the Shared view — keeping the connection visible.
+      const from = state.dataFrom || 'shared';
+      let backBar;
+      if (from.startsWith('site:')) {
+        const target = from.slice('site:'.length);
+        const site = (state.sites || []).find((entry) => entry.target_id === target);
+        const label = site ? site.name : target;
+        backBar = '<div class="crumb-bar">' +
+          '<a href="#inspections" class="crumb-link">Sites</a><span class="crumb-sep">›</span>' +
+          '<button class="crumb-back" data-target="' + escapeHtml(target) + '">' + escapeHtml(label) + '</button>' +
+          '<span class="crumb-sep">›</span><span class="crumb-current">Data › ' + escapeHtml(data.path.split('/').pop()) + '</span></div>';
+      } else {
+        backBar = '<div class="crumb-bar">' +
+          '<a href="#shared" class="crumb-link">Shared</a><span class="crumb-sep">›</span>' +
+          '<span class="crumb-current">' + escapeHtml(data.path.split('/').pop()) + '</span></div>';
+      }
       view.innerHTML = backBar +
         '<section class="hero"><div><p class="eyebrow">Dataset</p><h1>' + escapeHtml(data.path.split('/').pop()) + '</h1>' +
           '<div class="subline"><span class="mono">' + escapeHtml(data.path) + '</span><span>Modified ' + escapeHtml(data.modified_at) + '</span><span><a href="' + artifactHref(data.path) + '" target="_blank">Open raw file</a></span></div></div>' +
@@ -1863,7 +2102,9 @@ function dashboardPage() {
       const crumbBack = document.querySelector('.crumb-back');
       if (crumbBack) crumbBack.addEventListener('click', (event) => {
         event.preventDefault();
-        state.selected = crumbBack.dataset.inspection;
+        state.selected = null;
+        state.selectedSite = crumbBack.dataset.target;
+        state.datasetPath = null;
         window.location.hash = '#inspections';
       });
       document.getElementById('datasetSearch').addEventListener('input', (event) => {
@@ -1922,23 +2163,20 @@ function dashboardPage() {
         await renderSettings();
         return;
       }
+      if (route.view === 'shared') {
+        await renderShared();
+        return;
+      }
+      if (route.view === 'dataset') {
+        await openDataset(route.path, route.from);
+        return;
+      }
       setView(route.view);
       if (route.view === 'inspections') {
         renderSitesNav();
         if (state.selected && state.inspections.some((run) => run.inspection_id === state.selected)) await openRun(state.selected);
         else if (state.selectedSite) renderSiteView(state.selectedSite);
         else if (state.sites && state.sites.length) selectSite(state.sites[0].target_id);
-        return;
-      }
-      if (route.view !== 'datasets') return;
-      if (!state.catalog) loadCatalog().catch((error) => {
-        document.getElementById('datasetNav').innerHTML = '<div class="empty">Dataset catalog failed to load: ' + escapeHtml(error.message) + '</div>';
-      });
-      if (route.path) {
-        await openDataset(route.path, route.q);
-      } else {
-        renderDatasetNav();
-        renderDatasetView();
       }
     }
     async function runAction(kind) {
@@ -1955,7 +2193,7 @@ function dashboardPage() {
     }
     document.getElementById('newInspectionBtn').addEventListener('click', () => { window.location.hash = '#setup'; });
     document.getElementById('tabInspections').addEventListener('click', () => { window.location.hash = '#inspections'; });
-    document.getElementById('tabDatasets').addEventListener('click', () => { window.location.hash = '#datasets'; });
+    document.getElementById('tabShared').addEventListener('click', () => { window.location.hash = '#shared'; });
     document.getElementById('tabSettings').addEventListener('click', () => { window.location.hash = '#settings'; });
     window.addEventListener('hashchange', () => applyHash().catch((error) => {
       document.getElementById('datasetView').innerHTML = '<div class="panel"><div class="panel-body">View failed to load: ' + escapeHtml(error.message) + '</div></div>';
@@ -2064,6 +2302,35 @@ function routeRequest(rootDir, request, response, queue) {
 
   if (request.method === 'GET' && url.pathname === '/api/datasets') {
     sendJson(response, 200, datasetCatalog(rootDir));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/site-data') {
+    const data = siteDatasets(rootDir, url.searchParams.get('target'));
+    if (!data) {
+      sendJson(response, 404, { error: `Site not found: ${url.searchParams.get('target')}` });
+      return;
+    }
+    sendJson(response, 200, data);
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/shared') {
+    sendJson(response, 200, sharedData(rootDir));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/sector/promote') {
+    readBody(request)
+      .then((body) => sendJson(response, 200, promoteToSector(rootDir, body)))
+      .catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/sector/adopt') {
+    readBody(request)
+      .then((body) => sendJson(response, 200, adoptSector(rootDir, body)))
+      .catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 

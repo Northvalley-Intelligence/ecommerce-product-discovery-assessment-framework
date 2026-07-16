@@ -47,7 +47,11 @@ function pickRunDir() {
       if (!generation.isDirectory()) continue;
       const genDir = path.join(reportRoot, generation.name);
       for (const run of fs.readdirSync(genDir, { withFileTypes: true })) {
-        if (run.isDirectory() && RUN_DIR_PATTERN.test(run.name)) runs.push(path.join(genDir, run.name));
+        // Only complete runs (interrupted runs lack inspection-report.json).
+        if (run.isDirectory() && RUN_DIR_PATTERN.test(run.name)
+          && exists(path.join(genDir, run.name, 'inspection-report.json'))) {
+          runs.push(path.join(genDir, run.name));
+        }
       }
     }
   }
@@ -112,7 +116,7 @@ async function main() {
     );
     assert(artifact.includes('Inspection Report:'), 'Artifact route did not serve inspection report markdown.');
 
-    assert(page.includes('id="tabDatasets"'), 'Dashboard page missing Datasets tab.');
+    assert(page.includes('id="tabShared"'), 'Dashboard page missing Shared tab.');
     assert(page.includes('id="tabSettings"'), 'Dashboard page missing Settings tab.');
     assert(page.includes('id="sitesList"'), 'Dashboard page missing persistent sites list.');
     assert(page.includes("'/api/sites'"), 'Dashboard page missing sites API wiring.');
@@ -154,9 +158,43 @@ async function main() {
     assert(allRunsPreview.runs_kept === 0, 'Delete-all cleanup kept runs; a full delete must remove every run.');
     assert(allRunsPreview.runs_to_remove === allRunsPreview.total_runs, 'Delete-all cleanup does not plan to remove every run on disk.');
     assert(typeof allRunsPreview.referenced_runs_removed === 'number', 'Delete-all cleanup preview does not surface fix-plan-referenced runs as evidence.');
-    assert(page.includes('id="datasetNav"'), 'Dashboard page missing dataset navigator.');
     assert(page.includes('id="datasetView"'), 'Dashboard page missing dataset viewer container.');
     assert(page.includes("'/api/dataset?path='"), 'Dashboard page missing dataset API wiring.');
+    // GEN-023: the flat repo-wide Datasets tab is gone; a site's data is shown
+    // under the site, and a small Shared entry holds platform + sector data.
+    assert(!page.includes('id="tabDatasets"'), 'Flat Datasets tab should be removed in the site-scoped data model.');
+    assert(page.includes('id="tabShared"'), 'Dashboard page missing the Shared tab.');
+    assert(page.includes('id="siteData"'), 'Site view missing the connected-data section.');
+    assert(page.includes('function loadSiteData'), 'Dashboard page missing site-connected data loader.');
+    assert(page.includes("'/api/site-data?target='"), 'Dashboard page missing site-data API wiring.');
+
+    // A site groups its own datasets together (manifest, evaluation, query
+    // packs, site profile, per-run DS1-DS4).
+    const someSite = sites.find((site) => inspectionRows.some((row) => row.target_id === site.target_id)) || sites[0];
+    const siteData = await fetchJson(`${dashboard.url}/api/site-data?target=${encodeURIComponent(someSite.target_id)}`);
+    assert(Array.isArray(siteData.groups) && siteData.groups.some((group) => group.id === 'manifest'), 'Site data missing the target manifest group.');
+    assert(siteData.groups.some((group) => group.id === 'evaluation'), 'Site data missing the evaluation group.');
+    assert(Array.isArray(siteData.runs), 'Site data missing runs array.');
+
+    // Shared holds only non-site data: platform capability model + sectors.
+    const shared = await fetchJson(`${dashboard.url}/api/shared`);
+    assert(Array.isArray(shared.platform) && shared.platform.length > 0, 'Shared data missing the platform capability model.');
+    assert(shared.platform.every((file) => file.path.startsWith('platform/')), 'Shared platform list leaked a non-platform dataset.');
+    assert(Array.isArray(shared.sectors), 'Shared data missing sectors array.');
+    const memberedSector = shared.sectors.find((sector) => (sector.member_sites || []).length > 0);
+    assert(memberedSector, 'No sector dataset is referenced by any site.');
+    assert((memberedSector.query_pack_files || []).length > 0, 'Sector dataset has no shared query pack file.');
+
+    // A site sees the sectors it belongs to (connection preserved), and the
+    // promote endpoint rejects non-query-pack datasets.
+    const memberSiteId = memberedSector.member_sites[0];
+    const memberSiteData = await fetchJson(`${dashboard.url}/api/site-data?target=${encodeURIComponent(memberSiteId)}`);
+    assert((memberSiteData.sector_membership || []).some((sector) => sector.sector_id === memberedSector.sector_id), 'Member site does not show its sector membership.');
+    const badPromote = await fetch(`${dashboard.url}/api/sector/promote`, {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ target_id: memberSiteId, dataset_path: `targets/${memberSiteId}.json`, sector_name: 'Should Reject' })
+    });
+    assert(badPromote.status === 400, 'Promote endpoint should reject a non-query-pack dataset.');
 
     const catalog = await fetchJson(`${dashboard.url}/api/datasets`);
     const groupIds = (catalog.groups || []).map((group) => group.id);
