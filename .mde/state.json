@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "Operator asked to finish testing + holistic review of what is built (GEN-021..024). GEN-025 (sector-grouped sidebar) remains an open, unscheduled candidate (not operator-deferred; the earlier absolute-scoring line was the operator's own note). No absolute-scoring work requested.",
+  "next_recommended_action": "Integrated holistic review complete (VAL-073): full gate green, all views coherent, no regressions, no inspection triggered. Open candidates when the operator chooses: GEN-025 sector-grouped sidebar, per-query cross-site comparison (needs a site inspected with a sector shared pack), per-site health summary.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {

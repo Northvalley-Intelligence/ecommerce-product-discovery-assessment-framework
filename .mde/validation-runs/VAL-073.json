@@ -1,0 +1,57 @@
+{
+  "validation_run_id": "VAL-073",
+  "generation": "GEN-024",
+  "phase": "Integrated holistic review (post GEN-021..024)",
+  "started_at": "2026-07-15T22:00:00Z",
+  "completed_at": "2026-07-15T22:30:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_integrated_holistic_review_no_new_generation",
+  "validations_executed": [
+    {
+      "category": "Full validation gate",
+      "tool": "validate:dashboard, validate:gen13, validate",
+      "result": "pass",
+      "evidence": "All three suites green; git diff --check clean at the GEN-024 exit (commit f046176) plus the GEN-025 deferral/correction commits."
+    },
+    {
+      "category": "Sites + site view + connected data",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Allbirds site view: hero, 2 inspection runs, and the Data connected to this site panel all render; flat sidebar list (GEN-025 grouping intentionally reverted)."
+    },
+    {
+      "category": "Run detail",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Opening the Allbirds 161827Z run shows a coherent Overview/Findings/Health/Data/Artifacts detail with needs-attention items. That run completed at 12:24 (operator ran it); no interrupted-run breakage."
+    },
+    {
+      "category": "Cross-feature: run evidence -> dataset viewer",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "\"view evidence\" on a needs-attention item opened submitted-search.jsonl in the viewer with breadcrumb Sites > Allbirds > Data > submitted-search.jsonl (from=site:allbirds), correctly tracing to the site from a run detail."
+    },
+    {
+      "category": "Shared + sector view + comparison",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Shared (6 platform files + 2 sectors) and the Women's Apparel sector cross-site comparison (Dress Up not yet inspected; Pink Lily PARTIAL/BOUNDED/90%/1/0) verified earlier this session; member link lands on the site."
+    },
+    {
+      "category": "Settings + Setup",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Settings (Data Management + cleanup policies incl. delete-all) coherent; New Inspection form renders all surface + rendered-capture options. Not submitted."
+    },
+    {
+      "category": "No inspection triggered",
+      "tool": "browser + queue",
+      "result": "pass",
+      "evidence": "No navigation triggered a run; the one completed 161827Z run was the operator's own."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Integrated holistic review of the app after GEN-021..024, at the operator's request to finish testing + holistic review. No new generation; no regressions found; no inspection triggered. query_id linkage for future per-query comparison confirmed present in shared pack (bwa-*) and run datasets, joinable once a site is inspected with the shared pack."
+}
