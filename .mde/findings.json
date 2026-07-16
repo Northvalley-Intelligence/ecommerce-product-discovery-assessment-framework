@@ -635,7 +635,16 @@
       "category": "Usability Validation",
       "title": "Datasets view is a flat listing that ignores site connections",
       "summary": "Operator: datasets for a Shopify site are shown as a standalone flat repo-wide list; all details for a given site (evaluation, manifest, query pack, site profile, run datasets, inspection history, runs) should be shown together under the site so internal connections are preserved (evidence principle). Sectors may later warrant shared datasets; for now everything is per-site.",
-      "status": "charter_candidate_gen023_site_scoped_data",
+      "status": "resolved_gen023_site_scoped_data_shipped",
+      "discovered_on": "2026-07-15"
+    },
+    {
+      "finding_id": "FND-GEN023-002",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "Operator can promote a site dataset to shared sector data",
+      "summary": "Operator asked for an option in the site data view to make a dataset sector-shared so other sites can use it. Implement promote-to-sector + adopt without blocking dialogs.",
+      "status": "resolved_gen023_promote_to_sector_shipped",
       "discovered_on": "2026-07-15"
     }
   ],

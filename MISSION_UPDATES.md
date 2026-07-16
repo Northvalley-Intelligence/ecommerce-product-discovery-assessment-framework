@@ -2,6 +2,13 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-15 (later)
+
+- Mission update: Datasets were shown as a flat, standalone listing that ignored site connections. Restructured so all details for a site are shown together (GEN-023): the flat Datasets tab is gone; each site now has a "Data connected to this site" panel (manifest, evaluation, query packs, site profile, per-run DS1–DS4) with a Sites › Site › Data breadcrumb; a small Shared tab holds only non-site data (the platform capability model + sector datasets). A site can promote a query pack to shared sector data and other sites can adopt it — all via inline forms, no blocking dialogs. Also fixed GEN-022: "Delete all inspection runs" now deletes every run (it was silently keeping every fix-plan-referenced run), and the dashboard validator no longer hard-depends on a specific Ridge run.
+- Reason: Operator: "Datasets for a Shopify site is a standalone listing… make sure all details for a given site are shown together so internal connections are preserved" and "give an option in the site data to make it sector data that is shared and can be used by other sites"; plus the earlier delete-all bug ("I still found a run after full delete").
+- Discovered through: Live browser holistic walkthrough (site data panel, dataset breadcrumb + back, Shared view, inline promote on Bombas, Settings — no inspection triggered); two independent clean Validation Gate passes each for GEN-022 (VAL-070) and GEN-023 (VAL-071); BDD inventory refreshed to BDD-INV-012. Seeded two sectors (Women's Apparel, Everyday Carry).
+- Impact: The dashboard now presents every dataset through its site (or, for shared/sector/platform data, through a small Shared entry), preserving the connections the evidence principle depends on. Sites can share and reuse sector query packs. GEN-022 and GEN-023 exited cleanly; no inspection runs were triggered and no destructive delete was applied.
+
 ## 2026-07-15
 
 - Mission update: Restructured the dashboard around the real hierarchy — a Shopify site has inspection runs, and each run has results/evidence — so the operator navigates Site → Run → Results with the connection always visible, instead of a flat list of runs and reports (GEN-021). Also recorded two standing operator directives: the assistant must not trigger inspection runs (the operator runs them via the UI), and every bug/command is a mission update that requires rerunning the full validation before returning.

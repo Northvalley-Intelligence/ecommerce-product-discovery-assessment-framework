@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-011",
+  "inventory_id": "BDD-INV-012",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-010",
+  "supersedes": "BDD-INV-011",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_22_cleanup_correctness_inventory",
-  "refresh_rationale": "Adds GEN-022 behaviors: 'Delete all inspection runs' removes every run (fix-plan-referenced runs included, surfaced as evidence), keep-latest still protects them, and the dashboard validator no longer hard-depends on a Ridge run.",
+  "status": "generation_23_site_scoped_data_inventory",
+  "refresh_rationale": "Adds GEN-023 behaviors: a site shows all its connected data together with breadcrumb-preserved navigation, the flat Datasets tab is gone, a Shared entry holds platform + sector data, and a site can promote a query pack to sector data other sites adopt.",
   "summary": {
-    "total": 59,
+    "total": 63,
     "critical": 15,
-    "high": 31,
-    "medium": 13,
+    "high": 32,
+    "medium": 16,
     "low": 0,
-    "passing": 57,
+    "passing": 61,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -517,6 +517,40 @@
       "category": "Technical Validation",
       "status": "passed_gen_022",
       "evidence": "Validator picks a run (preferring Ridge, else newest), derives target/generation, and no longer crashes when no Ridge run exists. VAL-070."
+    }
+  ],
+  "gen23_bdds": [
+    {
+      "id": "BDD-G23-001",
+      "title": "A site shows all its connected data together",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_023",
+      "evidence": "Site view groups manifest, evaluation, query packs, site profile, and per-run DS1-DS4 under the site. Verified live for Allbirds and Bombas. VAL-071. Resolves FND-GEN023-001."
+    },
+    {
+      "id": "BDD-G23-002",
+      "title": "Datasets opened from a site keep a breadcrumb back to it",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_023",
+      "evidence": "Viewer shows Sites › Site › Data › file; the site link returns to the site view. VAL-071."
+    },
+    {
+      "id": "BDD-G23-003",
+      "title": "Flat Datasets tab removed; Shared holds only non-site data",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_023",
+      "evidence": "Nav is Sites | Shared | Settings; Shared lists the platform capability model + sectors only. Validator asserts no site data leaks into Shared. VAL-071."
+    },
+    {
+      "id": "BDD-G23-004",
+      "title": "A site can promote a query pack to shared sector data others adopt",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_023",
+      "evidence": "Inline promote (no blocking dialog) creates/updates a sector and marks membership; other sites adopt via \"Use for <site>\". Guardrail rejects non-query-pack promotion. VAL-071. Resolves FND-GEN023-002."
     }
   ]
 }

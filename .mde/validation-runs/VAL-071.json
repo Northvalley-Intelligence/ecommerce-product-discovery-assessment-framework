@@ -1,0 +1,63 @@
+{
+  "validation_run_id": "VAL-071",
+  "generation": "GEN-023",
+  "phase": "Generation 23 - Site-scoped, connection-preserving data view",
+  "started_at": "2026-07-15T18:00:00Z",
+  "completed_at": "2026-07-15T19:30:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen023_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Site-connected data (functional)",
+      "tool": "browser + /api/site-data",
+      "result": "pass",
+      "evidence": "Opening Allbirds shows a \"Data connected to this site\" panel: Target manifest, Evaluation baseline, Query packs (allbirds-curated, allbirds-starter), Site profile, and per-run DS1-DS4 grouped under each run. Verified live in the browser."
+    },
+    {
+      "category": "Connection-preserving breadcrumb",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Opening allbirds-curated.json from the site renders breadcrumb \"Sites › Allbirds › Data › allbirds-curated.json\"; the Allbirds link returns to the site view. Confirmed live."
+    },
+    {
+      "category": "Flat Datasets tab removed",
+      "tool": "browser + validator",
+      "result": "pass",
+      "evidence": "Nav is Sites | Shared | Settings; no standalone flat repo-wide dataset list. Validator asserts the page no longer contains tabDatasets and does contain tabShared."
+    },
+    {
+      "category": "Shared holds only non-site data",
+      "tool": "browser + /api/shared",
+      "result": "pass",
+      "evidence": "Shared view shows 6 platform capability files + 2 sectors (Women's Apparel used by dress-up; Everyday Carry unused). Validator asserts every shared platform file path starts with platform/ (no site data leaks in)."
+    },
+    {
+      "category": "Promote to sector (no blocking dialog)",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "On Bombas, promoting bombas-starter.json to a new sector \"Everyday Basics\" via the inline form (no window.confirm/prompt) re-rendered the panel and moved the sector into \"Sector data this site uses\". Persisted sectors/everyday-basics.json with member bombas; test artifact then removed. Guardrail: promoting a non-query-pack returns 400 (validator-asserted)."
+    },
+    {
+      "category": "Sites use shared sector data",
+      "tool": "/api/site-data + validator",
+      "result": "pass",
+      "evidence": "dress-up shows Women's Apparel under sector membership; validator asserts a membered sector exists, has a shared query pack file, and the member site reports the membership."
+    },
+    {
+      "category": "Holistic UI walkthrough (all views)",
+      "tool": "as-a-user browser pass",
+      "result": "pass",
+      "evidence": "Sites (site data panel + breadcrumb + back), dataset viewer, Shared (platform + sectors), Settings all coherent; no dead clicks; no orphaned flat dataset list. No inspection triggered by any navigation."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit, no implementation changes). git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-023 chartered before implementation. Every record reflects browser interactions actually performed this session. The validator was also hardened to skip interrupted runs (no inspection-report.json) after one appeared on disk. No inspection run was triggered; the one live promote test artifact was cleaned up. Resolves FND-GEN023-001 and FND-GEN023-002."
+}

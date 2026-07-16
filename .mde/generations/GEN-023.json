@@ -1,0 +1,39 @@
+{
+  "generation_id": "GEN-023",
+  "mission_phase": "Generation 23 - Site-scoped, connection-preserving data view",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T18:00:00Z",
+  "ended_at": "2026-07-15T19:30:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Show all details for a site together: the standalone flat Datasets tab is removed and every dataset connected to a site (target manifest, evaluation, query packs, site profile, this site's inspection-history rows, and per-run DS1-DS4) is presented under the site with breadcrumb-preserved navigation. Non-site data (platform capability model + sector datasets) lives in a small Shared entry, and sites can reference a sector.",
+  "reason_generation_started": "Operator: datasets for a Shopify site are shown as a standalone flat listing that ignores connections; all details for a given site should be shown together so internal connections are preserved (MDE evidence principle). Sectors are a future grouping; for now everything is per-site, with shared sector/platform data reachable separately. Operator approved removing the Datasets tab (option 3) with a small Shared entry, and asked to create sector data not tied to any site that sites can use.",
+  "standing_directive": "OPERATOR DIRECTIVE (2026-07-15): do NOT trigger inspection runs and do NOT apply destructive cleanup. Validate against runs/datasets already on disk. Recorded as FND-GEN021-000.",
+  "validation_strategy": {
+    "functional": [
+      "Opening a site shows a 'Data connected to this site' panel listing that site's manifest, evaluation, query packs, site profile, its inspection-history rows, and per-run DS1-DS4; each opens in the dataset viewer.",
+      "Every dataset opened from a site keeps a Sites > <name> > Data > <dataset> breadcrumb back to the site.",
+      "The standalone flat Datasets tab no longer exists; per-site datasets are not shown as an orphaned repo-wide list.",
+      "A Shared entry lists only non-site data (platform capability model + sector datasets); no site-specific dataset leaks into it.",
+      "At least one sector dataset exists that is not tied to a site and is referenced by the sites that use it.",
+      "A site's promotable dataset (its query pack) has an in-UI 'Promote to sector data' action; after promotion the dataset is shared under a sector in the Shared entry and other sites can adopt/use it. Another site can 'Use' the sector pack, and the sector's member list reflects it. No blocking browser dialog (window.prompt/confirm) is used for these actions."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user, no runs triggered, no destructive apply): navigate Sites -> a site -> open one of its datasets -> breadcrumb back; open Shared -> platform + sector data; all views coherent, no dead clicks, no orphaned flat dataset list.",
+      "Confirm no inspection is triggered during testing."
+    ],
+    "technical": [
+      "validate:dashboard asserts the site-data API returns a site's connected datasets, asserts the Shared API returns only non-site data, asserts the flat Datasets tab is gone, and asserts a sector dataset exists and is referenced by a site; validate:gen13 and validate stay green; git diff --check clean; no run-inspection process spawned."
+    ]
+  },
+  "validation_notes": [
+    "VAL-071 two clean passes: validate:dashboard (asserts site-data/shared/sector model + no Datasets tab), validate:gen13, validate all green; pass 2 after commit with no implementation changes.",
+    "Holistic UI walkthrough live: site data panel, dataset breadcrumb + back, Shared (platform + sectors), promote inline flow, Settings — all coherent; no inspection triggered.",
+    "Validator hardened to skip interrupted runs (no inspection-report.json) after one appeared on disk.",
+    "BDD inventory refreshed to BDD-INV-012 (63 BDDs, 4 new for GEN-023, 61 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Per-site query pack matching is by target_id prefix or matching site-profile domain; a query pack named unlike its site and lacking a matching domain field would not appear under that site.",
+    "Sectors group shared query packs and member sites, but there is no sector-level view yet that lists all member sites and their comparison; sectors are surfaced from a site and from Shared only."
+  ]
+}
