@@ -655,6 +655,15 @@
       "summary": "Operator asked to build the sector-level view with cross-site comparison of member sites. Carried from GEN-023 known gap.",
       "status": "resolved_gen024_sector_view_shipped",
       "discovered_on": "2026-07-15"
+    },
+    {
+      "finding_id": "FND-GEN025-001",
+      "severity": "Low",
+      "category": "Usability Validation",
+      "title": "Sites not grouped by sector in the sidebar",
+      "summary": "Operator chose to group the sidebar site list by sector (un-sectored under Other sites). Carried from GEN-024 known gap.",
+      "status": "deferred_operator_prioritized_absolute_scoring",
+      "discovered_on": "2026-07-15"
     }
   ],
   "lifecycle_states": [
