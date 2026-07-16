@@ -1,0 +1,57 @@
+{
+  "validation_run_id": "VAL-072",
+  "generation": "GEN-024",
+  "phase": "Generation 24 - Sector-level view with cross-site comparison",
+  "started_at": "2026-07-15T20:00:00Z",
+  "completed_at": "2026-07-15T21:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen024_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Sector view + cross-site comparison (functional)",
+      "tool": "browser + /api/sector",
+      "result": "pass",
+      "evidence": "Women's Apparel sector view shows the shared query pack and a cross-site comparison table: Dress Up \"not yet inspected\", Pink Lily PARTIAL · BOUNDED · 90% · 1 warning · 0 failures · 2026-07-15 04:18. Verified live."
+    },
+    {
+      "category": "Reachable from Shared and member link back to site",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Shared view \"View comparison →\" opens the sector view; clicking Pink Lily in the comparison lands on the Pink Lily site view; breadcrumb Shared › Women's Apparel returns to Shared. Confirmed live."
+    },
+    {
+      "category": "Reachable from a site's sector membership",
+      "tool": "browser wiring",
+      "result": "pass",
+      "evidence": "A member site's \"Sector data this site uses\" shows a \"Compare sites in this sector →\" link using the same verified sector-open handler that opens the sector view."
+    },
+    {
+      "category": "Honest about un-inspected members",
+      "tool": "/api/sector",
+      "result": "pass",
+      "evidence": "Members with no run render \"not yet inspected\" with empty metric cells rather than fabricated numbers; derived only from runs on disk."
+    },
+    {
+      "category": "Sector API shape + 404",
+      "tool": "validator",
+      "result": "pass",
+      "evidence": "Validator asserts the sector API returns members with run_count/latest_run and shared query packs, includes a known member, and 404s for an unknown sector."
+    },
+    {
+      "category": "Holistic UI walkthrough (all views)",
+      "tool": "as-a-user browser pass",
+      "result": "pass",
+      "evidence": "Shared → sector → member → site → back; Sites, dataset viewer, Settings all coherent; no dead clicks; no inspection triggered."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit, no implementation changes). git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-024 chartered before implementation. Every record reflects browser interactions actually performed this session. Pink Lily (a women's boutique with a run) was added to the Women's Apparel sector so the comparison is a real multi-site one. No inspection triggered. Resolves FND-GEN024-001."
+}

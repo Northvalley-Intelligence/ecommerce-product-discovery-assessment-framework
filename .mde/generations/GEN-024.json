@@ -1,0 +1,37 @@
+{
+  "generation_id": "GEN-024",
+  "mission_phase": "Generation 24 - Sector-level view with cross-site comparison",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-15T20:00:00Z",
+  "ended_at": "2026-07-15T21:00:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Give each sector its own view: the sector's shared query packs, its member sites, and a cross-site comparison table (latest-run status, readiness, coverage, warnings, failures per member site) so the operator can see how the sites in a sector stack up. Reachable from the Shared view and from a site's sector membership, with a Shared > Sector breadcrumb and each member row linking back to its site.",
+  "reason_generation_started": "Operator: build the sector-level view with cross-site comparison. Closes the GEN-023 known gap that sectors had no dedicated view (members + shared packs + cross-site comparison); sectors were only surfaced from a site and from Shared.",
+  "standing_directive": "OPERATOR DIRECTIVE (2026-07-15): do NOT trigger inspection runs and do NOT apply destructive cleanup. Build and validate the comparison against runs already on disk; the comparison must be honest about members with no run yet. Recorded as FND-GEN021-000.",
+  "validation_strategy": {
+    "functional": [
+      "A sector view shows the sector name/description, its shared query pack(s), and a cross-site comparison table with one row per member site.",
+      "Each member row shows that site's latest-run status, readiness, coverage, warning and failure counts — or 'not yet inspected' when the site has no run.",
+      "The sector view is reachable by clicking a sector in the Shared view and from a site's sector membership; a Shared > Sector breadcrumb is shown and each member row links to that site.",
+      "The comparison reflects only the sector's member sites and is derived from runs already on disk (no run triggered)."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user, no runs triggered): Shared -> click a sector -> see members + comparison -> click a member -> land on that site; navigate back; all views coherent.",
+      "Confirm no inspection is triggered by any navigation."
+    ],
+    "technical": [
+      "validate:dashboard asserts the sector API returns the sector's members with per-site comparison metrics and shared query packs, and that a membered sector's comparison includes its member site; validate:gen13 and validate stay green; git diff --check clean; no run-inspection process spawned."
+    ]
+  },
+  "validation_notes": [
+    "VAL-072 two clean passes: validate:dashboard (asserts sector API + comparison), validate:gen13, validate all green; pass 2 after commit with no implementation changes.",
+    "Holistic UI walkthrough live: Shared → sector comparison → member site → back; honest \"not yet inspected\" for un-run members; no inspection triggered.",
+    "Pink Lily added to Women's Apparel so the comparison is a real multi-site one (Dress Up un-inspected, Pink Lily with a run).",
+    "BDD inventory refreshed to BDD-INV-013 (66 BDDs, 3 new for GEN-024, 64 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "The comparison is at latest-run health level (status/readiness/coverage/warnings/failures); it does not yet compare per-query or per-surface results across the sector's shared query pack.",
+    "Sites are not yet grouped by sector in the left sidebar; sectors are reached from Shared and from a site."
+  ]
+}

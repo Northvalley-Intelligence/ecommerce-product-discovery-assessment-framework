@@ -646,6 +646,15 @@
       "summary": "Operator asked for an option in the site data view to make a dataset sector-shared so other sites can use it. Implement promote-to-sector + adopt without blocking dialogs.",
       "status": "resolved_gen023_promote_to_sector_shipped",
       "discovered_on": "2026-07-15"
+    },
+    {
+      "finding_id": "FND-GEN024-001",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "Sectors have no dedicated view with cross-site comparison",
+      "summary": "Operator asked to build the sector-level view with cross-site comparison of member sites. Carried from GEN-023 known gap.",
+      "status": "resolved_gen024_sector_view_shipped",
+      "discovered_on": "2026-07-15"
     }
   ],
   "lifecycle_states": [

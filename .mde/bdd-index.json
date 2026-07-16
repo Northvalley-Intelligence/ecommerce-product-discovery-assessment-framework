@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-012",
+  "inventory_id": "BDD-INV-013",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-011",
+  "supersedes": "BDD-INV-012",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_23_site_scoped_data_inventory",
-  "refresh_rationale": "Adds GEN-023 behaviors: a site shows all its connected data together with breadcrumb-preserved navigation, the flat Datasets tab is gone, a Shared entry holds platform + sector data, and a site can promote a query pack to sector data other sites adopt.",
+  "status": "generation_24_sector_view_inventory",
+  "refresh_rationale": "Adds GEN-024 behaviors: each sector has its own view with a cross-site comparison of member sites, reachable from Shared and from a site, honest about un-inspected members.",
   "summary": {
-    "total": 63,
+    "total": 66,
     "critical": 15,
     "high": 32,
-    "medium": 16,
+    "medium": 19,
     "low": 0,
-    "passing": 61,
+    "passing": 64,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -551,6 +551,32 @@
       "category": "Usability Validation",
       "status": "passed_gen_023",
       "evidence": "Inline promote (no blocking dialog) creates/updates a sector and marks membership; other sites adopt via \"Use for <site>\". Guardrail rejects non-query-pack promotion. VAL-071. Resolves FND-GEN023-002."
+    }
+  ],
+  "gen24_bdds": [
+    {
+      "id": "BDD-G24-001",
+      "title": "A sector has a view with a cross-site comparison of its members",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_024",
+      "evidence": "Sector view shows shared query packs + a per-member comparison table (status, readiness, coverage, warnings, failures, latest run). Verified live for Women's Apparel. VAL-072. Resolves FND-GEN024-001."
+    },
+    {
+      "id": "BDD-G24-002",
+      "title": "Sector view is reachable from Shared and from a site, with back-links",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_024",
+      "evidence": "Shared \"View comparison\" and a site's \"Compare sites in this sector\" open the sector view; member rows link to their site; breadcrumb returns to Shared. VAL-072."
+    },
+    {
+      "id": "BDD-G24-003",
+      "title": "Comparison is honest about un-inspected members",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_024",
+      "evidence": "Members with no run show \"not yet inspected\"; metrics are derived only from runs on disk. VAL-072."
     }
   ]
 }

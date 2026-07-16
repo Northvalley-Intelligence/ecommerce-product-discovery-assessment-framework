@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-023",
-  "current_phase": "Generation 23 - Site-scoped, connection-preserving data view (exited)",
-  "phase_goal": "Remove the flat Datasets tab; show every dataset connected to a site under the site; a small Shared entry holds platform + sector data; a site can promote its query pack to sector data other sites can use.",
-  "status": "gen023_phase_exit_complete",
+  "current_generation": "GEN-024",
+  "current_phase": "Generation 24 - Sector-level view with cross-site comparison (exited)",
+  "phase_goal": "Sector view: shared packs, member sites, and a cross-site comparison table (status/readiness/coverage/warnings/failures per member).",
+  "status": "gen024_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,14 +19,14 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-071",
-    "reason": "GEN-023 (site-scoped data + Shared/sector layer + promote/adopt) validated with two independent clean passes (VAL-071) plus the holistic UI walkthrough; BDD inventory refreshed to BDD-INV-012. Phase exit declared. No inspection triggered."
+    "latest_run_id": "VAL-072",
+    "reason": "GEN-024 (sector view + cross-site comparison) validated with two independent clean passes (VAL-072) plus the holistic UI walkthrough; BDD inventory refreshed to BDD-INV-013. Phase exit declared. No inspection triggered."
   },
   "critical_bdds": 15,
   "high_bdds": 32,
-  "medium_bdds": 16,
+  "medium_bdds": 19,
   "low_bdds": 0,
-  "bdd_inventory": "BDD-INV-012",
+  "bdd_inventory": "BDD-INV-013",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-023 exited. Operator runs inspections via the UI (no-auto-run directive standing). Candidates for the next charter: a sector-level view (members + shared packs + cross-site comparison), grouping sites by sector in the sidebar, and per-site health summary. Charter phase goal + validation strategy before implementing; run the holistic UI review gate before requesting review.",
+  "next_recommended_action": "GEN-024 exited. Candidates for the next charter: per-query/per-surface comparison across a sector's shared pack, grouping sites by sector in the sidebar, and per-site health summary. Charter phase goal + validation strategy before implementing; run the holistic UI review gate before requesting review.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {
