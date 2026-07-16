@@ -5,7 +5,7 @@
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-15T21:30:00Z",
   "ended_at": "2026-07-15T21:40:00Z",
-  "record_status": "deferred_before_implementation_operator_prioritized_absolute_scoring",
+  "record_status": "open_candidate_not_yet_scheduled",
   "phase_goal": "Group the left sidebar's site list by sector: each sector is a labelled group listing its member sites, and sites in no sector fall under an 'Other sites' group. Selecting a site still opens its site view; a site in multiple sectors appears under each. Reflects sector membership directly in the Sites navigation.",
   "reason_generation_started": "Operator chose to close the GEN-024 known gap that sites were not grouped by sector in the sidebar. Works fully with data on disk; no inspection needed.",
   "standing_directive": "OPERATOR DIRECTIVE (2026-07-15): do NOT trigger inspection runs and do NOT apply destructive cleanup. Build and validate against data already on disk. Recorded as FND-GEN021-000.",
@@ -25,5 +25,5 @@
   },
   "validation_notes": [],
   "known_gaps_opened": [],
-  "deferral_note": "Operator (2026-07-15): wait on site-to-site comparison until we find absolute scoring cannot do a good job. Charter kept for when/if comparison is resumed. No implementation shipped; the partial sidebar-grouping code was reverted to the GEN-024 exit."
+  "deferral_note": "Correction (2026-07-15): the earlier \"prioritize absolute scoring\" line was the operator's note to themselves, not a directive. GEN-025 is simply an open, unscheduled candidate; the partial sidebar code was reverted to the GEN-024 exit and nothing shipped. Operator asked instead for a full testing + holistic review of what is built."
 }

@@ -34,11 +34,10 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "Operator directive: evaluate absolute scoring quality first; defer site-to-site comparison (GEN-025 sidebar grouping paused) until we find absolute scoring cannot do a good job. Await operator direction on how to approach absolute scoring.",
+  "next_recommended_action": "Operator asked to finish testing + holistic review of what is built (GEN-021..024). GEN-025 (sector-grouped sidebar) remains an open, unscheduled candidate (not operator-deferred; the earlier absolute-scoring line was the operator's own note). No absolute-scoring work requested.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {
-    "no_auto_runs": "2026-07-15: assistant must not trigger inspections; operator runs via UI only.",
-    "comparison_deferred": "2026-07-15: hold further site-to-site / sector comparison work (incl. GEN-025 sector-grouped sidebar) until we determine whether absolute scoring can do a good job. Prioritize absolute scoring first; pursue relative comparison only if absolute scoring proves insufficient."
+    "no_auto_runs": "2026-07-15: assistant must not trigger inspections; operator runs via UI only."
   }
 }
