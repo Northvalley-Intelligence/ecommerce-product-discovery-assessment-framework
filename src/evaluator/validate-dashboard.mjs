@@ -134,6 +134,10 @@ async function main() {
     const sites = await fetchJson(`${dashboard.url}/api/sites`);
     assert(Array.isArray(sites) && sites.length > 0, 'Sites API returned no identified sites.');
     assert(sites.every((site) => site.target_id && site.name && site.evaluation), 'Sites API entries missing required fields.');
+    // GEN-025: sites carry their sector membership so the sidebar can group them.
+    assert(sites.every((site) => Array.isArray(site.sectors)), 'Sites API entries missing sector membership array.');
+    assert(sites.some((site) => site.sectors.length > 0), 'No site reports a sector membership for the grouped sidebar.');
+    assert(page.includes('function renderSitesNav') && page.includes('class="site-group"'), 'Dashboard page missing the sector-grouped sidebar.');
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');
 

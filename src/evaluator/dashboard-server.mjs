@@ -138,6 +138,14 @@ function listSites(rootDir) {
   const evaluations = fs.readdirSync(evaluationsDir).filter((name) => name.endsWith('.json'))
     .map((name) => ({ file: name, ...readJson(path.join(evaluationsDir, name)) }));
   const historyRows = latestHistoryRows(rootDir);
+  // Sector membership per site, so the sidebar can group sites by sector.
+  const sectorsByTarget = new Map();
+  for (const sector of listSectors(rootDir)) {
+    for (const targetId of sector.member_sites || []) {
+      if (!sectorsByTarget.has(targetId)) sectorsByTarget.set(targetId, []);
+      sectorsByTarget.get(targetId).push({ sector_id: sector.sector_id, name: sector.name });
+    }
+  }
   const sites = [];
   for (const file of fs.readdirSync(targetsDir).filter((name) => name.endsWith('.json'))) {
     const target = readJson(path.join(targetsDir, file));
@@ -152,7 +160,8 @@ function listSites(rootDir) {
       evaluation: path.join('evaluations', evaluation.file),
       latest_run_id: latest?.inspection_id || null,
       latest_status: latest?.status || null,
-      latest_timestamp: latest?.timestamp || null
+      latest_timestamp: latest?.timestamp || null,
+      sectors: sectorsByTarget.get(target.target_id) || []
     });
   }
   return sites.sort((left, right) => left.name.localeCompare(right.name));
@@ -674,6 +683,8 @@ function dashboardPage() {
     }
     .sites-list { display: grid; gap: 6px; margin-bottom: 10px; }
     .list-head { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted); margin: 6px 0 2px; }
+    .site-group { display: grid; gap: 6px; margin-bottom: 12px; }
+    .site-group-head { font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--blue); text-transform: uppercase; margin: 4px 0 0; }
     .site-nav { width: 100%; text-align: left; display: grid; gap: 2px; border: 1px solid var(--line); background: white; color: var(--text); border-radius: 8px; padding: 9px 11px; }
     .site-nav.active { border-color: var(--blue); background: var(--soft-blue); }
     .site-name { font-weight: 800; overflow-wrap: anywhere; }
@@ -1306,18 +1317,37 @@ function dashboardPage() {
     function inspectionCount(targetId) {
       return state.inspections.filter((run) => run.target_id === targetId).length;
     }
+    function siteNavButton(site) {
+      const count = inspectionCount(site.target_id);
+      return '<button class="site-nav' + (site.target_id === state.selectedSite ? ' active' : '') + '" data-target="' + escapeHtml(site.target_id) + '">' +
+        '<span class="site-name">' + escapeHtml(site.name) + '</span>' +
+        '<span class="muted">' + (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected') + '</span>' +
+      '</button>';
+    }
     function renderSitesNav() {
       const el = document.getElementById('sitesList');
       const sites = state.sites || [];
       if (!sites.length) { el.innerHTML = ''; return; }
+      // Group sites by sector; a site in multiple sectors appears under each,
+      // and sites in no sector fall under "Other sites".
+      const bySector = new Map();
+      const ungrouped = [];
+      for (const site of sites) {
+        if (site.sectors && site.sectors.length) {
+          for (const sector of site.sectors) {
+            if (!bySector.has(sector.name)) bySector.set(sector.name, []);
+            bySector.get(sector.name).push(site);
+          }
+        } else {
+          ungrouped.push(site);
+        }
+      }
+      const groups = [...bySector.entries()].sort((left, right) => left[0].localeCompare(right[0]));
+      if (ungrouped.length) groups.push(['Other sites', ungrouped]);
       el.innerHTML = '<div class="list-head">Your Shopify sites (' + sites.length + ')</div>' +
-        sites.map((site) => {
-          const count = inspectionCount(site.target_id);
-          return '<button class="site-nav' + (site.target_id === state.selectedSite ? ' active' : '') + '" data-target="' + escapeHtml(site.target_id) + '">' +
-            '<span class="site-name">' + escapeHtml(site.name) + '</span>' +
-            '<span class="muted">' + (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected') + '</span>' +
-          '</button>';
-        }).join('');
+        groups.map(([label, groupSites]) =>
+          '<div class="site-group"><div class="site-group-head">' + escapeHtml(label) + ' (' + groupSites.length + ')</div>' +
+          groupSites.map(siteNavButton).join('') + '</div>').join('');
       for (const btn of el.querySelectorAll('.site-nav')) btn.addEventListener('click', () => selectSite(btn.dataset.target));
     }
     function highlightSite(targetId) {
