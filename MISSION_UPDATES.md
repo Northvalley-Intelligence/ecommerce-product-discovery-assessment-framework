@@ -2,6 +2,13 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-17
+
+- Mission update: Grouped the Sites sidebar by sector (GEN-025). Sites now appear under their sector (e.g. Women's Apparel — Dress Up, Pink Lily) with un-sectored sites under "Other sites"; selecting a site in any group still opens its view. Also: pushed all work to origin/main, and completed an integrated holistic review (VAL-073) of the app after GEN-021..024 with the full gate green and no regressions.
+- Reason: Operator: "push it and implement GEN-025" (the GEN-024 known gap that sites were not grouped by sector). An earlier "wait on comparison until absolute scoring" line was the operator's own note, not a directive — the misattributed directive was corrected in `.mde`.
+- Discovered through: /api/sites now carries each site's sector membership; live browser check of the grouped sidebar and in-group selection; two independent clean Validation Gate passes (VAL-074); BDD inventory refreshed to BDD-INV-014. No inspection triggered.
+- Impact: The Sites navigation reflects sector membership, matching the site-scoped, connection-preserving model from GEN-023/024. Deferred (open, unscheduled): per-query cross-site comparison, which needs a site inspected with a sector's shared query pack — the query_id join key (bwa-* in the shared pack, matched in run datasets) is already in place.
+
 ## 2026-07-15 (later)
 
 - Mission update: Datasets were shown as a flat, standalone listing that ignored site connections. Restructured so all details for a site are shown together (GEN-023): the flat Datasets tab is gone; each site now has a "Data connected to this site" panel (manifest, evaluation, query packs, site profile, per-run DS1–DS4) with a Sites › Site › Data breadcrumb; a small Shared tab holds only non-site data (the platform capability model + sector datasets). A site can promote a query pack to shared sector data and other sites can adopt it — all via inline forms, no blocking dialogs. Also fixed GEN-022: "Delete all inspection runs" now deletes every run (it was silently keeping every fix-plan-referenced run), and the dashboard validator no longer hard-depends on a specific Ridge run.

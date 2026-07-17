@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-074",
+  "generation": "GEN-025",
+  "phase": "Generation 25 - Group sites by sector in the sidebar",
+  "started_at": "2026-07-17T00:00:00Z",
+  "completed_at": "2026-07-17T00:40:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen025_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Sector-grouped sidebar (functional)",
+      "tool": "browser + /api/sites",
+      "result": "pass",
+      "evidence": "Sidebar shows YOUR SHOPIFY SITES (8) with a WOMEN'S APPAREL (2) group (Dress Up, Pink Lily) and an OTHER SITES (6) group (Allbirds, Bombas, Brooklinen, ColourPop, Gymshark, Ridge). Verified live."
+    },
+    {
+      "category": "Selection within a group",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Clicking Pink Lily under Women's Apparel opened the Pink Lily site view and highlighted it; selection works from any group."
+    },
+    {
+      "category": "Membership matches disk",
+      "tool": "/api/sites",
+      "result": "pass",
+      "evidence": "Each site carries a sectors[] array; Dress Up and Pink Lily report Women's Apparel (matching sectors/womens-apparel.json member_sites); all others empty -> Other sites."
+    },
+    {
+      "category": "Other views unaffected",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Sidebar is hidden outside the Sites view; Shared, sector view, dataset viewer, and Settings stay coherent (verified in VAL-073 and unchanged)."
+    },
+    {
+      "category": "No inspection triggered",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "No navigation triggered a run."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit, no implementation changes). Validator asserts the sectors[] field and the grouped sidebar render. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-025 reactivated by the operator and implemented. Every record reflects browser interactions actually performed this session. No inspection triggered. Resolves FND-GEN025-001."
+}

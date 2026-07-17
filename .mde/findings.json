@@ -662,7 +662,7 @@
       "category": "Usability Validation",
       "title": "Sites not grouped by sector in the sidebar",
       "summary": "Operator chose to group the sidebar site list by sector (un-sectored under Other sites). Carried from GEN-024 known gap.",
-      "status": "open_candidate_not_yet_scheduled",
+      "status": "resolved_gen025_sector_grouped_sidebar_shipped",
       "discovered_on": "2026-07-15"
     }
   ],

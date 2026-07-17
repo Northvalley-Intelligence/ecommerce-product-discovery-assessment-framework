@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-013",
+  "inventory_id": "BDD-INV-014",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-012",
+  "supersedes": "BDD-INV-013",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_24_sector_view_inventory",
-  "refresh_rationale": "Adds GEN-024 behaviors: each sector has its own view with a cross-site comparison of member sites, reachable from Shared and from a site, honest about un-inspected members.",
+  "status": "generation_25_sector_grouped_sidebar_inventory",
+  "refresh_rationale": "Adds GEN-025 behavior: the Sites sidebar groups sites by sector, with un-sectored sites under Other sites, and selection still opens the site view.",
   "summary": {
-    "total": 66,
+    "total": 68,
     "critical": 15,
     "high": 32,
     "medium": 19,
-    "low": 0,
-    "passing": 64,
+    "low": 2,
+    "passing": 66,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -577,6 +577,24 @@
       "category": "Technical Validation",
       "status": "passed_gen_024",
       "evidence": "Members with no run show \"not yet inspected\"; metrics are derived only from runs on disk. VAL-072."
+    }
+  ],
+  "gen25_bdds": [
+    {
+      "id": "BDD-G25-001",
+      "title": "The sidebar groups sites by sector",
+      "severity": "Low",
+      "category": "Usability Validation",
+      "status": "passed_gen_025",
+      "evidence": "Sites are grouped under their sector name (Women's Apparel) with un-sectored sites under Other sites; per-group and total counts shown. Verified live. VAL-074. Resolves FND-GEN025-001."
+    },
+    {
+      "id": "BDD-G25-002",
+      "title": "Selecting a site in any sector group opens its view",
+      "severity": "Low",
+      "category": "Usability Validation",
+      "status": "passed_gen_025",
+      "evidence": "Clicking Pink Lily under Women's Apparel opened its site view; a site in multiple sectors appears under each. VAL-074."
     }
   ]
 }

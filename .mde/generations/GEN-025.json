@@ -4,8 +4,8 @@
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-15T21:30:00Z",
-  "ended_at": "2026-07-15T21:40:00Z",
-  "record_status": "open_candidate_not_yet_scheduled",
+  "ended_at": "2026-07-17T00:40:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
   "phase_goal": "Group the left sidebar's site list by sector: each sector is a labelled group listing its member sites, and sites in no sector fall under an 'Other sites' group. Selecting a site still opens its site view; a site in multiple sectors appears under each. Reflects sector membership directly in the Sites navigation.",
   "reason_generation_started": "Operator chose to close the GEN-024 known gap that sites were not grouped by sector in the sidebar. Works fully with data on disk; no inspection needed.",
   "standing_directive": "OPERATOR DIRECTIVE (2026-07-15): do NOT trigger inspection runs and do NOT apply destructive cleanup. Build and validate against data already on disk. Recorded as FND-GEN021-000.",
@@ -23,7 +23,15 @@
       "validate:dashboard asserts /api/sites entries carry their sector membership and that a known membered site reports its sector, and asserts the sidebar renders sector groups; validate:gen13 and validate stay green; git diff --check clean; no run-inspection process spawned."
     ]
   },
-  "validation_notes": [],
-  "known_gaps_opened": [],
-  "deferral_note": "Correction (2026-07-15): the earlier \"prioritize absolute scoring\" line was the operator's note to themselves, not a directive. GEN-025 is simply an open, unscheduled candidate; the partial sidebar code was reverted to the GEN-024 exit and nothing shipped. Operator asked instead for a full testing + holistic review of what is built."
+  "validation_notes": [
+    "VAL-074 two clean passes: validate:dashboard (asserts sectors[] + grouped sidebar), validate:gen13, validate all green; pass 2 after commit with no implementation changes.",
+    "Holistic UI check: grouped sidebar (Women's Apparel + Other sites), selection within a group opens the site view; other views unaffected; no inspection triggered.",
+    "BDD inventory refreshed to BDD-INV-014 (68 BDDs, 2 new for GEN-025, 66 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Grouping is by sector membership only; there is no per-sector collapse/expand or sort control in the sidebar yet.",
+    "A site in multiple sectors is listed once per sector (intentional); there is no de-dup toggle."
+  ],
+  "deferral_note": "Correction (2026-07-15): the earlier \"prioritize absolute scoring\" line was the operator's note to themselves, not a directive. GEN-025 is simply an open, unscheduled candidate; the partial sidebar code was reverted to the GEN-024 exit and nothing shipped. Operator asked instead for a full testing + holistic review of what is built.",
+  "reactivation_note": "Operator (2026-07-17) asked to implement GEN-025 now."
 }
