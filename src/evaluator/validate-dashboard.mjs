@@ -180,6 +180,19 @@ async function main() {
     assert(siteData.groups.some((group) => group.id === 'evaluation'), 'Site data missing the evaluation group.');
     assert(Array.isArray(siteData.runs), 'Site data missing runs array.');
 
+    // GEN-026: per-site health summary aggregated from runs + fix plan.
+    assert(page.includes('function loadSiteHealth') && page.includes('id="siteHealth"'), 'Site view missing the health summary section.');
+    assert(page.includes("'/api/site-health?target='"), 'Dashboard page missing site-health API wiring.');
+    const siteHealthData = await fetchJson(`${dashboard.url}/api/site-health?target=${encodeURIComponent(someSite.target_id)}`);
+    assert(siteHealthData.inspected === true && siteHealthData.run_count > 0, 'Site-health for an inspected site should report runs.');
+    assert(siteHealthData.latest && typeof siteHealthData.latest.readiness === 'string' && 'coverage' in siteHealthData.latest, 'Site-health latest summary missing readiness/coverage.');
+    assert('fix_plan' in siteHealthData && Array.isArray(siteHealthData.coverage_trend) && siteHealthData.coverage_trend.length > 0, 'Site-health missing fix_plan/coverage_trend.');
+    const uninspected = sites.find((site) => !inspectionRows.some((row) => row.target_id === site.target_id));
+    if (uninspected) {
+      const emptyHealth = await fetchJson(`${dashboard.url}/api/site-health?target=${encodeURIComponent(uninspected.target_id)}`);
+      assert(emptyHealth.inspected === false && emptyHealth.run_count === 0, 'Site-health for an un-inspected site should report an empty state.');
+    }
+
     // Shared holds only non-site data: platform capability model + sectors.
     const shared = await fetchJson(`${dashboard.url}/api/shared`);
     assert(Array.isArray(shared.platform) && shared.platform.length > 0, 'Shared data missing the platform capability model.');

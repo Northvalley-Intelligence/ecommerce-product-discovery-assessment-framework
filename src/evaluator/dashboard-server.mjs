@@ -367,6 +367,47 @@ function siteDatasets(rootDir, targetId) {
   };
 }
 
+function siteHealth(rootDir, targetId) {
+  const targetPath = path.join(rootDir, 'targets', `${targetId}.json`);
+  if (!exists(targetPath)) return null;
+  const target = readJson(targetPath);
+  const runs = inspections(rootDir)
+    .filter((row) => row.target_id === targetId)
+    .sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
+  const latest = runs[0] || null;
+  // Most recent run with no failed components is the last "clean" run.
+  const lastClean = runs.find((row) => (row.failed_components || 0) === 0) || null;
+  const plan = readFixPlan(rootDir, targetId);
+  return {
+    target_id: targetId,
+    name: target.name,
+    run_count: runs.length,
+    inspected: runs.length > 0,
+    latest: latest
+      ? {
+          inspection_id: latest.inspection_id,
+          timestamp: latest.timestamp,
+          status: latest.status,
+          readiness: latest.readiness,
+          coverage: latest.evidence_coverage,
+          confidence: latest.overall_confidence,
+          evidence_quality: latest.evidence_quality,
+          failed_components: latest.failed_components,
+          warning_components: latest.warning_components
+        }
+      : null,
+    last_clean: lastClean ? { inspection_id: lastClean.inspection_id, timestamp: lastClean.timestamp } : null,
+    fix_plan: plan
+      ? { open_items: plan.open_items || 0, verified_items: plan.verified_items || 0, updated_from_inspection: plan.updated_from_inspection || null }
+      : null,
+    // Coverage across runs, oldest -> newest, for a simple trend.
+    coverage_trend: runs
+      .slice()
+      .sort((left, right) => String(left.timestamp).localeCompare(String(right.timestamp)))
+      .map((row) => ({ inspection_id: row.inspection_id, timestamp: row.timestamp, coverage: row.evidence_coverage }))
+  };
+}
+
 function sharedData(rootDir) {
   const platformDir = path.join(rootDir, 'platform');
   return {
@@ -964,6 +1005,9 @@ function dashboardPage() {
       color: var(--muted);
       font-size: 12px;
     }
+    .metric-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+    .spark { display: flex; align-items: flex-end; gap: 4px; height: 32px; margin-top: 6px; }
+    .spark-bar { width: 14px; background: var(--blue); border-radius: 2px 2px 0 0; display: inline-block; }
     .panel {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -1371,6 +1415,7 @@ function dashboardPage() {
           '<div class="hero-actions"><button id="siteInspectBtn" data-eval="' + escapeHtml(site.evaluation) + '" data-name="' + escapeHtml(site.name) + '">Inspect ' + escapeHtml(site.name) + '</button>' +
           '<button id="siteEditBtn" class="secondary" data-target="' + escapeHtml(targetId) + '">Edit setup</button></div>' +
         '</div></section>' +
+        '<div id="siteHealth"><div class="empty">Loading health summary…</div></div>' +
         panel('Inspection Runs', 'Each run is one inspection of this site; open one to see its results', runs.length
           ? '<div class="panel-body"><div class="run-cards">' + runs.map((run) =>
               '<button class="run-card" data-id="' + escapeHtml(run.inspection_id) + '">' +
@@ -1380,6 +1425,7 @@ function dashboardPage() {
               '</button>').join('') + '</div></div>'
           : '<div class="panel-body"><div class="empty">No inspections yet for this site. Click Inspect ' + escapeHtml(site.name) + ' to run one.</div></div>') +
         '<div id="siteData"><div class="empty">Loading data connected to this site…</div></div>';
+      loadSiteHealth(targetId);
       loadSiteData(targetId);
       const inspectBtn = document.getElementById('siteInspectBtn');
       if (inspectBtn) inspectBtn.addEventListener('click', async () => {
@@ -1392,6 +1438,47 @@ function dashboardPage() {
       const editBtn = document.getElementById('siteEditBtn');
       if (editBtn) editBtn.addEventListener('click', () => { window.location.hash = '#setup=' + encodeURIComponent(editBtn.dataset.target); });
       for (const card of document.querySelectorAll('.run-card')) card.addEventListener('click', () => openRun(card.dataset.id));
+    }
+    function healthMetric(label, value, detail) {
+      return '<article class="metric"><div class="metric-label">' + escapeHtml(label) + '</div><div class="metric-value">' + value + '</div><div class="metric-detail">' + escapeHtml(detail || '') + '</div></article>';
+    }
+    function coverageSparkline(trend) {
+      if (!trend || trend.length < 2) return '';
+      const values = trend.map((point) => Number(point.coverage) || 0);
+      const max = Math.max(100, ...values);
+      const bars = values.map((value) => '<span class="spark-bar" style="height:' + Math.max(4, Math.round((value / max) * 28)) + 'px" title="' + escapeHtml(String(value)) + '%"></span>').join('');
+      return '<div class="spark">' + bars + '</div>';
+    }
+    async function loadSiteHealth(targetId) {
+      let h;
+      try {
+        h = await api('/api/site-health?target=' + encodeURIComponent(targetId));
+      } catch (error) {
+        const el = document.getElementById('siteHealth');
+        if (el) el.innerHTML = '';
+        return;
+      }
+      if (state.selectedSite !== targetId) return; // navigated away while loading
+      const el = document.getElementById('siteHealth');
+      if (!el) return;
+      if (!h.inspected) {
+        el.innerHTML = panel('Health summary', 'At a glance', '<div class="panel-body"><div class="empty">Not yet inspected — run an inspection to see this site\\'s health.</div></div>');
+        return;
+      }
+      const latest = h.latest;
+      const lastInspected = (latest.timestamp || '').slice(0, 16).replace('T', ' ');
+      const fixOpen = h.fix_plan ? h.fix_plan.open_items : 0;
+      const fixFixed = h.fix_plan ? h.fix_plan.verified_items : 0;
+      const metrics =
+        healthMetric('Readiness', pill(latest.readiness), 'Latest run') +
+        healthMetric('Coverage', escapeHtml(String(latest.coverage)) + '%', h.coverage_trend.length > 1 ? 'across ' + h.coverage_trend.length + ' runs' : 'observed') +
+        healthMetric('Status', pill(latest.status), latest.confidence ? escapeHtml(latest.confidence) + ' confidence' : '') +
+        healthMetric('Warnings / Failures', escapeHtml(String(latest.warning_components || 0)) + ' / ' + escapeHtml(String(latest.failed_components || 0)), 'latest components') +
+        healthMetric('Open fixes', escapeHtml(String(fixOpen)), fixFixed + ' verified fixed') +
+        healthMetric('Last clean run', h.last_clean ? escapeHtml((h.last_clean.timestamp || '').slice(0, 10)) : '—', h.last_clean ? 'no failed components' : 'no fully clean run yet');
+      el.innerHTML = panel('Health summary', h.run_count + ' run' + (h.run_count === 1 ? '' : 's') + ' · last inspected ' + escapeHtml(lastInspected),
+        '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
+        (h.coverage_trend.length > 1 ? '<div class="muted" style="margin-top:10px;font-size:12px">Coverage trend</div>' + coverageSparkline(h.coverage_trend) : '') + '</div>');
     }
     function dataFileButtons(files, origin) {
       return '<div class="data-files">' + files.map((file) =>
@@ -2449,6 +2536,16 @@ function routeRequest(rootDir, request, response, queue) {
       return;
     }
     sendJson(response, 200, data);
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/site-health') {
+    const health = siteHealth(rootDir, url.searchParams.get('target'));
+    if (!health) {
+      sendJson(response, 404, { error: `Site not found: ${url.searchParams.get('target')}` });
+      return;
+    }
+    sendJson(response, 200, health);
     return;
   }
 
