@@ -1,0 +1,35 @@
+{
+  "generation_id": "GEN-026",
+  "mission_phase": "Generation 26 - Per-site health summary",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T00:00:00Z",
+  "ended_at": "2026-07-18T00:45:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Give each site an at-a-glance health summary at the top of its site view: latest readiness/coverage/status, run count and last-inspected date, open vs verified-fixed items from its fix plan, latest component warnings/failures, a coverage trend across runs, and the last clean run. Aggregated from runs and the fix plan already on disk; honest when a site has no runs.",
+  "reason_generation_started": "Operator chose the per-site health summary next. Closes the GEN-021 known gap that site cards showed per-run status but no site-level health rollup (last-clean date, open findings count).",
+  "standing_directive": "OPERATOR DIRECTIVE: do NOT trigger inspection runs and do NOT apply destructive cleanup. Aggregate from data already on disk; be honest when a site has no runs. Recorded as FND-GEN021-000.",
+  "validation_strategy": {
+    "functional": [
+      "A site view shows a health summary: latest readiness, coverage, and overall status; run count and last-inspected timestamp; fix-plan open vs verified-fixed counts; latest warnings and failures; a coverage trend across runs; and the most recent clean run (no failed components) if any.",
+      "A site with no runs shows a clear 'not yet inspected' health state rather than fabricated metrics.",
+      "The summary is derived only from runs and the fix plan on disk (no run triggered)."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user, no runs triggered): open a site with runs and see a coherent health summary; open a not-yet-inspected site and see the empty state; other views stay coherent.",
+      "Confirm no inspection is triggered by any navigation."
+    ],
+    "technical": [
+      "validate:dashboard asserts the site-health API returns the aggregate fields (run_count, latest, fix_plan open/verified, coverage_trend) for a site with runs and an empty state for a site with none; validate:gen13 and validate stay green; git diff --check clean; no run-inspection process spawned."
+    ]
+  },
+  "validation_notes": [
+    "VAL-075 two clean passes: validate:dashboard (asserts site-health aggregate + empty state), validate:gen13, validate all green; pass 2 after commit with no implementation changes.",
+    "Holistic UI check: Allbirds (2 runs, no clean run, sparkline), Pink Lily (open fixes 2, last clean run), Dress Up (empty state); no inspection triggered.",
+    "BDD inventory refreshed to BDD-INV-015 (70 BDDs, 2 new for GEN-026, 68 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "The coverage trend is a simple sparkline of coverage per run; it does not yet break down per-surface or per-plugin health over time.",
+    "Health is shown in the site view; the sidebar card still shows only run count + latest status, not the rolled-up open-fixes/clean state."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "validation_run_id": "VAL-075",
+  "generation": "GEN-026",
+  "phase": "Generation 26 - Per-site health summary",
+  "started_at": "2026-07-18T00:00:00Z",
+  "completed_at": "2026-07-18T00:45:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen026_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Health summary for a multi-run site",
+      "tool": "browser + /api/site-health",
+      "result": "pass",
+      "evidence": "Allbirds: \"2 runs · last inspected 2026-07-15 16:18\"; Readiness BOUNDED, Coverage 70% (across 2 runs), Status PARTIAL/Medium confidence, Warnings/Failures 4/2, Open fixes 0, Last clean run \"—\" (no clean run yet), coverage-trend sparkline with 2 bars. Verified live."
+    },
+    {
+      "category": "Fix counts + last clean run",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Pink Lily: Open fixes 2 (0 verified fixed), Last clean run 2026-07-15 (0 failed components), Coverage 90%, single run so no sparkline. Reflects fix-plan.json (open_items 2) and the clean run."
+    },
+    {
+      "category": "Un-inspected empty state",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Dress Up (0 runs): Health summary shows \"Not yet inspected — run an inspection to see this site's health.\" No fabricated metrics."
+    },
+    {
+      "category": "Aggregated from disk only",
+      "tool": "/api/site-health",
+      "result": "pass",
+      "evidence": "Health is derived from inspection rows + readFixPlan; no run triggered."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit, no implementation changes). Validator asserts inspected/run_count/latest/fix_plan/coverage_trend and the empty state. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-026 chartered before implementation. Every record reflects browser interactions actually performed this session. No inspection triggered. Resolves FND-GEN026-001."
+}

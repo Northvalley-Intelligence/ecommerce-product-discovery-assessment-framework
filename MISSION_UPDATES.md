@@ -2,6 +2,13 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-18
+
+- Mission update: Added a per-site health summary (GEN-026). Each site view now opens with an at-a-glance Health summary aggregated from the site's runs and fix plan: latest readiness/coverage/status, run count + last inspected, warnings/failures, open vs verified-fixed items, last clean run, and a coverage-trend sparkline. Un-inspected sites show an honest empty state.
+- Reason: Operator: "per-site health summary and then rest" — closing the GEN-021 known gap that site cards showed per-run status but no site-level health rollup.
+- Discovered through: New /api/site-health endpoint; live browser check across Allbirds (2 runs, no clean run, sparkline), Pink Lily (open fixes 2, last clean run), and Dress Up (empty state); two independent clean Validation Gate passes (VAL-075); BDD inventory refreshed to BDD-INV-015. No inspection triggered.
+- Impact: The site view leads with health, matching the site-scoped model. Remaining operator candidates: sidebar collapse/sort controls (next), and per-query cross-site comparison (blocked until a site is inspected with a sector's shared query pack — operator runs it; the query_id join key is already in place).
+
 ## 2026-07-17
 
 - Mission update: Grouped the Sites sidebar by sector (GEN-025). Sites now appear under their sector (e.g. Women's Apparel — Dress Up, Pink Lily) with un-sectored sites under "Other sites"; selecting a site in any group still opens its view. Also: pushed all work to origin/main, and completed an integrated holistic review (VAL-073) of the app after GEN-021..024 with the full gate green and no regressions.

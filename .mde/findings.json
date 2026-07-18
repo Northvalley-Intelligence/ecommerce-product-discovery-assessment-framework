@@ -664,6 +664,15 @@
       "summary": "Operator chose to group the sidebar site list by sector (un-sectored under Other sites). Carried from GEN-024 known gap.",
       "status": "resolved_gen025_sector_grouped_sidebar_shipped",
       "discovered_on": "2026-07-15"
+    },
+    {
+      "finding_id": "FND-GEN026-001",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "No per-site health rollup at the site level",
+      "summary": "Operator chose the per-site health summary: aggregate readiness/coverage, open vs verified-fixed, warnings/failures, coverage trend, last clean run. Carried from GEN-021 known gap.",
+      "status": "resolved_gen026_per_site_health_summary_shipped",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

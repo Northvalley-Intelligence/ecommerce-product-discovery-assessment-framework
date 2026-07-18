@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-014",
+  "inventory_id": "BDD-INV-015",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-013",
+  "supersedes": "BDD-INV-014",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_25_sector_grouped_sidebar_inventory",
-  "refresh_rationale": "Adds GEN-025 behavior: the Sites sidebar groups sites by sector, with un-sectored sites under Other sites, and selection still opens the site view.",
+  "status": "generation_26_per_site_health_summary_inventory",
+  "refresh_rationale": "Adds GEN-026 behavior: each site view opens with a health summary aggregated from its runs and fix plan, with an honest empty state for un-inspected sites.",
   "summary": {
-    "total": 68,
+    "total": 70,
     "critical": 15,
     "high": 32,
-    "medium": 19,
+    "medium": 21,
     "low": 2,
-    "passing": 66,
+    "passing": 68,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -595,6 +595,24 @@
       "category": "Usability Validation",
       "status": "passed_gen_025",
       "evidence": "Clicking Pink Lily under Women's Apparel opened its site view; a site in multiple sectors appears under each. VAL-074."
+    }
+  ],
+  "gen26_bdds": [
+    {
+      "id": "BDD-G26-001",
+      "title": "A site view shows an aggregated health summary",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_026",
+      "evidence": "Health summary shows latest readiness/coverage/status, run count + last inspected, warnings/failures, open vs verified-fixed, last clean run, and a coverage trend. Verified live for Allbirds and Pink Lily. VAL-075. Resolves FND-GEN026-001."
+    },
+    {
+      "id": "BDD-G26-002",
+      "title": "Un-inspected sites show an honest empty health state",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_026",
+      "evidence": "Dress Up (0 runs) shows \"Not yet inspected\" with no fabricated metrics; API reports inspected=false, run_count=0. VAL-075."
     }
   ]
 }
