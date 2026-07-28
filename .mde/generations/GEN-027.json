@@ -1,0 +1,35 @@
+{
+  "generation_id": "GEN-027",
+  "mission_phase": "Generation 27 - Sidebar collapse + sort controls",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T01:00:00Z",
+  "ended_at": "2026-07-18T01:30:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Let the operator manage the sector-grouped sidebar: collapse/expand each sector group, and sort sites within groups by Name, Recently inspected, or Most runs. Selecting a site still opens its view; collapse and sort state persist within the session.",
+  "reason_generation_started": "Operator asked for the remaining candidates after the per-site health summary; sidebar collapse/sort is the doable one (per-query cross-site comparison stays blocked until a site is inspected with a sector shared pack).",
+  "standing_directive": "OPERATOR DIRECTIVE: do NOT trigger inspection runs and do NOT apply destructive cleanup. Client-only sidebar controls over data already on disk. Recorded as FND-GEN021-000.",
+  "validation_strategy": {
+    "functional": [
+      "Each sector group header can collapse/expand its site list; the collapsed state persists while navigating within the session.",
+      "A sort control reorders sites within every group by Name (A-Z), Recently inspected (newest first, un-inspected last), or Most runs (desc).",
+      "Selecting a site in any group still opens its site view regardless of collapse/sort state."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user, no runs triggered): collapse a group, change the sort, select a site; the sidebar and right pane stay coherent.",
+      "Confirm no inspection is triggered by any navigation."
+    ],
+    "technical": [
+      "validate:dashboard asserts the sidebar exposes the sort control and collapsible group headers; validate:gen13 and validate stay green; git diff --check clean; no run-inspection process spawned."
+    ]
+  },
+  "validation_notes": [
+    "VAL-076 two clean passes: validate:dashboard (asserts sort control + collapsible headers), validate:gen13, validate all green; pass 2 after commit with no implementation changes.",
+    "Holistic UI check: collapse persists through re-sort, Most runs reorders correctly, selection still works; no inspection triggered.",
+    "BDD inventory refreshed to BDD-INV-016 (72 BDDs, 2 new for GEN-027, 70 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Collapse/sort state is in-session only (not persisted across dashboard restarts).",
+    "Per-query cross-site comparison remains blocked until a site is inspected with a sector shared query pack (operator runs it)."
+  ]
+}

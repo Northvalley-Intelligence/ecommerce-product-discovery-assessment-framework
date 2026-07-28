@@ -673,6 +673,15 @@
       "summary": "Operator chose the per-site health summary: aggregate readiness/coverage, open vs verified-fixed, warnings/failures, coverage trend, last clean run. Carried from GEN-021 known gap.",
       "status": "resolved_gen026_per_site_health_summary_shipped",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN027-001",
+      "severity": "Low",
+      "category": "Usability Validation",
+      "title": "Sidebar has no collapse/sort controls",
+      "summary": "Operator asked for the remaining candidates: collapse/expand sector groups and sort sites within groups. Per-query cross-site comparison remains blocked pending an operator inspection with a sector shared pack.",
+      "status": "resolved_gen027_sidebar_collapse_sort_shipped",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

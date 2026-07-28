@@ -1,0 +1,45 @@
+{
+  "validation_run_id": "VAL-076",
+  "generation": "GEN-027",
+  "phase": "Generation 27 - Sidebar collapse + sort controls",
+  "started_at": "2026-07-18T01:00:00Z",
+  "completed_at": "2026-07-18T01:30:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen027_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Collapse/expand group",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Clicking the Women's Apparel header collapsed it (caret ▸, its sites hidden) while Other Sites stayed expanded; the collapsed state persisted through a re-sort. Verified live."
+    },
+    {
+      "category": "Sort control",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Switching Sort to \"Most runs\" reordered Other Sites so Allbirds (2 runs) is first and Ridge (0 runs) last; options are Name / Recently inspected / Most runs."
+    },
+    {
+      "category": "Selection still works",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Allbirds remained selected with its health summary shown; selecting a site works regardless of collapse/sort state."
+    },
+    {
+      "category": "No inspection triggered",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "No navigation triggered a run."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit, no implementation changes). Validator asserts siteSort/sortSitesList and collapsible headers/collapsedGroups. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "GEN-027 chartered before implementation. Client-only sidebar controls over data on disk. Every record reflects browser interactions actually performed this session. No inspection triggered. Resolves FND-GEN027-001. Per-query cross-site comparison remains blocked pending an operator inspection with a sector shared pack."
+}

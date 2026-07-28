@@ -4,6 +4,8 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
 ## 2026-07-18
 
+- Mission update: Added sidebar collapse + sort controls (GEN-027). Each sector group in the Sites sidebar can collapse/expand, and a Sort control reorders sites within groups by Name, Recently inspected, or Most runs; selection still opens the site view. Validated live (collapse persists through re-sort; Most runs put Allbirds first, Ridge last); two clean gate passes (VAL-076); BDD inventory BDD-INV-016. No inspection triggered.
+- Note: Per-query cross-site comparison — the one remaining named candidate — stays deferred; it needs a site inspected with a sector's shared query pack (operator runs it). The query_id join key (bwa-* in the shared pack, matched in run datasets) is already in place.
 - Mission update: Added a per-site health summary (GEN-026). Each site view now opens with an at-a-glance Health summary aggregated from the site's runs and fix plan: latest readiness/coverage/status, run count + last inspected, warnings/failures, open vs verified-fixed items, last clean run, and a coverage-trend sparkline. Un-inspected sites show an honest empty state.
 - Reason: Operator: "per-site health summary and then rest" — closing the GEN-021 known gap that site cards showed per-run status but no site-level health rollup.
 - Discovered through: New /api/site-health endpoint; live browser check across Allbirds (2 runs, no clean run, sparkline), Pink Lily (open fixes 2, last clean run), and Dress Up (empty state); two independent clean Validation Gate passes (VAL-075); BDD inventory refreshed to BDD-INV-015. No inspection triggered.

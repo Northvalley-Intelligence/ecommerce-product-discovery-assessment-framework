@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-026",
-  "current_phase": "Generation 26 - Per-site health summary (exited)",
-  "phase_goal": "At-a-glance per-site health summary in the site view (readiness/coverage, open vs fixed, warnings/failures, coverage trend, last clean run).",
-  "status": "gen026_phase_exit_complete",
+  "current_generation": "GEN-027",
+  "current_phase": "Generation 27 - Sidebar collapse + sort controls (exited)",
+  "phase_goal": "Collapse/expand sector groups and sort sites within groups (Name / Recently inspected / Most runs).",
+  "status": "gen027_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,14 +19,14 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-075",
-    "reason": "GEN-026 (per-site health summary) validated with two independent clean passes (VAL-075); BDD inventory refreshed to BDD-INV-015. Phase exit declared. No inspection triggered."
+    "latest_run_id": "VAL-076",
+    "reason": "GEN-027 (sidebar collapse + sort) validated with two independent clean passes (VAL-076); BDD inventory refreshed to BDD-INV-016. Phase exit declared. No inspection triggered."
   },
   "critical_bdds": 15,
   "high_bdds": 32,
   "medium_bdds": 21,
-  "low_bdds": 2,
-  "bdd_inventory": "BDD-INV-015",
+  "low_bdds": 4,
+  "bdd_inventory": "BDD-INV-016",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "GEN-026 exited. Remaining operator candidates: sidebar collapse/sort controls (next), and per-query cross-site comparison (blocked until a site is inspected with a sector shared pack — operator runs it).",
+  "next_recommended_action": "GEN-026 and GEN-027 exited. Only remaining named candidate is per-query cross-site comparison, which is blocked until the operator inspects a site with a sector shared query pack (query_id join key already in place). Local commits ready to push when the operator says so.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {

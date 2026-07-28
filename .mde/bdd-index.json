@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-015",
+  "inventory_id": "BDD-INV-016",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-014",
+  "supersedes": "BDD-INV-015",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_26_per_site_health_summary_inventory",
-  "refresh_rationale": "Adds GEN-026 behavior: each site view opens with a health summary aggregated from its runs and fix plan, with an honest empty state for un-inspected sites.",
+  "status": "generation_27_sidebar_collapse_sort_inventory",
+  "refresh_rationale": "Adds GEN-027 behavior: the sector-grouped sidebar can collapse/expand groups and sort sites within groups.",
   "summary": {
-    "total": 70,
+    "total": 72,
     "critical": 15,
     "high": 32,
     "medium": 21,
-    "low": 2,
-    "passing": 68,
+    "low": 4,
+    "passing": 70,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -613,6 +613,24 @@
       "category": "Technical Validation",
       "status": "passed_gen_026",
       "evidence": "Dress Up (0 runs) shows \"Not yet inspected\" with no fabricated metrics; API reports inspected=false, run_count=0. VAL-075."
+    }
+  ],
+  "gen27_bdds": [
+    {
+      "id": "BDD-G27-001",
+      "title": "Sector groups collapse/expand in the sidebar",
+      "severity": "Low",
+      "category": "Usability Validation",
+      "status": "passed_gen_027",
+      "evidence": "Clicking a group header toggles its site list; collapsed state persists in-session. Verified live. VAL-076. Resolves FND-GEN027-001."
+    },
+    {
+      "id": "BDD-G27-002",
+      "title": "Sites sort within groups by Name/Recently inspected/Most runs",
+      "severity": "Low",
+      "category": "Usability Validation",
+      "status": "passed_gen_027",
+      "evidence": "Sort control reorders sites within each group; Most runs put Allbirds first, Ridge last. VAL-076."
     }
   ]
 }
