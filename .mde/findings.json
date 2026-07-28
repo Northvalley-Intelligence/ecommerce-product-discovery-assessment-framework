@@ -682,6 +682,15 @@
       "summary": "Operator asked for the remaining candidates: collapse/expand sector groups and sort sites within groups. Per-query cross-site comparison remains blocked pending an operator inspection with a sector shared pack.",
       "status": "resolved_gen027_sidebar_collapse_sort_shipped",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN028-001",
+      "severity": "High",
+      "category": "Technical Validation",
+      "title": "Legion Athletics is WooCommerce; app inspection is Shopify-only",
+      "summary": "Operator asked for a full analysis of legionathletics.com. Detected WooCommerce (generator=woocommerce, 18 markers; Shopify /collections.json + /products.json return branded 404). The Shopify inspection engine cannot analyze it. WooCommerce Store API IS public: 97 products (X-WP-Total), 63 product categories (all flat, parent=0), many operational. No inspection run was performed; the Shopify-assumption onboarding (target/evaluation/query-pack) was removed. Awaiting operator decision on whether to add WooCommerce support.",
+      "status": "in_progress_gen028_woo_engine_slice1",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

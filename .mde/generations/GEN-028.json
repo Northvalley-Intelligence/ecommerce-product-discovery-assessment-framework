@@ -1,0 +1,28 @@
+{
+  "generation_id": "GEN-028",
+  "mission_phase": "Generation 28 - WooCommerce inspection engine (slice 1: adapter + catalog/search/browse capture)",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T02:00:00Z",
+  "ended_at": null,
+  "record_status": "chartered_before_implementation",
+  "phase_goal": "Begin a WooCommerce inspection engine paralleling the Shopify path. Slice 1: a WooCommerce Store API adapter + a live capture runner that inspects a Woo store's catalog scale (SKUs, browse nodes/categories, hierarchy levels), submitted search, and category browse, writing honest evidence artifacts. First target: legionathletics.com. Includes the operator-requested catalog summary (SKUs / browse nodes / levels) as a discovery-effort signal.",
+  "reason_generation_started": "Operator asked to run a full analysis of legionathletics.com and add a catalog summary. Legion is WooCommerce, not Shopify (FND-GEN028-001); the Shopify engine cannot inspect it. Operator chose to build a full WooCommerce inspection engine (multi-generation). This slice lands the adapter + real catalog/search/browse capture; later slices add dashboard site parity, facets/recommendations/rendered capture, a Woo platform capability model, and the shared inspection-report schema.",
+  "standing_directive": "The operator EXPLICITLY authorized running the Legion analysis this session (lifting the no-auto-run directive for this request). Runs are read-only inspections of the public store via its WooCommerce Store API; be honest about what the API does and does not expose. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "The WooCommerce adapter detects the platform (generator=woocommerce / Store API reachable) and returns catalog scale: total SKUs (products), browse nodes (categories) with parent/child hierarchy and level depth.",
+      "The capture runs live against legionathletics.com and produces honest artifacts: a catalog summary (SKUs, browse nodes, levels, top categories, discovery signal), a submitted-search probe (queries -> result counts), and a category browse listing.",
+      "Counts reported match the store's Store API (e.g. X-WP-Total for products; categories list length), and the discovery signal is derived, not asserted."
+    ],
+    "usability": [
+      "The catalog summary is human-readable and states the discovery signal (small catalog / flat browse -> lower search priority, or the opposite).",
+      "Artifacts are inspectable (valid JSON/JSONL) and stored under the Legion assessment directory."
+    ],
+    "technical": [
+      "New src/adapters/woocommerce.mjs with unit-checkable methods; the capture writes valid JSON/JSONL; the existing gate (validate:dashboard, validate:gen13, validate) stays green and is not regressed by the new files; git diff --check clean."
+    ]
+  },
+  "validation_notes": [],
+  "known_gaps_opened": []
+}
