@@ -138,6 +138,9 @@ async function main() {
     assert(sites.every((site) => Array.isArray(site.sectors)), 'Sites API entries missing sector membership array.');
     assert(sites.some((site) => site.sectors.length > 0), 'No site reports a sector membership for the grouped sidebar.');
     assert(page.includes('function renderSitesNav') && page.includes('class="site-group"'), 'Dashboard page missing the sector-grouped sidebar.');
+    // GEN-027: sidebar collapse + sort controls.
+    assert(page.includes('id="siteSort"') && page.includes('function sortSitesList'), 'Sidebar missing the site sort control.');
+    assert(page.includes('class="site-group-head"') && page.includes('collapsedGroups'), 'Sidebar missing collapsible group headers.');
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');
 

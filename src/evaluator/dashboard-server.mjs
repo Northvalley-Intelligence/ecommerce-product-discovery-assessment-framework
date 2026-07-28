@@ -725,7 +725,12 @@ function dashboardPage() {
     .sites-list { display: grid; gap: 6px; margin-bottom: 10px; }
     .list-head { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted); margin: 6px 0 2px; }
     .site-group { display: grid; gap: 6px; margin-bottom: 12px; }
-    .site-group-head { font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--blue); text-transform: uppercase; margin: 4px 0 0; }
+    .site-group-head { width: 100%; text-align: left; background: none; border: none; cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--blue); text-transform: uppercase; margin: 4px 0 0; padding: 2px 0; }
+    .site-group-head:hover { text-decoration: underline; }
+    .group-caret { display: inline-block; width: 10px; color: var(--muted); }
+    .sort-control { display: flex; align-items: center; gap: 6px; margin: 2px 0 8px; }
+    .sort-control label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+    .sort-control select { flex: 1; padding: 5px 7px; border: 1px solid var(--line); border-radius: 7px; font: inherit; font-size: 12px; }
     .site-nav { width: 100%; text-align: left; display: grid; gap: 2px; border: 1px solid var(--line); background: white; color: var(--text); border-radius: 8px; padding: 9px 11px; }
     .site-nav.active { border-color: var(--blue); background: var(--soft-blue); }
     .site-name { font-weight: 800; overflow-wrap: anywhere; }
@@ -1279,7 +1284,9 @@ function dashboardPage() {
       datasetField: '',
       selectedRecordIndex: -1,
       detailTab: 'overview',
-      selectedSite: null
+      selectedSite: null,
+      sortSites: 'name',
+      collapsedGroups: []
     };
 
     function cls(status) {
@@ -1368,6 +1375,16 @@ function dashboardPage() {
         '<span class="muted">' + (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected') + '</span>' +
       '</button>';
     }
+    function sortSitesList(list) {
+      const copy = list.slice();
+      if (state.sortSites === 'recent') {
+        return copy.sort((left, right) => String(right.latest_timestamp || '').localeCompare(String(left.latest_timestamp || '')));
+      }
+      if (state.sortSites === 'runs') {
+        return copy.sort((left, right) => inspectionCount(right.target_id) - inspectionCount(left.target_id) || left.name.localeCompare(right.name));
+      }
+      return copy.sort((left, right) => left.name.localeCompare(right.name));
+    }
     function renderSitesNav() {
       const el = document.getElementById('sitesList');
       const sites = state.sites || [];
@@ -1388,11 +1405,32 @@ function dashboardPage() {
       }
       const groups = [...bySector.entries()].sort((left, right) => left[0].localeCompare(right[0]));
       if (ungrouped.length) groups.push(['Other sites', ungrouped]);
-      el.innerHTML = '<div class="list-head">Your Shopify sites (' + sites.length + ')</div>' +
-        groups.map(([label, groupSites]) =>
-          '<div class="site-group"><div class="site-group-head">' + escapeHtml(label) + ' (' + groupSites.length + ')</div>' +
-          groupSites.map(siteNavButton).join('') + '</div>').join('');
+      const sortControl = '<div class="sort-control"><label for="siteSort">Sort</label>' +
+        '<select id="siteSort">' +
+          ['name:Name', 'recent:Recently inspected', 'runs:Most runs'].map((opt) => {
+            const [value, text] = opt.split(':');
+            return '<option value="' + value + '"' + (state.sortSites === value ? ' selected' : '') + '>' + text + '</option>';
+          }).join('') +
+        '</select></div>';
+      el.innerHTML = '<div class="list-head">Your Shopify sites (' + sites.length + ')</div>' + sortControl +
+        groups.map(([label, groupSites]) => {
+          const collapsed = state.collapsedGroups.includes(label);
+          return '<div class="site-group">' +
+            '<button class="site-group-head" data-group="' + escapeHtml(label) + '"><span class="group-caret">' + (collapsed ? '▸' : '▾') + '</span> ' + escapeHtml(label) + ' (' + groupSites.length + ')</button>' +
+            (collapsed ? '' : sortSitesList(groupSites).map(siteNavButton).join('')) + '</div>';
+        }).join('');
       for (const btn of el.querySelectorAll('.site-nav')) btn.addEventListener('click', () => selectSite(btn.dataset.target));
+      for (const head of el.querySelectorAll('.site-group-head')) {
+        head.addEventListener('click', () => {
+          const label = head.dataset.group;
+          const index = state.collapsedGroups.indexOf(label);
+          if (index >= 0) state.collapsedGroups.splice(index, 1);
+          else state.collapsedGroups.push(label);
+          renderSitesNav();
+        });
+      }
+      const sortSelect = document.getElementById('siteSort');
+      if (sortSelect) sortSelect.addEventListener('change', (event) => { state.sortSites = event.target.value; renderSitesNav(); });
     }
     function highlightSite(targetId) {
       for (const btn of document.querySelectorAll('.site-nav')) btn.classList.toggle('active', btn.dataset.target === targetId);
