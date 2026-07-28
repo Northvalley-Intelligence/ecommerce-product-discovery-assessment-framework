@@ -4,8 +4,8 @@
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "validation_strategy_version": "VALSTRAT-001",
   "started_at": "2026-07-18T02:00:00Z",
-  "ended_at": null,
-  "record_status": "chartered_before_implementation",
+  "ended_at": "2026-07-18T03:00:00Z",
+  "record_status": "slice1_complete_two_clean_passes_and_bdd_inventory_refreshed",
   "phase_goal": "Begin a WooCommerce inspection engine paralleling the Shopify path. Slice 1: a WooCommerce Store API adapter + a live capture runner that inspects a Woo store's catalog scale (SKUs, browse nodes/categories, hierarchy levels), submitted search, and category browse, writing honest evidence artifacts. First target: legionathletics.com. Includes the operator-requested catalog summary (SKUs / browse nodes / levels) as a discovery-effort signal.",
   "reason_generation_started": "Operator asked to run a full analysis of legionathletics.com and add a catalog summary. Legion is WooCommerce, not Shopify (FND-GEN028-001); the Shopify engine cannot inspect it. Operator chose to build a full WooCommerce inspection engine (multi-generation). This slice lands the adapter + real catalog/search/browse capture; later slices add dashboard site parity, facets/recommendations/rendered capture, a Woo platform capability model, and the shared inspection-report schema.",
   "standing_directive": "The operator EXPLICITLY authorized running the Legion analysis this session (lifting the no-auto-run directive for this request). Runs are read-only inspections of the public store via its WooCommerce Store API; be honest about what the API does and does not expose. Do not apply destructive cleanup.",
@@ -23,6 +23,14 @@
       "New src/adapters/woocommerce.mjs with unit-checkable methods; the capture writes valid JSON/JSONL; the existing gate (validate:dashboard, validate:gen13, validate) stays green and is not regressed by the new files; git diff --check clean."
     ]
   },
-  "validation_notes": [],
-  "known_gaps_opened": []
+  "validation_notes": [
+    "VAL-077: live Legion capture (97 SKUs, 63 browse nodes/46 substantive, 1 level; search 4/4 literal, 0/4 intent) + two clean gate passes with the Shopify pipeline untouched.",
+    "BDD inventory refreshed to BDD-INV-017 (75 BDDs, 3 new for GEN-028, 73 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Slice 2: make WooCommerce stores first-class in the dashboard (sites list, site view, health + catalog-summary panels) instead of standalone artifacts.",
+    "Slice 3: Woo discovery depth — autocomplete, faceted browse/attributes, recommendations, and rendered (Playwright) capture parity with the Shopify plugins.",
+    "Slice 4: a WooCommerce platform capability model + the shared inspection-report schema, so Woo runs feed executive reports and fix plans like Shopify runs.",
+    "Product sample uses orderby=popularity; some stores may ignore it — literal-query derivation is best-effort."
+  ]
 }

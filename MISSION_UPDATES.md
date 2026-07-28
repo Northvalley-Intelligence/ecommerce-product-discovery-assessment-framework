@@ -2,6 +2,13 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-18 (WooCommerce)
+
+- Mission update: Started a WooCommerce inspection engine (GEN-028, slice 1) after discovering legionathletics.com is WooCommerce, not Shopify — the Shopify-only engine can't inspect it. Operator opted to build full WooCommerce support (multi-generation) and explicitly authorized running the Legion analysis. Slice 1 lands a WooCommerce Store API adapter + a live capture runner.
+- Reason: Operator: "run full analysis on legionathletics.com" + add a catalog summary (SKUs / browse nodes / levels) as a discovery signal.
+- Discovered through: Live capture of Legion — 97 SKUs, 63 browse nodes (46 substantive after filtering operational categories), 1 browse level (flat); native search hits 4/4 literal product-name terms (whey, pulse, recharge, triumph) but 0/4 intent/category terms (Supplements, Workout Supplements, …) — a real search-relevance gap. Two clean gate passes (VAL-077) with the Shopify pipeline untouched; BDD inventory BDD-INV-017.
+- Impact: The tool now inspects a WooCommerce store (catalog scale + search signal), delivering the operator's catalog summary and confirming the discovery premise for Legion (small, flat catalog → search is lower-priority, but native search still misses intent queries). Remaining Woo slices: dashboard site parity, discovery depth (autocomplete/facets/recommendations/rendered), and a Woo capability model + shared report schema.
+
 ## 2026-07-18
 
 - Mission update: Added sidebar collapse + sort controls (GEN-027). Each sector group in the Sites sidebar can collapse/expand, and a Sort control reorders sites within groups by Name, Recently inspected, or Most runs; selection still opens the site view. Validated live (collapse persists through re-sort; Most runs put Allbirds first, Ridge last); two clean gate passes (VAL-076); BDD inventory BDD-INV-016. No inspection triggered.

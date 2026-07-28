@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-016",
+  "inventory_id": "BDD-INV-017",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-015",
+  "supersedes": "BDD-INV-016",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_27_sidebar_collapse_sort_inventory",
-  "refresh_rationale": "Adds GEN-027 behavior: the sector-grouped sidebar can collapse/expand groups and sort sites within groups.",
+  "status": "generation_28_woocommerce_engine_slice1_inventory",
+  "refresh_rationale": "Adds GEN-028 slice-1 behaviors: WooCommerce platform detection and catalog/search discovery via the Store API, producing an honest catalog summary and search-relevance signal.",
   "summary": {
-    "total": 72,
-    "critical": 15,
+    "total": 75,
+    "critical": 16,
     "high": 32,
-    "medium": 21,
+    "medium": 23,
     "low": 4,
-    "passing": 70,
+    "passing": 73,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -631,6 +631,32 @@
       "category": "Usability Validation",
       "status": "passed_gen_027",
       "evidence": "Sort control reorders sites within each group; Most runs put Allbirds first, Ridge last. VAL-076."
+    }
+  ],
+  "gen28_bdds": [
+    {
+      "id": "BDD-G28-001",
+      "title": "WooCommerce stores are detected and inspected via the Store API",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_028",
+      "evidence": "woo-inspect detects woocommerce and reads the public Store API; ran live on Legion. VAL-077. Resolves FND-GEN028-001."
+    },
+    {
+      "id": "BDD-G28-002",
+      "title": "Catalog summary reports SKUs, browse nodes, and levels",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_028",
+      "evidence": "Legion: 97 SKUs, 63 browse nodes (46 substantive), 1 level; discovery signal derived (small catalog + flat browse -> lower search priority). VAL-077."
+    },
+    {
+      "id": "BDD-G28-003",
+      "title": "Search probe distinguishes literal vs intent query handling",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_028",
+      "evidence": "Legion native search: 4/4 literal product-name hits, 0/4 intent/category hits — a real search-relevance gap. VAL-077."
     }
   ]
 }
