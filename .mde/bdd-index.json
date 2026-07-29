@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-018",
+  "inventory_id": "BDD-INV-019",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-017",
+  "supersedes": "BDD-INV-018",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_29_woocommerce_dashboard_integration_inventory",
-  "refresh_rationale": "Adds GEN-029 behaviors: WooCommerce stores are first-class in the dashboard with a catalog summary panel and live search + autocomplete.",
+  "status": "generation_30_woocommerce_discovery_depth_inventory",
+  "refresh_rationale": "Adds GEN-030 behaviors: WooCommerce facets/attributes, an honest recommendations status, and a Shopify-style discovery-surfaces presentation for Woo stores.",
   "summary": {
-    "total": 78,
+    "total": 81,
     "critical": 17,
     "high": 33,
-    "medium": 25,
+    "medium": 28,
     "low": 4,
-    "passing": 76,
+    "passing": 79,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -683,6 +683,32 @@
       "category": "Functional Validation",
       "status": "passed_gen_029",
       "evidence": "Typed \"wh\" -> Whey Starter Pack, Whey Protein, Clear Whey+, Whey+. Prefix product search, labelled (no native Woo autocomplete). VAL-078."
+    }
+  ],
+  "gen30_bdds": [
+    {
+      "id": "BDD-G30-001",
+      "title": "Woo facets/attributes are inspected and surfaced",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_030",
+      "evidence": "Legion: 22 attributes (9 filterable, Flavor 87 terms) with coverage; Facets & attributes panel renders. VAL-079. Resolves FND-GEN030-001."
+    },
+    {
+      "id": "BDD-G30-002",
+      "title": "Woo store shows the same discovery surfaces as Shopify",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_030",
+      "evidence": "Discovery surfaces panel: Catalog/Search/Autocomplete/Facets/Recommendations/Browse with per-surface status. VAL-079."
+    },
+    {
+      "id": "BDD-G30-003",
+      "title": "Recommendations reported honestly as a capture limitation",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_030",
+      "evidence": "Recommendations = LIMITED, nature capture_limitation (not exposed via Store API; needs rendered capture). No fabricated feed. VAL-079."
     }
   ]
 }

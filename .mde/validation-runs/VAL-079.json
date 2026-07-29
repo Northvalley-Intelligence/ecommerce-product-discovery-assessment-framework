@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-079",
+  "generation": "GEN-030",
+  "phase": "Generation 30 - WooCommerce discovery depth (facets/recommendations/browse)",
+  "started_at": "2026-07-18T05:00:00Z",
+  "completed_at": "2026-07-18T06:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen030_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Facets capture",
+      "tool": "live woo-inspect + Store API",
+      "result": "pass",
+      "evidence": "Legion: 22 global attributes, 9 filterable; top facets Flavor (87 terms), Size (6), Color (3); 9/15 sampled products carry attributes / are variable. Matches direct Store API probes."
+    },
+    {
+      "category": "Discovery surfaces (Shopify parity presentation)",
+      "tool": "browser + /api/woo/catalog",
+      "result": "pass",
+      "evidence": "Woo site view shows a Discovery surfaces panel: Catalog PASS, Search WARN (intent gap), Autocomplete PASS, Facets PASS, Recommendations LIMITED, Browse WARN — the same surfaces the Shopify view inspects."
+    },
+    {
+      "category": "Recommendations honesty",
+      "tool": "browser + capture",
+      "result": "pass",
+      "evidence": "Recommendations surface is LIMITED with nature=capture_limitation: \"Not exposed via the WooCommerce Store API (rendered server-side). Needs rendered capture.\" No fabricated feed. Validator asserts nature=capture_limitation."
+    },
+    {
+      "category": "Facets panel",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Facets & attributes table renders Flavor 87 (Acai Berry, Apple Cider, ...), Size 6 (Large/Medium/Small/X-Large/X-Small), Color 3 (Black/Gray/White)."
+    },
+    {
+      "category": "Shopify unaffected + no run triggered",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Allbirds still shows its Shopify site view/health; viewing the Woo site triggered no Shopify inspection."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit). Validator asserts facets summary, surfaces incl. Facets/Recommendations, recommendations=capture_limitation, and the client panels. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator asked to add discovery depth and make Woo the same in features as Shopify. This slice adds facets/recommendations/browse as inspectable surfaces presented like Shopify. Full parity (health/readiness/coverage rollup, findings, executive report, fix plan for Woo) and rendered capture remain subsequent slices. Resolves FND-GEN030-001."
+}

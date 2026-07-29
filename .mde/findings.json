@@ -700,6 +700,15 @@
       "summary": "Operator wants to see catalog, search, and autocomplete for Legion in the same dashboard. Slice 2 integrates Woo sites into the dashboard UI.",
       "status": "resolved_gen029_woo_dashboard_integration_shipped",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN030-001",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "Woo lacks facets/recommendations/browse surfaces and Shopify-parity presentation",
+      "summary": "Operator: add discovery depth (facets/recommendations/browse) and make Woo the same in features as Shopify. This slice adds the surfaces; full report/health/findings parity is later slices.",
+      "status": "resolved_gen030_woo_discovery_surfaces_shipped",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

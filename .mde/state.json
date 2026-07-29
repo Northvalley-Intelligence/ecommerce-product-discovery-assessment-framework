@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-029",
-  "current_phase": "Generation 29 - WooCommerce dashboard integration (exited)",
-  "phase_goal": "Legion (Woo) first-class in the dashboard with live Catalog, Search, and Autocomplete panels.",
-  "status": "gen029_phase_exit_complete",
+  "current_generation": "GEN-030",
+  "current_phase": "Generation 30 - WooCommerce discovery depth (exited)",
+  "phase_goal": "Add Woo facets/recommendations/browse as inspectable surfaces in the site view, mirroring Shopify surface coverage.",
+  "status": "gen030_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,14 +19,14 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-078",
-    "reason": "GEN-029 (Woo dashboard integration: catalog/search/autocomplete) validated with two independent clean passes (VAL-078); BDD-INV-018. Phase exit declared."
+    "latest_run_id": "VAL-079",
+    "reason": "GEN-030 (Woo discovery depth: facets/recommendations/browse + Shopify-style surfaces) validated with two independent clean passes (VAL-079); BDD-INV-019. Phase exit declared."
   },
   "critical_bdds": 17,
   "high_bdds": 33,
-  "medium_bdds": 25,
+  "medium_bdds": 28,
   "low_bdds": 4,
-  "bdd_inventory": "BDD-INV-018",
+  "bdd_inventory": "BDD-INV-019",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "Legion is fully visible in the dashboard (catalog + live search + autocomplete). Remaining WooCommerce slices: in-dashboard re-scan button, discovery depth (facets/attributes, recommendations, rendered capture), and the shared report schema so Woo runs feed executive reports/fix plans. Local commits ready to push when the operator says so.",
+  "next_recommended_action": "Woo discovery surfaces now match Shopify (catalog, search, autocomplete, facets, recommendations-status, browse). For full feature parity, next slices: a Woo health rollup (readiness/coverage), findings list, executive report + fix plan for Woo, and rendered (Playwright) capture. Local commits ready to push.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {

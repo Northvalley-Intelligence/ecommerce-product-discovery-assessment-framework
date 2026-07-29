@@ -4,6 +4,11 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
 ## 2026-07-18 (WooCommerce)
 
+- Mission update: WooCommerce discovery depth + Shopify surface parity (GEN-030). Added facets/attributes, an honest recommendations status, and browse as inspectable surfaces, presented like the Shopify view. Legion's site view now shows a "Discovery surfaces" panel (Catalog PASS · Search WARN · Autocomplete PASS · Facets PASS · Recommendations LIMITED · Browse WARN) and a Facets & attributes table (Flavor 87 terms, Size 6, Color 3; 22 attributes / 9 filterable). Recommendations is flagged as a capture limitation (not exposed via the Store API), never fabricated.
+- Reason: Operator: "keep going with the discovery depth slice" + "make it the same in terms of features as Shopify."
+- Discovered through: Live Legion capture + browser walkthrough of the new panels; two clean gate passes (VAL-079); BDD inventory BDD-INV-019. Shopify sites unaffected; no run triggered.
+- Impact: A WooCommerce store now shows the same discovery surfaces as Shopify in the same dashboard. Toward full parity, remaining slices: a Woo health rollup (readiness/coverage), findings list, executive report + fix plan for Woo, and rendered (Playwright) capture.
+
 - Mission update: WooCommerce dashboard integration (GEN-029, slice 2). Legion Athletics is now first-class in the same dashboard: it appears in the Sites list, and its site view shows a Catalog summary panel (97 SKUs, 63 browse nodes / 46 substantive, 1 level, search signal 4/4 literal · 0/4 intent, top categories, discovery signal) plus live Search and Autocomplete panels that query the store's WooCommerce Store API when the operator types.
 - Reason: Operator: "finish it so I can see the catalog, search, and autocomplete for the site in the same dashboard."
 - Discovered through: Live browser walkthrough — Legion in the sidebar → catalog summary → search "protein" → 5 live results → autocomplete "wh" → Whey Starter Pack/Whey Protein/Clear Whey+/Whey+. Shopify sites unaffected; no Shopify run triggered. Two clean gate passes (VAL-078); BDD inventory BDD-INV-018. Fixed an invalid orderby=relevance that had zeroed autocomplete.
