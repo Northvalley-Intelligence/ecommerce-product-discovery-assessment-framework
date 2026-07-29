@@ -159,9 +159,20 @@ async function main() {
           const rec = surfaces.find((s) => s.surface === 'Recommendations');
           assert(rec && rec.nature === 'capture_limitation', 'Recommendations must be a capture limitation (not exposed via Store API), not a store finding.');
           assert(wooCatalog.summary.facets && typeof wooCatalog.summary.facets.attribute_count === 'number', 'Woo facets summary missing attribute_count.');
+          // GEN-031: Shopify-parity deliverables — health, findings, fix plan, report.
+          assert(wooCatalog.summary.health && typeof wooCatalog.summary.health.coverage_percent === 'number' && wooCatalog.summary.health.readiness, 'Woo summary missing health rollup.');
+          assert(Array.isArray(wooCatalog.summary.findings), 'Woo summary missing findings.');
+          assert(wooCatalog.summary.fix_plan && Array.isArray(wooCatalog.summary.fix_plan.items), 'Woo summary missing fix plan.');
+          const recFinding = wooCatalog.summary.findings.find((f) => f.surface === 'Recommendations');
+          if (recFinding) assert(recFinding.nature === 'capture_limitation', 'Recommendations finding must be a capture limitation.');
+          if (wooCatalog.summary.report_md_path) {
+            const report = await fetchText(`${dashboard.url}/artifact?path=${encodeURIComponent(wooCatalog.summary.report_md_path)}`);
+            assert(report.includes('Ecommerce Discovery Evaluation'), 'Woo executive report artifact did not serve.');
+          }
         }
       }
       assert(page.includes('Discovery surfaces') && page.includes('Facets & attributes'), 'Woo site view missing the discovery-surfaces / facets panels.');
+    assert(page.includes('findingsPanel') && page.includes('fixPanel') && page.includes('healthPanel'), 'Woo site view missing health/findings/fix-plan panels.');
     }
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');

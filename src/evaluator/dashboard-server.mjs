@@ -1547,7 +1547,24 @@ function dashboardPage() {
       const facets = s.facets || null;
       const facetRows = facets && facets.top_facets ? facets.top_facets.slice(0, 8).map((facet) =>
         '<tr><td>' + escapeHtml(facet.name) + '</td><td>' + escapeHtml(String(facet.term_count)) + '</td><td class="muted" style="font-size:12px">' + escapeHtml((facet.top_terms || []).slice(0, 5).join(', ')) + '</td></tr>').join('') : '';
-      el.innerHTML = panel('Catalog summary', 'Captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
+      const sevStatus = (severity) => ({ Critical: 'fail', High: 'fail', Medium: 'warn', Low: 'warn', Info: 'muted-status' }[severity] || 'warn');
+      const health = s.health;
+      const healthPanel = health ? panel('Health summary', s.findings ? s.findings.length + ' finding' + (s.findings.length === 1 ? '' : 's') + ' · ' + (s.fix_plan ? s.fix_plan.open_items : 0) + ' fix item' + ((s.fix_plan && s.fix_plan.open_items === 1) ? '' : 's') : '',
+        '<div class="panel-body"><div class="metric-row">' +
+          healthMetric('Readiness', pill(health.readiness), 'from surface coverage') +
+          healthMetric('Surface coverage', escapeHtml(String(health.coverage_percent)) + '%', health.surfaces_pass + '/' + (health.surfaces_pass + health.surfaces_warn + health.surfaces_fail) + ' inspectable pass') +
+          healthMetric('Status', pill(health.status), health.surfaces_warn + ' warn · ' + health.surfaces_limited + ' not inspectable') +
+          healthMetric('Findings', escapeHtml(String((s.findings || []).length)), (s.fix_plan ? s.fix_plan.open_items : 0) + ' fixable') +
+        '</div></div>') : '';
+      const findingsPanel = (s.findings && s.findings.length) ? panel('Findings', 'Discovery gaps and capture limitations',
+        '<div class="table-wrap"><table><thead><tr><th>Severity</th><th>Surface</th><th>Finding</th></tr></thead><tbody>' +
+        s.findings.map((f) => '<tr><td>' + pill(sevStatus(f.severity), f.severity) + (f.nature === 'capture_limitation' ? ' <span class="muted" style="font-size:11px">capture limit</span>' : '') + '</td><td><strong>' + escapeHtml(f.surface) + '</strong></td><td class="muted" style="font-size:12px">' + escapeHtml(f.detail) + '</td></tr>').join('') +
+        '</tbody></table></div>') : '';
+      const fixPanel = (s.fix_plan && s.fix_plan.items && s.fix_plan.items.length) ? panel('Fix plan', s.fix_plan.open_items + ' recommended fix' + (s.fix_plan.open_items === 1 ? '' : 'es') + ' for the ecommerce team',
+        '<div class="panel-body">' + s.fix_plan.items.map((item) => '<div style="margin-bottom:10px"><strong>' + escapeHtml(item.surface) + '</strong> ' + pill(sevStatus(item.severity), item.severity) + '<div class="muted" style="font-size:12px;margin-top:2px">' + escapeHtml(item.recommendation) + '</div></div>').join('') +
+        (s.report_md_path ? '<p style="margin-top:8px"><a href="' + artifactHref(s.report_md_path) + '" target="_blank"><strong>Open executive report</strong></a></p>' : '') + '</div>') : '';
+      el.innerHTML = healthPanel +
+        panel('Catalog summary', 'Captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
         '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
         (s.discovery_signal ? '<p class="muted" style="margin-top:10px;font-size:12px">' + escapeHtml(s.discovery_signal) + '</p>' : '') +
         (s.search_signal && s.search_signal.note ? '<p class="muted" style="margin-top:4px;font-size:12px">Search: ' + escapeHtml(s.search_signal.note) + '</p>' : '') +
@@ -1556,7 +1573,8 @@ function dashboardPage() {
         (surfaces ? panel('Discovery surfaces', 'The same discovery surfaces inspected for Shopify, for this WooCommerce store',
           '<div class="table-wrap"><table><thead><tr><th>Surface</th><th>Status</th><th>Signal</th></tr></thead><tbody>' + surfaces + '</tbody></table></div>') : '') +
         (facets ? panel('Facets & attributes', facets.attribute_count + ' attributes · ' + facets.filterable_count + ' filterable · ' + facets.products_with_attributes + '/' + facets.sample_size + ' sampled products carry attributes',
-          facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') : '');
+          facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') : '') +
+        findingsPanel + fixPanel;
     }
     function wireWooSearch(targetId) {
       let searchTimer = null;

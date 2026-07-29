@@ -63,6 +63,102 @@ function buildSurfaces({ catalog, facets, literalHits, literalTotal, intentHits,
   ];
 }
 
+// Health rollup derived from the discovery surfaces, mirroring the Shopify
+// site view's readiness/coverage. Capture limitations (e.g. Recommendations)
+// are excluded from the pass-rate denominator - they are not store failures.
+function buildHealth(surfaces) {
+  const inspectable = surfaces.filter((s) => s.nature === 'store_finding');
+  const passed = inspectable.filter((s) => s.status === 'pass').length;
+  const warned = inspectable.filter((s) => s.status === 'warn').length;
+  const failed = inspectable.filter((s) => s.status === 'fail').length;
+  const limited = surfaces.filter((s) => s.nature === 'capture_limitation').length;
+  const coverage = inspectable.length ? Math.round((passed / inspectable.length) * 100) : 0;
+  const readiness = failed > 0 ? 'not_ready' : warned > 0 ? 'bounded' : 'ready';
+  return {
+    coverage_percent: coverage,
+    readiness,
+    status: warned > 0 || failed > 0 ? 'partial' : 'complete',
+    surfaces_total: surfaces.length,
+    surfaces_pass: passed,
+    surfaces_warn: warned,
+    surfaces_fail: failed,
+    surfaces_limited: limited
+  };
+}
+
+// Findings derived from warn/fail/limited surfaces. store_finding warnings are
+// the store's discovery issues; capture_limitation entries are our tooling limits.
+function buildFindings(surfaces, searchSignal) {
+  const findings = [];
+  let n = 0;
+  const sev = { Search: 'High', Browse: 'Medium', Facets: 'Medium', Catalog: 'Medium', Autocomplete: 'Low' };
+  for (const surface of surfaces) {
+    if (surface.status === 'pass') continue;
+    n += 1;
+    findings.push({
+      id: `WOO-F${String(n).padStart(3, '0')}`,
+      surface: surface.surface,
+      severity: surface.nature === 'capture_limitation' ? 'Info' : (sev[surface.surface] || 'Medium'),
+      nature: surface.nature,
+      title: surface.nature === 'capture_limitation'
+        ? `${surface.surface} not inspectable via the Store API`
+        : `${surface.surface}: ${surface.status === 'warn' ? 'discovery gap' : 'failure'}`,
+      detail: surface.detail
+    });
+  }
+  return findings;
+}
+
+// Fix plan: only store findings become fix items (capture limitations are ours).
+function buildFixPlan(findings) {
+  const RECS = {
+    Search: 'Add synonym/intent handling (or a search app) so category and concept queries ("sofa", "seating") return products, not just literal product names.',
+    Browse: 'Introduce a hierarchical category structure (parent/child) so shoppers can drill down instead of scanning a flat list.',
+    Facets: 'Expose more filterable attributes as on-page facets so shoppers can refine large result sets.',
+    Autocomplete: 'Add a real autocomplete/suggest experience rather than relying on prefix product search.'
+  };
+  const items = findings.filter((f) => f.nature === 'store_finding').map((f) => ({
+    id: f.id.replace('WOO-F', 'WOO-FIX'),
+    surface: f.surface,
+    severity: f.severity,
+    issue: f.detail,
+    recommendation: RECS[f.surface] || 'Review this surface for discovery improvements.',
+    status: 'open'
+  }));
+  return { open_items: items.length, items };
+}
+
+function buildExecutiveReport(summary) {
+  const h = summary.health;
+  const lines = [];
+  lines.push(`# Ecommerce Discovery Evaluation: ${summary.name}`);
+  lines.push('');
+  lines.push(`**Store:** ${summary.url}  `);
+  lines.push(`**Platform:** WooCommerce  `);
+  lines.push(`**Evaluated:** ${summary.captured_at}  `);
+  lines.push(`**Readiness:** ${h.readiness} · **Surface coverage:** ${h.coverage_percent}% (${h.surfaces_pass} pass · ${h.surfaces_warn} warn · ${h.surfaces_limited} not inspectable)`);
+  lines.push('');
+  lines.push('## Catalog');
+  lines.push(`- **${summary.sku_count} SKUs** across **${summary.browse_nodes} browse nodes** (${summary.browse_nodes_substantive} substantive), **${summary.browse_levels} level** (${summary.browse_levels <= 1 ? 'flat' : 'hierarchical'}).`);
+  lines.push(`- **${summary.facets.attribute_count} product attributes** (${summary.facets.filterable_count} filterable). Top facet: ${summary.facets.top_facets[0] ? summary.facets.top_facets[0].name + ' (' + summary.facets.top_facets[0].term_count + ' terms)' : 'none'}.`);
+  lines.push('');
+  lines.push('## Discovery surfaces');
+  for (const s of summary.surfaces) lines.push(`- **${s.surface}** — ${s.status.toUpperCase()}${s.nature === 'capture_limitation' ? ' (capture limitation)' : ''}: ${s.detail}`);
+  lines.push('');
+  lines.push('## Findings');
+  if (summary.findings.length === 0) lines.push('- No discovery gaps found.');
+  for (const f of summary.findings) lines.push(`- **[${f.severity}] ${f.title}** — ${f.detail}`);
+  lines.push('');
+  lines.push('## Recommended fixes');
+  if (summary.fix_plan.items.length === 0) lines.push('- None.');
+  for (const item of summary.fix_plan.items) lines.push(`- **${item.surface}** (${item.severity}): ${item.recommendation}`);
+  lines.push('');
+  lines.push(`*${summary.discovery_signal}*`);
+  lines.push('');
+  lines.push('_Note: Recommendations and rendered UI are not exposed by the WooCommerce Store API; rendered (browser) capture is a pending inspection slice._');
+  return lines.join('\n') + '\n';
+}
+
 function discoverySignal({ sku_count, browse_levels, browse_nodes_substantive }) {
   const parts = [];
   if (sku_count == null) parts.push('SKU count unavailable from the Store API.');
@@ -181,6 +277,15 @@ async function main() {
     surfaces: buildSurfaces({ catalog, facets, literalHits, literalTotal, intentHits, intentTotal }),
     discovery_signal: discoverySignal(catalog)
   };
+  // Shopify-parity deliverables derived from the captured surfaces.
+  summary.health = buildHealth(summary.surfaces);
+  summary.findings = buildFindings(summary.surfaces, summary.search_signal);
+  summary.fix_plan = buildFixPlan(summary.findings);
+  const executiveMarkdown = buildExecutiveReport(summary);
+  writeJson(path.join(outputDir, 'executive-report.json'), { summary_ref: 'catalog-summary.json', health: summary.health, findings: summary.findings, fix_plan: summary.fix_plan });
+  fs.writeFileSync(path.join(outputDir, 'executive-report.md'), executiveMarkdown);
+  summary.report_md_path = path.relative(rootDir, path.join(outputDir, 'executive-report.md'));
+  console.log(`  health: readiness ${summary.health.readiness} · coverage ${summary.health.coverage_percent}% · findings ${summary.findings.length} · fixes ${summary.fix_plan.open_items}`);
 
   writeJson(path.join(outputDir, 'catalog-summary.json'), summary);
   writeJsonl(path.join(outputDir, 'evidence', 'search-probe.jsonl'), searchProbe);
