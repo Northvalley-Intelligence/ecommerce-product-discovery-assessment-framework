@@ -14,6 +14,7 @@ import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateFixPlan, readFixPlan, verifyFixPlan } from './fix-plan.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
 import { onboardTarget } from './onboard-target.mjs';
+import { createWooCommerceAdapter } from '../adapters/woocommerce.mjs';
 import { latexmkAvailable, renderExecutivePdf } from './render-executive-pdf.mjs';
 
 const DEFAULT_HOST = '127.0.0.1';
@@ -149,15 +150,19 @@ function listSites(rootDir) {
   const sites = [];
   for (const file of fs.readdirSync(targetsDir).filter((name) => name.endsWith('.json'))) {
     const target = readJson(path.join(targetsDir, file));
+    const platform = target.platform?.expected || 'shopify';
     const evaluation = evaluations.find((entry) => entry.target === path.join('targets', file));
-    if (!evaluation) continue;
+    // Shopify sites require an evaluation (their inspection is evaluation-driven);
+    // WooCommerce sites are listed directly (their catalog/search/autocomplete
+    // come from the Store API, not an evaluation manifest).
+    if (!evaluation && platform !== 'woocommerce') continue;
     const latest = historyRows.find((row) => row.target_id === target.target_id) || null;
     sites.push({
       target_id: target.target_id,
       name: target.name,
       url: target.primary_url,
-      platform: target.platform?.expected || 'shopify',
-      evaluation: path.join('evaluations', evaluation.file),
+      platform,
+      evaluation: evaluation ? path.join('evaluations', evaluation.file) : null,
       latest_run_id: latest?.inspection_id || null,
       latest_status: latest?.status || null,
       latest_timestamp: latest?.timestamp || null,
@@ -406,6 +411,25 @@ function siteHealth(rootDir, targetId) {
       .sort((left, right) => String(left.timestamp).localeCompare(String(right.timestamp)))
       .map((row) => ({ inspection_id: row.inspection_id, timestamp: row.timestamp, coverage: row.evidence_coverage }))
   };
+}
+
+// --- WooCommerce dashboard integration (GEN-029) --------------------------
+
+function wooAdapterForTarget(rootDir, targetId) {
+  const targetPath = path.join(rootDir, 'targets', `${targetId}.json`);
+  if (!exists(targetPath)) return null;
+  const target = readJson(targetPath);
+  if ((target.platform?.expected || '') !== 'woocommerce') return null;
+  return createWooCommerceAdapter(target);
+}
+
+// Latest cached catalog-summary.json from a woo-inspect capture, if any.
+function latestWooCatalog(rootDir, targetId) {
+  const captureRoot = path.join(rootDir, 'assessments', targetId, 'woo-inspection');
+  if (!exists(captureRoot)) return null;
+  const runs = fs.readdirSync(captureRoot).filter((name) => exists(path.join(captureRoot, name, 'catalog-summary.json'))).sort();
+  if (!runs.length) return null;
+  return readJson(path.join(captureRoot, runs[runs.length - 1], 'catalog-summary.json'));
 }
 
 function sharedData(rootDir) {
@@ -1370,9 +1394,12 @@ function dashboardPage() {
     }
     function siteNavButton(site) {
       const count = inspectionCount(site.target_id);
+      const sub = site.platform === 'woocommerce'
+        ? 'woocommerce · catalog/search'
+        : (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected');
       return '<button class="site-nav' + (site.target_id === state.selectedSite ? ' active' : '') + '" data-target="' + escapeHtml(site.target_id) + '">' +
         '<span class="site-name">' + escapeHtml(site.name) + '</span>' +
-        '<span class="muted">' + (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected') + '</span>' +
+        '<span class="muted">' + sub + '</span>' +
       '</button>';
     }
     function sortSitesList(list) {
@@ -1444,6 +1471,7 @@ function dashboardPage() {
     function renderSiteView(targetId) {
       const site = (state.sites || []).find((entry) => entry.target_id === targetId);
       if (!site) return;
+      if (site.platform === 'woocommerce') { renderWooSite(site); return; }
       const runs = state.inspections.filter((run) => run.target_id === targetId)
         .sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
       document.getElementById('detail').innerHTML =
@@ -1476,6 +1504,84 @@ function dashboardPage() {
       const editBtn = document.getElementById('siteEditBtn');
       if (editBtn) editBtn.addEventListener('click', () => { window.location.hash = '#setup=' + encodeURIComponent(editBtn.dataset.target); });
       for (const card of document.querySelectorAll('.run-card')) card.addEventListener('click', () => openRun(card.dataset.id));
+    }
+    function renderWooSite(site) {
+      const targetId = site.target_id;
+      document.getElementById('detail').innerHTML =
+        '<div class="crumb-bar"><span class="crumb-current">Sites › ' + escapeHtml(site.name) + '</span><span class="muted">— WooCommerce</span></div>' +
+        '<section class="hero"><div><p class="eyebrow">WooCommerce Site</p><h1>' + escapeHtml(site.name) + '</h1>' +
+          '<div class="subline"><span>' + escapeHtml(site.url) + '</span><span>woocommerce</span><span><a href="' + escapeHtml(site.url) + '" target="_blank" rel="noopener">Open store</a></span></div></div></section>' +
+        '<div id="wooCatalog"><div class="empty">Loading catalog…</div></div>' +
+        panel('Search', 'Live query against the store\\'s WooCommerce Store API',
+          '<div class="panel-body"><div class="field" style="max-width:420px"><input id="wooSearchInput" placeholder="Search products (e.g. protein)"></div>' +
+          '<div id="wooSearchResults" class="muted" style="margin-top:8px">Type a query to see live results.</div></div>') +
+        panel('Autocomplete', 'Type-ahead prefix search (WooCommerce has no native autocomplete endpoint)',
+          '<div class="panel-body"><div class="field" style="max-width:420px"><input id="wooAutoInput" placeholder="Start typing (e.g. wh)"></div>' +
+          '<div id="wooAutoResults" class="muted" style="margin-top:8px">Start typing to see suggestions.</div></div>');
+      loadWooCatalog(targetId);
+      wireWooSearch(targetId);
+    }
+    async function loadWooCatalog(targetId) {
+      let data;
+      try { data = await api('/api/woo/catalog?target=' + encodeURIComponent(targetId)); }
+      catch (error) { document.getElementById('wooCatalog').innerHTML = ''; return; }
+      if (state.selectedSite !== targetId) return;
+      const el = document.getElementById('wooCatalog');
+      if (!el) return;
+      if (!data.captured) {
+        el.innerHTML = panel('Catalog summary', 'At a glance', '<div class="panel-body"><div class="empty">Not scanned yet — run woo-inspect for this store to populate the catalog.</div></div>');
+        return;
+      }
+      const s = data.summary;
+      const metrics =
+        healthMetric('SKUs', escapeHtml(String(s.sku_count)), 'products (' + escapeHtml(s.sku_count_source || '') + ')') +
+        healthMetric('Browse nodes', escapeHtml(String(s.browse_nodes)), s.browse_nodes_substantive + ' substantive · ' + s.browse_nodes_operational_heuristic + ' operational') +
+        healthMetric('Browse levels', escapeHtml(String(s.browse_levels)), s.browse_levels <= 1 ? 'flat' : 'hierarchical') +
+        healthMetric('Search signal', escapeHtml((s.search_signal && s.search_signal.literal_hits) || '—') + ' / ' + escapeHtml((s.search_signal && s.search_signal.intent_hits) || '—'), 'literal / intent hits');
+      const topCats = (s.top_categories || []).slice(0, 8).map((category) =>
+        '<tr><td>' + escapeHtml(category.name) + '</td><td>' + escapeHtml(String(category.count ?? '')) + '</td></tr>').join('');
+      el.innerHTML = panel('Catalog summary', 'Captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
+        '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
+        (s.discovery_signal ? '<p class="muted" style="margin-top:10px;font-size:12px">' + escapeHtml(s.discovery_signal) + '</p>' : '') +
+        (s.search_signal && s.search_signal.note ? '<p class="muted" style="margin-top:4px;font-size:12px">Search: ' + escapeHtml(s.search_signal.note) + '</p>' : '') +
+        (topCats ? '<div class="muted" style="margin-top:12px;font-size:12px">Top categories</div><div class="table-wrap"><table><thead><tr><th>Category</th><th>Products</th></tr></thead><tbody>' + topCats + '</tbody></table></div>' : '') +
+        '</div>');
+    }
+    function wireWooSearch(targetId) {
+      let searchTimer = null;
+      let autoTimer = null;
+      const searchInput = document.getElementById('wooSearchInput');
+      const autoInput = document.getElementById('wooAutoInput');
+      if (searchInput) searchInput.addEventListener('input', (event) => {
+        const query = event.target.value;
+        clearTimeout(searchTimer);
+        const out = document.getElementById('wooSearchResults');
+        if (!query.trim()) { out.textContent = 'Type a query to see live results.'; return; }
+        searchTimer = setTimeout(async () => {
+          out.textContent = 'Searching…';
+          try {
+            const data = await api('/api/woo/search?target=' + encodeURIComponent(targetId) + '&q=' + encodeURIComponent(query));
+            out.innerHTML = '<div><strong>' + data.result_count + '</strong> result' + (data.result_count === 1 ? '' : 's') + ' for “' + escapeHtml(query) + '”</div>' +
+              (data.results && data.results.length
+                ? '<ul style="margin:6px 0 0;padding-left:18px">' + data.results.slice(0, 8).map((r) => '<li><a href="' + escapeHtml(r.permalink || '#') + '" target="_blank" rel="noopener">' + escapeHtml(r.name) + '</a></li>').join('') + '</ul>'
+                : '<div class="muted" style="margin-top:4px">No products matched — a possible search-relevance gap for this query.</div>');
+          } catch (error) { out.textContent = 'Search failed: ' + error.message; }
+        }, 350);
+      });
+      if (autoInput) autoInput.addEventListener('input', (event) => {
+        const prefix = event.target.value;
+        clearTimeout(autoTimer);
+        const out = document.getElementById('wooAutoResults');
+        if (!prefix.trim()) { out.textContent = 'Start typing to see suggestions.'; return; }
+        autoTimer = setTimeout(async () => {
+          try {
+            const data = await api('/api/woo/autocomplete?target=' + encodeURIComponent(targetId) + '&q=' + encodeURIComponent(prefix));
+            out.innerHTML = (data.suggestions && data.suggestions.length
+              ? '<ul style="margin:0;padding-left:18px">' + data.suggestions.slice(0, 6).map((sug) => '<li>' + escapeHtml(sug.name) + '</li>').join('') + '</ul>'
+              : '<div class="muted">No suggestions for “' + escapeHtml(prefix) + '”.</div>');
+          } catch (error) { out.textContent = 'Autocomplete failed: ' + error.message; }
+        }, 250);
+      });
     }
     function healthMetric(label, value, detail) {
       return '<article class="metric"><div class="metric-label">' + escapeHtml(label) + '</div><div class="metric-value">' + value + '</div><div class="metric-detail">' + escapeHtml(detail || '') + '</div></article>';
@@ -2584,6 +2690,35 @@ function routeRequest(rootDir, request, response, queue) {
       return;
     }
     sendJson(response, 200, health);
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/woo/catalog') {
+    // Cached catalog summary (no external call) so the panel loads instantly.
+    const summary = latestWooCatalog(rootDir, url.searchParams.get('target'));
+    sendJson(response, 200, summary ? { captured: true, summary } : { captured: false });
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/woo/search') {
+    const adapter = wooAdapterForTarget(rootDir, url.searchParams.get('target'));
+    const query = url.searchParams.get('q') || '';
+    if (!adapter) { sendJson(response, 404, { error: 'Not a WooCommerce target.' }); return; }
+    if (!query.trim()) { sendJson(response, 200, { query, result_count: 0, results: [] }); return; }
+    adapter.fetchSubmittedSearch(query)
+      .then((result) => sendJson(response, 200, { query: result.query, result_count: result.result_count, returned: result.returned, results: result.results }))
+      .catch((error) => sendJson(response, 502, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/woo/autocomplete') {
+    const adapter = wooAdapterForTarget(rootDir, url.searchParams.get('target'));
+    const prefix = url.searchParams.get('q') || '';
+    if (!adapter) { sendJson(response, 404, { error: 'Not a WooCommerce target.' }); return; }
+    if (!prefix.trim()) { sendJson(response, 200, { prefix, suggestions: [] }); return; }
+    adapter.fetchAutocomplete(prefix)
+      .then((result) => sendJson(response, 200, { prefix: result.prefix, method: result.method, suggestion_count: result.suggestion_count, suggestions: result.suggestions }))
+      .catch((error) => sendJson(response, 502, { error: error.message }));
     return;
   }
 

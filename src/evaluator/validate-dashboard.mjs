@@ -133,7 +133,9 @@ async function main() {
 
     const sites = await fetchJson(`${dashboard.url}/api/sites`);
     assert(Array.isArray(sites) && sites.length > 0, 'Sites API returned no identified sites.');
-    assert(sites.every((site) => site.target_id && site.name && site.evaluation), 'Sites API entries missing required fields.');
+    assert(sites.every((site) => site.target_id && site.name), 'Sites API entries missing required fields.');
+    // Shopify sites are evaluation-driven; WooCommerce sites are listed without one.
+    assert(sites.every((site) => site.platform === 'woocommerce' || site.evaluation), 'Non-Woo sites must carry an evaluation.');
     // GEN-025: sites carry their sector membership so the sidebar can group them.
     assert(sites.every((site) => Array.isArray(site.sectors)), 'Sites API entries missing sector membership array.');
     assert(sites.some((site) => site.sectors.length > 0), 'No site reports a sector membership for the grouped sidebar.');
@@ -141,6 +143,17 @@ async function main() {
     // GEN-027: sidebar collapse + sort controls.
     assert(page.includes('id="siteSort"') && page.includes('function sortSitesList'), 'Sidebar missing the site sort control.');
     assert(page.includes('class="site-group-head"') && page.includes('collapsedGroups'), 'Sidebar missing collapsible group headers.');
+    // GEN-029: WooCommerce sites are first-class with catalog/search/autocomplete.
+    assert(page.includes('function renderWooSite'), 'Dashboard page missing the WooCommerce site view.');
+    assert(page.includes("'/api/woo/catalog?target='") && page.includes("'/api/woo/search?target='") && page.includes("'/api/woo/autocomplete?target='"), 'Dashboard page missing WooCommerce API wiring.');
+    const wooSite = sites.find((site) => site.platform === 'woocommerce');
+    if (wooSite) {
+      const wooCatalog = await fetchJson(`${dashboard.url}/api/woo/catalog?target=${encodeURIComponent(wooSite.target_id)}`);
+      assert('captured' in wooCatalog, 'Woo catalog endpoint should return a captured flag.');
+      if (wooCatalog.captured) {
+        assert(typeof wooCatalog.summary.sku_count === 'number' && typeof wooCatalog.summary.browse_nodes === 'number', 'Woo catalog summary missing sku_count/browse_nodes.');
+      }
+    }
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');
 

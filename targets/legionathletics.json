@@ -1,0 +1,19 @@
+{
+  "schema_version": "target-manifest-v0.1",
+  "target_id": "legionathletics",
+  "name": "Legion Athletics",
+  "primary_url": "https://legionathletics.com/",
+  "domain": "legionathletics.com",
+  "platform": {
+    "expected": "woocommerce",
+    "canonical_platform_host": null,
+    "confidence": "observed",
+    "source": "WooCommerce Store API reachable; detected via woo-inspect."
+  },
+  "inspection_defaults": {
+    "respect_robots": true,
+    "timeout_ms": 15000,
+    "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
+  },
+  "known_limitations": []
+}

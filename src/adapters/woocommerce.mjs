@@ -145,6 +145,24 @@ export function createWooCommerceAdapter(target, options = {}) {
       };
     },
 
+    // WooCommerce core has no dedicated autocomplete/suggest endpoint, so this
+    // is prefix product search (type-ahead) over the Store API - labelled as
+    // such wherever surfaced so it is never mistaken for a real suggest API.
+    async fetchAutocomplete(prefix, limit = 6) {
+      const res = await wooFetch(`${storeApi}/products?search=${encodeURIComponent(prefix)}&per_page=${limit}`);
+      const suggestions = Array.isArray(res.json)
+        ? res.json.map((product) => ({ id: product.id, name: product.name, permalink: product.permalink }))
+        : [];
+      return {
+        prefix,
+        method: 'prefix product search (WooCommerce has no native autocomplete endpoint)',
+        suggestion_count: res.total != null ? res.total : suggestions.length,
+        suggestions,
+        status: res.status,
+        evidence: endpointSummary('autocomplete_prefix_search', res)
+      };
+    },
+
     async fetchProductSample(limit = 15) {
       const res = await wooFetch(`${storeApi}/products?per_page=${limit}&orderby=popularity`);
       const products = Array.isArray(res.json)

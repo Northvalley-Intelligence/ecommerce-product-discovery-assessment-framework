@@ -14,13 +14,37 @@ import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { createWooCommerceAdapter } from '../adapters/woocommerce.mjs';
+import { targetIdFromDomain } from './onboard-target.mjs';
 
-function slugifyDomain(url) {
+function domainOf(url) {
   try {
-    return new URL(url.startsWith('http') ? url : `https://${url}`).hostname.replace(/^www\./, '').replace(/[^a-z0-9]+/gi, '').toLowerCase();
+    return new URL(url.startsWith('http') ? url : `https://${url}`).hostname.replace(/^www\./, '').toLowerCase();
   } catch {
     return 'woo-target';
   }
+}
+function slugifyDomain(url) {
+  return targetIdFromDomain(domainOf(url)) || 'woo-target';
+}
+
+// Register the store as a WooCommerce target so it shows up in the dashboard
+// Sites list alongside Shopify targets. Idempotent: refreshes primary fields.
+function writeWooTarget(rootDir, { targetId, name, url }) {
+  const targetPath = path.join(rootDir, 'targets', `${targetId}.json`);
+  const existing = fs.existsSync(targetPath) ? JSON.parse(fs.readFileSync(targetPath, 'utf8')) : {};
+  const manifest = {
+    schema_version: 'target-manifest-v0.1',
+    target_id: targetId,
+    name,
+    primary_url: url,
+    domain: domainOf(url),
+    platform: { expected: 'woocommerce', canonical_platform_host: null, confidence: 'observed', source: 'WooCommerce Store API reachable; detected via woo-inspect.' },
+    inspection_defaults: { respect_robots: true, timeout_ms: 15000, user_agent: 'Northvalley-Ecommerce-Inspection/0.1' },
+    known_limitations: existing.known_limitations || []
+  };
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+  fs.writeFileSync(targetPath, JSON.stringify(manifest, null, 2) + '\n');
+  return path.relative(rootDir, targetPath);
 }
 
 function discoverySignal({ sku_count, browse_levels, browse_nodes_substantive }) {
@@ -59,6 +83,8 @@ async function main() {
     console.error('  Not a WooCommerce store (or Store API blocked). Aborting.');
     process.exit(2);
   }
+  const targetRel = writeWooTarget(rootDir, { targetId, name, url });
+  console.log(`  registered target: ${targetRel}`);
 
   const catalog = await adapter.discoverCatalog();
   evidence.push(...catalog.evidence);
