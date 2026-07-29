@@ -152,7 +152,16 @@ async function main() {
       assert('captured' in wooCatalog, 'Woo catalog endpoint should return a captured flag.');
       if (wooCatalog.captured) {
         assert(typeof wooCatalog.summary.sku_count === 'number' && typeof wooCatalog.summary.browse_nodes === 'number', 'Woo catalog summary missing sku_count/browse_nodes.');
+        // GEN-030: discovery depth — facets + Shopify-style surfaces.
+        if (wooCatalog.summary.surfaces) {
+          const surfaces = wooCatalog.summary.surfaces;
+          assert(surfaces.some((s) => s.surface === 'Facets') && surfaces.some((s) => s.surface === 'Recommendations'), 'Woo surfaces missing Facets/Recommendations.');
+          const rec = surfaces.find((s) => s.surface === 'Recommendations');
+          assert(rec && rec.nature === 'capture_limitation', 'Recommendations must be a capture limitation (not exposed via Store API), not a store finding.');
+          assert(wooCatalog.summary.facets && typeof wooCatalog.summary.facets.attribute_count === 'number', 'Woo facets summary missing attribute_count.');
+        }
       }
+      assert(page.includes('Discovery surfaces') && page.includes('Facets & attributes'), 'Woo site view missing the discovery-surfaces / facets panels.');
     }
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');

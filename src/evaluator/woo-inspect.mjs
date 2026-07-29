@@ -47,6 +47,22 @@ function writeWooTarget(rootDir, { targetId, name, url }) {
   return path.relative(rootDir, targetPath);
 }
 
+// Present the WooCommerce discovery surfaces the same way the Shopify view
+// does: one entry per surface with a status (pass / warn / limited) and an
+// honest signal. Recommendations is a capture limitation, not a store finding.
+function buildSurfaces({ catalog, facets, literalHits, literalTotal, intentHits, intentTotal }) {
+  const facetRich = facets.filterable_count >= 3 && facets.top_facets.some((f) => f.term_count >= 5);
+  const intentMiss = intentTotal > 0 && intentHits < intentTotal;
+  return [
+    { surface: 'Catalog', status: 'pass', nature: 'store_finding', detail: `${catalog.sku_count} SKUs across ${catalog.browse_nodes} browse nodes (${catalog.browse_nodes_substantive} substantive), ${catalog.browse_levels} level.` },
+    { surface: 'Search', status: intentMiss ? 'warn' : 'pass', nature: 'store_finding', detail: `Literal ${literalHits}/${literalTotal}, intent ${intentHits}/${intentTotal}.` + (intentMiss ? ' Intent/category queries return nothing — relevance gap.' : '') },
+    { surface: 'Autocomplete', status: 'pass', nature: 'store_finding', detail: 'Type-ahead available via prefix product search (no native WooCommerce autocomplete endpoint).' },
+    { surface: 'Facets', status: facetRich ? 'pass' : 'warn', nature: 'store_finding', detail: `${facets.attribute_count} attributes, ${facets.filterable_count} filterable; top facet ${facets.top_facets[0] ? facets.top_facets[0].name + ' (' + facets.top_facets[0].term_count + ' terms)' : 'none'}. ${facets.products_with_attributes}/${facets.sample_size} sampled products carry attributes.` },
+    { surface: 'Recommendations', status: 'limited', nature: 'capture_limitation', detail: 'Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect.' },
+    { surface: 'Browse', status: catalog.browse_levels > 1 ? 'pass' : 'warn', nature: 'store_finding', detail: `${catalog.browse_nodes} category nodes, ${catalog.browse_levels === 1 ? 'flat (no hierarchy)' : catalog.browse_levels + ' levels'}.` }
+  ];
+}
+
 function discoverySignal({ sku_count, browse_levels, browse_nodes_substantive }) {
   const parts = [];
   if (sku_count == null) parts.push('SKU count unavailable from the Store API.');
@@ -89,6 +105,10 @@ async function main() {
   const catalog = await adapter.discoverCatalog();
   evidence.push(...catalog.evidence);
   console.log(`  SKUs: ${catalog.sku_count} | browse nodes: ${catalog.browse_nodes} (${catalog.browse_nodes_substantive} substantive) | levels: ${catalog.browse_levels}`);
+
+  const facets = await adapter.discoverFacets();
+  evidence.push(...facets.evidence);
+  console.log(`  facets: ${facets.attribute_count} attributes (${facets.filterable_count} filterable) · top: ${facets.top_facets.slice(0, 3).map((f) => f.name + '(' + f.term_count + ')').join(', ')}`);
 
   // Build a query set that surfaces search quality both ways:
   //  - "literal" queries taken from actual product names (native search should hit these)
@@ -150,6 +170,15 @@ async function main() {
         ? 'Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood).'
         : 'Native search handled both literal and intent queries in this sample.'
     },
+    facets: {
+      attribute_count: facets.attribute_count,
+      filterable_count: facets.filterable_count,
+      top_facets: facets.top_facets,
+      products_with_attributes: facets.products_with_attributes,
+      variable_products: facets.variable_products,
+      sample_size: facets.sample_size
+    },
+    surfaces: buildSurfaces({ catalog, facets, literalHits, literalTotal, intentHits, intentTotal }),
     discovery_signal: discoverySignal(catalog)
   };
 

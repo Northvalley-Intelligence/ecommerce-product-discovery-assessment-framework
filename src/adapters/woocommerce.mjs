@@ -145,6 +145,39 @@ export function createWooCommerceAdapter(target, options = {}) {
       };
     },
 
+    // Facets: global product attributes are WooCommerce's faceted-navigation
+    // dimensions. Report how many exist, how many are filterable (have term
+    // archives), and term counts for the top filterable ones. Also measure
+    // attribute/variation coverage across a product sample.
+    async discoverFacets(sampleSize = 15) {
+      const attrsRes = await wooFetch(`${storeApi}/products/attributes`);
+      const attributes = Array.isArray(attrsRes.json) ? attrsRes.json : [];
+      const filterable = attributes.filter((attribute) => attribute.has_archives);
+      // Term counts for up to 8 filterable attributes (bounded to stay cheap).
+      const topFacets = [];
+      for (const attribute of filterable.slice(0, 8)) {
+        const termsRes = await wooFetch(`${storeApi}/products/attributes/${attribute.id}/terms`);
+        const terms = Array.isArray(termsRes.json) ? termsRes.json : [];
+        topFacets.push({ id: attribute.id, name: attribute.name, term_count: terms.length, top_terms: terms.slice(0, 6).map((term) => term.name) });
+      }
+      topFacets.sort((left, right) => right.term_count - left.term_count);
+
+      const sampleRes = await wooFetch(`${storeApi}/products?per_page=${sampleSize}&orderby=popularity`);
+      const sample = Array.isArray(sampleRes.json) ? sampleRes.json : [];
+      const withAttributes = sample.filter((product) => (product.attributes || []).length > 0).length;
+      const variable = sample.filter((product) => product.type === 'variable' || (product.variations || []).length > 0).length;
+
+      return {
+        attribute_count: attributes.length,
+        filterable_count: filterable.length,
+        top_facets: topFacets,
+        sample_size: sample.length,
+        products_with_attributes: withAttributes,
+        variable_products: variable,
+        evidence: [endpointSummary('attributes', attrsRes), endpointSummary('facet_sample', sampleRes)]
+      };
+    },
+
     // WooCommerce core has no dedicated autocomplete/suggest endpoint, so this
     // is prefix product search (type-ahead) over the Store API - labelled as
     // such wherever surfaced so it is never mistaken for a real suggest API.

@@ -1540,12 +1540,23 @@ function dashboardPage() {
         healthMetric('Search signal', escapeHtml((s.search_signal && s.search_signal.literal_hits) || '—') + ' / ' + escapeHtml((s.search_signal && s.search_signal.intent_hits) || '—'), 'literal / intent hits');
       const topCats = (s.top_categories || []).slice(0, 8).map((category) =>
         '<tr><td>' + escapeHtml(category.name) + '</td><td>' + escapeHtml(String(category.count ?? '')) + '</td></tr>').join('');
+      const surfaces = (s.surfaces || []).map((surface) =>
+        '<tr><td><strong>' + escapeHtml(surface.surface) + '</strong></td>' +
+        '<td>' + pill(surface.status, surface.status === 'limited' ? 'LIMITED' : null) + (surface.nature === 'capture_limitation' ? ' <span class="muted" style="font-size:11px">capture limit</span>' : '') + '</td>' +
+        '<td class="muted" style="font-size:12px">' + escapeHtml(surface.detail) + '</td></tr>').join('');
+      const facets = s.facets || null;
+      const facetRows = facets && facets.top_facets ? facets.top_facets.slice(0, 8).map((facet) =>
+        '<tr><td>' + escapeHtml(facet.name) + '</td><td>' + escapeHtml(String(facet.term_count)) + '</td><td class="muted" style="font-size:12px">' + escapeHtml((facet.top_terms || []).slice(0, 5).join(', ')) + '</td></tr>').join('') : '';
       el.innerHTML = panel('Catalog summary', 'Captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
         '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
         (s.discovery_signal ? '<p class="muted" style="margin-top:10px;font-size:12px">' + escapeHtml(s.discovery_signal) + '</p>' : '') +
         (s.search_signal && s.search_signal.note ? '<p class="muted" style="margin-top:4px;font-size:12px">Search: ' + escapeHtml(s.search_signal.note) + '</p>' : '') +
         (topCats ? '<div class="muted" style="margin-top:12px;font-size:12px">Top categories</div><div class="table-wrap"><table><thead><tr><th>Category</th><th>Products</th></tr></thead><tbody>' + topCats + '</tbody></table></div>' : '') +
-        '</div>');
+        '</div>') +
+        (surfaces ? panel('Discovery surfaces', 'The same discovery surfaces inspected for Shopify, for this WooCommerce store',
+          '<div class="table-wrap"><table><thead><tr><th>Surface</th><th>Status</th><th>Signal</th></tr></thead><tbody>' + surfaces + '</tbody></table></div>') : '') +
+        (facets ? panel('Facets & attributes', facets.attribute_count + ' attributes · ' + facets.filterable_count + ' filterable · ' + facets.products_with_attributes + '/' + facets.sample_size + ' sampled products carry attributes',
+          facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') : '');
     }
     function wireWooSearch(targetId) {
       let searchTimer = null;
