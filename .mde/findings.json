@@ -691,6 +691,15 @@
       "summary": "Operator asked for a full analysis of legionathletics.com. Detected WooCommerce (generator=woocommerce, 18 markers; Shopify /collections.json + /products.json return branded 404). The Shopify inspection engine cannot analyze it. WooCommerce Store API IS public: 97 products (X-WP-Total), 63 product categories (all flat, parent=0), many operational. No inspection run was performed; the Shopify-assumption onboarding (target/evaluation/query-pack) was removed. Awaiting operator decision on whether to add WooCommerce support.",
       "status": "resolved_gen028_slice1_legion_analyzed_via_woocommerce",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN029-001",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "WooCommerce sites not visible in the dashboard",
+      "summary": "Operator wants to see catalog, search, and autocomplete for Legion in the same dashboard. Slice 2 integrates Woo sites into the dashboard UI.",
+      "status": "resolved_gen029_woo_dashboard_integration_shipped",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

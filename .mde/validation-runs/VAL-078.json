@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-078",
+  "generation": "GEN-029",
+  "phase": "Generation 29 - WooCommerce dashboard integration (catalog/search/autocomplete)",
+  "started_at": "2026-07-18T03:30:00Z",
+  "completed_at": "2026-07-18T04:30:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen029_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Woo site is first-class",
+      "tool": "browser + /api/sites",
+      "result": "pass",
+      "evidence": "Legion Athletics appears in the Sites list (\"woocommerce · catalog/search\"); its site view shows a WooCommerce hero with an Open store link. Shopify sites still show runs + health summary."
+    },
+    {
+      "category": "Catalog panel",
+      "tool": "browser + /api/woo/catalog",
+      "result": "pass",
+      "evidence": "Catalog summary renders SKUs 97, Browse nodes 63 (46 substantive / 17 operational), Browse levels 1 (flat), Search signal 4/4 literal · 0/4 intent, discovery signal, and top categories (On Sale 68, Available on Facebook 55, Supplements 51, ...). Read from the cached capture."
+    },
+    {
+      "category": "Live search",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Typing \"protein\" returned 5 live results (Protein Crispy Treats, Whey Protein, Protein Cereal, Protein Cookies, Protein Bars) via /api/woo/search against the Store API."
+    },
+    {
+      "category": "Live autocomplete",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Typing \"wh\" returned suggestions (Whey Starter Pack, Whey Protein, Clear Whey+, Whey+) via /api/woo/autocomplete. Fixed an invalid orderby=relevance that had zeroed results; prefix search labelled honestly (Woo has no native autocomplete)."
+    },
+    {
+      "category": "Shopify unaffected + no run triggered",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Allbirds still shows its Shopify site view/health summary; viewing the Woo site triggered no Shopify inspection."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit). Validator asserts the Woo site listing (evaluation optional for woo), the cached catalog endpoint shape, and the search/autocomplete client wiring, without calling the live endpoints. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator authorized inspecting Legion this session. Slice 2 of the WooCommerce engine. Catalog reads the cached capture; search/autocomplete are live Store API queries issued only when the operator types. Resolves FND-GEN029-001."
+}

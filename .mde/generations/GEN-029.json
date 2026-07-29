@@ -1,0 +1,37 @@
+{
+  "generation_id": "GEN-029",
+  "mission_phase": "Generation 29 - WooCommerce engine slice 2: dashboard integration (catalog, search, autocomplete)",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T03:30:00Z",
+  "ended_at": "2026-07-18T04:30:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Make a WooCommerce store first-class in the same dashboard: Legion Athletics appears in the Sites list (platform woocommerce), and its site view shows a Catalog panel (SKUs, browse nodes, levels, top categories, discovery signal) and interactive Search and Autocomplete panels that query the store's WooCommerce Store API live. Shopify sites keep their existing view unchanged.",
+  "reason_generation_started": "Operator: finish it so I can see the catalog, search, and autocomplete for the site in the same dashboard. Builds on GEN-028 slice 1 (Woo adapter + capture); this slice integrates Woo into the dashboard UI.",
+  "standing_directive": "Operator authorized inspecting Legion this session. Search/autocomplete panels issue live read-only Store API queries when the operator types; catalog reads the cached capture. Be honest that WooCommerce has no native autocomplete endpoint — type-ahead is prefix product search, labelled as such. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "Legion appears in the Sites list as a WooCommerce site; selecting it shows a Catalog panel with SKUs, browse nodes (substantive vs operational), levels, top categories, and the discovery signal.",
+      "The Search panel returns live Store API results for a typed query; the Autocomplete panel shows live type-ahead product suggestions for a typed prefix (labelled as prefix product search).",
+      "Shopify sites are unaffected (their site view still shows runs, health summary, and connected data).",
+      "The catalog panel reads the cached capture and shows a clear 'not scanned yet' state when no capture exists."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user): open Legion, read the catalog summary, type a search query and see results, type a prefix and see autocomplete suggestions; the sidebar/right pane stay coherent and Shopify sites still work.",
+      "No Shopify inspection is triggered by viewing a Woo site."
+    ],
+    "technical": [
+      "validate:dashboard asserts the Woo site is listed with platform woocommerce, the catalog endpoint returns the cached summary (no external call in the validator), and the search/autocomplete endpoints + client panels are wired; validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-078: live browser walkthrough (Legion in sites -> catalog summary -> live search \"protein\" 5 results -> live autocomplete \"wh\" 4 suggestions); Shopify sites unaffected; no run triggered.",
+    "Fixed orderby=relevance (invalid Store API value) that had zeroed autocomplete.",
+    "Two clean gate passes; BDD inventory refreshed to BDD-INV-018 (78 BDDs, 3 new for GEN-029, 76 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Catalog reads the cached woo-inspect capture; there is no in-dashboard \"re-scan catalog\" button yet (re-run woo-inspect from the CLI to refresh).",
+    "Woo discovery depth is still catalog + submitted search + prefix autocomplete; facets/attributes, recommendations, and rendered capture remain later slices.",
+    "Woo runs do not yet feed the shared inspection-report schema / executive reports / fix plans (Shopify-only for now)."
+  ]
+}

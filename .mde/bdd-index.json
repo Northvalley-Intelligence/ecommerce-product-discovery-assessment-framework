@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-017",
+  "inventory_id": "BDD-INV-018",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-016",
+  "supersedes": "BDD-INV-017",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_28_woocommerce_engine_slice1_inventory",
-  "refresh_rationale": "Adds GEN-028 slice-1 behaviors: WooCommerce platform detection and catalog/search discovery via the Store API, producing an honest catalog summary and search-relevance signal.",
+  "status": "generation_29_woocommerce_dashboard_integration_inventory",
+  "refresh_rationale": "Adds GEN-029 behaviors: WooCommerce stores are first-class in the dashboard with a catalog summary panel and live search + autocomplete.",
   "summary": {
-    "total": 75,
-    "critical": 16,
-    "high": 32,
-    "medium": 23,
+    "total": 78,
+    "critical": 17,
+    "high": 33,
+    "medium": 25,
     "low": 4,
-    "passing": 73,
+    "passing": 76,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -657,6 +657,32 @@
       "category": "Functional Validation",
       "status": "passed_gen_028",
       "evidence": "Legion native search: 4/4 literal product-name hits, 0/4 intent/category hits — a real search-relevance gap. VAL-077."
+    }
+  ],
+  "gen29_bdds": [
+    {
+      "id": "BDD-G29-001",
+      "title": "WooCommerce stores appear in the dashboard with a catalog summary",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_029",
+      "evidence": "Legion listed as a woocommerce site; site view shows SKUs/browse nodes/levels/search-signal + top categories + discovery signal. Verified live. VAL-078. Resolves FND-GEN029-001."
+    },
+    {
+      "id": "BDD-G29-002",
+      "title": "Live search runs against the Woo Store API from the dashboard",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_029",
+      "evidence": "Typed \"protein\" -> 5 live results with product links. VAL-078."
+    },
+    {
+      "id": "BDD-G29-003",
+      "title": "Autocomplete offers live type-ahead product suggestions",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_029",
+      "evidence": "Typed \"wh\" -> Whey Starter Pack, Whey Protein, Clear Whey+, Whey+. Prefix product search, labelled (no native Woo autocomplete). VAL-078."
     }
   ]
 }

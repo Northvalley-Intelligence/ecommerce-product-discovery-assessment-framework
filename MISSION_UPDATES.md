@@ -4,6 +4,11 @@ Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
 ## 2026-07-18 (WooCommerce)
 
+- Mission update: WooCommerce dashboard integration (GEN-029, slice 2). Legion Athletics is now first-class in the same dashboard: it appears in the Sites list, and its site view shows a Catalog summary panel (97 SKUs, 63 browse nodes / 46 substantive, 1 level, search signal 4/4 literal · 0/4 intent, top categories, discovery signal) plus live Search and Autocomplete panels that query the store's WooCommerce Store API when the operator types.
+- Reason: Operator: "finish it so I can see the catalog, search, and autocomplete for the site in the same dashboard."
+- Discovered through: Live browser walkthrough — Legion in the sidebar → catalog summary → search "protein" → 5 live results → autocomplete "wh" → Whey Starter Pack/Whey Protein/Clear Whey+/Whey+. Shopify sites unaffected; no Shopify run triggered. Two clean gate passes (VAL-078); BDD inventory BDD-INV-018. Fixed an invalid orderby=relevance that had zeroed autocomplete.
+- Impact: The tool now shows a WooCommerce store's catalog, search, and autocomplete in the same dashboard as Shopify sites. Remaining Woo slices: in-dashboard re-scan, discovery depth (facets/attributes/recommendations/rendered), and the shared report schema so Woo runs feed executive reports/fix plans.
+
 - Mission update: Started a WooCommerce inspection engine (GEN-028, slice 1) after discovering legionathletics.com is WooCommerce, not Shopify — the Shopify-only engine can't inspect it. Operator opted to build full WooCommerce support (multi-generation) and explicitly authorized running the Legion analysis. Slice 1 lands a WooCommerce Store API adapter + a live capture runner.
 - Reason: Operator: "run full analysis on legionathletics.com" + add a catalog summary (SKUs / browse nodes / levels) as a discovery signal.
 - Discovered through: Live capture of Legion — 97 SKUs, 63 browse nodes (46 substantive after filtering operational categories), 1 browse level (flat); native search hits 4/4 literal product-name terms (whey, pulse, recharge, triumph) but 0/4 intent/category terms (Supplements, Workout Supplements, …) — a real search-relevance gap. Two clean gate passes (VAL-077) with the Shopify pipeline untouched; BDD inventory BDD-INV-017.
