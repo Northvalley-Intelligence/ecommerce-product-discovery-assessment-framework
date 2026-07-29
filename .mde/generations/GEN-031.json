@@ -1,0 +1,34 @@
+{
+  "generation_id": "GEN-031",
+  "mission_phase": "Generation 31 - WooCommerce parity: health rollup, findings, executive report, fix plan",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T07:00:00Z",
+  "ended_at": "2026-07-18T08:00:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Bring a WooCommerce store to feature parity with a Shopify site in the dashboard: derive a Health summary (readiness/coverage/status from the discovery surfaces), a Findings list (Critical/High/Medium/Low, store_finding vs capture_limitation), an executive-ready report (Markdown + JSON), and fix-plan items (from store findings). Surface all of it in the Woo site view like the Shopify view. Rendered (Playwright) capture remains the only flagged gap.",
+  "reason_generation_started": "Operator: finish any missing implementation of Woo in comparison with Shopify. Industry West (WooCommerce, 246 SKUs / 148 browse nodes / 52 filterable facets) is the working target. Builds on GEN-028/029/030 (catalog, search, autocomplete, facets, discovery surfaces).",
+  "standing_directive": "Operator authorized inspecting these Woo stores this session. Derive health/findings/report/fix-plan from captured evidence only; be honest (Recommendations is a capture limitation, not a store finding; report never over-claims). Do not fabricate data. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "The capture derives and stores a health rollup (coverage %, readiness, status, surface pass/warn/limited counts), a findings list with severities and nature, an executive report (Markdown + JSON), and fix-plan items from store findings.",
+      "The Woo site view shows a Health summary panel, a Findings panel, an executive-report link, and a fix-plan panel - matching the Shopify site view's deliverables (minus rendered capture).",
+      "Findings and severities are derived from the surfaces (e.g. Search intent gap -> High; flat Browse -> Medium; Recommendations -> capture limitation), and the executive report reflects the real numbers for the target."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user): open Industry West (and Legion), see Health + Findings + executive report + fix plan alongside catalog/search/autocomplete/facets; Shopify sites unaffected.",
+      "No Shopify inspection is triggered."
+    ],
+    "technical": [
+      "validate:dashboard asserts the Woo catalog endpoint returns health + findings, the report artifact exists/serves, and the Woo site view wires the Health/Findings/report/fix-plan panels; validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-080: Industry West parity view (Health bounded/60%, Findings HIGH Search/INFO Recommendations/MEDIUM Browse, Fix plan 2 items, executive report served) + Legion parity; Shopify unaffected; no run triggered.",
+    "Two clean gate passes; BDD inventory refreshed to BDD-INV-020 (84 BDDs, 3 new for GEN-031, 82 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Rendered (Playwright) capture for Woo is the sole remaining parity gap vs Shopify (Recommendations + faceted UI as customers see it); Cloudflare bot-challenge risk on these targets.",
+    "The care_instructions attribute inflates term counts with free-text values; a future refinement could distinguish true facets from free-text attributes."
+  ]
+}

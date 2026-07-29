@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-019",
+  "inventory_id": "BDD-INV-020",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-018",
+  "supersedes": "BDD-INV-019",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_30_woocommerce_discovery_depth_inventory",
-  "refresh_rationale": "Adds GEN-030 behaviors: WooCommerce facets/attributes, an honest recommendations status, and a Shopify-style discovery-surfaces presentation for Woo stores.",
+  "status": "generation_31_woocommerce_parity_inventory",
+  "refresh_rationale": "Adds GEN-031 behaviors: WooCommerce stores get a health rollup, findings, executive report, and fix plan — parity with the Shopify site view (minus rendered capture).",
   "summary": {
-    "total": 81,
+    "total": 84,
     "critical": 17,
     "high": 33,
-    "medium": 28,
+    "medium": 31,
     "low": 4,
-    "passing": 79,
+    "passing": 82,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -709,6 +709,32 @@
       "category": "Technical Validation",
       "status": "passed_gen_030",
       "evidence": "Recommendations = LIMITED, nature capture_limitation (not exposed via Store API; needs rendered capture). No fabricated feed. VAL-079."
+    }
+  ],
+  "gen31_bdds": [
+    {
+      "id": "BDD-G31-001",
+      "title": "Woo site shows a health rollup like Shopify",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_031",
+      "evidence": "Health summary (readiness/coverage/status/findings) derived from surfaces. Industry West: bounded, 60% coverage. VAL-080. Resolves FND-GEN031-001."
+    },
+    {
+      "id": "BDD-G31-002",
+      "title": "Woo store produces findings + fix plan + executive report",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_031",
+      "evidence": "Findings (severity + nature), fix plan (store findings only), and an executive-report.md served via the artifact route. VAL-080."
+    },
+    {
+      "id": "BDD-G31-003",
+      "title": "Recommendations stays an honest capture limitation in findings",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_031",
+      "evidence": "Recommendations finding nature=capture_limitation; excluded from fix plan and coverage denominator. VAL-080."
     }
   ]
 }

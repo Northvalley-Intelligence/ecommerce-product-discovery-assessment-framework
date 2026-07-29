@@ -1,0 +1,62 @@
+{
+  "validation_run_id": "VAL-080",
+  "generation": "GEN-031",
+  "phase": "Generation 31 - WooCommerce parity (health/findings/exec-report/fix-plan)",
+  "started_at": "2026-07-18T07:00:00Z",
+  "completed_at": "2026-07-18T08:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen031_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Health rollup",
+      "tool": "browser + /api/woo/catalog",
+      "result": "pass",
+      "evidence": "Industry West Health summary: readiness BOUNDED, surface coverage 60% (3/5 inspectable pass), status PARTIAL (2 warn · 1 not inspectable), 3 findings (2 fixable). Derived from the discovery surfaces; capture limitations excluded from the denominator."
+    },
+    {
+      "category": "Findings",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Findings panel: HIGH Search (discovery gap), INFO Recommendations (capture limit), MEDIUM Browse (flat). Severity + nature per finding."
+    },
+    {
+      "category": "Fix plan",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Fix plan: 2 recommended fixes for the ecommerce team — Search (synonym/intent handling, references sofa/seating) and Browse (hierarchical categories). Only store findings become fix items."
+    },
+    {
+      "category": "Executive report",
+      "tool": "browser + artifact route + validator",
+      "result": "pass",
+      "evidence": "executive-report.md written and served via the artifact route (\"Ecommerce Discovery Evaluation: Industry West\"); Open executive report link present. Honest (Recommendations = capture limitation; rendered noted as pending)."
+    },
+    {
+      "category": "Generalizes across stores",
+      "tool": "live captures",
+      "result": "pass",
+      "evidence": "Same pipeline produced parity deliverables for both Industry West (246 SKUs, 60% coverage) and Legion (97 SKUs). Woo sites list shows both."
+    },
+    {
+      "category": "Shopify unaffected + no run triggered",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Allbirds still shows its Shopify health/site view; viewing Woo sites triggered no Shopify inspection."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit). Validator asserts health + findings + fix_plan in the summary, the report artifact serves, and the client panels are wired. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Rendered (Playwright) capture for Woo",
+      "reason": "The one remaining parity gap vs Shopify. Needed to inspect Recommendations and the faceted UI as customers see it. Legion/Industry West are Cloudflare-fronted (bot-challenge risk). Deferred to a later slice."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator: finish missing Woo implementation vs Shopify. Woo site view now matches Shopify deliverables (health, findings, executive report, fix plan) plus catalog/search/autocomplete/facets/surfaces. Recommendations honestly a capture limitation. Resolves FND-GEN031-001. Industry West search finding (FND-IW-SEARCH: \"sofa\"/\"Seating\" -> 0) captured in its report."
+}

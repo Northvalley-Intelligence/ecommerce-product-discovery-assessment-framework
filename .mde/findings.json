@@ -709,6 +709,24 @@
       "summary": "Operator: add discovery depth (facets/recommendations/browse) and make Woo the same in features as Shopify. This slice adds the surfaces; full report/health/findings parity is later slices.",
       "status": "resolved_gen030_woo_discovery_surfaces_shipped",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN031-001",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "Woo lacks Shopify-parity health/findings/report/fix-plan",
+      "summary": "Operator: finish missing Woo implementation vs Shopify. Add health rollup, findings, executive report, fix plan to the Woo site view. Rendered capture remains the one gap.",
+      "status": "resolved_gen031_woo_parity_shipped",
+      "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-IW-SEARCH",
+      "severity": "High",
+      "category": "Functional Validation",
+      "title": "Industry West search misses core product-type queries",
+      "summary": "Live Woo search on industrywest.com: literal product names hit (enrique/monica/erik) but generic type terms fail — \"sofa\" -> 0 results, \"Seating\" -> 0 — on a furniture store. Strong search-relevance gap (products named after people; native search is literal).",
+      "status": "observed_gen031_iw_evaluation",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [
