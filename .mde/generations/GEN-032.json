@@ -1,0 +1,35 @@
+{
+  "generation_id": "GEN-032",
+  "mission_phase": "Generation 32 - Debuggable Woo reports: summary -> experiment -> call -> replay",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T09:00:00Z",
+  "ended_at": "2026-07-18T10:00:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Make every WooCommerce report claim navigable to its evidence: from a surface summary (e.g. Search 'literal 4/4, intent 0/4') the operator drills to the experiment (each query with pass/fail), then to the specific API call actually made (exact URL, parameters, HTTP status, and the fetched result), and can Replay that exact call live to confirm it was not a one-off. Applies to Search (the four literals that passed and the intents that failed), Catalog, and Facets. No claim in the report is a dead end.",
+  "reason_generation_started": "Operator: the reports must not lose references in the UI. For the Search WARN summary I should see which literals passed and which intents failed, navigate to the actual experiment and the specific call (parameters + fetched input), and replay that call to verify it is reproducible. Reports should be debuggable to the individual call.",
+  "standing_directive": "Operator authorized inspecting these Woo stores this session. Replay re-issues the exact recorded GET call to the SAME store's Store API only (validate host = the target's domain; no arbitrary-URL fetching). Show real recorded evidence; never fabricate a call or result. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "The capture records, per experiment, the exact call: url, method, parameters, HTTP status, result_count, and a sample of the fetched result, tagged to its surface.",
+      "The Woo report drills from a surface summary to its experiments (Search shows all 8 queries with kind literal/intent and hit/miss), and from an experiment to the specific call (URL + params + status + sample).",
+      "A Replay control re-issues the exact recorded call live via a replay endpoint and shows the fresh status/result; the endpoint only allows calls to the target store's Store API host.",
+      "Recommendations remains a capture limitation with no fabricated call."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user): open Industry West, expand the Search surface, see the 4 literal hits and 4 intent misses, open one call to see its exact URL/params/result, click Replay and see it re-run; other views unaffected.",
+      "No Shopify inspection is triggered."
+    ],
+    "technical": [
+      "validate:dashboard asserts the Woo summary carries per-surface experiments with url + status, the replay endpoint rejects a foreign host and returns a result for a valid same-store URL, and the client wires the experiment drill-down + Replay; validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-081: Search claim drilled to 8 query experiments (which literals HIT / intents MISS), expanded to the exact call (URL+params+fetched), and Replay re-issued it live (enrique -> 2 results, HTTP 200, fresh timestamp). Foreign-host replay rejected (400).",
+    "Two clean gate passes; BDD inventory refreshed to BDD-INV-021 (87 BDDs, 3 new for GEN-032, 85 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Experiments are captured for Search, Catalog, and Facets; Autocomplete/Browse could also record their representative calls in a later refinement.",
+    "Replay compares to the recorded result by eye; an automatic drift indicator (changed vs same) is a possible enhancement."
+  ]
+}

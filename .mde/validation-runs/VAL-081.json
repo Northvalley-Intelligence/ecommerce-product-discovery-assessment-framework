@@ -1,0 +1,51 @@
+{
+  "validation_run_id": "VAL-081",
+  "generation": "GEN-032",
+  "phase": "Generation 32 - Debuggable Woo reports (experiment -> call -> replay)",
+  "started_at": "2026-07-18T09:00:00Z",
+  "completed_at": "2026-07-18T10:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen032_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Summary drills to experiments",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "The Search \"4/4 literal, 0/4 intent\" claim drills to an Experiments & evidence panel listing all 8 queries: HIT enrique/monica/erik/piccolo (literal), MISS All Products/Home for the Holidays/Seating/Under $500 (intent), each with HTTP status and kind."
+    },
+    {
+      "category": "Experiment drills to the exact call",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Expanding search \"enrique\" shows GET https://www.industrywest.com/wp-json/wc/store/v1/products?search=enrique&per_page=10, Params search=enrique · per_page=10, Fetched: Enrique Counter Stool, Enrique Bar Stool."
+    },
+    {
+      "category": "Replay re-issues the exact call live",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Clicking Replay returned \"Replayed 04:34:58: 2 results (HTTP 200) — Enrique Counter Stool, Enrique Bar Stool\" — a fresh live call confirming reproducibility."
+    },
+    {
+      "category": "Replay host restriction",
+      "tool": "validator + endpoint",
+      "result": "pass",
+      "evidence": "/api/woo/replay only allows calls to the target store's Store API host; a foreign host (evil.example.com) returns HTTP 400. Validator asserts both a valid replay result and the foreign-host rejection."
+    },
+    {
+      "category": "Recommendations honesty preserved",
+      "tool": "capture",
+      "result": "pass",
+      "evidence": "Recommendations remains a capture limitation with no fabricated call/experiment."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit). Validator asserts per-surface experiments with url + result, replay valid + foreign-host 400, and the client drill-down/Replay wiring. git diff --check clean."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator: reports must be debuggable to the specific call, with a replay to verify reproducibility. Applies to Search (which literals passed / intents failed), Catalog (product count call), and Facets (attributes + term calls). Resolves FND-GEN032-001."
+}

@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-020",
+  "inventory_id": "BDD-INV-021",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-019",
+  "supersedes": "BDD-INV-020",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_31_woocommerce_parity_inventory",
-  "refresh_rationale": "Adds GEN-031 behaviors: WooCommerce stores get a health rollup, findings, executive report, and fix plan — parity with the Shopify site view (minus rendered capture).",
+  "status": "generation_32_debuggable_woo_reports_inventory",
+  "refresh_rationale": "Adds GEN-032 behaviors: Woo report claims drill to per-call experiments (exact URL/params/result) with a host-restricted Replay to confirm reproducibility.",
   "summary": {
-    "total": 84,
-    "critical": 17,
-    "high": 33,
+    "total": 87,
+    "critical": 18,
+    "high": 34,
     "medium": 31,
     "low": 4,
-    "passing": 82,
+    "passing": 85,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -735,6 +735,32 @@
       "category": "Technical Validation",
       "status": "passed_gen_031",
       "evidence": "Recommendations finding nature=capture_limitation; excluded from fix plan and coverage denominator. VAL-080."
+    }
+  ],
+  "gen32_bdds": [
+    {
+      "id": "BDD-G32-001",
+      "title": "Every Woo claim drills to the exact API call",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_032",
+      "evidence": "Search 4/4/0/4 drills to 8 query experiments; each expands to GET URL + params + fetched sample. VAL-081. Resolves FND-GEN032-001."
+    },
+    {
+      "id": "BDD-G32-002",
+      "title": "Recorded calls are replayable to confirm reproducibility",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_032",
+      "evidence": "Replay re-issued search \"enrique\" live -> 2 results (HTTP 200) with fresh timestamp. VAL-081."
+    },
+    {
+      "id": "BDD-G32-003",
+      "title": "Replay is restricted to the target store's host",
+      "severity": "High",
+      "category": "Technical Validation",
+      "status": "passed_gen_032",
+      "evidence": "Replay of a foreign host returns HTTP 400; only the target's Store API host is allowed (no arbitrary-URL fetching). VAL-081."
     }
   ]
 }

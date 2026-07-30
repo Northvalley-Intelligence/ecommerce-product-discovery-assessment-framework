@@ -727,6 +727,15 @@
       "summary": "Live Woo search on industrywest.com: literal product names hit (enrique/monica/erik) but generic type terms fail — \"sofa\" -> 0 results, \"Seating\" -> 0 — on a furniture store. Strong search-relevance gap (products named after people; native search is literal).",
       "status": "observed_gen031_iw_evaluation",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN032-001",
+      "severity": "High",
+      "category": "Usability Validation",
+      "title": "Woo report summaries are not drillable to the underlying call",
+      "summary": "Operator: reports must be debuggable — summary -> experiment (which literals passed/intents failed) -> specific call (url+params+result) -> replay to verify reproducibility. Evidence-for-everything applied to Woo.",
+      "status": "resolved_gen032_debuggable_reports_shipped",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [
