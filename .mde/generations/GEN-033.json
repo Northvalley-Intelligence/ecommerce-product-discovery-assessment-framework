@@ -1,0 +1,33 @@
+{
+  "generation_id": "GEN-033",
+  "mission_phase": "Generation 33 - Self-verifiable numbers: every count navigates to its backing",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T11:00:00Z",
+  "ended_at": "2026-07-18T11:40:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "In the WooCommerce site view, no summary number is a dead end: every count in the Health summary and Catalog summary is clickable and jumps to (and highlights) the exact items that make it up — findings count -> Findings panel, fix items -> Fix plan, surface coverage / warn / not-inspectable -> Discovery surfaces, search signal literal/intent -> the Search experiments, SKUs/browse nodes/facets -> their evidence. The operator can convince themselves of any number by navigating from it.",
+  "reason_generation_started": "Operator: make the numbers in the summary clickable/navigable so I can convince myself from the numbers you give me — a claimed count with nothing to see below it is a dead end. Extends the GEN-032 debuggable-reports work from experiments to the summary counts.",
+  "standing_directive": "Operator authorized inspecting these Woo stores this session. Every clickable number must resolve to real captured items; if a number has no backing it is a bug to fix, not to hide. Do not fabricate. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "Health summary numbers (surface coverage, warn/not-inspectable, findings, fix items) and Catalog numbers (SKUs, browse nodes, facets, search signal literal/intent) are rendered as navigation controls that scroll to and highlight the backing panel/items.",
+      "Clicking the search-signal '0/4 intent' lands on the four intent MISS experiments; clicking 'findings' lands on the Findings panel; every number resolves to real items.",
+      "No summary number lacks a backing target (no dead numbers)."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user): on Industry West, click a number in the Health/Catalog summary and land on its backing detail, highlighted; Shopify sites unaffected.",
+      "No Shopify inspection is triggered."
+    ],
+    "technical": [
+      "validate:dashboard asserts the Woo view wires navigable numbers (jump controls + targets for findings/surfaces/experiments); validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-082: Woo summary numbers navigable; clicking search signal \"4/4 / 0/4\" landed on the Search experiments (8 calls, hit/miss + exact calls); Shopify unaffected; no run triggered.",
+    "Two clean gate passes; BDD inventory refreshed to BDD-INV-022 (89 BDDs, 2 new for GEN-033, 87 passing, 2 deferred)."
+  ],
+  "known_gaps_opened": [
+    "Shopify site-view rollup numbers (warnings/failures) are not yet navigable in the same way; per-run detail already lists the items via Findings/Health tabs."
+  ]
+}

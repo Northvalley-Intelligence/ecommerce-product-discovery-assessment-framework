@@ -736,6 +736,15 @@
       "summary": "Operator: reports must be debuggable — summary -> experiment (which literals passed/intents failed) -> specific call (url+params+result) -> replay to verify reproducibility. Evidence-for-everything applied to Woo.",
       "status": "resolved_gen032_debuggable_reports_shipped",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-GEN033-001",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "title": "Summary numbers are not navigable to their backing",
+      "summary": "Operator: a claimed count (e.g. failures/findings) with nothing to see below is a dead end. Make every summary number clickable to jump to the items behind it, so numbers are self-verifiable.",
+      "status": "resolved_gen033_navigable_numbers_shipped",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

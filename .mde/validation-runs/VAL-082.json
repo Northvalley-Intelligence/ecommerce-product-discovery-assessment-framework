@@ -1,0 +1,50 @@
+{
+  "validation_run_id": "VAL-082",
+  "generation": "GEN-033",
+  "phase": "Generation 33 - Self-verifiable navigable numbers (Woo)",
+  "started_at": "2026-07-18T11:00:00Z",
+  "completed_at": "2026-07-18T11:40:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_for_gen033_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Numbers render as navigation controls",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Industry West Health/Catalog numbers show the dotted jump styling: 60%, 3, 246, 148, 52, 4/4 / 0/4 are all clickable."
+    },
+    {
+      "category": "Number jumps to its backing",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Clicking the Search signal \"4/4 / 0/4\" smooth-scrolled to the Experiments & evidence -> SEARCH (8 CALLS) section showing each query hit/miss + exact call. Findings/coverage/SKUs/facets use the same wireJumps handler to their anchored panels (woo-findings/woo-surfaces/woo-experiments/woo-cats/woo-facets)."
+    },
+    {
+      "category": "No dead numbers",
+      "tool": "validator + code",
+      "result": "pass",
+      "evidence": "Every clickable number has a real anchor target; validator asserts jumpNum/wireJumps and the woo-findings/woo-surfaces/woo-experiments targets exist."
+    },
+    {
+      "category": "Shopify unaffected + no run triggered",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Shopify health metric detail escaping preserved; Shopify site views unchanged; no inspection triggered."
+    },
+    {
+      "category": "Suites (two independent passes)",
+      "tool": "validate:dashboard, validate:gen13, validate, git diff --check",
+      "result": "pass",
+      "evidence": "Green on pass 1 (before commit) and pass 2 (after commit). git diff --check clean."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Shopify site-view number navigation",
+      "reason": "This slice makes the WooCommerce summary numbers navigable (operator was in the Woo/Industry West view). The Shopify site-view health rollup (warnings/failures) could get the same treatment if desired; its per-run detail already lists the items via the Findings/Health tabs."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator: give no bare numbers — I should convince myself from the numbers. Woo summary counts are now navigable to their backing items. Checked the failure counts across sites; no site has 7 failures (Allbirds 2, Bombas 5), so the earlier \"7 failures\" was likely a Shopify rollup the operator was viewing. Resolves FND-GEN033-001."
+}

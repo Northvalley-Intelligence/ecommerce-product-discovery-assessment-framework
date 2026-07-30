@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-032",
-  "current_phase": "Generation 32 - Debuggable Woo reports (exited)",
-  "phase_goal": "Every Woo report claim drills to its experiment and the specific API call, with a Replay option.",
-  "status": "gen032_phase_exit_complete",
+  "current_generation": "GEN-033",
+  "current_phase": "Generation 33 - Self-verifiable navigable numbers (exited)",
+  "phase_goal": "Every summary number in the Woo view jumps to its backing items; no dead numbers.",
+  "status": "gen033_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,14 +19,14 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-081",
-    "reason": "GEN-032 (debuggable Woo reports: experiment -> call -> replay, host-restricted) validated with two independent clean passes (VAL-081); BDD-INV-021. Phase exit declared."
+    "latest_run_id": "VAL-082",
+    "reason": "GEN-033 (navigable summary numbers) validated with two independent clean passes (VAL-082); BDD-INV-022. Phase exit declared."
   },
   "critical_bdds": 18,
   "high_bdds": 34,
-  "medium_bdds": 31,
+  "medium_bdds": 33,
   "low_bdds": 4,
-  "bdd_inventory": "BDD-INV-021",
+  "bdd_inventory": "BDD-INV-022",
   "known_blockers": [],
   "open_clarifications": [],
   "operator_decisions": {
@@ -34,7 +34,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "Woo reports are now debuggable to the exact call with live Replay. Sole remaining Woo parity gap vs Shopify: rendered (Playwright) capture. Local commits ready to push.",
+  "next_recommended_action": "Woo summary numbers are navigable to their backing. Candidates: extend navigable numbers to the Shopify site-view rollup, and rendered (Playwright) capture for Woo. Local commits ready to push.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {

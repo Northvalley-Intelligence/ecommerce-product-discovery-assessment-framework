@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-021",
+  "inventory_id": "BDD-INV-022",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-020",
+  "supersedes": "BDD-INV-021",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_32_debuggable_woo_reports_inventory",
-  "refresh_rationale": "Adds GEN-032 behaviors: Woo report claims drill to per-call experiments (exact URL/params/result) with a host-restricted Replay to confirm reproducibility.",
+  "status": "generation_33_navigable_numbers_inventory",
+  "refresh_rationale": "Adds GEN-033 behavior: WooCommerce summary numbers are navigable to their backing items — no dead numbers.",
   "summary": {
-    "total": 87,
+    "total": 89,
     "critical": 18,
     "high": 34,
-    "medium": 31,
+    "medium": 33,
     "low": 4,
-    "passing": 85,
+    "passing": 87,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -761,6 +761,24 @@
       "category": "Technical Validation",
       "status": "passed_gen_032",
       "evidence": "Replay of a foreign host returns HTTP 400; only the target's Store API host is allowed (no arbitrary-URL fetching). VAL-081."
+    }
+  ],
+  "gen33_bdds": [
+    {
+      "id": "BDD-G33-001",
+      "title": "Every Woo summary number navigates to its backing",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_033",
+      "evidence": "Health/Catalog numbers are jump controls; clicking the search signal lands on the Search experiments. VAL-082. Resolves FND-GEN033-001."
+    },
+    {
+      "id": "BDD-G33-002",
+      "title": "No summary number is a dead end",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_033",
+      "evidence": "Each clickable number resolves to a real anchor (woo-findings/woo-surfaces/woo-experiments/woo-cats/woo-facets); validator asserts targets exist. VAL-082."
     }
   ]
 }
