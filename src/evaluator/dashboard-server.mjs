@@ -783,6 +783,10 @@ function dashboardPage() {
     .exp-body { padding: 9px 11px; }
     .woo-replay { padding: 5px 10px; border: 1px solid var(--blue); background: var(--soft-blue); color: var(--blue); border-radius: 7px; cursor: pointer; font: inherit; font-size: 12px; }
     .woo-replay:hover { background: var(--blue); color: white; }
+    a.jump { color: inherit; text-decoration: none; cursor: pointer; border-bottom: 2px dotted var(--blue); }
+    a.jump:hover { color: var(--blue); }
+    @keyframes flashbg { 0% { background: var(--soft-blue); } 100% { background: transparent; } }
+    .flash { animation: flashbg 1.6s ease-out; border-radius: 12px; }
     .run-item {
       width: 100%;
       display: grid;
@@ -1540,18 +1544,18 @@ function dashboardPage() {
         return;
       }
       const s = data.summary;
+      const facets = s.facets || null;
       const metrics =
-        healthMetric('SKUs', escapeHtml(String(s.sku_count)), 'products (' + escapeHtml(s.sku_count_source || '') + ')') +
-        healthMetric('Browse nodes', escapeHtml(String(s.browse_nodes)), s.browse_nodes_substantive + ' substantive · ' + s.browse_nodes_operational_heuristic + ' operational') +
-        healthMetric('Browse levels', escapeHtml(String(s.browse_levels)), s.browse_levels <= 1 ? 'flat' : 'hierarchical') +
-        healthMetric('Search signal', escapeHtml((s.search_signal && s.search_signal.literal_hits) || '—') + ' / ' + escapeHtml((s.search_signal && s.search_signal.intent_hits) || '—'), 'literal / intent hits');
+        healthMetric('SKUs', jumpNum(escapeHtml(String(s.sku_count)), 'woo-experiments', 'See the product-count call'), 'products (' + escapeHtml(s.sku_count_source || '') + ')') +
+        healthMetric('Browse nodes', jumpNum(escapeHtml(String(s.browse_nodes)), 'woo-cats', 'See the categories'), s.browse_nodes_substantive + ' substantive · ' + s.browse_nodes_operational_heuristic + ' operational') +
+        healthMetric('Facets', jumpNum(escapeHtml(String(facets ? facets.attribute_count : 0)), 'woo-facets', 'See the facets'), (facets ? facets.filterable_count : 0) + ' filterable') +
+        healthMetric('Search signal', jumpNum(escapeHtml((s.search_signal && s.search_signal.literal_hits) || '—') + ' / ' + escapeHtml((s.search_signal && s.search_signal.intent_hits) || '—'), 'woo-experiments', 'See each query that hit or missed'), 'literal / intent hits');
       const topCats = (s.top_categories || []).slice(0, 8).map((category) =>
         '<tr><td>' + escapeHtml(category.name) + '</td><td>' + escapeHtml(String(category.count ?? '')) + '</td></tr>').join('');
       const surfaces = (s.surfaces || []).map((surface) =>
         '<tr><td><strong>' + escapeHtml(surface.surface) + '</strong></td>' +
         '<td>' + pill(surface.status, surface.status === 'limited' ? 'LIMITED' : null) + (surface.nature === 'capture_limitation' ? ' <span class="muted" style="font-size:11px">capture limit</span>' : '') + '</td>' +
         '<td class="muted" style="font-size:12px">' + escapeHtml(surface.detail) + '</td></tr>').join('');
-      const facets = s.facets || null;
       const facetRows = facets && facets.top_facets ? facets.top_facets.slice(0, 8).map((facet) =>
         '<tr><td>' + escapeHtml(facet.name) + '</td><td>' + escapeHtml(String(facet.term_count)) + '</td><td class="muted" style="font-size:12px">' + escapeHtml((facet.top_terms || []).slice(0, 5).join(', ')) + '</td></tr>').join('') : '';
       const sevStatus = (severity) => ({ Critical: 'fail', High: 'fail', Medium: 'warn', Low: 'warn', Info: 'muted-status' }[severity] || 'warn');
@@ -1559,9 +1563,9 @@ function dashboardPage() {
       const healthPanel = health ? panel('Health summary', s.findings ? s.findings.length + ' finding' + (s.findings.length === 1 ? '' : 's') + ' · ' + (s.fix_plan ? s.fix_plan.open_items : 0) + ' fix item' + ((s.fix_plan && s.fix_plan.open_items === 1) ? '' : 's') : '',
         '<div class="panel-body"><div class="metric-row">' +
           healthMetric('Readiness', pill(health.readiness), 'from surface coverage') +
-          healthMetric('Surface coverage', escapeHtml(String(health.coverage_percent)) + '%', health.surfaces_pass + '/' + (health.surfaces_pass + health.surfaces_warn + health.surfaces_fail) + ' inspectable pass') +
-          healthMetric('Status', pill(health.status), health.surfaces_warn + ' warn · ' + health.surfaces_limited + ' not inspectable') +
-          healthMetric('Findings', escapeHtml(String((s.findings || []).length)), (s.fix_plan ? s.fix_plan.open_items : 0) + ' fixable') +
+          healthMetric('Surface coverage', jumpNum(escapeHtml(String(health.coverage_percent)) + '%', 'woo-surfaces', 'See the surfaces that pass/warn'), health.surfaces_pass + '/' + (health.surfaces_pass + health.surfaces_warn + health.surfaces_fail) + ' inspectable pass') +
+          healthMetric('Status', jumpNum(pill(health.status), 'woo-surfaces'), health.surfaces_warn + ' warn · ' + health.surfaces_limited + ' not inspectable') +
+          healthMetric('Findings', jumpNum(escapeHtml(String((s.findings || []).length)), 'woo-findings', 'See the findings'), (s.fix_plan ? s.fix_plan.open_items : 0) + ' fixable') +
         '</div></div>') : '';
       const findingsPanel = (s.findings && s.findings.length) ? panel('Findings', 'Discovery gaps and capture limitations',
         '<div class="table-wrap"><table><thead><tr><th>Severity</th><th>Surface</th><th>Finding</th></tr></thead><tbody>' +
@@ -1591,13 +1595,16 @@ function dashboardPage() {
         '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
         (s.discovery_signal ? '<p class="muted" style="margin-top:10px;font-size:12px">' + escapeHtml(s.discovery_signal) + '</p>' : '') +
         (s.search_signal && s.search_signal.note ? '<p class="muted" style="margin-top:4px;font-size:12px">Search: ' + escapeHtml(s.search_signal.note) + '</p>' : '') +
-        (topCats ? '<div class="muted" style="margin-top:12px;font-size:12px">Top categories</div><div class="table-wrap"><table><thead><tr><th>Category</th><th>Products</th></tr></thead><tbody>' + topCats + '</tbody></table></div>' : '') +
+        (topCats ? '<div id="woo-cats" class="muted" style="margin-top:12px;font-size:12px">Top categories (of ' + escapeHtml(String(s.browse_nodes)) + ' browse nodes)</div><div class="table-wrap"><table><thead><tr><th>Category</th><th>Products</th></tr></thead><tbody>' + topCats + '</tbody></table></div>' : '') +
         '</div>') +
-        (surfaces ? panel('Discovery surfaces', 'The same discovery surfaces inspected for Shopify, for this WooCommerce store',
-          '<div class="table-wrap"><table><thead><tr><th>Surface</th><th>Status</th><th>Signal</th></tr></thead><tbody>' + surfaces + '</tbody></table></div>') : '') +
-        (facets ? panel('Facets & attributes', facets.attribute_count + ' attributes · ' + facets.filterable_count + ' filterable · ' + facets.products_with_attributes + '/' + facets.sample_size + ' sampled products carry attributes',
-          facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') : '') +
-        findingsPanel + fixPanel + expPanel;
+        (surfaces ? '<div id="woo-surfaces">' + panel('Discovery surfaces', 'The same discovery surfaces inspected for Shopify, for this WooCommerce store',
+          '<div class="table-wrap"><table><thead><tr><th>Surface</th><th>Status</th><th>Signal</th></tr></thead><tbody>' + surfaces + '</tbody></table></div>') + '</div>' : '') +
+        (facets ? '<div id="woo-facets">' + panel('Facets & attributes', facets.attribute_count + ' attributes · ' + facets.filterable_count + ' filterable · ' + facets.products_with_attributes + '/' + facets.sample_size + ' sampled products carry attributes',
+          facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') + '</div>' : '') +
+        '<div id="woo-findings">' + findingsPanel + '</div>' +
+        '<div id="woo-fix">' + fixPanel + '</div>' +
+        '<div id="woo-experiments">' + expPanel + '</div>';
+      wireJumps(el);
       for (const btn of el.querySelectorAll('.woo-replay')) {
         btn.addEventListener('click', async () => {
           const out = btn.parentElement.querySelector('.replay-out');
@@ -1647,6 +1654,26 @@ function dashboardPage() {
     }
     function healthMetric(label, value, detail) {
       return '<article class="metric"><div class="metric-label">' + escapeHtml(label) + '</div><div class="metric-value">' + value + '</div><div class="metric-detail">' + escapeHtml(detail || '') + '</div></article>';
+    }
+    // Render a number as a navigation control: clicking it scrolls to and flashes
+    // the backing items so any claimed count is self-verifiable (never a dead end).
+    function jumpNum(display, targetId, hint) {
+      return '<a href="#" class="jump" data-jump="' + escapeHtml(targetId) + '"' + (hint ? ' title="' + escapeHtml(hint) + '"' : '') + '>' + display + '</a>';
+    }
+    function wireJumps(root) {
+      for (const link of root.querySelectorAll('.jump')) {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const target = document.getElementById(link.dataset.jump);
+          if (!target) return;
+          const details = target.querySelector('details');
+          if (details) details.open = true;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.classList.remove('flash');
+          void target.offsetWidth;
+          target.classList.add('flash');
+        });
+      }
     }
     function coverageSparkline(trend) {
       if (!trend || trend.length < 2) return '';

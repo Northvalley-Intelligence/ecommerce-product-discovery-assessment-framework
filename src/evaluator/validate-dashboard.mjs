@@ -184,6 +184,9 @@ async function main() {
       assert(page.includes('Discovery surfaces') && page.includes('Facets & attributes'), 'Woo site view missing the discovery-surfaces / facets panels.');
     assert(page.includes('findingsPanel') && page.includes('fixPanel') && page.includes('healthPanel'), 'Woo site view missing health/findings/fix-plan panels.');
     assert(page.includes('Experiments & evidence') && page.includes('class="woo-replay"') && page.includes("'/api/woo/replay?target='"), 'Woo site view missing the experiments/replay drill-down.');
+    // GEN-033: summary numbers are navigable to their backing (no dead numbers).
+    assert(page.includes('function jumpNum') && page.includes('function wireJumps') && page.includes('class="jump"'), 'Woo summary numbers are not navigable.');
+    assert(page.includes("id=\"woo-findings\"") && page.includes("id=\"woo-surfaces\"") && page.includes("id=\"woo-experiments\""), 'Woo view missing jump targets for its summary numbers.');
     }
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');
