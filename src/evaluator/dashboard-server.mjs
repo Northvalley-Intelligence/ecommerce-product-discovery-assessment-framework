@@ -776,6 +776,13 @@ function dashboardPage() {
     .promote-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .promote-row select, .promote-row input { padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
     .link-btn { background: none; border: none; color: var(--blue); cursor: pointer; padding: 0; font: inherit; text-decoration: underline; }
+    .exp { border: 1px solid var(--line); border-radius: 8px; background: white; margin-bottom: 6px; }
+    .exp > summary { cursor: pointer; padding: 8px 11px; font-size: 13px; list-style: none; }
+    .exp > summary::-webkit-details-marker { display: none; }
+    .exp[open] > summary { border-bottom: 1px solid var(--line); }
+    .exp-body { padding: 9px 11px; }
+    .woo-replay { padding: 5px 10px; border: 1px solid var(--blue); background: var(--soft-blue); color: var(--blue); border-radius: 7px; cursor: pointer; font: inherit; font-size: 12px; }
+    .woo-replay:hover { background: var(--blue); color: white; }
     .run-item {
       width: 100%;
       display: grid;
@@ -1563,6 +1570,22 @@ function dashboardPage() {
       const fixPanel = (s.fix_plan && s.fix_plan.items && s.fix_plan.items.length) ? panel('Fix plan', s.fix_plan.open_items + ' recommended fix' + (s.fix_plan.open_items === 1 ? '' : 'es') + ' for the ecommerce team',
         '<div class="panel-body">' + s.fix_plan.items.map((item) => '<div style="margin-bottom:10px"><strong>' + escapeHtml(item.surface) + '</strong> ' + pill(sevStatus(item.severity), item.severity) + '<div class="muted" style="font-size:12px;margin-top:2px">' + escapeHtml(item.recommendation) + '</div></div>').join('') +
         (s.report_md_path ? '<p style="margin-top:8px"><a href="' + artifactHref(s.report_md_path) + '" target="_blank"><strong>Open executive report</strong></a></p>' : '') + '</div>') : '';
+      const outcomePill = (o) => pill({ hit: 'pass', ok: 'pass', miss: 'fail', empty: 'warn' }[o] || 'muted-status', o);
+      const experiments = s.experiments || [];
+      const bySurface = {};
+      for (const e of experiments) { (bySurface[e.surface] = bySurface[e.surface] || []).push(e); }
+      const expPanel = experiments.length ? panel('Experiments & evidence', 'Every claim above traces to the exact API call — expand one to see its URL, parameters, and fetched result, then Replay it to confirm it reproduces',
+        '<div class="panel-body">' + Object.entries(bySurface).map(([surface, exps]) =>
+          '<div class="data-group"><h3>' + escapeHtml(surface) + ' (' + exps.length + ' call' + (exps.length === 1 ? '' : 's') + ')</h3>' +
+          exps.map((e) =>
+            '<details class="exp"><summary>' + outcomePill(e.outcome) + ' <strong>' + escapeHtml(e.label) + '</strong> — ' + escapeHtml(String(e.result_count)) + ' result' + (e.result_count === 1 ? '' : 's') + ' <span class="muted">(HTTP ' + escapeHtml(String(e.status)) + (e.kind ? ' · ' + escapeHtml(e.kind) : '') + ')</span></summary>' +
+              '<div class="exp-body">' +
+                '<div class="muted" style="font-size:12px">GET <span class="mono">' + escapeHtml(e.url) + '</span></div>' +
+                (Object.keys(e.params || {}).length ? '<div class="muted" style="font-size:12px;margin-top:4px">Params: ' + Object.entries(e.params).map(([k, v]) => escapeHtml(k) + '=' + escapeHtml(String(v))).join(' · ') + '</div>' : '') +
+                (e.sample && e.sample.length ? '<div class="muted" style="font-size:12px;margin-top:4px">Fetched: ' + e.sample.map(escapeHtml).join(', ') + '</div>' : '') +
+                '<div style="margin-top:6px"><button class="woo-replay" data-url="' + escapeHtml(e.url) + '">Replay this call</button> <span class="replay-out muted" style="font-size:12px;margin-left:6px"></span></div>' +
+              '</div></details>').join('') +
+          '</div>').join('') + '</div>') : '';
       el.innerHTML = healthPanel +
         panel('Catalog summary', 'Captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
         '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
@@ -1574,7 +1597,17 @@ function dashboardPage() {
           '<div class="table-wrap"><table><thead><tr><th>Surface</th><th>Status</th><th>Signal</th></tr></thead><tbody>' + surfaces + '</tbody></table></div>') : '') +
         (facets ? panel('Facets & attributes', facets.attribute_count + ' attributes · ' + facets.filterable_count + ' filterable · ' + facets.products_with_attributes + '/' + facets.sample_size + ' sampled products carry attributes',
           facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') : '') +
-        findingsPanel + fixPanel;
+        findingsPanel + fixPanel + expPanel;
+      for (const btn of el.querySelectorAll('.woo-replay')) {
+        btn.addEventListener('click', async () => {
+          const out = btn.parentElement.querySelector('.replay-out');
+          out.textContent = 'Replaying…';
+          try {
+            const r = await api('/api/woo/replay?target=' + encodeURIComponent(targetId) + '&url=' + encodeURIComponent(btn.dataset.url));
+            out.innerHTML = 'Replayed ' + escapeHtml((r.fetched_at || '').slice(11, 19)) + ': <strong>' + escapeHtml(String(r.result_count)) + '</strong> result' + (r.result_count === 1 ? '' : 's') + ' (HTTP ' + escapeHtml(String(r.status)) + ')' + (r.sample && r.sample.length ? ' — ' + r.sample.map(escapeHtml).join(', ') : '');
+          } catch (error) { out.textContent = 'Replay failed: ' + error.message; }
+        });
+      }
     }
     function wireWooSearch(targetId) {
       let searchTimer = null;
@@ -2747,6 +2780,33 @@ function routeRequest(rootDir, request, response, queue) {
     if (!prefix.trim()) { sendJson(response, 200, { prefix, suggestions: [] }); return; }
     adapter.fetchAutocomplete(prefix)
       .then((result) => sendJson(response, 200, { prefix: result.prefix, method: result.method, suggestion_count: result.suggestion_count, suggestions: result.suggestions }))
+      .catch((error) => sendJson(response, 502, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/woo/replay') {
+    const targetId = url.searchParams.get('target');
+    const targetPath = path.join(rootDir, 'targets', `${targetId}.json`);
+    const replayUrl = url.searchParams.get('url') || '';
+    if (!exists(targetPath)) { sendJson(response, 404, { error: 'Not a WooCommerce target.' }); return; }
+    const target = readJson(targetPath);
+    const adapter = wooAdapterForTarget(rootDir, targetId);
+    if (!adapter) { sendJson(response, 404, { error: 'Not a WooCommerce target.' }); return; }
+    // Only replay calls to THIS store's Store API (no arbitrary-URL fetching).
+    let host = '';
+    try { host = new URL(replayUrl).hostname.replace(/^www\./, ''); } catch { host = ''; }
+    const okHost = host && host === String(target.domain || '').replace(/^www\./, '');
+    const okPath = /\/wp-json\/wc\/store\//.test(replayUrl);
+    if (!okHost || !okPath) { sendJson(response, 400, { error: 'Replay is restricted to this store\'s WooCommerce Store API.' }); return; }
+    adapter.wooFetch(replayUrl)
+      .then((res) => sendJson(response, 200, {
+        url: replayUrl,
+        status: res.status,
+        ok: res.ok,
+        result_count: res.total != null ? res.total : (Array.isArray(res.json) ? res.json.length : null),
+        sample: Array.isArray(res.json) ? res.json.slice(0, 5).map((item) => item.name).filter(Boolean) : [],
+        fetched_at: new Date().toISOString()
+      }))
       .catch((error) => sendJson(response, 502, { error: error.message }));
     return;
   }

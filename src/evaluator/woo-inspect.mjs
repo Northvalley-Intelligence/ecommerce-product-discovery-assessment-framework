@@ -159,6 +159,39 @@ function buildExecutiveReport(summary) {
   return lines.join('\n') + '\n';
 }
 
+// One record per concrete API call actually made, tagged to its surface, with
+// the exact URL + parsed params + status + a sample of the fetched result.
+// These make every summary claim drillable and replayable.
+function paramsOf(url) {
+  try {
+    const parsed = new URL(url);
+    return Object.fromEntries(parsed.searchParams.entries());
+  } catch { return {}; }
+}
+function buildExperiments({ searchProbe, catalog, facets }) {
+  const experiments = [];
+  let n = 0;
+  const add = (surface, label, url, status, resultCount, sample, outcome, extra) => {
+    n += 1;
+    experiments.push({ id: `EXP-${String(n).padStart(3, '0')}`, surface, label, method: 'GET', url, params: paramsOf(url), status, result_count: resultCount, sample: sample || [], outcome, ...(extra || {}) });
+  };
+  // Search: one experiment per query (the four literals + the intents).
+  for (const row of searchProbe) {
+    add('Search', `search "${row.query}"`, row.url, row.status, row.result_count,
+      (row.top || []).map((p) => p.name), row.result_count > 0 ? 'hit' : 'miss', { kind: row.kind });
+  }
+  // Catalog: the product-count call (source of the SKU number).
+  const countEvidence = (catalog.evidence || []).find((e) => e.label === 'products_count_probe');
+  if (countEvidence) add('Catalog', 'product count (X-WP-Total)', countEvidence.url, countEvidence.status, countEvidence.total, [], countEvidence.total > 0 ? 'ok' : 'empty');
+  // Facets: the attributes call + each top facet's term call.
+  const attrEvidence = (facets.evidence || []).find((e) => e.label === 'attributes');
+  if (attrEvidence) add('Facets', 'global attributes', attrEvidence.url, attrEvidence.status, facets.attribute_count, [], 'ok');
+  for (const facet of (facets.top_facets || []).slice(0, 5)) {
+    if (facet.terms_url) add('Facets', `terms for "${facet.name}"`, facet.terms_url, facet.terms_status, facet.term_count, facet.top_terms || [], facet.term_count > 0 ? 'ok' : 'empty');
+  }
+  return experiments;
+}
+
 function discoverySignal({ sku_count, browse_levels, browse_nodes_substantive }) {
   const parts = [];
   if (sku_count == null) parts.push('SKU count unavailable from the Store API.');
@@ -233,7 +266,7 @@ async function main() {
   for (const { query, kind } of queries) {
     const result = await adapter.fetchSubmittedSearch(query);
     evidence.push(result.evidence);
-    searchProbe.push({ query: result.query, kind, result_count: result.result_count, returned: result.returned, status: result.status, top: result.results.slice(0, 5) });
+    searchProbe.push({ query: result.query, kind, url: result.evidence.url, result_count: result.result_count, returned: result.returned, status: result.status, top: result.results.slice(0, 5) });
     console.log(`  search "${query}" [${kind}] -> ${result.result_count} results (status ${result.status})`);
   }
   const literalHits = searchProbe.filter((row) => row.kind.startsWith('literal') && row.result_count > 0).length;
@@ -277,6 +310,9 @@ async function main() {
     surfaces: buildSurfaces({ catalog, facets, literalHits, literalTotal, intentHits, intentTotal }),
     discovery_signal: discoverySignal(catalog)
   };
+  // Per-call experiments so every report claim drills to the exact API call
+  // that produced it, with a replayable URL. This is the evidence layer.
+  summary.experiments = buildExperiments({ searchProbe, catalog, facets });
   // Shopify-parity deliverables derived from the captured surfaces.
   summary.health = buildHealth(summary.surfaces);
   summary.findings = buildFindings(summary.surfaces, summary.search_signal);

@@ -156,9 +156,10 @@ export function createWooCommerceAdapter(target, options = {}) {
       // Term counts for up to 8 filterable attributes (bounded to stay cheap).
       const topFacets = [];
       for (const attribute of filterable.slice(0, 8)) {
-        const termsRes = await wooFetch(`${storeApi}/products/attributes/${attribute.id}/terms`);
+        const termsUrl = `${storeApi}/products/attributes/${attribute.id}/terms`;
+        const termsRes = await wooFetch(termsUrl);
         const terms = Array.isArray(termsRes.json) ? termsRes.json : [];
-        topFacets.push({ id: attribute.id, name: attribute.name, term_count: terms.length, top_terms: terms.slice(0, 6).map((term) => term.name) });
+        topFacets.push({ id: attribute.id, name: attribute.name, term_count: terms.length, top_terms: terms.slice(0, 6).map((term) => term.name), terms_url: termsUrl, terms_status: termsRes.status });
       }
       topFacets.sort((left, right) => right.term_count - left.term_count);
 

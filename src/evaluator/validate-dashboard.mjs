@@ -169,10 +169,21 @@ async function main() {
             const report = await fetchText(`${dashboard.url}/artifact?path=${encodeURIComponent(wooCatalog.summary.report_md_path)}`);
             assert(report.includes('Ecommerce Discovery Evaluation'), 'Woo executive report artifact did not serve.');
           }
+          // GEN-032: every claim drills to the exact call, and calls are replayable.
+          const exps = wooCatalog.summary.experiments;
+          assert(Array.isArray(exps) && exps.length > 0, 'Woo summary missing per-call experiments.');
+          const searchExp = exps.find((e) => e.surface === 'Search');
+          assert(searchExp && typeof searchExp.url === 'string' && searchExp.url.includes('/wp-json/wc/store/') && 'result_count' in searchExp, 'Search experiment missing the exact call URL / result.');
+          // Replay re-issues the exact call to the same store; foreign hosts are rejected.
+          const replay = await fetchJson(`${dashboard.url}/api/woo/replay?target=${encodeURIComponent(wooSite.target_id)}&url=${encodeURIComponent(searchExp.url)}`);
+          assert(replay.status && 'result_count' in replay && replay.fetched_at, 'Replay endpoint did not return a fresh result.');
+          const badReplay = await fetch(`${dashboard.url}/api/woo/replay?target=${encodeURIComponent(wooSite.target_id)}&url=${encodeURIComponent('https://evil.example.com/wp-json/wc/store/v1/products')}`);
+          assert(badReplay.status === 400, 'Replay must reject a foreign host.');
         }
       }
       assert(page.includes('Discovery surfaces') && page.includes('Facets & attributes'), 'Woo site view missing the discovery-surfaces / facets panels.');
     assert(page.includes('findingsPanel') && page.includes('fixPanel') && page.includes('healthPanel'), 'Woo site view missing health/findings/fix-plan panels.');
+    assert(page.includes('Experiments & evidence') && page.includes('class="woo-replay"') && page.includes("'/api/woo/replay?target='"), 'Woo site view missing the experiments/replay drill-down.');
     }
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');
