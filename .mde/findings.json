@@ -787,7 +787,7 @@
       "severity": "High",
       "category": "Functional Validation",
       "title": "Inconsistent term->node mapping: the same product returns wildly different results by term (category vs synonym)",
-      "summary": "Searching the same concept with a different-but-equivalent term returns very different result sets. Sometimes the synonym collapses (sheetrock 33 vs drywall 2411; liquid nails 17 vs construction adhesive 1605). Notably it is NOT simply \"use the category name\": sometimes the GENERIC category term is the one that fails (concrete mix -> 20 wrong anchoring-cement results, while brand quikrete -> 643 correct; locking pliers -> 106 vs vise grips -> 1161). Some synonyms map perfectly (plexiglass=acrylic sheet 338; sawzall~=reciprocating saw). The mapping is inconsistent, so findability depends on guessing the \"right\" term.",
+      "summary": "Tested 28 equivalent term pairs; 17 show materially different result sets (>=40% divergence or wrong products). Bidirectional: synonyms collapse (sheetrock 33/drywall 2411; liquid nails 17/construction adhesive 1605; roundup 249/weed killer 3078; zip ties 267/cable ties 1602; dremel 1508/rotary tool 5616) AND generic category terms fail (concrete mix 20 wrong/quikrete 643; locking pliers 106/vise grips 1161; utility knife 207/box cutter 525; oriented strand board 173/osb 378). ~11 pairs map well (plexiglass=acrylic, teflon=plumbers tape, sawzall~=reciprocating saw). Full set in assessments/homedepot/search-eval/category-synonym-pairs.json.",
       "status": "observed_gen034_category_synonym_set",
       "discovered_on": "2026-07-18"
     }
