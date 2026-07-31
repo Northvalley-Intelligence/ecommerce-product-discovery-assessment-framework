@@ -137,16 +137,20 @@ async function main() {
     // Shopify sites are evaluation-driven; WooCommerce sites are listed without one.
     assert(sites.every((site) => site.platform === 'woocommerce' || site.platform === 'browser-eval' || site.evaluation), 'Non-Woo/browser-eval sites must carry an evaluation.');
     // GEN-035: browser-driven search evaluation view (Home Depot category<->synonym pairs).
-    assert(page.includes('function renderBrowserEvalSite') && page.includes('function loadSearchEval'), 'Dashboard page missing the browser-eval search view.');
-    assert(page.includes("'/api/search-eval?target='"), 'Dashboard page missing search-eval API wiring.');
-    const hd = sites.find((site) => site.platform === 'browser-eval');
-    if (hd) {
-      const se = await fetchJson(`${dashboard.url}/api/search-eval?target=${encodeURIComponent(hd.target_id)}`);
-      assert('captured' in se, 'search-eval endpoint should return a captured flag.');
-      if (se.captured) {
-        assert(se.pairs && Array.isArray(se.pairs.pairs) && typeof se.pairs.total_pairs === 'number', 'search-eval pairs summary missing.');
-        assert(se.pairs.pairs.every((p) => p.term_a && p.term_a.url && typeof p.term_a.total === 'number'), 'search-eval pair terms missing url/total.');
-      }
+    assert(page.includes('function renderBrowserEvalSite') && page.includes('function loadSearchScoreboard'), 'Dashboard page missing the browser-eval search scoreboard view.');
+    assert(page.includes("'/api/search-datasets'") && page.includes('class="ds-site"'), 'Dashboard page missing the dataset scoreboard wiring.');
+    // GEN-036: dataset x retailer scoreboard (Home Improvement domain).
+    const browserEvalSites = sites.filter((site) => site.platform === 'browser-eval');
+    assert(browserEvalSites.length >= 2, 'Expected Home Depot and Lowe\'s as browser-eval sites.');
+    assert(browserEvalSites.some((site) => (site.sectors || []).some((sec) => sec.sector_id === 'home-improvement')), 'Browser-eval sites should be grouped under the Home Improvement domain.');
+    const sd = await fetchJson(`${dashboard.url}/api/search-datasets`);
+    assert('captured' in sd, 'search-datasets endpoint should return a captured flag.');
+    if (sd.captured) {
+      assert(Array.isArray(sd.datasets) && sd.datasets.length > 0, 'search-datasets missing datasets.');
+      const syn = sd.datasets.find((d) => d.id === 'synonym-pairs');
+      assert(syn && syn.retailers && syn.retailers.homedepot && syn.retailers.lowes, 'synonym dataset missing per-retailer entries.');
+      assert(typeof syn.retailers.homedepot.score === 'number' && Array.isArray(syn.retailers.homedepot.cases), 'retailer entry missing score/cases.');
+      assert(syn.retailers.homedepot.cases.every((c) => c.term_a && c.term_a.url && typeof c.term_a.total === 'number'), 'dataset case terms missing url/total.');
     }
     // GEN-025: sites carry their sector membership so the sidebar can group them.
     assert(sites.every((site) => Array.isArray(site.sectors)), 'Sites API entries missing sector membership array.');
@@ -260,8 +264,9 @@ async function main() {
     assert(Array.isArray(shared.platform) && shared.platform.length > 0, 'Shared data missing the platform capability model.');
     assert(shared.platform.every((file) => file.path.startsWith('platform/')), 'Shared platform list leaked a non-platform dataset.');
     assert(Array.isArray(shared.sectors), 'Shared data missing sectors array.');
-    const memberedSector = shared.sectors.find((sector) => (sector.member_sites || []).length > 0);
-    assert(memberedSector, 'No sector dataset is referenced by any site.');
+    // A query-pack sector referenced by a site (domain sectors have no packs).
+    const memberedSector = shared.sectors.find((sector) => (sector.member_sites || []).length > 0 && (sector.query_pack_files || []).length > 0);
+    assert(memberedSector, 'No query-pack sector is referenced by any site.');
     assert((memberedSector.query_pack_files || []).length > 0, 'Sector dataset has no shared query pack file.');
 
     // A site sees the sectors it belongs to (connection preserved), and the

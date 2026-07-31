@@ -1,0 +1,9 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "home-improvement",
+  "name": "Home Improvement",
+  "description": "Big-box home improvement retailers evaluated via browser-driven search datasets.",
+  "shared_query_packs": [],
+  "member_sites": ["homedepot", "lowes"],
+  "domain": true
+}

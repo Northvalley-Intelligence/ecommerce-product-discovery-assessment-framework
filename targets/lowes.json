@@ -1,0 +1,10 @@
+{
+  "schema_version": "target-manifest-v0.1",
+  "target_id": "lowes",
+  "name": "Lowe's",
+  "primary_url": "https://www.lowes.com/",
+  "domain": "lowes.com",
+  "platform": { "expected": "browser-eval", "canonical_platform_host": null, "confidence": "observed", "source": "Custom enterprise platform. Search evaluated via the browser-embedded response; not API-inspectable." },
+  "inspection_defaults": { "respect_robots": true, "timeout_ms": 15000, "user_agent": "Northvalley-Ecommerce-Inspection/0.1" },
+  "known_limitations": [ { "type": "infrastructure", "code": "bot_protection_no_api", "notes": "Enterprise bot protection; search evaluated via the browser-embedded searchData/Apollo state." } ]
+}

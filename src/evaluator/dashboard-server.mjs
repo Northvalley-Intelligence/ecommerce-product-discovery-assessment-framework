@@ -446,6 +446,16 @@ function latestSearchEval(rootDir, targetId) {
   return { pairs, eval: exists(evalPath) ? readJson(evalPath) : null };
 }
 
+// Combined dataset x retailer scoreboard (Home Improvement domain), read from
+// the captured artifact. No server-side fetching of the retailers.
+function latestSearchDatasets(rootDir) {
+  const root = path.join(rootDir, 'assessments', 'search-datasets');
+  if (!exists(root)) return null;
+  const runs = fs.readdirSync(root).filter((name) => exists(path.join(root, name, 'datasets.json'))).sort();
+  if (!runs.length) return null;
+  return readJson(path.join(root, runs[runs.length - 1], 'datasets.json'));
+}
+
 function sharedData(rootDir) {
   const platformDir = path.join(rootDir, 'platform');
   return {
@@ -1675,9 +1685,57 @@ function dashboardPage() {
         '<div class="crumb-bar"><span class="crumb-current">Sites › ' + escapeHtml(site.name) + '</span><span class="muted">— browser-driven search evaluation</span></div>' +
         '<section class="hero"><div><p class="eyebrow">Browser-Evaluated Site</p><h1>' + escapeHtml(site.name) + '</h1>' +
           '<div class="subline"><span>' + escapeHtml(site.url) + '</span><span>enterprise (Akamai)</span><span><a href="' + escapeHtml(site.url) + '" target="_blank" rel="noopener">Open store</a></span></div>' +
-          '<p class="muted" style="margin:8px 0 0;font-size:12px">No API engine (Akamai bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.</p></div></section>' +
-        '<div id="searchEval"><div class="empty">Loading search evaluation…</div></div>';
-      loadSearchEval(targetId);
+          '<p class="muted" style="margin:8px 0 0;font-size:12px">No API engine (bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.</p></div></section>' +
+        '<div id="searchEval"><div class="empty">Loading search datasets…</div></div>';
+      loadSearchScoreboard(targetId);
+    }
+    async function loadSearchScoreboard(targetId) {
+      let data;
+      try { data = await api('/api/search-datasets'); }
+      catch (error) { document.getElementById('searchEval').innerHTML = ''; return; }
+      if (state.selectedSite !== targetId) return;
+      const el = document.getElementById('searchEval');
+      if (!el || !data.captured || !data.datasets) { if (el) el.innerHTML = panel('Search datasets', '', '<div class="panel-body"><div class="empty">No datasets captured yet.</div></div>'); return; }
+      const retailers = (data.retailers || []).map((id) => { for (const d of data.datasets) { if (d.retailers[id]) return { id, name: d.retailers[id].name }; } return { id, name: id }; });
+      // Scoreboard: one row per dataset, a score cell per retailer.
+      const scoreCell = (dsId, r, ds) => {
+        const rr = ds.retailers[r.id]; if (!rr) return '<td class="muted">—</td>';
+        const val = escapeHtml(String(rr.score)) + '% <span class="muted" style="font-size:11px">(' + escapeHtml(rr.score_label || '') + ')</span>';
+        return '<td>' + (r.id === targetId
+          ? jumpNum(val, 'ds-' + dsId, 'See ' + r.name + ' cases below')
+          : '<a href="#" class="ds-site" data-target="' + escapeHtml(r.id) + '">' + val + '</a>') + '</td>';
+      };
+      const head = '<tr><th>Dataset</th>' + retailers.map((r) => '<th>' + escapeHtml(r.name) + '</th>').join('') + '</tr>';
+      const body = data.datasets.map((ds) =>
+        '<tr><td><strong>' + escapeHtml(ds.name) + '</strong><div class="muted" style="font-size:11px">' + escapeHtml(ds.scoring || '') + '</div></td>' +
+        retailers.map((r) => scoreCell(ds.id, r, ds)).join('') + '</tr>').join('');
+      let html = panel('Search datasets — retailer scoreboard', 'Score per dataset per retailer · higher = more consistent · click a score to drill to its cases',
+        '<div class="table-wrap"><table><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>');
+      // This retailer's cases for each dataset (drill target).
+      for (const ds of data.datasets) {
+        const rr = ds.retailers[targetId];
+        if (!rr) continue;
+        const order = { severe: 0, high: 1, medium: 2, minor: 3, pass: 4 };
+        const sev = (v) => ({ severe: 'fail', high: 'fail', medium: 'warn', minor: 'muted-status', pass: 'pass' }[v] || 'warn');
+        const cases = (rr.cases || []).slice().sort((a, b) => (order[a.verdict] - order[b.verdict]) || (b.divergence_pct - a.divergence_pct));
+        const rows = cases.map((p) => {
+          const hi = p.term_a.total >= p.term_b.total ? p.term_a : p.term_b;
+          const lo = p.term_a.total >= p.term_b.total ? p.term_b : p.term_a;
+          return '<details class="exp"><summary>' + pill(sev(p.verdict), p.verdict) + ' <strong>' + escapeHtml(p.concept) + '</strong> — ' +
+            escapeHtml(hi.q) + ' <strong>' + escapeHtml(String(hi.total)) + '</strong> vs ' + escapeHtml(lo.q) + ' <strong>' + escapeHtml(String(lo.total)) + '</strong> <span class="muted">(' + escapeHtml(String(p.divergence_pct)) + '% apart)</span></summary>' +
+            '<div class="exp-body">' +
+              '<div><a href="' + escapeHtml(p.term_a.url) + '" target="_blank" rel="noopener">Rerun “' + escapeHtml(p.term_a.q) + '” on ' + escapeHtml(rr.name) + ' (' + escapeHtml(String(p.term_a.total)) + ')</a></div>' +
+              '<div><a href="' + escapeHtml(p.term_b.url) + '" target="_blank" rel="noopener">Rerun “' + escapeHtml(p.term_b.q) + '” on ' + escapeHtml(rr.name) + ' (' + escapeHtml(String(p.term_b.total)) + ')</a></div>' +
+            '</div></details>';
+        }).join('');
+        html += '<div id="ds-' + ds.id + '">' + panel(rr.name + ' — ' + ds.name, rr.score + '% consistent (' + escapeHtml(rr.score_label || '') + ') · expand a pair to open the live search and verify/rerun the count',
+          '<div class="panel-body">' + rows + '</div>') + '</div>';
+      }
+      el.innerHTML = html;
+      wireJumps(el);
+      for (const link of el.querySelectorAll('.ds-site')) {
+        link.addEventListener('click', (event) => { event.preventDefault(); state.selected = null; selectSite(link.dataset.target); });
+      }
     }
     async function loadSearchEval(targetId) {
       let data;
@@ -2908,6 +2966,12 @@ function routeRequest(rootDir, request, response, queue) {
 
   if (request.method === 'GET' && url.pathname === '/api/search-eval') {
     const data = latestSearchEval(rootDir, url.searchParams.get('target'));
+    sendJson(response, 200, data ? { captured: true, ...data } : { captured: false });
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/search-datasets') {
+    const data = latestSearchDatasets(rootDir);
     sendJson(response, 200, data ? { captured: true, ...data } : { captured: false });
     return;
   }
