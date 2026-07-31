@@ -1,0 +1,33 @@
+{
+  "generation_id": "GEN-034",
+  "mission_phase": "Generation 34 - Browser-driven search evaluation (Home Depot, embedded SearchModel)",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T13:00:00Z",
+  "ended_at": "2026-07-18T13:45:00Z",
+  "record_status": "phase_complete_browser_evaluation_recorded",
+  "phase_goal": "Evaluate a site's search purely through the real browser (no external API calls, no token replay, no crawling) by reading the search response the page itself receives — for Home Depot, the embedded Apollo SearchModel (totalProducts, correctedKeyword, searchRedirect, semanticToken) plus the rendered product titles. Run a targeted query set designed to surface failures: dimension/unit queries (1/2 in vs 1/2 ft, #2 bit), synonym consistency (drywall sheets / sheetrock / sheet rock), and pro/trade names (romex, unistrut). Record each query as a debuggable experiment (exact search URL + observed result + top titles).",
+  "reason_generation_started": "Operator: build the browser-driven search evaluation and try tricky queries (dimensions like 1/2 in vs 1/2 ft, # sizes, drywall synonym consistency, pro queries) to see if Home Depot's search brings noise / inconsistency — the kind of big failure we saw with 'sofa' on a Woo site.",
+  "standing_directive": "Read only what the real browser legitimately receives (embedded SearchModel + rendered DOM) for a bounded, user-requested query set — equivalent to a person running those searches. Do NOT call apionline.homedepot.com from a scraper, do NOT replay Akamai/session tokens, do NOT crawl beyond the query set. Report observed evidence; never fabricate a result count or title.",
+  "validation_strategy": {
+    "functional": [
+      "For each query the evaluation records: the exact search URL, whether it stayed on search (/s/) or redirected to a category (/b/), totalProducts, correctedKeyword (spell handling), and the top rendered product titles.",
+      "Dimension queries are assessed for noise (do the top titles match the requested size/unit); the drywall synonym trio is compared for consistency (similar totalProducts / same redirect); pro/trade names are checked for correct mapping.",
+      "Every reported number/claim ties back to the exact query URL and the observed on-page evidence (debuggable)."
+    ],
+    "usability": [
+      "Findings clearly separate PASS (intent handled) from failures (noise / synonym inconsistency), with the evidence per query.",
+      "No crawling beyond the bounded query set; no external API calls."
+    ],
+    "technical": [
+      "Results are captured to an honest artifact (JSON) under the Home Depot assessment dir; if surfaced in the dashboard it reuses the debuggable/navigable report pattern; existing gate stays green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-083: 15 queries via browser; findings HD-F001/002/003; passes for pro/intent/spelled-fraction; artifact + report written; no code changed."
+  ],
+  "known_gaps_opened": [
+    "A dashboard view for browser-driven (non-Shopify/Woo) search evaluations is not built; results live as an artifact + markdown report.",
+    "Result counts for category-redirect queries reflect the redirected category page, not a raw search total — noted in findings."
+  ]
+}

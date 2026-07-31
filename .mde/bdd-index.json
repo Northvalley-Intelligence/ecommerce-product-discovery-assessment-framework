@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-022",
+  "inventory_id": "BDD-INV-023",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-021",
+  "supersedes": "BDD-INV-022",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_33_navigable_numbers_inventory",
-  "refresh_rationale": "Adds GEN-033 behavior: WooCommerce summary numbers are navigable to their backing items — no dead numbers.",
+  "status": "generation_34_browser_search_eval_inventory",
+  "refresh_rationale": "Adds GEN-034: browser-driven search evaluation that reads the page-embedded search response (no crawl/bypass) and surfaces search failures, first run on Home Depot.",
   "summary": {
-    "total": 89,
+    "total": 91,
     "critical": 18,
-    "high": 34,
-    "medium": 33,
+    "high": 35,
+    "medium": 34,
     "low": 4,
-    "passing": 87,
+    "passing": 89,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -779,6 +779,24 @@
       "category": "Technical Validation",
       "status": "passed_gen_033",
       "evidence": "Each clickable number resolves to a real anchor (woo-findings/woo-surfaces/woo-experiments/woo-cats/woo-facets); validator asserts targets exist. VAL-082."
+    }
+  ],
+  "gen34_bdds": [
+    {
+      "id": "BDD-G34-001",
+      "title": "Search can be evaluated via the browser-embedded response",
+      "severity": "Medium",
+      "category": "Technical Validation",
+      "status": "passed_gen_034",
+      "evidence": "Home Depot searchModel read from window.__APOLLO_STATE__ per query; no external API/crawl. VAL-083."
+    },
+    {
+      "id": "BDD-G34-002",
+      "title": "Evaluation surfaces real search failures with evidence",
+      "severity": "High",
+      "category": "Functional Validation",
+      "status": "passed_gen_034",
+      "evidence": "sheetrock synonym collapse (33 vs 2411), 1/2 ft dimension conflation, 2x4 format count swing. VAL-083."
     }
   ]
 }

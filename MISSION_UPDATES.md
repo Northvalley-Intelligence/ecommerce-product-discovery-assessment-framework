@@ -2,6 +2,13 @@
 
 Keep this concise and human-readable. Detailed state belongs in `.mde/`.
 
+## 2026-07-18 (Home Depot search)
+
+- Mission update: Built and ran a browser-driven search evaluation on homedepot.com (GEN-034). Home Depot is a custom enterprise platform behind Akamai (no Shopify/Woo engine, HTTP 403 to scrapers), so the evaluation reads what the real logged-in browser legitimately receives — the page-embedded Apollo SearchModel (search API = GraphQL searchModel on apionline.homedepot.com) via bounded same-origin /s/<query> fetches. No external API calls, no token replay, no crawling.
+- Reason: Operator: build the browser-driven search eval and hunt for a big failure like the earlier "sofa -> 0" on a Woo furniture site; test dimension/unit, synonym, and pro queries.
+- Discovered through: 15 queries. Home Depot search is strong (pro names romex->NM-B wire, unistrut->strut channel; spelled fractions half inch->1/2 in; intent redirects cordless drill->Cordless Drills all pass). Real failures found: HD-F001 (High) "sheetrock"/"sheet rock" collapse to a 33-product USG category vs "drywall" 2411 / "drywall sheets" 921 — an everyday word hides ~99% of the assortment; HD-F002 (Med) "1/2 ft" returns 1/2-inch products (unit conflation); HD-F003 (Med) 2x4 / 2 by 4 / 2 x 4 return 757/1043/4586 (format-based count swing). Artifact + report under assessments/homedepot/search-eval/. Gate green (no code changed).
+- Impact: Demonstrates a legitimate way to evaluate search on Akamai-protected enterprise sites (via the browser-embedded response), and produced a real, debuggable search-quality read on Home Depot.
+
 ## 2026-07-18 (WooCommerce)
 
 - Mission update: Self-verifiable numbers (GEN-033). No bare number is a dead end: in the WooCommerce site view, every count in the Health summary (surface coverage, warn/not-inspectable, findings) and Catalog summary (SKUs, browse nodes, facets, search signal) is now a navigation control — clicking it smooth-scrolls to and flashes the exact backing items (search signal → the 8 Search experiments, findings → Findings panel, SKUs → the product-count call, etc.).

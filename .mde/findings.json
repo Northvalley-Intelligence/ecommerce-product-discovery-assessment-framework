@@ -745,6 +745,42 @@
       "summary": "Operator: a claimed count (e.g. failures/findings) with nothing to see below is a dead end. Make every summary number clickable to jump to the items behind it, so numbers are self-verifiable.",
       "status": "resolved_gen033_navigable_numbers_shipped",
       "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "FND-HOMEDEPOT",
+      "severity": "High",
+      "category": "Technical Validation",
+      "title": "Home Depot is out of scope: custom enterprise stack + Akamai bot wall + robots disallow",
+      "summary": "Operator requested a full evaluation of homedepot.com. Detected: custom enterprise platform (THD) behind Akamai (not Shopify/WooCommerce; products.json + wp-json both 404). Every automated request returns 403 Access Denied from Akamai Bot Manager (_bman/akavpau cookies) even with a browser UA. robots.txt explicitly disallows the discovery surfaces we inspect (/*Search?*, /*Ntt-*, /*Ntk-*, /*AjaxNavigation*). A full evaluation would require bypassing bot protection and ignoring robots.txt on disallowed paths — declined. No run performed, no bypass attempted. Legitimate path would be an authorized API / partner access or a consented manual evaluation.",
+      "status": "blocked_out_of_scope_bot_protection_and_robots",
+      "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "HD-F001",
+      "severity": "High",
+      "category": "Functional Validation",
+      "title": "Home Depot search: \"sheetrock\" synonym collapse (33 vs ~2400 drywall products)",
+      "summary": "Observed via browser-driven search evaluation (VAL-083). See assessments/homedepot/search-eval/.",
+      "status": "observed_gen034",
+      "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "HD-F002",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "title": "Home Depot search: \"1/2 ft\" dimension unit conflation -> 1/2 in products",
+      "summary": "Observed via browser-driven search evaluation (VAL-083). See assessments/homedepot/search-eval/.",
+      "status": "observed_gen034",
+      "discovered_on": "2026-07-18"
+    },
+    {
+      "finding_id": "HD-F003",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "title": "Home Depot search: 2x4/2 by 4/2 x 4 format-based result-count inconsistency (757/1043/4586)",
+      "summary": "Observed via browser-driven search evaluation (VAL-083). See assessments/homedepot/search-eval/.",
+      "status": "observed_gen034",
+      "discovered_on": "2026-07-18"
     }
   ],
   "lifecycle_states": [

@@ -1,0 +1,52 @@
+{
+  "validation_run_id": "VAL-083",
+  "generation": "GEN-034",
+  "phase": "Browser-driven search evaluation (Home Depot)",
+  "started_at": "2026-07-18T13:00:00Z",
+  "completed_at": "2026-07-18T13:45:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_browser_driven_evaluation",
+  "validations_executed": [
+    {
+      "category": "Method (no bypass, no crawl)",
+      "tool": "browser same-origin fetch + embedded SearchModel",
+      "result": "pass",
+      "evidence": "15 bounded queries via the real logged-in session; read window.__APOLLO_STATE__ SearchModel + rendered titles. No external API calls, no token replay, no crawling."
+    },
+    {
+      "category": "Search failures surfaced",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "HD-F001 synonym collapse (sheetrock/sheet rock -> 33 vs drywall 2411 / drywall sheets 921); HD-F002 dimension unit conflation (1/2 ft -> 1/2 in products); HD-F003 lumber format count inconsistency (2x4 757 / 2 by 4 1043 / 2 x 4 4586)."
+    },
+    {
+      "category": "Passes verified",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Pro names map (romex->NM-B wire, unistrut->strut channel); spelled fractions (half inch drywall->1/2 in); intent redirects (cordless drill->Cordless Drills)."
+    },
+    {
+      "category": "Debuggable evidence",
+      "tool": "artifact",
+      "result": "pass",
+      "evidence": "Each query recorded as an experiment with the exact /s/<query> URL + result count + top titles; artifact + markdown report under assessments/homedepot/search-eval/."
+    },
+    {
+      "category": "No code regression",
+      "tool": "validate:dashboard/gen13/validate",
+      "result": "pass",
+      "evidence": "No dashboard/adapter code changed this generation; gate green."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Dashboard view for HD search eval",
+      "reason": "Home Depot is not a first-class site in the dashboard (enterprise, no API engine); the evaluation is a browser-driven artifact + report. A dashboard view is a possible follow-up."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    "HD-F001 sheetrock synonym collapse"
+  ],
+  "notes": "Operator asked to build the browser-driven search eval and hunt for a big failure like the sofa. Home Depot search is strong overall (pro/intent/spelled-fraction all pass) but the eval found a real one: searching the everyday word \"sheetrock\" shows 33 of ~2400 drywall products."
+}
