@@ -89,6 +89,16 @@ async function main() {
     assert(health.status === 'ok', 'Dashboard health route did not return ok.');
 
     const page = await fetchText(`${dashboard.url}/`);
+    // Guard: the inline client script must PARSE. A syntax error anywhere in it (e.g. an
+    // unescaped apostrophe inside a single-quoted string) throws at load and blanks the WHOLE
+    // SPA - which server-side node --check and HTML-content assertions do not catch.
+    const inlineScripts = [...page.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]);
+    assert(inlineScripts.length > 0, 'Dashboard page has no inline client script to validate.');
+    for (const [i, body] of inlineScripts.entries()) {
+      if (!body.trim()) continue;
+      try { new Function(body); } // parse-only; does not execute
+      catch (error) { assert(false, `Dashboard inline client script #${i + 1} does not parse (would blank the dashboard): ${error.message}`); }
+    }
     assert(page.includes('Operational Dashboard'), 'Dashboard page missing operational title.');
     assert(page.includes('Run, review, debug, compare'), 'Dashboard page missing mission-aligned purpose copy.');
     assert(page.includes('id="newInspectionBtn"'), 'Dashboard page missing New Inspection control.');

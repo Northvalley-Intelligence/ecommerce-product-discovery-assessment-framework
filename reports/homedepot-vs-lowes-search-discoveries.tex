@@ -1,0 +1,296 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\input{northvalley-template-assets/northvalley-brand.sty}
+\usepackage[letterpaper,margin=0.62in,top=0.62in,bottom=0.72in]{geometry}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\renewcommand{\labelitemi}{\textcolor{NVIAccent}{\(\triangleright\)}}
+\renewcommand{\labelitemii}{\textcolor{NVIAccent}{\(\triangleright\)}}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=0.10in
+
+\newcommand{\ReportTitle}{Home Depot vs Lowe's: Search Relevance Discoveries}
+\newcommand{\ReportClient}{Home Improvement Retail Search Benchmark}
+\newcommand{\ReportDate}{2026-07-31}
+\newcommand{\ReportSummary}{An LLM-judged relevance benchmark of Home Depot and Lowe's on-site search across three query datasets and 900+ graded product judgments --- showing where each engine wins, breaks, and loses shoppers.}
+\newcommand{\ReportPreparedBy}{Northvalley Intelligence LLC}
+
+\newcommand{\ReportPageHeader}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-0.46in]current page.north east);
+    \fill[NVIAccent] ([yshift=-0.46in]current page.north west) rectangle ([yshift=-0.49in]current page.north east);
+    \node[anchor=west,text=white,font=\fontsize{8.4}{9.8}\selectfont\bfseries]
+      at ([xshift=0.62in,yshift=-0.23in]current page.north west) {#1};
+    \node[anchor=east,text=white,font=\fontsize{7.4}{8.6}\selectfont]
+      at ([xshift=-0.62in,yshift=-0.23in]current page.north east) {\ReportClient};
+  \end{tikzpicture}
+  \vspace*{0.22in}
+}
+
+\newcommand{\ReportFooter}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.34in]current page.south east);
+    \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=0.62in,yshift=0.17in]current page.south west) {\NorthvalleyContactLine};
+    \node[anchor=east,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+      at ([xshift=-0.62in,yshift=0.17in]current page.south east) {\thepage};
+  \end{tikzpicture}
+}
+
+\newcommand{\ReportSection}[1]{%
+  \vspace{0.12in}
+  {\fontsize{15}{18}\selectfont\bfseries\color{NVIInk}#1}\\[-0.02in]
+  {\color{NVIAccent}\rule{\linewidth}{0.8pt}}
+  \vspace{0.07in}
+}
+
+\newcommand{\ReportKicker}[1]{%
+  {\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}%
+}
+
+\newcommand{\ReportBody}[1]{%
+  {\fontsize{9.4}{11.5}\selectfont\color{NVIInk}#1}%
+}
+
+\newcommand{\ReportFine}[1]{%
+  {\fontsize{7.6}{9.1}\selectfont\color{NVIMuted}#1}%
+}
+
+\newcommand{\ReportCard}[2]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIRule,
+      fill=white,
+      rounded corners=2pt,
+      inner xsep=11pt,
+      inner ysep=9pt,
+      text width=\dimexpr\linewidth-24pt\relax,
+      align=left
+    ] {
+      \ReportKicker{#1}\\[0.05in]
+      \ReportBody{#2}
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\ReportDarkCard}[2]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIAccentDark,
+      fill=NVIAccentDark,
+      rounded corners=2pt,
+      inner xsep=12pt,
+      inner ysep=10pt,
+      text width=\dimexpr\linewidth-26pt\relax,
+      align=left
+    ] {
+      {\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.06in]
+      {\fontsize{10.4}{12.6}\selectfont\color{white}#2}
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\MetricCard}[3]{%
+  \begin{tikzpicture}
+    \node[
+      draw=NVIRule,
+      fill=NVIPanel,
+      rounded corners=2pt,
+      inner xsep=9pt,
+      inner ysep=8pt,
+      text width=\dimexpr\linewidth-20pt\relax,
+      minimum height=0.92in,
+      align=left
+    ] {
+      \ReportKicker{#1}\\[0.04in]
+      {\fontsize{18}{21}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]
+      \ReportFine{#3}
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\FindingBlock}[3]{%
+  \ReportCard{#1}{%
+    {\bfseries #2}\\[0.03in]
+    #3
+  }
+}
+
+\newcommand{\PhaseRow}[4]{%
+  \textbf{\color{NVIAccentDark}#1} & \textbf{#2} & #3 & #4\\[0.04in]
+}
+
+\begin{document}
+\color{NVIInk}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+  \fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.05in]current page.north east);
+  \fill[NVIAccent] ([yshift=-1.05in]current page.north west) rectangle ([yshift=-1.10in]current page.north east);
+  \fill[NVIAccentSoft] ([xshift=-1.60in,yshift=-1.10in]current page.north east) --
+    (current page.north east) --
+    ([yshift=-2.45in]current page.north east) -- cycle;
+  \fill[NVIAccent!12] ([xshift=-1.2in]current page.south west) --
+    ([xshift=1.55in]current page.south west) --
+    ([xshift=0.25in,yshift=1.34in]current page.south west) -- cycle;
+  \fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.45in]current page.south east);
+  \node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries]
+    at ([xshift=0.62in,yshift=-0.52in]current page.north west) {\NorthvalleyBusinessName};
+  \node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont]
+    at ([xshift=-0.62in,yshift=-0.52in]current page.north east) {\ReportDate};
+  \node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont]
+    at ([xshift=0.62in,yshift=0.22in]current page.south west) {\NorthvalleyContactLine};
+\end{tikzpicture}
+
+\vspace*{1.08in}
+\begin{minipage}[t]{0.58\linewidth}
+\raggedright
+\ReportKicker{Client Report}\\[0.12in]
+{\fontsize{31}{36}\selectfont\bfseries\color{NVIInk}\ReportTitle}\par
+\vspace{0.20in}
+{\fontsize{12.5}{15}\selectfont\color{NVIInk}\ReportSummary}\par
+\vspace{0.30in}
+{\color{NVIAccent}\rule{2.6in}{0.9pt}}\par
+\vspace{0.18in}
+{\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]
+{\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}\ReportClient}\par
+\vspace{0.08in}
+{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \ReportPreparedBy}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.31\linewidth}
+\centering
+\vspace{0.10in}
+\NorthvalleyLogo[0.88in]\par
+\vspace{0.24in}
+\ReportDarkCard{Report Promise}{Decision-ready findings, practical priorities, and a clear path from review to implementation.}
+\vspace{0.12in}
+\MetricCard{Format}{Multi-page}{Cover, executive summary, findings, roadmap, and next steps.}
+\end{minipage}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\ReportPageHeader{Executive Summary}
+\ReportFooter
+\ReportSection{Executive Summary}
+\begin{minipage}[t]{0.64\linewidth}
+\ReportDarkCard{The Headline}{Home Depot and Lowe's are near-tied on core relevance, but they fail in opposite, fixable ways. Lowe's wins on synonyms; Home Depot edges project search; and both mishandle industry specs --- Home Depot ignores them, Lowe's over-reacts to them.}
+\vspace{0.12in}
+\ReportBody{We evaluated live on-site search on \textbf{homedepot.com} and \textbf{lowes.com} across three query datasets: (1)~\textbf{synonym/category} equivalence, (2)~\textbf{dimensions} --- measurement notation and the ``\#'' spec gradations, and (3)~\textbf{pro/job-function} project and trade queries. Results were captured by bounded, same-origin browser reads (no crawling or scraping); result counts read deterministically; and each returned product graded 0--3 for relevance by a local LLM judge, scored as NDCG. The three headline numbers are at right.}\par
+\vspace{0.12in}
+\ReportSection{What This Answers}
+\begin{itemize}
+\item Which engine returns more relevant results, and where does each break?
+\item Do the engines understand industry specs (``\#57 stone'', ``\#4 rebar'') and notation (``1/2-in'')?
+\item Which is better for natural-language project shopping (``build a deck'')?
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+\MetricCard{Dimensions NDCG}{0.90 / 0.88}{Home Depot vs Lowe's --- near tie on core relevance.}
+\vspace{0.09in}
+\MetricCard{Synonym match}{30 / 48\%}{Lowe's returns consistent results for more equivalent terms.}
+\vspace{0.09in}
+\MetricCard{Project NDCG}{0.83 / 0.78}{Home Depot edges project and trade queries.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Findings}
+\ReportFooter
+\ReportSection{Key Findings}
+\begin{minipage}[t]{0.48\linewidth}
+\FindingBlock{Finding 01}{Industry specs are the biggest gap}{The ``\#'' gradations (\#57 stone, \#4 rebar, \#7 drill bit) are hard catalog specs. \textbf{Home Depot ignores them} --- it returns generic in-category products and never surfaces the true spec. \textbf{Lowe's over-reacts} --- it treats the ``\#'' as a different query and often derails to the wrong category entirely. Neither reliably finds the exact spec'd item.}
+\vspace{0.10in}
+\FindingBlock{Finding 02}{Notation fails oppositely}{Home Depot breaks on \textbf{hyphenation}: ``1/2-in screw'' drops about 70\% of the results of ``1/2 in screw'' --- a recall cliff. Lowe's breaks on \textbf{unit words}: ``10 foot cable'' returns a fraction of ``10 ft cable''. Relevance of what each keeps stays high, so these are recall failures, not ranking failures.}
+\vspace{0.10in}
+\FindingBlock{Finding 03}{Project search favors Home Depot}{Both return real kits for most projects. Home Depot edges it and \textbf{monetizes ``install a\ldots''} queries as paid services; a few Lowe's project queries (kitchen faucet, toilet, paint a room) return little. Both fail bare trade names --- ``electrician'' and ``landscaper'' return \textbf{zero products}.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\ReportCard{Business Implication}{These are not vague ``search feels off'' complaints --- each is a specific, reproducible query behavior with a clear fix. Spec parsing and notation normalization are self-contained engine changes; synonym coverage is a mapping problem. All three convert directly into found products, fewer dead-ends, and larger baskets.}
+\vspace{0.12in}
+\ReportSection{Evidence Snapshot}
+\begin{tabularx}{\linewidth}{@{}L{0.34\linewidth}N@{}}
+\toprule
+\textbf{Query (retailer)} & \textbf{What we observed}\\
+\midrule
+\#57 stone (Lowe's) & Window blinds and a quartz sink; ``57 stone'' returns real \#57 aggregate.\\
+\#7 drill bit (Lowe's) & Magnetic drill presses; ``7 mm drill bit'' returns real twist bits.\\
+\#4 rebar vs 4 rebar (HD) & Near-identical sets --- the ``\#'' spec is ignored.\\
+1/2-in screw (HD) & Drops about 70\% vs ``1/2 in screw'' (hyphen recall cliff).\\
+replace a kitchen faucet (Lowe's) & 5 results, a stray wire listing; HD returns real faucets.\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Recommendations}
+\ReportFooter
+\ReportSection{Recommended Improvements}
+\ReportBody{The findings translate into a clear priority sequence. Each fix targets a specific, reproducible query behavior --- ordered by shopper impact and engineering self-containment.}\par
+\vspace{0.14in}
+\begin{tabularx}{\linewidth}{@{}L{0.13\linewidth}L{0.26\linewidth}N L{0.17\linewidth}@{}}
+\toprule
+\textbf{Phase} & \textbf{Focus} & \textbf{Recommended work} & \textbf{Outcome}\\
+\midrule
+\PhaseRow{Now}{Spec parsing (both)}{Treat ``\#57'', ``\#4'', ``\#7'' as catalog gradations, not noise; for Lowe's, stop the ``\#'' from derailing the query.}{Finds the exact SKU}
+\PhaseRow{Next}{Notation normalize}{Make hyphen / unit-word / decimal / quote variants equivalent (``1/2-in'' = ``1/2 in'' = ``0.5 in'').}{No recall cliffs}
+\PhaseRow{Then}{Synonyms (esp.\ HD)}{Map equivalents and brands: drywall/sheetrock, weed killer/roundup, concrete/quikrete.}{Fewer dead-ends}
+\PhaseRow{Later}{Project kits}{Return complete project kits for natural-language jobs; disambiguate bare trade names.}{Larger baskets}
+\bottomrule
+\end{tabularx}
+\vspace{0.18in}
+\begin{minipage}[t]{0.48\linewidth}
+\ReportCard{Per-Retailer Priority}{\textbf{Home Depot:} spec awareness (the ``\#'' is ignored) and synonym coverage (30\% vs 48\%). \textbf{Lowe's:} stop the ``\#'' from derailing to the wrong category, and shore up a few empty project queries.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\ReportCard{How This Was Measured}{Live search on both sites via bounded same-origin browser reads; deterministic result counts; every returned product graded 0--3 by a local LLM judge (auditable per-item traces) and scored as NDCG; plus count-ratio and SKU-overlap checks. Repeatable and self-verifiable.}
+\end{minipage}
+
+\newpage
+\ReportPageHeader{Roadmap and Next Steps}
+\ReportFooter
+\ReportSection{Roadmap and Next Steps}
+\begin{minipage}[t]{0.47\linewidth}
+\ReportDarkCard{Where This Goes Next}{The evaluation harness is live and repeatable --- three datasets, both retailers, LLM-judged NDCG, drillable to per-product grades. The next axis is recommendation quality: are a product's suggested add-ons the ones a shopper would actually buy alongside it?}
+\vspace{0.12in}
+\ReportSection{Extend the Benchmark}
+\begin{itemize}
+\item Complementary-recommendation quality (does a drill suggest bits, batteries, a case?)
+\item Full transformation-type coverage across every dimension seed
+\item Additional retailers and departments under the same rubric
+\item Track scores over time as each engine ships fixes
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\ReportCard{Trust and Auditability}{Every grade behind every score is a stored trace with the exact prompt and model output --- a questionable number can be inspected, not just trusted. The judge was validated against a hand-labelled gold set, and two notation defects were caught and fixed before scoring.}
+\vspace{0.12in}
+\ReportSection{At a Glance}
+\begin{itemize}
+\item Synonyms: Lowe's ahead (48\% vs 30\%)
+\item Dimensions relevance: tie (0.90 / 0.88), opposite spec failures
+\item Project / trade: Home Depot edge (0.83 / 0.78)
+\item 900+ graded judgments, fully auditable
+\end{itemize}
+\end{minipage}
+\vfill
+\begin{center}
+{\fontsize{16}{19}\selectfont\bfseries\color{NVIInk}Northvalley Intelligence}\\[0.06in]
+{\color{NVIAccent}\rule{2.2in}{0.8pt}}\\[0.08in]
+\ReportFine{\NorthvalleyContactLine}
+\end{center}
+
+\end{document}

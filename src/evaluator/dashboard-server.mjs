@@ -818,6 +818,9 @@ function dashboardPage() {
     .dvg { font-size: 11px; color: #64748b; margin-left: 8px; }
     .evrow { padding: 2px 0; font-size: 12px; }
     .evrow code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
+    .gbadge { display: inline-block; min-width: 14px; text-align: center; color: #fff; font-size: 11px; font-weight: 700; border-radius: 4px; padding: 0 4px; margin-right: 5px; }
+    a.relink { color: var(--blue); text-decoration: none; font-size: 11px; margin-left: 6px; }
+    a.relink:hover { text-decoration: underline; }
     .woo-replay { padding: 5px 10px; border: 1px solid var(--blue); background: var(--soft-blue); color: var(--blue); border-radius: 7px; cursor: pointer; font: inherit; font-size: 12px; }
     .woo-replay:hover { background: var(--blue); color: white; }
     a.jump { color: inherit; text-decoration: none; cursor: pointer; border-bottom: 2px dotted var(--blue); }
@@ -1722,12 +1725,31 @@ function dashboardPage() {
       const body = data.datasets.map((ds) =>
         '<tr><td><strong>' + escapeHtml(ds.name) + '</strong><div class="muted" style="font-size:11px">' + escapeHtml(ds.scoring || '') + '</div></td>' +
         retailers.map((r) => scoreCell(ds.id, r, ds)).join('') + '</tr>').join('');
-      let html = panel('Search datasets — retailer scoreboard', 'Score per dataset per retailer · higher = more consistent · click a score to drill · ● severity, ✓ reading confirmed vs live count',
-        '<div class="table-wrap"><table><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>');
+      const reportLink = '<div style="margin:0 0 9px;font-size:12px"><a class="relink" href="' + artifactHref('reports/homedepot-vs-lowes-search-discoveries.pdf') + '" target="_blank" rel="noopener" title="Home Depot vs Lowe&#39;s search relevance discoveries — PDF report">📄 Download the discoveries report (PDF)</a></div>';
+      let html = panel('Search datasets — retailer scoreboard', 'Score per dataset per retailer · higher = better · click a score to drill · ● severity, grade 3 → 0',
+        reportLink + '<div class="table-wrap"><table><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>');
       // This retailer's cases for each dataset (drill target).
       for (const ds of data.datasets) {
         const rr = ds.retailers[targetId];
         if (!rr) continue;
+        // Relevance datasets (dimensions, pro): per-query NDCG, drill to per-product grades.
+        if (ds.kind === 'relevance') {
+          const rorder = { severe: 0, high: 1, medium: 2, minor: 3, pass: 4 };
+          const rcases = (rr.cases || []).slice().sort((a, b) => ((rorder[a.verdict] ?? 2) - (rorder[b.verdict] ?? 2)) || ((a.ndcg ?? 1) - (b.ndcg ?? 1)));
+          const gcol = (g) => g >= 3 ? '#16a34a' : g >= 2 ? '#65a30d' : g >= 1 ? '#d97706' : '#dc2626';
+          const rrows = rcases.map((c) => {
+            const nd = c.ndcg == null ? '—' : Math.round(c.ndcg * 100) + '%';
+            const dot = '<span class="sdot sev-' + escapeHtml(c.verdict) + '" title="' + escapeHtml(c.verdict) + '"></span>';
+            const chips = (c.count_ratio != null ? ' <span class="dvg" title="result-count ratio vs reference; band = expected">count ' + escapeHtml(String(c.count_ratio)) + '× [' + escapeHtml(String((c.band || [])[0])) + '–' + escapeHtml(String((c.band || [])[1])) + ']</span>' : '') +
+              (c.jaccard != null ? ' <span class="dvg" title="top-N SKU overlap with reference (low = distinct result set)">overlap J=' + escapeHtml(String(c.jaccard)) + '</span>' : '') +
+              (c.total != null ? ' <span class="qc">' + escapeHtml(String(c.total)) + ' results</span>' : '');
+            const prod = (c.products || []).map((p, i) => '<div class="evrow"><span class="gbadge" style="background:' + gcol(p.grade) + '">' + escapeHtml(String(p.grade)) + '</span> ' + escapeHtml(p.t || ('#' + (i + 1))) + (p.reason ? ' <span class="muted" style="font-size:11px">— ' + escapeHtml(p.reason) + '</span>' : '') + '</div>').join('');
+            return '<details class="exp"><summary>' + dot + ' <strong>' + escapeHtml(c.query) + '</strong> <b>' + nd + '</b> <span class="muted" style="font-size:11px">NDCG@' + escapeHtml(String(c.k || 10)) + '</span>' + chips + '</summary><div class="exp-body">' + prod + '</div></details>';
+          }).join('');
+          html += '<div id="ds-' + ds.id + '">' + panel(rr.name + ' — ' + ds.name, rr.score + '% (' + escapeHtml(rr.score_label || '') + ') · grade 3 perfect → 0 irrelevant; click a query for per-product grades',
+            '<div class="panel-body">' + rrows + '</div>') + '</div>';
+          continue;
+        }
         const order = { severe: 0, high: 1, medium: 2, minor: 3, pass: 4 };
         const cases = (rr.cases || []).slice().sort((a, b) => ((order[a.verdict] ?? 2) - (order[b.verdict] ?? 2)) || (b.divergence_pct - a.divergence_pct));
         const rows = cases.map((p) => {
@@ -1739,16 +1761,21 @@ function dashboardPage() {
             ' <span class="qc">' + escapeHtml(p.term_a.q) + ' <b>' + escapeHtml(String(p.term_a.total)) + '</b></span>' +
             ' <span class="qc">' + escapeHtml(p.term_b.q) + ' <b>' + escapeHtml(String(p.term_b.total)) + '</b></span>' +
             ' <span class="dvg">Δ' + escapeHtml(String(p.divergence_pct)) + '%</span>' + vicon;
-          const verdictLine = (vok ? '✓ Confirmed — reading re-checked against the live count' : '✗ Not confirmed — could not re-read this count') + (v.detail ? ' · ' + escapeHtml(v.detail) : '');
+          const when = v.method === 'live re-check' ? ('by live re-check' + (v.at ? ' ' + escapeHtml(v.at) : '')) : 'read once at capture (not re-checked live)';
+          const verdictLine = (vok ? '✓ Confirmed — ' + when : '✗ Not confirmed — could not read this count') + (v.detail ? ' · ' + escapeHtml(v.detail) : '');
+          const live = (t) => t.url ? ' <a class="relink" href="' + escapeHtml(t.url) + '" target="_blank" rel="noopener" title="Open the live count on ' + escapeHtml(rr.name) + ' to re-verify yourself">↗ live</a>' : '';
           return '<details class="exp"><summary>' + summary + '</summary>' +
             '<div class="exp-body">' +
-              '<div class="evrow"><code>' + escapeHtml(p.term_a.q) + '</code> → <b>' + escapeHtml(String(p.term_a.total)) + '</b> results</div>' +
-              '<div class="evrow"><code>' + escapeHtml(p.term_b.q) + '</code> → <b>' + escapeHtml(String(p.term_b.total)) + '</b> results</div>' +
+              '<div class="evrow"><code>' + escapeHtml(p.term_a.q) + '</code> → <b>' + escapeHtml(String(p.term_a.total)) + '</b> results' + live(p.term_a) + '</div>' +
+              '<div class="evrow"><code>' + escapeHtml(p.term_b.q) + '</code> → <b>' + escapeHtml(String(p.term_b.total)) + '</b> results' + live(p.term_b) + '</div>' +
               (p.note ? '<div class="muted" style="font-size:11px;margin-top:4px">' + escapeHtml(p.note) + '</div>' : '') +
               '<div class="muted" style="font-size:11px;margin-top:5px">' + verdictLine + '</div>' +
             '</div></details>';
         }).join('');
-        const cc = rr.verify_summary ? (' · ✓ ' + rr.verify_summary.confirmed + ' confirmed' + (rr.verify_summary.failed ? ' · ✗ ' + rr.verify_summary.failed + ' unconfirmed' : '')) : '';
+        const nRead = cases.filter((c) => (c.verify || {}).status === 'confirmed').length;
+        const nLive = cases.filter((c) => (c.verify || {}).method === 'live re-check').length;
+        const nFail = cases.filter((c) => (c.verify || {}).status !== 'confirmed').length;
+        const cc = ' · ✓ ' + nRead + ' readings valid' + (nLive ? ' (' + nLive + ' live-reverified)' : '') + (nFail ? ' · ✗ ' + nFail + ' unconfirmed' : '');
         html += '<div id="ds-' + ds.id + '">' + panel(rr.name + ' — ' + ds.name, rr.score + '% consistent (' + escapeHtml(rr.score_label || '') + ')' + cc,
           '<div class="panel-body">' + rows + '</div>') + '</div>';
       }

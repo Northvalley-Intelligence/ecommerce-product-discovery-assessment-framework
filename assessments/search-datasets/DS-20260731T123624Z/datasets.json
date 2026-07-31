@@ -1,0 +1,5365 @@
+{
+ "schema_version": "search-datasets-v0.1",
+ "domain": "home-improvement",
+ "retailers": [
+  "homedepot",
+  "lowes"
+ ],
+ "captured_at": "20260731T123624Z",
+ "captured": true,
+ "datasets": [
+  {
+   "id": "synonym-pairs",
+   "name": "Synonym / category mapping",
+   "kind": "consistency",
+   "description": "Equivalent-term pairs (category term vs synonym / genericized brand). A well-behaved search returns similar counts for both; big divergence means findability depends on the exact word.",
+   "scoring": "consistency = % of pairs with <40% result-count divergence (higher is better)",
+   "retailers": {
+    "homedepot": {
+     "site": "homedepot",
+     "name": "Home Depot",
+     "score": 30,
+     "score_label": "7/23 consistent",
+     "cases": [
+      {
+       "concept": "Drywall",
+       "term_a": {
+        "q": "drywall",
+        "total": 2411,
+        "url": "https://www.homedepot.com/s/drywall"
+       },
+       "term_b": {
+        "q": "sheetrock",
+        "total": 33,
+        "url": "https://www.homedepot.com/s/sheetrock"
+       },
+       "divergence_pct": 99,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "rechecked": true,
+        "detail": "drywall: 2411->2410, sheetrock: 33->33",
+        "method": "live re-check",
+        "at": "2026-07-30"
+       }
+      },
+      {
+       "concept": "Construction adhesive",
+       "term_a": {
+        "q": "construction adhesive",
+        "total": 1605,
+        "url": "https://www.homedepot.com/s/construction%20adhesive"
+       },
+       "term_b": {
+        "q": "liquid nails",
+        "total": 17,
+        "url": "https://www.homedepot.com/s/liquid%20nails"
+       },
+       "divergence_pct": 99,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "rechecked": true,
+        "detail": "liquid nails: 17->17",
+        "method": "live re-check",
+        "at": "2026-07-30"
+       }
+      },
+      {
+       "concept": "Concrete mix",
+       "term_a": {
+        "q": "concrete mix",
+        "total": 20,
+        "url": "https://www.homedepot.com/s/concrete%20mix"
+       },
+       "term_b": {
+        "q": "quikrete",
+        "total": 643,
+        "url": "https://www.homedepot.com/s/quikrete"
+       },
+       "divergence_pct": 97,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "rechecked": true,
+        "detail": "quikrete: 643->637",
+        "method": "live re-check",
+        "at": "2026-07-30"
+       }
+      },
+      {
+       "concept": "Weed killer",
+       "term_a": {
+        "q": "weed killer",
+        "total": 3078,
+        "url": "https://www.homedepot.com/s/weed%20killer"
+       },
+       "term_b": {
+        "q": "roundup",
+        "total": 249,
+        "url": "https://www.homedepot.com/s/roundup"
+       },
+       "divergence_pct": 92,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "rechecked": true,
+        "detail": "roundup: 249->251",
+        "method": "live re-check",
+        "at": "2026-07-30"
+       }
+      },
+      {
+       "concept": "Locking pliers",
+       "term_a": {
+        "q": "locking pliers",
+        "total": 106,
+        "url": "https://www.homedepot.com/s/locking%20pliers"
+       },
+       "term_b": {
+        "q": "vise grips",
+        "total": 1161,
+        "url": "https://www.homedepot.com/s/vise%20grips"
+       },
+       "divergence_pct": 91,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Cable ties",
+       "term_a": {
+        "q": "cable ties",
+        "total": 1602,
+        "url": "https://www.homedepot.com/s/cable%20ties"
+       },
+       "term_b": {
+        "q": "zip ties",
+        "total": 267,
+        "url": "https://www.homedepot.com/s/zip%20ties"
+       },
+       "divergence_pct": 83,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Rotary tool",
+       "term_a": {
+        "q": "rotary tool",
+        "total": 5616,
+        "url": "https://www.homedepot.com/s/rotary%20tool"
+       },
+       "term_b": {
+        "q": "dremel",
+        "total": 1508,
+        "url": "https://www.homedepot.com/s/dremel"
+       },
+       "divergence_pct": 73,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "String trimmer",
+       "term_a": {
+        "q": "string trimmer",
+        "total": 1799,
+        "url": "https://www.homedepot.com/s/string%20trimmer"
+       },
+       "term_b": {
+        "q": "weed eater",
+        "total": 800,
+        "url": "https://www.homedepot.com/s/weed%20eater"
+       },
+       "divergence_pct": 56,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Utility knife",
+       "term_a": {
+        "q": "utility knife",
+        "total": 207,
+        "url": "https://www.homedepot.com/s/utility%20knife"
+       },
+       "term_b": {
+        "q": "box cutter",
+        "total": 525,
+        "url": "https://www.homedepot.com/s/box%20cutter"
+       },
+       "divergence_pct": 61,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Wet/dry vacuum",
+       "term_a": {
+        "q": "wet dry vacuum",
+        "total": 1587,
+        "url": "https://www.homedepot.com/s/wet%20dry%20vacuum"
+       },
+       "term_b": {
+        "q": "shop vac",
+        "total": 648,
+        "url": "https://www.homedepot.com/s/shop%20vac"
+       },
+       "divergence_pct": 59,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Laminate sheet",
+       "term_a": {
+        "q": "laminate sheet",
+        "total": 695,
+        "url": "https://www.homedepot.com/s/laminate%20sheet"
+       },
+       "term_b": {
+        "q": "formica",
+        "total": 695,
+        "url": "https://www.homedepot.com/s/formica"
+       },
+       "divergence_pct": 0,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Acrylic sheet",
+       "term_a": {
+        "q": "acrylic sheet",
+        "total": 338,
+        "url": "https://www.homedepot.com/s/acrylic%20sheet"
+       },
+       "term_b": {
+        "q": "plexiglass",
+        "total": 338,
+        "url": "https://www.homedepot.com/s/plexiglass"
+       },
+       "divergence_pct": 0,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Penetrating oil",
+       "term_a": {
+        "q": "penetrating oil",
+        "total": 358,
+        "url": "https://www.homedepot.com/s/penetrating%20oil"
+       },
+       "term_b": {
+        "q": "wd-40",
+        "total": 26,
+        "url": "https://www.homedepot.com/s/wd-40"
+       },
+       "divergence_pct": 93,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Lawn fertilizer",
+       "term_a": {
+        "q": "lawn fertilizer",
+        "total": 185,
+        "url": "https://www.homedepot.com/s/lawn%20fertilizer"
+       },
+       "term_b": {
+        "q": "weed and feed",
+        "total": 520,
+        "url": "https://www.homedepot.com/s/weed%20and%20feed"
+       },
+       "divergence_pct": 64,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Spray foam",
+       "term_a": {
+        "q": "spray foam",
+        "total": 331,
+        "url": "https://www.homedepot.com/s/spray%20foam"
+       },
+       "term_b": {
+        "q": "great stuff",
+        "total": 136,
+        "url": "https://www.homedepot.com/s/great%20stuff"
+       },
+       "divergence_pct": 59,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Push-to-connect",
+       "term_a": {
+        "q": "push to connect fitting",
+        "total": 2627,
+        "url": "https://www.homedepot.com/s/push%20to%20connect%20fitting"
+       },
+       "term_b": {
+        "q": "shark bite",
+        "total": 1149,
+        "url": "https://www.homedepot.com/s/shark%20bite"
+       },
+       "divergence_pct": 56,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "House wrap",
+       "term_a": {
+        "q": "house wrap",
+        "total": 704,
+        "url": "https://www.homedepot.com/s/house%20wrap"
+       },
+       "term_b": {
+        "q": "tyvek",
+        "total": 371,
+        "url": "https://www.homedepot.com/s/tyvek"
+       },
+       "divergence_pct": 47,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "OSB",
+       "term_a": {
+        "q": "oriented strand board",
+        "total": 173,
+        "url": "https://www.homedepot.com/s/oriented%20strand%20board"
+       },
+       "term_b": {
+        "q": "osb",
+        "total": 378,
+        "url": "https://www.homedepot.com/s/osb"
+       },
+       "divergence_pct": 54,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Hardboard",
+       "term_a": {
+        "q": "hardboard",
+        "total": 379,
+        "url": "https://www.homedepot.com/s/hardboard"
+       },
+       "term_b": {
+        "q": "masonite",
+        "total": 569,
+        "url": "https://www.homedepot.com/s/masonite"
+       },
+       "divergence_pct": 33,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Circular saw",
+       "term_a": {
+        "q": "circular saw",
+        "total": 2045,
+        "url": "https://www.homedepot.com/s/circular%20saw"
+       },
+       "term_b": {
+        "q": "skil saw",
+        "total": 1440,
+        "url": "https://www.homedepot.com/s/skil%20saw"
+       },
+       "divergence_pct": 30,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Tongue&groove pliers",
+       "term_a": {
+        "q": "tongue and groove pliers",
+        "total": 1068,
+        "url": "https://www.homedepot.com/s/tongue%20and%20groove%20pliers"
+       },
+       "term_b": {
+        "q": "channel locks",
+        "total": 1395,
+        "url": "https://www.homedepot.com/s/channel%20locks"
+       },
+       "divergence_pct": 23,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Bleach",
+       "term_a": {
+        "q": "bleach",
+        "total": 904,
+        "url": "https://www.homedepot.com/s/bleach"
+       },
+       "term_b": {
+        "q": "clorox",
+        "total": 1375,
+        "url": "https://www.homedepot.com/s/clorox"
+       },
+       "divergence_pct": 34,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Joint compound",
+       "term_a": {
+        "q": "joint compound",
+        "total": 762,
+        "url": "https://www.homedepot.com/s/joint%20compound"
+       },
+       "term_b": {
+        "q": "spackle",
+        "total": 595,
+        "url": "https://www.homedepot.com/s/spackle"
+       },
+       "divergence_pct": 22,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      }
+     ],
+     "verify_summary": {
+      "confirmed": 23,
+      "failed": 0,
+      "method": "browser re-check vs recorded"
+     }
+    },
+    "lowes": {
+     "site": "lowes",
+     "name": "Lowe's",
+     "score": 48,
+     "score_label": "11/23 consistent",
+     "cases": [
+      {
+       "concept": "Drywall",
+       "term_a": {
+        "q": "drywall",
+        "total": 782,
+        "url": "https://www.lowes.com/search?searchTerm=drywall"
+       },
+       "term_b": {
+        "q": "sheetrock",
+        "total": 782,
+        "url": "https://www.lowes.com/search?searchTerm=sheetrock"
+       },
+       "divergence_pct": 0,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Construction adhesive",
+       "term_a": {
+        "q": "construction adhesive",
+        "total": 157,
+        "url": "https://www.lowes.com/search?searchTerm=construction%20adhesive"
+       },
+       "term_b": {
+        "q": "liquid nails",
+        "total": 29,
+        "url": "https://www.lowes.com/search?searchTerm=liquid%20nails"
+       },
+       "divergence_pct": 82,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Concrete mix",
+       "term_a": {
+        "q": "concrete mix",
+        "total": 60,
+        "url": "https://www.lowes.com/search?searchTerm=concrete%20mix"
+       },
+       "term_b": {
+        "q": "quikrete",
+        "total": 57,
+        "url": "https://www.lowes.com/search?searchTerm=quikrete"
+       },
+       "divergence_pct": 5,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Weed killer",
+       "term_a": {
+        "q": "weed killer",
+        "total": 358,
+        "url": "https://www.lowes.com/search?searchTerm=weed%20killer"
+       },
+       "term_b": {
+        "q": "roundup",
+        "total": 40,
+        "url": "https://www.lowes.com/search?searchTerm=roundup"
+       },
+       "divergence_pct": 89,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Locking pliers",
+       "term_a": {
+        "q": "locking pliers",
+        "total": 102,
+        "url": "https://www.lowes.com/search?searchTerm=locking%20pliers"
+       },
+       "term_b": {
+        "q": "vise grips",
+        "total": 19,
+        "url": "https://www.lowes.com/search?searchTerm=vise%20grips"
+       },
+       "divergence_pct": 81,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Cable ties",
+       "term_a": {
+        "q": "cable ties",
+        "total": 775,
+        "url": "https://www.lowes.com/search?searchTerm=cable%20ties"
+       },
+       "term_b": {
+        "q": "zip ties",
+        "total": 761,
+        "url": "https://www.lowes.com/search?searchTerm=zip%20ties"
+       },
+       "divergence_pct": 2,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Rotary tool",
+       "term_a": {
+        "q": "rotary tool",
+        "total": 168,
+        "url": "https://www.lowes.com/search?searchTerm=rotary%20tool"
+       },
+       "term_b": {
+        "q": "dremel",
+        "total": 167,
+        "url": "https://www.lowes.com/search?searchTerm=dremel"
+       },
+       "divergence_pct": 1,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "String trimmer",
+       "term_a": {
+        "q": "string trimmer",
+        "total": 344,
+        "url": "https://www.lowes.com/search?searchTerm=string%20trimmer"
+       },
+       "term_b": {
+        "q": "weed eater",
+        "total": 344,
+        "url": "https://www.lowes.com/search?searchTerm=weed%20eater"
+       },
+       "divergence_pct": 0,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Utility knife",
+       "term_a": {
+        "q": "utility knife",
+        "total": 358,
+        "url": "https://www.lowes.com/search?searchTerm=utility%20knife"
+       },
+       "term_b": {
+        "q": "box cutter",
+        "total": 382,
+        "url": "https://www.lowes.com/search?searchTerm=box%20cutter"
+       },
+       "divergence_pct": 6,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Wet/dry vacuum",
+       "term_a": {
+        "q": "wet dry vacuum",
+        "total": 257,
+        "url": "https://www.lowes.com/search?searchTerm=wet%20dry%20vacuum"
+       },
+       "term_b": {
+        "q": "shop vac",
+        "total": 529,
+        "url": "https://www.lowes.com/search?searchTerm=shop%20vac"
+       },
+       "divergence_pct": 51,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Laminate sheet",
+       "term_a": {
+        "q": "laminate sheet",
+        "total": 277,
+        "url": "https://www.lowes.com/search?searchTerm=laminate%20sheet"
+       },
+       "term_b": {
+        "q": "formica",
+        "total": 176,
+        "url": "https://www.lowes.com/search?searchTerm=formica"
+       },
+       "divergence_pct": 36,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Acrylic sheet",
+       "term_a": {
+        "q": "acrylic sheet",
+        "total": 601,
+        "url": "https://www.lowes.com/search?searchTerm=acrylic%20sheet"
+       },
+       "term_b": {
+        "q": "plexiglass",
+        "total": 601,
+        "url": "https://www.lowes.com/search?searchTerm=plexiglass"
+       },
+       "divergence_pct": 0,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Penetrating oil",
+       "term_a": {
+        "q": "penetrating oil",
+        "total": 63,
+        "url": "https://www.lowes.com/search?searchTerm=penetrating%20oil"
+       },
+       "term_b": {
+        "q": "wd-40",
+        "total": 60,
+        "url": "https://www.lowes.com/search?searchTerm=wd-40"
+       },
+       "divergence_pct": 5,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Lawn fertilizer",
+       "term_a": {
+        "q": "lawn fertilizer",
+        "total": 334,
+        "url": "https://www.lowes.com/search?searchTerm=lawn%20fertilizer"
+       },
+       "term_b": {
+        "q": "weed and feed",
+        "total": 87,
+        "url": "https://www.lowes.com/search?searchTerm=weed%20and%20feed"
+       },
+       "divergence_pct": 74,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Spray foam",
+       "term_a": {
+        "q": "spray foam",
+        "total": 71,
+        "url": "https://www.lowes.com/search?searchTerm=spray%20foam"
+       },
+       "term_b": {
+        "q": "great stuff",
+        "total": 29,
+        "url": "https://www.lowes.com/search?searchTerm=great%20stuff"
+       },
+       "divergence_pct": 59,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Push-to-connect",
+       "term_a": {
+        "q": "push to connect fitting",
+        "total": 497,
+        "url": "https://www.lowes.com/search?searchTerm=push%20to%20connect%20fitting"
+       },
+       "term_b": {
+        "q": "shark bite",
+        "total": 1259,
+        "url": "https://www.lowes.com/search?searchTerm=shark%20bite"
+       },
+       "divergence_pct": 61,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "House wrap",
+       "term_a": {
+        "q": "house wrap",
+        "total": 50,
+        "url": "https://www.lowes.com/search?searchTerm=house%20wrap"
+       },
+       "term_b": {
+        "q": "tyvek",
+        "total": 33,
+        "url": "https://www.lowes.com/search?searchTerm=tyvek"
+       },
+       "divergence_pct": 34,
+       "verdict": "minor",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "OSB",
+       "term_a": {
+        "q": "oriented strand board",
+        "total": 15,
+        "url": "https://www.lowes.com/search?searchTerm=oriented%20strand%20board"
+       },
+       "term_b": {
+        "q": "osb",
+        "total": 16,
+        "url": "https://www.lowes.com/search?searchTerm=osb"
+       },
+       "divergence_pct": 6,
+       "verdict": "pass",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Hardboard",
+       "term_a": {
+        "q": "hardboard",
+        "total": 3,
+        "url": "https://www.lowes.com/search?searchTerm=hardboard"
+       },
+       "term_b": {
+        "q": "masonite",
+        "total": 5,
+        "url": "https://www.lowes.com/search?searchTerm=masonite"
+       },
+       "divergence_pct": 40,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Circular saw",
+       "term_a": {
+        "q": "circular saw",
+        "total": 122,
+        "url": "https://www.lowes.com/search?searchTerm=circular%20saw"
+       },
+       "term_b": {
+        "q": "skil saw",
+        "total": 11,
+        "url": "https://www.lowes.com/search?searchTerm=skil%20saw"
+       },
+       "divergence_pct": 91,
+       "verdict": "severe",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Tongue&groove pliers",
+       "term_a": {
+        "q": "tongue and groove pliers",
+        "total": 102,
+        "url": "https://www.lowes.com/search?searchTerm=tongue%20and%20groove%20pliers"
+       },
+       "term_b": {
+        "q": "channel locks",
+        "total": 292,
+        "url": "https://www.lowes.com/search?searchTerm=channel%20locks"
+       },
+       "divergence_pct": 65,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Bleach",
+       "term_a": {
+        "q": "bleach",
+        "total": 33,
+        "url": "https://www.lowes.com/search?searchTerm=bleach"
+       },
+       "term_b": {
+        "q": "clorox",
+        "total": 169,
+        "url": "https://www.lowes.com/search?searchTerm=clorox"
+       },
+       "divergence_pct": 80,
+       "verdict": "high",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      },
+      {
+       "concept": "Joint compound",
+       "term_a": {
+        "q": "joint compound",
+        "total": 36,
+        "url": "https://www.lowes.com/search?searchTerm=joint%20compound"
+       },
+       "term_b": {
+        "q": "spackle",
+        "total": 110,
+        "url": "https://www.lowes.com/search?searchTerm=spackle"
+       },
+       "divergence_pct": 67,
+       "verdict": "medium",
+       "verify": {
+        "status": "confirmed",
+        "method": "read at capture"
+       }
+      }
+     ],
+     "verify_summary": {
+      "confirmed": 23,
+      "failed": 0,
+      "method": "browser re-check vs recorded"
+     }
+    }
+   }
+  },
+  {
+   "id": "dimensions",
+   "name": "Dimension / notation & hash",
+   "kind": "relevance",
+   "scoring": "graded relevance (Cortex, llama3.2:3b judge) → NDCG@10; plus count-band & SKU-overlap",
+   "retailers": {
+    "homedepot": {
+     "site": "homedepot",
+     "name": "The Home Depot",
+     "score": 90,
+     "score_label": "mean NDCG@10, n=24",
+     "cases": [
+      {
+       "query": "1/2 in screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 3182,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "#8 x 1/2 in. Zinc Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Half-inch screw; 1/2-in equals 1/2 in.",
+         "t": "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#4 is the No. 4 gauge; matches 1/2 in screw.",
+         "t": "#4 x 1/2 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "#8 x 1/2 in. Phillips Pan Head Zinc Plated Sheet Metal Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "#8 1/2 in. Phillips Pan-Head Self-Drilling Screws (300-Pack)"
+        }
+       ]
+      },
+      {
+       "query": "3/8 in bolt",
+       "ndcg": 0.861,
+       "k": 6,
+       "total": 1229,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "3/8 in.-16 x 1 in. Zinc Plated Hex Bolt (25-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 3/8 in bolt.",
+         "t": "3/8 in.-16 x 1-1/2 in. Zinc Plated Hex Bolt (25-Pack)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "3/8 in.- 16 x 3 in. Zinc Plated Hex Bolt (25-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 3/8 in bolt.",
+         "t": "3/8 in.-16 x 2-1/2 in. Zinc Plated Hex Bolt"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt instead of a standard bolt.",
+         "t": "3/8 in.-16 x 8 in. Zinc Plated Hex Bolt"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt instead of a standard bolt.",
+         "t": "3/8 in.-16 x 5 in. Zinc Plated Hex Bolt"
+        }
+       ]
+      },
+      {
+       "query": "#8 wood screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 2222,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 1 in. Zinc Plated Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 3/4 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches #8 wood screw.",
+         "t": "#8 x 2-1/2 in. #2 Phillips Bugle Head Coarse Thread Wood Screws 1 lb. Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 1-1/4 in. Star Drive Flat Head Interior Wood Screws (242-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 1-1/4 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 2 in. Star Drive Dual Flat Head Coarse Thread Construction Screws 1 lb. Box"
+        }
+       ]
+      },
+      {
+       "query": "3/4 in pvc pipe",
+       "ndcg": 0.996,
+       "k": 10,
+       "total": 3879,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. x 10 ft. PVC Schedule 40 Pressure Plain-"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. PVC Schedule 40 S x S Coupling"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. PVC Schedule. 40 90° S x S Elbow Fitting"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. x 24 in. PVC DWV Schedule 40 Pipe"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. Schedule 40 S x S x S Tee"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. x 3/4 in. 90 Degree PVC Socket x Socket "
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 in. PVC Schedule 40 MPT x S Male Adapter"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a length of pipe instead of a fitting.",
+         "t": "3/4 in. x 2 ft. PVC Schedule 40 Pressure Plain E"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4 x 10 PR 200 Pipe Plain End"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a length of pipe instead of a fitting.",
+         "t": "3/4 in. x 5 ft. White Furniture Grade Schedule 4"
+        }
+       ]
+      },
+      {
+       "query": "1/2 in copper pipe",
+       "ndcg": 0.942,
+       "k": 10,
+       "total": 4840,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "1/2 in. x 10 ft. Copper Type L Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "1/2 in. x 5 ft. Copper Type M Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "1/2 in. x 10 ft. Copper Type M Hard Temper Strai"
+        },
+        {
+         "grade": 0,
+         "reason": "Incorrect size unit and type mismatch",
+         "t": "ProPress 3/4 in. x 1/2 in. x 1/2 in. Press Coppe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "1/2 in. x 5 ft. Copper Type L Pipe"
+        },
+        {
+         "grade": 0,
+         "reason": "Incorrect size unit and a fitting, not a length of pipe.",
+         "t": "1/2 in. Copper Adapter Solder x MPT Fitting"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a tube strap, not a length of pipe.",
+         "t": "1/2 in. Copper Tube Strap (5-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "ProPress 1/2 in. Press Copper Tee (5-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "1/2 in. Copper Pressure Cup x FIP Female Adapter"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "1/2 in. Copper Pressure All Cup Tee Fitting"
+        }
+       ]
+      },
+      {
+       "query": "12 gauge wire",
+       "ndcg": 0.978,
+       "k": 10,
+       "total": 845,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire (copper vs. unknown material).",
+         "t": "500 ft. 12 Gauge Black Stranded Copper THHN Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12-gauge size but a different type of wire.",
+         "t": "100 ft. 150 lb. 12-Gauge Galvanized Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire.",
+         "t": "50 ft. 12 Gauge White Solid Copper THHN Wire"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire (Romex) and not a single length.",
+         "t": "250 ft. 12/2 Solid Romex SIMpull CU NM-B W/G Wir"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire (copper vs. unknown material).",
+         "t": "50 ft. 12 Gauge Black Stranded Copper THHN Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire (copper vs. unknown material).",
+         "t": "25 ft. 12 Gauge Black Stranded Copper THHN Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire (copper vs. unknown material).",
+         "t": "100 ft. 12 Gauge Black Stranded Copper THHN Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a type of wire, not just wire itself.",
+         "t": "500 ft. 12 Gauge Green Stranded Copper THHN Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire (copper vs. unknown material).",
+         "t": "50 ft. 12 Gauge Black Solid Copper THHN Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge size but a different type of wire.",
+         "t": "50 ft. 12 Gauge Green Stranded Copper THHN Wire"
+        }
+       ]
+      },
+      {
+       "query": "10 ft cable",
+       "ndcg": 0.794,
+       "k": 10,
+       "total": 797,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct length but a type of cable, not a general cable",
+         "t": "10 ft., 12/2 Solid CU MC (Metal Clad) Armorlite "
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "Steel Cable with Looped Ends, 15 ft. Long"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a type of cable, not a general cable",
+         "t": "10 ft. 10-Gauge 4 Conductor 600-Volt Black SOOW "
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a type of cable, not just a general cable.",
+         "t": "10 ft. 16/3 Light Duty Computer, Monitor, TV Rep"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (cable vs wire)",
+         "t": "100 ft. 10 Gauge Black Stranded Copper THHN Wire"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (cable vs wire)",
+         "t": "15 ft. 12/2 Solid Romex SIMpull CU NM-B W/G Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a type of cable, not a general cable",
+         "t": "10 ft. 10-Gauge 3 Conductor 600-Volt Black SOOW "
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (cable vs wire)",
+         "t": "15 ft. 14/2 Solid Romex SIMpull CU NM-B W/G Wire"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a type of cable, not just a general cable",
+         "t": "10 ft. High Performance 24AWG CAT5e Cable with S"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect diameter and type of cable.",
+         "t": "3/8 in. x 9 ft. Galvanized Cable Sling with Loop"
+        }
+       ]
+      },
+      {
+       "query": "10 mm socket",
+       "ndcg": 0.861,
+       "k": 10,
+       "total": 1337,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size and metric type but a different drive type.",
+         "t": "3/8 in. Drive 10 mm 6-Point Metric Deep Socket"
+        },
+        {
+         "grade": 0,
+         "reason": "Socket is not a standard part name",
+         "t": "1/4 in. Drive 10 mm 6-Point Metric Standard Sock"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size and metric unit but incorrect drive type.",
+         "t": "3/8 in. Drive 10 mm 6-Point Metric Standard Sock"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a set, not a single socket.",
+         "t": "10 mm Metric Socket Set (8-Piece)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and metric type but incorrect drive type.",
+         "t": "1/4 in. Drive 10 mm 6-Point Metric Deep Socket"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size (10mm) but wrong drive type and application.",
+         "t": "SHOCKWAVE 3/8 in. Drive 10mm Deep 6 Point Impact"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size (10mm) but wrong drive type (3/8 in.)",
+         "t": "3/8 in. Drive 10 mm Hex Bit Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but wrong drive type (1/4 in.)",
+         "t": "1/4 in. Drive x 10 mm 6-Point Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but wrong drive type and unit (1/8 in instead of mm)",
+         "t": "3/8 in. Drive x 10 mm Deep 6-Point Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (socket) but incorrect drive type.",
+         "t": "1/4 in. Drive x 10 mm 12-Point Socket"
+        }
+       ]
+      },
+      {
+       "query": "#4 rebar",
+       "ndcg": 0.976,
+       "k": 10,
+       "total": 217,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 20 ft. #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 10 ft. #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 4 ft. #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (#4) but a different type (rebar bender) and material (5/8 bar)",
+         "t": "Manual Hand Operated Rebar Bender for 5/8 Bar wi"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in x 2 ft. #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 4 ft. #4 Rebar (6 Per Bundle)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (#4 rebars) but not a standard length or material.",
+         "t": "0.5 in. x 36 in. #4 Black Nature Surface FRP Reb"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 10 ft. #4 Steel Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 72 in. #4 FRP Rebar Nature Surface (6-"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2 in. x 72 in. #4 Nature Surface FRP Rebar (6-"
+        }
+       ]
+      },
+      {
+       "query": "#7 drill bit",
+       "ndcg": 0.945,
+       "k": 10,
+       "total": 1625,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct #7 drill bit but a tap, not a standard drill bit.",
+         "t": "1/4 in. -20 High Speed Steel Tap and #7 Drill Bi"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct #7 drill bit size but a different type and brand.",
+         "t": "#7 High Speed Steel Killer Force Drill Bit (12-P"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of drill bit.",
+         "t": "#7 High Speed Steel Premium General Purpose Blac"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory (spade bit) of a drill bit set, not the drill bit itself.",
+         "t": "SPEEDemon High Speed Steel Spade Bit Set (12-Pie"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a twist drill, not a general purpose drill bit.",
+         "t": "#7 High Speed Steel General Purpose Short Twist "
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a set, not a single drill bit.",
+         "t": "SHOCKWAVE Impact Duty Titanium Drill Bit Set (7-"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (drill bit instead of drill)",
+         "t": "Shockwave 7/32 in. Titanium Drill Bit"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory of a drill bit set, not the drill bit itself.",
+         "t": "Impact Step Drill Bit Set (3-Piece)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct drill bit size but a set, not a single item.",
+         "t": "Black Oxide Round Shank Drill Bit Set (7-Piece)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (#7), but 'drill bit' is not the head noun of the query.",
+         "t": "7/8 in. #7 Black Oxide Step Drill Bit (1-Step)"
+        }
+       ]
+      },
+      {
+       "query": "#57 stone",
+       "ndcg": 0.792,
+       "k": 10,
+       "total": 815,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Same broad category (#stone) but not an ideal match for decorative landscaping material.",
+         "t": "0.5 cu. ft. Bagged All-Purpose Decorative Landsc"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but incorrect quantity and unit.",
+         "t": "50 lb. All-Purpose Gravel"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (#stone) but not an ideal match for #57 specific size.",
+         "t": "0.5 cu. ft. Bagged Marble Chip Landscape Rock"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct material (#57) but a type of adhesive (stone), not a natural stone.",
+         "t": "Rock Glue 1.05 Gal. Ready to Use Landscaping Sto"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of stone.",
+         "t": "0.5 cu. ft. Bagged Pea Gravel Pebble Landscape R"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (#stone) but does not satisfy the intent",
+         "t": "0.5 cu. ft. Bagged Calico Stone Decorative Lands"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (#stone) but does not satisfy the intent",
+         "t": "0.5 cu. ft. Bagged Pond Pebble Landscape Rock"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material (#57) but not a stone, rather a type of adhesive.",
+         "t": "Rock Glue 4.75 Gal. Ready to Use Landscaping Sto"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (#stone) but does not satisfy the intent",
+         "t": "0.25 cu. ft. 3/4 in. Crushed Gravel Bagged Lands"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (#stone) but incorrect size unit and material.",
+         "t": "0.40 cu. ft. 3/16 in. 30 lbs. Black Gravel"
+        }
+       ]
+      },
+      {
+       "query": "#40 roller chain",
+       "ndcg": 0.89,
+       "k": 10,
+       "total": 534,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct chain size but a different type (metal vs roller) and application.",
+         "t": "Roller Metal Chain 1 in. x 120 in. for Sliding G"
+        },
+        {
+         "grade": 1,
+         "reason": "Same number but different type and size.",
+         "t": "#80 Connecting Link (4-Pack)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size (#40) but a different type (straight link)",
+         "t": "2/0 x 40 ft. Zinc Plated Steel Straight Link Cha"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type (sash vs roller)",
+         "t": "#35 x 100 ft. Zinc Plated Steel Sash Chain"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a chainsaw chain, not roller chain.",
+         "t": "10 in. 0.043-Gauge Replacement Chainsaw Chain, 4"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size (#40) but incorrect type (straight link instead of roller chain)",
+         "t": "#2 x 30 ft. Stainless Steel Straight Link Chain"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct pitch and gauge but a different link length.",
+         "t": "10 in. 3/8 in. Pitch, 0.043 in. Gauge, 40 Link R"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct chain size but a different type (428) and length.",
+         "t": "428 Roller Chain 20 ft. 474 Links with Chain Bre"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain gauge but incorrect type (chainsaw chain instead of roller chain).",
+         "t": "10 in. 0.043 Gauge Chainsaw Chain, 40 Link"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain gauge but incorrect type and size.",
+         "t": "10 in. 0.043-Gauge Replacement Chainsaw Chain 40"
+        }
+       ]
+      },
+      {
+       "query": "#15 felt",
+       "ndcg": 0.967,
+       "k": 10,
+       "total": 259,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct material but a large quantity and different application.",
+         "t": "FeltBuster 1000 sq. ft. Synthetic Roofing Underl"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct material but a shingle, not felt.",
+         "t": "Shingle-Mate 432 sq. ft. Fiberglass-Reinforced R"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but not a specific type of felt.",
+         "t": "StormGuard 200 sq. ft. Synthetic Patterned-Surfa"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but not for felt application.",
+         "t": "Tiger Paw 1000 sq. ft. Premium Synthetic Roofing"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but a large roll of felt, not a small quantity like #15.",
+         "t": "WeatherWatch 36 in. x 50 ft., 150 sq. ft. Minera"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt (roof deck protection) than the searched material (#15 felt).",
+         "t": "15 432 sq. ft. Felt Roof Deck Protection"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but not a specific type of felt.",
+         "t": "216 sq. ft. Felt Roof Underlayment"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but not a specific type of felt.",
+         "t": "EXO50 1000 sq. ft. Premium Synthetic Roofing Und"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but not for felt application.",
+         "t": "EXO25 1000 sq. ft. Synthetic Roofing Underlaymen"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of felt.",
+         "t": "#30 216 sq. ft. Felt Roof Deck Protection"
+        }
+       ]
+      },
+      {
+       "query": "4 rebar",
+       "ndcg": 0.766,
+       "k": 10,
+       "total": 223,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.43,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size (#4) but incorrect length (20ft), not a standard rebar length",
+         "t": "1/2 in. x 20 ft. #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (#4) but incorrect length (10ft), not a standard 4 rebar",
+         "t": "1/2 in. x 10 ft. #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (rebar) but not exact length.",
+         "t": "1/2 in. x 4 ft. #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct rebar type but not a length of rebar as requested.",
+         "t": "Cordless Electric Hydraulic Rebar Cutter Portabl"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (#4) but incorrect length (2ft), and type (rebar)",
+         "t": "1/2 in x 2 ft. #4 Rebar"
+        },
+        {
+         "grade": 0,
+         "reason": "Rebar is a type of material, not 'rebar' as a singular unit.",
+         "t": "1/2 in. x 4 ft. #4 Rebar (6 Per Bundle)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 4 rebar.",
+         "t": "1/2 in. x 60 in. #4 Nature Surface FRP Rebar (12"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct diameter but a bender, not rebar.",
+         "t": "Manual Steel Rod Bender 4-14 mm Diameter Medium "
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 4 rebar.",
+         "t": "1/2 in. x 72 in. #4 FRP Rebar Nature Surface (6-"
+        },
+        {
+         "grade": 0,
+         "reason": "Rebar is a specific type of material, but the product is a FRP rebars with different dimensions.",
+         "t": "1/2 in. x 72 in. #4 Black Nature Surface FRP Reb"
+        }
+       ]
+      },
+      {
+       "query": "1/2 in rebar",
+       "ndcg": 0.982,
+       "k": 10,
+       "total": 1769,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.54,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 10 ft. #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 20 ft. #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in x 2 ft. #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of rebar than specified.",
+         "t": "Manual Hand Operated Rebar Bender for 5/8 Bar wi"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 4 ft. #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 72 in. #4 FRP Rebar Nature Surface (6-"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 2 ft. #4 Rebar (6-Per Bundle)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 4 in. x 6 in. Rebar Demon SDS-Plus 4-C"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 72 in. #4 Black Nature Surface FRP Reb"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2 in. x 72 in. #4 Nature Surface FRP Rebar (6-"
+        }
+       ]
+      },
+      {
+       "query": "7 mm drill bit",
+       "ndcg": 0.796,
+       "k": 10,
+       "total": 1589,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.18,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of drill bit.",
+         "t": "Metric Brad Point Bit Set (7-Piece)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of multiple bits, not a single drill bit.",
+         "t": "Black Oxide Round Shank Drill Bit Set (7-Piece)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a set, not a single drill bit.",
+         "t": "SHOCKWAVE Impact Duty Titanium Drill Bit Set (7-"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (6.00 mm) but incorrect type (tap instead of drill bit).",
+         "t": "m7 x 1 High Speed Steel Tap and 6.00 mm Drill Bi"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a hammer drill bit kit, not a single drill bit.",
+         "t": "SHOCKWAVE Carbide Hammer Drill Bit Kit (7-Piece)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of brad-point bits, not a single drill bit.",
+         "t": "High Speed Steel Brad-Point Drill Bit Set (6-Pie"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a twist drill bit, not a standard drill bit.",
+         "t": "SHOCKWAVE IMPACT DUTY Titanium Twist Drill Bit S"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of drill bits, not a single item.",
+         "t": "Black and Gold Drill Bit Set (14-Piece)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of drill bits, not a single item.",
+         "t": "Black and Gold Twist Drill Bit Set (21-Piece)"
+        },
+        {
+         "grade": 0,
+         "reason": "Drill bit not found; tap is a different tool.",
+         "t": "1/4 in. -20 High Speed Steel Tap and #7 Drill Bi"
+        }
+       ]
+      },
+      {
+       "query": "7 in drill bit",
+       "ndcg": 0.928,
+       "k": 10,
+       "total": 1619,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.11,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but incorrect type; drill bit is not a length of pipe.",
+         "t": "1/4 in. x 7in. Steel Carbide SDS Drill Bit (1-Pi"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (drill bit instead of drill)",
+         "t": "5/32 in. x 7 in. 2-Cutter SDS-PLUS Carbide Drill"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of drill bit.",
+         "t": "3/16 in. x 7in. Steel Carbide SDS Drill Bit (1-P"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (drill bit instead of drill)",
+         "t": "3/16 in. x 7 in. 2-Cutter SDS-PLUS Carbide Drill"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type and unit.",
+         "t": "3/16 in. x 8 in. High Speed Steel Extra Long Twi"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size range but not a drill bit",
+         "t": "2 in. to 7 in. Black Oxide Adjustable Hole Saw C"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of drill bits, not a single item.",
+         "t": "Black Oxide Round Shank Drill Bit Set (7-Piece)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a set of drill bits, not a single item.",
+         "t": "SHOCKWAVE Impact Duty Titanium Drill Bit Set (7-"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (drill bit instead of length)",
+         "t": "3/8 in. x 12 in. Black and Gold Twist Drill Bit"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of drill bits, not a single item.",
+         "t": "Black and Gold Drill Bit Set (14-Piece)"
+        }
+       ]
+      },
+      {
+       "query": "57 stone",
+       "ndcg": 0.792,
+       "k": 10,
+       "total": 813,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.67,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but not an ideal match for decorative landscaping.",
+         "t": "0.5 cu. ft. Bagged All-Purpose Decorative Landsc"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct weight but incorrect material and unit.",
+         "t": "50 lb. All-Purpose Gravel"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but does not satisfy the intent",
+         "t": "0.5 cu. ft. Bagged Marble Chip Landscape Rock"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct material (stone) but incorrect type (landscaping glue)",
+         "t": "Rock Glue 1.05 Gal. Ready to Use Landscaping Sto"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of gravel.",
+         "t": "0.5 cu. ft. Bagged Pea Gravel Pebble Landscape R"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but does not satisfy the intent.",
+         "t": "0.5 cu. ft. Paver Base"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but does not satisfy the intent of a specific quantity or type.",
+         "t": "0.5 cu. ft. Bagged Calico Stone Decorative Lands"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material (stone) but incorrect size unit and type (glue)",
+         "t": "Rock Glue 4.75 Gal. Ready to Use Landscaping Sto"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but does not satisfy the intent of a specific quantity or type.",
+         "t": "0.5 cu. ft. Bagged River Pebble Landscape Rock"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but incorrect size unit and weight.",
+         "t": "0.40 cu. ft. 3/16 in. 30 lbs. Black Gravel"
+        }
+       ]
+      },
+      {
+       "query": "40 mm chain",
+       "ndcg": 0.693,
+       "k": 10,
+       "total": 489,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.11,
+       "verdict": "high",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type (link vs chain)",
+         "t": "2/0 x 40 ft. Zinc Plated Steel Straight Link Cha"
+        },
+        {
+         "grade": 0,
+         "reason": "Chain not mentioned; product is a length of metal rod.",
+         "t": "3/8 in. x 3 ft. Case Hardened Yellow Zinc Plated"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type and length.",
+         "t": "#2/0 x 50 ft. Zinc Plated Steel Passing Link Cha"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different unit and type of chain.",
+         "t": "40 in. Towing Safety Chains with S Hooks - 5,000"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different length and type.",
+         "t": "#2 x 30 ft. Stainless Steel Straight Link Chain"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type and length.",
+         "t": "#135 x 15 ft. Zinc Plated Steel Handy Link Chain"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct drive links but a chainsaw chain, not a standard chain.",
+         "t": "10 in. Chainsaw Chain with 40 Drive Links (5-Pac"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of chain.",
+         "t": "S40 Chainsaw Chain for 10 in. Bar, Fits Echo, Cr"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type and length.",
+         "t": "#3 x 15 ft. Zinc Plated Steel Double Loop Chain"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size (2/0) but incorrect type and length.",
+         "t": "2/0 x 10 ft. Zinc Straight Link Chain"
+        }
+       ]
+      },
+      {
+       "query": "15 in felt",
+       "ndcg": 0.888,
+       "k": 10,
+       "total": 92,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.33,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt (roof deck protection)",
+         "t": "15 432 sq. ft. Felt Roof Deck Protection"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of felt.",
+         "t": "216 sq. ft. Felt Roof Underlayment"
+        },
+        {
+         "grade": 0,
+         "reason": "Felt size is not specified as inches.",
+         "t": "3/8 in. Brown Self-Adhesive Felt Pads (75-Pack)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt (synthetic vs natural)",
+         "t": "FeltBuster 1000 sq. ft. Synthetic Roofing Underl"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different width and material than requested.",
+         "t": "4 1/4 in. x 6 in. Brown Rectangular Felt Heavy D"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of felt.",
+         "t": "3 in. Beige Round Felt Heavy Duty Self Adhesive "
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt pad.",
+         "t": "Scotch 1 in. x 4 in. Brown Rectangle Felt Pads,"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of material than felt.",
+         "t": "Tiger Paw 1000 sq. ft. Premium Synthetic Roofing"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of felt.",
+         "t": "#30 216 sq. ft. Felt Roof Deck Protection"
+        },
+        {
+         "grade": 0,
+         "reason": "Felt size is not specified as 15 inches.",
+         "t": "1/2 in. x 58 in. Beige Felt Strip Heavy Duty Sel"
+        }
+       ]
+      },
+      {
+       "query": "8 in wood screw",
+       "ndcg": 0.991,
+       "k": 6,
+       "total": 2222,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 8 in wood screw.",
+         "t": "TimberLOK Structural Wood Screws - 8 inch wood screws with hex head - Black (50 Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 8 in wood screw.",
+         "t": "TimberLOK Structural Wood Screws - 8 inch wood screws with hex head - Black (12 Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 8 in wood screw.",
+         "t": "8 in. HeadLOK Structural Wood Screws Flat Head Wood Screws, Black (50-Pack)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge (#8) but incorrect length (2 in), not a perfect match",
+         "t": "#8 x 2 in Star Flat Head Outdoor Deck Screw (500 pack)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of screw.",
+         "t": "TimberLOK 3/16 in. x 8 in. Heavy Duty External Hex Drive, Hex Head Structural Wood Screw (250-Pack)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of screw.",
+         "t": "3/8 in. x 8 in. Star Drive Low Profile Washer Head Rugged Structural Wood Screw (20-Pack)"
+        }
+       ]
+      },
+      {
+       "query": "8 mm wood screw",
+       "ndcg": 0.877,
+       "k": 6,
+       "total": 432,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.43,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct gauge (#8) but incorrect size and type (wood screw instead of wood)",
+         "t": "#8 x 3/4 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 0,
+         "reason": "No match for 8mm size and type.",
+         "t": "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+        },
+        {
+         "grade": 0,
+         "reason": "No match for 8mm size; uses gauge notation instead.",
+         "t": "#8 x 1-1/4 in. #2 Phillips, Wafer-Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of screw.",
+         "t": "8 x 3/4 in. Philips Truss Head Drill Point Lath Screws (200-Pack)"
+        },
+        {
+         "grade": 0,
+         "reason": "No match for exact size and type.",
+         "t": "#8 x 1 in. Zinc Plated Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 0,
+         "reason": "No match for exact size and type.",
+         "t": "#8 x 3 in. #2 Phillips Bugle Head Coarse Thread Wood Screws 1 lb. Box"
+        }
+       ]
+      },
+      {
+       "query": "1/2in screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 3182,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2in screw.",
+         "t": "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#4 is the No. 4 gauge; matches 1/2in screw.",
+         "t": "#4 x 1/2 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Half-inch screw; 1/2-in equals 1/2 in.",
+         "t": "8 x 1/2 in. Phillips Truss Head Drill Point Lath Screws (260-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "10-Pack #8 x 2-1/2 in. #2 Phillips Bugle Head Coarse Thread Coated Exterior Wood Deck Screws (100 lbs./8600-Piece)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 inch screw.",
+         "t": "#8 x 1/2 in. Zinc Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Half-inch screw; 1/2-in equals 1/2 in.",
+         "t": "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+        }
+       ]
+      },
+      {
+       "query": "no 8 wood screw",
+       "ndcg": 0.907,
+       "k": 6,
+       "total": 2222,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 2-1/2 in. #2 Phillips Bugle Head Coarse Thread Wood Screws 1 lb. Box"
+        },
+        {
+         "grade": 0,
+         "reason": "No 8 gauge matches but incorrect size and type.",
+         "t": "#8 x 3 in. #2 Phillips Bugle Head Coarse Thread Wood Screws 1 lb. Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 2 in. Star Drive Trim-Head Finish Screw (100-per Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 2 in. Star Drive Flat Head Interior Wood Screws 1 lb.-Box (153-Piece)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 1-1/2 in. Zinc Plated Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "#8 x 3/4 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        }
+       ]
+      }
+     ]
+    },
+    "lowes": {
+     "site": "lowes",
+     "name": "Lowe's",
+     "score": 88,
+     "score_label": "mean NDCG@10, n=31",
+     "cases": [
+      {
+       "query": "1/2 in screw",
+       "ndcg": 0.951,
+       "k": 6,
+       "total": 258,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 14 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#6 is the No. 6 gauge; matches half-inch screw.",
+         "t": "Hillman #6 x 1/2-in Zinc-plated Interior Construction screws 20 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw type (#6) does not match the query (1/2 in screw).",
+         "t": "Power Pro One #6 x 1/2-in Epoxy Exterior Multi-material screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "Teks #8 x 1/2-in Phillips -Drive Self-drilling Lath Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#7 is the No. 7 gauge; matches 1/2 in screw.",
+         "t": "Hillman #7 x 1/2-in Socket hex -Drive Standard Sheet Metal Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 100 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "3/8 in bolt",
+       "ndcg": 0.8,
+       "k": 6,
+       "total": 233,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "Hillman 3/8-in x 7-in Zinc-Plated Coarse Thread Hex Bolt"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "Hillman 3/8-in x 3-in Zinc-Plated Coarse Thread Hex Bolt"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "Hillman 3/8-in x 1-in Zinc-Plated Coarse Thread Hex Bolt"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "Hillman 3/8-in x 4-in Zinc-plated Coarse Thread Hex Bolt -Count"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a hex bolt, not a standard bolt.",
+         "t": "Hillman 3/8-in x 3-in Zinc-Plated Coarse Thread Hex Bolt (2-Count)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 3/8 in bolt.",
+         "t": "Hillman 3/8-in x 1-1/2-in Zinc-Plated Coarse Thread Hex Bolt"
+        }
+       ]
+      },
+      {
+       "query": "#8 wood screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 1291,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Power Pro #8 x 1-1/4-in Epoxy Exterior Construction screws 200 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Simpson Strong-Tie Strong-Drive SDWS Timber #12 x 8-in Double-barrier Exterior Construction screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Power Pro #8 x 1-1/2-in Epoxy Exterior Construction screws 75 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Power Pro #8 x 2-in Epoxy Exterior Construction screws 125 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Simpson Strong-Tie Strong-Drive SDWS Timber #12 x 8-in Double-barrier Exterior Construction screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Hillman #8 x 3/4-in Zinc-plated Interior Construction screws 12 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "3/4 in pvc pipe",
+       "ndcg": 1,
+       "k": 10,
+       "total": 204,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "Charlotte Pipe 3/4-in Schedule 40 PVC Pipe"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "IPEX 3/4-in x 10-ft 200 Psi SDR 21 PVC Pipe"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "3/4-in x 5-ft 480 PSI Schedule 40 PVC Pipe"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "Charlotte Pipe 3/4-in 90-Degree Schedule 40 PVC "
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a coupling, not a length of pipe.",
+         "t": "Charlotte Pipe 3/4-in Schedule 40 PVC Coupling"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 3/4 in PVC size but a fitting, not a length of pipe.",
+         "t": "Charlotte Pipe 3/4-in Schedule 40 PVC Tee for Pr"
+        },
+        {
+         "grade": 0,
+         "reason": "No PVC pipe; galvanized steel instead.",
+         "t": "Hubbell - RACO 2 -Gang Galvanized steel New work"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match the head noun 'pipe'",
+         "t": "Hubbell - TayMac 1 -Gang PVC Weatherproof New wo"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match the head noun 'pipe'",
+         "t": "CANTEX - 4-in x 4-in x 4-in Gray PVC New work/Ol"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match the head noun 'pipe'",
+         "t": "IPEX - 1/2-in x 10-ft 600 Psi Schedule 40 PVC Pi"
+        }
+       ]
+      },
+      {
+       "query": "1/2 in copper pipe",
+       "ndcg": 1,
+       "k": 6,
+       "total": 187,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "Streamline 1/2-in x 5-ft Copper Type M Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "Streamline 1/2-in x 10-ft Copper Type M Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "Streamline 1/2-In X 2-ft Copper Type L Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "Streamline 1/2-in x 10-ft Copper Type L Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "Streamline 1/2-in x 5-ft Copper Type L Pipe"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in copper pipe.",
+         "t": "Streamline 1/2-in x 2-ft Copper Type M Pipe"
+        }
+       ]
+      },
+      {
+       "query": "12 gauge wire",
+       "ndcg": 0.787,
+       "k": 10,
+       "total": 141,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire (Romex vs standard wire)",
+         "t": "Southwire 250-ft 12 / 2 Romex SIMpull Solid CU N"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire (Romex) and not a single length of wire.",
+         "t": "Southwire 50-ft 12 / 2 Romex SIMpull Solid CU NM"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12 gauge wire but a type of electrical wire, not just 'wire'.",
+         "t": "Southwire 100-ft 12 / Romex SIMpull Solid CU NM-"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire (Romex) and not a single length of wire.",
+         "t": "Southwire 25-ft 12 / 2 Romex SIMpull Solid CU NM"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire (aluminum instead of copper).",
+         "t": "Southwire Armorlite 250-ft 12 / 2 Solid Aluminum"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire (Romex vs standard wire)",
+         "t": "Southwire 1000-ft 12 / 2 Romex SIMpull Solid CU "
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire.",
+         "t": "Southwire - 2-2-2-4 Stranded Aluminum USE By-the"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but a different type of wire.",
+         "t": "Southwire - 6 / 3 Romex SIMpull Stranded CU NM-B"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct 12-gauge wire but a specific length and type, not an ideal match.",
+         "t": "Southwire - 1-ft 6 / 3 UF-B Wire W/G ( By-the-fo"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge but incorrect type (aluminum instead of copper or other materials)",
+         "t": "Southwire - 4/0-4/0-4/0-2/0 Stranded Aluminum SE"
+        }
+       ]
+      },
+      {
+       "query": "10 ft cable",
+       "ndcg": 0.747,
+       "k": 6,
+       "total": 2136,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "DEWALT 10-ft USB 2.0 USB-C Black Cable"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "Utilitech Cat 6A Black Ethernet Cable"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "DEWALT 10-ft USB Lightning Black Cable"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a different type of cable.",
+         "t": "Gardner Bender 10-ft x 0.375-in Plastic Black Sp"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a type of cable with different gauge and prongs.",
+         "t": "parkworld 10-ft 12 / 3 Heavy Duty 3 Prong Yellow"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a single cable, not a bundle or roll.",
+         "t": "Tripp Lite 10-ft Blue Cable"
+        }
+       ]
+      },
+      {
+       "query": "10 mm socket",
+       "ndcg": 0.73,
+       "k": 10,
+       "total": 121,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct metric size but a shallow socket set, not a single 10mm socket.",
+         "t": "Kobalt 3/8-in Drive Metric Shallow Socket Set"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but a shallow socke, not a full socket.",
+         "t": "CRAFTSMAN 1/4-in Drive Metric 10mm Shallow Socke"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but a shallow socke, not a full socket.",
+         "t": "CRAFTSMAN 3/8-in Drive Metric 10mm Shallow Socke"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10 mm) but a different drive type and depth unit.",
+         "t": "CRAFTSMAN 3/8-in Drive Metric 10mm Deep Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10 mm) but a different drive type and depth unit.",
+         "t": "CRAFTSMAN 1/4-in Drive Metric 10mm Deep Socket"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 10mm socket.",
+         "t": "Kobalt 1/4-in to 1/2-in Drive Metric 10mm Shallo"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct metric size but a different type (socket vs fitting)",
+         "t": "Wiha - Metric Color-Coded Magnetic 1/4-in x 6-in"
+        },
+        {
+         "grade": 0,
+         "reason": "Socket size is not specified in metric units as requested.",
+         "t": "CRAFTSMAN - 1/2-in Drive Metric 10mm Shallow Soc"
+        },
+        {
+         "grade": 0,
+         "reason": "Socket size not mentioned; only drive sizes.",
+         "t": "Kobalt - 10 -Piece 1/4-in 3/8-in 1/2-in Drive Se"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct metric size but a different head noun (socket vs comb).",
+         "t": "CRAFTSMAN - 21mm 12-point Metric Standard Combin"
+        }
+       ]
+      },
+      {
+       "query": "#4 rebar",
+       "ndcg": 0.994,
+       "k": 10,
+       "total": 34,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2-in x 20-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2-in x 10-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "Hillman 1/2-in x 3.0-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2-in x 4-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2-in x 1-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "1/2-in x 2-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (#4) but not exact match for #4 rebar.",
+         "t": "3/8-in x 4-ft Steel #3 Rebar"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of rebar (#6 instead of #4)",
+         "t": "PROWORX - 0.75-in x 18.0-in #6 Steel Rebar Pins"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #4 rebar.",
+         "t": "Greenbar2X - 1/2-in x 10-ft Fiberglass #4 Rebar"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of rebar (#6 instead of #4)",
+         "t": "PROWORX - 0.75-in x 24.0-in #6 Steel Rebar Pins"
+        }
+       ]
+      },
+      {
+       "query": "#7 drill bit",
+       "ndcg": 0.802,
+       "k": 10,
+       "total": 124,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Accessory (drill bit) but not the tool itself",
+         "t": "SUGIFT 5 Inch Wet Diamond Core Drill Bit 14 Inch"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory (drill bit) but not the tool itself",
+         "t": "SUGIFT 3.5 Inch Wet Diamond Core Drill Bit 14 In"
+        },
+        {
+         "grade": 2,
+         "reason": "Accessory (drill bits) is not the tool itself, but a related item.",
+         "t": "VEVOR 1100W Mag Drill Press 7 Bits 10 -Amp 1 -Sp"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct drill bit size but a different type of tool.",
+         "t": "VEVOR 1100W Mag Drill Press 7 Bits 10 -Amp 1 -Sp"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of tool.",
+         "t": "Mecale Magnetic Drill Press 1100W 1.57-in Boring"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory (drill bit) of a drill press, not the drill press itself.",
+         "t": "GIVIMO 1100W Magnetic Drill Press 110V - Portabl"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory (drill bit) but not the tool itself.",
+         "t": "Bosch - Bulldog Tough 4-Cutter 5/32-in x 6-in Al"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory (drill bit) of a masonry set, not the tool itself.",
+         "t": "Bosch - Bulldog 7 -Piece High-carbon steel Mason"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of drill bit.",
+         "t": "Bosch - Bulldog Tough 4-Cutter 7/8-in x 10-in Al"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of tool (impact driver bit instead of drill bit).",
+         "t": "Spyder - Mach-Blue 1/4-in x Impact Driver Bit Se"
+        }
+       ]
+      },
+      {
+       "query": "#57 stone",
+       "ndcg": 0.94,
+       "k": 10,
+       "total": 415,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of stones.",
+         "t": "BlindsAvenue Cordless Day/Night Sticks Stones 57"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of stones.",
+         "t": "BlindsAvenue Cordless Day/Night Sticks Stones 57"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material (quartz) but not a natural stone (#57 stone)",
+         "t": "Elkay Quartz Undermount 33-in x 22-in Quartz Dou"
+        },
+        {
+         "grade": 1,
+         "reason": "Color match but no size or material information.",
+         "t": "Black"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category but does not satisfy the intent",
+         "t": "White"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct material (#57) but a lapping machine, not a stone.",
+         "t": "GIVIMO Cabbing Machine 6-in 1/4-HP 1620-RPM Lapi"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a decorative stone, not a natural #57 stone.",
+         "t": "Grayson Lane Modern Round Stone 18 Gold 31-in W"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of stone.",
+         "t": "WonderLand - Polished 0.4 Cubic feet 0.4 cu ft B"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (#57 stone) but not an ideal match for 'stone'.",
+         "t": "Style Selections - Vented Gas Log Lava rock"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material (#57) but incorrect size and type (stone vs vinyl)",
+         "t": "Hillman - Restricted Area 4-in x 6-in Vinyl Proh"
+        }
+       ]
+      },
+      {
+       "query": "#40 roller chain",
+       "ndcg": 0.82,
+       "k": 10,
+       "total": 122,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct chain size but a connecting link, not the entire chain.",
+         "t": "Koch Farmex S66401 Roller Chain Connecting Link"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct #40 size but a specific type of roller chain with offset link.",
+         "t": "Koch Koch 7640040 #40 Roller Chain Offset Link 4"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct #40 roller chain size but a longer length than searched.",
+         "t": "SpeeCo S06401 #40 Roller Chain x 10 Feet with Co"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a lubricant, not a chain itself.",
+         "t": "WD-40 WD-40 Specialist 10 Ounce(s) Roller Chain"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: #40 roller chain.",
+         "t": "Koch Koch Industries 7540040 #40 Roller Chain Co"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct #40 chain size but a half link offset, not a full length chain.",
+         "t": "Unique Bargains 4pcs #40 Chain Offset Half Link"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type (Quick Change vs standard roller chain)",
+         "t": "CRAFTSMAN - Green HI-VIS Quick Change 3/4-in 3 -"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a garage door roller, not a chain itself.",
+         "t": "RELIABILT - Garage Door Garage Door Roller Silve"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size (#1) but a different type (weldless)",
+         "t": "RELIABILT - 15.0-ft x #1 Weldless Zinc Plated St"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size (#3) but a different type (weldless)",
+         "t": "RELIABILT - 15.0-ft x #3 Weldless Zinc plated St"
+        }
+       ]
+      },
+      {
+       "query": "#15 felt",
+       "ndcg": 0.977,
+       "k": 10,
+       "total": 138,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt.",
+         "t": "PATIKIL Felt Base Shaper 15x7 Inch Bag Bottom Sh"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt.",
+         "t": "PATIKIL Felt Base Shaper 15x7 Inch Bag Bottom Sh"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but a different shape and size than #15 felt.",
+         "t": "PATIKIL Felt Base Shaper 15x7 Inch 2pcs Bag Bott"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt.",
+         "t": "PATIKIL Felt Base Shaper 15x7 Inch Bag Bottom Sh"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but a bag, not just felt.",
+         "t": "PATIKIL 2pcs Felt Base Shaper 15x7-Inch Bag Bott"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but a different shape and size than #15 felt.",
+         "t": "PATIKIL Felt Base Shaper 15x7 Inch 2pcs Bag Bott"
+        },
+        {
+         "grade": 0,
+         "reason": "Felt not mentioned in the product title.",
+         "t": "Fas-n-Tite - #6 x 1-1/4-in Bugle Coarse Thread D"
+        },
+        {
+         "grade": 0,
+         "reason": "Felt type and size do not match; only thread type is mentioned.",
+         "t": "Grip-Rite - #6 x 1-1/4-in Bugle Fine Thread Dryw"
+        },
+        {
+         "grade": 0,
+         "reason": "Felt not mentioned in the product title.",
+         "t": "CRAFTSMAN - 1/2-in 3/4-in 1-in 23 -Gauge 2d Stra"
+        },
+        {
+         "grade": 1,
+         "reason": "Accessory (thread) is related to #15 felt but not the exact item.",
+         "t": "Grip-Rite - #6 x 1-in Bugle Fine Thread Drywall"
+        }
+       ]
+      },
+      {
+       "query": "4 rebar",
+       "ndcg": 0.965,
+       "k": 10,
+       "total": 34,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.54,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: 4 rebar.",
+         "t": "1/2-in x 20-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 4 rebar.",
+         "t": "1/2-in x 10-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (#4) but not exact length (4 rebar)",
+         "t": "Hillman 1/2-in x 3.0-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (rebar) but not exact length.",
+         "t": "1/2-in x 4-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 4 rebar.",
+         "t": "1/2-in x 1-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 4 rebar.",
+         "t": "1/2-in x 2-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size and type (rebar) but not exact length.",
+         "t": "3/8-in x 4-ft Steel #3 Rebar"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material (rebar) but incorrect size and type (tie)",
+         "t": "PROWORX - 16 -Gauge 6-in 100 -Pack Tie"
+        },
+        {
+         "grade": 0,
+         "reason": "Rebar is a specific type of material, not a product with 'rebar' in its title or description.",
+         "t": "PROWORX - 4.33-in x 4.33-in x 2.83-in 100 -Pack"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of rebar material.",
+         "t": "Severe Weather - 6-in x 6-in x 8-ft #2 Southern"
+        }
+       ]
+      },
+      {
+       "query": "1/2 in rebar",
+       "ndcg": 1,
+       "k": 6,
+       "total": 101,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.6,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2-in x 10-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2-in x 20-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2-in x 2-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2-in x 4-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "1/2-in x 1-ft Steel #4 Rebar"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 in rebar.",
+         "t": "Greenbar2X 1/2-in x 10-ft Fiberglass #4 Rebar"
+        }
+       ]
+      },
+      {
+       "query": "7 mm drill bit",
+       "ndcg": 1,
+       "k": 10,
+       "total": 237,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a set of assorted bits, not a single drill bit.",
+         "t": "DEWALT BLACK + GOLD 14 -Piece Assorted Black and"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (assorted vs drill bit)",
+         "t": "CRAFTSMAN 14 -Piece Assorted Assorted Gold oxide"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (drill bit instead of hole saw or other cutting tool).",
+         "t": "DEWALT ELITE SERIES 7/16-in 5-3/5-in Cobalt allo"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (assorted vs drill bit)",
+         "t": "DEWALT 21 -Piece Assorted Assorted Black and gol"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (assorted vs drill bit)",
+         "t": "DEWALT 14 -Piece Assorted Assorted Black and gol"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a set of assorted bits, not a single drill bit.",
+         "t": "DEWALT IMPACT READY 15 -Piece Assorted Assorted"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size (29.00mm) but incorrect unit and type (drill bit instead of drill)",
+         "t": "DEWALT - 3/16-in 29.00mm Titanium nitride coated"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect unit and type (inch instead of mm)",
+         "t": "DEWALT - ELITE SERIES 7/64-in 2-3/5-in Cobalt al"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect unit (inch instead of millimeter)",
+         "t": "DEWALT - 2 -Piece 7/64-in 2-5/8-in Black and gol"
+        },
+        {
+         "grade": 0,
+         "reason": "Drill bit size not mentioned; only a general tool category.",
+         "t": "Spyder - 1/2-Inch 6 -Piece Assorted x Assorted W"
+        }
+       ]
+      },
+      {
+       "query": "7 in drill bit",
+       "ndcg": 0.845,
+       "k": 6,
+       "total": 20,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of fastener.",
+         "t": "QUIK DRIVE BY SIMPSON STRONG TIE Quik Drive Proj"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a masonry drill bit, not a standard drill bit.",
+         "t": "Tapcon 3-1/16-in x 7-in Carbide Masonry Drill Bi"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but incorrect type (drill bit instead of hole saw or other drill bit)",
+         "t": "DEWALT ELITE SERIES 7/16-in 5-3/5-in Cobalt allo"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (assorted vs drill bit)",
+         "t": "CRAFTSMAN 7 -Piece Assorted Assorted Gold oxide"
+        },
+        {
+         "grade": 0,
+         "reason": "Drill bit size not mentioned; only masonry bit dimensions.",
+         "t": "Bosch 2 -Piece 1-3/4-in x 2-in Carbide Masonry D"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (assorted vs drill bit)",
+         "t": "DEWALT 21 -Piece Assorted Assorted Black and gol"
+        }
+       ]
+      },
+      {
+       "query": "57 stone",
+       "ndcg": 0.718,
+       "k": 10,
+       "total": 4,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size but a different unit (cubic yards), not a length of material.",
+         "t": "Longleaf Packaging #57 0.33 Cubic yard(s) Multic"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but not an ideal match for 57 stone.",
+         "t": "EARTHESSENTIALS BY QUIKRETE 0.5 cu ft Gray Drain"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct quantity of gravel but 'stone' is not specified.",
+         "t": "Sakrete 0.5-cu ft 0.5 Cubic feet Gravel"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material but incorrect quantity and size.",
+         "t": "Yard Elements 14 cu ft Multicolor Crushed stone"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct material (stone) but incorrect size and type (not a natural stone, but a synthetic silver)",
+         "t": "Project Source - 20-ft x 30-ft Silver Waterproof"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 57 stone.",
+         "t": "12.0-in L x 12.0-in W x 2.0-in H Square Gray Con"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct material (stone) but incorrect size and unit.",
+         "t": "EARTHESSENTIALS BY QUIKRETE - 0.5 cu ft Multicol"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (stone) but not an ideal match for quantity or type.",
+         "t": "Sta-Green - 50-ft x 3-ft Basic Weed barrier Land"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct material (stone) but incorrect size and unit.",
+         "t": "EARTHESSENTIALS BY QUIKRETE - 0.5 cu ft Multicol"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 57 stone (square red concrete) dimensions.",
+         "t": "12.0-in L x 12.0-in W x 2.0-in H Square Red Conc"
+        }
+       ]
+      },
+      {
+       "query": "40 mm chain",
+       "ndcg": 0.793,
+       "k": 6,
+       "total": 135,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct chain size but incorrect type (3/8 in instead of 40 mm)",
+         "t": "RELIABILT 3/8-in Welded Galvanized Steel Chain ("
+        },
+        {
+         "grade": 2,
+         "reason": "Correct chain size but incorrect material and type.",
+         "t": "RELIABILT 1/4-in Welded Galvanized Steel Chain ("
+        },
+        {
+         "grade": 0,
+         "reason": "Chain type and size do not match; steel chain instead of 40mm chain.",
+         "t": "RELIABILT 1/4-in Welded Powder coated Steel Chai"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of chain.",
+         "t": "RELIABILT #1 Weldless Zinc plated Steel Chain (B"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size (5/16 in) but incorrect length and material.",
+         "t": "RELIABILT 20.0-ft x 5/16-in Welded Zinc plated S"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct chain size but a different type and material.",
+         "t": "RELIABILT 3/8-in Welded Polished Steel Chain (By"
+        }
+       ]
+      },
+      {
+       "query": "15 in felt",
+       "ndcg": 0.994,
+       "k": 7,
+       "total": 154,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct length but a different type of felt.",
+         "t": "RELIABILT Roof deck protection 36-in x 144-ft 43"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt.",
+         "t": "Warrior Roofing 36-in x 144-ft 432-sq ft Felt Ro"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a different type of felt.",
+         "t": "GAF FeltBuster Roof deck protection 48.0-in x 25"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of felt.",
+         "t": "Scotch Easy Cut 1/2-in x 60-in Brown Felt roll(s"
+        },
+        {
+         "grade": 1,
+         "reason": "Felt color match but incorrect length.",
+         "t": "Beige"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size but a different type of material and application.",
+         "t": "GAF Shingle-Mate Roof deck protection 36-in x 14"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size but a different type of underlayment material.",
+         "t": "RELIABILT Synthetic Underlayment Roof deck prote"
+        }
+       ]
+      },
+      {
+       "query": "8 in wood screw",
+       "ndcg": 0.946,
+       "k": 6,
+       "total": 24,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0.25,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#12 is the No. 12 gauge; matches 8 in wood screw.",
+         "t": "Simpson Strong-Tie Strong-Drive SDWS Timber #12 x 8-in Double-barrier Exterior Construction screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#12 is the No. 12 gauge; matches 8 in wood screw.",
+         "t": "Simpson Strong-Tie Strong-Drive SDWS Timber #12 x 8-in Double-barrier Exterior Construction screws"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct gauge (#8) but incorrect length (2 in), not a standard wood screw.",
+         "t": "Power Pro #8 x 2-in Epoxy Exterior Construction screws 50 -Per Box"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size (8 in) but incorrect gauge (#12 instead of 8)",
+         "t": "Simpson Strong-Tie Strong-Drive SDWS Timber #12 x 6-in Double-barrier Exterior Construction screws 50 -Per Box"
+        },
+        {
+         "grade": 1,
+         "reason": "Same gauge (#12) but different size and type (timber construction)",
+         "t": "Simpson Strong-Tie Strong-Drive SDWS Timber #12 x 3-in Double-barrier Exterior Construction screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 8 in wood screw.",
+         "t": "Power Pro One #8 x 1-1/2-in Epoxy Exterior Multi-material screws"
+        }
+       ]
+      },
+      {
+       "query": "8 mm wood screw",
+       "ndcg": 0.799,
+       "k": 6,
+       "total": 19,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": 0,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct size (8 mm) but a different gauge and type (M3.5 vs 8 mm)",
+         "t": "Unique Bargains 36pcs Brass Screws M3.5 x 8mm Solid Phillips Flat Head Self-Tapping Wood Screw Fasteners for Woodworking Furniture Repair"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 8 mm wood screw.",
+         "t": "Unique Bargains Brass Wood Screws 25pcs M2.5 x 8mm Slotted Drive Flat Head Self Tapping Screw Countersunk for Woodworking Furniture"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size and type but not exact match: 8 mm wood screw.",
+         "t": "Unique Bargains 4mm x 8mm Phillips Pan Head Self-tapping Screw 100pcs - 304 Stainless Steel Round Head Wood Screw Full Thread (Black)"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct size and type but not exact match: 8 mm wood screw.",
+         "t": "Unique Bargains 100pcs 3mm x 8mm Phillips Pan Head Self-tapping Screw - 304 Stainless Steel Round Head Wood Screw Full Thread (Black)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 8 mm wood screw.",
+         "t": "Unique Bargains 20pcs Brass Screws M1.6 x 8mm Solid Slotted Drive Flat Head Self-Tapping Wood Screw Fasteners for Woodworking Furniture"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the M2.5 gauge; matches 8 mm wood screw.",
+         "t": "Unique Bargains 20pcs Brass Screws M2.5 x 8mm Solid Slotted Drive Flat Head Self-Tapping Wood Screw Fasteners for Woodworking Furniture"
+        }
+       ]
+      },
+      {
+       "query": "1/2in screw",
+       "ndcg": 0.849,
+       "k": 6,
+       "total": 259,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 14 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw type and size match but not exact match.",
+         "t": "Hillman #6 x 1/2-in Zinc-plated Interior Construction screws 20 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw type (#6) does not match 'screw' in query.",
+         "t": "Power Pro One #6 x 1/2-in Epoxy Exterior Multi-material screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2in screw.",
+         "t": "Teks #8 x 1/2-in Phillips -Drive Self-drilling Lath Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#7 is the No. 7 gauge; matches 1/2 inch screw.",
+         "t": "Hillman #7 x 1/2-in Socket hex -Drive Standard Sheet Metal Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 100 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "1/2\" screw",
+       "ndcg": 0.839,
+       "k": 6,
+       "total": 258,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 inch screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 14 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw type (#6) does not match 'screw' in query.",
+         "t": "Hillman #6 x 1/2-in Zinc-plated Interior Construction screws 20 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw size is correct but type and material do not match 'screw'.",
+         "t": "Power Pro One #6 x 1/2-in Epoxy Exterior Multi-material screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 inch screw.",
+         "t": "Teks #8 x 1/2-in Phillips -Drive Self-drilling Lath Screws"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw type and size match but not exact match.",
+         "t": "Hillman #7 x 1/2-in Socket hex -Drive Standard Sheet Metal Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 inch screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 100 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "0.5 in screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 258,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 0.5 in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 14 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#6 is the No. 6 gauge; matches half-inch screw.",
+         "t": "Hillman #6 x 1/2-in Zinc-plated Interior Construction screws 20 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#6 is the No. 6 gauge; matches half-inch screw.",
+         "t": "Power Pro One #6 x 1/2-in Epoxy Exterior Multi-material screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 0.5 in screw.",
+         "t": "Teks #8 x 1/2-in Phillips -Drive Self-drilling Lath Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#7 is the No. 7 gauge; matches .5 inch screw.",
+         "t": "Hillman #7 x 1/2-in Socket hex -Drive Standard Sheet Metal Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 0.5 in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 100 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "1/2-in screw",
+       "ndcg": 0.849,
+       "k": 6,
+       "total": 258,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 14 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "No match for 'screw' in product type.",
+         "t": "Hillman #6 x 1/2-in Zinc-plated Interior Construction screws 20 -Per Box"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw type (#6) does not match the query (1/2-in)",
+         "t": "Power Pro One #6 x 1/2-in Epoxy Exterior Multi-material screws 50 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2-in screw.",
+         "t": "Teks #8 x 1/2-in Phillips -Drive Self-drilling Lath Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#7 is the No. 7 gauge; matches 1/2-in screw.",
+         "t": "Hillman #7 x 1/2-in Socket hex -Drive Standard Sheet Metal Screws"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 in screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 100 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "no 8 wood screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 3697,
+       "count_ratio": 2.86,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Fas-n-Tite #8 x 1-5/8-in Wood to wood Deck Screws 144 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Power Pro One #8 x 1-in Epoxy Exterior Multi-material screws 35 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Fas-n-Tite #8 x 1-1/4-in Wood to wood Deck Screws 181 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Power Pro #8 x 1-1/2-in Epoxy Exterior Construction screws 75 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Deck Plus #8 x 1-5/8-in Wood to wood Deck Screws 735 -Per Box"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches no 8 wood screw.",
+         "t": "Hillman #8 x 1/2-in Zinc-plated Interior Construction screws 100 -Per Box"
+        }
+       ]
+      },
+      {
+       "query": "10 foot cable",
+       "ndcg": 0.798,
+       "k": 7,
+       "total": 101,
+       "count_ratio": 0.05,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "Southwire 200-ft 14 / 2 Romex SIMpull DUO 16-Gau"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (cable vs cord)",
+         "t": "Southwire 200-ft 12 / 2 Romex SIMpull DUO 16-Gau"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect type (cable vs cord)",
+         "t": "Southwire 1000-ft 12 / 2 Romex SIMpull DUO 16-Ga"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a different gauge and type of cable.",
+         "t": "Misopily 12 Gauge Solid Indoor NM B Cable with G"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "VEVOR NM-B Wire 12AWG/2C Non-Mettalic Residentia"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable.",
+         "t": "VEVOR NM-B Wire 6AWG/3C Non-Mettalic Residential"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different type of cable (10 AWG vs 10 ft)",
+         "t": "Southwire - 500-ft 10 -AWG Black Stranded Copper"
+        }
+       ]
+      },
+      {
+       "query": "120 in cable",
+       "ndcg": 0.641,
+       "k": 7,
+       "total": 138,
+       "count_ratio": 0.06,
+       "band": [
+        0.4,
+        1.6
+       ],
+       "jaccard": null,
+       "verdict": "high",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Incorrect length and type of cable.",
+         "t": "Southwire 200-ft 14 / 2 Romex SIMpull DUO 16-Gau"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect gauge and type of cable.",
+         "t": "Southwire 200-ft 12 / 2 Romex SIMpull DUO 16-Gau"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect gauge and type of cable.",
+         "t": "Southwire 1000-ft 12 / 2 Romex SIMpull DUO 16-Ga"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a different gauge and type of cable.",
+         "t": "Misopily 12 Gauge Solid Indoor NM B Cable with G"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but a different gauge and type of cable.",
+         "t": "VEVOR NM-B Wire 12AWG/2C Non-Mettalic Residentia"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct length but a different gauge and type of cable.",
+         "t": "VEVOR NM-B Wire 6AWG/3C Non-Mettalic Residential"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct length but incorrect gauge and material.",
+         "t": "Southwire - 500-ft 10 -AWG Black Stranded Copper"
+        }
+       ]
+      },
+      {
+       "query": "10mm socket",
+       "ndcg": 0.706,
+       "k": 10,
+       "total": 121,
+       "count_ratio": 1,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct metric size but a shallow socket set, not a single 10mm socket.",
+         "t": "Kobalt 3/8-in Drive Metric Shallow Socket Set"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but a shallow socket instead of a full-size one.",
+         "t": "CRAFTSMAN 1/4-in Drive Metric 10mm Shallow Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but a shallow socket instead of a full-size one.",
+         "t": "CRAFTSMAN 3/8-in Drive Metric 10mm Shallow Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct metric size but a different drive type and depth.",
+         "t": "CRAFTSMAN 3/8-in Drive Metric 10mm Deep Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct metric size but a different drive type and depth.",
+         "t": "CRAFTSMAN 1/4-in Drive Metric 10mm Deep Socket"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 10mm socket.",
+         "t": "Kobalt 1/4-in to 1/2-in Drive Metric 10mm Shallow/Deep Socket Set 10 -Pi"
+        },
+        {
+         "grade": 1,
+         "reason": "Socket type and size not specified in query, but a ratchet is related to sockets.",
+         "t": "CRAFTSMAN - 72 -Tooth 3/8-in Drive Chrome Handle Ratchet"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 10mm socket.",
+         "t": "TEKTON - 10mm 6-point Metric Flare nut Open end Wrench (no case)"
+        },
+        {
+         "grade": 0,
+         "reason": "Socket size is correct but drive type and depth are not.",
+         "t": "CRAFTSMAN - 1/2-in Drive Metric 10mm Shallow Socket"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct size (10mm) but a shallow socket instead of a full-size one.",
+         "t": "TEKTON - 1/4-in Drive Metric 10mm Shallow Socket"
+        }
+       ]
+      },
+      {
+       "query": "15 lb felt",
+       "ndcg": 0.944,
+       "k": 10,
+       "total": 908,
+       "count_ratio": 6.58,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a different type of felt and size.",
+         "t": "Scotch 32 -Pack 1-in Beige Round Felt furniture"
+        },
+        {
+         "grade": 1,
+         "reason": "Felt color match but incorrect weight unit.",
+         "t": "Brown"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a different type of felt and measurement unit.",
+         "t": "RELIABILT Roof deck protection 36-in x 144-ft 43"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a specific size and type of felt not exactly matched.",
+         "t": "GAF FeltBuster Roof deck protection 48.0-in x 25"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a different type and size than 'felt'.",
+         "t": "Warrior Roofing 36-in x 72-ft 216-sq ft Felt Roo"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a different type and size than 'felt'.",
+         "t": "Warrior Roofing 36-in x 144-ft 432-sq ft Felt Ro"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a pack of assorted brown round felt, not just 'felt'.",
+         "t": "Scotch 78 -Pack Assorted Brown Round Felt furnit"
+        },
+        {
+         "grade": 1,
+         "reason": "Felt type and color match but not weight.",
+         "t": "Beige"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct weight (15 lbs) but a specific type of insulation material, not general 'felt'.",
+         "t": "US Greenfiber - SANCTUARY by Greenfiber R- 60 Ce"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct weight but a chimney support box, not felt.",
+         "t": "AllFuel HST - 11 Ceiling Support Box Chimney Pi"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "pro",
+   "name": "Pro / job-function (project & trade)",
+   "kind": "relevance",
+   "scoring": "graded relevance vs project/trade intent (Cortex judge) → NDCG@10; core=3 related=2 peripheral=1",
+   "retailers": {
+    "homedepot": {
+     "site": "homedepot",
+     "name": "The Home Depot",
+     "score": 83,
+     "score_label": "mean NDCG@10, n=16",
+     "cases": [
+      {
+       "query": "build a deck",
+       "ndcg": 0.658,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "high",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Deck construction is not mentioned; focuses on concrete blocks.",
+         "t": "10-3/4 in. x 10-3/4 in. x 7-3/4 in. Concrete Deck Block"
+        },
+        {
+         "grade": 1,
+         "reason": "Deck materials and tools; not a complete build guide.",
+         "t": "4 ft. x 8 ft. Cedar Dock Kit for Cedar Dock Decking for Boat Dock Systems"
+        },
+        {
+         "grade": 2,
+         "reason": "Deck construction materials and tools; not a specific tool or material for building an outdoor wood deck.",
+         "t": "Enhance Naturals 1 in. x 6 in. x 8 ft. Rocky Harbor Square Edge Composite Deck Board"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct materials and size but a specific type of decking board, not general construction tools.",
+         "t": "5/4 in. x 6 in. x 16 ft. Ground Contact Pressure-Treated Premium Southern Yellow Pine Decking Board"
+        },
+        {
+         "grade": 0,
+         "reason": "Deck construction is not mentioned; only deck tile.",
+         "t": "UltraShield Naturale 1 ft. x 1 ft. Quick Deck Outdoor Composite Deck Tile in Peruvian Teak (10 sq. ft. Per Box)"
+        },
+        {
+         "grade": 2,
+         "reason": "Deck construction materials and tools; not a specific deck product.",
+         "t": "Enhance Naturals 1 in. x 6 in. x 16 ft. Rocky Harbor Grooved Edge Composite Deck Board"
+        }
+       ]
+      },
+      {
+       "query": "hang drywall",
+       "ndcg": 0.681,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "high",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Tools for hanging drywall, but not materials or installation tools.",
+         "t": "15 lb. Drywall Picture Hanger with Spot Marker, Gray, 5 Wall Hangers, 5 Spot Markers"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools for hanging drywall, but not materials or installation supplies.",
+         "t": "Twist-N-Lock 75 lbs. Drywall Anchors (50-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: hang drywall materials and tools.",
+         "t": "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Drywall Panels"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: hang drywall panels.",
+         "t": "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Mold Tough Drywall Panels"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools for hanging drywall, but not materials or installation supplies.",
+         "t": "Twist-N-Lock 50 lbs. Drywall Anchors (25-Pack)"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct materials and tools for hang drywall installation but not an ideal match due to size specification.",
+         "t": "5/8 in. x 4 ft. x 8 ft. USG Sheetrock Brand Firecode X Drywall Panels"
+        }
+       ]
+      },
+      {
+       "query": "unclog a drain",
+       "ndcg": 0.82,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Tools and chemicals for clearing a clogged drain; not specifically unclogging",
+         "t": "67.6 oz. Hair and Grease Drain Openers & Chemicals"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Drain Weasel Hair Clog Tool Starter Kit for Drain Cleaning (3-Piece)"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and chemicals for clearing a clogged drain; not specifically unclogging.",
+         "t": "33.8 oz. Hair and Grease Drain Cleaner"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "1 Gallon 10 Minute Clog Remover Drain Opener Gel"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools for clearing a clogged drain; not chemicals.",
+         "t": "25 ft. Power Drum Drain Snake Drill-Operated Auger for Sink, Tub and Shower Clogs"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Drain and Toilet Clog Opening Packs with Tool Drain Cleaner (3-Count)"
+        }
+       ]
+      },
+      {
+       "query": "tile a shower",
+       "ndcg": 0.958,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Relevant tile type but lacks setting and grouting materials.",
+         "t": "Carrara 10 in. x 12 in. x 6.35 mm Ceramic Hexagon Mosaic Floor and Wall Tile (0.81 sq. ft./Each)"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches 'tile' but lacks setting and grouting materials.",
+         "t": "Restore Bright White 3 in. x 6 in. Glossy Ceramic Subway Wall Tile (12.5 sq. ft. /case)"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant tile and shower kit but lacks setting and grouting materials.",
+         "t": "NexTile 60 in. W x 30 in. D x 74 in. H Four-Piece Direct-to-Stud Composite Alcove Subway Tile Shower Wall Kit in White"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches 'tile' but lacks setting and grouting materials.",
+         "t": "Michelangelo Calacatta Rectified 12 in. x 24 in. Porcelain Floor and Wall Tile (13.3 sq. ft. /case)"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches 'tile' but lacks setting and grouting materials.",
+         "t": "Cascade Ridge Slate 12 in. x 24 in. Glazed Ceramic Floor and Wall Tile (15.04 sq. ft./case)"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent at all",
+         "t": "Redi Niche 16 in. W x 20 in. H x 4 in. D Shampoo - Soap Standard Double Niche"
+        }
+       ]
+      },
+      {
+       "query": "paint a room",
+       "ndcg": 0.725,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Paint type matches but lacks application supplies.",
+         "t": "Ultra Pure White Paint"
+        },
+        {
+         "grade": 1,
+         "reason": "Paint applicator kit; related to painting but not interior paint or application supplies.",
+         "t": "8-Piece Metal Tray/Shed Resistant White Woven Paint Applicator Kit"
+        },
+        {
+         "grade": 1,
+         "reason": "Paint type matches but not application supplies.",
+         "t": "32 oz. Ultra Cover Semi-Gloss White General Purpose Paint"
+        },
+        {
+         "grade": 0,
+         "reason": "Painting a room is not the primary purpose of this paint.",
+         "t": "1 qt. Protective Enamel Satin Black Interior/Exterior Paint"
+        },
+        {
+         "grade": 1,
+         "reason": "Paint type matches but no application supplies.",
+         "t": "PPU12-12 Gallery White Paint"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct interior paint but not application supplies.",
+         "t": "1 gal. #BNC-29 Dark Room Eggshell Interior Paint"
+        }
+       ]
+      },
+      {
+       "query": "build a raised garden bed",
+       "ndcg": 0.927,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "8 ft. x 2 ft. Wood Raised Garden Bed"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct lumber size but not ideal soil type and no specific instructions for build.",
+         "t": "48 in. x 24 in. x 30 in. Wood Raised Garden Bed - Natural"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "8 ft. x 4 ft. x 2 ft. Gray Outdoor Steel Raised Garden Bed Planter Box for Vegetables, Flowers, Herbs"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category (raised garden bed) but lacks lumber and soil specifics.",
+         "t": "6 ft. x 3 ft. x 2 ft. Gray Outdoor Steel Raised Garden Bed Planter Box for Vegetables, Flowers, Herbs"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "4 ft. x 8 ft. x 17.5 in. Wood Raised Garden Bed"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and liner.",
+         "t": "48 in. x 24 in. x 30 in. Wood Raised Garden Bed with Liner"
+        }
+       ]
+      },
+      {
+       "query": "replace a kitchen faucet",
+       "ndcg": 0.838,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Relevant category but not complete replacement kit.",
+         "t": "Foundations 2-Handle Standard Kitchen Faucet with Side Sprayer in Chrome"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant to replacing a kitchen faucet but lacks install parts.",
+         "t": "Kaden Single-Handle Pull-Down Sprayer Kitchen Faucet with Reflex and Power Clean in Spot Resist Stainless"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant to replacing a kitchen faucet but lacks install parts.",
+         "t": "Adler Single-Handle Pull-Down Sprayer Kitchen Faucet with Power Clean and Reflex in Spot Resist Stainless"
+        },
+        {
+         "grade": 1,
+         "reason": "Relevant but not an ideal match; includes replacement hose for kitchen faucet installation.",
+         "t": "Kitchen Faucet Replacement Hose"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant to replacing a kitchen faucet but includes additional features (sprayer) and installation parts (FastMount).",
+         "t": "McKenna Single-Handle Pull Down Sprayer Kitchen Faucet in Stainless Steel with TurboSpray and FastMount"
+        },
+        {
+         "grade": 1,
+         "reason": "Relevant category but not complete replacement kit.",
+         "t": "Chateau Low-Arc Single-Handle Standard Kitchen Faucet in Chrome"
+        }
+       ]
+      },
+      {
+       "query": "fix a leaky pipe",
+       "ndcg": 0.853,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Correct parts and tools for repairing a leaky pipe but not the exact issue.",
+         "t": "Pipe Repair Kit"
+        },
+        {
+         "grade": 0,
+         "reason": "Fixing a leaky pipe requires specific parts and tools; this is a sealant coating spray paint.",
+         "t": "Flex Seal Black 14 oz. Aerosol Liquid Rubber Sealant Coating Spray Paint"
+        },
+        {
+         "grade": 0,
+         "reason": "Fixing a leaky pipe requires specific parts and tools, not just a pipe repair cast.",
+         "t": "FiberWeld 1 in. x 48 in. Pipe Repair Cast White"
+        },
+        {
+         "grade": 1,
+         "reason": "Fixing a leaky pipe; epoxy is a part of the solution but not the primary tool.",
+         "t": "2 oz. Waterweld Epoxy"
+        },
+        {
+         "grade": 1,
+         "reason": "Correct parts for repairing a pipe but not specifically addressing a leaky pipe.",
+         "t": "FiberWeld 2 in X 60 in Pipe Repair Cast White"
+        },
+        {
+         "grade": 0,
+         "reason": "Fixing a leaky pipe requires specific parts and tools, not general-purpose tape.",
+         "t": "1 in. x 3.33 yd. Stretch and Seal Self-Fusing Silicone Tape in Black"
+        }
+       ]
+      },
+      {
+       "query": "pour a concrete slab",
+       "ndcg": 0.85,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Concrete mix for pouring a slab; lacks reinforcement.",
+         "t": "80 lb. Concrete Mix"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent at all",
+         "t": "50 lb. Fast-Setting Concrete Mix"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent at all",
+         "t": "12 in. x 12 in. x 1.5 in. Pewter Square Concrete Step Stone"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent of concrete and reinforcement for pouring a slab.",
+         "t": "22 in. x 16-1/2 in. x 22 in. Plastic Concrete Footing Form"
+        },
+        {
+         "grade": 1,
+         "reason": "Same broad category but does not satisfy the intent",
+         "t": "5 lb. Pourable Interior/Exterior Concrete Patch"
+        },
+        {
+         "grade": 0,
+         "reason": "Relevance is too broad; lacks key components of the search intent.",
+         "t": "1 Qt. Concrete Crack Sealant"
+        }
+       ]
+      },
+      {
+       "query": "insulate an attic",
+       "ndcg": 0.662,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "high",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Attic insulation not mentioned; product is a stair cover.",
+         "t": "Attic Stair Insulator Tent Cover II 25-1/2 in. x 54 in."
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: insulation materials for an attic.",
+         "t": "Raft-R-Mate 22-1/2 in. x 4 ft. Attic Insulation Rafter Baffle Proper Vents (70-Pieces)"
+        },
+        {
+         "grade": 0,
+         "reason": "Attic hatch is unrelated to insulation materials.",
+         "t": "R-38 Universal Attic Hatch - Scuttle Hole Insulation Cover"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant insulation material for an attic but not ideal match due to stair-specific application.",
+         "t": "4.5 ft. x 25 in. x 11 in. Attic Stair Insulation Cover Radiant Barrier"
+        },
+        {
+         "grade": 1,
+         "reason": "Insulation materials for an attic; not a direct solution but related product.",
+         "t": "R-38 Attic Ladder Insulation Cover and Air Sealing Kit for Pull Down Ladders with IM 27 in. x 55 in. x 10 in."
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant insulation type but not ideal match as it can be applied in multiple ways.",
+         "t": "25 lbs. Cellulose Blown-In Insulation or Spray Applied Insulation"
+        }
+       ]
+      },
+      {
+       "query": "hang an interior door",
+       "ndcg": 0.912,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Door and mounting hardware; but 'kit' implies a single door rather than two.",
+         "t": "Door Install Kit (1 door pack)"
+        },
+        {
+         "grade": 1,
+         "reason": "Door slab only; lacks mounting hardware.",
+         "t": "Textured 6-Panel Hollow Core Primed Composite Interior Door Slab with Bore"
+        },
+        {
+         "grade": 0,
+         "reason": "Door slab only, no mounting hardware.",
+         "t": "Textured 6-Panel Hollow Core Primed Composite Interior Door Slab"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct interior door size but lacks mounting hardware.",
+         "t": "30 in. x 80 in. Colonist Primed Right-Hand Textured Solid Core Molded Composite MDF Single Prehung Interior Door"
+        },
+        {
+         "grade": 1,
+         "reason": "Door type matches but no mounting hardware mentioned.",
+         "t": "30 in. x 80 in. No Panel Primed White Smooth Flush Hardboard Hollow Core Composite Interior Door Slab"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches broad category of interior doors but lacks mounting hardware.",
+         "t": "Solid Core Primed Composite Interior Barn Door Slab with Sliding Door Hardware Kit"
+        }
+       ]
+      },
+      {
+       "query": "plumber tools",
+       "ndcg": 0.823,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not specifically for plumbing tasks.",
+         "t": "EZ Change Plumbing Wrench Faucet Installation and Removal Tool"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool type and category but not an ideal match for 'plumber tools'.",
+         "t": "Adjustable Plumbers Wrench"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool set for plumbers but not an ideal match",
+         "t": "18 in. Plumbers Hand Tool Set (6-Piece)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: tools used by a plumber.",
+         "t": "One Stop Wrench for Angle Stops, Straight Stops, and Compression Couplings, 2-in-1 Plumbing Wrench for Common Nut Sizes"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by plumbers but not exclusively for them.",
+         "t": "Double Ended Tub Drain Wrench"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not specifically for plumbing tasks.",
+         "t": "3-Way Plumbers Wrench"
+        }
+       ]
+      },
+      {
+       "query": "welder",
+       "ndcg": 0.876,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: welder",
+         "t": "225 Amp Stick/TIG Welder, 120/230-Volt Weld-Pak 225i, Electric (DC)"
+        },
+        {
+         "grade": 1,
+         "reason": "Welder is a broad category; kit includes welding equipment and supplies.",
+         "t": "Port-A-Torch Kit with Oxygen and Acetylene Tanks for Cutting Welding and Brazing"
+        },
+        {
+         "grade": 2,
+         "reason": "Welder/welding equipment; kit includes torch and cylinder.",
+         "t": "DuraCast 8000 Torch Kit with 14.1 oz. MAP-Pro Cylinder and Premium Blow Torch with Adjustable Flame"
+        },
+        {
+         "grade": 0,
+         "reason": "No relation to welding equipment or supplies.",
+         "t": "1 lb. All-Purpose Propane Gas Cylinder (2-Pack)"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant welding equipment but not a specific supply",
+         "t": "Auto-Darkening Welding Helmet with Variable Shade Lens No. 7-13 (1.73 x 3.82 in. Viewing Area), Red Fierce Design"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: welder and welding equipment.",
+         "t": "180 Amp Weld-Pak 180i Multi-Process Stick/MIG/Flux-Core/TIG, 120V or 230V Aluminum Welder with Spool Gun sold separately"
+        }
+       ]
+      },
+      {
+       "query": "carpenter tools",
+       "ndcg": 0.757,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Tool storage for carpenters; not a tool itself.",
+         "t": "Professional Carpenter's Work Tool Belt Tool Storage Suspension Rig with LoadBear Suspenders and 2 Tool Pouches in Black"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool category match but not specific tool.",
+         "t": "Carpenter Apron"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool category match but not specific tool",
+         "t": "Carpenter Pencils with Original Sharpener (10-Pack)"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool-related but not specifically for use by a carpenter.",
+         "t": "11 in. Carpenter Tool Pouch"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool set, but not specifically for a carpenter.",
+         "t": "Pry Bar Set (3-Piece)"
+        },
+        {
+         "grade": 2,
+         "reason": "Tool belt is a common accessory for carpenters, but not the primary tool itself.",
+         "t": "16-Pocket Black Carpenter's Tool Belt with Suspenders"
+        }
+       ]
+      },
+      {
+       "query": "hvac technician",
+       "ndcg": 0.897,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Tools and supplies for HVAC technicians; not a direct tool but relevant category.",
+         "t": "HVAC Clamp Meter Electrical Tester Set"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not specifically for the trade.",
+         "t": "28 Piece Hand Tool Set with Tradesman Pro Tool Backpack"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not a direct tool but related category.",
+         "t": "HVAC Hand Notcher"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not specifically HVAC tools",
+         "t": "SAE Quad Drive Ratcheting Wrench Set (2-Piece)"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant tools and supplies for an HVAC technician, but not a comprehensive set.",
+         "t": "Digital HVAC Manifold Gauge with Backlit LCD for Refrigerant Recharge, Pressure Temp Test Leak Detection"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and supplies for HVAC technicians; not a direct tool but related category.",
+         "t": "3-in-1 HVAC Pocket Multibit Screwdriver"
+        }
+       ]
+      },
+      {
+       "query": "painter tools",
+       "ndcg": 1,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not an ideal match for 'painter tools'.",
+         "t": "6-in-1 Painter's Tool"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not specifically for painting tasks.",
+         "t": "15-in-1 Painters Multi-Tool with Stainless Steel Blade"
+        },
+        {
+         "grade": 1,
+         "reason": "Painter tool, but not specifically for painting, rather for protecting the user.",
+         "t": "24 in. Stainless Steel Edge Paint Shield"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by painters; not specific enough.",
+         "t": "Multi-Purpose Tool"
+        },
+        {
+         "grade": 1,
+         "reason": "Painter tool kit; applicator kit for painting.",
+         "t": "8-Piece Metal Tray/Shed Resistant White Woven Paint Applicator Kit"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by painters, but not specifically for painting tasks.",
+         "t": "5 in. Tight Space Painter for Hard to Reach Places"
+        }
+       ]
+      }
+     ]
+    },
+    "lowes": {
+     "site": "lowes",
+     "name": "Lowe's",
+     "score": 78,
+     "score_label": "mean NDCG@10, n=17",
+     "cases": [
+      {
+       "query": "build a deck",
+       "ndcg": 0.479,
+       "k": 10,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "severe",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Deck construction is not mentioned; only materials are discussed.",
+         "t": "Trex Enhance Basics 1-in x 6-in Composite Deck Board"
+        },
+        {
+         "grade": 0,
+         "reason": "Pebble Beach is a location, not a product related to building a deck.",
+         "t": "Pebble Beach"
+        },
+        {
+         "grade": 0,
+         "reason": "A saddle is completely irrelevant to building a deck.",
+         "t": "Saddle"
+        },
+        {
+         "grade": 0,
+         "reason": "The product 'Tide Pool' is completely irrelevant to building a deck.",
+         "t": "Tide Pool"
+        },
+        {
+         "grade": 1,
+         "reason": "The product is a deck rail kit, which is only one component of a deck, not materials and tools to build a whole deck.",
+         "t": "Trex Enhance Composite Deck Rail Kit"
+        },
+        {
+         "grade": 0,
+         "reason": "The product title 'Classic White' is completely irrelevant to building a deck.",
+         "t": "Classic White"
+        },
+        {
+         "grade": 1,
+         "reason": "Not a direct match for 'deck' but related to construction",
+         "t": "Saddle"
+        },
+        {
+         "grade": 0,
+         "reason": "Deck construction is not mentioned; only materials are discussed.",
+         "t": "Trex Enhance Naturals 1-in x 6-in Composite Deck Board"
+        },
+        {
+         "grade": 1,
+         "reason": "Broad category 'deck' but lacks specific materials and tools.",
+         "t": "Foggy Wharf"
+        },
+        {
+         "grade": 0,
+         "reason": "Honey Grove is a brand name and does not relate to deck building materials or tools.",
+         "t": "Honey Grove"
+        }
+       ]
+      },
+      {
+       "query": "hang drywall",
+       "ndcg": 0.714,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Hangs drywall is a process, not a material or tool.",
+         "t": "Gold Bond 1/2-in x 4-ft x 8-ft High Strength LITE Regular Drywall Panel"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: hang drywall materials and tools.",
+         "t": "Gold Bond 1/2-in x 4-ft x 8-ft PURPLE XP Mold Resistant Moisture Resistant Regular Drywall Panel"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: hang drywall materials and tools.",
+         "t": "CertainTeed 1/2-in x 4-ft x 8-ft M2Tech Mold Resistant Moisture Resistant Regular Drywall Panel"
+        },
+        {
+         "grade": 1,
+         "reason": "Materials for repairing drywall, not installing new panels.",
+         "t": "SHEETROCK Brand Composite 23.625-in x 23.625-in Drywall Repair Patch"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools for installing drywall, but not hang drywall itself.",
+         "t": "TOGGLER 802-lb 3/16-in x Assorted length Toggle Bolt Anchors with Screws Included 10-Pack"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools for drywall installation, but not hang drywall itself.",
+         "t": "TOGGLER SnapSkru 135.0-lb 3/8-in x 1-5/8-in Self-Drilling Anchors with Screws Included 20.0 -Pack"
+        }
+       ]
+      },
+      {
+       "query": "unclog a drain",
+       "ndcg": 0.9,
+       "k": 10,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals to clear a clogged drain; not specifically for shower drains.",
+         "t": "Drano Liquid Drain Clog Remover and Cleaner for Shower"
+        },
+        {
+         "grade": 3,
+         "reason": "The product is a tool specifically designed to unclog drains, matching the search intent perfectly.",
+         "t": "Drain King 750 Unclogs Main Drain Sewer Line with Wate"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Liquid-Plumr Urgent Clear 17 Fluid ounce(s) Drain Clea"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Phyfalip Crystal Lye Drain Opener Sodium Hydroxide Unc"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Drano EarlyAction Foamer Clog Remover 17 Fluid ounce(s"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools for clearing a clogged drain; not chemical solutions.",
+         "t": "FlexiSnake - Drain Weasel Plastic Drain snake"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Drano - Max Gel Commercial Line 128 Fluid ounce(s) Dra"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools for clearing a clogged drain; not chemical solutions.",
+         "t": "FlexiSnake - Drain Weasel Plastic Drain snake"
+        },
+        {
+         "grade": 2,
+         "reason": "Tools and chemicals for clearing a clogged drain; not an ideal match but relevant.",
+         "t": "Drano - Max Gel Commercial Line 42 Fluid ounce(s) Drai"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools for unclogging drains; not chemicals or a plunger with a different size handle.",
+         "t": "Project Source - 4.5-in Gray Rubber Plunger 3-in Handl"
+        }
+       ]
+      },
+      {
+       "query": "install a ceiling fan",
+       "ndcg": 0.731,
+       "k": 10,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Ceiling fan kit; includes mounting and lighting components but not wiring supplies.",
+         "t": "IdealHouse Modern Flush Mount Ceiling Fan Light Kit Qu"
+        },
+        {
+         "grade": 1,
+         "reason": "Ceiling fan installation kit; missing mounting and wiring supplies.",
+         "t": "Hunter Crestfield Easy Install 52-in Fresh White Ceili"
+        },
+        {
+         "grade": 1,
+         "reason": "Ceiling fan installation kit; includes fan, mounting hardware, and wiring supplies.",
+         "t": "Matte Silver"
+        },
+        {
+         "grade": 0,
+         "reason": "The product title 'Noble Bronze' is completely irrelevant to installing a ceiling fan or its supplies.",
+         "t": "Noble Bronze"
+        },
+        {
+         "grade": 1,
+         "reason": "Ceiling fan; missing mounting and wiring supplies.",
+         "t": "Antoine Low Profile 20-in Black LED Flush Mount Cage C"
+        },
+        {
+         "grade": 2,
+         "reason": "The product is a ceiling fan, which is part of the query, but it does not include mounting and wiring supplies.",
+         "t": "VACZON 60-in Matte Black Ceiling Fan With Light and Re"
+        },
+        {
+         "grade": 2,
+         "reason": "The product is a ceiling fan, which is the main item needed, but it does not include mounting and wiring supplies.",
+         "t": "Harbor Breeze - Boltz III Easy2Hang 52-in Matte Black "
+        },
+        {
+         "grade": 1,
+         "reason": "Ceiling fan but no mounting or wiring supplies.",
+         "t": "Harbor Breeze - Sunport Easy2Hang 44-in Matte Black LE"
+        },
+        {
+         "grade": 1,
+         "reason": "This is a ceiling fan mounting bracket, not a complete ceiling fan or installation kit.",
+         "t": "Harbor Breeze - Universal 5.75-in Matte Black Metal In"
+        },
+        {
+         "grade": 1,
+         "reason": "This product is a ceiling fan, but the query implies a kit or supplies for installation, which this product does not appear to be.",
+         "t": "Harbor Breeze - Universal 5.75-in Brushed Nickel Metal"
+        }
+       ]
+      },
+      {
+       "query": "tile a shower",
+       "ndcg": 0.954,
+       "k": 9,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "The product is a shower seat, not tile or setting/grouting materials for tiling a shower.",
+         "t": "VEVOR Tile Shower Seat 22.4in x 16in x 20in Ready to T"
+        },
+        {
+         "grade": 1,
+         "reason": "Relevant category but lacks specific tile and installation details.",
+         "t": "GIVIMO Shower Curb Kit 48x48-in Watertight Shower Pan "
+        },
+        {
+         "grade": 1,
+         "reason": "The product is a grout brush, which is related to 'grouting materials' but is a cleaning tool, not a material for setting or grouting.",
+         "t": "Phyfalip Grout Brush Cleaning Hard Bristle Grout Clean"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent of 'tile a shower' as it only mentions a drain.",
+         "t": "Tinyhomie 36 Inch Offset Linear Shower Drain with Reve"
+        },
+        {
+         "grade": 1,
+         "reason": "Relevant category but lacks specific shower tile products.",
+         "t": "LUXEYARD 30 Inch Offset Linear Shower Drain with Rever"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent of 'tile a shower' as it only mentions a drain.",
+         "t": "Tinyhomie 30 Inch Offset Linear Shower Drain with Reve"
+        },
+        {
+         "grade": 1,
+         "reason": "Tile installation platform; not tile, setting, and grouting materials.",
+         "t": "allen + roth - Platform 60-in W x 32-in D x 78-in H Ca"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent at all",
+         "t": "MAAX - Via 32-in W x 60-in L x 80-in H White Bathtub S"
+        },
+        {
+         "grade": 1,
+         "reason": "Relevant category but lacks specific tile type and installation details.",
+         "t": "Daltile - Handcrafted Artistry Tea Party 11-in x 12-in"
+        }
+       ]
+      },
+      {
+       "query": "paint a room",
+       "ndcg": 0.693,
+       "k": 3,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "high",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Entirely unrelated to painting a room.",
+         "t": "allen + roth - Hannah 8 -Light Matte Black Bare bulb S"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches broad category 'paint' but lacks specific intent of interior painting",
+         "t": "HGTV HOME by Sherwin-Williams - Satin Base B Tintable "
+        },
+        {
+         "grade": 1,
+         "reason": "Satisfies broad category of interior painting but lacks specific intent",
+         "t": "HGTV HOME by Sherwin-Williams - Semi-gloss Base B Tint"
+        }
+       ]
+      },
+      {
+       "query": "build a raised garden bed",
+       "ndcg": 0.922,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "EMSCO GROUP Resin Raised Garden Bed 33-in L x 13.25-in W x 28.75-in H"
+        },
+        {
+         "grade": 1,
+         "reason": "Related category but lacks specific lumber and soil details.",
+         "t": "Charcoal Gray"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "Nuu Garden Galvanized Metal Raised Garden Bed"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "VEIKOUS Cedar Raised Garden Bed 94.9-in L x 48.6-in W x 14.9-in H"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: raised garden bed with lumber and soil.",
+         "t": "VEIKOUS Elevated Cedar Raised Garden Bed"
+        },
+        {
+         "grade": 1,
+         "reason": "Related category but lacks specific details for building a raised garden bed.",
+         "t": "Rustic"
+        }
+       ]
+      },
+      {
+       "query": "replace a kitchen faucet",
+       "ndcg": 0,
+       "k": 1,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "severe",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Relevant keywords like 'faucet' are present but 'replace', 'kitchen faucet', and 'install parts' are missing.",
+         "t": "Southwire - 500-ft 10 -AWG Black Stranded Copper THHN wire ( By-the-roll )"
+        }
+       ]
+      },
+      {
+       "query": "fix a leaky pipe",
+       "ndcg": 0.967,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Fixing a leaky pipe; parts and tools for repair, but not the actual fix itself.",
+         "t": "J-B WELD 2-in x 60-ft Pipe Wrap Tape"
+        },
+        {
+         "grade": 1,
+         "reason": "Fixing a leaky pipe; parts and tools for repair, but not the actual fix itself.",
+         "t": "RELIABILT 2-in x 30-ft Pipe Wrap Tape"
+        },
+        {
+         "grade": 0,
+         "reason": "Fixing a leaky pipe requires parts and tools, not tape for wrapping pipes.",
+         "t": "J-B WELD 1-in x 48-in Pipe Wrap Tape"
+        },
+        {
+         "grade": 1,
+         "reason": "Fixing a leaky pipe; adhesive for bonding materials, not a direct fix.",
+         "t": "J-B WELD WaterWeld White Epoxy Adhesive"
+        },
+        {
+         "grade": 0,
+         "reason": "Fixing a leaky pipe requires specific parts and tools, not just pipe wrapping tape.",
+         "t": "Dearborn Miracle Wrap 1-in x 8-ft Pipe Wrap Tape"
+        },
+        {
+         "grade": 0,
+         "reason": "Fixing a leaky pipe requires parts and tools, not a pipe wrap.",
+         "t": "Harvey 's Self Sealing 2 in. X 100 ft. L Polyethylene Pipe Wrap"
+        }
+       ]
+      },
+      {
+       "query": "pour a concrete slab",
+       "ndcg": 0.975,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Concrete mix for pouring a slab; lacks reinforcement.",
+         "t": "Sakrete 60 -lb High strength Concrete mix"
+        },
+        {
+         "grade": 1,
+         "reason": "Concrete mix for pouring a slab; lacks reinforcement.",
+         "t": "Sakrete 80 -lb High strength Concrete mix"
+        },
+        {
+         "grade": 1,
+         "reason": "Concrete mix for pouring a slab but lacks reinforcement.",
+         "t": "Sakrete 50 -lb Fast setting Concrete mix"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not match search intent at all",
+         "t": "11-in W x 7-in H x 11-in L Concrete Deck Block"
+        },
+        {
+         "grade": 1,
+         "reason": "Concrete mix for pouring a slab but lacks reinforcement.",
+         "t": "QUIKRETE ProFinish 5000 80 -lb High strength Concrete mix"
+        },
+        {
+         "grade": 1,
+         "reason": "Relevant materials for pouring a concrete slab but not the exact process or application.",
+         "t": "PROWORX 3-in x 60-in x 3-in Steel Slab bolster"
+        }
+       ]
+      },
+      {
+       "query": "insulate an attic",
+       "ndcg": 0.758,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "Attic ladder cover is unrelated to insulation materials.",
+         "t": "Energy Wise 53.98-in Pull-down attic ladder cover"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: insulation materials for an attic.",
+         "t": "Reflectix R- 21 Attic Wall Unfaced Reflective Roll Insulation 50-sq ft ( 24-in W x 25-ft L )"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: insulation materials for an attic.",
+         "t": "Insulfoam R- 1.88 , 0.5-in x 4-ft x 8-ft Faced Expanded polystyrene Board Insulation"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: insulation materials for an attic.",
+         "t": "Owens Corning R- 30 Attic Unfaced Fiberglass Batt Insulation 80-sq ft ( 24-in W x 48-in L)"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant insulation material for an attic but not ideal match due to specific size and type.",
+         "t": "Reflectix R- 21 Attic Wall Unfaced Reflective Roll Insulation 33.3-sq ft ( 16-in W x 25-ft L )"
+        },
+        {
+         "grade": 2,
+         "reason": "Relevant insulation material but not ideal for an attic insulate purpose.",
+         "t": "R- 3.9 , 1-in x 4-ft x 8-ft Faced Polystyrene Board Insulation"
+        }
+       ]
+      },
+      {
+       "query": "hang an interior door",
+       "ndcg": 0.975,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Matches broad category of interior door but lacks mounting hardware.",
+         "t": "RELIABILT Hollow Core 2-panel Molded Composite Single Prehung Interior Door"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches broad category of interior door but lacks mounting hardware.",
+         "t": "RELIABILT Hollow Core 6-panel Molded Composite Single Prehung Interior Door"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches broad category of interior door but lacks mounting hardware.",
+         "t": "Woodgrain Hollow Core 6-panel Molded Composite Single Prehung Interior Door"
+        },
+        {
+         "grade": 0,
+         "reason": "Does not include mounting hardware.",
+         "t": "RELIABILT Solid Core 1-panel Prehung Interior Door"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches broad category of interior door but lacks mounting hardware.",
+         "t": "Woodgrain Hollow Core 2-Panel Molded Composite Single Prehung Interior Door"
+        },
+        {
+         "grade": 1,
+         "reason": "Matches broad category of interior door but lacks mounting hardware.",
+         "t": "RELIABILT Hollow Core Flush Hardboard Single Prehung Interior Door"
+        }
+       ]
+      },
+      {
+       "query": "plumber tools",
+       "ndcg": 0.786,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 2,
+         "reason": "Correct type of tool but not specifically for plumbing tasks.",
+         "t": "Klein Tools 12-in-1 Faucet Wrench Multi Tool"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by plumbers; not specifically for plumbing tasks.",
+         "t": "Kobalt 11-in Wrench"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: tools used by a plumber.",
+         "t": "PressFast XPRTOOL 1/2in, 3/4in and 1-in with Relief Valve Press tool"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool for faucet installation, related to plumbing.",
+         "t": "Kobalt Faucet change-out tool"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by plumbers; matches broad category but not exact intent",
+         "t": "Kobalt 3 in Wrench"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by plumbers; not exclusively plumber tools.",
+         "t": "Kobalt 6-in Wrench"
+        }
+       ]
+      },
+      {
+       "query": "welder",
+       "ndcg": 1,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: welder/welding equipment and supplies.",
+         "t": "Lincoln Electric WELD-PAK 120 -Volt 120 -Amp Flux-cored Wire Feed Welder"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: welder/welding equipment and supplies.",
+         "t": "Lincoln Electric 120 or 230 -Volt 180 -Amp Multi-process Wire Feed Welder"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: welder/welding equipment and supplies.",
+         "t": "Lincoln Electric 120 or 230 -Volt 180 -Amp Multi-process Wire Feed Welder"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: welder (welding equipment and supplies).",
+         "t": "Lincoln Electric WELD-PAK 120 -Volt 120 -Amp MIG flux-cored Wire Feed Welder"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: welder/welding equipment and supplies.",
+         "t": "VEVOR 120 -Volt 130 -Amp MIG flux-cored Wire Feed Welder"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: welder/welding equipment and supplies.",
+         "t": "Forney 120 -Volt 140 -Amp Flux-cored Wire Feed Welder"
+        }
+       ]
+      },
+      {
+       "query": "carpenter tools",
+       "ndcg": 0.787,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 1,
+         "reason": "Tool belt for carpenters; not an individual tool.",
+         "t": "DEWALT Framer Leather Tool belt"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by a carpenter; not an ideal match for 'carpenter tools'.",
+         "t": "DEWALT Carpenter Polyester Suspension tool belt"
+        },
+        {
+         "grade": 2,
+         "reason": "Tool used by a carpenter; not an ideal match for 'carpenter tools'.",
+         "t": "DEWALT Carpenter Polyester Tool belt"
+        },
+        {
+         "grade": 2,
+         "reason": "Tool used by a carpenter; not an ideal match but relevant category.",
+         "t": "Lowe's Blue Carpenter Pencil"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool category match but not specific tool",
+         "t": "Lowe's 20 -Pack Blue Carpenter Pencil"
+        },
+        {
+         "grade": 1,
+         "reason": "Tool used by a carpenter, but not exclusively for that purpose.",
+         "t": "OX Tools Tuff Carbon marking Pencil"
+        }
+       ]
+      },
+      {
+       "query": "hvac technician",
+       "ndcg": 0.782,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "medium",
+       "products": [
+        {
+         "grade": 0,
+         "reason": "No tools or supplies for HVAC technicians; fan only.",
+         "t": "Utilitech 120 3 Indoor BLACK/MATTE Oscillating Tower Fan with Remote"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not a direct tool or supply",
+         "t": "POLYKEN Vent and Appliance Install Tape HVAC Tape 2.5-in x 10 Yard(s)"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not specifically for water heater tune-up kits.",
+         "t": "Utilitech Electric Water Heater Tune-Up Kit"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not a tool or supply itself.",
+         "t": "Utilitech 20-in High Velocity Indoor Floor Fan, in Black"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not a direct tool or supply",
+         "t": "Utilitech 1500W 360 Deg Ceramic Heater 1500 -Watt Ceramic Tower Indoor Electric Space Heater"
+        },
+        {
+         "grade": 1,
+         "reason": "Tools and supplies for HVAC technicians; not a direct tool or supply",
+         "t": "Utilitech High Velocity Indoor Industrial Fan"
+        }
+       ]
+      },
+      {
+       "query": "painter tools",
+       "ndcg": 0.912,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "minor",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: painter tool.",
+         "t": "Warner Pro Grip 6-in-1 2.25-in Carbon Steel Paint Multi-Tool"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not specifically for painting.",
+         "t": "Warner Pro Grip Stiff 3.06-in Carbon Steel Paint Multi-Tool"
+        },
+        {
+         "grade": 1,
+         "reason": "Painter tool; related but not ideal match.",
+         "t": "WAL-BOARD TOOLS 3 -Pack 2-in 4-in 6-in Plastic Disposable Reusable Putty Knife"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not specifically for painting.",
+         "t": "Purdy Contractor 1-in Carbon Steel Paint Multi-Tool"
+        },
+        {
+         "grade": 2,
+         "reason": "Correct tool type but not specifically for painting",
+         "t": "Warner Pro Grip 8-in-1 3.25-in Carbon Steel Paint Multi-Tool"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: painter tool.",
+         "t": "Warner Painter's Flex 1-1/2-in Steel Reusable Putty Knife"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "verified": {
+  "method": "browser re-check (fresh count vs recorded, confirmed within 15%)",
+  "sample": "Home Depot severe pairs live-reverified: drywall 2411->2410, sheetrock 33->33, liquid nails 17->17, quikrete 643->637, roundup 249->251 (all confirmed)",
+  "note": "Dashboard cannot live-fetch bot-walled sites; verify is a browser re-check result."
+ }
+}

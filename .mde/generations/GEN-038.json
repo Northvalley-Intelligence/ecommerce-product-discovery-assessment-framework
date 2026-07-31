@@ -1,0 +1,36 @@
+{
+  "generation_id": "GEN-038",
+  "mission_phase": "Generation 38 - Three-dataset Cortex-judged relevance scoreboard (Home Improvement: Home Depot + Lowe's)",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-31T00:00:00Z",
+  "ended_at": "2026-07-31T12:40:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes",
+  "phase_goal": "Turn the dataset x retailer search scoreboard into a graded-relevance evaluation across three query datasets, judged by a local LLM (Cortex / llama3.2:3b) with auditable per-(query,product) traces. Datasets: (1) synonym/category consistency, (2) dimensions - notation & hash sensitivity, (3) pro/job-function project & trade queries. Each dataset shows an NDCG-based score per retailer (Home Depot, Lowe's), drillable to per-query NDCG and per-product grades (3 perfect -> 0 irrelevant) with the judge's reason, plus count-band ratio and SKU-overlap Jaccard chips for the dimensions dataset. Evidence captured via bounded same-origin browser reads (no crawling/API/token-replay).",
+  "reason_generation_started": "Operator delivered two additional datasets (dimensions, then pro/job-function) and asked to see, in the UI, per-retailer NDCG for Home Depot vs Lowe's, drillable to the actual results at query and query+product level, leveraging the shared Cortex relevance service.",
+  "standing_directive": "Scores from captured browser-driven evidence only (bounded, same-origin, real session). Relevance graded by Cortex; counts deterministic. Do not fabricate grades or counts. Never record a validation claim not actually performed. Keep work local; commit only when the operator asks.",
+  "validation_strategy": {
+    "functional": [
+      "The Home Improvement search view shows a dataset x retailer scoreboard with THREE datasets (synonym consistency, dimensions relevance, pro relevance) and a score per retailer.",
+      "Relevance datasets drill from dataset score to per-query NDCG and from a query to per-product graded relevance (0-3) with the judge's one-line reason.",
+      "Dimensions queries also surface count-band ratio and SKU-overlap Jaccard; the structure stays dataset-generic so future datasets slot in as rows.",
+      "Product titles sent to the judge are full (not truncated) for the truncation-critical fastener queries; the Cortex notation/No.-abbreviation defect is fixed and re-judged."
+    ],
+    "usability": [
+      "Interactive walkthrough: open the scoreboard, read HD vs Lowe's per dataset, drill a score to per-query NDCG, expand a query to per-product grades; Shopify/Woo sites unaffected.",
+      "No inspection triggered; no server-side fetching of the retailers."
+    ],
+    "technical": [
+      "validate:dashboard asserts the search-datasets API returns datasets with per-retailer scores + cases and the view renders the relevance branch (severity dots, grade badges); validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-087: three-dataset scoreboard (Synonym HD 30 / Lowe's 48; Dimensions HD 90 / Lowe's 88; Pro HD 83 / Lowe's 78) with query- and product-level drill-down; Cortex judge notation + 'No.' abbreviation defects found, fixed (validated 12/13 gold, stable), delivered to and deployed by the Cortex session, then re-judged; two clean gate passes."
+  ],
+  "known_gaps_opened": [
+    "22 non-fastener dimension queries per retailer remain on the original 48-char title capture (nouns fit within 48 chars; minimal NDCG impact); full-title re-capture applied to the 10 fastener queries per retailer.",
+    "Pro dataset: 3 queries (electrician, landscaper on both; install a toilet on Lowe's) genuinely return 0 products.",
+    "Recommendations/complementary-product eval designed (complement rubric via Cortex per-job rubric) but blocked on PDP recommendation carousels not rendering in the automated session; retry on a fresh/logged-in browser.",
+    "Cortex prerequisites for the app's internal headless pipeline (rendered-evidence.mjs: >=10 candidates, keep href as id) remain open."
+  ]
+}

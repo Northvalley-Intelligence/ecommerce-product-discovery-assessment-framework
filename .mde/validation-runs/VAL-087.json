@@ -1,0 +1,60 @@
+{
+  "validation_run_id": "VAL-087",
+  "generation": "GEN-038",
+  "phase": "Three-dataset Cortex-judged relevance scoreboard",
+  "started_at": "2026-07-31T00:00:00Z",
+  "completed_at": "2026-07-31T12:40:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes",
+  "validations_executed": [
+    {
+      "category": "Three-dataset scoreboard (dataset x retailer)",
+      "tool": "browser + /api/search-datasets",
+      "result": "pass",
+      "evidence": "Scoreboard renders three rows: Synonym/category (HD 30% / Lowe's 48%), Dimension/notation & hash (HD 0.90 / Lowe's 0.88 NDCG), Pro/job-function (HD 0.83 / Lowe's 0.78 NDCG). Confirmed live in the browser (Home Depot view) with 240+ product-grade badges rendered."
+    },
+    {
+      "category": "Query-level and query+product drill-down",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Relevance datasets expand from dataset score to per-query NDCG rows (severity dot + NDCG% + count-ratio/Jaccard chips) and from each query to per-product grade badges (3->0) with the judge's one-line reason."
+    },
+    {
+      "category": "Cortex judge defect remediation",
+      "tool": "Cortex /v1/relevance + Ollama llama3.2:3b prompt lab",
+      "result": "pass",
+      "evidence": "Notation defect (1/2-in read as size mismatch) and 'No.' abbreviation defect (no 8 read as negation) reproduced, fixed via strengthened rubric (12/13 hand-labelled gold, stable across 3 temp-0 runs), delivered to the Cortex session and deployed to the default rubric. Re-judged: no 8 wood screw HD 0.91 / Lowe's 1.00; dimensions rose to HD 0.90 / Lowe's 0.88."
+    },
+    {
+      "category": "Title-truncation fix",
+      "tool": "Cortex + capture",
+      "result": "pass",
+      "evidence": "48-char title truncation clipped product nouns; full-title re-capture of the 10 fastener queries per retailer raised HD fastener mean NDCG 0.785->0.895 (and further with the deployed rubric), correcting both under- and over-scores."
+    },
+    {
+      "category": "Gate: dashboard/gen13/validate + diff-check, two clean passes",
+      "tool": "validate:dashboard/gen13/validate",
+      "result": "pass",
+      "evidence": "Pass 1 and Pass 2 both green (exit 0) with no implementation changes between; git diff --check clean. Pre-existing BDD-012 (independent evaluator calibration) warning is a known deferred item, not a regression."
+    },
+    {
+      "category": "Discoveries PDF deliverable + client-JS parse guard",
+      "tool": "latexmk + validate:dashboard + browser",
+      "result": "pass",
+      "evidence": "Generated a Northvalley-branded discoveries report (reports/homedepot-vs-lowes-search-discoveries.pdf, 5 pages, validated - real content, no placeholders) and surfaced a download link on the scoreboard, served via /artifact (200 application/pdf). A client-JS break (an unescaped apostrophe in a single-quoted string that blanked the whole SPA) was caught by the operator and fixed with an HTML entity; validate:dashboard now parses the inline client script via new Function, so this class of bug fails the gate (proven to catch it, passes on the fixed page). Confirmed in-browser: 12 nav items, 3 dataset rows, 308 grade badges, report link present."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Full 41-case dimensions coverage + all-32 full-title re-capture on both retailers",
+      "reason": "Coverage-complete 32-query slice (all 12 transformation types) captured; full-title re-capture applied to the truncation-critical fastener subset. Non-fastener nouns fit within 48 chars. Retailer throttling bounded further re-capture."
+    },
+    {
+      "category": "Recommendations / complementary-product eval",
+      "reason": "Designed (complement rubric via Cortex per-job rubric) but PDP recommendation carousels did not render in the automated session; deferred to a fresh/logged-in browser."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator-driven three-dataset relevance scoreboard with Cortex-judged NDCG, drillable at query and query+product level, for Home Depot vs Lowe's. Synonyms favour Lowe's; dimensions ~tie with opposite failure modes (HD ignores the # spec, Lowe's over-reacts); pro/project favours Home Depot slightly. MDE followed."
+}
