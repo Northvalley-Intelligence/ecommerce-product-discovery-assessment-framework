@@ -1,0 +1,258 @@
+{
+  "schema_version": "browser-search-eval-v0.1",
+  "target": "homedepot.com",
+  "platform": "custom-enterprise (Akamai)",
+  "method": "browser-driven: real logged-in session, same-origin /s/<query> fetches, read embedded Apollo SearchModel + rendered titles. No external API calls, no token replay, no crawling beyond the query set.",
+  "captured_at": "2026-07-31T00:31:22.577Z",
+  "search_api": {
+    "operation": "searchModel (GraphQL)",
+    "host": "apionline.homedepot.com",
+    "response_location": "window.__APOLLO_STATE__ SearchModel (SSR-hydrated)"
+  },
+  "queries_run": 15,
+  "experiments": [
+    {
+      "id": "EXP-001",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/sheetrock",
+      "query": "sheetrock",
+      "kind": "synonym",
+      "result_count": 33,
+      "category_redirect": true,
+      "top_titles": [
+        "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Drywall Panels",
+        "1/2 in. x 4 ft. x 12 ft. USG Sheetrock Brand UltraLight Drywall Panels"
+      ]
+    },
+    {
+      "id": "EXP-002",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/sheet%20rock",
+      "query": "sheet rock",
+      "kind": "synonym",
+      "result_count": 33,
+      "category_redirect": true,
+      "top_titles": [
+        "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Drywall Panels"
+      ]
+    },
+    {
+      "id": "EXP-003",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/drywall%20sheets",
+      "query": "drywall sheets",
+      "kind": "synonym",
+      "result_count": 921,
+      "category_redirect": false,
+      "top_titles": [
+        "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Drywall Panels",
+        "2-1/16 in. x 250 ft. Paper Drywall Joint Tape"
+      ]
+    },
+    {
+      "id": "EXP-004",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/drywall",
+      "query": "drywall",
+      "kind": "synonym",
+      "result_count": 2411,
+      "category_redirect": false,
+      "top_titles": [
+        "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Drywall Panels",
+        "4.5 gal. All Purpose Ready-Mixed Joint Compound"
+      ]
+    },
+    {
+      "id": "EXP-005",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/1%2F2%20in%20screw",
+      "query": "1/2 in screw",
+      "kind": "dimension",
+      "result_count": 4955,
+      "category_redirect": false,
+      "top_titles": [
+        "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+      ]
+    },
+    {
+      "id": "EXP-006",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/1%2F2%20ft",
+      "query": "1/2 ft",
+      "kind": "dimension",
+      "result_count": 825,
+      "category_redirect": false,
+      "top_titles": [
+        "12mm - Sande Plywood ( 1/2 in. Category x 4 ft. x 8 ft. ...)",
+        "1/2 in. x 10 ft. Gray Non-Metallic PVC Schedule 40-Conduit"
+      ]
+    },
+    {
+      "id": "EXP-007",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/1%2F2%20ft%20screw",
+      "query": "1/2 ft screw",
+      "kind": "dimension",
+      "result_count": 1047,
+      "category_redirect": false,
+      "top_titles": [
+        "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+      ]
+    },
+    {
+      "id": "EXP-008",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/%232%20phillips%20bit",
+      "query": "#2 phillips bit",
+      "kind": "dimension",
+      "result_count": 300,
+      "category_redirect": false,
+      "top_titles": [
+        "SHOCKWAVE Impact Duty 2 in. Phillips #2 Alloy Steel Screw Driver Drill Bit (15-Pack)"
+      ]
+    },
+    {
+      "id": "EXP-009",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/3%2F4%20plywood",
+      "query": "3/4 plywood",
+      "kind": "dimension",
+      "result_count": 219,
+      "category_redirect": false,
+      "top_titles": [
+        "23/32 in. x 4 ft. x 8 ft. RTD Southern Yellow Pine Wood Sheathing Plywood"
+      ]
+    },
+    {
+      "id": "EXP-010",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/half%20inch%20drywall",
+      "query": "half inch drywall",
+      "kind": "spelled",
+      "result_count": 953,
+      "category_redirect": false,
+      "top_titles": [
+        "1/2 in. x 4 ft. x 8 ft. USG Sheetrock Brand UltraLight Drywall Panels"
+      ]
+    },
+    {
+      "id": "EXP-011",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/2x4",
+      "query": "2x4",
+      "kind": "format",
+      "result_count": 757,
+      "category_redirect": false,
+      "top_titles": [
+        "2 in. x 4 in. x 96 in. #2 Premium Grade KD-HT Stud"
+      ]
+    },
+    {
+      "id": "EXP-012",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/2%20by%204",
+      "query": "2 by 4",
+      "kind": "format",
+      "result_count": 1043,
+      "category_redirect": false,
+      "top_titles": [
+        "2 in. x 4 in. x 96 in. #2 Premium Grade KD-HT Stud"
+      ]
+    },
+    {
+      "id": "EXP-013",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/2%20x%204",
+      "query": "2 x 4",
+      "kind": "format",
+      "result_count": 4586,
+      "category_redirect": false,
+      "top_titles": [
+        "2 in. x 4 in. x 96 in. #2 Premium Grade KD-HT Stud"
+      ]
+    },
+    {
+      "id": "EXP-014",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/romex",
+      "query": "romex",
+      "kind": "pro",
+      "result_count": 1797,
+      "category_redirect": false,
+      "top_titles": [
+        "250 ft. 12/2 Solid Romex SIMpull CU NM-B W/G Wire"
+      ]
+    },
+    {
+      "id": "EXP-015",
+      "surface": "Search",
+      "method": "GET (browser session)",
+      "url": "https://www.homedepot.com/s/unistrut",
+      "query": "unistrut",
+      "kind": "pro",
+      "result_count": 1759,
+      "category_redirect": false,
+      "top_titles": [
+        "10 ft. 12-Gauge Half Slotted Metal Framing Strut Channel in Silver Galvanized"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "HD-F001",
+      "severity": "High",
+      "surface": "Search",
+      "title": "Synonym collapse: \"sheetrock\" returns ~1% of the drywall assortment",
+      "detail": "\"sheetrock\" and \"sheet rock\" redirect to a narrow USG-brand category with 33 products, while \"drywall\" returns 2411 and \"drywall sheets\" returns 921. A shopper using the everyday word \"sheetrock\" is shown 33 of ~2400 drywall products.",
+      "evidence": [
+        "sheetrock",
+        "sheet rock",
+        "drywall",
+        "drywall sheets"
+      ]
+    },
+    {
+      "id": "HD-F002",
+      "severity": "Medium",
+      "surface": "Search",
+      "title": "Dimension unit conflation: \"1/2 ft\" returns 1/2-inch products",
+      "detail": "\"1/2 ft\" (half a foot) and \"1/2 ft screw\" return 1/2-INCH items (plywood, PVC conduit, 1/2 in screws). The fraction 1/2 is matched but the unit \"ft\" is dropped, so half-foot intent yields half-inch results.",
+      "evidence": [
+        "1/2 ft",
+        "1/2 ft screw"
+      ]
+    },
+    {
+      "id": "HD-F003",
+      "severity": "Medium",
+      "surface": "Search",
+      "title": "Format-based count inconsistency for the same lumber query",
+      "detail": "\"2x4\", \"2 by 4\", and \"2 x 4\" all return correct 2x4 lumber up top but with 757 / 1043 / 4586 results respectively — a 6x swing in result-set size driven purely by spacing/format normalization.",
+      "evidence": [
+        "2x4",
+        "2 by 4",
+        "2 x 4"
+      ]
+    }
+  ],
+  "passes": [
+    "Pro/trade names map correctly: romex -> Romex NM-B wire (1797), unistrut -> strut channel (1759).",
+    "Spelled fractions handled: \"half inch drywall\" -> 1/2 in drywall panels (953).",
+    "Dimension queries with product context are relevant: \"1/2 in screw\", \"#2 phillips bit\", \"3/4 plywood\".",
+    "Concept queries redirect to the right category: \"cordless drill\" -> Cordless Drills, \"hammer\" -> Hammers."
+  ]
+}

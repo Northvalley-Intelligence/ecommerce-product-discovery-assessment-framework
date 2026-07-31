@@ -1,6 +1,6 @@
 {
-  "schema_version": "site-profile-v0.1",
-  "discovered_at": "2026-07-15T02:32:15.193Z",
+  "schema_version": "site-profile-v0.2",
+  "discovered_at": "2026-07-15T16:18:34.541Z",
   "target": {
     "target_id": "allbirds",
     "name": "Allbirds",
@@ -29,7 +29,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 487,
+      "duration_ms": 385,
       "content_type": "text/html; charset=utf-8",
       "classification": null,
       "confidence": "High",
@@ -43,7 +43,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 206,
+      "duration_ms": 254,
       "content_type": "text/plain; charset=utf-8",
       "classification": null,
       "confidence": "High",
@@ -57,11 +57,11 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 177,
+      "duration_ms": 175,
       "content_type": "application/json; charset=utf-8",
       "classification": null,
       "confidence": "High",
-      "text_excerpt": "{\"products\":[{\"id\":7292464955472,\"title\":\"Men's Cruiser - Shadow Blue (Natural White Sole)\",\"handle\":\"mens-cruiser-shadow-blue-natural-white-sole\",\"body_html\":\"\\u003cp\\u003eInspired by a classic court style, this signature shoe delivers the right balance of style and comfort. Its lightweight build and supple softness make this your new pick for life on the go.\\u003c\\/p\\u003e\",\"published_at\":\"2026-07-08T11:32:23-07:00\",\"created_at\":\"2026-02-04T17:38:18-08:00\",\"updated_at\":\"2026-07-14T19:32:11-07:",
+      "text_excerpt": "{\"products\":[{\"id\":7292464955472,\"title\":\"Men's Cruiser - Shadow Blue (Natural White Sole)\",\"handle\":\"mens-cruiser-shadow-blue-natural-white-sole\",\"body_html\":\"\\u003cp\\u003eInspired by a classic court style, this signature shoe delivers the right balance of style and comfort. Its lightweight build and supple softness make this your new pick for life on the go.\\u003c\\/p\\u003e\",\"published_at\":\"2026-07-08T11:32:23-07:00\",\"created_at\":\"2026-02-04T17:38:18-08:00\",\"updated_at\":\"2026-07-15T09:18:30-07:",
       "json_payload": {
         "products": [
           {
@@ -71,7 +71,7 @@
             "body_html": "<p>Inspired by a classic court style, this signature shoe delivers the right balance of style and comfort. Its lightweight build and supple softness make this your new pick for life on the go.</p>",
             "published_at": "2026-07-08T11:32:23-07:00",
             "created_at": "2026-02-04T17:38:18-08:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Shoes",
             "tags": [
@@ -97,7 +97,7 @@
                 "position": 1,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816792656,
@@ -116,7 +116,7 @@
                 "position": 2,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816825424,
@@ -135,7 +135,7 @@
                 "position": 3,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816858192,
@@ -154,7 +154,7 @@
                 "position": 4,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816890960,
@@ -173,7 +173,7 @@
                 "position": 5,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816923728,
@@ -192,7 +192,7 @@
                 "position": 6,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816956496,
@@ -211,7 +211,7 @@
                 "position": 7,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990816989264,
@@ -230,7 +230,7 @@
                 "position": 8,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990817022032,
@@ -249,7 +249,7 @@
                 "position": 9,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990817054800,
@@ -268,7 +268,7 @@
                 "position": 10,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990817087568,
@@ -287,7 +287,7 @@
                 "position": 11,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990817120336,
@@ -306,7 +306,7 @@
                 "position": 12,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41990817153104,
@@ -325,7 +325,7 @@
                 "position": 13,
                 "product_id": 7292464955472,
                 "created_at": "2026-02-04T17:38:18-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -414,7 +414,7 @@
             "body_html": "<p class=\"p1\">Inspired by a classic court style, this signature shoe delivers the right balance of style and comfort. Its lightweight build and supple softness make this your new pick for life on the go.</p>",
             "published_at": "2026-07-08T11:32:06-07:00",
             "created_at": "2025-08-30T02:29:20-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Shoes",
             "tags": [
@@ -439,7 +439,7 @@
                 "position": 1,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315822829648,
@@ -458,7 +458,7 @@
                 "position": 2,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315822862416,
@@ -477,7 +477,7 @@
                 "position": 3,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315822895184,
@@ -496,7 +496,7 @@
                 "position": 4,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315822927952,
@@ -515,7 +515,7 @@
                 "position": 5,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315822960720,
@@ -534,7 +534,7 @@
                 "position": 6,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315822993488,
@@ -553,7 +553,7 @@
                 "position": 7,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315823026256,
@@ -572,7 +572,7 @@
                 "position": 8,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315823059024,
@@ -591,7 +591,7 @@
                 "position": 9,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315823091792,
@@ -610,7 +610,7 @@
                 "position": 10,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315823124560,
@@ -629,7 +629,7 @@
                 "position": 11,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315823157328,
@@ -648,7 +648,7 @@
                 "position": 12,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41315823190096,
@@ -667,7 +667,7 @@
                 "position": 13,
                 "product_id": 7215691300944,
                 "created_at": "2025-08-30T02:29:20-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -756,7 +756,7 @@
             "body_html": "<p>Crafted using bio-fabrication, designed for movement, and built for modern ambition, the Cruiser Terralux™ combines iconic Allbirds comfort with our most refined styling to date—because comfort doesn’t have to be casual.</p>",
             "published_at": "2026-06-30T18:04:23-07:00",
             "created_at": "2025-08-06T16:52:33-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Shoes",
             "tags": [
@@ -793,7 +793,7 @@
                 "position": 1,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112499280,
@@ -812,7 +812,7 @@
                 "position": 2,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112532048,
@@ -831,7 +831,7 @@
                 "position": 3,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112564816,
@@ -850,7 +850,7 @@
                 "position": 4,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112597584,
@@ -869,7 +869,7 @@
                 "position": 5,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112630352,
@@ -888,7 +888,7 @@
                 "position": 6,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112663120,
@@ -907,7 +907,7 @@
                 "position": 7,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112695888,
@@ -926,7 +926,7 @@
                 "position": 8,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112728656,
@@ -945,7 +945,7 @@
                 "position": 9,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112761424,
@@ -964,7 +964,7 @@
                 "position": 10,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112794192,
@@ -983,7 +983,7 @@
                 "position": 11,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41271112859728,
@@ -1002,7 +1002,7 @@
                 "position": 12,
                 "product_id": 7205181653072,
                 "created_at": "2025-08-06T16:52:33-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -1090,7 +1090,7 @@
             "body_html": "<p>Downpours happen. Be prepared with fully waterproof kicks boasting a little extra coverage. This stylish sneaker adds a mid-top silhouette and weather-ready features to the cozy comfort of the Wool Runner NZ.</p>",
             "published_at": "2026-06-30T18:03:14-07:00",
             "created_at": "2025-08-26T17:33:15-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Shoes",
             "tags": [
@@ -1128,7 +1128,7 @@
                 "position": 1,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654702160,
@@ -1147,7 +1147,7 @@
                 "position": 2,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654734928,
@@ -1166,7 +1166,7 @@
                 "position": 3,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654767696,
@@ -1185,7 +1185,7 @@
                 "position": 4,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654800464,
@@ -1204,7 +1204,7 @@
                 "position": 5,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654833232,
@@ -1223,7 +1223,7 @@
                 "position": 6,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654866000,
@@ -1242,7 +1242,7 @@
                 "position": 7,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654898768,
@@ -1261,7 +1261,7 @@
                 "position": 8,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654931536,
@@ -1280,7 +1280,7 @@
                 "position": 9,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654964304,
@@ -1299,7 +1299,7 @@
                 "position": 10,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313654997072,
@@ -1318,7 +1318,7 @@
                 "position": 11,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313655029840,
@@ -1337,7 +1337,7 @@
                 "position": 12,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41313655062608,
@@ -1356,7 +1356,7 @@
                 "position": 13,
                 "product_id": 7214904279120,
                 "created_at": "2025-08-26T17:33:15-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -1445,7 +1445,7 @@
             "body_html": "",
             "published_at": "2026-06-30T10:21:29-07:00",
             "created_at": "2026-06-05T07:14:57-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "re:do",
             "product_type": "return,package_protection",
             "tags": [
@@ -1472,7 +1472,7 @@
                 "position": 1,
                 "product_id": 7369944137808,
                 "created_at": "2026-06-05T07:14:57-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 42436493148240,
@@ -1491,7 +1491,7 @@
                 "position": 2,
                 "product_id": 7369944137808,
                 "created_at": "2026-06-05T07:14:57-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -1525,7 +1525,7 @@
             "body_html": "<p>The Wool Runner-up Mizzle is a wet-weather high top made with ZQ Merino wool and a bio-based water repellent shield, so your feet stay dry and cozy no matter what the weather is.</p>",
             "published_at": "2026-06-18T17:41:16-07:00",
             "created_at": "2022-07-15T16:09:14-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Shoes",
             "tags": [
@@ -1583,7 +1583,7 @@
                 "position": 1,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39812334551120,
@@ -1621,7 +1621,7 @@
                 "position": 2,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39812334583888,
@@ -1659,7 +1659,7 @@
                 "position": 3,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39812334616656,
@@ -1697,7 +1697,7 @@
                 "position": 4,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39812334649424,
@@ -1735,7 +1735,7 @@
                 "position": 5,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39812334682192,
@@ -1773,7 +1773,7 @@
                 "position": 6,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39812334714960,
@@ -1811,7 +1811,7 @@
                 "position": 7,
                 "product_id": 6712397496400,
                 "created_at": "2022-07-15T16:09:14-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -1891,7 +1891,7 @@
             "body_html": "<p>The Trino Sprinter Low is a performance low-rise sock made with a breathable mesh knit and durable reinforcements like a reinforced heel and toe. Made with natural materials like eucalyptus tree fiber and merino wool which help minimize odor and wicks moisture. Pairs perfectly with our Tree Dasher running shoe.</p>",
             "published_at": "2026-06-18T17:28:28-07:00",
             "created_at": "2022-07-01T10:55:32-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Socks",
             "tags": [
@@ -1946,7 +1946,7 @@
                 "position": 1,
                 "product_id": 6698212458576,
                 "created_at": "2022-07-01T10:55:32-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39790553595984,
@@ -1981,7 +1981,7 @@
                 "position": 2,
                 "product_id": 6698212458576,
                 "created_at": "2022-07-01T10:55:32-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39790553628752,
@@ -2016,7 +2016,7 @@
                 "position": 3,
                 "product_id": 6698212458576,
                 "created_at": "2022-07-01T10:55:32-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39790553661520,
@@ -2051,7 +2051,7 @@
                 "position": 4,
                 "product_id": 6698212458576,
                 "created_at": "2022-07-01T10:55:32-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -2114,7 +2114,7 @@
             "body_html": "<p>The Trino Sprinters - Cushioned is a performance crew sock made with a breathable mesh knit and durable reinforcements like a reinforced heel and toe. Made with natural materials like eucalyptus tree fiber and merino wool which help minimize odor and wicks moisture. Pairs perfectly with our Tree Dasher running shoe.</p>",
             "published_at": "2026-06-18T16:33:54-07:00",
             "created_at": "2022-06-07T12:10:34-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Socks",
             "tags": [
@@ -2169,7 +2169,7 @@
                 "position": 1,
                 "product_id": 6691390423120,
                 "created_at": "2022-06-07T12:10:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39773456695376,
@@ -2204,7 +2204,7 @@
                 "position": 2,
                 "product_id": 6691390423120,
                 "created_at": "2022-06-07T12:10:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39773456728144,
@@ -2239,7 +2239,7 @@
                 "position": 3,
                 "product_id": 6691390423120,
                 "created_at": "2022-06-07T12:10:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39773456760912,
@@ -2274,7 +2274,7 @@
                 "position": 4,
                 "product_id": 6691390423120,
                 "created_at": "2022-06-07T12:10:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -2337,7 +2337,7 @@
             "body_html": "<p>The Trino Sprinter No Show is a performance no-show sock made with a breathable mesh knit and durable reinforcements like a reinforced heel and toe. Made with natural materials like eucalyptus tree fiber and merino wool which help minimize odor and wicks moisture. Pairs perfectly with our Tree Dasher running shoe.</p>",
             "published_at": "2026-06-18T16:30:25-07:00",
             "created_at": "2021-11-16T14:50:07-08:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Socks",
             "tags": [
@@ -2392,7 +2392,7 @@
                 "position": 1,
                 "product_id": 6622704959568,
                 "created_at": "2021-11-16T14:50:07-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39594659545168,
@@ -2427,7 +2427,7 @@
                 "position": 2,
                 "product_id": 6622704959568,
                 "created_at": "2021-11-16T14:50:07-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39594659577936,
@@ -2462,7 +2462,7 @@
                 "position": 3,
                 "product_id": 6622704959568,
                 "created_at": "2021-11-16T14:50:07-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 39594659610704,
@@ -2497,7 +2497,7 @@
                 "position": 4,
                 "product_id": 6622704959568,
                 "created_at": "2021-11-16T14:50:07-08:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -2560,7 +2560,7 @@
             "body_html": "<p>With an elevated sole and versatile canvas material, this modern slip-on raises the bar for easy wearability and styling.</p>",
             "published_at": "2026-06-16T13:56:35-07:00",
             "created_at": "2025-07-03T15:12:33-07:00",
-            "updated_at": "2026-07-14T19:32:11-07:00",
+            "updated_at": "2026-07-15T09:18:30-07:00",
             "vendor": "Allbirds",
             "product_type": "Shoes",
             "tags": [
@@ -2598,7 +2598,7 @@
                 "position": 1,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676349008,
@@ -2617,7 +2617,7 @@
                 "position": 2,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676381776,
@@ -2636,7 +2636,7 @@
                 "position": 3,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676414544,
@@ -2655,7 +2655,7 @@
                 "position": 4,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676447312,
@@ -2674,7 +2674,7 @@
                 "position": 5,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676480080,
@@ -2693,7 +2693,7 @@
                 "position": 6,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676512848,
@@ -2712,7 +2712,7 @@
                 "position": 7,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676545616,
@@ -2731,7 +2731,7 @@
                 "position": 8,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676578384,
@@ -2750,7 +2750,7 @@
                 "position": 9,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676611152,
@@ -2769,7 +2769,7 @@
                 "position": 10,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676643920,
@@ -2788,7 +2788,7 @@
                 "position": 11,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676676688,
@@ -2807,7 +2807,7 @@
                 "position": 12,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               },
               {
                 "id": 41222676709456,
@@ -2826,7 +2826,7 @@
                 "position": 13,
                 "product_id": 7193832652880,
                 "created_at": "2025-07-03T15:12:34-07:00",
-                "updated_at": "2026-07-14T19:32:11-07:00"
+                "updated_at": "2026-07-15T09:18:30-07:00"
               }
             ],
             "images": [
@@ -2918,11 +2918,11 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 182,
+      "duration_ms": 134,
       "content_type": "application/json; charset=utf-8",
       "classification": null,
       "confidence": "High",
-      "text_excerpt": "{\"collections\":[{\"id\":263506919504,\"title\":\"$109 Tree Dashers for Outlet Discount Code\",\"handle\":\"109-tree-dashers-for-outlet-discount-code\",\"description\":\"\",\"published_at\":\"2022-07-11T07:39:16-07:00\",\"updated_at\":\"2026-07-08T13:39:47-07:00\",\"image\":null,\"products_count\":0},{\"id\":270995030096,\"title\":\"30% Off Tree Runner Go \\u0026 Tree Gliders\",\"handle\":\"30-off-tree-runner-go-tree-gliders\",\"description\":\"\",\"published_at\":\"2024-09-07T20:37:09-07:00\",\"updated_at\":\"2026-07-14T04:02:14-07:00\",\"image",
+      "text_excerpt": "{\"collections\":[{\"id\":263506919504,\"title\":\"$109 Tree Dashers for Outlet Discount Code\",\"handle\":\"109-tree-dashers-for-outlet-discount-code\",\"description\":\"\",\"published_at\":\"2022-07-11T07:39:16-07:00\",\"updated_at\":\"2026-07-08T13:39:47-07:00\",\"image\":null,\"products_count\":0},{\"id\":270995030096,\"title\":\"30% Off Tree Runner Go \\u0026 Tree Gliders\",\"handle\":\"30-off-tree-runner-go-tree-gliders\",\"description\":\"\",\"published_at\":\"2024-09-07T20:37:09-07:00\",\"updated_at\":\"2026-07-15T04:02:09-07:00\",\"image",
       "json_payload": {
         "collections": [
           {
@@ -2941,7 +2941,7 @@
             "handle": "30-off-tree-runner-go-tree-gliders",
             "description": "",
             "published_at": "2024-09-07T20:37:09-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 107
           },
@@ -2971,7 +2971,7 @@
             "handle": "add-on-essentials",
             "description": "<p>Round out your cart with simple, low-key essentials. Discover lightweight and cozy everyday favorites to finish your order in style.</p>",
             "published_at": "2026-01-21T09:12:56-08:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 53
           },
@@ -2991,7 +2991,7 @@
             "handle": "aff-secret-sale-mkd",
             "description": "",
             "published_at": "2023-10-25T12:45:07-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 126
           },
@@ -3001,7 +3001,7 @@
             "handle": "aff-secret-sale-40-off",
             "description": "",
             "published_at": "2024-02-09T11:52:59-08:00",
-            "updated_at": "2026-07-14T04:02:11-07:00",
+            "updated_at": "2026-07-15T04:02:08-07:00",
             "image": null,
             "products_count": 57
           },
@@ -3011,7 +3011,7 @@
             "handle": "aff-secret-sale-fp",
             "description": "",
             "published_at": "2023-10-25T12:39:30-07:00",
-            "updated_at": "2026-07-14T04:02:11-07:00",
+            "updated_at": "2026-07-15T04:02:08-07:00",
             "image": null,
             "products_count": 28
           },
@@ -3031,7 +3031,7 @@
             "handle": "all-apparel-excluding-face-masks",
             "description": "All apparel excluding face masks",
             "published_at": "2026-07-01T17:20:20-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 529
           },
@@ -3041,7 +3041,7 @@
             "handle": "all-full-price-shoes",
             "description": "",
             "published_at": "2023-04-24T16:05:32-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 1322
           },
@@ -3051,7 +3051,7 @@
             "handle": "all-msrp-products",
             "description": "",
             "published_at": "2024-10-17T10:51:19-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 1867
           },
@@ -3061,7 +3061,7 @@
             "handle": "all-shoes-mens-and-womens",
             "description": "All shoes in the catalog",
             "published_at": "2025-08-14T09:31:43-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 3056
           },
@@ -3071,7 +3071,7 @@
             "handle": "all-shoes-search",
             "description": "",
             "published_at": "2025-08-14T09:33:26-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 1322
           },
@@ -3081,7 +3081,7 @@
             "handle": "all-tier-2-4-products",
             "description": "",
             "published_at": "2024-05-10T10:04:34-07:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 2148
           },
@@ -3111,7 +3111,7 @@
             "handle": "allbirds-14-apparel-loop",
             "description": "",
             "published_at": "2023-02-17T15:34:14-08:00",
-            "updated_at": "2026-07-14T04:02:14-07:00",
+            "updated_at": "2026-07-15T04:02:09-07:00",
             "image": null,
             "products_count": 9
           },
@@ -3135,7 +3135,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 229,
+      "duration_ms": 112,
       "content_type": "application/json; charset=utf-8",
       "classification": null,
       "confidence": "High",

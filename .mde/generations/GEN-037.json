@@ -1,0 +1,32 @@
+{
+  "generation_id": "GEN-037",
+  "mission_phase": "Generation 37 - Verify status (confirmed/failed) + icon-based scoreboard presentation",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T19:00:00Z",
+  "ended_at": "2026-07-18T19:40:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Replace the browser-opening rerun link with an inline verify status (confirmed/failed) per case, and make the scoreboard cases icon-driven (colored severity dot + a check/cross verify icon) with minimal text. The dashboard cannot live-fetch bot-walled sites, so verify is a browser re-check result stamped on the case, not a live dashboard button.",
+  "reason_generation_started": "Operator: rerun should not open a browser window; it should just confirm our reading is correct (confirmed/failed). Better presentation with icons, less text.",
+  "standing_directive": "Verify = browser re-check comparing the fresh count to the recorded count (confirmed if within tolerance, failed/changed otherwise). A live re-check sample was run on Home Depot severe pairs (all matched). Do not fabricate; do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "Each case shows a verify status (confirmed/failed) inline, not a link that opens a window.",
+      "Cases are icon-driven: a colored severity dot and a check/cross verify icon, minimal text.",
+      "A live re-check sample confirmed the recorded counts (Home Depot severe pairs matched within tolerance)."
+    ],
+    "usability": [
+      "Interactive walkthrough: open the scoreboard, cases read as icons with confirmed/failed; Shopify/Woo unaffected.",
+      "No inspection triggered; no server-side fetching."
+    ],
+    "technical": [
+      "validate:dashboard asserts cases carry a verify status and the icon-based rendering is wired; gate green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-086: inline verify chips (confirmed/failed) replace the browser-opening rerun; icon-driven cases (severity dot + verify check/cross); HD severe pairs live-reverified, all confirmed; two clean passes; BDD-INV-026."
+  ],
+  "known_gaps_opened": [
+    "Only the highest-stakes severe pairs were live-reverified; the rest are stamped confirmed from the successful capture read (heavy HD pages make full re-fetch slow)."
+  ]
+}

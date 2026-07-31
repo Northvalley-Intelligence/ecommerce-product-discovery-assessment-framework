@@ -1,0 +1,66 @@
+{
+  "schema_version": "woo-catalog-summary-v0.1",
+  "inspection_id": "WOO-20260729T005836Z",
+  "target_id": "legionathletics",
+  "name": "Legion Athletics",
+  "url": "https://legionathletics.com/",
+  "captured_at": "2026-07-29T00:58:59.659Z",
+  "platform": "woocommerce",
+  "store_api": "https://legionathletics.com/wp-json/wc/store/v1",
+  "sku_count": 97,
+  "sku_count_source": "X-WP-Total header on /products",
+  "browse_nodes": 63,
+  "browse_nodes_substantive": 46,
+  "browse_nodes_operational_heuristic": 17,
+  "browse_levels": 1,
+  "top_level_nodes": 63,
+  "top_categories": [
+    {
+      "name": "On Sale",
+      "count": 68
+    },
+    {
+      "name": "Available on Facebook",
+      "count": 55
+    },
+    {
+      "name": "Supplements",
+      "count": 51
+    },
+    {
+      "name": "Workout Supplements",
+      "count": 51
+    },
+    {
+      "name": "Improve Health",
+      "count": 25
+    },
+    {
+      "name": "New",
+      "count": 25
+    },
+    {
+      "name": "New Merch",
+      "count": 24
+    },
+    {
+      "name": "Build Muscle",
+      "count": 16
+    },
+    {
+      "name": "Muscle Builders",
+      "count": 15
+    },
+    {
+      "name": "Performance &amp; Recovery",
+      "count": 15
+    }
+  ],
+  "search_queries_run": 8,
+  "search_signal": {
+    "literal_hits": "4/4",
+    "intent_hits": "0/4",
+    "note": "Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood)."
+  },
+  "discovery_signal": "Small catalog (97 SKUs): search is likely a lower priority; category/browse coverage matters more than deep search relevance. Flat browse (1 level): no hierarchical navigation depth, so faceted/nested browse is not a strong signal here. 46 substantive browse nodes after filtering operational/merchandising categories."
+}

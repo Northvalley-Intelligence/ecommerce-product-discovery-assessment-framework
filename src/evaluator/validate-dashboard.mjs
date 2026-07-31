@@ -139,6 +139,9 @@ async function main() {
     // GEN-035: browser-driven search evaluation view (Home Depot category<->synonym pairs).
     assert(page.includes('function renderBrowserEvalSite') && page.includes('function loadSearchScoreboard'), 'Dashboard page missing the browser-eval search scoreboard view.');
     assert(page.includes("'/api/search-datasets'") && page.includes('class="ds-site"'), 'Dashboard page missing the dataset scoreboard wiring.');
+    // GEN-037: cases render as icons (severity dot + verify check/cross), no browser-opening rerun link.
+    assert(page.includes('sdot sev-') && page.includes('class="vchip '), 'Scoreboard cases missing the icon-based severity dot / verify chip rendering.');
+    assert(!/Rerun[^<]*” on ' \+ escapeHtml\(rr\.name\)/.test(page), 'Scoreboard should no longer open a live search window on rerun.');
     // GEN-036: dataset x retailer scoreboard (Home Improvement domain).
     const browserEvalSites = sites.filter((site) => site.platform === 'browser-eval');
     assert(browserEvalSites.length >= 2, 'Expected Home Depot and Lowe\'s as browser-eval sites.');
@@ -150,7 +153,7 @@ async function main() {
       const syn = sd.datasets.find((d) => d.id === 'synonym-pairs');
       assert(syn && syn.retailers && syn.retailers.homedepot && syn.retailers.lowes, 'synonym dataset missing per-retailer entries.');
       assert(typeof syn.retailers.homedepot.score === 'number' && Array.isArray(syn.retailers.homedepot.cases), 'retailer entry missing score/cases.');
-      assert(syn.retailers.homedepot.cases.every((c) => c.term_a && c.term_a.url && typeof c.term_a.total === 'number'), 'dataset case terms missing url/total.');
+      assert(syn.retailers.homedepot.cases.every((c) => c.term_a && typeof c.term_a.total === 'number' && c.verify && c.verify.status), 'dataset case terms missing total or verify status.');
     }
     // GEN-025: sites carry their sector membership so the sidebar can group them.
     assert(sites.every((site) => Array.isArray(site.sectors)), 'Sites API entries missing sector membership array.');

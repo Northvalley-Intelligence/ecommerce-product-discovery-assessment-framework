@@ -1,0 +1,503 @@
+{
+  "schema_version": "woo-catalog-summary-v0.1",
+  "inspection_id": "WOO-20260730T043112Z",
+  "target_id": "legionathletics",
+  "name": "Legion Athletics",
+  "url": "https://legionathletics.com/",
+  "captured_at": "2026-07-30T04:31:48.151Z",
+  "platform": "woocommerce",
+  "store_api": "https://legionathletics.com/wp-json/wc/store/v1",
+  "sku_count": 97,
+  "sku_count_source": "X-WP-Total header on /products",
+  "browse_nodes": 63,
+  "browse_nodes_substantive": 46,
+  "browse_nodes_operational_heuristic": 17,
+  "browse_levels": 1,
+  "top_level_nodes": 63,
+  "top_categories": [
+    {
+      "name": "On Sale",
+      "count": 68
+    },
+    {
+      "name": "Available on Facebook",
+      "count": 55
+    },
+    {
+      "name": "Supplements",
+      "count": 51
+    },
+    {
+      "name": "Workout Supplements",
+      "count": 51
+    },
+    {
+      "name": "Improve Health",
+      "count": 25
+    },
+    {
+      "name": "New",
+      "count": 25
+    },
+    {
+      "name": "New Merch",
+      "count": 24
+    },
+    {
+      "name": "Build Muscle",
+      "count": 16
+    },
+    {
+      "name": "Muscle Builders",
+      "count": 15
+    },
+    {
+      "name": "Performance &amp; Recovery",
+      "count": 15
+    }
+  ],
+  "search_queries_run": 8,
+  "search_signal": {
+    "literal_hits": "4/4",
+    "intent_hits": "0/4",
+    "note": "Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood)."
+  },
+  "facets": {
+    "attribute_count": 22,
+    "filterable_count": 9,
+    "top_facets": [
+      {
+        "id": 4,
+        "name": "Flavor",
+        "term_count": 87,
+        "top_terms": [
+          "Acai Berry",
+          "Apple Cider",
+          "Apple Pie",
+          "Arctic Blast",
+          "Banana Bread",
+          "Banana Cream Pie"
+        ],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/4/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 2,
+        "name": "Size",
+        "term_count": 6,
+        "top_terms": [
+          "Large",
+          "Medium",
+          "Small",
+          "X-Large",
+          "X-Small",
+          "XX-Large"
+        ],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/2/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 3,
+        "name": "Color",
+        "term_count": 3,
+        "top_terms": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/3/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 1,
+        "name": "Amount",
+        "term_count": 0,
+        "top_terms": [],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/1/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 7,
+        "name": "Bottle 1 Flavor",
+        "term_count": 0,
+        "top_terms": [],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/7/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 8,
+        "name": "Bottle 2 Flavor",
+        "term_count": 0,
+        "top_terms": [],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/8/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 9,
+        "name": "Bottle 3 Flavor",
+        "term_count": 0,
+        "top_terms": [],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/9/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 5,
+        "name": "Pulse Flavor",
+        "term_count": 0,
+        "top_terms": [],
+        "terms_url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/5/terms",
+        "terms_status": 200
+      }
+    ],
+    "products_with_attributes": 9,
+    "variable_products": 9,
+    "sample_size": 15
+  },
+  "surfaces": [
+    {
+      "surface": "Catalog",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "97 SKUs across 63 browse nodes (46 substantive), 1 level."
+    },
+    {
+      "surface": "Search",
+      "status": "warn",
+      "nature": "store_finding",
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+    },
+    {
+      "surface": "Autocomplete",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "Type-ahead available via prefix product search (no native WooCommerce autocomplete endpoint)."
+    },
+    {
+      "surface": "Facets",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "22 attributes, 9 filterable; top facet Flavor (87 terms). 9/15 sampled products carry attributes."
+    },
+    {
+      "surface": "Recommendations",
+      "status": "limited",
+      "nature": "capture_limitation",
+      "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+    },
+    {
+      "surface": "Browse",
+      "status": "warn",
+      "nature": "store_finding",
+      "detail": "63 category nodes, flat (no hierarchy)."
+    }
+  ],
+  "discovery_signal": "Small catalog (97 SKUs): search is likely a lower priority; category/browse coverage matters more than deep search relevance. Flat browse (1 level): no hierarchical navigation depth, so faceted/nested browse is not a strong signal here. 46 substantive browse nodes after filtering operational/merchandising categories.",
+  "experiments": [
+    {
+      "id": "EXP-001",
+      "surface": "Search",
+      "label": "search \"whey\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=whey&per_page=10",
+      "params": {
+        "search": "whey",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 4,
+      "sample": [
+        "Whey Starter Pack",
+        "Whey Protein",
+        "Clear Whey+",
+        "Whey+"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-002",
+      "surface": "Search",
+      "label": "search \"pulse\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=pulse&per_page=10",
+      "params": {
+        "search": "pulse",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 4,
+      "sample": [
+        "Pre-Workout Starter Kit",
+        "Pulse+ Burn",
+        "Pulse Stim-Free",
+        "Pulse"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-003",
+      "surface": "Search",
+      "label": "search \"recharge\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=recharge&per_page=10",
+      "params": {
+        "search": "recharge",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 1,
+      "sample": [
+        "Recharge"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-004",
+      "surface": "Search",
+      "label": "search \"triumph\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=triumph&per_page=10",
+      "params": {
+        "search": "triumph",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 3,
+      "sample": [
+        "Triumph+ Prenatal",
+        "Triumph for Women",
+        "Triumph for Men"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-005",
+      "surface": "Search",
+      "label": "search \"Supplements\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Supplements&per_page=10",
+      "params": {
+        "search": "Supplements",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-006",
+      "surface": "Search",
+      "label": "search \"Workout Supplements\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Workout%20Supplements&per_page=10",
+      "params": {
+        "search": "Workout Supplements",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-007",
+      "surface": "Search",
+      "label": "search \"Improve Health\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Improve%20Health&per_page=10",
+      "params": {
+        "search": "Improve Health",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-008",
+      "surface": "Search",
+      "label": "search \"New Merch\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=New%20Merch&per_page=10",
+      "params": {
+        "search": "New Merch",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-009",
+      "surface": "Catalog",
+      "label": "product count (X-WP-Total)",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=1",
+      "params": {
+        "per_page": "1"
+      },
+      "status": 200,
+      "result_count": 97,
+      "sample": [],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-010",
+      "surface": "Facets",
+      "label": "global attributes",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes",
+      "params": {},
+      "status": 200,
+      "result_count": 22,
+      "sample": [],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-011",
+      "surface": "Facets",
+      "label": "terms for \"Flavor\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/4/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 87,
+      "sample": [
+        "Acai Berry",
+        "Apple Cider",
+        "Apple Pie",
+        "Arctic Blast",
+        "Banana Bread",
+        "Banana Cream Pie"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-012",
+      "surface": "Facets",
+      "label": "terms for \"Size\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/2/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 6,
+      "sample": [
+        "Large",
+        "Medium",
+        "Small",
+        "X-Large",
+        "X-Small",
+        "XX-Large"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-013",
+      "surface": "Facets",
+      "label": "terms for \"Color\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/3/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 3,
+      "sample": [
+        "Black",
+        "Gray",
+        "White"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-014",
+      "surface": "Facets",
+      "label": "terms for \"Amount\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/1/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "empty"
+    },
+    {
+      "id": "EXP-015",
+      "surface": "Facets",
+      "label": "terms for \"Bottle 1 Flavor\"",
+      "method": "GET",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products/attributes/7/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "empty"
+    }
+  ],
+  "health": {
+    "coverage_percent": 60,
+    "readiness": "bounded",
+    "status": "partial",
+    "surfaces_total": 6,
+    "surfaces_pass": 3,
+    "surfaces_warn": 2,
+    "surfaces_fail": 0,
+    "surfaces_limited": 1
+  },
+  "findings": [
+    {
+      "id": "WOO-F001",
+      "surface": "Search",
+      "severity": "High",
+      "nature": "store_finding",
+      "title": "Search: discovery gap",
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+    },
+    {
+      "id": "WOO-F002",
+      "surface": "Recommendations",
+      "severity": "Info",
+      "nature": "capture_limitation",
+      "title": "Recommendations not inspectable via the Store API",
+      "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+    },
+    {
+      "id": "WOO-F003",
+      "surface": "Browse",
+      "severity": "Medium",
+      "nature": "store_finding",
+      "title": "Browse: discovery gap",
+      "detail": "63 category nodes, flat (no hierarchy)."
+    }
+  ],
+  "fix_plan": {
+    "open_items": 2,
+    "items": [
+      {
+        "id": "WOO-FIX001",
+        "surface": "Search",
+        "severity": "High",
+        "issue": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap.",
+        "recommendation": "Add synonym/intent handling (or a search app) so category and concept queries (\"sofa\", \"seating\") return products, not just literal product names.",
+        "status": "open"
+      },
+      {
+        "id": "WOO-FIX003",
+        "surface": "Browse",
+        "severity": "Medium",
+        "issue": "63 category nodes, flat (no hierarchy).",
+        "recommendation": "Introduce a hierarchical category structure (parent/child) so shoppers can drill down instead of scanning a flat list.",
+        "status": "open"
+      }
+    ]
+  },
+  "report_md_path": "assessments/legionathletics/woo-inspection/WOO-20260730T043112Z/executive-report.md"
+}

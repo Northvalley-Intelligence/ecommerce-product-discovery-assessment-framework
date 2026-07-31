@@ -1,0 +1,60 @@
+{
+  "summary_ref": "catalog-summary.json",
+  "health": {
+    "coverage_percent": 60,
+    "readiness": "bounded",
+    "status": "partial",
+    "surfaces_total": 6,
+    "surfaces_pass": 3,
+    "surfaces_warn": 2,
+    "surfaces_fail": 0,
+    "surfaces_limited": 1
+  },
+  "findings": [
+    {
+      "id": "WOO-F001",
+      "surface": "Search",
+      "severity": "High",
+      "nature": "store_finding",
+      "title": "Search: discovery gap",
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+    },
+    {
+      "id": "WOO-F002",
+      "surface": "Recommendations",
+      "severity": "Info",
+      "nature": "capture_limitation",
+      "title": "Recommendations not inspectable via the Store API",
+      "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+    },
+    {
+      "id": "WOO-F003",
+      "surface": "Browse",
+      "severity": "Medium",
+      "nature": "store_finding",
+      "title": "Browse: discovery gap",
+      "detail": "148 category nodes, flat (no hierarchy)."
+    }
+  ],
+  "fix_plan": {
+    "open_items": 2,
+    "items": [
+      {
+        "id": "WOO-FIX001",
+        "surface": "Search",
+        "severity": "High",
+        "issue": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap.",
+        "recommendation": "Add synonym/intent handling (or a search app) so category and concept queries (\"sofa\", \"seating\") return products, not just literal product names.",
+        "status": "open"
+      },
+      {
+        "id": "WOO-FIX003",
+        "surface": "Browse",
+        "severity": "Medium",
+        "issue": "148 category nodes, flat (no hierarchy).",
+        "recommendation": "Introduce a hierarchical category structure (parent/child) so shoppers can drill down instead of scanning a flat list.",
+        "status": "open"
+      }
+    ]
+  }
+}

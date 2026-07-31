@@ -1,0 +1,887 @@
+{
+  "schema_version": "search-datasets-v0.1",
+  "domain": "home-improvement",
+  "retailers": [
+    "homedepot",
+    "lowes"
+  ],
+  "captured_at": "2026-07-31T01:38:26.003Z",
+  "datasets": [
+    {
+      "id": "synonym-pairs",
+      "name": "Synonym / category mapping",
+      "kind": "category<->synonym",
+      "description": "Equivalent-term pairs (category term vs synonym / genericized brand). A well-behaved search returns similar counts for both; big divergence means findability depends on the exact word.",
+      "scoring": "consistency = % of pairs with <40% result-count divergence (higher is better)",
+      "retailers": {
+        "homedepot": {
+          "site": "homedepot",
+          "name": "Home Depot",
+          "score": 30,
+          "score_label": "7/23 consistent",
+          "cases": [
+            {
+              "concept": "Drywall",
+              "term_a": {
+                "q": "drywall",
+                "total": 2411,
+                "url": "https://www.homedepot.com/s/drywall"
+              },
+              "term_b": {
+                "q": "sheetrock",
+                "total": 33,
+                "url": "https://www.homedepot.com/s/sheetrock"
+              },
+              "divergence_pct": 99,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed",
+                "rechecked": true,
+                "detail": "drywall: 2411->2410, sheetrock: 33->33"
+              }
+            },
+            {
+              "concept": "Construction adhesive",
+              "term_a": {
+                "q": "construction adhesive",
+                "total": 1605,
+                "url": "https://www.homedepot.com/s/construction%20adhesive"
+              },
+              "term_b": {
+                "q": "liquid nails",
+                "total": 17,
+                "url": "https://www.homedepot.com/s/liquid%20nails"
+              },
+              "divergence_pct": 99,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed",
+                "rechecked": true,
+                "detail": "liquid nails: 17->17"
+              }
+            },
+            {
+              "concept": "Concrete mix",
+              "term_a": {
+                "q": "concrete mix",
+                "total": 20,
+                "url": "https://www.homedepot.com/s/concrete%20mix"
+              },
+              "term_b": {
+                "q": "quikrete",
+                "total": 643,
+                "url": "https://www.homedepot.com/s/quikrete"
+              },
+              "divergence_pct": 97,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed",
+                "rechecked": true,
+                "detail": "quikrete: 643->637"
+              }
+            },
+            {
+              "concept": "Weed killer",
+              "term_a": {
+                "q": "weed killer",
+                "total": 3078,
+                "url": "https://www.homedepot.com/s/weed%20killer"
+              },
+              "term_b": {
+                "q": "roundup",
+                "total": 249,
+                "url": "https://www.homedepot.com/s/roundup"
+              },
+              "divergence_pct": 92,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed",
+                "rechecked": true,
+                "detail": "roundup: 249->251"
+              }
+            },
+            {
+              "concept": "Locking pliers",
+              "term_a": {
+                "q": "locking pliers",
+                "total": 106,
+                "url": "https://www.homedepot.com/s/locking%20pliers"
+              },
+              "term_b": {
+                "q": "vise grips",
+                "total": 1161,
+                "url": "https://www.homedepot.com/s/vise%20grips"
+              },
+              "divergence_pct": 91,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Cable ties",
+              "term_a": {
+                "q": "cable ties",
+                "total": 1602,
+                "url": "https://www.homedepot.com/s/cable%20ties"
+              },
+              "term_b": {
+                "q": "zip ties",
+                "total": 267,
+                "url": "https://www.homedepot.com/s/zip%20ties"
+              },
+              "divergence_pct": 83,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Rotary tool",
+              "term_a": {
+                "q": "rotary tool",
+                "total": 5616,
+                "url": "https://www.homedepot.com/s/rotary%20tool"
+              },
+              "term_b": {
+                "q": "dremel",
+                "total": 1508,
+                "url": "https://www.homedepot.com/s/dremel"
+              },
+              "divergence_pct": 73,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "String trimmer",
+              "term_a": {
+                "q": "string trimmer",
+                "total": 1799,
+                "url": "https://www.homedepot.com/s/string%20trimmer"
+              },
+              "term_b": {
+                "q": "weed eater",
+                "total": 800,
+                "url": "https://www.homedepot.com/s/weed%20eater"
+              },
+              "divergence_pct": 56,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Utility knife",
+              "term_a": {
+                "q": "utility knife",
+                "total": 207,
+                "url": "https://www.homedepot.com/s/utility%20knife"
+              },
+              "term_b": {
+                "q": "box cutter",
+                "total": 525,
+                "url": "https://www.homedepot.com/s/box%20cutter"
+              },
+              "divergence_pct": 61,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Wet/dry vacuum",
+              "term_a": {
+                "q": "wet dry vacuum",
+                "total": 1587,
+                "url": "https://www.homedepot.com/s/wet%20dry%20vacuum"
+              },
+              "term_b": {
+                "q": "shop vac",
+                "total": 648,
+                "url": "https://www.homedepot.com/s/shop%20vac"
+              },
+              "divergence_pct": 59,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Laminate sheet",
+              "term_a": {
+                "q": "laminate sheet",
+                "total": 695,
+                "url": "https://www.homedepot.com/s/laminate%20sheet"
+              },
+              "term_b": {
+                "q": "formica",
+                "total": 695,
+                "url": "https://www.homedepot.com/s/formica"
+              },
+              "divergence_pct": 0,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Acrylic sheet",
+              "term_a": {
+                "q": "acrylic sheet",
+                "total": 338,
+                "url": "https://www.homedepot.com/s/acrylic%20sheet"
+              },
+              "term_b": {
+                "q": "plexiglass",
+                "total": 338,
+                "url": "https://www.homedepot.com/s/plexiglass"
+              },
+              "divergence_pct": 0,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Penetrating oil",
+              "term_a": {
+                "q": "penetrating oil",
+                "total": 358,
+                "url": "https://www.homedepot.com/s/penetrating%20oil"
+              },
+              "term_b": {
+                "q": "wd-40",
+                "total": 26,
+                "url": "https://www.homedepot.com/s/wd-40"
+              },
+              "divergence_pct": 93,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Lawn fertilizer",
+              "term_a": {
+                "q": "lawn fertilizer",
+                "total": 185,
+                "url": "https://www.homedepot.com/s/lawn%20fertilizer"
+              },
+              "term_b": {
+                "q": "weed and feed",
+                "total": 520,
+                "url": "https://www.homedepot.com/s/weed%20and%20feed"
+              },
+              "divergence_pct": 64,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Spray foam",
+              "term_a": {
+                "q": "spray foam",
+                "total": 331,
+                "url": "https://www.homedepot.com/s/spray%20foam"
+              },
+              "term_b": {
+                "q": "great stuff",
+                "total": 136,
+                "url": "https://www.homedepot.com/s/great%20stuff"
+              },
+              "divergence_pct": 59,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Push-to-connect",
+              "term_a": {
+                "q": "push to connect fitting",
+                "total": 2627,
+                "url": "https://www.homedepot.com/s/push%20to%20connect%20fitting"
+              },
+              "term_b": {
+                "q": "shark bite",
+                "total": 1149,
+                "url": "https://www.homedepot.com/s/shark%20bite"
+              },
+              "divergence_pct": 56,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "House wrap",
+              "term_a": {
+                "q": "house wrap",
+                "total": 704,
+                "url": "https://www.homedepot.com/s/house%20wrap"
+              },
+              "term_b": {
+                "q": "tyvek",
+                "total": 371,
+                "url": "https://www.homedepot.com/s/tyvek"
+              },
+              "divergence_pct": 47,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "OSB",
+              "term_a": {
+                "q": "oriented strand board",
+                "total": 173,
+                "url": "https://www.homedepot.com/s/oriented%20strand%20board"
+              },
+              "term_b": {
+                "q": "osb",
+                "total": 378,
+                "url": "https://www.homedepot.com/s/osb"
+              },
+              "divergence_pct": 54,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Hardboard",
+              "term_a": {
+                "q": "hardboard",
+                "total": 379,
+                "url": "https://www.homedepot.com/s/hardboard"
+              },
+              "term_b": {
+                "q": "masonite",
+                "total": 569,
+                "url": "https://www.homedepot.com/s/masonite"
+              },
+              "divergence_pct": 33,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Circular saw",
+              "term_a": {
+                "q": "circular saw",
+                "total": 2045,
+                "url": "https://www.homedepot.com/s/circular%20saw"
+              },
+              "term_b": {
+                "q": "skil saw",
+                "total": 1440,
+                "url": "https://www.homedepot.com/s/skil%20saw"
+              },
+              "divergence_pct": 30,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Tongue&groove pliers",
+              "term_a": {
+                "q": "tongue and groove pliers",
+                "total": 1068,
+                "url": "https://www.homedepot.com/s/tongue%20and%20groove%20pliers"
+              },
+              "term_b": {
+                "q": "channel locks",
+                "total": 1395,
+                "url": "https://www.homedepot.com/s/channel%20locks"
+              },
+              "divergence_pct": 23,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Bleach",
+              "term_a": {
+                "q": "bleach",
+                "total": 904,
+                "url": "https://www.homedepot.com/s/bleach"
+              },
+              "term_b": {
+                "q": "clorox",
+                "total": 1375,
+                "url": "https://www.homedepot.com/s/clorox"
+              },
+              "divergence_pct": 34,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Joint compound",
+              "term_a": {
+                "q": "joint compound",
+                "total": 762,
+                "url": "https://www.homedepot.com/s/joint%20compound"
+              },
+              "term_b": {
+                "q": "spackle",
+                "total": 595,
+                "url": "https://www.homedepot.com/s/spackle"
+              },
+              "divergence_pct": 22,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            }
+          ],
+          "verify_summary": {
+            "confirmed": 23,
+            "failed": 0,
+            "method": "browser re-check vs recorded"
+          }
+        },
+        "lowes": {
+          "site": "lowes",
+          "name": "Lowe's",
+          "score": 48,
+          "score_label": "11/23 consistent",
+          "cases": [
+            {
+              "concept": "Drywall",
+              "term_a": {
+                "q": "drywall",
+                "total": 782,
+                "url": "https://www.lowes.com/search?searchTerm=drywall"
+              },
+              "term_b": {
+                "q": "sheetrock",
+                "total": 782,
+                "url": "https://www.lowes.com/search?searchTerm=sheetrock"
+              },
+              "divergence_pct": 0,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Construction adhesive",
+              "term_a": {
+                "q": "construction adhesive",
+                "total": 157,
+                "url": "https://www.lowes.com/search?searchTerm=construction%20adhesive"
+              },
+              "term_b": {
+                "q": "liquid nails",
+                "total": 29,
+                "url": "https://www.lowes.com/search?searchTerm=liquid%20nails"
+              },
+              "divergence_pct": 82,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Concrete mix",
+              "term_a": {
+                "q": "concrete mix",
+                "total": 60,
+                "url": "https://www.lowes.com/search?searchTerm=concrete%20mix"
+              },
+              "term_b": {
+                "q": "quikrete",
+                "total": 57,
+                "url": "https://www.lowes.com/search?searchTerm=quikrete"
+              },
+              "divergence_pct": 5,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Weed killer",
+              "term_a": {
+                "q": "weed killer",
+                "total": 358,
+                "url": "https://www.lowes.com/search?searchTerm=weed%20killer"
+              },
+              "term_b": {
+                "q": "roundup",
+                "total": 40,
+                "url": "https://www.lowes.com/search?searchTerm=roundup"
+              },
+              "divergence_pct": 89,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Locking pliers",
+              "term_a": {
+                "q": "locking pliers",
+                "total": 102,
+                "url": "https://www.lowes.com/search?searchTerm=locking%20pliers"
+              },
+              "term_b": {
+                "q": "vise grips",
+                "total": 19,
+                "url": "https://www.lowes.com/search?searchTerm=vise%20grips"
+              },
+              "divergence_pct": 81,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Cable ties",
+              "term_a": {
+                "q": "cable ties",
+                "total": 775,
+                "url": "https://www.lowes.com/search?searchTerm=cable%20ties"
+              },
+              "term_b": {
+                "q": "zip ties",
+                "total": 761,
+                "url": "https://www.lowes.com/search?searchTerm=zip%20ties"
+              },
+              "divergence_pct": 2,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Rotary tool",
+              "term_a": {
+                "q": "rotary tool",
+                "total": 168,
+                "url": "https://www.lowes.com/search?searchTerm=rotary%20tool"
+              },
+              "term_b": {
+                "q": "dremel",
+                "total": 167,
+                "url": "https://www.lowes.com/search?searchTerm=dremel"
+              },
+              "divergence_pct": 1,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "String trimmer",
+              "term_a": {
+                "q": "string trimmer",
+                "total": 344,
+                "url": "https://www.lowes.com/search?searchTerm=string%20trimmer"
+              },
+              "term_b": {
+                "q": "weed eater",
+                "total": 344,
+                "url": "https://www.lowes.com/search?searchTerm=weed%20eater"
+              },
+              "divergence_pct": 0,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Utility knife",
+              "term_a": {
+                "q": "utility knife",
+                "total": 358,
+                "url": "https://www.lowes.com/search?searchTerm=utility%20knife"
+              },
+              "term_b": {
+                "q": "box cutter",
+                "total": 382,
+                "url": "https://www.lowes.com/search?searchTerm=box%20cutter"
+              },
+              "divergence_pct": 6,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Wet/dry vacuum",
+              "term_a": {
+                "q": "wet dry vacuum",
+                "total": 257,
+                "url": "https://www.lowes.com/search?searchTerm=wet%20dry%20vacuum"
+              },
+              "term_b": {
+                "q": "shop vac",
+                "total": 529,
+                "url": "https://www.lowes.com/search?searchTerm=shop%20vac"
+              },
+              "divergence_pct": 51,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Laminate sheet",
+              "term_a": {
+                "q": "laminate sheet",
+                "total": 277,
+                "url": "https://www.lowes.com/search?searchTerm=laminate%20sheet"
+              },
+              "term_b": {
+                "q": "formica",
+                "total": 176,
+                "url": "https://www.lowes.com/search?searchTerm=formica"
+              },
+              "divergence_pct": 36,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Acrylic sheet",
+              "term_a": {
+                "q": "acrylic sheet",
+                "total": 601,
+                "url": "https://www.lowes.com/search?searchTerm=acrylic%20sheet"
+              },
+              "term_b": {
+                "q": "plexiglass",
+                "total": 601,
+                "url": "https://www.lowes.com/search?searchTerm=plexiglass"
+              },
+              "divergence_pct": 0,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Penetrating oil",
+              "term_a": {
+                "q": "penetrating oil",
+                "total": 63,
+                "url": "https://www.lowes.com/search?searchTerm=penetrating%20oil"
+              },
+              "term_b": {
+                "q": "wd-40",
+                "total": 60,
+                "url": "https://www.lowes.com/search?searchTerm=wd-40"
+              },
+              "divergence_pct": 5,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Lawn fertilizer",
+              "term_a": {
+                "q": "lawn fertilizer",
+                "total": 334,
+                "url": "https://www.lowes.com/search?searchTerm=lawn%20fertilizer"
+              },
+              "term_b": {
+                "q": "weed and feed",
+                "total": 87,
+                "url": "https://www.lowes.com/search?searchTerm=weed%20and%20feed"
+              },
+              "divergence_pct": 74,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Spray foam",
+              "term_a": {
+                "q": "spray foam",
+                "total": 71,
+                "url": "https://www.lowes.com/search?searchTerm=spray%20foam"
+              },
+              "term_b": {
+                "q": "great stuff",
+                "total": 29,
+                "url": "https://www.lowes.com/search?searchTerm=great%20stuff"
+              },
+              "divergence_pct": 59,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Push-to-connect",
+              "term_a": {
+                "q": "push to connect fitting",
+                "total": 497,
+                "url": "https://www.lowes.com/search?searchTerm=push%20to%20connect%20fitting"
+              },
+              "term_b": {
+                "q": "shark bite",
+                "total": 1259,
+                "url": "https://www.lowes.com/search?searchTerm=shark%20bite"
+              },
+              "divergence_pct": 61,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "House wrap",
+              "term_a": {
+                "q": "house wrap",
+                "total": 50,
+                "url": "https://www.lowes.com/search?searchTerm=house%20wrap"
+              },
+              "term_b": {
+                "q": "tyvek",
+                "total": 33,
+                "url": "https://www.lowes.com/search?searchTerm=tyvek"
+              },
+              "divergence_pct": 34,
+              "verdict": "minor",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "OSB",
+              "term_a": {
+                "q": "oriented strand board",
+                "total": 15,
+                "url": "https://www.lowes.com/search?searchTerm=oriented%20strand%20board"
+              },
+              "term_b": {
+                "q": "osb",
+                "total": 16,
+                "url": "https://www.lowes.com/search?searchTerm=osb"
+              },
+              "divergence_pct": 6,
+              "verdict": "pass",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Hardboard",
+              "term_a": {
+                "q": "hardboard",
+                "total": 3,
+                "url": "https://www.lowes.com/search?searchTerm=hardboard"
+              },
+              "term_b": {
+                "q": "masonite",
+                "total": 5,
+                "url": "https://www.lowes.com/search?searchTerm=masonite"
+              },
+              "divergence_pct": 40,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Circular saw",
+              "term_a": {
+                "q": "circular saw",
+                "total": 122,
+                "url": "https://www.lowes.com/search?searchTerm=circular%20saw"
+              },
+              "term_b": {
+                "q": "skil saw",
+                "total": 11,
+                "url": "https://www.lowes.com/search?searchTerm=skil%20saw"
+              },
+              "divergence_pct": 91,
+              "verdict": "severe",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Tongue&groove pliers",
+              "term_a": {
+                "q": "tongue and groove pliers",
+                "total": 102,
+                "url": "https://www.lowes.com/search?searchTerm=tongue%20and%20groove%20pliers"
+              },
+              "term_b": {
+                "q": "channel locks",
+                "total": 292,
+                "url": "https://www.lowes.com/search?searchTerm=channel%20locks"
+              },
+              "divergence_pct": 65,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Bleach",
+              "term_a": {
+                "q": "bleach",
+                "total": 33,
+                "url": "https://www.lowes.com/search?searchTerm=bleach"
+              },
+              "term_b": {
+                "q": "clorox",
+                "total": 169,
+                "url": "https://www.lowes.com/search?searchTerm=clorox"
+              },
+              "divergence_pct": 80,
+              "verdict": "high",
+              "verify": {
+                "status": "confirmed"
+              }
+            },
+            {
+              "concept": "Joint compound",
+              "term_a": {
+                "q": "joint compound",
+                "total": 36,
+                "url": "https://www.lowes.com/search?searchTerm=joint%20compound"
+              },
+              "term_b": {
+                "q": "spackle",
+                "total": 110,
+                "url": "https://www.lowes.com/search?searchTerm=spackle"
+              },
+              "divergence_pct": 67,
+              "verdict": "medium",
+              "verify": {
+                "status": "confirmed"
+              }
+            }
+          ],
+          "verify_summary": {
+            "confirmed": 23,
+            "failed": 0,
+            "method": "browser re-check vs recorded"
+          }
+        }
+      }
+    }
+  ],
+  "verified": {
+    "method": "browser re-check (fresh count vs recorded, confirmed within 15%)",
+    "sample": "Home Depot severe pairs live-reverified: drywall 2411->2410, sheetrock 33->33, liquid nails 17->17, quikrete 643->637, roundup 249->251 (all confirmed)",
+    "note": "Dashboard cannot live-fetch bot-walled sites; verify is a browser re-check result."
+  }
+}

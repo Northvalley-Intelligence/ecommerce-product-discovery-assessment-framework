@@ -1,0 +1,170 @@
+{
+  "inspection_id": "WOO-20260729T042021Z",
+  "adapter": {
+    "adapter_id": "woocommerce-store-api",
+    "adapter_version": "0.1.0"
+  },
+  "target": {
+    "target_id": "industrywest",
+    "name": "Industry West",
+    "url": "https://www.industrywest.com/"
+  },
+  "platform": "woocommerce",
+  "started_at": "2026-07-29T04:20:22.272Z",
+  "endpoints": [
+    {
+      "label": "homepage",
+      "url": "https://www.industrywest.com/",
+      "final_url": "https://www.industrywest.com/",
+      "status": 200,
+      "ok": true,
+      "content_type": "text/html; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 231,
+      "text_excerpt": "<!doctype html> <html lang=\"en-US\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <meta name=\"designer\" content=\"Created with Soul and Care by Web Design Sun® | https://www.webdesignsun.com\"> <link rel=\"profile\" href=\"https://gmpg.org/xfn/11\"> <me"
+    },
+    {
+      "label": "store_api_products_probe",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=1",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=1",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 246,
+      "duration_ms": 114,
+      "text_excerpt": "[{\"id\":16474,\"name\":\"Enrique Counter Stool\",\"slug\":\"enrique-counter-stool\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/enrique-counter-stool\",\"sku\":\"ENR-CS-LBM-BRS\",\"short_description\":\"\",\"description\":\"<p><span>Both beautiful and functional, th"
+    },
+    {
+      "label": "products_count_probe",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=1",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=1",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 246,
+      "duration_ms": 24,
+      "text_excerpt": "[{\"id\":16474,\"name\":\"Enrique Counter Stool\",\"slug\":\"enrique-counter-stool\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/enrique-counter-stool\",\"sku\":\"ENR-CS-LBM-BRS\",\"short_description\":\"\",\"description\":\"<p><span>Both beautiful and functional, th"
+    },
+    {
+      "label": "attributes",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 24,
+      "text_excerpt": "[{\"id\":35,\"name\":\"Arms\",\"taxonomy\":\"pa_arms\",\"type\":\"select\",\"order\":\"menu_order\",\"has_archives\":true,\"count\":1},{\"id\":9,\"name\":\"assembly_required\",\"taxonomy\":\"pa_assembly_required\",\"type\":\"select\",\"order\":\"menu_order\",\"has_archives\":true,\"count\":2},{\"id\":48,\"name\":\"back-type\",\"taxonomy\":\"pa_back-ty"
+    },
+    {
+      "label": "facet_sample",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=15&orderby=popularity",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=15&orderby=popularity",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 246,
+      "duration_ms": 30,
+      "text_excerpt": "[{\"id\":16474,\"name\":\"Enrique Counter Stool\",\"slug\":\"enrique-counter-stool\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/enrique-counter-stool\",\"sku\":\"ENR-CS-LBM-BRS\",\"short_description\":\"\",\"description\":\"<p><span>Both beautiful and functional, th"
+    },
+    {
+      "label": "product_sample",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=15&orderby=popularity",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=15&orderby=popularity",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 246,
+      "duration_ms": 30,
+      "text_excerpt": "[{\"id\":16474,\"name\":\"Enrique Counter Stool\",\"slug\":\"enrique-counter-stool\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/enrique-counter-stool\",\"sku\":\"ENR-CS-LBM-BRS\",\"short_description\":\"\",\"description\":\"<p><span>Both beautiful and functional, th"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=enrique&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=enrique&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 2,
+      "duration_ms": 25,
+      "text_excerpt": "[{\"id\":16474,\"name\":\"Enrique Counter Stool\",\"slug\":\"enrique-counter-stool\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/enrique-counter-stool\",\"sku\":\"ENR-CS-LBM-BRS\",\"short_description\":\"\",\"description\":\"<p><span>Both beautiful and functional, th"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=monica&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=monica&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 1,
+      "duration_ms": 24,
+      "text_excerpt": "[{\"id\":16466,\"name\":\"Monica Bistro Table\",\"slug\":\"monica-bar-table\",\"parent\":0,\"type\":\"simple\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/monica-bar-table\",\"sku\":\"CC31-70-WP\\/LT\\/RD\",\"short_description\":\"\",\"description\":\"<p class=\\\"p1\\\">Sculptural, soft-edged, and striking"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=erik&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=erik&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 1,
+      "duration_ms": 22,
+      "text_excerpt": "[{\"id\":16458,\"name\":\"Erik Bar Table\",\"slug\":\"erik-bar-table\",\"parent\":0,\"type\":\"simple\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/erik-bar-table\",\"sku\":\"TM33-61-G\\/MO\\/ST-KIT\",\"short_description\":\"\",\"description\":\"<p class=\\\"p1\\\">The <span class=\\\"s1\\\">Erik Bar Table<\\/sp"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=piccolo&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=piccolo&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 1,
+      "duration_ms": 23,
+      "text_excerpt": "[{\"id\":16409,\"name\":\"Piccolo Stool\",\"slug\":\"piccolo-stool\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/www.industrywest.com\\/products\\/piccolo-stool\",\"sku\":\"TO-2400-BK\",\"short_description\":\"\",\"description\":\"<p>The Piccolo Stool blends bold proportions with minimalist design. M"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=All%20Products&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=All%20Products&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 88,
+      "text_excerpt": "[]"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Home%20for%20the%20Holidays&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Home%20for%20the%20Holidays&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 23,
+      "text_excerpt": "[]"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Seating&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Seating&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 22,
+      "text_excerpt": "[]"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Under%20%24500&per_page=10",
+      "final_url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Under%20%24500&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 22,
+      "text_excerpt": "[]"
+    }
+  ]
+}

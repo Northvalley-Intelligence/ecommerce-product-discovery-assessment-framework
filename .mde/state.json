@@ -7,10 +7,10 @@
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-036",
-  "current_phase": "Generation 36 - Dataset x retailer scoreboard (exited)",
+  "current_generation": "GEN-037",
+  "current_phase": "Generation 37 - Verify status + icon presentation",
   "phase_goal": "Home Improvement domain (HD+Lowes); dataset x retailer scoreboard with drillable scores + live rerun.",
-  "status": "gen036_phase_exit_complete",
+  "status": "gen037_phase_exit_complete",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -18,9 +18,9 @@
   "validation_gate": {
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
-    "latest_result": "second_independent_pass_clean",
-    "latest_run_id": "VAL-085",
-    "reason": "GEN-036 validated with two clean passes (VAL-085); BDD-INV-025. Phase exit."
+    "latest_result": "pass",
+    "latest_run_id": "VAL-086",
+    "reason": "GEN-037 exited: inline verify chips + icon presentation; two clean passes."
   },
   "critical_bdds": 18,
   "high_bdds": 36,

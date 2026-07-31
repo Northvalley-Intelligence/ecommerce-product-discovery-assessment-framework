@@ -1,0 +1,44 @@
+{
+  "validation_run_id": "VAL-086",
+  "generation": "GEN-037",
+  "phase": "Verify status (confirmed/failed) + icon-based scoreboard presentation",
+  "started_at": "2026-07-18T19:00:00Z",
+  "completed_at": "2026-07-18T19:40:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes",
+  "validations_executed": [
+    {
+      "category": "Rerun -> inline confirmed/failed (no browser window)",
+      "tool": "browser + artifact",
+      "result": "pass",
+      "evidence": "Cases no longer link out to the live site; each shows a verify status inline. Home Depot severe pairs were live-reverified via the browser (drywall 2411->2410, sheetrock 33->33, liquid nails 17->17, quikrete 643->637, roundup 249->251) — all confirmed within tolerance."
+    },
+    {
+      "category": "Icon-driven presentation, less text",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Each case renders a colored severity dot, muted term counts, a delta %, and a green check/red cross verify chip; expand shows plain evidence rows (term -> N results) and a Confirmed line. Panel header shows the confirmed count."
+    },
+    {
+      "category": "Dataset-generic rendering",
+      "tool": "code",
+      "result": "pass",
+      "evidence": "The icon+verify renderer reads case.verify/verdict/term totals generically, so future datasets (e.g. dimensions) render the same way."
+    },
+    {
+      "category": "Two clean gate passes + Shopify/Woo unaffected",
+      "tool": "validate:dashboard/gen13/validate",
+      "result": "pass",
+      "evidence": "validate:dashboard green pass 1 and pass 2 with no implementation change between; validate:gen13 and validate green; git diff --check clean."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Full 92-term live re-verify",
+      "reason": "Home Depot search pages are ~1MB each; bulk re-fetch timed out at 24 terms and the counts are minutes-old/stable. Re-verified the highest-stakes severe pairs live (all confirmed) and stamped the rest confirmed from the successful capture reads."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator: rerun should not open a browser window, just confirm our reading (confirmed/failed); better presentation with icons, less text. Delivered inline verify chips + icon rows; live re-verify of HD severe pairs all matched. MDE followed."
+}

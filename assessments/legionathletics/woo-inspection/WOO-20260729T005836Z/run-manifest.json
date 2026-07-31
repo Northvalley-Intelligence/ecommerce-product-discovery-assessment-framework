@@ -1,0 +1,148 @@
+{
+  "inspection_id": "WOO-20260729T005836Z",
+  "adapter": {
+    "adapter_id": "woocommerce-store-api",
+    "adapter_version": "0.1.0"
+  },
+  "target": {
+    "target_id": "legionathletics",
+    "name": "Legion Athletics",
+    "url": "https://legionathletics.com/"
+  },
+  "platform": "woocommerce",
+  "started_at": "2026-07-29T00:58:59.659Z",
+  "endpoints": [
+    {
+      "label": "homepage",
+      "url": "https://legionathletics.com/",
+      "final_url": "https://legionathletics.com/",
+      "status": 200,
+      "ok": true,
+      "content_type": "text/html; charset=utf-8",
+      "total": 0,
+      "duration_ms": 638,
+      "text_excerpt": "<!DOCTYPE html> <html lang=\"en-US\"> <head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'AW-923395211','google_tags_first_party');</script><script async src=\"/iaoc/\"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLaye"
+    },
+    {
+      "label": "store_api_products_probe",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=1",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=1",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 97,
+      "duration_ms": 1981,
+      "text_excerpt": "[{\"id\":4956591,\"name\":\"BOGO Free Creatine Gummies w\\/ 4 Free Gifts\",\"slug\":\"creatine-gummies-bogo-free-v1-lp\",\"parent\":0,\"type\":\"bundle\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/creatine-gummies-bogo-free-v1-lp\\/\",\"sku\":\"\",\"short_description\":\"\",\"description\":\"\",\"on_sale\":true,\"pri"
+    },
+    {
+      "label": "products_count_probe",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=1",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=1",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 97,
+      "duration_ms": 1676,
+      "text_excerpt": "[{\"id\":4956591,\"name\":\"BOGO Free Creatine Gummies w\\/ 4 Free Gifts\",\"slug\":\"creatine-gummies-bogo-free-v1-lp\",\"parent\":0,\"type\":\"bundle\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/creatine-gummies-bogo-free-v1-lp\\/\",\"sku\":\"\",\"short_description\":\"\",\"description\":\"\",\"on_sale\":true,\"pri"
+    },
+    {
+      "label": "product_sample",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=15&orderby=popularity",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?per_page=15&orderby=popularity",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 97,
+      "duration_ms": 1800,
+      "text_excerpt": "[{\"id\":7403,\"name\":\"Whey+\",\"slug\":\"whey-protein-powder\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/products\\/supplements\\/whey-protein-powder\\/\",\"sku\":\"PARENT_VARIABLE_WHEY\",\"short_description\":\"<p>Whey+ is a naturally sweetened and flavored whey isolate "
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=whey&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=whey&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 4,
+      "duration_ms": 2292,
+      "text_excerpt": "[{\"id\":4839561,\"name\":\"Whey Starter Pack\",\"slug\":\"whey-starter-pack-v1-lp\",\"parent\":0,\"type\":\"bundle\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/whey-starter-pack-v1-lp\\/\",\"sku\":\"STACK_BUNDLE_WHEY_STARTER_PACK\",\"short_description\":\"\",\"description\":\"\",\"on_sale\":true,\"prices\":{\"price\":"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=pulse&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=pulse&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 4,
+      "duration_ms": 2211,
+      "text_excerpt": "[{\"id\":4876676,\"name\":\"Pre-Workout Starter Kit\",\"slug\":\"preworkout-starter-pack-v1-lp\",\"parent\":0,\"type\":\"bundle\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/preworkout-starter-pack-v1-lp\\/\",\"sku\":\"STACK_BUNDLE_PULSE_STARTER_PACK\",\"short_description\":\"\",\"description\":\"\",\"on_sale\":true"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=recharge&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=recharge&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 1,
+      "duration_ms": 1711,
+      "text_excerpt": "[{\"id\":28577,\"name\":\"Recharge\",\"slug\":\"recharge-post-workout\",\"parent\":0,\"type\":\"variable\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/products\\/supplements\\/recharge-post-workout\\/\",\"sku\":\"PARENT_VARIABLE_RECHARGE\",\"short_description\":\"<p>Recharge is a natural post-workout supplement"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=triumph&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=triumph&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 3,
+      "duration_ms": 1546,
+      "text_excerpt": "[{\"id\":4809497,\"name\":\"Triumph+ Prenatal\",\"slug\":\"prenatal-multivitamin\",\"parent\":0,\"type\":\"simple\",\"variation\":\"\",\"permalink\":\"https:\\/\\/legionathletics.com\\/products\\/supplements\\/prenatal-multivitamin\\/\",\"sku\":\"Triumph-Prenatal\",\"short_description\":\"<p>Legion\\u2019s prenatal multivitamin provides"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Supplements&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Supplements&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 1505,
+      "text_excerpt": "[]"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Workout%20Supplements&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Workout%20Supplements&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 4032,
+      "text_excerpt": "[]"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Improve%20Health&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=Improve%20Health&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 1387,
+      "text_excerpt": "[]"
+    },
+    {
+      "label": "submitted_search",
+      "url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=New%20Merch&per_page=10",
+      "final_url": "https://legionathletics.com/wp-json/wc/store/v1/products?search=New%20Merch&per_page=10",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json; charset=UTF-8",
+      "total": 0,
+      "duration_ms": 1470,
+      "text_excerpt": "[]"
+    }
+  ]
+}

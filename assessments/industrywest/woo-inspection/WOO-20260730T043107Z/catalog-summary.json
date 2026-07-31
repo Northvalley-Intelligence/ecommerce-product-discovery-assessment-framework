@@ -1,0 +1,514 @@
+{
+  "schema_version": "woo-catalog-summary-v0.1",
+  "inspection_id": "WOO-20260730T043107Z",
+  "target_id": "industrywest",
+  "name": "Industry West",
+  "url": "https://www.industrywest.com/",
+  "captured_at": "2026-07-30T04:31:12.547Z",
+  "platform": "woocommerce",
+  "store_api": "https://www.industrywest.com/wp-json/wc/store/v1",
+  "sku_count": 246,
+  "sku_count_source": "X-WP-Total header on /products",
+  "browse_nodes": 148,
+  "browse_nodes_substantive": 134,
+  "browse_nodes_operational_heuristic": 14,
+  "browse_levels": 1,
+  "top_level_nodes": 148,
+  "top_categories": [
+    {
+      "name": "All Products",
+      "count": 236
+    },
+    {
+      "name": "Promo Eligible Items",
+      "count": 206
+    },
+    {
+      "name": "In Stock Promo Eligible Items",
+      "count": 199
+    },
+    {
+      "name": "Home for the Holidays",
+      "count": 186
+    },
+    {
+      "name": "Seating",
+      "count": 135
+    },
+    {
+      "name": "Under $500",
+      "count": 133
+    },
+    {
+      "name": "Living",
+      "count": 132
+    },
+    {
+      "name": "Promo Eligible Chairs &#038; Stools",
+      "count": 129
+    },
+    {
+      "name": "Promo Eligible Seating",
+      "count": 129
+    },
+    {
+      "name": "Dining",
+      "count": 113
+    }
+  ],
+  "search_queries_run": 8,
+  "search_signal": {
+    "literal_hits": "4/4",
+    "intent_hits": "0/4",
+    "note": "Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood)."
+  },
+  "facets": {
+    "attribute_count": 52,
+    "filterable_count": 52,
+    "top_facets": [
+      {
+        "id": 3,
+        "name": "care_instructions",
+        "term_count": 68,
+        "top_terms": [
+          "All items in the Monaco Collection are made of raw, natural, sustainable rattan are are designed to be used outside, preferably in covered areas. The chairs can stand showers, but we do not recommend",
+          "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.&nbsp;",
+          "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.Some wood species, such as oak, contain tannin, wh",
+          "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.Some wood species, such as oak, contain tannin, wh",
+          "Avoid contact with hot items and immediately soak up spills. To clean, use a cloth moistened with warm water and mild soap.",
+          "Avoid direct contact with hot items and immediately soak up spills to avoid staining. All wood and metal bases can be cleaned using a moistened cloth with warm water and mild soap. Ensure metal bases"
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/3/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 19,
+        "name": "badges",
+        "term_count": 15,
+        "top_terms": [
+          "[&#8220;Final Sale&#8221;,&#8221;High Stock&#8221;]",
+          "[&#8220;Final Sale&#8221;,&#8221;Outdoor&#8221;]",
+          "[&#8220;Final Sale&#8221;,&#8221;Stackable&#8221;]",
+          "[&#8220;Final Sale&#8221;]",
+          "[&#8220;Last Chance Sale&#8221;]",
+          "[&#8220;New&#8221;,&#8221;Best Seller&#8221;]"
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/19/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 42,
+        "name": "Base",
+        "term_count": 4,
+        "top_terms": [
+          "Black",
+          "Black Oak",
+          "Chrome",
+          "Oak"
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/42/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 9,
+        "name": "assembly_required",
+        "term_count": 2,
+        "top_terms": [
+          "false",
+          "true"
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/9/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 43,
+        "name": "Cabinet",
+        "term_count": 2,
+        "top_terms": [
+          "Birch",
+          "White Metal"
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/43/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 35,
+        "name": "Arms",
+        "term_count": 1,
+        "top_terms": [
+          "With Arms"
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/35/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 48,
+        "name": "back-type",
+        "term_count": 1,
+        "top_terms": [
+          ""
+        ],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/48/terms",
+        "terms_status": 200
+      },
+      {
+        "id": 51,
+        "name": "backrest-type",
+        "term_count": 0,
+        "top_terms": [],
+        "terms_url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/51/terms",
+        "terms_status": 200
+      }
+    ],
+    "products_with_attributes": 15,
+    "variable_products": 3,
+    "sample_size": 15
+  },
+  "surfaces": [
+    {
+      "surface": "Catalog",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "246 SKUs across 148 browse nodes (134 substantive), 1 level."
+    },
+    {
+      "surface": "Search",
+      "status": "warn",
+      "nature": "store_finding",
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+    },
+    {
+      "surface": "Autocomplete",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "Type-ahead available via prefix product search (no native WooCommerce autocomplete endpoint)."
+    },
+    {
+      "surface": "Facets",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "52 attributes, 52 filterable; top facet care_instructions (68 terms). 15/15 sampled products carry attributes."
+    },
+    {
+      "surface": "Recommendations",
+      "status": "limited",
+      "nature": "capture_limitation",
+      "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+    },
+    {
+      "surface": "Browse",
+      "status": "warn",
+      "nature": "store_finding",
+      "detail": "148 category nodes, flat (no hierarchy)."
+    }
+  ],
+  "discovery_signal": "Mid-size catalog (246 SKUs): search starts to matter for findability. Flat browse (1 level): no hierarchical navigation depth, so faceted/nested browse is not a strong signal here. 134 substantive browse nodes after filtering operational/merchandising categories.",
+  "experiments": [
+    {
+      "id": "EXP-001",
+      "surface": "Search",
+      "label": "search \"enrique\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=enrique&per_page=10",
+      "params": {
+        "search": "enrique",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 2,
+      "sample": [
+        "Enrique Counter Stool",
+        "Enrique Bar Stool"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-002",
+      "surface": "Search",
+      "label": "search \"monica\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=monica&per_page=10",
+      "params": {
+        "search": "monica",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 1,
+      "sample": [
+        "Monica Bistro Table"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-003",
+      "surface": "Search",
+      "label": "search \"erik\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=erik&per_page=10",
+      "params": {
+        "search": "erik",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 1,
+      "sample": [
+        "Erik Bar Table"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-004",
+      "surface": "Search",
+      "label": "search \"piccolo\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=piccolo&per_page=10",
+      "params": {
+        "search": "piccolo",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 1,
+      "sample": [
+        "Piccolo Stool"
+      ],
+      "outcome": "hit",
+      "kind": "literal (from product names)"
+    },
+    {
+      "id": "EXP-005",
+      "surface": "Search",
+      "label": "search \"All Products\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=All%20Products&per_page=10",
+      "params": {
+        "search": "All Products",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-006",
+      "surface": "Search",
+      "label": "search \"Home for the Holidays\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Home%20for%20the%20Holidays&per_page=10",
+      "params": {
+        "search": "Home for the Holidays",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-007",
+      "surface": "Search",
+      "label": "search \"Seating\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Seating&per_page=10",
+      "params": {
+        "search": "Seating",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-008",
+      "surface": "Search",
+      "label": "search \"Under $500\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?search=Under%20%24500&per_page=10",
+      "params": {
+        "search": "Under $500",
+        "per_page": "10"
+      },
+      "status": 200,
+      "result_count": 0,
+      "sample": [],
+      "outcome": "miss",
+      "kind": "intent (from category names)"
+    },
+    {
+      "id": "EXP-009",
+      "surface": "Catalog",
+      "label": "product count (X-WP-Total)",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products?per_page=1",
+      "params": {
+        "per_page": "1"
+      },
+      "status": 200,
+      "result_count": 246,
+      "sample": [],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-010",
+      "surface": "Facets",
+      "label": "global attributes",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes",
+      "params": {},
+      "status": 200,
+      "result_count": 52,
+      "sample": [],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-011",
+      "surface": "Facets",
+      "label": "terms for \"care_instructions\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/3/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 68,
+      "sample": [
+        "All items in the Monaco Collection are made of raw, natural, sustainable rattan are are designed to be used outside, preferably in covered areas. The chairs can stand showers, but we do not recommend",
+        "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.&nbsp;",
+        "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.Some wood species, such as oak, contain tannin, wh",
+        "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.Some wood species, such as oak, contain tannin, wh",
+        "Avoid contact with hot items and immediately soak up spills. To clean, use a cloth moistened with warm water and mild soap.",
+        "Avoid direct contact with hot items and immediately soak up spills to avoid staining. All wood and metal bases can be cleaned using a moistened cloth with warm water and mild soap. Ensure metal bases"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-012",
+      "surface": "Facets",
+      "label": "terms for \"badges\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/19/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 15,
+      "sample": [
+        "[&#8220;Final Sale&#8221;,&#8221;High Stock&#8221;]",
+        "[&#8220;Final Sale&#8221;,&#8221;Outdoor&#8221;]",
+        "[&#8220;Final Sale&#8221;,&#8221;Stackable&#8221;]",
+        "[&#8220;Final Sale&#8221;]",
+        "[&#8220;Last Chance Sale&#8221;]",
+        "[&#8220;New&#8221;,&#8221;Best Seller&#8221;]"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-013",
+      "surface": "Facets",
+      "label": "terms for \"Base\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/42/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 4,
+      "sample": [
+        "Black",
+        "Black Oak",
+        "Chrome",
+        "Oak"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-014",
+      "surface": "Facets",
+      "label": "terms for \"assembly_required\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/9/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 2,
+      "sample": [
+        "false",
+        "true"
+      ],
+      "outcome": "ok"
+    },
+    {
+      "id": "EXP-015",
+      "surface": "Facets",
+      "label": "terms for \"Cabinet\"",
+      "method": "GET",
+      "url": "https://www.industrywest.com/wp-json/wc/store/v1/products/attributes/43/terms",
+      "params": {},
+      "status": 200,
+      "result_count": 2,
+      "sample": [
+        "Birch",
+        "White Metal"
+      ],
+      "outcome": "ok"
+    }
+  ],
+  "health": {
+    "coverage_percent": 60,
+    "readiness": "bounded",
+    "status": "partial",
+    "surfaces_total": 6,
+    "surfaces_pass": 3,
+    "surfaces_warn": 2,
+    "surfaces_fail": 0,
+    "surfaces_limited": 1
+  },
+  "findings": [
+    {
+      "id": "WOO-F001",
+      "surface": "Search",
+      "severity": "High",
+      "nature": "store_finding",
+      "title": "Search: discovery gap",
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+    },
+    {
+      "id": "WOO-F002",
+      "surface": "Recommendations",
+      "severity": "Info",
+      "nature": "capture_limitation",
+      "title": "Recommendations not inspectable via the Store API",
+      "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+    },
+    {
+      "id": "WOO-F003",
+      "surface": "Browse",
+      "severity": "Medium",
+      "nature": "store_finding",
+      "title": "Browse: discovery gap",
+      "detail": "148 category nodes, flat (no hierarchy)."
+    }
+  ],
+  "fix_plan": {
+    "open_items": 2,
+    "items": [
+      {
+        "id": "WOO-FIX001",
+        "surface": "Search",
+        "severity": "High",
+        "issue": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap.",
+        "recommendation": "Add synonym/intent handling (or a search app) so category and concept queries (\"sofa\", \"seating\") return products, not just literal product names.",
+        "status": "open"
+      },
+      {
+        "id": "WOO-FIX003",
+        "surface": "Browse",
+        "severity": "Medium",
+        "issue": "148 category nodes, flat (no hierarchy).",
+        "recommendation": "Introduce a hierarchical category structure (parent/child) so shoppers can drill down instead of scanning a flat list.",
+        "status": "open"
+      }
+    ]
+  },
+  "report_md_path": "assessments/industrywest/woo-inspection/WOO-20260730T043107Z/executive-report.md"
+}

@@ -1,6 +1,6 @@
 {
-  "schema_version": "site-profile-v0.1",
-  "discovered_at": "2026-07-15T04:58:24.213Z",
+  "schema_version": "site-profile-v0.2",
+  "discovered_at": "2026-07-15T15:09:45.280Z",
   "target": {
     "target_id": "dress-up",
     "name": "Dress Up",
@@ -29,7 +29,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 526,
+      "duration_ms": 631,
       "content_type": "text/html; charset=utf-8",
       "classification": null,
       "confidence": "High",
@@ -43,7 +43,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 71,
+      "duration_ms": 108,
       "content_type": "text/plain; charset=utf-8",
       "classification": null,
       "confidence": "High",
@@ -57,559 +57,173 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 112,
+      "duration_ms": 97,
       "content_type": "application/json; charset=utf-8",
       "classification": null,
       "confidence": "High",
-      "text_excerpt": "{\"products\":[{\"id\":7745815511107,\"title\":\"Beige Amen Embroidered Faith Hat\",\"handle\":\"beige-amen-embroidered-faith-hat\",\"body_html\":\"\\u003cp\\u003eWe love the message on the Beige Amen Embroidered Faith Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with \\\"Amen\\\" embroidered on the front!\\u003c\\/p\\u003e\\u003cul\\u003e\\n\\u003cli\\u003e\\u003cp\\u003eAdjustable Strap\\u003c\\/p\\u003e\\u003c\\/li\\u003e\\n\\u003cli\\u003e\\u003cp\\u003e100% Cotton\\u003c\\",
+      "text_excerpt": "{\"products\":[{\"id\":7644820996163,\"title\":\"FINAL SALE - Sweetest Occasion Blue Floral Mini Dress\",\"handle\":\"sweetest-occasion-blue-floral-mini-dress\",\"body_html\":\"\\u003cp\\u003eThe Sweetest Occasion Blue Floral Mini Dress is playful, flirty, and full of charm! Featuring a soft floral print with cascading ruffle details, this mini creates beautiful movement with every step. The lightweight fabric and relaxed fit make it perfect for warm-weather outings, brunch, or casual date nights. Pair it with s",
       "json_payload": {
         "products": [
           {
-            "id": 7745815511107,
-            "title": "Beige Amen Embroidered Faith Hat",
-            "handle": "beige-amen-embroidered-faith-hat",
-            "body_html": "<p>We love the message on the Beige Amen Embroidered Faith Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with \"Amen\" embroidered on the front!</p><ul>\n<li><p>Adjustable Strap</p></li>\n<li><p>100% Cotton</p></li>\n<li><p>Spot Clean with Damp Cloth or Sponge</p></li>\n<li><p>One Size Fits Most</p></li>\n</ul><p></p>",
-            "published_at": "2026-07-13T08:33:29-04:00",
-            "created_at": "2026-07-09T07:42:47-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "LCAP5549-TT",
-            "product_type": "DU Exclusive",
-            "tags": [
-              "6/26/2026",
-              "Accessories",
-              "DU Exclusive",
-              "Faith",
-              "Hat"
-            ],
-            "variants": [
-              {
-                "id": 43509352038467,
-                "title": "Beige",
-                "option1": "Beige",
-                "option2": null,
-                "option3": null,
-                "sku": "256768",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36425677406275,
-                  "product_id": 7745815511107,
-                  "position": 1,
-                  "created_at": "2026-07-13T08:31:24-04:00",
-                  "updated_at": "2026-07-13T08:31:27-04:00",
-                  "alt": "A woman wearing a beige baseball cap with 'AMEN' embroidered in brown across the front, photographed against a plain light gray studio background.",
-                  "width": 3257,
-                  "height": 4885,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-4.jpg?v=1783945887",
-                  "variant_ids": [
-                    43509352038467
-                  ]
-                },
-                "available": true,
-                "price": "28.00",
-                "grams": 82,
-                "compare_at_price": "28.00",
-                "position": 1,
-                "product_id": 7745815511107,
-                "created_at": "2026-07-09T07:42:48-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              }
-            ],
-            "images": [
-              {
-                "id": 36425677406275,
-                "created_at": "2026-07-13T08:31:24-04:00",
-                "position": 1,
-                "updated_at": "2026-07-13T08:31:27-04:00",
-                "product_id": 7745815511107,
-                "variant_ids": [
-                  43509352038467
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-4.jpg?v=1783945887",
-                "width": 3257,
-                "height": 4885
-              },
-              {
-                "id": 36425677439043,
-                "created_at": "2026-07-13T08:31:24-04:00",
-                "position": 2,
-                "updated_at": "2026-07-13T08:31:27-04:00",
-                "product_id": 7745815511107,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-5.jpg?v=1783945887",
-                "width": 3033,
-                "height": 4549
-              },
-              {
-                "id": 36425677373507,
-                "created_at": "2026-07-13T08:31:24-04:00",
-                "position": 3,
-                "updated_at": "2026-07-13T08:31:27-04:00",
-                "product_id": 7745815511107,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_accessories-3.jpg?v=1783945887",
-                "width": 3257,
-                "height": 4885
-              }
-            ],
-            "options": [
-              {
-                "name": "Color",
-                "position": 1,
-                "values": [
-                  "Beige"
-                ]
-              }
-            ]
-          },
-          {
-            "id": 7735678107715,
-            "title": "Yellow Cross Embroidered Hat",
-            "handle": "pray-baseball-hat",
-            "body_html": "<p>We love the message on the Yellow Cross Embroidered Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with a cross embroidered on the front!</p><ul>\n<li><p>Adjustable Strap</p></li>\n<li><p>100% Cotton</p></li>\n<li><p>Spot Clean with Damp Cloth or Sponge</p></li>\n<li><p>One Size Fits Most</p></li>\n</ul><p></p>",
-            "published_at": "2026-07-13T07:57:56-04:00",
-            "created_at": "2026-07-02T13:41:27-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "LCAP6448-YW",
-            "product_type": "DU Exclusive",
-            "tags": [
-              "6/26/2026",
-              "Accessories",
-              "Dad",
-              "DU Exclusive",
-              "Faith",
-              "Hat"
-            ],
-            "variants": [
-              {
-                "id": 43485899817027,
-                "title": "Yellow",
-                "option1": "Yellow",
-                "option2": null,
-                "option3": null,
-                "sku": "256761",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36371645136963,
-                  "product_id": 7735678107715,
-                  "position": 1,
-                  "created_at": "2026-07-09T06:33:41-04:00",
-                  "updated_at": "2026-07-09T06:33:44-04:00",
-                  "alt": "A blonde woman wearing a pale yellow baseball cap with a white cross embroidery and gold-framed aviator sunglasses, posing outdoors in front of a blurred tree trunk.",
-                  "width": 2859,
-                  "height": 4288,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-27_79f92dd4-4580-433d-9e0f-3dc42a42ec6d.jpg?v=1783593224",
-                  "variant_ids": [
-                    43485899817027
-                  ]
-                },
-                "available": true,
-                "price": "24.00",
-                "grams": 82,
-                "compare_at_price": "24.00",
-                "position": 1,
-                "product_id": 7735678107715,
-                "created_at": "2026-07-02T13:41:30-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              }
-            ],
-            "images": [
-              {
-                "id": 36371645136963,
-                "created_at": "2026-07-09T06:33:41-04:00",
-                "position": 1,
-                "updated_at": "2026-07-09T06:33:44-04:00",
-                "product_id": 7735678107715,
-                "variant_ids": [
-                  43485899817027
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-27_79f92dd4-4580-433d-9e0f-3dc42a42ec6d.jpg?v=1783593224",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36371600277571,
-                "created_at": "2026-07-09T06:31:42-04:00",
-                "position": 2,
-                "updated_at": "2026-07-09T06:31:45-04:00",
-                "product_id": 7735678107715,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-28_602ea875-f223-4d32-98ba-01e603b1f607.jpg?v=1783593105",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36371600212035,
-                "created_at": "2026-07-09T06:31:42-04:00",
-                "position": 3,
-                "updated_at": "2026-07-09T06:32:28-04:00",
-                "product_id": 7735678107715,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-29_30caa83f-6cfe-4bd8-9d87-700951f7c549.jpg?v=1783593148",
-                "width": 2624,
-                "height": 3936
-              }
-            ],
-            "options": [
-              {
-                "name": "Color",
-                "position": 1,
-                "values": [
-                  "Yellow"
-                ]
-              }
-            ]
-          },
-          {
-            "id": 7735675387971,
-            "title": "Blue Embroidered Cross Hat",
-            "handle": "cross-baseball-hat",
-            "body_html": "<p>We love the message on the Blue Embroidered Cross Hat! This cute hat is made of a soft cotton construction. It has a rounded top and a slightly rounded brim with a cross embroidered on the front! </p><ul>\n<li><p>Adjustable Strap</p></li>\n<li><p>100% Cotton</p></li>\n<li><p>Spot Clean with Damp Cloth or Sponge</p></li>\n<li><p>One Size Fits Most</p></li>\n</ul><p></p>",
-            "published_at": "2026-07-13T07:57:41-04:00",
-            "created_at": "2026-07-02T13:33:12-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "LCAP6448-BL",
-            "product_type": "DU Exclusive",
-            "tags": [
-              "6/26/2026",
-              "Accessories",
-              "Dad",
-              "DU Exclusive",
-              "Faith",
-              "Hat"
-            ],
-            "variants": [
-              {
-                "id": 43485899423811,
-                "title": "Yellow",
-                "option1": "Yellow",
-                "option2": null,
-                "option3": null,
-                "sku": "256762",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36371802128451,
-                  "product_id": 7735675387971,
-                  "position": 3,
-                  "created_at": "2026-07-09T06:43:11-04:00",
-                  "updated_at": "2026-07-09T06:43:13-04:00",
-                  "alt": "A close-up lifestyle shot of a smiling blonde woman wearing a pale yellow baseball cap with a blue embroidered cross on the front, gold-framed sunglasses, and a gray hoodie, with a blurred tree trunk in the background.",
-                  "width": 1365,
-                  "height": 2048,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/AF16ACA9-64A1-4075-A2A1-CAECFF4911E7.jpg?v=1783593793",
-                  "variant_ids": [
-                    43485899423811
-                  ]
-                },
-                "available": true,
-                "price": "24.00",
-                "grams": 82,
-                "compare_at_price": "24.00",
-                "position": 1,
-                "product_id": 7735675387971,
-                "created_at": "2026-07-02T13:41:11-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43485885661251,
-                "title": "White",
-                "option1": "White",
-                "option2": null,
-                "option3": null,
-                "sku": "256763",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36303918628931,
-                  "product_id": 7735675387971,
-                  "position": 1,
-                  "created_at": "2026-07-02T14:23:06-04:00",
-                  "updated_at": "2026-07-02T14:23:08-04:00",
-                  "alt": "A woman outdoors wearing a white baseball cap with a small blue cross on the front, gold-framed aviator sunglasses, and a brown sweatshirt, with a blurred tree trunk in the background.",
-                  "width": 2859,
-                  "height": 4288,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-5_d542e7d0-fe3c-4898-980c-cdefc3cd2bb1.jpg?v=1783016588",
-                  "variant_ids": [
-                    43485885661251
-                  ]
-                },
-                "available": true,
-                "price": "24.00",
-                "grams": 82,
-                "compare_at_price": "24.00",
-                "position": 2,
-                "product_id": 7735675387971,
-                "created_at": "2026-07-02T13:33:13-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              }
-            ],
-            "images": [
-              {
-                "id": 36303918628931,
-                "created_at": "2026-07-02T14:23:06-04:00",
-                "position": 1,
-                "updated_at": "2026-07-02T14:23:08-04:00",
-                "product_id": 7735675387971,
-                "variant_ids": [
-                  43485885661251
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-5_d542e7d0-fe3c-4898-980c-cdefc3cd2bb1.jpg?v=1783016588",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36303918661699,
-                "created_at": "2026-07-02T14:23:06-04:00",
-                "position": 2,
-                "updated_at": "2026-07-02T14:23:08-04:00",
-                "product_id": 7735675387971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-6_6b395a21-82e7-4030-97cb-872119900265.jpg?v=1783016588",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36371802128451,
-                "created_at": "2026-07-09T06:43:11-04:00",
-                "position": 3,
-                "updated_at": "2026-07-09T06:43:13-04:00",
-                "product_id": 7735675387971,
-                "variant_ids": [
-                  43485899423811
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/AF16ACA9-64A1-4075-A2A1-CAECFF4911E7.jpg?v=1783593793",
-                "width": 1365,
-                "height": 2048
-              },
-              {
-                "id": 36303914008643,
-                "created_at": "2026-07-02T14:22:44-04:00",
-                "position": 4,
-                "updated_at": "2026-07-02T14:22:46-04:00",
-                "product_id": 7735675387971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-25_4c07f567-8d56-40e1-8187-29cdf0db6861.jpg?v=1783016566",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36303919677507,
-                "created_at": "2026-07-02T14:23:10-04:00",
-                "position": 5,
-                "updated_at": "2026-07-02T14:23:12-04:00",
-                "product_id": 7735675387971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-7_ab7ead4b-0ced-4e8e-8103-4ee006950922.jpg?v=1783016592",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36303916630083,
-                "created_at": "2026-07-02T14:22:54-04:00",
-                "position": 6,
-                "updated_at": "2026-07-09T06:38:00-04:00",
-                "product_id": 7735675387971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_-29_ade610f4-d5bd-4c88-ae0c-5c7903f3fb15.jpg?v=1783593480",
-                "width": 2469,
-                "height": 3703
-              }
-            ],
-            "options": [
-              {
-                "name": "Color",
-                "position": 1,
-                "values": [
-                  "Yellow",
-                  "White"
-                ]
-              }
-            ]
-          },
-          {
-            "id": 7735694983235,
-            "title": "Unapologetically Her Brown Polka Dot Midi Dress",
-            "handle": "unapologetically-her-brown-polka-dot-midi-dress",
-            "body_html": "<p>Sweet, feminine, and effortlessly charming. The Unapologetically Her Brown Polka Dot Midi Dress features a classic polka dot print, flattering plunge neckline, flowy skirt, and adjustable tie-back detail for the perfect fit. Style it with boots for fall or heels for your next special occasion.</p>\n<ul>\n  <li>Shiny Lightweight Satin-Like Fabrication</li>\n  <li>Brown Polka Dot Print </li>\n  <li>V-Neckline</li>\n  <li>Sleeveless</li>\n  <li>Functional Back Zipper</li>\n  <li>A-line Fit</li>\n  <li>Maxi Length</li>\n  <li>Self: 100% Polyester</li>\n  <li>Lining: 100% Polyester</li>\n  <li>Hand Wash Cold, Dry Flat</li>\n  <li>Model is 5'10\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 30” | Waist 26” | Hips 38” | Length 54”<br>\nMedium | Bust 32” | Waist 28” | Hips 40” | Length 54.5”<br>\nLarge | Bust 34” | Waist 30” | Hips 42” | Length 55”</p>",
-            "published_at": "2026-07-12T19:50:09-04:00",
-            "created_at": "2026-07-02T14:13:44-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "DZ25E063",
+            "id": 7644820996163,
+            "title": "FINAL SALE - Sweetest Occasion Blue Floral Mini Dress",
+            "handle": "sweetest-occasion-blue-floral-mini-dress",
+            "body_html": "<p>The Sweetest Occasion Blue Floral Mini Dress is playful, flirty, and full of charm! Featuring a soft floral print with cascading ruffle details, this mini creates beautiful movement with every step. The lightweight fabric and relaxed fit make it perfect for warm-weather outings, brunch, or casual date nights. Pair it with sandals for an effortlessly cute look! </p>\n<ul>\n  <li>Lightweight Blend Fabrication</li>\n  <li>Floral Print</li>\n  <li>Elastic Square Neckline</li>\n  <li>Elastic Waistband</li>\n  <li>Long Puff Sleeves</li>\n  <li>Babydoll Fit</li>\n  <li>Short/Mini Length</li>\n  <li>Self + Lining: 100% Polyester</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'2\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 30\" | Waist 26\" | Hips 32\" | Length 31\"<br>\nMedium | Bust 32\" | Waist 28\" | Hips 34\" | Length 32\"<br>\nLarge | Bust 34\" | Waist 30\" | Hips 36\" | Length 33\"</p>",
+            "published_at": "2026-07-15T09:09:56-04:00",
+            "created_at": "2026-04-24T14:12:58-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LD46541F-083",
             "product_type": "Dress",
             "tags": [
-              "7/10/2026",
-              "Brown",
+              "5/1/2026",
+              "Babydoll",
+              "Brunch",
+              "DD7.15.26",
               "Dress",
-              "Midi",
-              "New",
+              "Final Sale",
+              "Friday",
+              "Mini",
+              "Party",
               "Print",
-              "Sunday",
+              "Resort",
+              "Sundress",
               "Vacation",
               "Wedding"
             ],
             "variants": [
               {
-                "id": 43486178213955,
-                "title": "Brown / Small",
-                "option1": "Brown",
+                "id": 43179967479875,
+                "title": "Blue / Small",
+                "option1": "Blue",
                 "option2": "Small",
                 "option3": null,
-                "sku": "257131",
+                "sku": "255028",
                 "requires_shipping": true,
                 "taxable": true,
-                "featured_image": {
-                  "id": 36419017965635,
-                  "product_id": 7735694983235,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:50:26-04:00",
-                  "updated_at": "2026-07-12T17:50:28-04:00",
-                  "alt": null,
-                  "width": 736,
-                  "height": 1104,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
-                  "variant_ids": [
-                    43486178213955,
-                    43486178246723,
-                    43486178279491
-                  ]
-                },
+                "featured_image": null,
                 "available": true,
-                "price": "42.00",
-                "grams": 181,
-                "compare_at_price": "42.00",
+                "price": "38.40",
+                "grams": 332,
+                "compare_at_price": "64.00",
                 "position": 1,
-                "product_id": 7735694983235,
-                "created_at": "2026-07-02T14:13:46-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7644820996163,
+                "created_at": "2026-04-24T14:13:00-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486178246723,
-                "title": "Brown / Medium",
-                "option1": "Brown",
+                "id": 43179967512643,
+                "title": "Blue / Medium",
+                "option1": "Blue",
                 "option2": "Medium",
                 "option3": null,
-                "sku": "257132",
+                "sku": "255029",
                 "requires_shipping": true,
                 "taxable": true,
-                "featured_image": {
-                  "id": 36419017965635,
-                  "product_id": 7735694983235,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:50:26-04:00",
-                  "updated_at": "2026-07-12T17:50:28-04:00",
-                  "alt": null,
-                  "width": 736,
-                  "height": 1104,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
-                  "variant_ids": [
-                    43486178213955,
-                    43486178246723,
-                    43486178279491
-                  ]
-                },
+                "featured_image": null,
                 "available": true,
-                "price": "42.00",
-                "grams": 184,
-                "compare_at_price": "42.00",
+                "price": "38.40",
+                "grams": 346,
+                "compare_at_price": "64.00",
                 "position": 2,
-                "product_id": 7735694983235,
-                "created_at": "2026-07-02T14:13:46-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7644820996163,
+                "created_at": "2026-04-24T14:13:00-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486178279491,
-                "title": "Brown / Large",
-                "option1": "Brown",
+                "id": 43179967545411,
+                "title": "Blue / Large",
+                "option1": "Blue",
                 "option2": "Large",
                 "option3": null,
-                "sku": "257133",
+                "sku": "255030",
                 "requires_shipping": true,
                 "taxable": true,
-                "featured_image": {
-                  "id": 36419017965635,
-                  "product_id": 7735694983235,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:50:26-04:00",
-                  "updated_at": "2026-07-12T17:50:28-04:00",
-                  "alt": null,
-                  "width": 736,
-                  "height": 1104,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
-                  "variant_ids": [
-                    43486178213955,
-                    43486178246723,
-                    43486178279491
-                  ]
-                },
+                "featured_image": null,
                 "available": true,
-                "price": "42.00",
-                "grams": 203,
-                "compare_at_price": "42.00",
+                "price": "38.40",
+                "grams": 346,
+                "compare_at_price": "64.00",
                 "position": 3,
-                "product_id": 7735694983235,
-                "created_at": "2026-07-02T14:13:46-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7644820996163,
+                "created_at": "2026-04-24T14:13:00-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               }
             ],
             "images": [
               {
-                "id": 36419017965635,
-                "created_at": "2026-07-12T17:50:26-04:00",
+                "id": 35740006907971,
+                "created_at": "2026-04-30T14:45:00-04:00",
                 "position": 1,
-                "updated_at": "2026-07-12T17:50:28-04:00",
-                "product_id": 7735694983235,
-                "variant_ids": [
-                  43486178213955,
-                  43486178246723,
-                  43486178279491
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/6392C3BB-DA0C-4F26-B0D9-347D4A84F303.jpg?v=1783893028",
-                "width": 736,
-                "height": 1104
+                "updated_at": "2026-04-30T14:45:30-04:00",
+                "product_id": 7644820996163,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress-4_e0ce60db-a200-408f-893c-c777acb81982.jpg?v=1777574730",
+                "width": 2230,
+                "height": 3345
               },
               {
-                "id": 36419017932867,
-                "created_at": "2026-07-12T17:50:26-04:00",
+                "id": 35740006940739,
+                "created_at": "2026-04-30T14:45:00-04:00",
                 "position": 2,
-                "updated_at": "2026-07-12T17:50:28-04:00",
-                "product_id": 7735694983235,
+                "updated_at": "2026-04-30T14:45:02-04:00",
+                "product_id": 7644820996163,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F796DA0D-B95B-4560-A540-63000A2F5E12.jpg?v=1783893028",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress-5_3290cd0c-f740-4e3d-a848-af02153949b3.jpg?v=1777574702",
+                "width": 2859,
+                "height": 4288
               },
               {
-                "id": 36419017900099,
-                "created_at": "2026-07-12T17:50:26-04:00",
+                "id": 35740006809667,
+                "created_at": "2026-04-30T14:45:00-04:00",
                 "position": 3,
-                "updated_at": "2026-07-12T17:50:28-04:00",
-                "product_id": 7735694983235,
+                "updated_at": "2026-05-01T09:37:34-04:00",
+                "product_id": 7644820996163,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/9358C671-A1CC-42EF-9233-0E92FDD81378.jpg?v=1783893028",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress_8afec783-1895-482a-a1b4-9bbaf86bfa8f.jpg?v=1777642654",
+                "width": 1800,
+                "height": 2699
               },
               {
-                "id": 36361349824579,
-                "created_at": "2026-07-08T10:24:16-04:00",
+                "id": 35740006842435,
+                "created_at": "2026-04-30T14:45:00-04:00",
                 "position": 4,
-                "updated_at": "2026-07-09T10:22:44-04:00",
-                "product_id": 7735694983235,
+                "updated_at": "2026-05-01T09:36:32-04:00",
+                "product_id": 7644820996163,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_polka_dot_midi-8.jpg?v=1783606964",
-                "width": 2643,
-                "height": 3963
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress-2_f447070c-0e18-45b1-be26-d79e2d768ffb.jpg?v=1777642592",
+                "width": 1585,
+                "height": 2377
               },
               {
-                "id": 36361349693507,
-                "created_at": "2026-07-08T10:24:16-04:00",
+                "id": 35740006875203,
+                "created_at": "2026-04-30T14:45:00-04:00",
                 "position": 5,
-                "updated_at": "2026-07-08T10:24:19-04:00",
-                "product_id": 7735694983235,
+                "updated_at": "2026-04-30T14:45:03-04:00",
+                "product_id": 7644820996163,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_polka_dot_midi-4.jpg?v=1783520659",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress-3_0a735df4-a132-4062-965c-325a73c32775.jpg?v=1777574703",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35740006973507,
+                "created_at": "2026-04-30T14:45:00-04:00",
+                "position": 6,
+                "updated_at": "2026-04-30T14:45:03-04:00",
+                "product_id": 7644820996163,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress-6_8698ae6a-4c01-4abf-9e76-f92773b65f34.jpg?v=1777574703",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35740007006275,
+                "created_at": "2026-04-30T14:45:00-04:00",
+                "position": 7,
+                "updated_at": "2026-04-30T14:45:02-04:00",
+                "product_id": 7644820996163,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_mini_dress-7_9b175525-506e-40da-bbd1-6b3b0a61d608.jpg?v=1777574702",
                 "width": 2859,
                 "height": 4288
               }
@@ -619,7 +233,7 @@
                 "name": "Color",
                 "position": 1,
                 "values": [
-                  "Brown"
+                  "Blue"
                 ]
               },
               {
@@ -634,251 +248,909 @@
             ]
           },
           {
-            "id": 7735694917699,
-            "title": "Paris After Dark Cream Polka Dot Blouse",
-            "handle": "paris-after-dark-cream-polka-dot-blouse",
-            "body_html": "<p>The Paris After Dark Cream Polka Dot Blouse has a timeless appeal. Featuring a playful polka dot print, collared neckline, button-front design, and feminine ruffle hem, this top brings instant sophistication to any outfit. Pair it with denim for brunch or tailored trousers for an elevated office look. </p><ul>\n<li><p>Lightweight Woven Knit Fabrication</p></li>\n<li><p>Polka Dot Print</p></li>\n<li><p>Collared Neckline</p></li>\n<li><p>Functional Button Front</p></li>\n<li><p>Long Sleeves </p></li>\n<li><p>Flowy Fit</p></li>\n<li><p>Ruffle Bottom</p></li>\n<li><p>100% Polyester</p></li>\n<li><p>Hand Wash Cold, Hang or Line Dry</p></li>\n<li><p>Model is 5'10\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 50” | Waist 50\" | Length 23”<br>Medium | Bust 52” | Waist 52” | Length 23”<br>Large | Bust 54” | Waist 54” | Length 23”</p>",
-            "published_at": "2026-07-12T19:50:08-04:00",
-            "created_at": "2026-07-02T14:13:00-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "IT4873G-02",
-            "product_type": "Top",
+            "id": 7656549318723,
+            "title": "FINAL SALE - Calm And Composed Blue Floral Smocked Midi Dress",
+            "handle": "calm-and-composed-blue-floral-smocked-midi-dress",
+            "body_html": "<p>The Calm And Composed Blue Floral Smocked Midi Dress is made for brunch dates, showers, and every pretty moment in between! Featuring a soft blue backdrop with romantic floral detailing and a flattering midi silhouette, this dress feels effortlessly feminine. Pair it with wedges or dainty sandals for the ultimate charming look. </p>\n<ul>\n  <li>Lightweight Blend Fabrication</li>\n  <li>Floral Eyelet Print </li>\n  <li>Smocked Bodice</li>\n  <li>Ruffle Round Neckline</li>\n  <li>Adjustable Spaghetti Straps</li>\n  <li>A-line Fit</li>\n  <li>Midi Length</li>\n  <li>Self + Lining: 100% Polyester</li>\n  <li>Dry Clean Only</li>\n  <li>Model is 5'4\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 28\" (Stretches up to 40\") | Waist 30\" | Hips 40\" | Length 47\"<br>\nMedium | Bust 30\" (Stretches up to 42\") | Waist 32\" | Hips 42\" | Length 48\"<br>\nLarge | Bust 32\" (Stretches up to 44\") | Waist 34\" | Hips 44\" | Length 49\" </p>",
+            "published_at": "2026-07-15T09:09:18-04:00",
+            "created_at": "2026-05-11T09:57:33-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LD49614-083",
+            "product_type": "Dress",
             "tags": [
-              "7/10/2026",
-              "Blouse",
-              "New",
-              "Sunday",
-              "Top",
+              "5/15/2026",
+              "Blue",
+              "Brunch",
+              "Bump",
+              "DD7.15.26",
+              "Dress",
+              "Final Sale",
+              "Floral",
+              "Midi",
+              "Print",
+              "Resort",
+              "Saturday",
               "Vacation",
-              "Workwear"
+              "Wedding"
             ],
             "variants": [
               {
-                "id": 43486177919043,
-                "title": "Cream / Small",
-                "option1": "Cream",
+                "id": 43235742974019,
+                "title": "Blue / Small",
+                "option1": "Blue",
                 "option2": "Small",
                 "option3": null,
-                "sku": "256930",
+                "sku": "255439",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36418928508995,
-                  "product_id": 7735694917699,
+                  "id": 35866240516163,
+                  "product_id": 7656549318723,
                   "position": 1,
-                  "created_at": "2026-07-12T16:42:46-04:00",
-                  "updated_at": "2026-07-12T16:42:48-04:00",
-                  "alt": null,
-                  "width": 718,
-                  "height": 1077,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                  "created_at": "2026-05-13T13:23:53-04:00",
+                  "updated_at": "2026-05-13T13:25:15-04:00",
+                  "alt": "Woman in a floral dress standing on a patio with lounge chairs and an umbrella in the background.",
+                  "width": 2580,
+                  "height": 3869,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-3_27bc90d4-b171-490c-9be1-1abca127870d.jpg?v=1778693115",
                   "variant_ids": [
-                    43486177919043,
-                    43486177951811,
-                    43486177984579
+                    43235742974019,
+                    43235743006787,
+                    43235743039555
                   ]
                 },
                 "available": true,
-                "price": "42.00",
-                "grams": 266,
-                "compare_at_price": "42.00",
+                "price": "37.20",
+                "grams": 357,
+                "compare_at_price": "62.00",
                 "position": 1,
-                "product_id": 7735694917699,
-                "created_at": "2026-07-02T14:13:02-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7656549318723,
+                "created_at": "2026-05-11T09:57:35-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486177951811,
-                "title": "Cream / Medium",
-                "option1": "Cream",
+                "id": 43235743006787,
+                "title": "Blue / Medium",
+                "option1": "Blue",
                 "option2": "Medium",
                 "option3": null,
-                "sku": "256931",
+                "sku": "255440",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36418928508995,
-                  "product_id": 7735694917699,
+                  "id": 35866240516163,
+                  "product_id": 7656549318723,
                   "position": 1,
-                  "created_at": "2026-07-12T16:42:46-04:00",
-                  "updated_at": "2026-07-12T16:42:48-04:00",
-                  "alt": null,
-                  "width": 718,
-                  "height": 1077,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                  "created_at": "2026-05-13T13:23:53-04:00",
+                  "updated_at": "2026-05-13T13:25:15-04:00",
+                  "alt": "Woman in a floral dress standing on a patio with lounge chairs and an umbrella in the background.",
+                  "width": 2580,
+                  "height": 3869,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-3_27bc90d4-b171-490c-9be1-1abca127870d.jpg?v=1778693115",
                   "variant_ids": [
-                    43486177919043,
-                    43486177951811,
-                    43486177984579
+                    43235742974019,
+                    43235743006787,
+                    43235743039555
                   ]
                 },
                 "available": true,
-                "price": "42.00",
-                "grams": 278,
-                "compare_at_price": "42.00",
+                "price": "37.20",
+                "grams": 371,
+                "compare_at_price": "62.00",
                 "position": 2,
-                "product_id": 7735694917699,
-                "created_at": "2026-07-02T14:13:02-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7656549318723,
+                "created_at": "2026-05-11T09:57:35-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486177984579,
-                "title": "Cream / Large",
-                "option1": "Cream",
+                "id": 43235743039555,
+                "title": "Blue / Large",
+                "option1": "Blue",
                 "option2": "Large",
                 "option3": null,
-                "sku": "256932",
+                "sku": "255441",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36418928508995,
-                  "product_id": 7735694917699,
+                  "id": 35866240516163,
+                  "product_id": 7656549318723,
                   "position": 1,
-                  "created_at": "2026-07-12T16:42:46-04:00",
-                  "updated_at": "2026-07-12T16:42:48-04:00",
-                  "alt": null,
-                  "width": 718,
-                  "height": 1077,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
+                  "created_at": "2026-05-13T13:23:53-04:00",
+                  "updated_at": "2026-05-13T13:25:15-04:00",
+                  "alt": "Woman in a floral dress standing on a patio with lounge chairs and an umbrella in the background.",
+                  "width": 2580,
+                  "height": 3869,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-3_27bc90d4-b171-490c-9be1-1abca127870d.jpg?v=1778693115",
                   "variant_ids": [
-                    43486177919043,
-                    43486177951811,
-                    43486177984579
+                    43235742974019,
+                    43235743006787,
+                    43235743039555
                   ]
                 },
                 "available": true,
-                "price": "42.00",
-                "grams": 288,
-                "compare_at_price": "42.00",
+                "price": "37.20",
+                "grams": 391,
+                "compare_at_price": "62.00",
                 "position": 3,
-                "product_id": 7735694917699,
-                "created_at": "2026-07-02T14:13:02-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7656549318723,
+                "created_at": "2026-05-11T09:57:35-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               }
             ],
             "images": [
               {
-                "id": 36418928508995,
-                "created_at": "2026-07-12T16:42:46-04:00",
+                "id": 35866240516163,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 1,
-                "updated_at": "2026-07-12T16:42:48-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:25:15-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [
-                  43486177919043,
-                  43486177951811,
-                  43486177984579
+                  43235742974019,
+                  43235743006787,
+                  43235743039555
                 ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F304BADC-C968-47C4-901E-6CB11C920BB4.jpg?v=1783888968",
-                "width": 718,
-                "height": 1077
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-3_27bc90d4-b171-490c-9be1-1abca127870d.jpg?v=1778693115",
+                "width": 2580,
+                "height": 3869
               },
               {
-                "id": 36418928476227,
-                "created_at": "2026-07-12T16:42:46-04:00",
+                "id": 35866240450627,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 2,
-                "updated_at": "2026-07-12T16:42:48-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:59-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/F2827F6B-DA50-4F0D-A84B-C4800F7E0564.jpg?v=1783888968",
-                "width": 725,
-                "height": 1087
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress_cf8868fb-1624-4629-926f-a1e8ad0f53e4.jpg?v=1778693039",
+                "width": 2859,
+                "height": 4288
               },
               {
-                "id": 36418928443459,
-                "created_at": "2026-07-12T16:42:46-04:00",
+                "id": 35866240319555,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 3,
-                "updated_at": "2026-07-12T16:42:48-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:56-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B74E8AC0-B09A-4233-8106-682AFEA023AD.jpg?v=1783888968",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-5_774748e6-2ea1-49ba-b9ac-8b319fea94f1.jpg?v=1778693036",
+                "width": 2859,
+                "height": 4288
               },
               {
-                "id": 36361305620547,
-                "created_at": "2026-07-08T10:21:04-04:00",
+                "id": 35866240352323,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 4,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:56-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-6.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-6_3dd408e5-e923-4af3-ad5a-e2ddea35a241.jpg?v=1778693036",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305751619,
-                "created_at": "2026-07-08T10:21:04-04:00",
+                "id": 35866240483395,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 5,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:56-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-2.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-2_fe93e579-473f-4320-a9d2-71807921a5d0.jpg?v=1778693036",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305587779,
-                "created_at": "2026-07-08T10:21:04-04:00",
+                "id": 35866240548931,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 6,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:56-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-5.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-4_196cd52c-36cb-4aa7-83ac-de95afb2200c.jpg?v=1778693036",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305784387,
-                "created_at": "2026-07-08T10:21:04-04:00",
+                "id": 35866240385091,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 7,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:56-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-3.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-7_ef1343ed-df1e-4cb5-b23f-0797cb1a2819.jpg?v=1778693036",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305555011,
-                "created_at": "2026-07-08T10:21:04-04:00",
+                "id": 35866240417859,
+                "created_at": "2026-05-13T13:23:53-04:00",
                 "position": 8,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "updated_at": "2026-05-13T13:23:58-04:00",
+                "product_id": 7656549318723,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-4.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_blue_floral_midi_dress-8_b719139f-e6fa-4b45-aadf-177b72e213a2.jpg?v=1778693038",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Blue"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7664099360835,
+            "title": "FINAL SALE - European Market White Fruit Print Mini Dress",
+            "handle": "european-market-white-fruit-print-mini-dress",
+            "body_html": "<p>This European Market White Fruit Print Mini Dress is full of playful European summer vibes! Featuring a colorful fruit-inspired print, flattering sleeveless silhouette, and woven fabric, this dress is perfect for vacations, brunches, and warm-weather events. Just add sandals and gold jewelry for a chic effortless look.</p>\n<ul>\n  <li>Lightweight Woven-Knit Fabrication</li>\n  <li>Abstract Print</li>\n  <li>Lace Trim Round Neckline</li>\n  <li>Adjustable Spaghetti Straps with Flower Detail</li>\n  <li>Button Front</li>\n  <li>Side Zipper</li>\n  <li>A-line Fit</li>\n  <li>Short/Mini Length</li>\n  <li>Self: 100% Polyester</li>\n  <li>Lining: 100% Rayon</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'4\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 32\" | Waist 28\" (Stretches up to 30\")| Hips 34\" | Length 30\"<br>\nMedium | Bust 34\" | Waist 30\" (Stretches up to 32\")| Hips 36\" | Length 31\"<br>\nLarge | Bust 36\" | Waist 32\" (Stretches up to 34\")| Hips 38\" | Length 32\"</p>",
+            "published_at": "2026-07-15T09:08:28-04:00",
+            "created_at": "2026-05-18T11:38:40-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LD50512-083",
+            "product_type": "Dress",
+            "tags": [
+              "5/22/2026",
+              "DD7.15.26",
+              "Dress",
+              "Final Sale",
+              "Floral",
+              "Mini",
+              "Print",
+              "Resort",
+              "Saturday",
+              "Vacation",
+              "White"
+            ],
+            "variants": [
+              {
+                "id": 43281171316803,
+                "title": "White / Small",
+                "option1": "White",
+                "option2": "Small",
+                "option3": null,
+                "sku": "255634",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35913060778051,
+                  "product_id": 7664099360835,
+                  "position": 1,
+                  "created_at": "2026-05-20T15:43:19-04:00",
+                  "updated_at": "2026-07-15T09:18:05-04:00",
+                  "alt": "Woman wearing a patterned dress standing outdoors under an umbrella",
+                  "width": 2567,
+                  "height": 3850,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-2.jpg?v=1784121485",
+                  "variant_ids": [
+                    43281171316803,
+                    43281171349571,
+                    43281171382339
+                  ]
+                },
+                "available": true,
+                "price": "31.20",
+                "grams": 244,
+                "compare_at_price": "52.00",
+                "position": 1,
+                "product_id": 7664099360835,
+                "created_at": "2026-05-18T11:38:41-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43281171349571,
+                "title": "White / Medium",
+                "option1": "White",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "255635",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35913060778051,
+                  "product_id": 7664099360835,
+                  "position": 1,
+                  "created_at": "2026-05-20T15:43:19-04:00",
+                  "updated_at": "2026-07-15T09:18:05-04:00",
+                  "alt": "Woman wearing a patterned dress standing outdoors under an umbrella",
+                  "width": 2567,
+                  "height": 3850,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-2.jpg?v=1784121485",
+                  "variant_ids": [
+                    43281171316803,
+                    43281171349571,
+                    43281171382339
+                  ]
+                },
+                "available": true,
+                "price": "31.20",
+                "grams": 261,
+                "compare_at_price": "52.00",
+                "position": 2,
+                "product_id": 7664099360835,
+                "created_at": "2026-05-18T11:38:41-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43281171382339,
+                "title": "White / Large",
+                "option1": "White",
+                "option2": "Large",
+                "option3": null,
+                "sku": "255636",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35913060778051,
+                  "product_id": 7664099360835,
+                  "position": 1,
+                  "created_at": "2026-05-20T15:43:19-04:00",
+                  "updated_at": "2026-07-15T09:18:05-04:00",
+                  "alt": "Woman wearing a patterned dress standing outdoors under an umbrella",
+                  "width": 2567,
+                  "height": 3850,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-2.jpg?v=1784121485",
+                  "variant_ids": [
+                    43281171316803,
+                    43281171349571,
+                    43281171382339
+                  ]
+                },
+                "available": true,
+                "price": "31.20",
+                "grams": 272,
+                "compare_at_price": "52.00",
+                "position": 3,
+                "product_id": 7664099360835,
+                "created_at": "2026-05-18T11:38:41-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 35913060778051,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 1,
+                "updated_at": "2026-07-15T09:18:05-04:00",
+                "product_id": 7664099360835,
+                "variant_ids": [
+                  43281171316803,
+                  43281171349571,
+                  43281171382339
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-2.jpg?v=1784121485",
+                "width": 2567,
+                "height": 3850
+              },
+              {
+                "id": 35913060941891,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 2,
+                "updated_at": "2026-05-20T15:43:21-04:00",
+                "product_id": 7664099360835,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-7.jpg?v=1779306201",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305653315,
-                "created_at": "2026-07-08T10:21:04-04:00",
-                "position": 9,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "id": 35913060843587,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 3,
+                "updated_at": "2026-05-20T15:43:21-04:00",
+                "product_id": 7664099360835,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-7.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-4.jpg?v=1779306201",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305718851,
-                "created_at": "2026-07-08T10:21:04-04:00",
-                "position": 10,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "id": 35913060745283,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 4,
+                "updated_at": "2026-05-20T15:43:24-04:00",
+                "product_id": 7664099360835,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress.jpg?v=1779306204",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361305686083,
-                "created_at": "2026-07-08T10:21:04-04:00",
-                "position": 11,
-                "updated_at": "2026-07-08T10:21:06-04:00",
-                "product_id": 7735694917699,
+                "id": 35913060810819,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 5,
+                "updated_at": "2026-05-20T15:43:21-04:00",
+                "product_id": 7664099360835,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_polka_dot_blouse-8.jpg?v=1783520466",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-3.jpg?v=1779306201",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35913060876355,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 6,
+                "updated_at": "2026-05-20T15:43:21-04:00",
+                "product_id": 7664099360835,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-5.jpg?v=1779306201",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35913060909123,
+                "created_at": "2026-05-20T15:43:19-04:00",
+                "position": 7,
+                "updated_at": "2026-05-20T15:43:22-04:00",
+                "product_id": 7664099360835,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_white_fruit_print_mini_dress-6.jpg?v=1779306202",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "White"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7665572282435,
+            "title": "FINAL SALE - Market Fresh Pink Print Mini Skort",
+            "handle": "market-fresh-pink-print-mini-skort",
+            "body_html": "<p>This Market Fresh Pink Print Mini Skort is the sweetest statement piece for sunny days ahead! Featuring a playful food-inspired print with lemons, tomatoes, basil, and vintage details, this skirt adds the perfect fun pop to your wardrobe. The elastic waistband and flowy fit make it easy to style with tanks, graphic tees, or the matching top! </p>\n<ul>\n  <li>Lightweight Cotton Fabrication</li>\n  <li>Elastic Waistband</li>\n  <li>Abstract Print</li>\n  <li>Mid-Rise</li>\n  <li>Flowy Fit</li>\n  <li>Lined Shorts</li>\n  <li>Side Pockets</li>\n  <li>Self: 85% Nylon, 15% Rayon</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'4\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Waist 26” (Stretches up to 36\") | Hips 38” | Length 13”<br>\nMedium | Waist 28” (Stretches up to 38\") | Hips 40” | Length 14”<br>\nLarge | Waist 30” (Stretches up to 40\") | Hips 42” | Length 15”</p>",
+            "published_at": "2026-07-15T09:07:32-04:00",
+            "created_at": "2026-05-21T12:12:24-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LSK0283",
+            "product_type": "Bottom",
+            "tags": [
+              "5/29/2026",
+              "Bottom",
+              "DD7.15.26",
+              "FINAL SALE",
+              "Friday",
+              "Resort",
+              "Shorts",
+              "Skirt",
+              "Vacation"
+            ],
+            "variants": [
+              {
+                "id": 43289453002819,
+                "title": "Pink / Small",
+                "option1": "Pink",
+                "option2": "Small",
+                "option3": null,
+                "sku": "255757",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945889202243,
+                  "product_id": 7665572282435,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:11:49-04:00",
+                  "updated_at": "2026-05-27T13:14:06-04:00",
+                  "alt": null,
+                  "width": 2447,
+                  "height": 3670,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-4.jpg?v=1779902046",
+                  "variant_ids": [
+                    43289453002819,
+                    43289453035587,
+                    43289453068355
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 176,
+                "compare_at_price": "42.00",
+                "position": 1,
+                "product_id": 7665572282435,
+                "created_at": "2026-05-21T12:12:26-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289453035587,
+                "title": "Pink / Medium",
+                "option1": "Pink",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "255758",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945889202243,
+                  "product_id": 7665572282435,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:11:49-04:00",
+                  "updated_at": "2026-05-27T13:14:06-04:00",
+                  "alt": null,
+                  "width": 2447,
+                  "height": 3670,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-4.jpg?v=1779902046",
+                  "variant_ids": [
+                    43289453002819,
+                    43289453035587,
+                    43289453068355
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 184,
+                "compare_at_price": "42.00",
+                "position": 2,
+                "product_id": 7665572282435,
+                "created_at": "2026-05-21T12:12:26-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289453068355,
+                "title": "Pink / Large",
+                "option1": "Pink",
+                "option2": "Large",
+                "option3": null,
+                "sku": "255759",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945889202243,
+                  "product_id": 7665572282435,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:11:49-04:00",
+                  "updated_at": "2026-05-27T13:14:06-04:00",
+                  "alt": null,
+                  "width": 2447,
+                  "height": 3670,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-4.jpg?v=1779902046",
+                  "variant_ids": [
+                    43289453002819,
+                    43289453035587,
+                    43289453068355
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 198,
+                "compare_at_price": "42.00",
+                "position": 3,
+                "product_id": 7665572282435,
+                "created_at": "2026-05-21T12:12:26-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 35945889202243,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 1,
+                "updated_at": "2026-05-27T13:14:06-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [
+                  43289453002819,
+                  43289453035587,
+                  43289453068355
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-4.jpg?v=1779902046",
+                "width": 2447,
+                "height": 3670
+              },
+              {
+                "id": 35945889169475,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 2,
+                "updated_at": "2026-05-27T13:11:50-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-3.jpg?v=1779901910",
+                "width": 2860,
+                "height": 4288
+              },
+              {
+                "id": 35945889103939,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 3,
+                "updated_at": "2026-05-27T13:11:51-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort.jpg?v=1779901911",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945889136707,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 4,
+                "updated_at": "2026-05-27T13:11:50-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-2.jpg?v=1779901910",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945889235011,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 5,
+                "updated_at": "2026-05-27T13:11:50-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-5.jpg?v=1779901910",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945889267779,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 6,
+                "updated_at": "2026-05-27T13:11:50-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-6.jpg?v=1779901910",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945889300547,
+                "created_at": "2026-05-27T13:11:49-04:00",
+                "position": 7,
+                "updated_at": "2026-05-27T13:11:51-04:00",
+                "product_id": 7665572282435,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_pink_market_print_mini_skort-7.jpg?v=1779901911",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Pink"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7665574215747,
+            "title": "FINAL SALE - Amalfi Market Cream Printed Vest Top",
+            "handle": "amalfi-market-cream-printed-vest-top",
+            "body_html": "<p>The Amalfi Market Cream Printed Vest Top is the ultimate trendy statement piece! Featuring a tailored vest silhouette, button front detailing, and whimsical Italian-inspired print, this top brings a chic European feel to any look. Style it with the matching skirt or white denim for an effortlessly elevated outfit! </p>\n<ul>\n  <li>Lightweight Cotton Fabrication</li>\n  <li>Abstract Print</li>\n  <li>Rounded Neckline</li>\n  <li>Functional Button Front </li>\n  <li>Sleeveless</li>\n  <li>Relaxed Fit</li>\n  <li>100% Cotton</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'2\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 32\" | Waist 30\" | Length 21\"<br>\nMedium | Bust 34\" | Waist 32\" | Length 22\"<br>\nLarge | Bust 36\" | Waist 34\" | Length 23\"</p>",
+            "published_at": "2026-07-15T09:06:31-04:00",
+            "created_at": "2026-05-21T12:22:42-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LT27436-083",
+            "product_type": "Outerwear",
+            "tags": [
+              "5/29/2026",
+              "DD7.15.26",
+              "Final Sale",
+              "Friday",
+              "Matching set",
+              "Resort",
+              "Set",
+              "Top",
+              "Vacation",
+              "Vest"
+            ],
+            "variants": [
+              {
+                "id": 43289471287363,
+                "title": "Cream / Small",
+                "option1": "Cream",
+                "option2": "Small",
+                "option3": null,
+                "sku": "255785",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945915580483,
+                  "product_id": 7665574215747,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:18:09-04:00",
+                  "updated_at": "2026-05-27T13:18:11-04:00",
+                  "alt": null,
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-5.jpg?v=1779902291",
+                  "variant_ids": [
+                    43289471287363,
+                    43289471320131,
+                    43289471352899
+                  ]
+                },
+                "available": true,
+                "price": "23.99",
+                "grams": 150,
+                "compare_at_price": "39.99",
+                "position": 1,
+                "product_id": 7665574215747,
+                "created_at": "2026-05-21T12:22:43-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289471320131,
+                "title": "Cream / Medium",
+                "option1": "Cream",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "255786",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945915580483,
+                  "product_id": 7665574215747,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:18:09-04:00",
+                  "updated_at": "2026-05-27T13:18:11-04:00",
+                  "alt": null,
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-5.jpg?v=1779902291",
+                  "variant_ids": [
+                    43289471287363,
+                    43289471320131,
+                    43289471352899
+                  ]
+                },
+                "available": true,
+                "price": "23.99",
+                "grams": 159,
+                "compare_at_price": "39.99",
+                "position": 2,
+                "product_id": 7665574215747,
+                "created_at": "2026-05-21T12:22:43-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289471352899,
+                "title": "Cream / Large",
+                "option1": "Cream",
+                "option2": "Large",
+                "option3": null,
+                "sku": "255787",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945915580483,
+                  "product_id": 7665574215747,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:18:09-04:00",
+                  "updated_at": "2026-05-27T13:18:11-04:00",
+                  "alt": null,
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-5.jpg?v=1779902291",
+                  "variant_ids": [
+                    43289471287363,
+                    43289471320131,
+                    43289471352899
+                  ]
+                },
+                "available": true,
+                "price": "23.99",
+                "grams": 170,
+                "compare_at_price": "39.99",
+                "position": 3,
+                "product_id": 7665574215747,
+                "created_at": "2026-05-21T12:22:43-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 35945915580483,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 1,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [
+                  43289471287363,
+                  43289471320131,
+                  43289471352899
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-5.jpg?v=1779902291",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945915547715,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 2,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-4.jpg?v=1779902291",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945915449411,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 3,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top.jpg?v=1779902291",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945915482179,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 4,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-2.jpg?v=1779902291",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945915514947,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 5,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-3.jpg?v=1779902291",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945915613251,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 6,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-6.jpg?v=1779902291",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945915646019,
+                "created_at": "2026-05-27T13:18:09-04:00",
+                "position": 7,
+                "updated_at": "2026-05-27T13:18:11-04:00",
+                "product_id": 7665574215747,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_vest_top-7.jpg?v=1779902291",
                 "width": 2859,
                 "height": 4288
               }
@@ -903,438 +1175,886 @@
             ]
           },
           {
-            "id": 7735694622787,
-            "title": "Wherever You Go Black Textured Maxi Dress",
-            "handle": "wherever-you-go-black-textured-maxi-dress",
-            "body_html": "<p>The definition of timeless elegance. The Wherever You Go Black Textured Maxi Dress features a sleek sleeveless silhouette, flattering drape, and versatile design that's easy to dress up or down. Add heels for an evening out or sneakers and a denim jacket for an effortlessly chic daytime look.</p><ul>\n<li><p>Lightweight Blend Fabrication</p></li>\n<li><p>Rounded Neckline</p></li>\n<li><p>Sleeveless</p></li>\n<li><p>Fitted</p></li>\n<li><p>A-Line Fit</p></li>\n<li><p>Maxi Length</p></li>\n<li><p>95% Polyester, 5% Spandex</p></li>\n<li><p>Hand Wash Cold, Line Dry</p></li>\n<li><p>Model is 5'3.5\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 30\" | Waist 26\" | Length 54\"<br>Medium | Bust 32\" | Waist 28\" | Length 54\"<br>Large | Bust 34\" | Waist 30\" | Length 54\" </p>",
-            "published_at": "2026-07-12T19:50:07-04:00",
-            "created_at": "2026-07-02T14:12:21-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "HF26C177",
+            "id": 7665574346819,
+            "title": "FINAL SALE - Amalfi Market Cream Print Mini Skirt",
+            "handle": "amalfi-market-cream-print-mini-skirt",
+            "body_html": "<p>This Amalfi Market Cream Print Mini Skirt is made for your next European-inspired getaway! Featuring a flattering high-waisted fit, layered ruffle hem, and whimsical market-inspired print, this skirt creates the prettiest feminine silhouette. Pair it with the matching vest top or a simple tank for an effortlessly polished look! </p>\n<ul>\n  <li>Lightweight Cream Denim Fabrication</li>\n  <li>Abstract Print</li>\n  <li>Mid-Rise</li>\n  <li>Side Zipper Closure</li>\n  <li>Relaxed Fit</li>\n  <li>Self: 100% Cotton</li>\n  <li>Lining: 100% Rayon</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'2\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Waist 28” | Hips 32” | Length 15”<br>\nMedium | Waist 30” | Hips 34” | Length 16”<br>\nLarge | Waist 32” | Hips 36” | Length 17”</p>",
+            "published_at": "2026-07-15T09:05:55-04:00",
+            "created_at": "2026-05-21T12:23:30-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LS32012B-083",
+            "product_type": "Bottom",
+            "tags": [
+              "5/29/2026",
+              "Bottom",
+              "DD7.15.26",
+              "Final Sale",
+              "Friday",
+              "Matching set",
+              "Resort",
+              "set",
+              "Skirt",
+              "Vacation"
+            ],
+            "variants": [
+              {
+                "id": 43289472827459,
+                "title": "Cream / Small",
+                "option1": "Cream",
+                "option2": "Small",
+                "option3": null,
+                "sku": "255779",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945941729347,
+                  "product_id": 7665574346819,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:24:17-04:00",
+                  "updated_at": "2026-05-27T13:24:20-04:00",
+                  "alt": "Person wearing a red top and a colorful skirt with a pattern of fruits and vegetables.",
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-5.jpg?v=1779902660",
+                  "variant_ids": [
+                    43289472827459,
+                    43289472860227,
+                    43289472892995
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 230,
+                "compare_at_price": "42.00",
+                "position": 1,
+                "product_id": 7665574346819,
+                "created_at": "2026-05-21T12:23:31-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289472860227,
+                "title": "Cream / Medium",
+                "option1": "Cream",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "255780",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945941729347,
+                  "product_id": 7665574346819,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:24:17-04:00",
+                  "updated_at": "2026-05-27T13:24:20-04:00",
+                  "alt": "Person wearing a red top and a colorful skirt with a pattern of fruits and vegetables.",
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-5.jpg?v=1779902660",
+                  "variant_ids": [
+                    43289472827459,
+                    43289472860227,
+                    43289472892995
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 241,
+                "compare_at_price": "42.00",
+                "position": 2,
+                "product_id": 7665574346819,
+                "created_at": "2026-05-21T12:23:31-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289472892995,
+                "title": "Cream / Large",
+                "option1": "Cream",
+                "option2": "Large",
+                "option3": null,
+                "sku": "255781",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945941729347,
+                  "product_id": 7665574346819,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:24:17-04:00",
+                  "updated_at": "2026-05-27T13:24:20-04:00",
+                  "alt": "Person wearing a red top and a colorful skirt with a pattern of fruits and vegetables.",
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-5.jpg?v=1779902660",
+                  "variant_ids": [
+                    43289472827459,
+                    43289472860227,
+                    43289472892995
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 258,
+                "compare_at_price": "42.00",
+                "position": 3,
+                "product_id": 7665574346819,
+                "created_at": "2026-05-21T12:23:31-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 35945941729347,
+                "created_at": "2026-05-27T13:24:17-04:00",
+                "position": 1,
+                "updated_at": "2026-05-27T13:24:20-04:00",
+                "product_id": 7665574346819,
+                "variant_ids": [
+                  43289472827459,
+                  43289472860227,
+                  43289472892995
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-5.jpg?v=1779902660",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945941762115,
+                "created_at": "2026-05-27T13:24:17-04:00",
+                "position": 2,
+                "updated_at": "2026-05-27T13:24:20-04:00",
+                "product_id": 7665574346819,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-6.jpg?v=1779902660",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945941598275,
+                "created_at": "2026-05-27T13:24:17-04:00",
+                "position": 3,
+                "updated_at": "2026-05-27T13:24:22-04:00",
+                "product_id": 7665574346819,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt.jpg?v=1779902662",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945941631043,
+                "created_at": "2026-05-27T13:24:17-04:00",
+                "position": 4,
+                "updated_at": "2026-05-27T13:24:20-04:00",
+                "product_id": 7665574346819,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-2.jpg?v=1779902660",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945941663811,
+                "created_at": "2026-05-27T13:24:17-04:00",
+                "position": 5,
+                "updated_at": "2026-05-27T13:24:21-04:00",
+                "product_id": 7665574346819,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-3.jpg?v=1779902661",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945941696579,
+                "created_at": "2026-05-27T13:24:17-04:00",
+                "position": 6,
+                "updated_at": "2026-05-27T13:24:20-04:00",
+                "product_id": 7665574346819,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_skirt-4.jpg?v=1779902660",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Cream"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7665577754691,
+            "title": "FINAL SALE - Positano Market Cream Print Wrap Mini Skirt",
+            "handle": "positano-market-cream-print-wrap-mini-skirt",
+            "body_html": "<p>This Positano Market Cream Print Wrap Mini Skirt is the perfect statement piece for your next getaway! Featuring a whimsical European-inspired print a flirty wrap silhouette, this skirt brings the perfect mix of playful and feminine style. The lightweight fabric keeps it breezy and comfortable, making it easy to pair with a simple tank or the matching top for the cutest vacation-ready look! </p>\n<ul>\n  <li>Lightweight Cotton Fabrication</li>\n  <li>Abstract Print</li>\n  <li>Mid-Rise</li>\n  <li>Side Zipper Closer</li>\n  <li>Functional Tie-Wrap Front</li>\n  <li>Relaxed Fit</li>\n  <li>100% Cotton</li>\n  <li>Hand Wash Cold, </li>\n  <li>Model is 5'4\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Waist 28” | Hips 32” | Length 15”<br>\nMedium | Waist 30” | Hips 34” | Length 16”<br>\nLarge | Waist 32” | Hips 36” | Length 17”</p>",
+            "published_at": "2026-07-15T09:05:02-04:00",
+            "created_at": "2026-05-21T12:32:35-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LS32036-083",
+            "product_type": "Bottom",
+            "tags": [
+              "5/29/2026",
+              "Bottom",
+              "DD7.15.26",
+              "Final Sale",
+              "Friday",
+              "Matching set",
+              "Resort",
+              "set",
+              "Skirt",
+              "Vacation"
+            ],
+            "variants": [
+              {
+                "id": 43289500221507,
+                "title": "Cream / Small",
+                "option1": "Cream",
+                "option2": "Small",
+                "option3": null,
+                "sku": "255782",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945987833923,
+                  "product_id": 7665577754691,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:34:36-04:00",
+                  "updated_at": "2026-05-27T13:34:38-04:00",
+                  "alt": null,
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-3.jpg?v=1779903278",
+                  "variant_ids": [
+                    43289500221507,
+                    43289500254275,
+                    43289500287043
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 204,
+                "compare_at_price": "42.00",
+                "position": 1,
+                "product_id": 7665577754691,
+                "created_at": "2026-05-21T12:32:37-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289500254275,
+                "title": "Cream / Medium",
+                "option1": "Cream",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "255783",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945987833923,
+                  "product_id": 7665577754691,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:34:36-04:00",
+                  "updated_at": "2026-05-27T13:34:38-04:00",
+                  "alt": null,
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-3.jpg?v=1779903278",
+                  "variant_ids": [
+                    43289500221507,
+                    43289500254275,
+                    43289500287043
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 224,
+                "compare_at_price": "42.00",
+                "position": 2,
+                "product_id": 7665577754691,
+                "created_at": "2026-05-21T12:32:37-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289500287043,
+                "title": "Cream / Large",
+                "option1": "Cream",
+                "option2": "Large",
+                "option3": null,
+                "sku": "255784",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35945987833923,
+                  "product_id": 7665577754691,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:34:36-04:00",
+                  "updated_at": "2026-05-27T13:34:38-04:00",
+                  "alt": null,
+                  "width": 2859,
+                  "height": 4288,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-3.jpg?v=1779903278",
+                  "variant_ids": [
+                    43289500221507,
+                    43289500254275,
+                    43289500287043
+                  ]
+                },
+                "available": true,
+                "price": "25.20",
+                "grams": 241,
+                "compare_at_price": "42.00",
+                "position": 3,
+                "product_id": 7665577754691,
+                "created_at": "2026-05-21T12:32:37-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 35945987833923,
+                "created_at": "2026-05-27T13:34:36-04:00",
+                "position": 1,
+                "updated_at": "2026-05-27T13:34:38-04:00",
+                "product_id": 7665577754691,
+                "variant_ids": [
+                  43289500221507,
+                  43289500254275,
+                  43289500287043
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-3.jpg?v=1779903278",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945987997763,
+                "created_at": "2026-05-27T13:34:36-04:00",
+                "position": 2,
+                "updated_at": "2026-05-27T13:34:38-04:00",
+                "product_id": 7665577754691,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-5.jpg?v=1779903278",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945987899459,
+                "created_at": "2026-05-27T13:34:36-04:00",
+                "position": 3,
+                "updated_at": "2026-05-27T13:34:38-04:00",
+                "product_id": 7665577754691,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt.jpg?v=1779903278",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945987932227,
+                "created_at": "2026-05-27T13:34:36-04:00",
+                "position": 4,
+                "updated_at": "2026-05-27T13:34:38-04:00",
+                "product_id": 7665577754691,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-2.jpg?v=1779903278",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945987964995,
+                "created_at": "2026-05-27T13:34:36-04:00",
+                "position": 5,
+                "updated_at": "2026-05-27T13:34:38-04:00",
+                "product_id": 7665577754691,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-4.jpg?v=1779903278",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35945987866691,
+                "created_at": "2026-05-27T13:34:36-04:00",
+                "position": 6,
+                "updated_at": "2026-05-27T13:34:38-04:00",
+                "product_id": 7665577754691,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_market_print_mini_wrap_skirt-6.jpg?v=1779903278",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Cream"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7665577820227,
+            "title": "FINAL SALE - Pretty In Provence Cream Print Mini Dress",
+            "handle": "pretty-in-provence-cream-print-mini-dress",
+            "body_html": "<p>This Pretty In Provence Cream Print Mini Dress is what cottagecore dreams are made of! Featuring a whimsical floral and fruit-inspired print, puff sleeves, bow front detail, and a flattering flowy silhouette, this dress feels both romantic and playful. Style it with sandals or wedges for the prettiest spring-to-summer look! </p>\n<ul>\n  <li>Lightweight Cotton-Blend Fabrication</li>\n  <li>Abstract Print</li>\n  <li>Lace Trim Sweetheart Neckline with Tie </li>\n  <li>Mini Puff Sleeves</li>\n  <li>Functional Back Zipper</li>\n  <li>A-line Fit</li>\n  <li>Short/Mini Length</li>\n  <li>Fully Lined</li>\n  <li>Self: 100% Cotton</li>\n  <li>Lining: 100% Rayon</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'2\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 30\" | Waist 28\" | Hips 34\" | Length 32\"<br>\nMedium | Bust 34\" | Waist 30\" | Hips 38\" | Length 32\"<br>\nLarge | Bust 38\" | Waist 32\" | Hips 42\" | Length 33\"</p>",
+            "published_at": "2026-07-15T09:04:18-04:00",
+            "created_at": "2026-05-21T12:33:16-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LD50454B-083",
             "product_type": "Dress",
             "tags": [
-              "7/10/2026",
-              "Black",
+              "5/29/2026",
+              "Brunch",
+              "DD7.15.26",
+              "Dress",
+              "Final Sale",
+              "Floral",
+              "Friday",
+              "Mini",
+              "Resort",
+              "Vacation"
+            ],
+            "variants": [
+              {
+                "id": 43289501106243,
+                "title": "Cream / Small",
+                "option1": "Cream",
+                "option2": "Small",
+                "option3": null,
+                "sku": "255772",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35946036396099,
+                  "product_id": 7665577820227,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:43:12-04:00",
+                  "updated_at": "2026-05-27T14:10:39-04:00",
+                  "alt": "Woman in a floral dress standing by a pool with greenery in the background",
+                  "width": 2501,
+                  "height": 3751,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-6.jpg?v=1779905439",
+                  "variant_ids": [
+                    43289501106243,
+                    43289501139011,
+                    43289501171779
+                  ]
+                },
+                "available": true,
+                "price": "28.80",
+                "grams": 227,
+                "compare_at_price": "48.00",
+                "position": 1,
+                "product_id": 7665577820227,
+                "created_at": "2026-05-21T12:33:18-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289501139011,
+                "title": "Cream / Medium",
+                "option1": "Cream",
+                "option2": "Medium",
+                "option3": null,
+                "sku": "255773",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35946036396099,
+                  "product_id": 7665577820227,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:43:12-04:00",
+                  "updated_at": "2026-05-27T14:10:39-04:00",
+                  "alt": "Woman in a floral dress standing by a pool with greenery in the background",
+                  "width": 2501,
+                  "height": 3751,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-6.jpg?v=1779905439",
+                  "variant_ids": [
+                    43289501106243,
+                    43289501139011,
+                    43289501171779
+                  ]
+                },
+                "available": true,
+                "price": "28.80",
+                "grams": 241,
+                "compare_at_price": "48.00",
+                "position": 2,
+                "product_id": 7665577820227,
+                "created_at": "2026-05-21T12:33:18-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              },
+              {
+                "id": 43289501171779,
+                "title": "Cream / Large",
+                "option1": "Cream",
+                "option2": "Large",
+                "option3": null,
+                "sku": "255774",
+                "requires_shipping": true,
+                "taxable": true,
+                "featured_image": {
+                  "id": 35946036396099,
+                  "product_id": 7665577820227,
+                  "position": 1,
+                  "created_at": "2026-05-27T13:43:12-04:00",
+                  "updated_at": "2026-05-27T14:10:39-04:00",
+                  "alt": "Woman in a floral dress standing by a pool with greenery in the background",
+                  "width": 2501,
+                  "height": 3751,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-6.jpg?v=1779905439",
+                  "variant_ids": [
+                    43289501106243,
+                    43289501139011,
+                    43289501171779
+                  ]
+                },
+                "available": true,
+                "price": "28.80",
+                "grams": 255,
+                "compare_at_price": "48.00",
+                "position": 3,
+                "product_id": 7665577820227,
+                "created_at": "2026-05-21T12:33:18-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
+              }
+            ],
+            "images": [
+              {
+                "id": 35946036396099,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 1,
+                "updated_at": "2026-05-27T14:10:39-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [
+                  43289501106243,
+                  43289501139011,
+                  43289501171779
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-6.jpg?v=1779905439",
+                "width": 2501,
+                "height": 3751
+              },
+              {
+                "id": 35946036363331,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 2,
+                "updated_at": "2026-05-27T13:43:15-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-5.jpg?v=1779903795",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946036232259,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 3,
+                "updated_at": "2026-05-27T13:43:15-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress.jpg?v=1779903795",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946036265027,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 4,
+                "updated_at": "2026-05-27T13:43:17-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-2.jpg?v=1779903797",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946036297795,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 5,
+                "updated_at": "2026-05-27T13:43:14-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-3.jpg?v=1779903794",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946036330563,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 6,
+                "updated_at": "2026-05-27T13:43:15-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-4.jpg?v=1779903795",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946036428867,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 7,
+                "updated_at": "2026-05-27T13:43:15-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-7.jpg?v=1779903795",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946036461635,
+                "created_at": "2026-05-27T13:43:12-04:00",
+                "position": 8,
+                "updated_at": "2026-05-27T13:43:15-04:00",
+                "product_id": 7665577820227,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_mini_dress-8.jpg?v=1779903795",
+                "width": 2859,
+                "height": 4288
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "position": 1,
+                "values": [
+                  "Cream"
+                ]
+              },
+              {
+                "name": "Size",
+                "position": 2,
+                "values": [
+                  "Small",
+                  "Medium",
+                  "Large"
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7665579720771,
+            "title": "FINAL SALE - Capri Picnic Light Blue Print Mini Dress",
+            "handle": "capri-picnic-light-blue-print-mini-dress",
+            "body_html": "<p>The Capri Picnic Light Blue Print Mini Dress is the perfect playful statement piece for warm weather! Featuring a colorful Mediterranean-inspired print, puff sleeves, and a breezy tiered silhouette, this dress was made for brunch dates, vacations, and sunny weekends. Pair it with sandals and gold jewelry for the cutest effortless outfit!</p>\n<ul>\n  <li>Lightweight Blend Fabrication</li>\n  <li>Abstract Print</li>\n  <li>Elastic Round Neckline</li>\n  <li>Puff Sleeves with Elastic Cuffs</li>\n  <li>Elastic Waist</li>\n  <li>Smocked Back</li>\n  <li>Side Pockets</li>\n  <li>Babydoll Fit</li>\n  <li>Short/Mini Length</li>\n  <li>Self: 85% Nylon, 15% Rayon</li>\n  <li>Lining: 100% Polyester</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'9.5\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 30\" | Waist 26\" | Hips 36\" | Length 35\"<br>\nMedium | Bust 32\" | Waist 28\" | Hips 38\" | Length 36\"<br>\nLarge | Bust 34\" | Waist 30\" | Hips 40\" | Length 37\"</p>",
+            "published_at": "2026-07-15T09:03:38-04:00",
+            "created_at": "2026-05-21T12:44:16-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LD1620",
+            "product_type": "Dress",
+            "tags": [
+              "5/29/2026",
+              "Babydoll",
+              "Blue",
               "Brunch",
               "Bump",
-              "Casual",
+              "DD7.15.26",
               "Dress",
-              "Maxi",
-              "New",
-              "Sunday",
-              "Vacation",
-              "Wedding"
-            ],
-            "variants": [
-              {
-                "id": 43486176804931,
-                "title": "Black / Small",
-                "option1": "Black",
-                "option2": "Small",
-                "option3": null,
-                "sku": "257114",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419014721603,
-                  "product_id": 7735694622787,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:46:21-04:00",
-                  "updated_at": "2026-07-12T17:46:23-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
-                  "variant_ids": [
-                    43486176804931,
-                    43486176837699,
-                    43486176870467
-                  ]
-                },
-                "available": true,
-                "price": "38.00",
-                "grams": 251,
-                "compare_at_price": "38.00",
-                "position": 1,
-                "product_id": 7735694622787,
-                "created_at": "2026-07-02T14:12:23-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43486176837699,
-                "title": "Black / Medium",
-                "option1": "Black",
-                "option2": "Medium",
-                "option3": null,
-                "sku": "257115",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419014721603,
-                  "product_id": 7735694622787,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:46:21-04:00",
-                  "updated_at": "2026-07-12T17:46:23-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
-                  "variant_ids": [
-                    43486176804931,
-                    43486176837699,
-                    43486176870467
-                  ]
-                },
-                "available": true,
-                "price": "38.00",
-                "grams": 266,
-                "compare_at_price": "38.00",
-                "position": 2,
-                "product_id": 7735694622787,
-                "created_at": "2026-07-02T14:12:23-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43486176870467,
-                "title": "Black / Large",
-                "option1": "Black",
-                "option2": "Large",
-                "option3": null,
-                "sku": "257116",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419014721603,
-                  "product_id": 7735694622787,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:46:21-04:00",
-                  "updated_at": "2026-07-12T17:46:23-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
-                  "variant_ids": [
-                    43486176804931,
-                    43486176837699,
-                    43486176870467
-                  ]
-                },
-                "available": true,
-                "price": "38.00",
-                "grams": 288,
-                "compare_at_price": "38.00",
-                "position": 3,
-                "product_id": 7735694622787,
-                "created_at": "2026-07-02T14:12:23-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              }
-            ],
-            "images": [
-              {
-                "id": 36419014721603,
-                "created_at": "2026-07-12T17:46:21-04:00",
-                "position": 1,
-                "updated_at": "2026-07-12T17:46:23-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [
-                  43486176804931,
-                  43486176837699,
-                  43486176870467
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/91018873-F35B-4C40-A88E-6DEDB6962ED9.jpg?v=1783892783",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36419014656067,
-                "created_at": "2026-07-12T17:46:21-04:00",
-                "position": 2,
-                "updated_at": "2026-07-12T17:46:23-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/DFB4F3F8-0BC1-4F7D-9A1A-BA4DAA0DC4F4.jpg?v=1783892783",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36419014688835,
-                "created_at": "2026-07-12T17:46:21-04:00",
-                "position": 3,
-                "updated_at": "2026-07-12T17:46:23-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B1341FA1-B7E0-4E18-92AD-C6DA199A4D2B.jpg?v=1783892783",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36361243033667,
-                "created_at": "2026-07-08T10:15:42-04:00",
-                "position": 4,
-                "updated_at": "2026-07-08T10:17:14-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-2.jpg?v=1783520234",
-                "width": 2453,
-                "height": 3679
-              },
-              {
-                "id": 36361242968131,
-                "created_at": "2026-07-08T10:15:42-04:00",
-                "position": 5,
-                "updated_at": "2026-07-08T10:15:45-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-7.jpg?v=1783520145",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361243066435,
-                "created_at": "2026-07-08T10:15:42-04:00",
-                "position": 6,
-                "updated_at": "2026-07-08T10:15:44-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-3.jpg?v=1783520144",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361243099203,
-                "created_at": "2026-07-08T10:15:42-04:00",
-                "position": 7,
-                "updated_at": "2026-07-08T10:15:44-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-4.jpg?v=1783520144",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361242935363,
-                "created_at": "2026-07-08T10:15:42-04:00",
-                "position": 8,
-                "updated_at": "2026-07-08T10:15:44-04:00",
-                "product_id": 7735694622787,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_black_textured_maxi_dress-6.jpg?v=1783520144",
-                "width": 2859,
-                "height": 4288
-              }
-            ],
-            "options": [
-              {
-                "name": "Color",
-                "position": 1,
-                "values": [
-                  "Black"
-                ]
-              },
-              {
-                "name": "Size",
-                "position": 2,
-                "values": [
-                  "Small",
-                  "Medium",
-                  "Large"
-                ]
-              }
-            ]
-          },
-          {
-            "id": 7735691903043,
-            "title": "Keep It Simple Charcoal Textured Pants",
-            "handle": "keep-it-simple-charcoal-textured-pants",
-            "body_html": "<p>Comfort meets sophistication in these effortlessly chic Keep It Simple Charcoal Textured Pants. Designed with a comfortable elastic waistband, relaxed wide-leg fit, and soft textured fabric, they're perfect for everything from travel days to cozy evenings. Pair with the matching sweater vest for an elevated set.</p><ul>\n<li><p>Soft + Stretchy Blend Fabrication</p></li>\n<li><p>Elastic Waistband with Functional Tie Waist</p></li>\n<li><p>High-Waisted</p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>98% Polyester, 2% Spandex</p></li>\n<li><p>Hand Wash Cold</p></li>\n<li><p>Model is 5'3.5\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Waist 26” (Stretches up to 36\") | Hips 38” | Length 40” | Inseam 31”<br>Medium | Waist 28” (Stretches up to 38\") | Hips 40” | Length 40” | Inseam 31”<br>Large | Waist 30” (Stretches up to 40\") | Hips 42\" | Length 40” | Inseam 31”</p>",
-            "published_at": "2026-07-12T19:50:07-04:00",
-            "created_at": "2026-07-02T14:05:11-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "S26126",
-            "product_type": "Bottom",
-            "tags": [
-              "7/10/2026",
-              "Bottom",
-              "Loungewear",
-              "Matching Set",
-              "New",
-              "Pants",
-              "Set",
-              "Sunday",
+              "FINAL SALE",
+              "Friday",
+              "Mini",
+              "Print",
+              "Resort",
               "Vacation"
             ],
             "variants": [
               {
-                "id": 43486171004995,
-                "title": "Charcoal / Small",
-                "option1": "Charcoal",
+                "id": 43289517752387,
+                "title": "Light Blue / Small",
+                "option1": "Light Blue",
                 "option2": "Small",
                 "option3": null,
-                "sku": "256864",
+                "sku": "255754",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36419015999555,
-                  "product_id": 7735691903043,
+                  "id": 35946220552259,
+                  "product_id": 7665579720771,
                   "position": 1,
-                  "created_at": "2026-07-12T17:49:44-04:00",
-                  "updated_at": "2026-07-12T17:49:45-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                  "created_at": "2026-05-27T14:18:52-04:00",
+                  "updated_at": "2026-05-27T14:26:03-04:00",
+                  "alt": "Woman wearing a colorful dress with a pattern of fruits and drinks by a pool.",
+                  "width": 2524,
+                  "height": 3786,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-3.jpg?v=1779906363",
                   "variant_ids": [
-                    43486171004995,
-                    43486171037763,
-                    43486171070531
+                    43289517752387,
+                    43289517785155,
+                    43289517817923
                   ]
                 },
                 "available": true,
-                "price": "38.00",
-                "grams": 264,
-                "compare_at_price": "38.00",
+                "price": "37.20",
+                "grams": 374,
+                "compare_at_price": "62.00",
                 "position": 1,
-                "product_id": 7735691903043,
-                "created_at": "2026-07-02T14:05:14-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7665579720771,
+                "created_at": "2026-05-21T12:44:18-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486171037763,
-                "title": "Charcoal / Medium",
-                "option1": "Charcoal",
+                "id": 43289517785155,
+                "title": "Light Blue / Medium",
+                "option1": "Light Blue",
                 "option2": "Medium",
                 "option3": null,
-                "sku": "256865",
+                "sku": "255755",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36419015999555,
-                  "product_id": 7735691903043,
+                  "id": 35946220552259,
+                  "product_id": 7665579720771,
                   "position": 1,
-                  "created_at": "2026-07-12T17:49:44-04:00",
-                  "updated_at": "2026-07-12T17:49:45-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                  "created_at": "2026-05-27T14:18:52-04:00",
+                  "updated_at": "2026-05-27T14:26:03-04:00",
+                  "alt": "Woman wearing a colorful dress with a pattern of fruits and drinks by a pool.",
+                  "width": 2524,
+                  "height": 3786,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-3.jpg?v=1779906363",
                   "variant_ids": [
-                    43486171004995,
-                    43486171037763,
-                    43486171070531
+                    43289517752387,
+                    43289517785155,
+                    43289517817923
                   ]
                 },
                 "available": true,
-                "price": "38.00",
-                "grams": 268,
-                "compare_at_price": "38.00",
+                "price": "37.20",
+                "grams": 349,
+                "compare_at_price": "62.00",
                 "position": 2,
-                "product_id": 7735691903043,
-                "created_at": "2026-07-02T14:05:14-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7665579720771,
+                "created_at": "2026-05-21T12:44:18-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486171070531,
-                "title": "Charcoal / Large",
-                "option1": "Charcoal",
+                "id": 43289517817923,
+                "title": "Light Blue / Large",
+                "option1": "Light Blue",
                 "option2": "Large",
                 "option3": null,
-                "sku": "256866",
+                "sku": "255756",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36419015999555,
-                  "product_id": 7735691903043,
+                  "id": 35946220552259,
+                  "product_id": 7665579720771,
                   "position": 1,
-                  "created_at": "2026-07-12T17:49:44-04:00",
-                  "updated_at": "2026-07-12T17:49:45-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
+                  "created_at": "2026-05-27T14:18:52-04:00",
+                  "updated_at": "2026-05-27T14:26:03-04:00",
+                  "alt": "Woman wearing a colorful dress with a pattern of fruits and drinks by a pool.",
+                  "width": 2524,
+                  "height": 3786,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-3.jpg?v=1779906363",
                   "variant_ids": [
-                    43486171004995,
-                    43486171037763,
-                    43486171070531
+                    43289517752387,
+                    43289517785155,
+                    43289517817923
                   ]
                 },
                 "available": true,
-                "price": "38.00",
-                "grams": 298,
-                "compare_at_price": "38.00",
+                "price": "37.20",
+                "grams": 363,
+                "compare_at_price": "62.00",
                 "position": 3,
-                "product_id": 7735691903043,
-                "created_at": "2026-07-02T14:05:14-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7665579720771,
+                "created_at": "2026-05-21T12:44:18-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               }
             ],
             "images": [
               {
-                "id": 36419015999555,
-                "created_at": "2026-07-12T17:49:44-04:00",
+                "id": 35946220552259,
+                "created_at": "2026-05-27T14:18:52-04:00",
                 "position": 1,
-                "updated_at": "2026-07-12T17:49:45-04:00",
-                "product_id": 7735691903043,
+                "updated_at": "2026-05-27T14:26:03-04:00",
+                "product_id": 7665579720771,
                 "variant_ids": [
-                  43486171004995,
-                  43486171037763,
-                  43486171070531
+                  43289517752387,
+                  43289517785155,
+                  43289517817923
                 ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0CE12B61-A611-4B52-8F1F-C340626DB9C4.jpg?v=1783892985",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-3.jpg?v=1779906363",
+                "width": 2524,
+                "height": 3786
               },
               {
-                "id": 36419015966787,
-                "created_at": "2026-07-12T17:49:44-04:00",
+                "id": 35946220748867,
+                "created_at": "2026-05-27T14:18:52-04:00",
                 "position": 2,
-                "updated_at": "2026-07-12T17:49:45-04:00",
-                "product_id": 7735691903043,
+                "updated_at": "2026-05-27T14:18:54-04:00",
+                "product_id": 7665579720771,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/948540EF-65CA-429D-A84C-002830E87E42.jpg?v=1783892985",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-5.jpg?v=1779905934",
+                "width": 2859,
+                "height": 4288
               },
               {
-                "id": 36361058058307,
-                "created_at": "2026-07-08T09:53:19-04:00",
+                "id": 35946220716099,
+                "created_at": "2026-05-27T14:18:52-04:00",
                 "position": 3,
-                "updated_at": "2026-07-08T09:53:21-04:00",
-                "product_id": 7735691903043,
+                "updated_at": "2026-05-27T14:18:54-04:00",
+                "product_id": 7665579720771,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants-5.jpg?v=1783518801",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-4.jpg?v=1779905934",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361234251843,
-                "created_at": "2026-07-08T10:14:45-04:00",
+                "id": 35946220650563,
+                "created_at": "2026-05-27T14:18:52-04:00",
                 "position": 4,
-                "updated_at": "2026-07-08T10:14:47-04:00",
-                "product_id": 7735691903043,
+                "updated_at": "2026-05-27T14:18:54-04:00",
+                "product_id": 7665579720771,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants_8572ce0f-ca85-4ecb-a9c9-fb4eb81e4bc5.jpg?v=1783520087",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress.jpg?v=1779905934",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361234317379,
-                "created_at": "2026-07-08T10:14:45-04:00",
+                "id": 35946220683331,
+                "created_at": "2026-05-27T14:18:52-04:00",
                 "position": 5,
-                "updated_at": "2026-07-08T10:14:47-04:00",
-                "product_id": 7735691903043,
+                "updated_at": "2026-05-27T14:18:54-04:00",
+                "product_id": 7665579720771,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants-3_0abc2cfa-f4dd-41bb-8ba4-53ade1ef5bc0.jpg?v=1783520087",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-2.jpg?v=1779905934",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361234284611,
-                "created_at": "2026-07-08T10:14:45-04:00",
+                "id": 35946220585027,
+                "created_at": "2026-05-27T14:18:52-04:00",
                 "position": 6,
-                "updated_at": "2026-07-08T10:14:47-04:00",
-                "product_id": 7735691903043,
+                "updated_at": "2026-05-27T14:18:54-04:00",
+                "product_id": 7665579720771,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_pants-2_da21c488-543b-4251-ab6a-7fd9ad854e96.jpg?v=1783520087",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-6.jpg?v=1779905934",
+                "width": 2859,
+                "height": 4288
+              },
+              {
+                "id": 35946220617795,
+                "created_at": "2026-05-27T14:18:52-04:00",
+                "position": 7,
+                "updated_at": "2026-05-27T14:18:54-04:00",
+                "product_id": 7665579720771,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_light_blue_print_mini_dress-7.jpg?v=1779905934",
                 "width": 2859,
                 "height": 4288
               }
@@ -1344,7 +2064,7 @@
                 "name": "Color",
                 "position": 1,
                 "values": [
-                  "Charcoal"
+                  "Light Blue"
                 ]
               },
               {
@@ -1359,632 +2079,210 @@
             ]
           },
           {
-            "id": 7735691870275,
-            "title": "Keep It Simple Charcoal Textured Vest",
-            "handle": "keep-it-simple-charcoal-textured-vest",
-            "body_html": "<p>Timeless layers start here. The Keep It Simple Charcoal Textured Vest features a soft knit fabric, functional button-front closure, and relaxed fit that makes styling simple. Wear it buttoned as a top or layered over a fitted long sleeve for the perfect transitional outfit. </p><ul>\n<li><p>Lightweight + Stretchy Knit Fabrication</p></li>\n<li><p>V-Neckline</p></li>\n<li><p>Functional Button Front </p></li>\n<li><p>Sleeveless</p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>98% Polyester, 2% Spandex</p></li>\n<li><p>Hand Wash Cold </p></li>\n<li><p>Model is 5'3.5\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 30\" | Waist 26\" | Length 23\"<br>Medium | Bust 32\" | Waist 28\" | Length 23.5\"<br>Large | Bust 34\" | Waist 30\" | Length 24\"</p>",
-            "published_at": "2026-07-12T19:50:06-04:00",
-            "created_at": "2026-07-02T14:04:43-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "S26125",
-            "product_type": "Outerwear",
+            "id": 7665581719619,
+            "title": "FINAL SALE - Villa Bloom Cream Printed Pleated Mini Dress",
+            "handle": "villa-bloom-cream-printed-pleated-mini-dress",
+            "body_html": "<p>This Villa Bloom Cream Printed Pleated Mini Dress is the sweetest blend of feminine and playful style! Featuring a whimsical market-inspired print with florals, fruit, and delicate vintage details, this dress is made to stand out. The flattering sleeveless silhouette, pleated skirt, and lightweight fabric create an effortlessly chic look that’s perfect for brunch dates, vacations, and sunny weekend outings. Style it with sandals or wedges for the ultimate European summer vibe! </p>\n<ul>\n  <li>Lightweight Blend Fabrication</li>\n  <li>Abstract Print</li>\n  <li>V-Neckline</li>\n  <li>Pleated Bodice</li>\n  <li>Sleeveless</li>\n  <li>A-line Fit</li>\n  <li>Functional Back Zipper and Tie</li>\n  <li>Side Pockets</li>\n  <li>Short/Mini Length</li>\n  <li>100% Cotton</li>\n  <li>Hand Wash Cold, Line Dry</li>\n  <li>Model is 5'4\" and wearing a Small.</li>\n</ul>\n<p>Garment Measurements in Inches:</p>\n<p>Small | Bust 30\" | Waist 26\" | Hips 28\" | Length 32\"<br>\nMedium | Bust 32\" | Waist 28\" | Hips 30\" | Length 33\"<br>\nLarge | Bust 34\" | Waist 30\" | Hips 32\" | Length 34\" </p>",
+            "published_at": "2026-07-15T09:02:50-04:00",
+            "created_at": "2026-05-21T12:54:57-04:00",
+            "updated_at": "2026-07-15T11:09:41-04:00",
+            "vendor": "LD50556B-083",
+            "product_type": "Dress",
             "tags": [
-              "7/10/2026",
-              "Matching Set",
-              "New",
+              "5/29/2026",
+              "DD7.15.26",
+              "Dress",
+              "Final Sale",
+              "Floral",
+              "Friday",
+              "Mini",
+              "Print",
               "Resort",
-              "Set",
-              "Sunday",
-              "Tank",
-              "Top",
-              "Vacation",
-              "Vest"
-            ],
-            "variants": [
-              {
-                "id": 43486170775619,
-                "title": "Charcoal / Small",
-                "option1": "Charcoal",
-                "option2": "Small",
-                "option3": null,
-                "sku": "256861",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419015278659,
-                  "product_id": 7735691870275,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:47:45-04:00",
-                  "updated_at": "2026-07-12T17:47:47-04:00",
-                  "alt": "A woman wearing a sleeveless black textured knit vest with a button-front closure and drawstring waist, styled with sunglasses and bracelets against a light gray background.",
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
-                  "variant_ids": [
-                    43486170775619,
-                    43486170808387,
-                    43486170841155
-                  ]
-                },
-                "available": true,
-                "price": "34.00",
-                "grams": 116,
-                "compare_at_price": "34.00",
-                "position": 1,
-                "product_id": 7735691870275,
-                "created_at": "2026-07-02T14:04:44-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43486170808387,
-                "title": "Charcoal / Medium",
-                "option1": "Charcoal",
-                "option2": "Medium",
-                "option3": null,
-                "sku": "256862",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419015278659,
-                  "product_id": 7735691870275,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:47:45-04:00",
-                  "updated_at": "2026-07-12T17:47:47-04:00",
-                  "alt": "A woman wearing a sleeveless black textured knit vest with a button-front closure and drawstring waist, styled with sunglasses and bracelets against a light gray background.",
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
-                  "variant_ids": [
-                    43486170775619,
-                    43486170808387,
-                    43486170841155
-                  ]
-                },
-                "available": true,
-                "price": "34.00",
-                "grams": 113,
-                "compare_at_price": "34.00",
-                "position": 2,
-                "product_id": 7735691870275,
-                "created_at": "2026-07-02T14:04:44-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43486170841155,
-                "title": "Charcoal / Large",
-                "option1": "Charcoal",
-                "option2": "Large",
-                "option3": null,
-                "sku": "256863",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419015278659,
-                  "product_id": 7735691870275,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:47:45-04:00",
-                  "updated_at": "2026-07-12T17:47:47-04:00",
-                  "alt": "A woman wearing a sleeveless black textured knit vest with a button-front closure and drawstring waist, styled with sunglasses and bracelets against a light gray background.",
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
-                  "variant_ids": [
-                    43486170775619,
-                    43486170808387,
-                    43486170841155
-                  ]
-                },
-                "available": true,
-                "price": "34.00",
-                "grams": 139,
-                "compare_at_price": "34.00",
-                "position": 3,
-                "product_id": 7735691870275,
-                "created_at": "2026-07-02T14:04:44-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              }
-            ],
-            "images": [
-              {
-                "id": 36419015278659,
-                "created_at": "2026-07-12T17:47:45-04:00",
-                "position": 1,
-                "updated_at": "2026-07-12T17:47:47-04:00",
-                "product_id": 7735691870275,
-                "variant_ids": [
-                  43486170775619,
-                  43486170808387,
-                  43486170841155
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/BEE66F11-9A53-49A4-87C7-7702B56DD06A.jpg?v=1783892867",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36419015245891,
-                "created_at": "2026-07-12T17:47:45-04:00",
-                "position": 2,
-                "updated_at": "2026-07-12T17:47:47-04:00",
-                "product_id": 7735691870275,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/79900A86-C454-421A-AEF3-ADE4CCB81F7F.jpg?v=1783892867",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36361044623427,
-                "created_at": "2026-07-08T09:48:52-04:00",
-                "position": 3,
-                "updated_at": "2026-07-09T10:28:06-04:00",
-                "product_id": 7735691870275,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_vest-2.jpg?v=1783607286",
-                "width": 2495,
-                "height": 3742
-              },
-              {
-                "id": 36361044590659,
-                "created_at": "2026-07-08T09:48:52-04:00",
-                "position": 4,
-                "updated_at": "2026-07-08T09:48:54-04:00",
-                "product_id": 7735691870275,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_vest.jpg?v=1783518534",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361044787267,
-                "created_at": "2026-07-08T09:48:52-04:00",
-                "position": 5,
-                "updated_at": "2026-07-08T09:48:55-04:00",
-                "product_id": 7735691870275,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_charcoal_textured_vest-7.jpg?v=1783518535",
-                "width": 2859,
-                "height": 4288
-              }
-            ],
-            "options": [
-              {
-                "name": "Color",
-                "position": 1,
-                "values": [
-                  "Charcoal"
-                ]
-              },
-              {
-                "name": "Size",
-                "position": 2,
-                "values": [
-                  "Small",
-                  "Medium",
-                  "Large"
-                ]
-              }
-            ]
-          },
-          {
-            "id": 7735691771971,
-            "title": "Off To The Hamptons Brown Textured Maxi Skirt",
-            "handle": "off-to-the-hamptons-brown-textured-maxi-skirt",
-            "body_html": "<p>Classic with a cozy twist. This textured Off To The Hamptons Brown Textured Maxi Skirt features a comfortable elastic waistband and an easy straight silhouette that creates a flattering, effortless look. Complete the outfit with the matching Cinnamon Spice Sweater Tank or style it with your favorite sweater for fall. </p><ul>\n<li><p>Soft + Stretchy Woven Knit Fabrication</p></li>\n<li><p>Mid-Waisted</p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>Maxi Length</p></li>\n<li><p>Self: 97% Polyester, 3% Spandex</p></li>\n<li><p>Lining: 97% Polyester, 3% Spandex</p></li>\n<li><p>Hand Wash Cold</p></li>\n<li><p>Model is 5'10\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Waist 27\" | Hips 30\" | Length 38\"<br>Medium | Waist 28\" | Hips 32\" | Length 38\"<br>Large | Waist 29\" | Hips 34\" | Length 38\" </p>",
-            "published_at": "2026-07-12T19:50:05-04:00",
-            "created_at": "2026-07-02T14:04:15-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "S25589",
-            "product_type": "Bottom",
-            "tags": [
-              "7/10/2026",
-              "Bottom",
-              "Matching Set",
-              "New",
-              "Resort",
-              "Set",
-              "Skirt",
-              "Sunday",
-              "Vacation",
-              "Workwear"
-            ],
-            "variants": [
-              {
-                "id": 43486170579011,
-                "title": "Brown / Small",
-                "option1": "Brown",
-                "option2": "Small",
-                "option3": null,
-                "sku": "256858",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419015573571,
-                  "product_id": 7735691771971,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:49:07-04:00",
-                  "updated_at": "2026-07-12T17:49:09-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
-                  "variant_ids": [
-                    43486170579011,
-                    43486170611779,
-                    43486170644547
-                  ]
-                },
-                "available": true,
-                "price": "38.00",
-                "grams": 320,
-                "compare_at_price": "38.00",
-                "position": 1,
-                "product_id": 7735691771971,
-                "created_at": "2026-07-02T14:04:17-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43486170611779,
-                "title": "Brown / Medium",
-                "option1": "Brown",
-                "option2": "Medium",
-                "option3": null,
-                "sku": "256859",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419015573571,
-                  "product_id": 7735691771971,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:49:07-04:00",
-                  "updated_at": "2026-07-12T17:49:09-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
-                  "variant_ids": [
-                    43486170579011,
-                    43486170611779,
-                    43486170644547
-                  ]
-                },
-                "available": true,
-                "price": "38.00",
-                "grams": 343,
-                "compare_at_price": "38.00",
-                "position": 2,
-                "product_id": 7735691771971,
-                "created_at": "2026-07-02T14:04:17-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              },
-              {
-                "id": 43486170644547,
-                "title": "Brown / Large",
-                "option1": "Brown",
-                "option2": "Large",
-                "option3": null,
-                "sku": "256860",
-                "requires_shipping": true,
-                "taxable": true,
-                "featured_image": {
-                  "id": 36419015573571,
-                  "product_id": 7735691771971,
-                  "position": 1,
-                  "created_at": "2026-07-12T17:49:07-04:00",
-                  "updated_at": "2026-07-12T17:49:09-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
-                  "variant_ids": [
-                    43486170579011,
-                    43486170611779,
-                    43486170644547
-                  ]
-                },
-                "available": true,
-                "price": "38.00",
-                "grams": 366,
-                "compare_at_price": "38.00",
-                "position": 3,
-                "product_id": 7735691771971,
-                "created_at": "2026-07-02T14:04:17-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
-              }
-            ],
-            "images": [
-              {
-                "id": 36419015573571,
-                "created_at": "2026-07-12T17:49:07-04:00",
-                "position": 1,
-                "updated_at": "2026-07-12T17:49:09-04:00",
-                "product_id": 7735691771971,
-                "variant_ids": [
-                  43486170579011,
-                  43486170611779,
-                  43486170644547
-                ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/03D04328-04CF-4F8B-9AD5-C230F56352C6.jpg?v=1783892949",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36419015540803,
-                "created_at": "2026-07-12T17:49:07-04:00",
-                "position": 2,
-                "updated_at": "2026-07-12T17:49:09-04:00",
-                "product_id": 7735691771971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/FE296386-A216-4A87-AACE-54E2511284CA.jpg?v=1783892949",
-                "width": 832,
-                "height": 1248
-              },
-              {
-                "id": 36361036005443,
-                "created_at": "2026-07-08T09:45:22-04:00",
-                "position": 3,
-                "updated_at": "2026-07-08T09:45:25-04:00",
-                "product_id": 7735691771971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt-4.jpg?v=1783518325",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361035907139,
-                "created_at": "2026-07-08T09:45:22-04:00",
-                "position": 4,
-                "updated_at": "2026-07-08T09:45:25-04:00",
-                "product_id": 7735691771971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt.jpg?v=1783518325",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361035972675,
-                "created_at": "2026-07-08T09:45:22-04:00",
-                "position": 5,
-                "updated_at": "2026-07-08T09:45:25-04:00",
-                "product_id": 7735691771971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt-3.jpg?v=1783518325",
-                "width": 2859,
-                "height": 4288
-              },
-              {
-                "id": 36361035939907,
-                "created_at": "2026-07-08T09:45:22-04:00",
-                "position": 6,
-                "updated_at": "2026-07-08T09:45:25-04:00",
-                "product_id": 7735691771971,
-                "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_maxi_skirt-2.jpg?v=1783518325",
-                "width": 2859,
-                "height": 4288
-              }
-            ],
-            "options": [
-              {
-                "name": "Color",
-                "position": 1,
-                "values": [
-                  "Brown"
-                ]
-              },
-              {
-                "name": "Size",
-                "position": 2,
-                "values": [
-                  "Small",
-                  "Medium",
-                  "Large"
-                ]
-              }
-            ]
-          },
-          {
-            "id": 7735691575363,
-            "title": "Off To The Hamptons Textured Brown Tank",
-            "handle": "off-to-the-hamptons-textured-brown-tank",
-            "body_html": "<p>An elevated everyday essential you'll wear on repeat. The Off To The Hamptons Textured Brown Tank features a soft textured knit, flattering V-neckline, and an easy sleeveless silhouette that layers beautifully or stands on its own. Pair it with the matching skirt for an effortlessly polished set.</p><ul>\n<li><p>Lightweight Woven Knit Fabrication</p></li>\n<li><p>V-Neckline</p></li>\n<li><p>Sleeveless </p></li>\n<li><p>Relaxed Fit</p></li>\n<li><p>97% Polyester, 3% Spandex </p></li>\n<li><p>Hand Wash Cold</p></li>\n<li><p>Model is 5'10\" and wearing a Small.<br></p></li>\n</ul><p>Garment Measurements in Inches:</p><p>Small | Bust 30” (Stretches up to 40\")| Waist 26\" (Stretches up to 32\")| Length 22”<br>Medium | Bust 32” (Stretches up to 42\")| Waist 28” (Stretches up to 34\")| Length 22”<br>Large | Bust 34” (Stretches up to 44\")| Waist 30” (Stretches up to \"36)| Length 22”</p>",
-            "published_at": "2026-07-12T19:50:04-04:00",
-            "created_at": "2026-07-02T14:03:36-04:00",
-            "updated_at": "2026-07-15T00:58:20-04:00",
-            "vendor": "S25588",
-            "product_type": "Outerwear",
-            "tags": [
-              "7/10/2026",
-              "Matching Set",
-              "New",
-              "Resort",
-              "Set",
-              "Sunday",
-              "Tank",
-              "Top",
               "Vacation"
             ],
             "variants": [
               {
-                "id": 43486159634499,
-                "title": "Brown / Small",
-                "option1": "Brown",
+                "id": 43289539280963,
+                "title": "Cream / Small",
+                "option1": "Cream",
                 "option2": "Small",
                 "option3": null,
-                "sku": "256855",
+                "sku": "255775",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36419015442499,
-                  "product_id": 7735691575363,
+                  "id": 35946283106371,
+                  "product_id": 7665581719619,
                   "position": 1,
-                  "created_at": "2026-07-12T17:48:39-04:00",
-                  "updated_at": "2026-07-12T17:48:41-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                  "created_at": "2026-05-27T14:33:18-04:00",
+                  "updated_at": "2026-05-27T14:35:13-04:00",
+                  "alt": "Woman in a floral dress and sun hat by a pool",
+                  "width": 2542,
+                  "height": 3813,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-2.jpg?v=1779906913",
                   "variant_ids": [
-                    43486159634499,
-                    43486159667267,
-                    43486159700035
+                    43289539280963,
+                    43289539313731,
+                    43289539346499
                   ]
                 },
                 "available": true,
-                "price": "26.00",
-                "grams": 89,
-                "compare_at_price": "26.00",
+                "price": "28.80",
+                "grams": 173,
+                "compare_at_price": "48.00",
                 "position": 1,
-                "product_id": 7735691575363,
-                "created_at": "2026-07-02T14:03:37-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7665581719619,
+                "created_at": "2026-05-21T12:54:58-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486159667267,
-                "title": "Brown / Medium",
-                "option1": "Brown",
+                "id": 43289539313731,
+                "title": "Cream / Medium",
+                "option1": "Cream",
                 "option2": "Medium",
                 "option3": null,
-                "sku": "256856",
+                "sku": "255776",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36419015442499,
-                  "product_id": 7735691575363,
+                  "id": 35946283106371,
+                  "product_id": 7665581719619,
                   "position": 1,
-                  "created_at": "2026-07-12T17:48:39-04:00",
-                  "updated_at": "2026-07-12T17:48:41-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                  "created_at": "2026-05-27T14:33:18-04:00",
+                  "updated_at": "2026-05-27T14:35:13-04:00",
+                  "alt": "Woman in a floral dress and sun hat by a pool",
+                  "width": 2542,
+                  "height": 3813,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-2.jpg?v=1779906913",
                   "variant_ids": [
-                    43486159634499,
-                    43486159667267,
-                    43486159700035
+                    43289539280963,
+                    43289539313731,
+                    43289539346499
                   ]
                 },
                 "available": true,
-                "price": "26.00",
-                "grams": 94,
-                "compare_at_price": "26.00",
+                "price": "28.80",
+                "grams": 179,
+                "compare_at_price": "48.00",
                 "position": 2,
-                "product_id": 7735691575363,
-                "created_at": "2026-07-02T14:03:37-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7665581719619,
+                "created_at": "2026-05-21T12:54:58-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               },
               {
-                "id": 43486159700035,
-                "title": "Brown / Large",
-                "option1": "Brown",
+                "id": 43289539346499,
+                "title": "Cream / Large",
+                "option1": "Cream",
                 "option2": "Large",
                 "option3": null,
-                "sku": "256857",
+                "sku": "255777",
                 "requires_shipping": true,
                 "taxable": true,
                 "featured_image": {
-                  "id": 36419015442499,
-                  "product_id": 7735691575363,
+                  "id": 35946283106371,
+                  "product_id": 7665581719619,
                   "position": 1,
-                  "created_at": "2026-07-12T17:48:39-04:00",
-                  "updated_at": "2026-07-12T17:48:41-04:00",
-                  "alt": null,
-                  "width": 832,
-                  "height": 1248,
-                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
+                  "created_at": "2026-05-27T14:33:18-04:00",
+                  "updated_at": "2026-05-27T14:35:13-04:00",
+                  "alt": "Woman in a floral dress and sun hat by a pool",
+                  "width": 2542,
+                  "height": 3813,
+                  "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-2.jpg?v=1779906913",
                   "variant_ids": [
-                    43486159634499,
-                    43486159667267,
-                    43486159700035
+                    43289539280963,
+                    43289539313731,
+                    43289539346499
                   ]
                 },
                 "available": true,
-                "price": "26.00",
-                "grams": 103,
-                "compare_at_price": "26.00",
+                "price": "28.80",
+                "grams": 190,
+                "compare_at_price": "48.00",
                 "position": 3,
-                "product_id": 7735691575363,
-                "created_at": "2026-07-02T14:03:37-04:00",
-                "updated_at": "2026-07-15T00:58:20-04:00"
+                "product_id": 7665581719619,
+                "created_at": "2026-05-21T12:54:58-04:00",
+                "updated_at": "2026-07-15T11:09:41-04:00"
               }
             ],
             "images": [
               {
-                "id": 36419015442499,
-                "created_at": "2026-07-12T17:48:39-04:00",
+                "id": 35946283106371,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 1,
-                "updated_at": "2026-07-12T17:48:41-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:35:13-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [
-                  43486159634499,
-                  43486159667267,
-                  43486159700035
+                  43289539280963,
+                  43289539313731,
+                  43289539346499
                 ],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/B91D99D1-C7DD-4DEF-A0E9-ECCEEA7E2647.jpg?v=1783892921",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-2.jpg?v=1779906913",
+                "width": 2542,
+                "height": 3813
               },
               {
-                "id": 36419015409731,
-                "created_at": "2026-07-12T17:48:39-04:00",
+                "id": 35946283204675,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 2,
-                "updated_at": "2026-07-12T17:48:41-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:33:20-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/0ED83CE3-5141-4C02-B750-F31BDE27FA62.jpg?v=1783892921",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-5.jpg?v=1779906800",
+                "width": 2859,
+                "height": 4288
               },
               {
-                "id": 36419015376963,
-                "created_at": "2026-07-12T17:48:39-04:00",
+                "id": 35946283073603,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 3,
-                "updated_at": "2026-07-12T17:48:41-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:33:20-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/E780A60C-57FF-4953-B44E-B0E74093177E.jpg?v=1783892921",
-                "width": 832,
-                "height": 1248
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress.jpg?v=1779906800",
+                "width": 2859,
+                "height": 4288
               },
               {
-                "id": 36361031581763,
-                "created_at": "2026-07-08T09:42:29-04:00",
+                "id": 35946283139139,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 4,
-                "updated_at": "2026-07-08T09:42:31-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:33:21-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank-3.jpg?v=1783518151",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-3.jpg?v=1779906801",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361031516227,
-                "created_at": "2026-07-08T09:42:29-04:00",
+                "id": 35946283171907,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 5,
-                "updated_at": "2026-07-08T09:42:32-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:33:20-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank.jpg?v=1783518152",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-4.jpg?v=1779906800",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361031647299,
-                "created_at": "2026-07-08T09:42:29-04:00",
+                "id": 35946283237443,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 6,
-                "updated_at": "2026-07-08T09:42:32-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:33:20-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank-5.jpg?v=1783518152",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-6.jpg?v=1779906800",
                 "width": 2859,
                 "height": 4288
               },
               {
-                "id": 36361031680067,
-                "created_at": "2026-07-08T09:42:29-04:00",
+                "id": 35946283270211,
+                "created_at": "2026-05-27T14:33:18-04:00",
                 "position": 7,
-                "updated_at": "2026-07-08T09:42:32-04:00",
-                "product_id": 7735691575363,
+                "updated_at": "2026-05-27T14:33:20-04:00",
+                "product_id": 7665581719619,
                 "variant_ids": [],
-                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_brown_textured_tank-6.jpg?v=1783518152",
+                "src": "https://cdn.shopify.com/s/files/1/0339/0901/files/shopdressup_cream_print_pleated_mini_dress-7.jpg?v=1779906800",
                 "width": 2859,
                 "height": 4288
               }
@@ -1994,7 +2292,7 @@
                 "name": "Color",
                 "position": 1,
                 "values": [
-                  "Brown"
+                  "Cream"
                 ]
               },
               {
@@ -2018,7 +2316,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 152,
+      "duration_ms": 184,
       "content_type": "application/json; charset=utf-8",
       "classification": null,
       "confidence": "High",
@@ -2076,7 +2374,7 @@
             "handle": "all-american-summer-collection",
             "description": "<h2 data-start=\"0\" data-end=\"38\"><span role=\"text\">All-American Summer Collection</span></h2>\n<p data-start=\"40\" data-end=\"449\">The All-American Summer Collection is your go-to lineup for everything warm-weather and effortlessly on-trend. Inspired by classic red, white, and blue tones with a modern twist, this collection blends timeless Americana with the easy, laid-back style of summer days. Think breezy gingham dresses, lightweight denim, relaxed matching sets, and statement knits that bring a fun, nostalgic feel to every outfit.</p>\n<p data-start=\"451\" data-end=\"825\">Designed for everything from backyard barbecues and beach trips to weekend getaways and holiday celebrations, each piece is made with lightweight, comfortable fabrics and flattering silhouettes you’ll want to wear on repeat. Whether you’re dressing it up with wedges or keeping it casual with sneakers, these styles make it easy to look put-together without overthinking it.</p>\n<p data-start=\"827\" data-end=\"947\" data-is-last-node=\"\" data-is-only-node=\"\">Classic, playful, and effortlessly cool—the All-American Summer Collection is all about celebrating the season in style.</p>",
             "published_at": "2026-05-05T09:27:05-04:00",
-            "updated_at": "2026-07-13T07:01:13-04:00",
+            "updated_at": "2026-07-15T07:01:00-04:00",
             "image": {
               "id": 1611255414851,
               "created_at": "2026-05-05T09:27:04-04:00",
@@ -2181,7 +2479,7 @@
             "handle": "american-nights-collection",
             "description": "<h2>American Nights Collection</h2>\n<p>The American Nights Collection is made for sunshine-filled weekends, backyard barbecues, lake days, and fireworks under the stars. Featuring patriotic knits, playful gingham prints, breezy stripes, and coastal-inspired graphics, this collection blends classic Americana charm with trendy summer style. From statement flag sweaters to easy denim staples and feminine dresses, every piece is designed to keep you looking effortlessly cute all season long. Style these looks for Memorial Day, the Fourth of July, beach vacations, and every all-American moment in between!</p>",
             "published_at": "2026-05-12T07:26:28-04:00",
-            "updated_at": "2026-07-14T07:01:52-04:00",
+            "updated_at": "2026-07-15T07:01:00-04:00",
             "image": {
               "id": 1611307778115,
               "created_at": "2026-05-12T07:32:07-04:00",
@@ -2196,7 +2494,7 @@
             "handle": "american-summer-collection",
             "description": "<h2>American Summer Collection</h2>\n<p data-start=\"40\" data-end=\"449\">The All-American Summer Collection is your go-to lineup for everything warm-weather and effortlessly on-trend. Inspired by classic red, white, and blue tones with a modern twist, this collection blends timeless Americana with the easy, laid-back style of summer days. Think breezy gingham dresses, lightweight denim, relaxed matching sets, and statement knits that bring a fun, nostalgic feel to every outfit.</p>\n<p data-start=\"451\" data-end=\"825\">Designed for everything from backyard barbecues and beach trips to weekend getaways and holiday celebrations, each piece is made with lightweight, comfortable fabrics and flattering silhouettes you’ll want to wear on repeat. Whether you’re dressing it up with wedges or keeping it casual with sneakers, these styles make it easy to look put-together without overthinking it.</p>\n<p data-start=\"827\" data-end=\"947\" data-is-last-node=\"\" data-is-only-node=\"\">Classic, playful, and effortlessly cool—the All-American Summer Collection is all about celebrating the season in style.</p>",
             "published_at": "2026-05-19T11:40:30-04:00",
-            "updated_at": "2026-07-14T07:01:50-04:00",
+            "updated_at": "2026-07-15T07:01:00-04:00",
             "image": {
               "id": 1611343659075,
               "created_at": "2026-05-19T11:40:29-04:00",
@@ -2211,7 +2509,7 @@
             "handle": "american-summer-dresses-collection",
             "description": "<h2>American Summer Dresses Collection</h2>\n<p>Celebrate summer in style with the American Dresses Collection. Featuring festive reds, crisp whites, and classic blues, these effortlessly chic dresses are perfect for Fourth of July celebrations, backyard barbecues, lake weekends, and fireworks under the stars. From playful prints to timeless silhouettes, each piece is designed to keep you looking polished, patriotic, and ready for every summer memory.</p>",
             "published_at": "2026-06-08T14:37:52-04:00",
-            "updated_at": "2026-07-14T07:01:50-04:00",
+            "updated_at": "2026-07-15T07:01:00-04:00",
             "image": {
               "id": 1611444224067,
               "created_at": "2026-06-08T14:37:51-04:00",
@@ -2241,7 +2539,7 @@
             "handle": "atlanta",
             "description": "<h2>DU Exclusive Atlanta Customs</h2>\n<p data-start=\"301\" data-end=\"684\">Looking for cute baseball game outfits or wondering what to wear to an Atlanta baseball game? Shop Dress Up’s <a href=\"https://shopdressup.com/collections/atlanta\"><strong data-start=\"411\" data-end=\"453\">DU Exclusive Atlanta Baseball Game Day</strong></a> collection for the best women’s game day tees, pullovers, long sleeve tops, hats, stickers, and accessories. Designed for true Atlanta fans, these styles make it easy to rep your team on game day—and wear them again all week long.</p>\n<p data-start=\"686\" data-end=\"1235\">From crowd-favorite <a href=\"https://shopdressup.com/collections/atlanta\"><strong data-start=\"706\" data-end=\"724\">Chop Chop tees</strong></a> to elevated graphic designs, this collection blends team pride with everyday wearability. Whether you’re heading to Truist Park or styling your look for casual plans, these pieces deliver comfort, versatility, and effortless game day style. Explore must-have pieces from our <strong data-start=\"1000\" data-end=\"1068\"><a data-start=\"1002\" data-end=\"1066\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/graphic-tees\">graphic tees,</a></strong> cozy <strong data-start=\"1075\" data-end=\"1147\"><a href=\"https://shopdressup.com/collections/atlanta\">sweaters &amp; pullovers</a><a data-start=\"1077\" data-end=\"1145\" rel=\"noopener\" class=\"decorated-link cursor-pointer\">,</a></strong> and game day–ready <strong data-start=\"1168\" data-end=\"1234\"><a data-start=\"1170\" data-end=\"1232\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/accessories\">accessories.<span aria-hidden=\"true\" class=\"ms-0.5 inline-block align-middle leading-none\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" aria-hidden=\"true\" data-rtl-flip=\"\" class=\"block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]\"><use fill=\"currentColor\" href=\"/cdn/assets/sprites-core-dy5p747x.svg#304883\"></use></svg></span></a></strong></p>\n<h2 data-start=\"1242\" data-end=\"1276\">Dress Up at The Battery Atlanta</h2>\n<p data-start=\"1278\" data-end=\"1660\">Cheer on your team in style at Truist Park with our <a href=\"https://shopdressup.com/collections/atlanta\"><strong data-start=\"1330\" data-end=\"1355\">Atlanta baseball tees</strong></a>, available exclusively at Dress Up. Pair your favorite tee with denim and sneakers for a comfortable, cute game day outfit that keeps up from first pitch to final inning. Add a <strong data-start=\"1533\" data-end=\"1593\"><a data-start=\"1535\" data-end=\"1591\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/hats\">baseball hat </a></strong>or tote to complete your look and rep Atlanta beyond the ballpark.</p>\n<p data-start=\"1662\" data-end=\"2096\">Visit <strong data-start=\"1668\" data-end=\"1703\">Dress Up at The Battery Atlanta</strong> and experience shopping in one of the city’s most exciting destinations. From fashion-forward boutiques to top dining and entertainment, The Battery offers the perfect backdrop for a full game day experience. Stop by our store to shop <strong data-start=\"1939\" data-end=\"2007\"><a data-start=\"1941\" data-end=\"2005\" rel=\"noopener\" class=\"decorated-link\" href=\"https://shopdressup.com/collections/new-arrivals\">new arrivals, </a></strong>exclusive Atlanta baseball styles, and everyday favorites you won’t find anywhere else.</p>\n<p data-start=\"2098\" data-end=\"2273\">Whether you’re a lifelong Atlanta fan or visiting for a game, Dress Up has everything you need to create a baseball game outfit that’s stylish, comfortable, and team-spirited.</p>",
             "published_at": "2022-08-05T12:26:34-04:00",
-            "updated_at": "2026-07-14T14:39:27-04:00",
+            "updated_at": "2026-07-15T07:01:00-04:00",
             "image": {
               "id": 1605579145283,
               "created_at": "2023-08-21T16:08:24-04:00",
@@ -2286,7 +2584,7 @@
             "handle": "autumn-awaits-collection",
             "description": "<h2>Autumn Awaits Collection</h2>\n<p><meta charset=\"utf-8\">Step confidently into the new season with Dress Up’s <em data-start=\"127\" data-end=\"142\">Autumn Awaits</em> Collection — a curated mix of pre-fall styles designed for those first crisp days. Featuring flowy dresses, soft knits, and easy layering pieces in warm, earthy hues, these looks are perfect for transitioning your wardrobe from summer to fall. The <em data-start=\"391\" data-end=\"406\">Autumn Awaits</em> Collection captures the charm of the season ahead — timeless, cozy, and effortlessly chic.</p>",
             "published_at": "2025-08-06T11:15:19-04:00",
-            "updated_at": "2026-07-08T20:00:29-04:00",
+            "updated_at": "2026-07-15T07:01:00-04:00",
             "image": {
               "id": 1609958686787,
               "created_at": "2025-08-06T11:15:18-04:00",
@@ -2335,7 +2633,7 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "duration_ms": 151,
+      "duration_ms": 136,
       "content_type": "application/json; charset=utf-8",
       "classification": null,
       "confidence": "High",
@@ -2462,54 +2760,54 @@
     ],
     "products": [
       {
-        "title": "Beige Amen Embroidered Faith Hat",
-        "handle": "beige-amen-embroidered-faith-hat",
-        "product_type": "DU Exclusive"
-      },
-      {
-        "title": "Yellow Cross Embroidered Hat",
-        "handle": "pray-baseball-hat",
-        "product_type": "DU Exclusive"
-      },
-      {
-        "title": "Blue Embroidered Cross Hat",
-        "handle": "cross-baseball-hat",
-        "product_type": "DU Exclusive"
-      },
-      {
-        "title": "Unapologetically Her Brown Polka Dot Midi Dress",
-        "handle": "unapologetically-her-brown-polka-dot-midi-dress",
+        "title": "FINAL SALE - Sweetest Occasion Blue Floral Mini Dress",
+        "handle": "sweetest-occasion-blue-floral-mini-dress",
         "product_type": "Dress"
       },
       {
-        "title": "Paris After Dark Cream Polka Dot Blouse",
-        "handle": "paris-after-dark-cream-polka-dot-blouse",
-        "product_type": "Top"
-      },
-      {
-        "title": "Wherever You Go Black Textured Maxi Dress",
-        "handle": "wherever-you-go-black-textured-maxi-dress",
+        "title": "FINAL SALE - Calm And Composed Blue Floral Smocked Midi Dress",
+        "handle": "calm-and-composed-blue-floral-smocked-midi-dress",
         "product_type": "Dress"
       },
       {
-        "title": "Keep It Simple Charcoal Textured Pants",
-        "handle": "keep-it-simple-charcoal-textured-pants",
+        "title": "FINAL SALE - European Market White Fruit Print Mini Dress",
+        "handle": "european-market-white-fruit-print-mini-dress",
+        "product_type": "Dress"
+      },
+      {
+        "title": "FINAL SALE - Market Fresh Pink Print Mini Skort",
+        "handle": "market-fresh-pink-print-mini-skort",
         "product_type": "Bottom"
       },
       {
-        "title": "Keep It Simple Charcoal Textured Vest",
-        "handle": "keep-it-simple-charcoal-textured-vest",
+        "title": "FINAL SALE - Amalfi Market Cream Printed Vest Top",
+        "handle": "amalfi-market-cream-printed-vest-top",
         "product_type": "Outerwear"
       },
       {
-        "title": "Off To The Hamptons Brown Textured Maxi Skirt",
-        "handle": "off-to-the-hamptons-brown-textured-maxi-skirt",
+        "title": "FINAL SALE - Amalfi Market Cream Print Mini Skirt",
+        "handle": "amalfi-market-cream-print-mini-skirt",
         "product_type": "Bottom"
       },
       {
-        "title": "Off To The Hamptons Textured Brown Tank",
-        "handle": "off-to-the-hamptons-textured-brown-tank",
-        "product_type": "Outerwear"
+        "title": "FINAL SALE - Positano Market Cream Print Wrap Mini Skirt",
+        "handle": "positano-market-cream-print-wrap-mini-skirt",
+        "product_type": "Bottom"
+      },
+      {
+        "title": "FINAL SALE - Pretty In Provence Cream Print Mini Dress",
+        "handle": "pretty-in-provence-cream-print-mini-dress",
+        "product_type": "Dress"
+      },
+      {
+        "title": "FINAL SALE - Capri Picnic Light Blue Print Mini Dress",
+        "handle": "capri-picnic-light-blue-print-mini-dress",
+        "product_type": "Dress"
+      },
+      {
+        "title": "FINAL SALE - Villa Bloom Cream Printed Pleated Mini Dress",
+        "handle": "villa-bloom-cream-printed-pleated-mini-dress",
+        "product_type": "Dress"
       }
     ]
   },

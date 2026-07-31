@@ -1,0 +1,66 @@
+{
+  "schema_version": "plugin-state-v0.1",
+  "inspection_id": "GEN-014-20260715T161827Z",
+  "plugins": {
+    "submitted-search": {
+      "plugin_id": "submitted-search",
+      "status": "warn",
+      "started_at": "2026-07-15T16:18:34.566Z",
+      "ended_at": "2026-07-15T16:20:19.592Z",
+      "evidence_file": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/submitted-search.jsonl",
+      "observations": 7,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    },
+    "autocomplete": {
+      "plugin_id": "autocomplete",
+      "status": "pass",
+      "started_at": "2026-07-15T16:20:19.594Z",
+      "ended_at": "2026-07-15T16:20:29.420Z",
+      "evidence_file": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/autocomplete.jsonl",
+      "observations": 7,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "facets": {
+      "plugin_id": "facets",
+      "status": "blocked",
+      "started_at": "2026-07-15T16:20:29.422Z",
+      "ended_at": "2026-07-15T16:21:01.392Z",
+      "evidence_file": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/facets.jsonl",
+      "observations": 2,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    },
+    "recommendations": {
+      "plugin_id": "recommendations",
+      "status": "pass",
+      "started_at": "2026-07-15T16:21:01.395Z",
+      "ended_at": "2026-07-15T16:21:07.601Z",
+      "evidence_file": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/recommendations.jsonl",
+      "observations": 3,
+      "confidence": "Medium",
+      "evidence_quality": "bounded"
+    },
+    "mobile": {
+      "plugin_id": "mobile",
+      "status": "blocked",
+      "started_at": "2026-07-15T16:21:07.604Z",
+      "ended_at": "2026-07-15T16:21:38.038Z",
+      "evidence_file": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/mobile.jsonl",
+      "observations": 2,
+      "confidence": "Low",
+      "evidence_quality": "partial"
+    },
+    "rendered-search": {
+      "plugin_id": "rendered-search",
+      "status": "warn",
+      "started_at": "2026-07-15T16:21:38.042Z",
+      "ended_at": "2026-07-15T16:24:48.406Z",
+      "evidence_file": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/rendered-search.jsonl",
+      "observations": 5,
+      "confidence": "Medium",
+      "evidence_quality": "partial"
+    }
+  }
+}

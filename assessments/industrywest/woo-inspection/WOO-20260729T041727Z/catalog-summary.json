@@ -1,0 +1,190 @@
+{
+  "schema_version": "woo-catalog-summary-v0.1",
+  "inspection_id": "WOO-20260729T041727Z",
+  "target_id": "industrywest",
+  "name": "Industry West",
+  "url": "https://www.industrywest.com/",
+  "captured_at": "2026-07-29T04:17:32.834Z",
+  "platform": "woocommerce",
+  "store_api": "https://www.industrywest.com/wp-json/wc/store/v1",
+  "sku_count": 246,
+  "sku_count_source": "X-WP-Total header on /products",
+  "browse_nodes": 148,
+  "browse_nodes_substantive": 134,
+  "browse_nodes_operational_heuristic": 14,
+  "browse_levels": 1,
+  "top_level_nodes": 148,
+  "top_categories": [
+    {
+      "name": "All Products",
+      "count": 236
+    },
+    {
+      "name": "Promo Eligible Items",
+      "count": 206
+    },
+    {
+      "name": "In Stock Promo Eligible Items",
+      "count": 199
+    },
+    {
+      "name": "Home for the Holidays",
+      "count": 186
+    },
+    {
+      "name": "Seating",
+      "count": 135
+    },
+    {
+      "name": "Under $500",
+      "count": 133
+    },
+    {
+      "name": "Living",
+      "count": 132
+    },
+    {
+      "name": "Promo Eligible Chairs &#038; Stools",
+      "count": 129
+    },
+    {
+      "name": "Promo Eligible Seating",
+      "count": 129
+    },
+    {
+      "name": "Dining",
+      "count": 113
+    }
+  ],
+  "search_queries_run": 8,
+  "search_signal": {
+    "literal_hits": "4/4",
+    "intent_hits": "0/4",
+    "note": "Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood)."
+  },
+  "facets": {
+    "attribute_count": 52,
+    "filterable_count": 52,
+    "top_facets": [
+      {
+        "id": 3,
+        "name": "care_instructions",
+        "term_count": 68,
+        "top_terms": [
+          "All items in the Monaco Collection are made of raw, natural, sustainable rattan are are designed to be used outside, preferably in covered areas. The chairs can stand showers, but we do not recommend",
+          "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.&nbsp;",
+          "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.Some wood species, such as oak, contain tannin, wh",
+          "Always ensure water and solutions used to clean the floor do not come into contact with the furniture&#8217;s metal base, as it might leave permanent marks.Some wood species, such as oak, contain tannin, wh",
+          "Avoid contact with hot items and immediately soak up spills. To clean, use a cloth moistened with warm water and mild soap.",
+          "Avoid direct contact with hot items and immediately soak up spills to avoid staining. All wood and metal bases can be cleaned using a moistened cloth with warm water and mild soap. Ensure metal bases"
+        ]
+      },
+      {
+        "id": 19,
+        "name": "badges",
+        "term_count": 15,
+        "top_terms": [
+          "[&#8220;Final Sale&#8221;,&#8221;High Stock&#8221;]",
+          "[&#8220;Final Sale&#8221;,&#8221;Outdoor&#8221;]",
+          "[&#8220;Final Sale&#8221;,&#8221;Stackable&#8221;]",
+          "[&#8220;Final Sale&#8221;]",
+          "[&#8220;Last Chance Sale&#8221;]",
+          "[&#8220;New&#8221;,&#8221;Best Seller&#8221;]"
+        ]
+      },
+      {
+        "id": 42,
+        "name": "Base",
+        "term_count": 4,
+        "top_terms": [
+          "Black",
+          "Black Oak",
+          "Chrome",
+          "Oak"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "assembly_required",
+        "term_count": 2,
+        "top_terms": [
+          "false",
+          "true"
+        ]
+      },
+      {
+        "id": 43,
+        "name": "Cabinet",
+        "term_count": 2,
+        "top_terms": [
+          "Birch",
+          "White Metal"
+        ]
+      },
+      {
+        "id": 35,
+        "name": "Arms",
+        "term_count": 1,
+        "top_terms": [
+          "With Arms"
+        ]
+      },
+      {
+        "id": 48,
+        "name": "back-type",
+        "term_count": 1,
+        "top_terms": [
+          ""
+        ]
+      },
+      {
+        "id": 51,
+        "name": "backrest-type",
+        "term_count": 0,
+        "top_terms": []
+      }
+    ],
+    "products_with_attributes": 15,
+    "variable_products": 3,
+    "sample_size": 15
+  },
+  "surfaces": [
+    {
+      "surface": "Catalog",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "246 SKUs across 148 browse nodes (134 substantive), 1 level."
+    },
+    {
+      "surface": "Search",
+      "status": "warn",
+      "nature": "store_finding",
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+    },
+    {
+      "surface": "Autocomplete",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "Type-ahead available via prefix product search (no native WooCommerce autocomplete endpoint)."
+    },
+    {
+      "surface": "Facets",
+      "status": "pass",
+      "nature": "store_finding",
+      "detail": "52 attributes, 52 filterable; top facet care_instructions (68 terms). 15/15 sampled products carry attributes."
+    },
+    {
+      "surface": "Recommendations",
+      "status": "limited",
+      "nature": "capture_limitation",
+      "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+    },
+    {
+      "surface": "Browse",
+      "status": "warn",
+      "nature": "store_finding",
+      "detail": "148 category nodes, flat (no hierarchy)."
+    }
+  ],
+  "discovery_signal": "Mid-size catalog (246 SKUs): search starts to matter for findability. Flat browse (1 level): no hierarchical navigation depth, so faceted/nested browse is not a strong signal here. 134 substantive browse nodes after filtering operational/merchandising categories."
+}

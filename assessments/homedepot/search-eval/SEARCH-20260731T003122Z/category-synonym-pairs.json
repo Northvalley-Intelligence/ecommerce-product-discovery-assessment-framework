@@ -1,0 +1,466 @@
+{
+  "schema_version": "category-synonym-set-v0.2",
+  "target": "homedepot.com",
+  "captured_at": "2026-07-31T01:16:42.280Z",
+  "method": "Browser-driven: real logged-in session, bounded same-origin /s/<term> fetches, embedded SearchModel totalProducts + rendered titles. No API calls, no token replay, no crawling.",
+  "total_pairs": 28,
+  "problem_pairs": 17,
+  "verdict_counts": {
+    "severe": 5,
+    "high": 2,
+    "medium": 10,
+    "minor": 3,
+    "pass": 8
+  },
+  "headline": "Of 28 equivalent term pairs, 17 returned materially different result sets (>=40% divergence or wrong products). The defect runs both ways: sometimes the synonym collapses (sheetrock 33 vs drywall 2411; liquid nails 17 vs construction adhesive 1605; roundup 249 vs weed killer 3078), sometimes the GENERIC category term fails (concrete mix 20 wrong vs quikrete 643; locking pliers 106 vs vise grips 1161; utility knife 207 vs box cutter 525). Some map perfectly (plexiglass=acrylic 338; teflon=plumbers tape 85). Findability depends on guessing the right term.",
+  "pairs": [
+    {
+      "concept": "Drywall",
+      "term_a": {
+        "q": "drywall",
+        "total": 2411,
+        "url": "https://www.homedepot.com/s/drywall"
+      },
+      "term_b": {
+        "q": "sheetrock",
+        "total": 33,
+        "url": "https://www.homedepot.com/s/sheetrock"
+      },
+      "divergence_pct": 99,
+      "verdict": "severe",
+      "note": "synonym collapses to narrow USG brand node"
+    },
+    {
+      "concept": "Construction adhesive",
+      "term_a": {
+        "q": "construction adhesive",
+        "total": 1605,
+        "url": "https://www.homedepot.com/s/construction%20adhesive"
+      },
+      "term_b": {
+        "q": "liquid nails",
+        "total": 17,
+        "url": "https://www.homedepot.com/s/liquid%20nails"
+      },
+      "divergence_pct": 99,
+      "verdict": "severe",
+      "note": "brand synonym collapses ~99%"
+    },
+    {
+      "concept": "Concrete mix",
+      "term_a": {
+        "q": "quikrete",
+        "total": 643,
+        "url": "https://www.homedepot.com/s/quikrete"
+      },
+      "term_b": {
+        "q": "concrete mix",
+        "total": 20,
+        "url": "https://www.homedepot.com/s/concrete%20mix"
+      },
+      "divergence_pct": 97,
+      "verdict": "severe",
+      "note": "GENERIC term fails: 20 results, top=Anchoring Cement (wrong)"
+    },
+    {
+      "concept": "Weed killer",
+      "term_a": {
+        "q": "weed killer",
+        "total": 3078,
+        "url": "https://www.homedepot.com/s/weed%20killer"
+      },
+      "term_b": {
+        "q": "roundup",
+        "total": 249,
+        "url": "https://www.homedepot.com/s/roundup"
+      },
+      "divergence_pct": 92,
+      "verdict": "severe",
+      "note": "brand collapses ~92%"
+    },
+    {
+      "concept": "Locking pliers",
+      "term_a": {
+        "q": "vise grips",
+        "total": 1161,
+        "url": "https://www.homedepot.com/s/vise%20grips"
+      },
+      "term_b": {
+        "q": "locking pliers",
+        "total": 106,
+        "url": "https://www.homedepot.com/s/locking%20pliers"
+      },
+      "divergence_pct": 91,
+      "verdict": "severe",
+      "note": "GENERIC term under-retrieves ~10x"
+    },
+    {
+      "concept": "Cable ties",
+      "term_a": {
+        "q": "cable ties",
+        "total": 1602,
+        "url": "https://www.homedepot.com/s/cable%20ties"
+      },
+      "term_b": {
+        "q": "zip ties",
+        "total": 267,
+        "url": "https://www.homedepot.com/s/zip%20ties"
+      },
+      "divergence_pct": 83,
+      "verdict": "high",
+      "note": "colloquial synonym ~83% fewer"
+    },
+    {
+      "concept": "Rotary tool",
+      "term_a": {
+        "q": "rotary tool",
+        "total": 5616,
+        "url": "https://www.homedepot.com/s/rotary%20tool"
+      },
+      "term_b": {
+        "q": "dremel",
+        "total": 1508,
+        "url": "https://www.homedepot.com/s/dremel"
+      },
+      "divergence_pct": 73,
+      "verdict": "high",
+      "note": "brand ~73% fewer"
+    },
+    {
+      "concept": "Wet/dry vacuum",
+      "term_a": {
+        "q": "wet dry vacuum",
+        "total": 1587,
+        "url": "https://www.homedepot.com/s/wet%20dry%20vacuum"
+      },
+      "term_b": {
+        "q": "shop vac",
+        "total": 648,
+        "url": "https://www.homedepot.com/s/shop%20vac"
+      },
+      "divergence_pct": 59,
+      "verdict": "medium",
+      "note": "synonym ~59% fewer"
+    },
+    {
+      "concept": "Spray foam",
+      "term_a": {
+        "q": "spray foam",
+        "total": 331,
+        "url": "https://www.homedepot.com/s/spray%20foam"
+      },
+      "term_b": {
+        "q": "great stuff",
+        "total": 136,
+        "url": "https://www.homedepot.com/s/great%20stuff"
+      },
+      "divergence_pct": 59,
+      "verdict": "medium",
+      "note": "brand ~59% fewer"
+    },
+    {
+      "concept": "Utility knife",
+      "term_a": {
+        "q": "box cutter",
+        "total": 525,
+        "url": "https://www.homedepot.com/s/box%20cutter"
+      },
+      "term_b": {
+        "q": "utility knife",
+        "total": 207,
+        "url": "https://www.homedepot.com/s/utility%20knife"
+      },
+      "divergence_pct": 61,
+      "verdict": "medium",
+      "note": "GENERIC term ~60% fewer (redirects)"
+    },
+    {
+      "concept": "Push-to-connect",
+      "term_a": {
+        "q": "push to connect fitting",
+        "total": 2627,
+        "url": "https://www.homedepot.com/s/push%20to%20connect%20fitting"
+      },
+      "term_b": {
+        "q": "shark bite",
+        "total": 1149,
+        "url": "https://www.homedepot.com/s/shark%20bite"
+      },
+      "divergence_pct": 56,
+      "verdict": "medium",
+      "note": "brand ~56% fewer"
+    },
+    {
+      "concept": "String trimmer",
+      "term_a": {
+        "q": "string trimmer",
+        "total": 1799,
+        "url": "https://www.homedepot.com/s/string%20trimmer"
+      },
+      "term_b": {
+        "q": "weed eater",
+        "total": 800,
+        "url": "https://www.homedepot.com/s/weed%20eater"
+      },
+      "divergence_pct": 56,
+      "verdict": "medium",
+      "note": "colloquial ~55% fewer (redirects)"
+    },
+    {
+      "concept": "House wrap",
+      "term_a": {
+        "q": "house wrap",
+        "total": 704,
+        "url": "https://www.homedepot.com/s/house%20wrap"
+      },
+      "term_b": {
+        "q": "tyvek",
+        "total": 371,
+        "url": "https://www.homedepot.com/s/tyvek"
+      },
+      "divergence_pct": 47,
+      "verdict": "medium",
+      "note": "brand ~47% fewer"
+    },
+    {
+      "concept": "OSB",
+      "term_a": {
+        "q": "osb",
+        "total": 378,
+        "url": "https://www.homedepot.com/s/osb"
+      },
+      "term_b": {
+        "q": "oriented strand board",
+        "total": 173,
+        "url": "https://www.homedepot.com/s/oriented%20strand%20board"
+      },
+      "divergence_pct": 54,
+      "verdict": "medium",
+      "note": "FULL category name ~54% fewer"
+    },
+    {
+      "concept": "Lawn fertilizer",
+      "term_a": {
+        "q": "weed and feed",
+        "total": 520,
+        "url": "https://www.homedepot.com/s/weed%20and%20feed"
+      },
+      "term_b": {
+        "q": "lawn fertilizer",
+        "total": 185,
+        "url": "https://www.homedepot.com/s/lawn%20fertilizer"
+      },
+      "divergence_pct": 64,
+      "verdict": "medium",
+      "note": "category term ~64% fewer (redirects)"
+    },
+    {
+      "concept": "Penetrating oil",
+      "term_a": {
+        "q": "penetrating oil",
+        "total": 358,
+        "url": "https://www.homedepot.com/s/penetrating%20oil"
+      },
+      "term_b": {
+        "q": "wd-40",
+        "total": 26,
+        "url": "https://www.homedepot.com/s/wd-40"
+      },
+      "divergence_pct": 93,
+      "verdict": "medium",
+      "note": "brand narrow node (26)"
+    },
+    {
+      "concept": "Hardboard",
+      "term_a": {
+        "q": "masonite",
+        "total": 569,
+        "url": "https://www.homedepot.com/s/masonite"
+      },
+      "term_b": {
+        "q": "hardboard",
+        "total": 379,
+        "url": "https://www.homedepot.com/s/hardboard"
+      },
+      "divergence_pct": 33,
+      "verdict": "medium",
+      "note": "both noisy/mismatched (hardboard->cement board)"
+    },
+    {
+      "concept": "Circular saw",
+      "term_a": {
+        "q": "circular saw",
+        "total": 2045,
+        "url": "https://www.homedepot.com/s/circular%20saw"
+      },
+      "term_b": {
+        "q": "skil saw",
+        "total": 1440,
+        "url": "https://www.homedepot.com/s/skil%20saw"
+      },
+      "divergence_pct": 30,
+      "verdict": "minor",
+      "note": "~30% fewer"
+    },
+    {
+      "concept": "Tongue&groove pliers",
+      "term_a": {
+        "q": "channel locks",
+        "total": 1395,
+        "url": "https://www.homedepot.com/s/channel%20locks"
+      },
+      "term_b": {
+        "q": "tongue and groove pliers",
+        "total": 1068,
+        "url": "https://www.homedepot.com/s/tongue%20and%20groove%20pliers"
+      },
+      "divergence_pct": 23,
+      "verdict": "minor",
+      "note": "~23%, both fine"
+    },
+    {
+      "concept": "Bleach",
+      "term_a": {
+        "q": "clorox",
+        "total": 1375,
+        "url": "https://www.homedepot.com/s/clorox"
+      },
+      "term_b": {
+        "q": "bleach",
+        "total": 904,
+        "url": "https://www.homedepot.com/s/bleach"
+      },
+      "divergence_pct": 34,
+      "verdict": "minor",
+      "note": "brand broader, both fine"
+    },
+    {
+      "concept": "Joint compound",
+      "term_a": {
+        "q": "joint compound",
+        "total": 762,
+        "url": "https://www.homedepot.com/s/joint%20compound"
+      },
+      "term_b": {
+        "q": "spackle",
+        "total": 595,
+        "url": "https://www.homedepot.com/s/spackle"
+      },
+      "divergence_pct": 22,
+      "verdict": "pass",
+      "note": "different products, both fine"
+    },
+    {
+      "concept": "Adjustable wrench",
+      "term_a": {
+        "q": "crescent wrench",
+        "total": 1369,
+        "url": "https://www.homedepot.com/s/crescent%20wrench"
+      },
+      "term_b": {
+        "q": "adjustable wrench",
+        "total": 1227,
+        "url": "https://www.homedepot.com/s/adjustable%20wrench"
+      },
+      "divergence_pct": 10,
+      "verdict": "pass",
+      "note": "synonym works"
+    },
+    {
+      "concept": "Reciprocating saw",
+      "term_a": {
+        "q": "reciprocating saw",
+        "total": 1950,
+        "url": "https://www.homedepot.com/s/reciprocating%20saw"
+      },
+      "term_b": {
+        "q": "sawzall",
+        "total": 1920,
+        "url": "https://www.homedepot.com/s/sawzall"
+      },
+      "divergence_pct": 2,
+      "verdict": "pass",
+      "note": "maps ~perfectly"
+    },
+    {
+      "concept": "Mineral spirits",
+      "term_a": {
+        "q": "mineral spirits",
+        "total": 1062,
+        "url": "https://www.homedepot.com/s/mineral%20spirits"
+      },
+      "term_b": {
+        "q": "paint thinner",
+        "total": 968,
+        "url": "https://www.homedepot.com/s/paint%20thinner"
+      },
+      "divergence_pct": 9,
+      "verdict": "pass",
+      "note": "maps ~perfectly"
+    },
+    {
+      "concept": "Allen wrench",
+      "term_a": {
+        "q": "allen wrench",
+        "total": 1251,
+        "url": "https://www.homedepot.com/s/allen%20wrench"
+      },
+      "term_b": {
+        "q": "hex key",
+        "total": 1189,
+        "url": "https://www.homedepot.com/s/hex%20key"
+      },
+      "divergence_pct": 5,
+      "verdict": "pass",
+      "note": "maps ~perfectly"
+    },
+    {
+      "concept": "Formica/laminate",
+      "term_a": {
+        "q": "formica",
+        "total": 695,
+        "url": "https://www.homedepot.com/s/formica"
+      },
+      "term_b": {
+        "q": "laminate sheet",
+        "total": 695,
+        "url": "https://www.homedepot.com/s/laminate%20sheet"
+      },
+      "divergence_pct": 0,
+      "verdict": "pass",
+      "note": "identical (695=695)"
+    },
+    {
+      "concept": "Acrylic/plexiglass",
+      "term_a": {
+        "q": "acrylic sheet",
+        "total": 338,
+        "url": "https://www.homedepot.com/s/acrylic%20sheet"
+      },
+      "term_b": {
+        "q": "plexiglass",
+        "total": 338,
+        "url": "https://www.homedepot.com/s/plexiglass"
+      },
+      "divergence_pct": 0,
+      "verdict": "pass",
+      "note": "identical (338=338)"
+    },
+    {
+      "concept": "Thread seal tape",
+      "term_a": {
+        "q": "plumbers tape",
+        "total": 85,
+        "url": "https://www.homedepot.com/s/plumbers%20tape"
+      },
+      "term_b": {
+        "q": "teflon tape",
+        "total": 85,
+        "url": "https://www.homedepot.com/s/teflon%20tape"
+      },
+      "divergence_pct": 0,
+      "verdict": "pass",
+      "note": "identical (85=85)"
+    }
+  ]
+}

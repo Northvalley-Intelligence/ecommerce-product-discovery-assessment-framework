@@ -1,7 +1,7 @@
 {
-  "inventory_id": "BDD-INV-025",
-  "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-024",
+  "inventory_id": "BDD-INV-026",
+  "created_on": "2026-07-18",
+  "supersedes": "BDD-INV-025",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "status": "generation_36_dataset_retailer_scoreboard",
   "refresh_rationale": "Adds GEN-035: browser-eval sites (Home Depot) are first-class in the dashboard with a navigable, live-verifiable category<->synonym pairs view.",
@@ -833,6 +833,20 @@
       "category": "Usability Validation",
       "status": "passed_gen_036",
       "evidence": "Synonym dataset: HD 30% vs Lowe's 48%; scores drill to per-retailer cases; cases link to live search rerun. VAL-085."
+    }
+  ],
+  "gen37_bdds": [
+    {
+      "id": "BDD-GEN37-1",
+      "invariant": "A scoreboard case shows a verify status (confirmed/failed) inline; it does not open a live-site window on rerun."
+    },
+    {
+      "id": "BDD-GEN37-2",
+      "invariant": "Cases are icon-driven: a colored severity dot and a check/cross verify chip, with expandable plain-text evidence (term -> result count)."
+    },
+    {
+      "id": "BDD-GEN37-3",
+      "invariant": "The confirmed/failed status derives from a browser re-check comparing the fresh count to the recorded count (confirmed within tolerance)."
     }
   ]
 }

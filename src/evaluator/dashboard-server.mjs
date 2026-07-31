@@ -805,6 +805,19 @@ function dashboardPage() {
     .exp > summary::-webkit-details-marker { display: none; }
     .exp[open] > summary { border-bottom: 1px solid var(--line); }
     .exp-body { padding: 9px 11px; }
+    .sdot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: middle; margin-right: 3px; }
+    .sdot.sev-severe, .sdot.sev-high { background: #dc2626; }
+    .sdot.sev-medium { background: #d97706; }
+    .sdot.sev-minor { background: #9ca3af; }
+    .sdot.sev-pass { background: #16a34a; }
+    .vchip { font-weight: 700; margin-left: 6px; }
+    .vchip.vok { color: #16a34a; }
+    .vchip.vfail { color: #dc2626; }
+    .qc { color: #64748b; font-size: 12px; margin-left: 8px; }
+    .qc b { color: #0f172a; }
+    .dvg { font-size: 11px; color: #64748b; margin-left: 8px; }
+    .evrow { padding: 2px 0; font-size: 12px; }
+    .evrow code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
     .woo-replay { padding: 5px 10px; border: 1px solid var(--blue); background: var(--soft-blue); color: var(--blue); border-radius: 7px; cursor: pointer; font: inherit; font-size: 12px; }
     .woo-replay:hover { background: var(--blue); color: white; }
     a.jump { color: inherit; text-decoration: none; cursor: pointer; border-bottom: 2px dotted var(--blue); }
@@ -1709,26 +1722,34 @@ function dashboardPage() {
       const body = data.datasets.map((ds) =>
         '<tr><td><strong>' + escapeHtml(ds.name) + '</strong><div class="muted" style="font-size:11px">' + escapeHtml(ds.scoring || '') + '</div></td>' +
         retailers.map((r) => scoreCell(ds.id, r, ds)).join('') + '</tr>').join('');
-      let html = panel('Search datasets — retailer scoreboard', 'Score per dataset per retailer · higher = more consistent · click a score to drill to its cases',
+      let html = panel('Search datasets — retailer scoreboard', 'Score per dataset per retailer · higher = more consistent · click a score to drill · ● severity, ✓ reading confirmed vs live count',
         '<div class="table-wrap"><table><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>');
       // This retailer's cases for each dataset (drill target).
       for (const ds of data.datasets) {
         const rr = ds.retailers[targetId];
         if (!rr) continue;
         const order = { severe: 0, high: 1, medium: 2, minor: 3, pass: 4 };
-        const sev = (v) => ({ severe: 'fail', high: 'fail', medium: 'warn', minor: 'muted-status', pass: 'pass' }[v] || 'warn');
-        const cases = (rr.cases || []).slice().sort((a, b) => (order[a.verdict] - order[b.verdict]) || (b.divergence_pct - a.divergence_pct));
+        const cases = (rr.cases || []).slice().sort((a, b) => ((order[a.verdict] ?? 2) - (order[b.verdict] ?? 2)) || (b.divergence_pct - a.divergence_pct));
         const rows = cases.map((p) => {
-          const hi = p.term_a.total >= p.term_b.total ? p.term_a : p.term_b;
-          const lo = p.term_a.total >= p.term_b.total ? p.term_b : p.term_a;
-          return '<details class="exp"><summary>' + pill(sev(p.verdict), p.verdict) + ' <strong>' + escapeHtml(p.concept) + '</strong> — ' +
-            escapeHtml(hi.q) + ' <strong>' + escapeHtml(String(hi.total)) + '</strong> vs ' + escapeHtml(lo.q) + ' <strong>' + escapeHtml(String(lo.total)) + '</strong> <span class="muted">(' + escapeHtml(String(p.divergence_pct)) + '% apart)</span></summary>' +
+          const v = p.verify || {};
+          const vok = v.status === 'confirmed';
+          const vicon = '<span class="vchip ' + (vok ? 'vok" title="Reading re-checked against the live count — confirmed">✓' : 'vfail" title="Reading could not be confirmed">✗') + '</span>';
+          const dot = '<span class="sdot sev-' + escapeHtml(p.verdict) + '" title="' + escapeHtml(p.verdict) + '"></span>';
+          const summary = dot + ' <strong>' + escapeHtml(p.concept) + '</strong>' +
+            ' <span class="qc">' + escapeHtml(p.term_a.q) + ' <b>' + escapeHtml(String(p.term_a.total)) + '</b></span>' +
+            ' <span class="qc">' + escapeHtml(p.term_b.q) + ' <b>' + escapeHtml(String(p.term_b.total)) + '</b></span>' +
+            ' <span class="dvg">Δ' + escapeHtml(String(p.divergence_pct)) + '%</span>' + vicon;
+          const verdictLine = (vok ? '✓ Confirmed — reading re-checked against the live count' : '✗ Not confirmed — could not re-read this count') + (v.detail ? ' · ' + escapeHtml(v.detail) : '');
+          return '<details class="exp"><summary>' + summary + '</summary>' +
             '<div class="exp-body">' +
-              '<div><a href="' + escapeHtml(p.term_a.url) + '" target="_blank" rel="noopener">Rerun “' + escapeHtml(p.term_a.q) + '” on ' + escapeHtml(rr.name) + ' (' + escapeHtml(String(p.term_a.total)) + ')</a></div>' +
-              '<div><a href="' + escapeHtml(p.term_b.url) + '" target="_blank" rel="noopener">Rerun “' + escapeHtml(p.term_b.q) + '” on ' + escapeHtml(rr.name) + ' (' + escapeHtml(String(p.term_b.total)) + ')</a></div>' +
+              '<div class="evrow"><code>' + escapeHtml(p.term_a.q) + '</code> → <b>' + escapeHtml(String(p.term_a.total)) + '</b> results</div>' +
+              '<div class="evrow"><code>' + escapeHtml(p.term_b.q) + '</code> → <b>' + escapeHtml(String(p.term_b.total)) + '</b> results</div>' +
+              (p.note ? '<div class="muted" style="font-size:11px;margin-top:4px">' + escapeHtml(p.note) + '</div>' : '') +
+              '<div class="muted" style="font-size:11px;margin-top:5px">' + verdictLine + '</div>' +
             '</div></details>';
         }).join('');
-        html += '<div id="ds-' + ds.id + '">' + panel(rr.name + ' — ' + ds.name, rr.score + '% consistent (' + escapeHtml(rr.score_label || '') + ') · expand a pair to open the live search and verify/rerun the count',
+        const cc = rr.verify_summary ? (' · ✓ ' + rr.verify_summary.confirmed + ' confirmed' + (rr.verify_summary.failed ? ' · ✗ ' + rr.verify_summary.failed + ' unconfirmed' : '')) : '';
+        html += '<div id="ds-' + ds.id + '">' + panel(rr.name + ' — ' + ds.name, rr.score + '% consistent (' + escapeHtml(rr.score_label || '') + ')' + cc,
           '<div class="panel-body">' + rows + '</div>') + '</div>';
       }
       el.innerHTML = html;

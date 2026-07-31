@@ -1,0 +1,159 @@
+{
+  "schema_version": "inspection-dashboard-v0.1",
+  "inspection_id": "GEN-014-20260715T161827Z",
+  "purpose_question": "Can I trust this inspection enough to generate downstream reports?",
+  "crawl_summary": {
+    "inspection_timestamp": "2026-07-15T16:18:27.459Z",
+    "target_url": "https://allbirds.com/",
+    "target_name": "Allbirds",
+    "platform_detection": {
+      "platform": "shopify",
+      "confidence": "High",
+      "signals": [
+        "Target manifest expects Shopify.",
+        "Products JSON returned a Shopify products payload.",
+        "Collections JSON returned a Shopify collections payload.",
+        "Suggest JSON returned a Shopify predictive-search payload."
+      ]
+    },
+    "overall_inspection_status": "partial",
+    "inspection_duration_ms": 380949,
+    "evidence_quality": "partial",
+    "overall_confidence": "Medium"
+  },
+  "operational_summary": {
+    "experiments_completed": 4,
+    "blocked_experiments": 2,
+    "warnings": 4,
+    "evidence_files": 6,
+    "screenshot_count": 10,
+    "downstream_report_readiness": "bounded",
+    "readiness_notes": "Inspection evidence is sufficient for a bounded technical Inspection Report export."
+  },
+  "crawl_health": [
+    {
+      "component": "Homepage",
+      "status": "PASS",
+      "confidence": "High",
+      "notes": "Homepage responded."
+    },
+    {
+      "component": "Search",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "1/7 submitted search observations completed."
+    },
+    {
+      "component": "Browse",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Collections endpoint responded; browse inventory is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Autocomplete",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "7/7 autocomplete observations returned suggestions."
+    },
+    {
+      "component": "Product Pages",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "Products endpoint responded; rendered product capture is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Facets",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/2 facet markup observations completed."
+    },
+    {
+      "component": "Recommendations",
+      "status": "PASS",
+      "confidence": "Medium",
+      "notes": "3/3 recommendations endpoint observations completed."
+    },
+    {
+      "component": "Mobile",
+      "status": "FAIL",
+      "confidence": "Low",
+      "notes": "0/2 mobile user-agent observations completed. HTTP-level only; rendered mobile capture remains a platform capability gap."
+    },
+    {
+      "component": "Competitor Inspection",
+      "status": "NOT_RUN",
+      "confidence": "Unknown",
+      "notes": "Peer inspection is not enabled in this evaluation manifest."
+    },
+    {
+      "component": "Rendered Storefront",
+      "status": "WARN",
+      "confidence": "Medium",
+      "notes": "3/5 rendered captures completed; 0/5 showed a visible autocomplete dropdown (P008)."
+    }
+  ],
+  "evidence_coverage": {
+    "component_coverage_percent": 70,
+    "plugin_observations": 26,
+    "dataset_rows": 21,
+    "evidence_quality": "partial"
+  },
+  "platform_capability": {
+    "status": "warn",
+    "report_path": "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/platform-capability-report.json",
+    "failed_capabilities": []
+  },
+  "artifact_explorer": {
+    "evidence": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/autocomplete.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/facets.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/mobile.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/recommendations.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/rendered-search.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/experiments/submitted-search.jsonl"
+    ],
+    "reports": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/dashboard.html",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/inspection-report.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/inspection-report.md"
+    ],
+    "datasets": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/datasets/ds1-canonical-search.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/datasets/ds2-query-normalization.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/datasets/ds3-search-facet.jsonl",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/datasets/ds4-advanced-retrieval.jsonl"
+    ],
+    "screenshots": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-mobile-search-allbirds-col-all-apparel-excluding-face-masks.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-mobile-search-allbirds-col-all-shoes-mens-and-womens.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-mobile-search-allbirds-col-all-shoes-search.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-mobile-search-allbirds-col-all-underwear.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-mobile-search-allbirds-col-womens-accessories.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-search-allbirds-col-all-apparel-excluding-face-masks.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-search-allbirds-col-all-shoes-mens-and-womens.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-search-allbirds-col-all-shoes-search.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-search-allbirds-col-all-underwear.png",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/screenshots/rendered-search-allbirds-col-womens-accessories.png"
+    ],
+    "raw_http": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/raw/http/site-profile-endpoints.json"
+    ],
+    "raw_html": [],
+    "timeline": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/evidence/timeline.jsonl"
+    ],
+    "inspection_model": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/inspection-model.json"
+    ],
+    "other": [
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/artifact-index.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/cache-metadata.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/dashboard.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/platform-capability-report.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/plugin-dependency-graph.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/plugin-state.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/run-manifest.json",
+      "assessments/allbirds/inspection-report/GEN-014/GEN-014-20260715T161827Z/site-profile.json"
+    ]
+  }
+}
