@@ -1,0 +1,33 @@
+{
+  "generation_id": "GEN-035",
+  "mission_phase": "Generation 35 - Dashboard view for browser-driven search evaluation (Home Depot category<->synonym pairs)",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T15:00:00Z",
+  "ended_at": "2026-07-18T15:40:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Surface the browser-driven Home Depot search evaluation in the same dashboard. Home Depot appears as a browser-eval site; its view shows a Search evaluation with the category<->synonym pair set: a summary (total pairs, problem pairs, verdict breakdown) with navigable numbers, and a pairs table (each pair: the two equivalent terms, their result counts, % divergence, verdict) where every term links to its exact live search URL so the operator can open it and verify the count. Debuggable and self-verifiable like the Woo reports; the 'replay' is opening the live homedepot.com/s/<term> search.",
+  "reason_generation_started": "Operator: build the dashboard view for these pairs. Makes the GEN-034 browser-driven search evaluation (category<->synonym mapping inconsistency, HD-F004) first-class and navigable in the dashboard.",
+  "standing_directive": "The view reads the already-captured browser evaluation artifact (no new fetching from the server). 'Open search' links navigate the operator's own browser to the live search (legitimate, as in normal use). Do not fabricate counts; show only captured evidence. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "Home Depot is listed as a browser-eval site; selecting it shows a Search evaluation view reading the captured category-synonym-pairs artifact.",
+      "The view shows total pairs, problem pairs, and a verdict breakdown as navigable numbers that jump to the pairs table; the pairs table shows each pair's two terms, counts, divergence %, and verdict, with a link to each term's exact live search URL.",
+      "No count is a dead end: every number traces to the pair rows, and every pair row links to the live search to verify."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user): open Home Depot, read the summary, click a number to jump to the pairs, expand a severe pair (e.g. drywall vs sheetrock) and see both live-search links; Shopify/Woo sites unaffected.",
+      "No inspection triggered; no server-side fetching of Home Depot."
+    ],
+    "technical": [
+      "validate:dashboard asserts Home Depot is listed (platform browser-eval), the search-eval API returns the pairs summary, and the view wires the pairs table + navigable numbers; validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-084: HD browser-eval site + navigable pairs view + live-verify links; two clean gate passes; BDD-INV-024."
+  ],
+  "known_gaps_opened": [
+    "The 28 pairs are a hand-picked adversarial set, not a random sample — a systematic browse-node-derived pair dataset would give a representative failure rate (operator insight).",
+    "The live-search links open the operator browser (Akamai-legitimate); there is no server-side re-count."
+  ]
+}

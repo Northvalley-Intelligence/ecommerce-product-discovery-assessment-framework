@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-023",
+  "inventory_id": "BDD-INV-024",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-022",
+  "supersedes": "BDD-INV-023",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_34_browser_search_eval_inventory",
-  "refresh_rationale": "Adds GEN-034: browser-driven search evaluation that reads the page-embedded search response (no crawl/bypass) and surfaces search failures, first run on Home Depot.",
+  "status": "generation_35_search_eval_dashboard_view",
+  "refresh_rationale": "Adds GEN-035: browser-eval sites (Home Depot) are first-class in the dashboard with a navigable, live-verifiable category<->synonym pairs view.",
   "summary": {
-    "total": 91,
+    "total": 93,
     "critical": 18,
     "high": 35,
-    "medium": 34,
+    "medium": 36,
     "low": 4,
-    "passing": 89,
+    "passing": 91,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -797,6 +797,24 @@
       "category": "Functional Validation",
       "status": "passed_gen_034",
       "evidence": "sheetrock synonym collapse (33 vs 2411), 1/2 ft dimension conflation, 2x4 format count swing. VAL-083."
+    }
+  ],
+  "gen35_bdds": [
+    {
+      "id": "BDD-G35-001",
+      "title": "Browser-eval sites appear in the dashboard with a search-eval view",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_035",
+      "evidence": "Home Depot listed (browser-eval); view shows the 28-pair category<->synonym set with navigable summary numbers. VAL-084."
+    },
+    {
+      "id": "BDD-G35-002",
+      "title": "Each pair links to its live search to verify the count",
+      "severity": "Medium",
+      "category": "Functional Validation",
+      "status": "passed_gen_035",
+      "evidence": "Expanding a pair shows Open \"<term>\" search links to homedepot.com/s/<term>. VAL-084."
     }
   ]
 }

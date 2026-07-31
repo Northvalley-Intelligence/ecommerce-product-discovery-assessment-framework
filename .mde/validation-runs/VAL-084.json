@@ -1,0 +1,45 @@
+{
+  "validation_run_id": "VAL-084",
+  "generation": "GEN-035",
+  "phase": "Dashboard view for browser-driven search evaluation",
+  "started_at": "2026-07-18T15:00:00Z",
+  "completed_at": "2026-07-18T15:40:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes",
+  "validations_executed": [
+    {
+      "category": "HD listed as browser-eval site",
+      "tool": "browser + /api/sites",
+      "result": "pass",
+      "evidence": "Home Depot appears in the sidebar (\"browser eval · search\"); its view shows a browser-driven search evaluation hero + method note."
+    },
+    {
+      "category": "Search evaluation summary (navigable)",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Pairs tested 28, Problem pairs 17, Severe 5, Map fine 8 — all navigable numbers jumping to the pairs table."
+    },
+    {
+      "category": "Pairs table + live verify",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Pairs sorted severe->pass with divergence %; expanding Drywall shows note + Open \"drywall\" (2411) / Open \"sheetrock\" (33) live-search links to verify counts on homedepot.com."
+    },
+    {
+      "category": "No server-side fetching",
+      "tool": "code",
+      "result": "pass",
+      "evidence": "/api/search-eval reads the captured artifact only; live-search links open in the operator browser."
+    },
+    {
+      "category": "Shopify/Woo unaffected + two clean passes",
+      "tool": "validate:dashboard/gen13/validate",
+      "result": "pass",
+      "evidence": "Other sites unchanged; gate green on pass 1 and pass 2 (after commit)."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator: build the dashboard view for the pairs. Note (operator): this is a dataset-creation process keyed on browse nodes — a systematic browse-node-derived pair dataset is the natural next step (the 28 pairs are a hand-picked adversarial set, not a random sample)."
+}
