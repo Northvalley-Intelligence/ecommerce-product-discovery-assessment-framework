@@ -1,17 +1,17 @@
 {
-  "inventory_id": "BDD-INV-024",
+  "inventory_id": "BDD-INV-025",
   "created_on": "2026-07-14",
-  "supersedes": "BDD-INV-023",
+  "supersedes": "BDD-INV-024",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
-  "status": "generation_35_search_eval_dashboard_view",
+  "status": "generation_36_dataset_retailer_scoreboard",
   "refresh_rationale": "Adds GEN-035: browser-eval sites (Home Depot) are first-class in the dashboard with a navigable, live-verifiable category<->synonym pairs view.",
   "summary": {
-    "total": 93,
+    "total": 95,
     "critical": 18,
-    "high": 35,
-    "medium": 36,
+    "high": 36,
+    "medium": 37,
     "low": 4,
-    "passing": 91,
+    "passing": 93,
     "failing": 0,
     "not_executed": 0,
     "deferred": 2
@@ -815,6 +815,24 @@
       "category": "Functional Validation",
       "status": "passed_gen_035",
       "evidence": "Expanding a pair shows Open \"<term>\" search links to homedepot.com/s/<term>. VAL-084."
+    }
+  ],
+  "gen36_bdds": [
+    {
+      "id": "BDD-G36-001",
+      "title": "Sites group by domain in the sidebar",
+      "severity": "Medium",
+      "category": "Usability Validation",
+      "status": "passed_gen_036",
+      "evidence": "Home Improvement (Home Depot + Lowe's) group. VAL-085."
+    },
+    {
+      "id": "BDD-G36-002",
+      "title": "Dataset x retailer scoreboard with drillable scores",
+      "severity": "High",
+      "category": "Usability Validation",
+      "status": "passed_gen_036",
+      "evidence": "Synonym dataset: HD 30% vs Lowe's 48%; scores drill to per-retailer cases; cases link to live search rerun. VAL-085."
     }
   ]
 }

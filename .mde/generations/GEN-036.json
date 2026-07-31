@@ -1,0 +1,34 @@
+{
+  "generation_id": "GEN-036",
+  "mission_phase": "Generation 36 - Dataset x retailer search scoreboard (Home Improvement: Home Depot + Lowe's)",
+  "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
+  "validation_strategy_version": "VALSTRAT-001",
+  "started_at": "2026-07-18T17:00:00Z",
+  "ended_at": "2026-07-18T18:00:00Z",
+  "record_status": "phase_exit_complete_two_clean_passes_and_bdd_inventory_refreshed",
+  "phase_goal": "Turn the browser-driven search evaluation into a dataset x retailer scoreboard. Sites are grouped by domain (Home Improvement: Home Depot + Lowe's) in the sidebar. A scoreboard shows each search dataset (synonym mapping first; future datasets slot in) with a score per retailer; clicking a score drills to that retailer's cases, and each case links to the actual live search on that retailer's site (the rerun/verify). The score is understandable from the UI and never a dead end.",
+  "reason_generation_started": "Operator: group sites by domain (home improvement); build several datasets; run the evals on the datasets for Home Depot and Lowe's; in the UI show the dataset score for each retailer, drillable to the actual live call with rerun. Extensible to future datasets the operator is drafting.",
+  "standing_directive": "Scores and cases come only from captured browser-driven evidence (bounded, same-origin, real session; no crawling/API/token-replay). 'Rerun' = opening the live search in the operator browser. Do not fabricate counts. Do not apply destructive cleanup.",
+  "validation_strategy": {
+    "functional": [
+      "Home Depot and Lowe's appear grouped under a Home Improvement domain in the sidebar.",
+      "A scoreboard shows the synonym dataset with a score for Home Depot and a score for Lowe's; each score is a navigable control that drills to that retailer's per-pair cases.",
+      "Each case shows the two terms, the retailer's result counts, and a link to the exact live search on that retailer (the rerun); no score or case is a dead end.",
+      "The structure is dataset-generic so future datasets appear as additional scoreboard rows."
+    ],
+    "usability": [
+      "Interactive holistic walkthrough (as-a-user): open the scoreboard, read synonym HD score vs Lowe's score, drill into a score, open a live search; Shopify/Woo sites unaffected.",
+      "No inspection triggered; no server-side fetching of the retailers."
+    ],
+    "technical": [
+      "validate:dashboard asserts the search-datasets API returns datasets with per-retailer scores + cases and the view wires the scoreboard + drill-down; Lowe's listed under the Home Improvement domain; validate:gen13 and validate stay green; git diff --check clean."
+    ]
+  },
+  "validation_notes": [
+    "VAL-085: domain grouping + scoreboard (HD 30% vs Lowe's 48%) + cross-retailer drill + live rerun links; two clean passes; BDD-INV-025."
+  ],
+  "known_gaps_opened": [
+    "Lowe's scored on 23 common pairs (throttle after ~50 fetches); can extend to the full set later.",
+    "Future datasets (the operator is drafting) slot in as additional scoreboard rows once captured."
+  ]
+}

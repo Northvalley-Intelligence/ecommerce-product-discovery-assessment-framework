@@ -1,0 +1,56 @@
+{
+  "validation_run_id": "VAL-085",
+  "generation": "GEN-036",
+  "phase": "Dataset x retailer search scoreboard",
+  "started_at": "2026-07-18T17:00:00Z",
+  "completed_at": "2026-07-18T18:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes",
+  "validations_executed": [
+    {
+      "category": "Domain grouping",
+      "tool": "browser + /api/sites",
+      "result": "pass",
+      "evidence": "Sidebar shows HOME IMPROVEMENT (2): Home Depot, Lowe's, grouped by the home-improvement sector."
+    },
+    {
+      "category": "Dataset x retailer scoreboard",
+      "tool": "browser + /api/search-datasets",
+      "result": "pass",
+      "evidence": "Synonym / category mapping row shows Home Depot 30% (7/23) and Lowe's 48% (11/23) as navigable scores."
+    },
+    {
+      "category": "Score drill-down (cross-retailer)",
+      "tool": "browser",
+      "result": "pass",
+      "evidence": "Clicking Lowe's 48% on the Home Depot view navigated to Lowe's, whose scoreboard highlights 48% and shows Lowe's own failing pairs (circular saw/skil saw 91%, weed killer/roundup 89%) — different from HD's."
+    },
+    {
+      "category": "Live rerun links",
+      "tool": "browser + artifact",
+      "result": "pass",
+      "evidence": "Each case expands to Rerun \"<term>\" on <retailer> links (homedepot.com/s/<term>, lowes.com/search?searchTerm=<term>)."
+    },
+    {
+      "category": "Dataset-generic + no server fetching",
+      "tool": "code",
+      "result": "pass",
+      "evidence": "Scoreboard iterates datasets[]; future datasets add rows. /api/search-datasets reads the captured artifact only."
+    },
+    {
+      "category": "Shopify/Woo unaffected + two clean passes",
+      "tool": "validate:dashboard/gen13/validate",
+      "result": "pass",
+      "evidence": "Fixed the GEN-024 sector assertion to target query-pack sectors (domain sectors have no packs). Gate green pass 1 and pass 2."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Full 28-pair Lowe's run",
+      "reason": "Lowe's throttled the last batch after ~50 rapid same-origin fetches; scored both retailers on the common 23 pairs (respected the throttle rather than hammering)."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Operator: dataset x retailer scoreboard with drillable scores + live rerun, grouped by domain, extensible to future datasets. Home Depot 30% vs Lowe's 48% synonym consistency; the two retailers fail on different terms. MDE followed."
+}
