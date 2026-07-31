@@ -135,7 +135,19 @@ async function main() {
     assert(Array.isArray(sites) && sites.length > 0, 'Sites API returned no identified sites.');
     assert(sites.every((site) => site.target_id && site.name), 'Sites API entries missing required fields.');
     // Shopify sites are evaluation-driven; WooCommerce sites are listed without one.
-    assert(sites.every((site) => site.platform === 'woocommerce' || site.evaluation), 'Non-Woo sites must carry an evaluation.');
+    assert(sites.every((site) => site.platform === 'woocommerce' || site.platform === 'browser-eval' || site.evaluation), 'Non-Woo/browser-eval sites must carry an evaluation.');
+    // GEN-035: browser-driven search evaluation view (Home Depot category<->synonym pairs).
+    assert(page.includes('function renderBrowserEvalSite') && page.includes('function loadSearchEval'), 'Dashboard page missing the browser-eval search view.');
+    assert(page.includes("'/api/search-eval?target='"), 'Dashboard page missing search-eval API wiring.');
+    const hd = sites.find((site) => site.platform === 'browser-eval');
+    if (hd) {
+      const se = await fetchJson(`${dashboard.url}/api/search-eval?target=${encodeURIComponent(hd.target_id)}`);
+      assert('captured' in se, 'search-eval endpoint should return a captured flag.');
+      if (se.captured) {
+        assert(se.pairs && Array.isArray(se.pairs.pairs) && typeof se.pairs.total_pairs === 'number', 'search-eval pairs summary missing.');
+        assert(se.pairs.pairs.every((p) => p.term_a && p.term_a.url && typeof p.term_a.total === 'number'), 'search-eval pair terms missing url/total.');
+      }
+    }
     // GEN-025: sites carry their sector membership so the sidebar can group them.
     assert(sites.every((site) => Array.isArray(site.sectors)), 'Sites API entries missing sector membership array.');
     assert(sites.some((site) => site.sectors.length > 0), 'No site reports a sector membership for the grouped sidebar.');

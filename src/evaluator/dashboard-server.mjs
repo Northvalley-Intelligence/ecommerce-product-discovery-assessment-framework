@@ -153,9 +153,10 @@ function listSites(rootDir) {
     const platform = target.platform?.expected || 'shopify';
     const evaluation = evaluations.find((entry) => entry.target === path.join('targets', file));
     // Shopify sites require an evaluation (their inspection is evaluation-driven);
-    // WooCommerce sites are listed directly (their catalog/search/autocomplete
-    // come from the Store API, not an evaluation manifest).
-    if (!evaluation && platform !== 'woocommerce') continue;
+    // WooCommerce and browser-eval sites are listed directly (their evidence
+    // comes from the Store API or a browser-driven evaluation, not an evaluation
+    // manifest).
+    if (!evaluation && platform !== 'woocommerce' && platform !== 'browser-eval') continue;
     const latest = historyRows.find((row) => row.target_id === target.target_id) || null;
     sites.push({
       target_id: target.target_id,
@@ -430,6 +431,19 @@ function latestWooCatalog(rootDir, targetId) {
   const runs = fs.readdirSync(captureRoot).filter((name) => exists(path.join(captureRoot, name, 'catalog-summary.json'))).sort();
   if (!runs.length) return null;
   return readJson(path.join(captureRoot, runs[runs.length - 1], 'catalog-summary.json'));
+}
+
+// Latest browser-driven search evaluation (category<->synonym pairs) captured
+// for a target, read from its assessment directory. No server-side fetching.
+function latestSearchEval(rootDir, targetId) {
+  const root = path.join(rootDir, 'assessments', targetId, 'search-eval');
+  if (!exists(root)) return null;
+  const runs = fs.readdirSync(root).filter((name) => exists(path.join(root, name, 'category-synonym-pairs.json'))).sort();
+  if (!runs.length) return null;
+  const dir = path.join(root, runs[runs.length - 1]);
+  const pairs = readJson(path.join(dir, 'category-synonym-pairs.json'));
+  const evalPath = path.join(dir, 'search-eval.json');
+  return { pairs, eval: exists(evalPath) ? readJson(evalPath) : null };
 }
 
 function sharedData(rootDir) {
@@ -1407,6 +1421,8 @@ function dashboardPage() {
       const count = inspectionCount(site.target_id);
       const sub = site.platform === 'woocommerce'
         ? 'woocommerce · catalog/search'
+        : site.platform === 'browser-eval'
+        ? 'browser eval · search'
         : (count ? count + ' run' + (count === 1 ? '' : 's') + ' · latest ' + escapeHtml(site.latest_status || 'unknown') : 'not yet inspected');
       return '<button class="site-nav' + (site.target_id === state.selectedSite ? ' active' : '') + '" data-target="' + escapeHtml(site.target_id) + '">' +
         '<span class="site-name">' + escapeHtml(site.name) + '</span>' +
@@ -1483,6 +1499,7 @@ function dashboardPage() {
       const site = (state.sites || []).find((entry) => entry.target_id === targetId);
       if (!site) return;
       if (site.platform === 'woocommerce') { renderWooSite(site); return; }
+      if (site.platform === 'browser-eval') { renderBrowserEvalSite(site); return; }
       const runs = state.inspections.filter((run) => run.target_id === targetId)
         .sort((left, right) => String(right.timestamp).localeCompare(String(left.timestamp)));
       document.getElementById('detail').innerHTML =
@@ -1651,6 +1668,57 @@ function dashboardPage() {
           } catch (error) { out.textContent = 'Autocomplete failed: ' + error.message; }
         }, 250);
       });
+    }
+    function renderBrowserEvalSite(site) {
+      const targetId = site.target_id;
+      document.getElementById('detail').innerHTML =
+        '<div class="crumb-bar"><span class="crumb-current">Sites › ' + escapeHtml(site.name) + '</span><span class="muted">— browser-driven search evaluation</span></div>' +
+        '<section class="hero"><div><p class="eyebrow">Browser-Evaluated Site</p><h1>' + escapeHtml(site.name) + '</h1>' +
+          '<div class="subline"><span>' + escapeHtml(site.url) + '</span><span>enterprise (Akamai)</span><span><a href="' + escapeHtml(site.url) + '" target="_blank" rel="noopener">Open store</a></span></div>' +
+          '<p class="muted" style="margin:8px 0 0;font-size:12px">No API engine (Akamai bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.</p></div></section>' +
+        '<div id="searchEval"><div class="empty">Loading search evaluation…</div></div>';
+      loadSearchEval(targetId);
+    }
+    async function loadSearchEval(targetId) {
+      let data;
+      try { data = await api('/api/search-eval?target=' + encodeURIComponent(targetId)); }
+      catch (error) { document.getElementById('searchEval').innerHTML = ''; return; }
+      if (state.selectedSite !== targetId) return;
+      const el = document.getElementById('searchEval');
+      if (!el) return;
+      if (!data.captured || !data.pairs) {
+        el.innerHTML = panel('Search evaluation', 'At a glance', '<div class="panel-body"><div class="empty">No browser search evaluation captured yet.</div></div>');
+        return;
+      }
+      const s = data.pairs;
+      const vc = s.verdict_counts || {};
+      const sev = (v) => ({ severe: 'fail', high: 'fail', medium: 'warn', minor: 'muted-status', pass: 'pass' }[v] || 'warn');
+      const order = { severe: 0, high: 1, medium: 2, minor: 3, pass: 4 };
+      const pairs = (s.pairs || []).slice().sort((a, b) => (order[a.verdict] - order[b.verdict]) || (b.divergence_pct - a.divergence_pct));
+      const metrics =
+        healthMetric('Pairs tested', jumpNum(escapeHtml(String(s.total_pairs)), 'hd-pairs', 'See all pairs'), 'equivalent term pairs') +
+        healthMetric('Problem pairs', jumpNum(escapeHtml(String(s.problem_pairs)), 'hd-pairs', 'Materially different results'), '>=40% divergence or wrong') +
+        healthMetric('Severe', jumpNum(escapeHtml(String(vc.severe || 0)), 'hd-pairs'), '~90-99% collapse') +
+        healthMetric('Map fine', jumpNum(escapeHtml(String(vc.pass || 0)), 'hd-pairs'), 'synonym works');
+      const rows = pairs.map((p) => {
+        const hi = p.term_a.total >= p.term_b.total ? p.term_a : p.term_b;
+        const lo = p.term_a.total >= p.term_b.total ? p.term_b : p.term_a;
+        return '<details class="exp"><summary>' + pill(sev(p.verdict), p.verdict) + ' <strong>' + escapeHtml(p.concept) + '</strong> — ' +
+          escapeHtml(hi.q) + ' <strong>' + escapeHtml(String(hi.total)) + '</strong> vs ' + escapeHtml(lo.q) + ' <strong>' + escapeHtml(String(lo.total)) + '</strong> ' +
+          '<span class="muted">(' + escapeHtml(String(p.divergence_pct)) + '% apart)</span></summary>' +
+          '<div class="exp-body">' +
+            '<div class="muted" style="font-size:12px;margin-bottom:6px">' + escapeHtml(p.note || '') + '</div>' +
+            '<div><a href="' + escapeHtml(p.term_a.url) + '" target="_blank" rel="noopener">Open “' + escapeHtml(p.term_a.q) + '” search (' + escapeHtml(String(p.term_a.total)) + ')</a></div>' +
+            '<div><a href="' + escapeHtml(p.term_b.url) + '" target="_blank" rel="noopener">Open “' + escapeHtml(p.term_b.q) + '” search (' + escapeHtml(String(p.term_b.total)) + ')</a></div>' +
+          '</div></details>';
+      }).join('');
+      el.innerHTML =
+        panel('Search evaluation', 'Category ↔ synonym mapping — captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
+          '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
+          (s.headline ? '<p class="muted" style="margin-top:10px;font-size:12px">' + escapeHtml(s.headline) + '</p>' : '') + '</div>') +
+        '<div id="hd-pairs">' + panel('Equivalent-term pairs', 'The same product searched two ways — expand a pair to open each live search and verify the count',
+          '<div class="panel-body">' + rows + '</div>') + '</div>';
+      wireJumps(el);
     }
     function healthMetric(label, value, detail) {
       return '<article class="metric"><div class="metric-label">' + escapeHtml(label) + '</div><div class="metric-value">' + value + '</div><div class="metric-detail">' + escapeHtml(detail || '') + '</div></article>';
@@ -2835,6 +2903,12 @@ function routeRequest(rootDir, request, response, queue) {
         fetched_at: new Date().toISOString()
       }))
       .catch((error) => sendJson(response, 502, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/search-eval') {
+    const data = latestSearchEval(rootDir, url.searchParams.get('target'));
+    sendJson(response, 200, data ? { captured: true, ...data } : { captured: false });
     return;
   }
 

@@ -1,0 +1,10 @@
+{
+  "schema_version": "target-manifest-v0.1",
+  "target_id": "homedepot",
+  "name": "Home Depot",
+  "primary_url": "https://www.homedepot.com/",
+  "domain": "homedepot.com",
+  "platform": { "expected": "browser-eval", "canonical_platform_host": null, "confidence": "observed", "source": "Custom enterprise platform (Akamai). Evaluated via browser-driven search evaluation; not API-inspectable." },
+  "inspection_defaults": { "respect_robots": true, "timeout_ms": 15000, "user_agent": "Northvalley-Ecommerce-Inspection/0.1" },
+  "known_limitations": [ { "type": "infrastructure", "code": "bot_protection_no_api", "notes": "Akamai bot wall + robots disallow; search evaluated via the browser-embedded SearchModel, not an API." } ]
+}
