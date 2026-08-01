@@ -1,5 +1,7 @@
 # Home Depot vs Lowe's — Search Relevance Evaluation
 
+> **Disclaimer.** This is a quick, exploratory analysis produced for rapid personal research only. It is **nowhere near complete**, has **not been verified**, and **must not be cited or referenced.** The **approach itself is sound and can be made production-reliable** with **direct retailer API access**, **real query logs (actual search terms)**, and **higher volume** — the current numbers rest on small per-query samples and browser-read counts, which are approximate.
+
 **Scope:** three query datasets scored on `homedepot.com` and `lowes.com`
 **Method:** bounded same-origin browser reads of live search (no crawling, API, or token replay); result counts read deterministically from the page's embedded total; **relevance graded by a local LLM judge (Cortex / llama3.2:3b), NDCG@10.**
 **Judge caveat:** the Cortex judge initially mis-read measurement notation (`1/2-in` ≠ `1/2 inch`) and produced spurious 0s; a validated prompt fix was applied and confirmed before scoring (notation cases went from grade 0 → correct, stable across re-runs). Counts are deterministic and independent of the judge.
@@ -12,7 +14,7 @@
 | Dataset | What it measures | Home Depot | Lowe's | Winner |
 |---|---|---|---|---|
 | **Synonym / category** | Do equivalent terms return equivalent results? | **30%** consistent (7/23) | **48%** (11/23) | Lowe's |
-| **Dimensions — relevance** | Are top-N results relevant? (NDCG) | **0.90** | **0.88** | ~tie (HD edge) |
+| **Dimensions — relevance** | Are top-N results relevant? (NDCG) | **0.91** | **0.88** | ~tie (HD edge) |
 | **Dimensions — notation** | Count stable across notation variants? | fails on **hyphenation** | fails on **unit-words** | different failure modes |
 | **Dimensions — hash/spec** | Does `#N` spec change results correctly? | **ignores** the `#` | **over-reacts** to the `#` | neither reliable |
 | **Pro / job-function** | Project/trade queries return the right kit? | **0.83** (16/20 return products) | **0.78** (17/20) | ~tie (HD edge) |
@@ -86,7 +88,11 @@ Natural-language project (`build a deck`, `tile a shower`) and trade (`electrici
 
 **Data-quality note:** an initial Lowe's pass under-counted because Lowe's renders results slowly (≈9–10 s); several queries first read as empty and were **render-timing artifacts, not real failures** — corrected here with a longer capture wait. A couple of Lowe's "NDCG 1.0" scores are **uniformly-marginal** sets (every item graded 1, making NDCG trivially 1.0) — read them with the grades, not the score alone.
 
-**Read:** For project/trade shopping the two are **close**, with a slight Home Depot edge. Both understand most project phrasings; the real differentiators are HD monetizing installs as services and a few specific Lowe's queries (faucet/toilet/paint) that return little.
+**The core problem (both retailers):** Home Depot and Lowe's *both publish curated project / job-function pages* — Home Depot has a "build a deck" project guide — but **search doesn't recognize the project intent and route to them**. It runs the query as a keyword product search and returns a generic list instead. The destination content already exists; search just doesn't connect the query to it.
+
+**Recommendation:** detect project/job-function intent (`build a deck`, `tile a shower`) and **redirect the search to the retailer's existing curated project page**, rather than returning a generic product list.
+
+**Read:** For project/trade shopping the two are **close**, with a slight Home Depot edge. Both understand most product phrasings; the real differentiators are HD monetizing installs as services, a few specific Lowe's queries (faucet/toilet/paint) that return little, and — for both — search failing to route project intent to the project pages they already have.
 
 ---
 

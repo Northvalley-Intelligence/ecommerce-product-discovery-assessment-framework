@@ -5,7 +5,7 @@
   "homedepot",
   "lowes"
  ],
- "captured_at": "20260731T123624Z",
+ "captured_at": "20260801T011959Z",
  "captured": true,
  "datasets": [
   {
@@ -938,8 +938,8 @@
     "homedepot": {
      "site": "homedepot",
      "name": "The Home Depot",
-     "score": 90,
-     "score_label": "mean NDCG@10, n=24",
+     "score": 91,
+     "score_label": "mean NDCG@10, n=27",
      "cases": [
       {
        "query": "1/2 in screw",
@@ -2247,6 +2247,138 @@
          "grade": 3,
          "reason": "Half-inch screw; 1/2-in equals 1/2 in.",
          "t": "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+        }
+       ]
+      },
+      {
+       "query": "1/2\" screw",
+       "ndcg": 0.975,
+       "k": 6,
+       "total": null,
+       "count_ratio": null,
+       "band": null,
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 inch screw.",
+         "t": "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#4 is the No. 4 gauge; matches 1/2 inch screw.",
+         "t": "#4 x 1/2 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Exact match: 1/2 inch screw.",
+         "t": "8 x 1/2 in. Phillips Truss Head Drill Point Lath Screws (260-Pack)"
+        },
+        {
+         "grade": 0,
+         "reason": "Screw size notation does not match; uses gauge instead of inch measurement.",
+         "t": "#9 x 2-1/2 in. Silver Metal Connector Torx Drive Washer Head Wood Deck Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 inch screw.",
+         "t": "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2 inch screw.",
+         "t": "#8 x 1/2 in. Zinc Phillips Flat Head Wood Screw (100-Pack)"
+        }
+       ]
+      },
+      {
+       "query": "0.5 in screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 4612,
+       "count_ratio": 1.45,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 0.5 inch screw.",
+         "t": "#8 x 1/2 in. Zinc Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 0.5 inch screw.",
+         "t": "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Half-inch screw; 1/2-in equals 0.5 in.",
+         "t": "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#4 is the No. 4 gauge; matches .5 inch screw.",
+         "t": "#4 x 1/2 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 0.5 inch screw.",
+         "t": "#8 1/2 in. Phillips Pan-Head Self-Drilling Screws (300-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#6-18 is the No. 6 gauge; matches .5 inch screw.",
+         "t": "#6-18 x 1/2 in. Phillips Pan-Head Sharp Point Screw (300-Pack)"
+        }
+       ]
+      },
+      {
+       "query": "1/2-in screw",
+       "ndcg": 1,
+       "k": 6,
+       "total": 947,
+       "count_ratio": 0.3,
+       "band": [
+        0.7,
+        1.4
+       ],
+       "jaccard": null,
+       "verdict": "pass",
+       "products": [
+        {
+         "grade": 3,
+         "reason": "#4 is the No. 4 gauge; matches 1/2-in screw.",
+         "t": "#4 x 1/2 in. Phillips Flat Head Zinc Plated Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "Half-inch screw; 1/2-in equals 1/2 in.",
+         "t": "8 x 1/2 in. Phillips Truss Head Sharp Point Lath Screws (260-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2-in screw.",
+         "t": "#8 x 1/2 in. Philips Truss-Head Standard Thread Wood Screw Zinc (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2-in screw.",
+         "t": "#8 x 1/2 in. Zinc Phillips Flat Head Wood Screw (100-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2-in screw.",
+         "t": "#8 1/2 in. Phillips Pan-Head Self-Drilling Screws (300-Pack)"
+        },
+        {
+         "grade": 3,
+         "reason": "#8 is the No. 8 gauge; matches 1/2-in screw.",
+         "t": "#8 x 1/2 in. Phillips Pan Head Zinc Plated Sheet Metal Screw (100-Pack)"
         }
        ]
       },

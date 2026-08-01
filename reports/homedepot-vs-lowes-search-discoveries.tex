@@ -2,8 +2,13 @@
 
 \newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
 \input{northvalley-template-assets/northvalley-brand.sty}
+% --- Unbranded edition: neutralize the Northvalley identity for this version ---
+\renewcommand{\NorthvalleyLogo}[1][]{}
+\renewcommand{\NorthvalleyBusinessName}{Retail Search Relevance Benchmark}
+\renewcommand{\NorthvalleyContactLine}{}
 \usepackage[letterpaper,margin=0.62in,top=0.62in,bottom=0.72in]{geometry}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage[hidelinks]{hyperref}
 
 \renewcommand{\familydefault}{\sfdefault}
@@ -20,7 +25,7 @@
 \newcommand{\ReportClient}{Home Improvement Retail Search Benchmark}
 \newcommand{\ReportDate}{2026-07-31}
 \newcommand{\ReportSummary}{An LLM-judged relevance benchmark of Home Depot and Lowe's on-site search across three query datasets and 900+ graded product judgments --- showing where each engine wins, breaks, and loses shoppers.}
-\newcommand{\ReportPreparedBy}{Northvalley Intelligence LLC}
+\newcommand{\ReportPreparedBy}{an LLM-judged search-evaluation harness}
 
 \newcommand{\ReportPageHeader}[1]{%
   \begin{tikzpicture}[remember picture,overlay]
@@ -165,7 +170,11 @@
 {\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]
 {\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}\ReportClient}\par
 \vspace{0.08in}
-{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \ReportPreparedBy}
+{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \ReportPreparedBy}\par
+\vspace{0.16in}
+{\color{NVIMuted}\rule{2.6in}{0.4pt}}\par
+\vspace{0.05in}
+{\fontsize{8}{10}\selectfont\itshape\color{NVIMuted}\textbf{Disclaimer.} A quick, exploratory analysis produced for rapid personal research only. It is nowhere near complete, has not been verified, and must not be cited or referenced. The approach itself is sound and can be made reliable with retailer API access, real query logs (actual search terms), and higher volume.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.31\linewidth}
@@ -173,9 +182,9 @@
 \vspace{0.10in}
 \NorthvalleyLogo[0.88in]\par
 \vspace{0.24in}
-\ReportDarkCard{Report Promise}{Decision-ready findings, practical priorities, and a clear path from review to implementation.}
+\ReportDarkCard{At a Glance}{Synonyms favor Lowe's (48 vs 30\%). Core relevance is a tie (0.91 / 0.88). Both break oppositely on industry specs, and both fail to route project queries to the project pages they already have.}
 \vspace{0.12in}
-\MetricCard{Format}{Multi-page}{Cover, executive summary, findings, roadmap, and next steps.}
+\MetricCard{Contents}{Findings}{Executive summary, key findings with evidence, and a scored-terms appendix.}
 \end{minipage}
 \end{titlepage}
 \hypersetup{pageanchor=true}
@@ -184,6 +193,8 @@
 \ReportPageHeader{Executive Summary}
 \ReportFooter
 \ReportSection{Executive Summary}
+{\fontsize{8.4}{10.4}\selectfont\itshape\color{NVIMuted}\textbf{Disclaimer:} quick, exploratory analysis for rapid personal research --- nowhere near complete, not verified, and not to be cited or referenced. The \textbf{approach itself is sound and can be made production-reliable} given retailer API access, real query logs (actual search terms), and higher volume; the current numbers rest on small per-query samples and browser-read counts.}\par
+\vspace{0.10in}
 \begin{minipage}[t]{0.64\linewidth}
 \ReportDarkCard{The Headline}{Home Depot and Lowe's are near-tied on core relevance, but they fail in opposite, fixable ways. Lowe's wins on synonyms; Home Depot edges project search; and both mishandle industry specs --- Home Depot ignores them, Lowe's over-reacts to them.}
 \vspace{0.12in}
@@ -198,7 +209,7 @@
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.30\linewidth}
-\MetricCard{Dimensions NDCG}{0.90 / 0.88}{Home Depot vs Lowe's --- near tie on core relevance.}
+\MetricCard{Dimensions NDCG}{0.91 / 0.88}{Home Depot vs Lowe's --- near tie on core relevance.}
 \vspace{0.09in}
 \MetricCard{Synonym match}{30 / 48\%}{Lowe's returns consistent results for more equivalent terms.}
 \vspace{0.09in}
@@ -214,7 +225,7 @@
 \vspace{0.10in}
 \FindingBlock{Finding 02}{Notation fails oppositely}{Home Depot breaks on \textbf{hyphenation}: ``1/2-in screw'' drops about 70\% of the results of ``1/2 in screw'' --- a recall cliff. Lowe's breaks on \textbf{unit words}: ``10 foot cable'' returns a fraction of ``10 ft cable''. Relevance of what each keeps stays high, so these are recall failures, not ranking failures.}
 \vspace{0.10in}
-\FindingBlock{Finding 03}{Project search favors Home Depot}{Both return real kits for most projects. Home Depot edges it and \textbf{monetizes ``install a\ldots''} queries as paid services; a few Lowe's project queries (kitchen faucet, toilet, paint a room) return little. Both fail bare trade names --- ``electrician'' and ``landscaper'' return \textbf{zero products}.}
+\FindingBlock{Finding 03}{Project intent isn't routed to project pages}{Both retailers \textbf{publish curated project / job-function pages} (Home Depot's ``build a deck'' project guide), but search does \textbf{not recognize the project intent and route to them} --- it returns a generic product list instead. The content already exists; search simply does not connect the query to it. Home Depot also monetizes ``install a\ldots'' as paid services; both fail bare trade names (``electrician'', ``landscaper'' return \textbf{zero products}).}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.46\linewidth}
@@ -235,62 +246,79 @@ replace a kitchen faucet (Lowe's) & 5 results, a stray wire listing; HD returns 
 \end{minipage}
 
 \newpage
-\ReportPageHeader{Recommendations}
+\ReportPageHeader{Appendix — Method and Scores}
 \ReportFooter
-\ReportSection{Recommended Improvements}
-\ReportBody{The findings translate into a clear priority sequence. Each fix targets a specific, reproducible query behavior --- ordered by shopper impact and engineering self-containment.}\par
-\vspace{0.14in}
-\begin{tabularx}{\linewidth}{@{}L{0.13\linewidth}L{0.26\linewidth}N L{0.17\linewidth}@{}}
+\ReportSection{Appendix A — Relevance Judge}
+\ReportBody{Every returned product was graded 0--3 for relevance to the query intent by \textbf{Meta Llama 3.2 3B} (model \texttt{llama3.2:3b}), run \textbf{locally} via Ollama and orchestrated by the Cortex evaluation service at \textbf{temperature 0} (deterministic; re-runs are stable). Grades: 3 = perfect match, 2 = relevant, 1 = marginal, 0 = irrelevant. Per-query \textbf{NDCG} (0--1) discounts by rank, so a mis-ordered or partly-irrelevant top set scores lower. Every grade is a stored, inspectable trace of the exact prompt and model output. The judge was validated against a hand-labelled gold set (12/13) and two notation defects were fixed before scoring. A ``\textemdash{}'' below means the query returned no products (or was not captured) on that retailer. The synonym dataset is scored by result-count consistency, not LLM NDCG, so it is not listed here.}\par
+\vspace{0.12in}
+\ReportSection{Appendix B — Search Terms and NDCG Scores}
+{\fontsize{8.3}{10}\selectfont
+\begin{longtable}{@{}L{0.56\linewidth}rr@{}}
 \toprule
-\textbf{Phase} & \textbf{Focus} & \textbf{Recommended work} & \textbf{Outcome}\\
+\textbf{Search term} & \textbf{Home Depot} & \textbf{Lowe's}\\
 \midrule
-\PhaseRow{Now}{Spec parsing (both)}{Treat ``\#57'', ``\#4'', ``\#7'' as catalog gradations, not noise; for Lowe's, stop the ``\#'' from derailing the query.}{Finds the exact SKU}
-\PhaseRow{Next}{Notation normalize}{Make hyphen / unit-word / decimal / quote variants equivalent (``1/2-in'' = ``1/2 in'' = ``0.5 in'').}{No recall cliffs}
-\PhaseRow{Then}{Synonyms (esp.\ HD)}{Map equivalents and brands: drywall/sheetrock, weed killer/roundup, concrete/quikrete.}{Fewer dead-ends}
-\PhaseRow{Later}{Project kits}{Return complete project kits for natural-language jobs; disambiguate bare trade names.}{Larger baskets}
+\endfirsthead
+\toprule
+\textbf{Search term} & \textbf{Home Depot} & \textbf{Lowe's}\\
+\midrule
+\endhead
+\multicolumn{3}{@{}l}{\rule{0pt}{2.2ex}\textbf{\color{NVIAccentDark}Dimensions — notation \& hash (32 terms)}}\\[2pt]
+1/2 in screw & 1.00 & 0.95 \\
+3/8 in bolt & 0.86 & 0.80 \\
+\#8 wood screw & 1.00 & 1.00 \\
+3/4 in pvc pipe & 1.00 & 1.00 \\
+1/2 in copper pipe & 0.94 & 1.00 \\
+12 gauge wire & 0.98 & 0.79 \\
+10 ft cable & 0.79 & 0.75 \\
+10 mm socket & 0.86 & 0.73 \\
+\#4 rebar & 0.98 & 0.99 \\
+\#7 drill bit & 0.95 & 0.80 \\
+\#57 stone & 0.79 & 0.94 \\
+\#40 roller chain & 0.89 & 0.82 \\
+\#15 felt & 0.97 & 0.98 \\
+4 rebar & 0.77 & 0.96 \\
+1/2 in rebar & 0.98 & 1.00 \\
+7 mm drill bit & 0.80 & 1.00 \\
+7 in drill bit & 0.93 & 0.84 \\
+57 stone & 0.79 & 0.72 \\
+40 mm chain & 0.69 & 0.79 \\
+15 in felt & 0.89 & 0.99 \\
+8 in wood screw & 0.99 & 0.95 \\
+8 mm wood screw & 0.88 & 0.80 \\
+1/2in screw & 1.00 & 0.85 \\
+1/2'' screw & 0.97 & 0.84 \\
+0.5 in screw & 1.00 & 1.00 \\
+1/2-in screw & 1.00 & 0.85 \\
+no 8 wood screw & 0.91 & 1.00 \\
+10' cable & \textemdash{} & \textemdash{} \\
+10 foot cable & \textemdash{} & 0.80 \\
+120 in cable & \textemdash{} & 0.64 \\
+10mm socket & \textemdash{} & 0.71 \\
+15 lb felt & \textemdash{} & 0.94 \\
+\midrule
+\multicolumn{3}{@{}l}{\rule{0pt}{2.4ex}\textbf{\color{NVIAccentDark}Pro / job-function (20 terms)}}\\[2pt]
+build a deck & 0.66 & 0.48 \\
+hang drywall & 0.68 & 0.71 \\
+unclog a drain & 0.82 & 0.90 \\
+install a ceiling fan & \textemdash{} & 0.73 \\
+tile a shower & 0.96 & 0.95 \\
+paint a room & 0.72 & 0.69 \\
+install a toilet & \textemdash{} & \textemdash{} \\
+build a raised garden bed & 0.93 & 0.92 \\
+replace a kitchen faucet & 0.84 & 0.00 \\
+fix a leaky pipe & 0.85 & 0.97 \\
+pour a concrete slab & 0.85 & 0.97 \\
+insulate an attic & 0.66 & 0.76 \\
+hang an interior door & 0.91 & 0.97 \\
+electrician & \textemdash{} & \textemdash{} \\
+plumber tools & 0.82 & 0.79 \\
+welder & 0.88 & 1.00 \\
+carpenter tools & 0.76 & 0.79 \\
+hvac technician & 0.90 & 0.78 \\
+landscaper & \textemdash{} & \textemdash{} \\
+painter tools & 1.00 & 0.91 \\
 \bottomrule
-\end{tabularx}
-\vspace{0.18in}
-\begin{minipage}[t]{0.48\linewidth}
-\ReportCard{Per-Retailer Priority}{\textbf{Home Depot:} spec awareness (the ``\#'' is ignored) and synonym coverage (30\% vs 48\%). \textbf{Lowe's:} stop the ``\#'' from derailing to the wrong category, and shore up a few empty project queries.}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.46\linewidth}
-\ReportCard{How This Was Measured}{Live search on both sites via bounded same-origin browser reads; deterministic result counts; every returned product graded 0--3 by a local LLM judge (auditable per-item traces) and scored as NDCG; plus count-ratio and SKU-overlap checks. Repeatable and self-verifiable.}
-\end{minipage}
-
-\newpage
-\ReportPageHeader{Roadmap and Next Steps}
-\ReportFooter
-\ReportSection{Roadmap and Next Steps}
-\begin{minipage}[t]{0.47\linewidth}
-\ReportDarkCard{Where This Goes Next}{The evaluation harness is live and repeatable --- three datasets, both retailers, LLM-judged NDCG, drillable to per-product grades. The next axis is recommendation quality: are a product's suggested add-ons the ones a shopper would actually buy alongside it?}
-\vspace{0.12in}
-\ReportSection{Extend the Benchmark}
-\begin{itemize}
-\item Complementary-recommendation quality (does a drill suggest bits, batteries, a case?)
-\item Full transformation-type coverage across every dimension seed
-\item Additional retailers and departments under the same rubric
-\item Track scores over time as each engine ships fixes
-\end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.47\linewidth}
-\ReportCard{Trust and Auditability}{Every grade behind every score is a stored trace with the exact prompt and model output --- a questionable number can be inspected, not just trusted. The judge was validated against a hand-labelled gold set, and two notation defects were caught and fixed before scoring.}
-\vspace{0.12in}
-\ReportSection{At a Glance}
-\begin{itemize}
-\item Synonyms: Lowe's ahead (48\% vs 30\%)
-\item Dimensions relevance: tie (0.90 / 0.88), opposite spec failures
-\item Project / trade: Home Depot edge (0.83 / 0.78)
-\item 900+ graded judgments, fully auditable
-\end{itemize}
-\end{minipage}
-\vfill
-\begin{center}
-{\fontsize{16}{19}\selectfont\bfseries\color{NVIInk}Northvalley Intelligence}\\[0.06in]
-{\color{NVIAccent}\rule{2.2in}{0.8pt}}\\[0.08in]
-\ReportFine{\NorthvalleyContactLine}
-\end{center}
+\end{longtable}
+}
 
 \end{document}

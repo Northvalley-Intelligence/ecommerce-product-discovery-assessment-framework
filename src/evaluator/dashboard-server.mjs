@@ -1725,7 +1725,7 @@ function dashboardPage() {
       const body = data.datasets.map((ds) =>
         '<tr><td><strong>' + escapeHtml(ds.name) + '</strong><div class="muted" style="font-size:11px">' + escapeHtml(ds.scoring || '') + '</div></td>' +
         retailers.map((r) => scoreCell(ds.id, r, ds)).join('') + '</tr>').join('');
-      const reportLink = '<div style="margin:0 0 9px;font-size:12px"><a class="relink" href="' + artifactHref('reports/homedepot-vs-lowes-search-discoveries.pdf') + '" target="_blank" rel="noopener" title="Home Depot vs Lowe&#39;s search relevance discoveries — PDF report">📄 Download the discoveries report (PDF)</a></div>';
+      const reportLink = '<div style="margin:0 0 9px;font-size:12px"><a class="relink" href="' + artifactHref('reports/homedepot-vs-lowes-search-discoveries.pdf') + '&t=' + Date.now() + '" target="_blank" rel="noopener" title="Home Depot vs Lowe&#39;s search relevance discoveries — PDF report">📄 Download the discoveries report (PDF)</a></div>';
       let html = panel('Search datasets — retailer scoreboard', 'Score per dataset per retailer · higher = better · click a score to drill · ● severity, grade 3 → 0',
         reportLink + '<div class="table-wrap"><table><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>');
       // This retailer's cases for each dataset (drill target).
