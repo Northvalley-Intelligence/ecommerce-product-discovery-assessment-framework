@@ -1,0 +1,58 @@
+{
+ "profile_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "profiled_at": "2026-08-11T23:38:13.808Z",
+ "platform": "enterprise_custom",
+ "engine": {
+  "kind": "storefront_html",
+  "url_template": "https://www.catfootwear.com/US/en/search?q={q}&sz=300",
+  "method": "GET",
+  "results_path": "product tiles in server-rendered HTML (Salesforce Commerce Cloud / SFRA)",
+  "title_path": "img alt text, base name before color",
+  "total_path": "distinct product tiles",
+  "excludes_sponsored": true,
+  "carousel_exclusions": [
+   "recommended-product-tile"
+  ]
+ },
+ "verified_against_live_ui": {
+  "control_terms": [
+   {
+    "term": "steel toe",
+    "live_count": 26,
+    "profiled_count": 26,
+    "live_top3": [
+     "Abbey Steel Toe Work Boot",
+     "Threshold Waterproof Steel Toe Work Boot",
+     "Revolver Steel Toe Work Boot"
+    ],
+    "profiled_top3": [
+     "Abbey Steel Toe Work Boot",
+     "Threshold Waterproof Steel Toe Work Boot",
+     "Revolver Steel Toe Work Boot"
+    ]
+   },
+   {
+    "term": "work boots",
+    "live_count": 72,
+    "profiled_count": 72,
+    "live_top3": [
+     "Colorado Equip 6 Waterproof Composite Toe Work Boot"
+    ],
+    "profiled_top3": [
+     "Colorado Equip 6 Waterproof Composite Toe Work Boot"
+    ]
+   }
+  ],
+  "matches": true,
+  "checked_at": "2026-08-11T23:38:13.808Z",
+  "notes": "L01/L10 - SFCC/SFRA. steel toe matches on fetch and live UI; work boots 302-redirects to the category PLP (rst=); known-item model queries (diagnostic) redirect to the product page. Product identity is the normalized slug/title (search exposes titles, not SKU IDs)."
+ },
+ "pacing": {
+  "min_interval_ms": 500,
+  "chunk_size": 50,
+  "cooldown_ms": 0,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
+ }
+}

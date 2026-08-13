@@ -1,0 +1,252 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|decorate a nursery",
+   "q": "decorate a nursery",
+   "ndcg": 0.9515730533554545,
+   "grades": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "target|keep drinks cold at the beach",
+   "q": "keep drinks cold at the beach",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|reduce clutter in my bathroom",
+   "q": "reduce clutter in my bathroom",
+   "ndcg": 0.7688272334591923,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift under 25 dollars",
+   "q": "gift under 25 dollars",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|something fun for a road trip",
+   "q": "something fun for a road trip",
+   "ndcg": 0.9244065274370025,
+   "grades": [
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|warm coat for winter",
+   "q": "warm coat for winter",
+   "ndcg": 0.6046195494162488,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    3,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift for a dog lover",
+   "q": "gift for a dog lover",
+   "ndcg": 0.793618894415833,
+   "grades": [
+    2,
+    2,
+    1,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|65 inch qled tv",
+   "q": "65 inch qled tv",
+   "ndcg": 0.8815261313700781,
+   "grades": [
+    3,
+    2,
+    0,
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "query_id": "target|stainless steel cookware set",
+   "q": "stainless steel cookware set",
+   "ndcg": 0.9627752745280407,
+   "grades": [
+    3,
+    3,
+    2,
+    2,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|nonstick frying pan",
+   "q": "nonstick frying pan",
+   "ndcg": 0.9887181162657254,
+   "grades": [
+    3,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|high waisted black leggings",
+   "q": "high waisted black leggings",
+   "ndcg": 0.968746075807192,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|organic cotton crib sheet",
+   "q": "organic cotton crib sheet",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|queen size cooling sheets",
+   "q": "queen size cooling sheets",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|wireless noise cancelling headphones",
+   "q": "wireless noise cancelling headphones",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|bluetooth portable speaker",
+   "q": "bluetooth portable speaker",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|stackable storage bins",
+   "q": "stackable storage bins",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|blackout curtains 84 inch",
+   "q": "blackout curtains 84 inch",
+   "ndcg": 0.9838137941109318,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|reusable stainless steel water bottle",
+   "q": "reusable stainless steel water bottle",
+   "ndcg": 0.9838137941109318,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|memory foam pillow",
+   "q": "memory foam pillow",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  }
+ ]
+}

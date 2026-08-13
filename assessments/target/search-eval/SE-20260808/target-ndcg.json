@@ -1,0 +1,601 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|couch",
+   "q": "couch",
+   "ndcg": 0.96373818477286,
+   "grades": [
+    3,
+    3,
+    1,
+    3,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|settee",
+   "q": "settee",
+   "ndcg": 0.9438147924866596,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|loveseat",
+   "q": "loveseat",
+   "ndcg": 0.9823867512294401,
+   "grades": [
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "target|flatware",
+   "q": "flatware",
+   "ndcg": 0.946893939970018,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|cutlery",
+   "q": "cutlery",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|trainers",
+   "q": "trainers",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|pram",
+   "q": "pram",
+   "ndcg": 0.8600691413894516,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|pushchair",
+   "q": "pushchair",
+   "ndcg": 0.7754859877084574,
+   "grades": [
+    2,
+    2,
+    0,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "target|rubbish bin",
+   "q": "rubbish bin",
+   "ndcg": 0.9709286432396583,
+   "grades": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "query_id": "target|duvet",
+   "q": "duvet",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|crockpot",
+   "q": "crockpot",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|tennis shoes",
+   "q": "tennis shoes",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|garbage can",
+   "q": "garbage can",
+   "ndcg": 0.9709286432396583,
+   "grades": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "query_id": "target|quilt",
+   "q": "quilt",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|jumper",
+   "q": "jumper",
+   "ndcg": 0.7698986984637216,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    0
+   ]
+  },
+  {
+   "query_id": "target|nappies",
+   "q": "nappies",
+   "ndcg": 0.8114768559342272,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "target|ice lolly",
+   "q": "ice lolly",
+   "ndcg": 0.9470686546392107,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|55 inch 4k oled tv",
+   "q": "55 inch 4k oled tv",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "query_id": "target|cast iron skillet 12 inch",
+   "q": "cast iron skillet 12 inch",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|velvet accent chair",
+   "q": "velvet accent chair",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|marble coffee table",
+   "q": "marble coffee table",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|waterproof hiking boots",
+   "q": "waterproof hiking boots",
+   "ndcg": 0.9933390559026385,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|gaming chair with lumbar support",
+   "q": "gaming chair with lumbar support",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|memory foam pillow",
+   "q": "memory foam pillow",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|stainless steel cookware set",
+   "q": "stainless steel cookware set",
+   "ndcg": 0.746992682032627,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|high waisted black leggings",
+   "q": "high waisted black leggings",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|air fryer 8 quart",
+   "q": "air fryer 8 quart",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "query_id": "target|everything for a college dorm",
+   "q": "everything for a college dorm",
+   "ndcg": 0.6240505200038379,
+   "grades": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "query_id": "target|host a backyard bbq",
+   "q": "host a backyard bbq",
+   "ndcg": 0.9438661545147249,
+   "grades": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "query_id": "target|home office setup",
+   "q": "home office setup",
+   "ndcg": 0.7688272334591923,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|newborn baby essentials",
+   "q": "newborn baby essentials",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|back to school supplies",
+   "q": "back to school supplies",
+   "ndcg": 0.8265982779544715,
+   "grades": [
+    1,
+    2,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|home gym equipment",
+   "q": "home gym equipment",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|thanksgiving dinner table",
+   "q": "thanksgiving dinner table",
+   "ndcg": 0.6039071644781281,
+   "grades": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "query_id": "target|small space storage solutions",
+   "q": "small space storage solutions",
+   "ndcg": 0.8379316458019734,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift for a new mom",
+   "q": "gift for a new mom",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|something to organize my kitchen",
+   "q": "something to organize my kitchen",
+   "ndcg": 0.9933390559026385,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|what to get a teenage girl",
+   "q": "what to get a teenage girl",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift for someone who loves coffee",
+   "q": "gift for someone who loves coffee",
+   "ndcg": 0.8115076132876992,
+   "grades": [
+    1,
+    2,
+    1,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|lego star wars",
+   "q": "lego star wars",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|dyson v8",
+   "q": "dyson v8",
+   "ndcg": 0.6182885020492784,
+   "grades": [
+    0,
+    0,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|coffee table",
+   "q": "coffee table",
+   "ndcg": 0.8145672023038535,
+   "grades": [
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|cocktail table",
+   "q": "cocktail table",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|walnut dining table",
+   "q": "walnut dining table",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|furnish a living room",
+   "q": "furnish a living room",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift for a 5 year old boy",
+   "q": "gift for a 5 year old boy",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  }
+ ]
+}

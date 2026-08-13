@@ -1,0 +1,256 @@
+{
+ "imported_at": "2026-08-07T18:05:32.006Z",
+ "parsed_rows": 50,
+ "matched": [
+  {
+   "term": "writing desk",
+   "volume": 22200,
+   "raw": "22,200"
+  },
+  {
+   "term": "woven dining chair",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "walnut dining table",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "velvet chair",
+   "volume": 3600,
+   "raw": "3,600"
+  },
+  {
+   "term": "sofa",
+   "volume": 201000,
+   "raw": "201,000"
+  },
+  {
+   "term": "small space seating",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "sideboard",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "side table",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "side chair",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "settee",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "restaurant chairs",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "reading chair",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "rattan chair",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "pouf",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "outdoor seating",
+   "volume": 22200,
+   "raw": "22,200"
+  },
+  {
+   "term": "ottoman",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "oak dining table",
+   "volume": 8100,
+   "raw": "8,100"
+  },
+  {
+   "term": "marble side table",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "marble coffee table",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "loveseat",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "lounge chair",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "leather lounge chair",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "leather dining chair",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "kitchen stool",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "home office",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "furnish a living room",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "footstool",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "entryway furniture",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "entryway bench",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "end table",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "dining table",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "dining set for 6",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "dining chair",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "desk",
+   "volume": 246000,
+   "raw": "246,000"
+  },
+  {
+   "term": "credenza",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "counter stool",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "couch",
+   "volume": 550000,
+   "raw": "550,000"
+  },
+  {
+   "term": "console table",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "coffee table",
+   "volume": 246000,
+   "raw": "246,000"
+  },
+  {
+   "term": "cocktail table",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "cane dining chair",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "buffet",
+   "volume": 673000,
+   "raw": "673,000"
+  },
+  {
+   "term": "boucle chair",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "black metal stool",
+   "volume": 320,
+   "raw": "320"
+  },
+  {
+   "term": "bench",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "bar stools for a kitchen island",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "bar stool",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "armchair",
+   "volume": 40500,
+   "raw": "40,500"
+  },
+  {
+   "term": "accent table",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "accent chair",
+   "volume": 110000,
+   "raw": "110,000"
+  }
+ ]
+}

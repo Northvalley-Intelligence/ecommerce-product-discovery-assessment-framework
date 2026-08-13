@@ -1,0 +1,174 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|waterproof hiking boots",
+   "q": "waterproof hiking boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|fleece lined leggings",
+   "q": "fleece lined leggings",
+   "ndcg": 0.9838137941109318,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|rose gold desk lamp",
+   "q": "rose gold desk lamp",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|kids rolling backpack",
+   "q": "kids rolling backpack",
+   "ndcg": 0.9838137941109318,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|12 cup programmable coffee maker",
+   "q": "12 cup programmable coffee maker",
+   "ndcg": 0.8020648872024343,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "target|air fryer 8 quart",
+   "q": "air fryer 8 quart",
+   "ndcg": 0.8298313311044833,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|gaming chair with lumbar support",
+   "q": "gaming chair with lumbar support",
+   "ndcg": 0.9933390559026385,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|standing desk adjustable",
+   "q": "standing desk adjustable",
+   "ndcg": 0.9933390559026385,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|slow cooker",
+   "q": "slow cooker",
+   "ndcg": 0.8938995903033765,
+   "grades": [
+    2,
+    3,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|crockpot",
+   "q": "crockpot",
+   "ndcg": 0.8363307499782423,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|crock pot",
+   "q": "crock pot",
+   "ndcg": 0.8363307499782423,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|sweater",
+   "q": "sweater",
+   "ndcg": 0.7429246355196535,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|jumper",
+   "q": "jumper",
+   "ndcg": 0.9090610362306536,
+   "grades": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    2
+   ]
+  }
+ ]
+}

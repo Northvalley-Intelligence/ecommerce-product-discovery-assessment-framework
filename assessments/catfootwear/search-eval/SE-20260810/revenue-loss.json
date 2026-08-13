@@ -1,0 +1,1296 @@
+{
+ "generated_from": {
+  "board": "eval-board.json",
+  "demand": "demand-volume.json",
+  "eval_id": "SE-20260810",
+  "retailer": "catfootwear"
+ },
+ "disclaimer": "MODELED ESTIMATE from a bounded query sample using stated assumptions and REAL Keyword Planner volumes. Not audited revenue. A production figure needs the retailer's own query logs, traffic share, AOV and conversion. Reported as a range.",
+ "assumptions": {
+  "accept_grade": 2,
+  "months_per_year": 12,
+  "scenarios": {
+   "conservative": {
+    "market_share": 0.01,
+    "conversion_rate": 0.015,
+    "aov": 110
+   },
+   "base": {
+    "market_share": 0.02,
+    "conversion_rate": 0.025,
+    "aov": 130
+   },
+   "aggressive": {
+    "market_share": 0.035,
+    "conversion_rate": 0.035,
+    "aov": 160
+   }
+  },
+  "notes": {
+   "market_share": "Cat Footwear's share of a term's US demand (single niche work-footwear brand; lower than a broad retailer).",
+   "conversion_rate": "Footwear on-site search conversion when results are relevant.",
+   "aov": "Cat Footwear average order value (work boots run $100-200).",
+   "accept_grade": "Grade >= 2/3 is acceptable (no loss); zero-result search-bugs are full loss; assortment gaps excluded."
+  }
+ },
+ "coverage": {
+  "demand_terms": 174,
+  "graded_and_priced": 88,
+  "contributing_terms": 88
+ },
+ "annual_lost": {
+  "conservative": 79108,
+  "base": 311645,
+  "aggressive": 939720
+ },
+ "extrapolation": {
+  "method": "Average annual loss per demand-priced term (annual_lost / priced_terms) scaled to project_to terms.",
+  "basis_terms": 88,
+  "per_term_avg_annual": {
+   "conservative": 899,
+   "base": 3541,
+   "aggressive": 10679
+  },
+  "project_to": 1000,
+  "projected_annual": {
+   "conservative": 899000,
+   "base": 3541000,
+   "aggressive": 10679000
+  },
+  "caveat": "Illustrative projection: assumes the next 1000 search terms share a similar average demand and failure profile as the measured sample. Real query catalogs follow a long-tail demand distribution, so validate against actual query logs."
+ },
+ "per_term": [
+  {
+   "term": "hikers",
+   "dataset": "synonym",
+   "volume": 368000,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 9108,
+    "base": 35880,
+    "aggressive": 108192
+   }
+  },
+  {
+   "term": "sneakers",
+   "dataset": "synonym",
+   "volume": 301000,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 7450,
+    "base": 29348,
+    "aggressive": 88494
+   }
+  },
+  {
+   "term": "rain boots",
+   "dataset": "synonym",
+   "volume": 74000,
+   "grade": 1,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 7326,
+    "base": 28860,
+    "aggressive": 87024
+   }
+  },
+  {
+   "term": "non slip shoes",
+   "dataset": "attribute",
+   "volume": 90500,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 4480,
+    "base": 17648,
+    "aggressive": 53214
+   }
+  },
+  {
+   "term": "hiking boots",
+   "dataset": "synonym",
+   "volume": 90500,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 4480,
+    "base": 17648,
+    "aggressive": 53214
+   }
+  },
+  {
+   "term": "snow boots",
+   "dataset": "synonym",
+   "volume": 110000,
+   "grade": 1.67,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 3594,
+    "base": 14157,
+    "aggressive": 42689
+   }
+  },
+  {
+   "term": "boots for hunting",
+   "dataset": "job_function",
+   "volume": 18100,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 3584,
+    "base": 14118,
+    "aggressive": 42571
+   }
+  },
+  {
+   "term": "leather boots",
+   "dataset": "attribute",
+   "volume": 49500,
+   "grade": 1.38,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.31,
+   "lost": {
+    "conservative": 3038,
+    "base": 11969,
+    "aggressive": 36091
+   }
+  },
+  {
+   "term": "ankle boots",
+   "dataset": "synonym",
+   "volume": 60500,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 2995,
+    "base": 11798,
+    "aggressive": 35574
+   }
+  },
+  {
+   "term": "brown boots",
+   "dataset": "attribute",
+   "volume": 74000,
+   "grade": 1.6,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.2,
+   "lost": {
+    "conservative": 2930,
+    "base": 11544,
+    "aggressive": 34810
+   }
+  },
+  {
+   "term": "winter boots",
+   "dataset": "synonym",
+   "volume": 74000,
+   "grade": 1.63,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 2711,
+    "base": 10678,
+    "aggressive": 32199
+   }
+  },
+  {
+   "term": "lace up boots",
+   "dataset": "synonym",
+   "volume": 9900,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 1960,
+    "base": 7722,
+    "aggressive": 23285
+   }
+  },
+  {
+   "term": "booties",
+   "dataset": "synonym",
+   "volume": 33100,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 1638,
+    "base": 6455,
+    "aggressive": 19463
+   }
+  },
+  {
+   "term": "trail shoes",
+   "dataset": "synonym",
+   "volume": 8100,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 1604,
+    "base": 6318,
+    "aggressive": 19051
+   }
+  },
+  {
+   "term": "rubber boots",
+   "dataset": "synonym",
+   "volume": 18100,
+   "grade": 1.25,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.375,
+   "lost": {
+    "conservative": 1344,
+    "base": 5294,
+    "aggressive": 15964
+   }
+  },
+  {
+   "term": "boots for logging",
+   "dataset": "job_function",
+   "volume": 6600,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 1307,
+    "base": 5148,
+    "aggressive": 15523
+   }
+  },
+  {
+   "term": "black boots",
+   "dataset": "attribute",
+   "volume": 110000,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 1307,
+    "base": 5148,
+    "aggressive": 15523
+   }
+  },
+  {
+   "term": "canvas shoes",
+   "dataset": "attribute",
+   "volume": 12100,
+   "grade": 1,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 1198,
+    "base": 4719,
+    "aggressive": 14230
+   }
+  },
+  {
+   "term": "metatarsal boots",
+   "dataset": "attribute",
+   "volume": 5400,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 1069,
+    "base": 4212,
+    "aggressive": 12701
+   }
+  },
+  {
+   "term": "boots for plantar fasciitis",
+   "dataset": "job_function",
+   "volume": 5400,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 1069,
+    "base": 4212,
+    "aggressive": 12701
+   }
+  },
+  {
+   "term": "casual shoes",
+   "dataset": "synonym",
+   "volume": 12100,
+   "grade": 1.25,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.375,
+   "lost": {
+    "conservative": 898,
+    "base": 3539,
+    "aggressive": 10672
+   }
+  },
+  {
+   "term": "suede boots",
+   "dataset": "attribute",
+   "volume": 18100,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 896,
+    "base": 3530,
+    "aggressive": 10643
+   }
+  },
+  {
+   "term": "shoes to wear with jeans",
+   "dataset": "intent",
+   "volume": 4400,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 871,
+    "base": 3432,
+    "aggressive": 10349
+   }
+  },
+  {
+   "term": "shoes for nurses",
+   "dataset": "job_function",
+   "volume": 4400,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 871,
+    "base": 3432,
+    "aggressive": 10349
+   }
+  },
+  {
+   "term": "insulated hunting boots",
+   "dataset": "attribute",
+   "volume": 4400,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 871,
+    "base": 3432,
+    "aggressive": 10349
+   }
+  },
+  {
+   "term": "waterproof hiking boots",
+   "dataset": "attribute",
+   "volume": 33100,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 819,
+    "base": 3227,
+    "aggressive": 9731
+   }
+  },
+  {
+   "term": "slip on shoes",
+   "dataset": "synonym",
+   "volume": 33100,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 819,
+    "base": 3227,
+    "aggressive": 9731
+   }
+  },
+  {
+   "term": "boots for welding",
+   "dataset": "job_function",
+   "volume": 3600,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 713,
+    "base": 2808,
+    "aggressive": 8467
+   }
+  },
+  {
+   "term": "wellington boots",
+   "dataset": "synonym",
+   "volume": 9900,
+   "grade": 1.38,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.31,
+   "lost": {
+    "conservative": 608,
+    "base": 2394,
+    "aggressive": 7218
+   }
+  },
+  {
+   "term": "suede shoes",
+   "dataset": "attribute",
+   "volume": 12100,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 599,
+    "base": 2360,
+    "aggressive": 7115
+   }
+  },
+  {
+   "term": "met guard boots",
+   "dataset": "attribute",
+   "volume": 2900,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 574,
+    "base": 2262,
+    "aggressive": 6821
+   }
+  },
+  {
+   "term": "boots for roofing",
+   "dataset": "job_function",
+   "volume": 8100,
+   "grade": 1.33,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.335,
+   "lost": {
+    "conservative": 537,
+    "base": 2117,
+    "aggressive": 6382
+   }
+  },
+  {
+   "term": "casual sneakers",
+   "dataset": "synonym",
+   "volume": 8100,
+   "grade": 1.43,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.285,
+   "lost": {
+    "conservative": 457,
+    "base": 1801,
+    "aggressive": 5430
+   }
+  },
+  {
+   "term": "slip resistant work shoes",
+   "dataset": "attribute",
+   "volume": 18100,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 448,
+    "base": 1765,
+    "aggressive": 5321
+   }
+  },
+  {
+   "term": "slip resistant shoes",
+   "dataset": "attribute",
+   "volume": 33100,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 393,
+    "base": 1549,
+    "aggressive": 4671
+   }
+  },
+  {
+   "term": "non slip work shoes",
+   "dataset": "attribute",
+   "volume": 33100,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 393,
+    "base": 1549,
+    "aggressive": 4671
+   }
+  },
+  {
+   "term": "full grain leather boots",
+   "dataset": "attribute",
+   "volume": 5400,
+   "grade": 1.4,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.3,
+   "lost": {
+    "conservative": 321,
+    "base": 1264,
+    "aggressive": 3810
+   }
+  },
+  {
+   "term": "shoes for restaurant work",
+   "dataset": "job_function",
+   "volume": 1600,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 317,
+    "base": 1248,
+    "aggressive": 3763
+   }
+  },
+  {
+   "term": "moc toe boots",
+   "dataset": "attribute",
+   "volume": 12100,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 299,
+    "base": 1180,
+    "aggressive": 3557
+   }
+  },
+  {
+   "term": "work boots for women",
+   "dataset": "job_function",
+   "volume": 5400,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 267,
+    "base": 1053,
+    "aggressive": 3175
+   }
+  },
+  {
+   "term": "shoes for kitchen work",
+   "dataset": "job_function",
+   "volume": 1300,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 257,
+    "base": 1014,
+    "aggressive": 3058
+   }
+  },
+  {
+   "term": "low top shoes",
+   "dataset": "attribute",
+   "volume": 2400,
+   "grade": 1,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 238,
+    "base": 936,
+    "aggressive": 2822
+   }
+  },
+  {
+   "term": "shoes for standing all day at work",
+   "dataset": "job_function",
+   "volume": 1000,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 198,
+    "base": 780,
+    "aggressive": 2352
+   }
+  },
+  {
+   "term": "puncture resistant boots",
+   "dataset": "attribute",
+   "volume": 1000,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 198,
+    "base": 780,
+    "aggressive": 2352
+   }
+  },
+  {
+   "term": "gray shoes",
+   "dataset": "attribute",
+   "volume": 2900,
+   "grade": 1.33,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.335,
+   "lost": {
+    "conservative": 192,
+    "base": 758,
+    "aggressive": 2285
+   }
+  },
+  {
+   "term": "tan boots",
+   "dataset": "attribute",
+   "volume": 6600,
+   "grade": 1.8,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.1,
+   "lost": {
+    "conservative": 131,
+    "base": 515,
+    "aggressive": 1552
+   }
+  },
+  {
+   "term": "side zip boots",
+   "dataset": "attribute",
+   "volume": 1300,
+   "grade": 1,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 129,
+    "base": 507,
+    "aggressive": 1529
+   }
+  },
+  {
+   "term": "boots for cold weather",
+   "dataset": "job_function",
+   "volume": 2400,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 119,
+    "base": 468,
+    "aggressive": 1411
+   }
+  },
+  {
+   "term": "6 inch boots",
+   "dataset": "attribute",
+   "volume": 590,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 117,
+    "base": 460,
+    "aggressive": 1388
+   }
+  },
+  {
+   "term": "wide width boots",
+   "dataset": "attribute",
+   "volume": 2900,
+   "grade": 1.63,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 106,
+    "base": 418,
+    "aggressive": 1262
+   }
+  },
+  {
+   "term": "waterproof leather boots",
+   "dataset": "attribute",
+   "volume": 8100,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 96,
+    "base": 379,
+    "aggressive": 1143
+   }
+  },
+  {
+   "term": "shoes for being on your feet all day",
+   "dataset": "job_function",
+   "volume": 480,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 95,
+    "base": 374,
+    "aggressive": 1129
+   }
+  },
+  {
+   "term": "boots for flat feet",
+   "dataset": "job_function",
+   "volume": 480,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 95,
+    "base": 374,
+    "aggressive": 1129
+   }
+  },
+  {
+   "term": "boots for wide feet",
+   "dataset": "job_function",
+   "volume": 1600,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 79,
+    "base": 312,
+    "aggressive": 941
+   }
+  },
+  {
+   "term": "boots for electricians",
+   "dataset": "job_function",
+   "volume": 1600,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 79,
+    "base": 312,
+    "aggressive": 941
+   }
+  },
+  {
+   "term": "boots for backpacking",
+   "dataset": "job_function",
+   "volume": 1600,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 79,
+    "base": 312,
+    "aggressive": 941
+   }
+  },
+  {
+   "term": "boots for mechanics",
+   "dataset": "job_function",
+   "volume": 1000,
+   "grade": 1.25,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.375,
+   "lost": {
+    "conservative": 74,
+    "base": 293,
+    "aggressive": 882
+   }
+  },
+  {
+   "term": "slip ons",
+   "dataset": "synonym",
+   "volume": 5400,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 64,
+    "base": 253,
+    "aggressive": 762
+   }
+  },
+  {
+   "term": "lightweight steel toe boots",
+   "dataset": "attribute",
+   "volume": 1600,
+   "grade": 1.63,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 59,
+    "base": 231,
+    "aggressive": 696
+   }
+  },
+  {
+   "term": "insulated boots",
+   "dataset": "attribute",
+   "volume": 4400,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 52,
+    "base": 206,
+    "aggressive": 621
+   }
+  },
+  {
+   "term": "shoes for standing on concrete",
+   "dataset": "job_function",
+   "volume": 260,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 51,
+    "base": 203,
+    "aggressive": 612
+   }
+  },
+  {
+   "term": "shoes for retail work",
+   "dataset": "job_function",
+   "volume": 260,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 51,
+    "base": 203,
+    "aggressive": 612
+   }
+  },
+  {
+   "term": "extra wide boots",
+   "dataset": "attribute",
+   "volume": 1900,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 47,
+    "base": 185,
+    "aggressive": 559
+   }
+  },
+  {
+   "term": "pull on boots",
+   "dataset": "synonym",
+   "volume": 1600,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 40,
+    "base": 156,
+    "aggressive": 470
+   }
+  },
+  {
+   "term": "waterproof slip on shoes",
+   "dataset": "attribute",
+   "volume": 2900,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 34,
+    "base": 136,
+    "aggressive": 409
+   }
+  },
+  {
+   "term": "nubuck boots",
+   "dataset": "attribute",
+   "volume": 390,
+   "grade": 1.17,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 32,
+    "base": 126,
+    "aggressive": 381
+   }
+  },
+  {
+   "term": "slip resistant boots",
+   "dataset": "attribute",
+   "volume": 2400,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 29,
+    "base": 112,
+    "aggressive": 339
+   }
+  },
+  {
+   "term": "boots for landscaping",
+   "dataset": "job_function",
+   "volume": 140,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 28,
+    "base": 109,
+    "aggressive": 329
+   }
+  },
+  {
+   "term": "electrical hazard boots",
+   "dataset": "attribute",
+   "volume": 720,
+   "grade": 1.63,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 26,
+    "base": 104,
+    "aggressive": 313
+   }
+  },
+  {
+   "term": "warm waterproof winter boots",
+   "dataset": "intent",
+   "volume": 480,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 24,
+    "base": 94,
+    "aggressive": 282
+   }
+  },
+  {
+   "term": "shoes for walking all day at work",
+   "dataset": "intent",
+   "volume": 110,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 22,
+    "base": 86,
+    "aggressive": 259
+   }
+  },
+  {
+   "term": "oil resistant boots",
+   "dataset": "attribute",
+   "volume": 480,
+   "grade": 1.63,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 18,
+    "base": 69,
+    "aggressive": 209
+   }
+  },
+  {
+   "term": "lightweight boots for summer",
+   "dataset": "intent",
+   "volume": 170,
+   "grade": 1,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 17,
+    "base": 66,
+    "aggressive": 200
+   }
+  },
+  {
+   "term": "slip resistant shoes for servers",
+   "dataset": "job_function",
+   "volume": 70,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 14,
+    "base": 55,
+    "aggressive": 165
+   }
+  },
+  {
+   "term": "boots for concrete floors",
+   "dataset": "job_function",
+   "volume": 40,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 8,
+    "base": 31,
+    "aggressive": 94
+   }
+  },
+  {
+   "term": "breathable work shoes",
+   "dataset": "attribute",
+   "volume": 590,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 7,
+    "base": 28,
+    "aggressive": 83
+   }
+  },
+  {
+   "term": "boots for delivery drivers",
+   "dataset": "job_function",
+   "volume": 30,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 6,
+    "base": 23,
+    "aggressive": 71
+   }
+  },
+  {
+   "term": "boots for standing all day",
+   "dataset": "job_function",
+   "volume": 110,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 5,
+    "base": 21,
+    "aggressive": 65
+   }
+  },
+  {
+   "term": "warm boots for winter",
+   "dataset": "intent",
+   "volume": 390,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 5,
+    "base": 18,
+    "aggressive": 55
+   }
+  },
+  {
+   "term": "soft toe boots",
+   "dataset": "attribute",
+   "volume": 390,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 5,
+    "base": 18,
+    "aggressive": 55
+   }
+  },
+  {
+   "term": "everyday work shoes",
+   "dataset": "intent",
+   "volume": 170,
+   "grade": 1.75,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 4,
+    "base": 17,
+    "aggressive": 50
+   }
+  },
+  {
+   "term": "work boots for flat feet",
+   "dataset": "job_function",
+   "volume": 320,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 4,
+    "base": 15,
+    "aggressive": 45
+   }
+  },
+  {
+   "term": "what to wear on a construction site",
+   "dataset": "intent",
+   "volume": 10,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 2,
+    "base": 8,
+    "aggressive": 24
+   }
+  },
+  {
+   "term": "shoes that look good and are comfortable",
+   "dataset": "intent",
+   "volume": 10,
+   "grade": 0,
+   "zero": true,
+   "loss_basis": "zero-result",
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 2,
+    "base": 8,
+    "aggressive": 24
+   }
+  },
+  {
+   "term": "breathable boots for hot weather",
+   "dataset": "intent",
+   "volume": 20,
+   "grade": 1,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 2,
+    "base": 8,
+    "aggressive": 24
+   }
+  },
+  {
+   "term": "memory foam work boots",
+   "dataset": "attribute",
+   "volume": 140,
+   "grade": 1.88,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 2,
+    "base": 7,
+    "aggressive": 20
+   }
+  },
+  {
+   "term": "mesh work shoes",
+   "dataset": "attribute",
+   "volume": 30,
+   "grade": 1.5,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 1,
+    "base": 6,
+    "aggressive": 18
+   }
+  },
+  {
+   "term": "comfortable shoes for long shifts",
+   "dataset": "intent",
+   "volume": 40,
+   "grade": 1.6,
+   "zero": false,
+   "loss_basis": "grade",
+   "loss_fraction": 0.2,
+   "lost": {
+    "conservative": 2,
+    "base": 6,
+    "aggressive": 19
+   }
+  }
+ ]
+}

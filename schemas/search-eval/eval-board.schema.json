@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/eval-board.schema.json",
+  "title": "Search-Eval Board",
+  "description": "The assembled findings board. Extends the shape the per-store build-board.mjs copies produced, adding two things the old boards could not express: recall (what search MISSED, from catalog answer keys) and verification (proof that the worst findings were independently re-checked before shipping).",
+  "type": "object",
+  "required": ["eval_id", "retailer", "captured_via", "rubric_hash", "datasets", "rows", "overall", "findings", "verification"],
+  "properties": {
+    "eval_id": { "type": "string" },
+    "retailer": { "type": "string" },
+    "sector": { "type": "string" },
+    "brand_color": { "type": "string" },
+    "brand_ink": { "type": "string" },
+    "captured": {
+      "type": ["string", "boolean"],
+      "description": "Capture timestamp, or a boolean flag on older boards."
+    },
+    "captured_via": { "type": "string" },
+    "rubric_hash": { "type": "string" },
+    "judge": { "type": ["string", "object"] },
+    "grading_partial": { "type": "boolean" },
+    "grading_graded": { "type": ["integer", "null"] },
+
+    "stores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "platform": { "type": "string" }
+        }
+      }
+    },
+
+    "headline": { "type": "string" },
+    "verdict": { "type": ["string", "object"] },
+
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "terms"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "terms": { "type": "integer" },
+          "zero": { "type": "integer" },
+          "coverage_pct": { "type": "number" },
+          "mean_ndcg": { "type": ["number", "null"] },
+          "mean_grade": { "type": ["number", "null"] },
+          "pct_not_relevant": { "type": ["number", "null"] },
+          "shallow": { "type": ["integer", "null"] },
+
+          "has_keys": {
+            "type": "boolean",
+            "description": "Whether this dataset's terms carry catalog answer keys. Only synonym and attribute do; job_function and intent have no node and no filter, so they are grade-only. The board must not imply recall coverage it does not have."
+          },
+          "mean_recall": { "type": ["number", "null"] },
+          "key_coverage_pct": {
+            "type": ["number", "null"],
+            "description": "Share of this dataset's terms that had a usable answer key. Low-confidence keys are excluded from the numerator."
+          }
+        }
+      }
+    },
+
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["dataset", "q", "total"],
+        "properties": {
+          "dataset": { "type": "string" },
+          "q": { "type": "string" },
+          "total": { "type": "integer" },
+          "search_call": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } },
+          "grades": { "type": "array", "items": { "type": "integer" } },
+          "ndcg": { "type": ["number", "null"] },
+          "mean_grade": { "type": ["number", "null"] },
+
+          "recall": { "type": ["number", "null"] },
+          "key_size": { "type": ["integer", "null"] },
+          "key_confidence": { "enum": ["high", "medium", "low", null] },
+          "missing_skus": { "type": "array", "items": { "type": "string" } },
+
+          "compared_to": { "type": ["string", "null"] },
+          "is_lead": { "type": ["boolean", "null"] },
+
+          "verified": {
+            "enum": ["confirmed", "refuted", "inconclusive", null],
+            "description": "Set for any row that entered the verification selection. A row with verdict 'refuted' must not appear in findings as a search failure."
+          },
+          "classification": {
+            "enum": ["search_bug", "true_empty", "assortment_gap", "shallow_answer", "capture_artifact", "brand_redirect", null]
+          }
+        }
+      }
+    },
+
+    "overall": {
+      "type": "object",
+      "required": ["terms", "coverage_pct"],
+      "properties": {
+        "terms": { "type": "integer" },
+        "graded_terms": { "type": "integer" },
+        "zero_terms": { "type": "integer" },
+        "coverage_pct": { "type": "number" },
+        "mean_grade": { "type": ["number", "null"] },
+        "pct_not_relevant": { "type": ["number", "null"] },
+        "product_judgments": { "type": "integer" },
+        "mean_recall": { "type": ["number", "null"] },
+        "shallow_answer_rate": {
+          "type": ["number", "null"],
+          "description": "Enterprise engines return something for almost anything, so coverage looks excellent while answers are shallow. For big-box stores this is the headline, not zero-result rate."
+        }
+      }
+    },
+
+    "verification": {
+      "type": "object",
+      "description": "Required. A board without it cannot be reported from - the report generator refuses to run on unverified bottom-N rows.",
+      "required": ["ran", "verified_findings_ref"],
+      "properties": {
+        "ran": { "type": "boolean" },
+        "verified_findings_ref": { "type": "string" },
+        "original_path": { "type": "string" },
+        "verification_path": { "type": "string" },
+        "confirmed": { "type": "integer" },
+        "refuted": { "type": "integer" },
+        "inconclusive": { "type": "integer" },
+        "capture_quality_flag": { "type": "boolean" },
+        "selection_rule": { "type": "string" }
+      }
+    },
+
+    "findings": {
+      "type": "array",
+      "description": "Severity-ranked. Every finding that rests on a bottom-N row must carry verified='confirmed'.",
+      "items": {
+        "type": "object",
+        "required": ["severity", "area", "title", "detail"],
+        "properties": {
+          "severity": { "enum": ["Critical", "High", "Medium", "Low", "Info"] },
+          "area": { "type": "string" },
+          "title": { "type": "string" },
+          "detail": { "type": "string" },
+          "evidence_terms": { "type": "array", "items": { "type": "string" } },
+          "verified": { "enum": ["confirmed", "refuted", "inconclusive", null] },
+          "fix_candidate": { "type": "string" }
+        }
+      }
+    },
+
+    "revenue_loss": {
+      "type": ["object", "null"],
+      "properties": {
+        "annual_lost": { "type": ["number", "object"] },
+        "base_scenario": { "type": ["number", "object"] },
+        "accept_grade": { "type": "number" },
+        "coverage": { "type": "object" },
+        "extrapolation": { "type": ["object", "string", "null"] },
+        "top": { "type": "array" }
+      }
+    },
+
+    "synonym_candidates": {
+      "type": "array",
+      "description": "Directional candidates mined from missed key members, each with the SKU that proves it. This is the actionable output a retailer can load into their synonym file.",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "direction", "evidence_skus"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "direction": { "enum": ["uni", "bi"] },
+          "evidence_skus": { "type": "array", "items": { "type": "string" } },
+          "est_recall_gain": { "type": ["number", "null"] }
+        }
+      }
+    }
+  }
+}

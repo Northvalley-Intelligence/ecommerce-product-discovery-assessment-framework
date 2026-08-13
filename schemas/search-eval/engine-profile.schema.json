@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/engine-profile.schema.json",
+  "title": "Search-Eval Engine Profile",
+  "description": "How to reach the retailer's REAL shopper-facing search engine, and the proof that it is the real one. L01 is the single biggest source of invalid evaluations: a WooCommerce Store API returned 0 for a term the storefront answered with 6. verified_against_live_ui is required precisely so that mistake cannot pass silently.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_version", "retailer", "profiled_at", "platform", "engine", "verified_against_live_ui", "pacing"],
+  "properties": {
+    "profile_version": { "const": "1" },
+    "retailer": { "type": "string" },
+    "eval_id": { "type": "string" },
+    "profiled_at": { "type": "string", "format": "date-time" },
+
+    "platform": { "enum": ["woocommerce", "shopify", "shopify_headless", "enterprise_custom", "bigcommerce", "magento", "other"] },
+
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "url_template"],
+      "properties": {
+        "kind": {
+          "description": "storefront_html is the Woo shopper path. storefront_graphql is Shopify's AND-of-prefix predictive query. json_api is the enterprise organic endpoint, which MUST exclude sponsored results.",
+          "enum": ["storefront_html", "storefront_graphql", "json_api", "browser_dom"]
+        },
+        "url_template": { "type": "string" },
+        "method": { "enum": ["GET", "POST"] },
+        "headers": { "type": "object" },
+        "body_template": { "type": "string" },
+        "results_path": { "type": "string", "description": "JSON pointer or CSS selector locating the organic result list." },
+        "title_path": { "type": "string" },
+        "total_path": { "type": "string" },
+        "excludes_sponsored": {
+          "type": "boolean",
+          "description": "L09. Required true for json_api on enterprise stores (e.g. include_sponsored=false)."
+        },
+        "carousel_exclusions": {
+          "type": "array",
+          "description": "L09. Selectors whose descendants must never be read as organic results. A naive a[href*='/p/'] captured 'Recommended for you' tiles and made the store look far worse than it was.",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "verified_against_live_ui": {
+      "type": "object",
+      "description": "L01 gate. A control term run through the profiled path must match what a shopper sees in the live UI. Without this the profile is unvalidated and no capture may proceed.",
+      "additionalProperties": false,
+      "required": ["control_terms", "matches", "checked_at"],
+      "properties": {
+        "control_terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["term", "live_count", "profiled_count"],
+            "properties": {
+              "term": { "type": "string" },
+              "live_count": { "type": "integer" },
+              "profiled_count": { "type": "integer" },
+              "live_top3": { "type": "array", "items": { "type": "string" } },
+              "profiled_top3": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "matches": { "type": "boolean" },
+        "checked_at": { "type": "string", "format": "date-time" },
+        "notes": { "type": "string" }
+      }
+    },
+
+    "pacing": {
+      "type": "object",
+      "description": "L11. Bot protection rate-limits on CUMULATIVE calls per visitor, and the block is long-lived. Recover by waiting, never by rotating identities - that is bypassing bot protection and is prohibited.",
+      "additionalProperties": false,
+      "required": ["min_interval_ms", "chunk_size"],
+      "properties": {
+        "min_interval_ms": { "type": "integer", "minimum": 500 },
+        "chunk_size": { "type": "integer", "minimum": 1, "maximum": 50 },
+        "cooldown_ms": { "type": "integer" },
+        "identity": { "const": "single_session" },
+        "user_agent": { "type": "string" }
+      }
+    },
+
+    "known_redirects": {
+      "type": "array",
+      "description": "L10. Brand queries that 302 to a curated brand page return 0 from the keyword API while the shopper sees thousands. These are a STRENGTH misread as total failure.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pattern", "redirects_to"],
+        "properties": {
+          "pattern": { "type": "string" },
+          "redirects_to": { "type": "string" },
+          "count_as_answered": { "type": "boolean" }
+        }
+      }
+    },
+
+    "catalog_available": { "type": "boolean" },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  }
+}

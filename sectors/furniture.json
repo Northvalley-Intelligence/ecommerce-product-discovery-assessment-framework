@@ -1,0 +1,9 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "furniture",
+  "name": "Furniture",
+  "description": "Furniture retailers evaluated on shared search-relevance query packs (Woo/Shopify Store API where available; browser reads for bot-walled sites).",
+  "shared_query_packs": [],
+  "member_sites": ["industrywest"],
+  "domain": true
+}

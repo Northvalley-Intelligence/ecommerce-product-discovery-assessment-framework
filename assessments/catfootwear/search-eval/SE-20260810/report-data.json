@@ -1,0 +1,247 @@
+{
+ "report_data_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "generated_at": "2026-08-12T00:50:29.244Z",
+ "store": {
+  "name": "Cat Footwear",
+  "platform": "Salesforce Commerce Cloud (SFRA)"
+ },
+ "overall": {
+  "terms": 245,
+  "graded_terms": 191,
+  "zero_terms": 0,
+  "coverage_pct": 78,
+  "mean_grade": 1.88,
+  "pct_not_relevant": 21,
+  "product_judgments": 1186,
+  "mean_recall": 0.532,
+  "shallow_answer_rate": 12
+ },
+ "datasets": [
+  {
+   "name": "Synonym / category",
+   "terms": 45,
+   "coverage_pct": 71,
+   "mean_grade": 1.73,
+   "mean_recall": 0.825,
+   "has_keys": true
+  },
+  {
+   "name": "Attribute (feature+material)",
+   "terms": 69,
+   "coverage_pct": 93,
+   "mean_grade": 1.92,
+   "mean_recall": 0.471,
+   "has_keys": true
+  },
+  {
+   "name": "Job-function (use case)",
+   "terms": 50,
+   "coverage_pct": 60,
+   "mean_grade": 1.88,
+   "mean_recall": null,
+   "has_keys": false
+  },
+  {
+   "name": "Intent (natural language)",
+   "terms": 46,
+   "coverage_pct": 67,
+   "mean_grade": 1.87,
+   "mean_recall": null,
+   "has_keys": false
+  },
+  {
+   "name": "Literal (model/brand)",
+   "terms": 35,
+   "coverage_pct": 100,
+   "mean_grade": 2.01,
+   "mean_recall": null,
+   "has_keys": false
+  }
+ ],
+ "findings": [
+  {
+   "severity": "High",
+   "area": "Intent / use-case (recall)",
+   "title": "Compositional use-case queries return ZERO despite matching stock",
+   "detail": "Job-function coverage is only 60% (20 of 50 return nothing): boots-for-welding, boots-for-nurses, boots-for-logging, boots-for-masonry, shoes-for-restaurant-work all -> 0, though Cat stocks suitable work boots/shoes. Intent coverage 67%. The engine does not parse multi-word natural-language queries into attributes/use-cases. Fix candidate: query understanding + use-case-to-attribute mapping.",
+   "verified": "confirmed",
+   "fix_candidate": "Fix candidate: query understanding + use-case-to-attribute mapping"
+  },
+  {
+   "severity": "High",
+   "area": "Category-token dependency (search bug)",
+   "title": "Search needs the exact category words - near-misses return zero",
+   "detail": "6-inch-boots -> 0 but 6-inch-WORK-boots -> results; lace-up-boots -> 0 but lace-up-work-boots -> results; trail-shoes -> 0 though Cat stocks hikers. The engine requires exact catalog tokens and does not generalize/stem. Fix candidate: broaden category synonyms and stemming so partial phrasings resolve.",
+   "verified": "confirmed",
+   "fix_candidate": "Fix candidate: broaden category synonyms and stemming so partial phrasings resolve"
+  },
+  {
+   "severity": "Medium",
+   "area": "Synonym vs assortment (guardrail)",
+   "title": "Separate search misses from true assortment gaps among zero-result synonyms",
+   "detail": "Of 13 synonym zeros, most are ASSORTMENT gaps (Cat makes none): sandals, flip flops, dress shoes, clogs, mules, slides, boat shoes, deck shoes, moccasins, trainers, tennis/running shoes -> merchandising, not search. But a few are search/nav gaps (lace up boots, kids shoes). Classify each before prioritizing a fix. Synonym coverage 71%.",
+   "verified": null
+  },
+  {
+   "severity": "Low",
+   "area": "Model & attribute search (strength)",
+   "title": "Known-item and attribute search are excellent",
+   "detail": "Literal/model queries: 100% coverage, grade ~2.35 (best dataset) - model names route straight to the product page (diagnostic, exposition, alloy toe boots -> exact PDP). Attribute queries: 93% coverage - steel toe, waterproof, composite toe, leather all strong. The engine is well-tuned for its focused catalog when queried in catalog terms.",
+   "verified": null
+  },
+  {
+   "severity": "Info",
+   "area": "Measurement",
+   "title": "Recall-style engine - rank by coverage x demand and classify each zero",
+   "detail": "Cat Footwear returns nothing on a miss (78% overall coverage; 53 zero-result terms), unlike big-box engines that answer everything shallowly. Weight zero-result rate x Google demand and classify each zero as search-bug vs assortment-gap (catalog guardrail), not grade alone. (Grades still finalizing at time of writing.)",
+   "verified": null
+  }
+ ],
+ "verification": {
+  "ran": true,
+  "verified_findings_ref": "verified-findings.json",
+  "original_path": "storefront_html",
+  "verification_path": "live_ui",
+  "confirmed": 4,
+  "refuted": 1,
+  "inconclusive": 0,
+  "selection_rule": "worst-first: lowest recall on keyed terms + zero-result on demand-mappable datasets + surprising zeros on stocked types"
+ },
+ "revenue_loss": {
+  "annual_lost": {
+   "conservative": 99007,
+   "base": 390035,
+   "aggressive": 1176096
+  },
+  "base_scenario": {
+   "market_share": 0.02,
+   "conversion_rate": 0.025,
+   "aov": 130
+  },
+  "accept_grade": 2,
+  "coverage": {
+   "demand_terms": 174,
+   "graded_and_priced": 89,
+   "contributing_terms": 89
+  },
+  "top": [
+   {
+    "term": "loafers",
+    "volume": 201000,
+    "grade": 1,
+    "zero": false,
+    "annual_base": 78390
+   },
+   {
+    "term": "hikers",
+    "volume": 368000,
+    "grade": 1.75,
+    "zero": false,
+    "annual_base": 35880
+   },
+   {
+    "term": "sneakers",
+    "volume": 301000,
+    "grade": 1.75,
+    "zero": false,
+    "annual_base": 29348
+   },
+   {
+    "term": "rain boots",
+    "volume": 74000,
+    "grade": 1,
+    "zero": false,
+    "annual_base": 28860
+   },
+   {
+    "term": "non slip shoes",
+    "volume": 90500,
+    "grade": 1.5,
+    "zero": false,
+    "annual_base": 17648
+   },
+   {
+    "term": "hiking boots",
+    "volume": 90500,
+    "grade": 1.5,
+    "zero": false,
+    "annual_base": 17648
+   },
+   {
+    "term": "snow boots",
+    "volume": 110000,
+    "grade": 1.67,
+    "zero": false,
+    "annual_base": 14157
+   },
+   {
+    "term": "boots for hunting",
+    "volume": 18100,
+    "grade": 0,
+    "zero": true,
+    "annual_base": 14118
+   }
+  ]
+ },
+ "recall_note": "Recall = |search ∩ answer-key products| / |answer-key|, keyed datasets only (synonym, attribute). Denominator = distinct PLP slugs. Extreme lows verified via live UI (stage 6).",
+ "worst_recall": [
+  {
+   "q": "insulated waterproof boots",
+   "recall": 0,
+   "key_size": 36,
+   "classification": null,
+   "verified": "confirmed"
+  },
+  {
+   "q": "steel toe sneakers",
+   "recall": 0.133,
+   "key_size": 15,
+   "classification": null,
+   "verified": "confirmed"
+  },
+  {
+   "q": "composite toe waterproof boots",
+   "recall": 0.139,
+   "key_size": 36,
+   "classification": null,
+   "verified": null
+  },
+  {
+   "q": "mesh work shoes",
+   "recall": 0.25,
+   "key_size": 4,
+   "classification": null,
+   "verified": null
+  },
+  {
+   "q": "breathable work shoes",
+   "recall": 0.25,
+   "key_size": 4,
+   "classification": null,
+   "verified": null
+  },
+  {
+   "q": "steel toe work shoes",
+   "recall": 0.25,
+   "key_size": 4,
+   "classification": null,
+   "verified": null
+  },
+  {
+   "q": "lightweight steel toe boots",
+   "recall": 0.267,
+   "key_size": 15,
+   "classification": null,
+   "verified": null
+  },
+  {
+   "q": "insulated boots",
+   "recall": 0.313,
+   "key_size": 16,
+   "classification": null,
+   "verified": null
+  }
+ ]
+}

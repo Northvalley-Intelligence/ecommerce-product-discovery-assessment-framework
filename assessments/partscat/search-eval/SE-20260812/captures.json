@@ -1,0 +1,359 @@
+{
+ "capture_version": "1",
+ "retailer": "partscat",
+ "eval_id": "SE-20260812",
+ "captured_at": "2026-08-12T11:56:50.393Z",
+ "engine_profile_ref": "engine-profile.json",
+ "captured_via": "browser_dom",
+ "query_pack_ref": "query-pack.json",
+ "rows": [
+  {
+   "q": "heavy duty battery",
+   "dataset": "synonym",
+   "total": 132,
+   "zero": false,
+   "items": [
+    "153-5720: Heavy Duty Battery",
+    "9X-9730: 12V Heavy Duty Low Maintenance Battery",
+    "9X-3404: 12V Heavy Duty Maintenance-Free Battery",
+    "115-2422: 12V Heavy Duty Maintenance-Free Battery",
+    "9X-9720: 12V Heavy Duty Low Maintenance Battery",
+    "101-4000: 12V Heavy Duty Low Maintenance Battery",
+    "175-4370: 12V Heavy Duty Maintenance-Free Battery",
+    "153-5710: 12V Heavy Duty Maintenance-Free Battery",
+    "399-2842: Cable Assembly-Battery",
+    "300-6152: Cable Assembly-Battery"
+   ],
+   "item_skus": [
+    "153-5720",
+    "9X-9730",
+    "9X-3404",
+    "115-2422",
+    "9X-9720",
+    "101-4000",
+    "175-4370",
+    "153-5710",
+    "399-2842",
+    "300-6152"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=heavy%20duty%20battery&p_page=1"
+  },
+  {
+   "q": "oil filter",
+   "dataset": "synonym",
+   "total": 16,
+   "zero": false,
+   "items": [
+    "7W-2326: Engine Oil Filter",
+    "1R-1808: Engine Oil Filter",
+    "500-0483: Engine Oil Filter",
+    "462-1171: Standard Efficiency Engine Oil Filter",
+    "1R-1807: Advanced Efficiency Engine Oil Filter",
+    "377-6969: Standard Efficiency Engine Oil Filter",
+    "249-2347: Advanced Efficiency Engine Oil Filter",
+    "569-8036: Lube Filter Element Kit (Engine Oil)",
+    "094-7207: Engine Oil Filter",
+    "2P-4301: Base-Oil Filter"
+   ],
+   "item_skus": [
+    "7W-2326",
+    "1R-1808",
+    "500-0483",
+    "462-1171",
+    "1R-1807",
+    "377-6969",
+    "249-2347",
+    "569-8036",
+    "094-7207",
+    "2P-4301"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=oil%20filter&p_page=1"
+  },
+  {
+   "q": "bucket teeth",
+   "dataset": "synonym",
+   "total": 16,
+   "zero": false,
+   "items": [
+    "1U-3202: Bucket Tip",
+    "220-9090: K Series Tip Retainer",
+    "1U-3302: Bucket Tip",
+    "6Y-3222: Bucket Tip",
+    "135-8203: Uni-Tooth Bucket Tip",
+    "505-4103: Bucket Tip",
+    "475-5480: Bucket Tip",
+    "505-4113: Bucket Tip",
+    "5K-2925: Bucket Tooth Short Tip",
+    "195-7206: Bucket Tip"
+   ],
+   "item_skus": [
+    "1U-3202",
+    "220-9090",
+    "1U-3302",
+    "6Y-3222",
+    "135-8203",
+    "505-4103",
+    "475-5480",
+    "505-4113",
+    "5K-2925",
+    "195-7206"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=bucket%20teeth&p_page=1"
+  },
+  {
+   "q": "cutting edge",
+   "dataset": "synonym",
+   "total": 16,
+   "zero": false,
+   "items": [
+    "525-5669: Center Cutting Edge",
+    "494-5878: Bucket Cutting Edge",
+    "593-0318: Bucket Cutting Edge",
+    "523-9813: Bucket Cutting Edge",
+    "593-0319: Bucket Cutting Edge",
+    "522-6329: 1100mm Wide Reversible Level Cut Cutting Edge",
+    "107-3746: Bucket Cutting Edge",
+    "1U-0601: Bucket Cutting Edge",
+    "135-9666: Bucket Cutting Edge",
+    "132-4724: Bucket Cutting Edge"
+   ],
+   "item_skus": [
+    "525-5669",
+    "494-5878",
+    "593-0318",
+    "523-9813",
+    "593-0319",
+    "522-6329",
+    "107-3746",
+    "1U-0601",
+    "135-9666",
+    "132-4724"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=cutting%20edge&p_page=1"
+  },
+  {
+   "q": "general duty battery",
+   "dataset": "synonym",
+   "total": 150,
+   "zero": false,
+   "items": [
+    "593-3129: General Duty Wet Battery",
+    "242-0825: General Duty, Wet, Battery",
+    "570-6511: General Duty Wet Battery",
+    "593-3128: General Duty Wet Battery",
+    "563-6052: 12V General Duty Battery",
+    "3T-5857: 12V General Duty Maintenance-Free Battery",
+    "356-6214: 12V T7 BCI Battery",
+    "8C-3605: 12V 41 BCI Battery",
+    "570-6509: Battery-Wet-Gd",
+    "8C-3628: 12V General Duty Maintenance-Free Battery"
+   ],
+   "item_skus": [
+    "593-3129",
+    "242-0825",
+    "570-6511",
+    "593-3128",
+    "563-6052",
+    "3T-5857",
+    "356-6214",
+    "8C-3605",
+    "570-6509",
+    "8C-3628"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=general%20duty%20battery&p_page=1"
+  },
+  {
+   "q": "12 volt battery",
+   "dataset": "attribute",
+   "total": 261,
+   "zero": false,
+   "items": [
+    "242-0825: General Duty, Wet, Battery",
+    "8C-3601: 12V 27 BCI Battery",
+    "430-5996: 12V General Duty Maintenance-Free Battery",
+    "430-5992: 12V 24DC BCI Battery",
+    "483-8978: 12 Volt Battery",
+    "563-6052: 12V General Duty Battery",
+    "250-0476: 12 Volt High-Rate UPS Battery",
+    "175-4390: 12V 31 BCI Battery",
+    "154-3630: 12 Volt Control Timer",
+    "369-9955: 12V DIN C11 Battery"
+   ],
+   "item_skus": [
+    "242-0825",
+    "8C-3601",
+    "430-5996",
+    "430-5992",
+    "483-8978",
+    "563-6052",
+    "250-0476",
+    "175-4390",
+    "154-3630",
+    "369-9955"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=12%20volt%20battery&p_page=1"
+  },
+  {
+   "q": "self sharpening bucket teeth",
+   "dataset": "attribute",
+   "total": 0,
+   "zero": true,
+   "items": [],
+   "item_skus": [],
+   "organic_grid_found": false,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=self%20sharpening%20bucket%20teeth&p_page=1"
+  },
+  {
+   "q": "1R-1808",
+   "dataset": "part_number",
+   "total": 0,
+   "zero": true,
+   "items": [],
+   "item_skus": [],
+   "organic_grid_found": false,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=1R-1808&p_page=1"
+  },
+  {
+   "q": "326-1644",
+   "dataset": "part_number",
+   "total": 0,
+   "zero": true,
+   "items": [],
+   "item_skus": [],
+   "organic_grid_found": false,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=326-1644&p_page=1"
+  },
+  {
+   "q": "9X-3404",
+   "dataset": "part_number",
+   "total": 0,
+   "zero": true,
+   "items": [],
+   "item_skus": [],
+   "organic_grid_found": false,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=9X-3404&p_page=1"
+  },
+  {
+   "q": "153-5710",
+   "dataset": "part_number",
+   "total": 0,
+   "zero": true,
+   "items": [],
+   "item_skus": [],
+   "organic_grid_found": false,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=153-5710&p_page=1"
+  },
+  {
+   "q": "oil filter for C15 engine",
+   "dataset": "intent",
+   "total": 56,
+   "zero": false,
+   "items": [
+    "211-4359: Engine Oil Filter",
+    "1R-0716: Engine Lube Oil Filter",
+    "1R-1808: Engine Oil Filter",
+    "125-5835: Engine Oil Filter",
+    "102-5828: Engine Oil Filter Cover",
+    "136-3742: Engine Oil Filter",
+    "249-2347: Advanced Efficiency Engine Oil Filter",
+    "4N-7082: Oil Filter Shield",
+    "546-5871: Engine Oil Filter Base",
+    "526-6376: Oil Filter Base"
+   ],
+   "item_skus": [
+    "211-4359",
+    "1R-0716",
+    "1R-1808",
+    "125-5835",
+    "102-5828",
+    "136-3742",
+    "249-2347",
+    "4N-7082",
+    "546-5871",
+    "526-6376"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=oil%20filter%20for%20C15%20engine&p_page=1"
+  },
+  {
+   "q": "1R-1808 cross reference",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "items": [],
+   "item_skus": [],
+   "organic_grid_found": false,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=1R-1808%20cross%20reference&p_page=1"
+  },
+  {
+   "q": "bucket teeth for 336 excavator",
+   "dataset": "intent",
+   "total": 17,
+   "zero": false,
+   "items": [
+    "505-4110: Bucket Tip",
+    "505-4115: Bucket Tip",
+    "505-4103: Bucket Tip",
+    "597-6033: Bucket Tip",
+    "159-0559: Bucket Tip",
+    "467-9823: Bucket Tip",
+    "159-0459: Bucket Tip",
+    "505-4114: Bucket Tip",
+    "505-4111: Bucket Tip",
+    "381-4093: Bucket Tip"
+   ],
+   "item_skus": [
+    "505-4110",
+    "505-4115",
+    "505-4103",
+    "597-6033",
+    "159-0559",
+    "467-9823",
+    "159-0459",
+    "505-4114",
+    "505-4111",
+    "381-4093"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=bucket%20teeth%20for%20336%20excavator&p_page=1"
+  },
+  {
+   "q": "battery for cold weather starting",
+   "dataset": "job_function",
+   "total": 16,
+   "zero": false,
+   "items": [
+    "235-0126: Battery Cable",
+    "364-1673: 0 Gauge Battery Wiring Cable",
+    "159-0984: 3mm Thick Battery Wiring Cover",
+    "564-2140: Heater Wiring Harness",
+    "633-9453: Cold Weather Battery Cover",
+    "632-0200: 5mm Thickness Cold Weather Battery Cover",
+    "654-5661: Cold Weather Battery Cover",
+    "635-2786: 00 Wire Gauge Battery Wiring Cable",
+    "170-9331: Battery Wiring Cable",
+    "259-5229: Wiring Harness Battery Cable"
+   ],
+   "item_skus": [
+    "235-0126",
+    "364-1673",
+    "159-0984",
+    "564-2140",
+    "633-9453",
+    "632-0200",
+    "654-5661",
+    "635-2786",
+    "170-9331",
+    "259-5229"
+   ],
+   "organic_grid_found": true,
+   "source_url": "https://parts.cat.com/en/catcorp/search?q=battery%20for%20cold%20weather%20starting&p_page=1"
+  }
+ ]
+}

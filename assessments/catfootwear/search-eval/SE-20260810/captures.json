@@ -1,0 +1,3883 @@
+{
+ "capture_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "captured_at": "2026-08-11T23:37:37.669Z",
+ "engine_profile_ref": "engine-profile.json",
+ "captured_via": "storefront_html",
+ "rows": [
+  {
+   "q": "work boots",
+   "dataset": "synonym",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots"
+  },
+  {
+   "q": "safety boots",
+   "dataset": "synonym",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Abbey Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=safety%20boots"
+  },
+  {
+   "q": "work shoes",
+   "dataset": "synonym",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Steel Toe Work Shoe",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Sport Slip On Composite Toe Work Shoe",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe",
+    "Invader Sport Lo Leather Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20shoes"
+  },
+  {
+   "q": "safety shoes",
+   "dataset": "synonym",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Invader Sport Slip On Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe",
+    "Invader Sport Lo Leather Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=safety%20shoes"
+  },
+  {
+   "q": "safety footwear",
+   "dataset": "synonym",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=safety%20footwear"
+  },
+  {
+   "q": "safety toe boots",
+   "dataset": "synonym",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=safety%20toe%20boots"
+  },
+  {
+   "q": "sneakers",
+   "dataset": "synonym",
+   "total": 20,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Lite Outdoor Sneaker",
+    "Grapple Leather Mesh Sneaker",
+    "Intruder Lightning Mesh Sneaker",
+    "Intruder Shoe",
+    "Colorado Low 2.0 Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Amperage Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=sneakers"
+  },
+  {
+   "q": "trainers",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=trainers"
+  },
+  {
+   "q": "athletic shoes",
+   "dataset": "synonym",
+   "total": 10,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Steel Toe Work Shoe",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "ProRush Speed FX Shoe",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Invader Hiker Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=athletic%20shoes"
+  },
+  {
+   "q": "tennis shoes",
+   "dataset": "synonym",
+   "total": 11,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Shoe",
+    "Intruder Lightning Mesh Sneaker",
+    "Intruder Lite Outdoor Sneaker",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=tennis%20shoes"
+  },
+  {
+   "q": "running shoes",
+   "dataset": "synonym",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "ProRush Speed FX Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=running%20shoes"
+  },
+  {
+   "q": "boots",
+   "dataset": "synonym",
+   "total": 34,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Wheelbase Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Drawbar Steel Toe Work Boot",
+    "Threshold Chelsea Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots"
+  },
+  {
+   "q": "booties",
+   "dataset": "synonym",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Rewrite Frontier Boot",
+    "Rewrite Harness Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=booties"
+  },
+  {
+   "q": "ankle boots",
+   "dataset": "synonym",
+   "total": 9,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Chukka Boot",
+    "Grader Chukka Boot",
+    "Outbase Waterproof Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Tess Steel Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=ankle%20boots"
+  },
+  {
+   "q": "moccasins",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=moccasins"
+  },
+  {
+   "q": "slip ons",
+   "dataset": "synonym",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Fused Slip On Shoe",
+    "Invader Sport Slip On Composite Toe Work Shoe",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Streamline Court Mid Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slip%20ons"
+  },
+  {
+   "q": "loafers",
+   "dataset": "synonym",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Fused Slip On Shoe",
+    "Invader Sport Slip On Composite Toe Work Shoe",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Streamline Court Mid Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=loafers"
+  },
+  {
+   "q": "slides",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slides"
+  },
+  {
+   "q": "mules",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=mules"
+  },
+  {
+   "q": "clogs",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=clogs"
+  },
+  {
+   "q": "shoes",
+   "dataset": "synonym",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Amperage Shoe",
+    "Fused Slip On Shoe",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Colorado Low 2.0 Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline Court Mid Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes"
+  },
+  {
+   "q": "footwear",
+   "dataset": "synonym",
+   "total": 33,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Cat Footwear x both GAO Pioneer Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Intruder Shoe",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=footwear"
+  },
+  {
+   "q": "sandals",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=sandals"
+  },
+  {
+   "q": "flip flops",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=flip%20flops"
+  },
+  {
+   "q": "oxfords",
+   "dataset": "synonym",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Oxford Long Sleeve Shirt"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=oxfords"
+  },
+  {
+   "q": "dress shoes",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=dress%20shoes"
+  },
+  {
+   "q": "hiking boots",
+   "dataset": "synonym",
+   "total": 13,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Invader Hiker Waterproof Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=hiking%20boots"
+  },
+  {
+   "q": "hikers",
+   "dataset": "synonym",
+   "total": 18,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Hiker Waterproof Boot",
+    "Invader Hiker Waterproof Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Threshold Rebound Hiker Waterproof Work Boot",
+    "Pursue Hiker Waterproof Boot",
+    "Threshold Rebound Hiker Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=hikers"
+  },
+  {
+   "q": "trail shoes",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=trail%20shoes"
+  },
+  {
+   "q": "chelsea boots",
+   "dataset": "synonym",
+   "total": 18,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Exposition Chelsea Work Boot",
+    "Exposition Chelsea Alloy Toe Work Boot",
+    "Threshold Chelsea Boot",
+    "Striver Chelsea Waterproof Steel Toe Work Boot",
+    "Grader Chelsea Boot",
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+    "Striver XL Chelsea Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=chelsea%20boots"
+  },
+  {
+   "q": "pull on boots",
+   "dataset": "synonym",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Drawbar Pull-On Work Boot",
+    "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Revolver Work Boot",
+    "Drawbar Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=pull%20on%20boots"
+  },
+  {
+   "q": "lace up boots",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=lace%20up%20boots"
+  },
+  {
+   "q": "slip on shoes",
+   "dataset": "synonym",
+   "total": 28,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Fused Slip On Shoe",
+    "Invader Sport Slip On Composite Toe Work Shoe",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Amperage Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slip%20on%20shoes"
+  },
+  {
+   "q": "casual shoes",
+   "dataset": "synonym",
+   "total": 18,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Shoe",
+    "Colorado Low 2.0 Shoe",
+    "Amperage Shoe",
+    "Fused Slip On Shoe",
+    "Threshold Hiker Waterproof Boot",
+    "Intruder Lite Outdoor Sneaker",
+    "Threshold Chelsea Boot",
+    "Threshold Chukka Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=casual%20shoes"
+  },
+  {
+   "q": "casual sneakers",
+   "dataset": "synonym",
+   "total": 7,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Lite Outdoor Sneaker",
+    "Grapple Leather Mesh Sneaker",
+    "Intruder Shoe",
+    "Intruder Lightning Mesh Sneaker",
+    "Colorado Low 2.0 Shoe",
+    "Amperage Shoe",
+    "Fused Slip On Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=casual%20sneakers"
+  },
+  {
+   "q": "wellington boots",
+   "dataset": "synonym",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Drawbar Pull-On Work Boot",
+    "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Revolver Work Boot",
+    "Drawbar Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=wellington%20boots"
+  },
+  {
+   "q": "rubber boots",
+   "dataset": "synonym",
+   "total": 35,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Drawbar Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Exposition Chelsea Work Boot",
+    "Invader Hi Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Drawbar Pull-On Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=rubber%20boots"
+  },
+  {
+   "q": "rain boots",
+   "dataset": "synonym",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Essential Rain Jacket"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=rain%20boots"
+  },
+  {
+   "q": "winter boots",
+   "dataset": "synonym",
+   "total": 16,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Echo Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=winter%20boots"
+  },
+  {
+   "q": "snow boots",
+   "dataset": "synonym",
+   "total": 3,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=snow%20boots"
+  },
+  {
+   "q": "boat shoes",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boat%20shoes"
+  },
+  {
+   "q": "deck shoes",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=deck%20shoes"
+  },
+  {
+   "q": "high tops",
+   "dataset": "synonym",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=high%20tops"
+  },
+  {
+   "q": "low tops",
+   "dataset": "synonym",
+   "total": 11,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Tess Steel Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=low%20tops"
+  },
+  {
+   "q": "kids shoes",
+   "dataset": "synonym",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=kids%20shoes"
+  },
+  {
+   "q": "steel toe boots",
+   "dataset": "attribute",
+   "total": 26,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Outline Steel Toe Work Boot",
+    "Brickline Waterproof Steel Toe Work Boot",
+    "Second Shift Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=steel%20toe%20boots"
+  },
+  {
+   "q": "composite toe boots",
+   "dataset": "attribute",
+   "total": 18,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Booster Vent Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=composite%20toe%20boots"
+  },
+  {
+   "q": "soft toe boots",
+   "dataset": "attribute",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Hi Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Wheelbase Work Boot",
+    "Booster Vent Work Boot",
+    "Pursue Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=soft%20toe%20boots"
+  },
+  {
+   "q": "alloy toe boots",
+   "dataset": "attribute",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Exposition Chelsea Alloy Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=alloy%20toe%20boots"
+  },
+  {
+   "q": "waterproof boots",
+   "dataset": "attribute",
+   "total": 29,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Outbase Waterproof Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20boots"
+  },
+  {
+   "q": "waterproof work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20work%20boots"
+  },
+  {
+   "q": "waterproof hiking boots",
+   "dataset": "attribute",
+   "total": 13,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Invader Hiker Waterproof Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20hiking%20boots"
+  },
+  {
+   "q": "waterproof leather boots",
+   "dataset": "attribute",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Outbase Waterproof Work Boot",
+    "Pursue Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20leather%20boots"
+  },
+  {
+   "q": "insulated boots",
+   "dataset": "attribute",
+   "total": 16,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Echo Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=insulated%20boots"
+  },
+  {
+   "q": "insulated work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=insulated%20work%20boots"
+  },
+  {
+   "q": "thinsulate boots",
+   "dataset": "attribute",
+   "total": 3,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=thinsulate%20boots"
+  },
+  {
+   "q": "slip resistant shoes",
+   "dataset": "attribute",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Threshold Rebound Waterproof Composite Toe Work Boot",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slip%20resistant%20shoes"
+  },
+  {
+   "q": "slip resistant boots",
+   "dataset": "attribute",
+   "total": 27,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Threshold Rebound Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Venward Composite Toe Work Shoe",
+    "Invader Hiker Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slip%20resistant%20boots"
+  },
+  {
+   "q": "non slip work shoes",
+   "dataset": "attribute",
+   "total": 28,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Threshold Rebound Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=non%20slip%20work%20shoes"
+  },
+  {
+   "q": "non slip shoes",
+   "dataset": "attribute",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Threshold Rebound Waterproof Composite Toe Work Boot",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=non%20slip%20shoes"
+  },
+  {
+   "q": "oil resistant boots",
+   "dataset": "attribute",
+   "total": 13,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Wheelbase Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Exposition Chelsea Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Exposition Chelsea Alloy Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=oil%20resistant%20boots"
+  },
+  {
+   "q": "electrical hazard boots",
+   "dataset": "attribute",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Second Shift Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=electrical%20hazard%20boots"
+  },
+  {
+   "q": "met guard boots",
+   "dataset": "attribute",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=met%20guard%20boots"
+  },
+  {
+   "q": "metatarsal boots",
+   "dataset": "attribute",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=metatarsal%20boots"
+  },
+  {
+   "q": "puncture resistant boots",
+   "dataset": "attribute",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=puncture%20resistant%20boots"
+  },
+  {
+   "q": "leather boots",
+   "dataset": "attribute",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Outline Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Second Shift Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=leather%20boots"
+  },
+  {
+   "q": "leather work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=leather%20work%20boots"
+  },
+  {
+   "q": "full grain leather boots",
+   "dataset": "attribute",
+   "total": 28,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Threshold Chelsea Boot",
+    "Outline Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Second Shift Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=full%20grain%20leather%20boots"
+  },
+  {
+   "q": "suede boots",
+   "dataset": "attribute",
+   "total": 4,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Rewrite Frontier Boot",
+    "Rewrite Harness Boot",
+    "Covert Boot",
+    "Intruder Lightning Mesh Sneaker"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=suede%20boots"
+  },
+  {
+   "q": "suede shoes",
+   "dataset": "attribute",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Lightning Mesh Sneaker",
+    "Covert Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=suede%20shoes"
+  },
+  {
+   "q": "nubuck boots",
+   "dataset": "attribute",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Cat Footwear x both GAO Pioneer Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=nubuck%20boots"
+  },
+  {
+   "q": "canvas shoes",
+   "dataset": "attribute",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Triton Insulated Bib"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=canvas%20shoes"
+  },
+  {
+   "q": "mesh work shoes",
+   "dataset": "attribute",
+   "total": 24,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Sport Lo Mesh Composite Toe Work Shoe",
+    "Intruder Lightning Mesh Sneaker",
+    "Invader Steel Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Hi Steel Toe Work Boot",
+    "Drawbar Steel Toe Work Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=mesh%20work%20shoes"
+  },
+  {
+   "q": "brown work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=brown%20work%20boots"
+  },
+  {
+   "q": "black work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=black%20work%20boots"
+  },
+  {
+   "q": "tan work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=tan%20work%20boots"
+  },
+  {
+   "q": "brown boots",
+   "dataset": "attribute",
+   "total": 43,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Drawbar Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Wheelbase Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=brown%20boots"
+  },
+  {
+   "q": "black boots",
+   "dataset": "attribute",
+   "total": 40,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=black%20boots"
+  },
+  {
+   "q": "tan boots",
+   "dataset": "attribute",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Tess Steel Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Second Shift Waterproof Steel Toe Work Boot",
+    "Pursue Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Grader Chelsea Boot",
+    "Threshold Chukka Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=tan%20boots"
+  },
+  {
+   "q": "gray shoes",
+   "dataset": "attribute",
+   "total": 13,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Sport Slip On Composite Toe Work Shoe",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Steel Toe Work Shoe",
+    "Threshold Hiker Waterproof Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=gray%20shoes"
+  },
+  {
+   "q": "6 inch work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=6%20inch%20work%20boots"
+  },
+  {
+   "q": "8 inch work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=8%20inch%20work%20boots"
+  },
+  {
+   "q": "6 inch boots",
+   "dataset": "attribute",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=6%20inch%20boots"
+  },
+  {
+   "q": "high top boots",
+   "dataset": "attribute",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=high%20top%20boots"
+  },
+  {
+   "q": "low top shoes",
+   "dataset": "attribute",
+   "total": 11,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Tess Steel Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=low%20top%20shoes"
+  },
+  {
+   "q": "mid boots",
+   "dataset": "attribute",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=mid%20boots"
+  },
+  {
+   "q": "lightweight work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=lightweight%20work%20boots"
+  },
+  {
+   "q": "comfortable work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20work%20boots"
+  },
+  {
+   "q": "wide work boots",
+   "dataset": "attribute",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Wheelbase Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=wide%20work%20boots"
+  },
+  {
+   "q": "wide width boots",
+   "dataset": "attribute",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Wheelbase Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=wide%20width%20boots"
+  },
+  {
+   "q": "extra wide boots",
+   "dataset": "attribute",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Wheelbase Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=extra%20wide%20boots"
+  },
+  {
+   "q": "memory foam work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=memory%20foam%20work%20boots"
+  },
+  {
+   "q": "cushioned work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=cushioned%20work%20boots"
+  },
+  {
+   "q": "pull on work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=pull%20on%20work%20boots"
+  },
+  {
+   "q": "lace up work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=lace%20up%20work%20boots"
+  },
+  {
+   "q": "side zip boots",
+   "dataset": "attribute",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Soft Shell Jacket"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=side%20zip%20boots"
+  },
+  {
+   "q": "wedge sole boots",
+   "dataset": "attribute",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Reclaimer Wedge Waterproof Work Boot",
+    "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge 10 Welly Waterproof Work Boot",
+    "Reclaimer Wedge 10 Welly Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=wedge%20sole%20boots"
+  },
+  {
+   "q": "moc toe boots",
+   "dataset": "attribute",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Second Shift Grader Moc Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Waterproof Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Drawbar Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=moc%20toe%20boots"
+  },
+  {
+   "q": "waterproof slip on shoes",
+   "dataset": "attribute",
+   "total": 28,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Striver Chelsea Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20slip%20on%20shoes"
+  },
+  {
+   "q": "insulated waterproof boots",
+   "dataset": "attribute",
+   "total": 3,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=insulated%20waterproof%20boots"
+  },
+  {
+   "q": "steel toe waterproof boots",
+   "dataset": "attribute",
+   "total": 23,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Brickline Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+    "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=steel%20toe%20waterproof%20boots"
+  },
+  {
+   "q": "composite toe waterproof boots",
+   "dataset": "attribute",
+   "total": 14,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=composite%20toe%20waterproof%20boots"
+  },
+  {
+   "q": "breathable work shoes",
+   "dataset": "attribute",
+   "total": 23,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Steel Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe",
+    "Drawbar Steel Toe Work Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Wheelbase Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=breathable%20work%20shoes"
+  },
+  {
+   "q": "vented work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=vented%20work%20boots"
+  },
+  {
+   "q": "slip resistant work shoes",
+   "dataset": "attribute",
+   "total": 28,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Threshold Rebound Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slip%20resistant%20work%20shoes"
+  },
+  {
+   "q": "waterproof composite toe boots",
+   "dataset": "attribute",
+   "total": 15,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20composite%20toe%20boots"
+  },
+  {
+   "q": "steel toe sneakers",
+   "dataset": "attribute",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Steel Toe Work Shoe",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=steel%20toe%20sneakers"
+  },
+  {
+   "q": "steel toe work shoes",
+   "dataset": "attribute",
+   "total": 20,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Steel Toe Work Shoe",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Outline Steel Toe Work Boot",
+    "Drawbar Steel Toe Work Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=steel%20toe%20work%20shoes"
+  },
+  {
+   "q": "lightweight steel toe boots",
+   "dataset": "attribute",
+   "total": 12,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Steel Toe Work Shoe",
+    "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Tess Steel Toe Work Boot",
+    "Reclaimer Wedge 10 Welly Waterproof Steel Toe Work Boot",
+    "247 6 Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=lightweight%20steel%20toe%20boots"
+  },
+  {
+   "q": "comfortable steel toe boots",
+   "dataset": "attribute",
+   "total": 26,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Outline Steel Toe Work Boot",
+    "Threshold Rebound Hiker Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20steel%20toe%20boots"
+  },
+  {
+   "q": "waterproof steel toe boots",
+   "dataset": "attribute",
+   "total": 24,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Brickline Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Striver Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20steel%20toe%20boots"
+  },
+  {
+   "q": "insulated hunting boots",
+   "dataset": "attribute",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=insulated%20hunting%20boots"
+  },
+  {
+   "q": "rubber work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=rubber%20work%20boots"
+  },
+  {
+   "q": "chelsea work boots",
+   "dataset": "attribute",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=chelsea%20work%20boots"
+  },
+  {
+   "q": "boots for standing all day",
+   "dataset": "job_function",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Low 2.0 Shoe",
+    "Colorado Waterproof Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20standing%20all%20day"
+  },
+  {
+   "q": "work boots for concrete",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20for%20concrete"
+  },
+  {
+   "q": "shoes for warehouse work",
+   "dataset": "job_function",
+   "total": 23,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "ProRush Speed FX Shoe",
+    "Invader Hi Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20warehouse%20work"
+  },
+  {
+   "q": "boots for construction",
+   "dataset": "job_function",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Wheelbase Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20construction"
+  },
+  {
+   "q": "boots for cold weather",
+   "dataset": "job_function",
+   "total": 16,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Outbase Waterproof Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20cold%20weather"
+  },
+  {
+   "q": "shoes for being on your feet all day",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20being%20on%20your%20feet%20all%20day"
+  },
+  {
+   "q": "boots for roofing",
+   "dataset": "job_function",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20roofing"
+  },
+  {
+   "q": "boots for welding",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20welding"
+  },
+  {
+   "q": "boots for electricians",
+   "dataset": "job_function",
+   "total": 10,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20electricians"
+  },
+  {
+   "q": "boots for landscaping",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20landscaping"
+  },
+  {
+   "q": "boots for farm work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20farm%20work"
+  },
+  {
+   "q": "boots for logging",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20logging"
+  },
+  {
+   "q": "boots for oil field work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20oil%20field%20work"
+  },
+  {
+   "q": "shoes for restaurant work",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20restaurant%20work"
+  },
+  {
+   "q": "shoes for nurses",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20nurses"
+  },
+  {
+   "q": "boots for hunting",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20hunting"
+  },
+  {
+   "q": "boots for snow",
+   "dataset": "job_function",
+   "total": 3,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20snow"
+  },
+  {
+   "q": "boots for rain",
+   "dataset": "job_function",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Essential Rain Jacket"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20rain"
+  },
+  {
+   "q": "work boots for men",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20for%20men"
+  },
+  {
+   "q": "work boots for women",
+   "dataset": "job_function",
+   "total": 16,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Intruder Shoe",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Intruder Lite Outdoor Sneaker",
+    "Colorado Low 2.0 Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20for%20women"
+  },
+  {
+   "q": "boots for wide feet",
+   "dataset": "job_function",
+   "total": 30,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Wheelbase Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20wide%20feet"
+  },
+  {
+   "q": "boots for flat feet",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20flat%20feet"
+  },
+  {
+   "q": "boots for plantar fasciitis",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20plantar%20fasciitis"
+  },
+  {
+   "q": "comfortable boots for walking",
+   "dataset": "job_function",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Pursue Waterproof Work Boot",
+    "Pursue Hiker Waterproof Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20boots%20for%20walking"
+  },
+  {
+   "q": "boots for factory work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20factory%20work"
+  },
+  {
+   "q": "boots for mechanics",
+   "dataset": "job_function",
+   "total": 16,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Striver Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Striver Chelsea Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20mechanics"
+  },
+  {
+   "q": "shoes for kitchen work",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20kitchen%20work"
+  },
+  {
+   "q": "slip resistant shoes for servers",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=slip%20resistant%20shoes%20for%20servers"
+  },
+  {
+   "q": "boots for concrete floors",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20concrete%20floors"
+  },
+  {
+   "q": "boots for backpacking",
+   "dataset": "job_function",
+   "total": 17,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Hi Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Hi Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Invader Steel Toe Work Shoe",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20backpacking"
+  },
+  {
+   "q": "work shoes for warehouse",
+   "dataset": "job_function",
+   "total": 24,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20shoes%20for%20warehouse"
+  },
+  {
+   "q": "boots for masonry",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20masonry"
+  },
+  {
+   "q": "boots for framing",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20framing"
+  },
+  {
+   "q": "boots for utility work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20utility%20work"
+  },
+  {
+   "q": "boots for railroad work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20railroad%20work"
+  },
+  {
+   "q": "shoes for standing on concrete",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20standing%20on%20concrete"
+  },
+  {
+   "q": "boots for cold storage",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20cold%20storage"
+  },
+  {
+   "q": "boots for wet conditions",
+   "dataset": "job_function",
+   "total": 18,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Brickline Waterproof Steel Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20wet%20conditions"
+  },
+  {
+   "q": "boots for outdoor work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20outdoor%20work"
+  },
+  {
+   "q": "boots for heavy duty work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20heavy%20duty%20work"
+  },
+  {
+   "q": "work shoes for long shifts",
+   "dataset": "job_function",
+   "total": 5,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Threshold Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20shoes%20for%20long%20shifts"
+  },
+  {
+   "q": "boots for delivery drivers",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20delivery%20drivers"
+  },
+  {
+   "q": "shoes for retail work",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20retail%20work"
+  },
+  {
+   "q": "boots for ranch work",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20ranch%20work"
+  },
+  {
+   "q": "boots for construction workers",
+   "dataset": "job_function",
+   "total": 17,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Outbase Waterproof Work Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Second Shift Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20construction%20workers"
+  },
+  {
+   "q": "boots for cold wet weather",
+   "dataset": "job_function",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20cold%20wet%20weather"
+  },
+  {
+   "q": "work boots for flat feet",
+   "dataset": "job_function",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20for%20flat%20feet"
+  },
+  {
+   "q": "shoes for standing all day at work",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20standing%20all%20day%20at%20work"
+  },
+  {
+   "q": "boots for hunting in cold",
+   "dataset": "job_function",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20hunting%20in%20cold"
+  },
+  {
+   "q": "boots for wet job sites",
+   "dataset": "job_function",
+   "total": 11,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Brickline Waterproof Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20wet%20job%20sites"
+  },
+  {
+   "q": "something waterproof for winter",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=something%20waterproof%20for%20winter"
+  },
+  {
+   "q": "casual shoes for everyday",
+   "dataset": "intent",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Hiker Waterproof Boot",
+    "Threshold Chelsea Boot",
+    "Threshold Chukka Boot",
+    "Covert Boot",
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=casual%20shoes%20for%20everyday"
+  },
+  {
+   "q": "gift for a construction worker",
+   "dataset": "intent",
+   "total": 12,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Outbase Waterproof Work Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Second Shift Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=gift%20for%20a%20construction%20worker"
+  },
+  {
+   "q": "most comfortable work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=most%20comfortable%20work%20boots"
+  },
+  {
+   "q": "shoes to wear with jeans",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20to%20wear%20with%20jeans"
+  },
+  {
+   "q": "boots that keep your feet dry",
+   "dataset": "intent",
+   "total": 26,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20that%20keep%20your%20feet%20dry"
+  },
+  {
+   "q": "work boots that dont hurt",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20that%20dont%20hurt"
+  },
+  {
+   "q": "something for muddy conditions",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=something%20for%20muddy%20conditions"
+  },
+  {
+   "q": "everyday work shoes",
+   "dataset": "intent",
+   "total": 8,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Threshold Hiker Waterproof Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Threshold Chukka Boot",
+    "Threshold Chelsea Boot",
+    "Covert Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=everyday%20work%20shoes"
+  },
+  {
+   "q": "comfortable shoes for long shifts",
+   "dataset": "intent",
+   "total": 5,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Streamline 2.0 Leather Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20shoes%20for%20long%20shifts"
+  },
+  {
+   "q": "warm boots for winter",
+   "dataset": "intent",
+   "total": 15,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=warm%20boots%20for%20winter"
+  },
+  {
+   "q": "durable work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=durable%20work%20boots"
+  },
+  {
+   "q": "affordable work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=affordable%20work%20boots"
+  },
+  {
+   "q": "best work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=best%20work%20boots"
+  },
+  {
+   "q": "lightweight boots for summer",
+   "dataset": "intent",
+   "total": 25,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Second Shift Work Boot",
+    "Exposition Chelsea Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Striver Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=lightweight%20boots%20for%20summer"
+  },
+  {
+   "q": "boots for a new construction job",
+   "dataset": "intent",
+   "total": 24,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Drawbar Steel Toe Work Boot",
+    "Revolver Steel Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20a%20new%20construction%20job"
+  },
+  {
+   "q": "shoes that look good and are comfortable",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20that%20look%20good%20and%20are%20comfortable"
+  },
+  {
+   "q": "waterproof boots that are comfortable",
+   "dataset": "intent",
+   "total": 27,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Outbase Waterproof Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Pursue Waterproof Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20boots%20that%20are%20comfortable"
+  },
+  {
+   "q": "work boots that last",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20that%20last"
+  },
+  {
+   "q": "boots for someone on their feet all day",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20someone%20on%20their%20feet%20all%20day"
+  },
+  {
+   "q": "what to wear on a construction site",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=what%20to%20wear%20on%20a%20construction%20site"
+  },
+  {
+   "q": "boots for a warehouse job",
+   "dataset": "intent",
+   "total": 17,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Second Shift Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20a%20warehouse%20job"
+  },
+  {
+   "q": "shoes for walking all day at work",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20walking%20all%20day%20at%20work"
+  },
+  {
+   "q": "something rugged for outdoor work",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=something%20rugged%20for%20outdoor%20work"
+  },
+  {
+   "q": "boots for standing on hard floors",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20standing%20on%20hard%20floors"
+  },
+  {
+   "q": "most durable work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=most%20durable%20work%20boots"
+  },
+  {
+   "q": "comfortable steel toe boots for work",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20steel%20toe%20boots%20for%20work"
+  },
+  {
+   "q": "waterproof boots for hiking in the rain",
+   "dataset": "intent",
+   "total": 13,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Invader Hiker Waterproof Work Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=waterproof%20boots%20for%20hiking%20in%20the%20rain"
+  },
+  {
+   "q": "warm waterproof winter boots",
+   "dataset": "intent",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=warm%20waterproof%20winter%20boots"
+  },
+  {
+   "q": "work boots that are easy to slip on",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20that%20are%20easy%20to%20slip%20on"
+  },
+  {
+   "q": "boots that are good for your feet",
+   "dataset": "intent",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Reclaimer Wedge Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20that%20are%20good%20for%20your%20feet"
+  },
+  {
+   "q": "breathable boots for hot weather",
+   "dataset": "intent",
+   "total": 4,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Steel Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Tess Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=breathable%20boots%20for%20hot%20weather"
+  },
+  {
+   "q": "stylish work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=stylish%20work%20boots"
+  },
+  {
+   "q": "gift for someone who works construction",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=gift%20for%20someone%20who%20works%20construction"
+  },
+  {
+   "q": "comfortable boots for concrete floors",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20boots%20for%20concrete%20floors"
+  },
+  {
+   "q": "work shoes that dont slip",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20shoes%20that%20dont%20slip"
+  },
+  {
+   "q": "boots for cold weather work",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20for%20cold%20weather%20work"
+  },
+  {
+   "q": "something for wet job sites",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=something%20for%20wet%20job%20sites"
+  },
+  {
+   "q": "shoes for a warehouse worker",
+   "dataset": "intent",
+   "total": 7,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Mae Steel Toe Waterproof Work Boot",
+    "Invader Hiker Waterproof Composite Toe Work Boot",
+    "Echo Waterproof Steel Toe Work Boot",
+    "Invader Hiker Waterproof Work Boot",
+    "Second Shift Waterproof Steel Toe Work Boot",
+    "Second Shift Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=shoes%20for%20a%20warehouse%20worker"
+  },
+  {
+   "q": "good boots for the money",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=good%20boots%20for%20the%20money"
+  },
+  {
+   "q": "comfortable waterproof work boots",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=comfortable%20waterproof%20work%20boots"
+  },
+  {
+   "q": "boots that wont give me blisters",
+   "dataset": "intent",
+   "total": 0,
+   "zero": true,
+   "no_results_msg": true,
+   "redirected": false,
+   "items": [],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=boots%20that%20wont%20give%20me%20blisters"
+  },
+  {
+   "q": "good work boots for standing",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=good%20work%20boots%20for%20standing"
+  },
+  {
+   "q": "durable waterproof boots",
+   "dataset": "intent",
+   "total": 27,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot",
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Accomplice X Waterproof Steel Toe Work Boot",
+    "Pursue Waterproof Work Boot",
+    "Brickline Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=durable%20waterproof%20boots"
+  },
+  {
+   "q": "warm boots for outdoor work",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=warm%20boots%20for%20outdoor%20work"
+  },
+  {
+   "q": "work boots for a warehouse job",
+   "dataset": "intent",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=work%20boots%20for%20a%20warehouse%20job"
+  },
+  {
+   "q": "caterpillar",
+   "dataset": "brand",
+   "total": 10,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Shoe",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Hi Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Pursue Waterproof Work Boot",
+    "Invader Hi Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=caterpillar"
+  },
+  {
+   "q": "cat boots",
+   "dataset": "brand",
+   "total": 32,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Cat Footwear x both GAO Pioneer Boot",
+    "Wheelbase Steel Toe Work Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Wheelbase Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=cat%20boots"
+  },
+  {
+   "q": "cat work boots",
+   "dataset": "brand",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=cat%20work%20boots"
+  },
+  {
+   "q": "cat footwear",
+   "dataset": "brand",
+   "total": 22,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Cat Footwear x both GAO Pioneer Boot",
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Threshold Waterproof Work Boot",
+    "Abbey Steel Toe Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Invader Mecha Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=cat%20footwear"
+  },
+  {
+   "q": "cat shoes",
+   "dataset": "brand",
+   "total": 21,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Cat Footwear x both GAO Pioneer Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Steel Toe Work Shoe",
+    "Fused Slip On Shoe",
+    "Venward Composite Toe Work Shoe",
+    "Streamline Court Mid Composite Toe Work Shoe",
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=cat%20shoes"
+  },
+  {
+   "q": "colorado",
+   "dataset": "brand",
+   "total": 14,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Colorado Low 2.0 Shoe",
+    "Colorado Equip 6 Waterproof Work Boot",
+    "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+    "Colorado Frontier Steel Toe Boot",
+    "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+    "Colorado Frontier Work Boot",
+    "Colorado Waterproof Boot",
+    "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=colorado"
+  },
+  {
+   "q": "invader",
+   "dataset": "brand",
+   "total": 11,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe",
+    "Invader Sport Lo Leather Composite Toe Work Shoe",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Steel Toe Work Shoe",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=invader"
+  },
+  {
+   "q": "striver",
+   "dataset": "brand",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+    "Striver XL Waterproof Steel Toe Work Boot",
+    "Striver Work Boot",
+    "Striver Waterproof Steel Toe Work Boot",
+    "Striver Chelsea Waterproof Steel Toe Work Boot",
+    "Striver Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=striver"
+  },
+  {
+   "q": "threshold",
+   "dataset": "brand",
+   "total": 15,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Threshold Waterproof Steel Toe Work Boot",
+    "Threshold Chelsea Boot",
+    "Threshold Hiker Waterproof Boot",
+    "Threshold Chukka Boot",
+    "Threshold Waterproof Work Boot",
+    "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+    "Threshold Rebound Hiker Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=threshold"
+  },
+  {
+   "q": "wheelbase",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Wheelbase Work Boot",
+    "Wheelbase Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=wheelbase"
+  },
+  {
+   "q": "resorption",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=resorption"
+  },
+  {
+   "q": "excavator",
+   "dataset": "brand",
+   "total": 7,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Work Boot",
+    "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology Chelsea Waterproof Composite Toe Work Boot",
+    "Booster Vent Composite Toe Work Boot",
+    "Booster Vent Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=excavator"
+  },
+  {
+   "q": "abbey",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Abbey Steel Toe Work Boot",
+    "Invader Sport Lo Mesh Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=abbey"
+  },
+  {
+   "q": "venward",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Venward Composite Toe Work Shoe",
+    "Venward Composite Toe Static Dissipative Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=venward"
+  },
+  {
+   "q": "streamline",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Streamline 2.0 Leather Composite Toe Work Shoe",
+    "Streamline Court Mid Composite Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=streamline"
+  },
+  {
+   "q": "intruder",
+   "dataset": "brand",
+   "total": 11,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Intruder Shoe",
+    "Intruder Lightning Mesh Sneaker",
+    "Intruder Lite Outdoor Sneaker",
+    "Invader Mid Vent Waterproof Composite Toe Work Boot",
+    "Invader Max 6 Waterproof Composite Toe Work Boot",
+    "Invader Mecha Composite Toe Work Shoe",
+    "Invader Hi Steel Toe Work Boot",
+    "Invader Mid Vent Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=intruder"
+  },
+  {
+   "q": "grapple",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Grapple Leather Mesh Sneaker"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=grapple"
+  },
+  {
+   "q": "amperage",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Amperage Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=amperage"
+  },
+  {
+   "q": "prorush",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "ProRush Speed FX Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=prorush"
+  },
+  {
+   "q": "drawbar",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Drawbar Steel Toe Work Boot",
+    "Drawbar Pull-On Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=drawbar"
+  },
+  {
+   "q": "rewrite",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Rewrite Frontier Boot",
+    "Rewrite Harness Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=rewrite"
+  },
+  {
+   "q": "fused",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Fused Slip On Shoe",
+    "Invader Steel Toe Work Shoe"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=fused"
+  },
+  {
+   "q": "revolver",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Revolver Steel Toe Work Boot",
+    "Revolver Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=revolver"
+  },
+  {
+   "q": "outline",
+   "dataset": "brand",
+   "total": 3,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Outline Work Boot",
+    "Outline Steel Toe Work Boot",
+    "Resorption Waterproof Composite Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=outline"
+  },
+  {
+   "q": "brickline",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Brickline Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=brickline"
+  },
+  {
+   "q": "second",
+   "dataset": "brand",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Second Shift USA 6 Waterproof Steel Toe Work Boot",
+    "Second Shift Steel Toe Work Boot",
+    "Second Shift Work Boot",
+    "Second Shift Waterproof Steel Toe Work Boot",
+    "Second Shift Grader Moc Steel Toe Work Boot",
+    "Second Shift Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=second"
+  },
+  {
+   "q": "booster",
+   "dataset": "brand",
+   "total": 7,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Booster Vent Work Boot",
+    "Booster Vent Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology Chelsea Waterproof Composite Toe Work Boot",
+    "Excavator ft Power Spring Technology 6 Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=booster"
+  },
+  {
+   "q": "outbase",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Outbase Waterproof Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=outbase"
+  },
+  {
+   "q": "reclaimer",
+   "dataset": "brand",
+   "total": 6,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Reclaimer Wedge Chelsea Waterproof Work Boot",
+    "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+    "Reclaimer Wedge Waterproof Work Boot",
+    "Reclaimer Wedge 10 Welly Waterproof Work Boot",
+    "Reclaimer Wedge 10 Welly Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=reclaimer"
+  },
+  {
+   "q": "diagnostic",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=diagnostic"
+  },
+  {
+   "q": "echo",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Echo Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=echo"
+  },
+  {
+   "q": "covert",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": true,
+   "items": [
+    "Covert Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=covert"
+  },
+  {
+   "q": "accomplice",
+   "dataset": "brand",
+   "total": 1,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Accomplice X Waterproof Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=accomplice"
+  },
+  {
+   "q": "exposition",
+   "dataset": "brand",
+   "total": 2,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Exposition Chelsea Work Boot",
+    "Exposition Chelsea Alloy Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=exposition"
+  },
+  {
+   "q": "grader",
+   "dataset": "brand",
+   "total": 3,
+   "zero": false,
+   "no_results_msg": false,
+   "redirected": false,
+   "items": [
+    "Grader Chelsea Boot",
+    "Grader Chukka Boot",
+    "Second Shift Grader Moc Steel Toe Work Boot"
+   ],
+   "source_url": "https://www.catfootwear.com/US/en/search?q=grader"
+  }
+ ]
+}

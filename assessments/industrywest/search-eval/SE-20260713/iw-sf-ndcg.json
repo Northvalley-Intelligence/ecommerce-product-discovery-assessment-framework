@@ -1,0 +1,290 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "using_default_rubric": true,
+ "rows": [
+  {
+   "query_id": "industrywest|counter stool",
+   "ndcg": 0.9720532509927219,
+   "grades": [
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|bar stool",
+   "ndcg": 0.8963312190009367,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|kitchen stool",
+   "ndcg": 0.862970438176485,
+   "grades": [
+    2,
+    3,
+    3,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "industrywest|accent chair",
+   "ndcg": 0.9823278498444782,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|lounge chair",
+   "ndcg": 0.9619139380553317,
+   "grades": [
+    3,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|armchair",
+   "ndcg": 0.8890573630780485,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|side table",
+   "ndcg": 0.9698433920840522,
+   "grades": [
+    3,
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|end table",
+   "ndcg": 0.8828038093726873,
+   "grades": [
+    2,
+    3,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|accent table",
+   "ndcg": 0.973854361986135,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|coffee table",
+   "ndcg": 0.8825662322956437,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|ottoman",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|pouf",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    1
+   ]
+  },
+  {
+   "query_id": "industrywest|dining chair",
+   "ndcg": 0.9279988547869685,
+   "grades": [
+    3,
+    2,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|side chair",
+   "ndcg": 0.9792110377953896,
+   "grades": [
+    3,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|desk",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "industrywest|bench",
+   "ndcg": 0.8126613093419779,
+   "grades": [
+    2,
+    2,
+    3,
+    3,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "industrywest|leather lounge chair",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|leather dining chair",
+   "ndcg": 0.873205271692715,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    1,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|marble side table",
+   "ndcg": 0.9871901582936081,
+   "grades": [
+    3,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|outdoor seating",
+   "ndcg": 0.820951645830935,
+   "grades": [
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|dining table",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|enrique",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|Seating",
+   "ndcg": 0.9671337605094592,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  }
+ ]
+}

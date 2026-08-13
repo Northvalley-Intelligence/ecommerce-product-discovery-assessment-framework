@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/grades.schema.json",
+  "title": "Search-Eval Grades",
+  "description": "Per-product 0-3 relevance grades and NDCG from the pinned local judge. rubric_hash and gold_validation are both required: the judge's default rubric can change, so results are deterministic only at a fixed rubric, and an unvalidated judge produces numbers nobody can defend.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["grade_version", "rubric_hash", "judge", "graded_at", "gold_validation", "rows"],
+  "properties": {
+    "grade_version": { "const": "1" },
+    "retailer": { "type": "string" },
+    "eval_id": { "type": "string" },
+    "captures_ref": { "type": "string" },
+    "graded_at": { "type": "string", "format": "date-time" },
+
+    "rubric_hash": {
+      "type": "string",
+      "description": "L02. Identical across every job in an eval. Reproducibility cannot be claimed without it."
+    },
+    "judge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "temperature"],
+      "properties": {
+        "model": { "type": "string" },
+        "temperature": { "type": "number" },
+        "endpoint": { "type": "string" }
+      }
+    },
+
+    "gold_validation": {
+      "type": "object",
+      "description": "L03. ~30 hand-labeled (query, product) pairs. Binary relevant-vs-not agreement is the metric that matters; the judge under-penalizes cross-category junk (grades 1 rather than 0), which is conservative for a noisy-search finding and must be stated.",
+      "additionalProperties": false,
+      "required": ["pairs", "binary_agreement", "validated_at"],
+      "properties": {
+        "pairs": { "type": "integer", "minimum": 20 },
+        "binary_agreement": { "type": "number", "minimum": 0, "maximum": 1 },
+        "validated_at": { "type": "string", "format": "date-time" },
+        "gold_set_ref": { "type": "string" },
+        "known_bias": { "type": "string" }
+      }
+    },
+
+    "partial": {
+      "type": "boolean",
+      "description": "True when not every captured term was graded. The board must show which."
+    },
+    "graded_count": { "type": "integer" },
+
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["query_id", "q", "grades"],
+        "properties": {
+          "query_id": { "type": "string" },
+          "q": { "type": "string" },
+          "ndcg": { "type": ["number", "null"] },
+          "grades": {
+            "type": "array",
+            "description": "Per-result 0-3, in rank order. Empty when the term returned nothing - which is a coverage failure, not a grade of 0.",
+            "items": { "type": "integer", "minimum": 0, "maximum": 3 }
+          },
+          "mean_grade": { "type": "number" },
+          "job_id": { "type": "string" }
+        }
+      }
+    }
+  }
+}

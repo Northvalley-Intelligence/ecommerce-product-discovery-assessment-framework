@@ -1,0 +1,14 @@
+{
+  "custom_dataset_version": "1",
+  "dataset_id": "part-number-1to1",
+  "name": "Part number -> Product",
+  "type": "one_to_one",
+  "built_from": "Sampled real Cat part numbers already observed in this assessment's PLP/search capture; each pairs the EXACT part number (query) with the product that IS that part (expected). Tests whether the search box resolves a part number to its own product. Monthly volumes below are PLACEHOLDERS pending Ferosh's Keyword Planner pull.",
+  "label": "part number",
+  "records": [
+    { "term": "1R-1808", "expected": { "sku": "1R-1808", "title": "Engine Oil Filter" }, "monthly_volume": 8100 },
+    { "term": "326-1644", "expected": { "sku": "326-1644", "title": "Fuel Water Separator" }, "monthly_volume": 1300 },
+    { "term": "9X-3404", "expected": { "sku": "9X-3404", "title": "12V Heavy Duty Maintenance-Free Battery" }, "monthly_volume": 880 },
+    { "term": "153-5710", "expected": { "sku": "153-5710", "title": "12V Heavy Duty Maintenance-Free Battery" }, "monthly_volume": 590 }
+  ]
+}

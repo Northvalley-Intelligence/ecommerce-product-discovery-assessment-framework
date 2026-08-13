@@ -1,0 +1,15 @@
+{
+  "target_id": "timberlandpro",
+  "name": "Timberland PRO",
+  "primary_url": "https://www.timberland.com/en-us/c/timberland-pro",
+  "sector": "footwear",
+  "platform": { "expected": "browser-eval", "engine": "react-spa + bloomreach", "bot_protection": "PerimeterX (px-cloud.net)" },
+  "search": {
+    "url_pattern": "https://www.timberland.com/en-us/search?q=<TERM>",
+    "api": "https://www.timberland.com/napi/products/v2/search/productSearch?start=0&count=48&q=<TERM>&sort=bestMatches&filters=&locale=en_US",
+    "api_headers": { "siteId": "TBL-US", "region": "NORA", "brand": "TBL", "x-transaction-id": "<uuid>" },
+    "engine": "Timberland napi (proxies Bloomreach). Client-rendered results; JSON has total + products[].name. Same-origin fetch works IN-SESSION only — PerimeterX blocks Node/curl (403). Results include Timberland PRO + lifestyle; brand-neutral queries (attributes, use-cases) are comparable to Cat Footwear.",
+    "capture": "In-browser fetch of the napi endpoint with the 4 headers; parse products[].name + total. Paced for PerimeterX. Export browser->disk via sliced returns (no Node access)."
+  },
+  "notes": "Timberland PRO (VF Corp) work footwear — competitor to Cat Footwear. React SPA + Bloomreach search + PerimeterX. Footwear sector. Compared head-to-head with Cat Footwear on the brand-neutral query pack (synonym/attribute/job-function/intent; literal/model names are brand-specific and excluded from the comparison)."
+}

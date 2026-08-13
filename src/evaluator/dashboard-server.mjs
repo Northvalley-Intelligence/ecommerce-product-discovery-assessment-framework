@@ -118,6 +118,48 @@ async function readBody(request) {
   return text ? JSON.parse(text) : {};
 }
 
+// Parse an "Avg. monthly searches" cell (e.g. "1K – 10K", "1,000-10,000", "500") into a number.
+function parseVolume(s) {
+  if (!s) return null;
+  const toks = String(s).match(/[\d,.]+\s*[KMkm]?/g);
+  if (!toks) return null;
+  const nums = toks.map((t) => {
+    let n = parseFloat(t.replace(/,/g, ''));
+    if (/[Kk]/.test(t)) n *= 1000;
+    if (/[Mm]/.test(t)) n *= 1000000;
+    return Math.round(n);
+  }).filter((n) => Number.isFinite(n));
+  if (!nums.length) return null;
+  return nums.length >= 2 ? Math.round((nums[0] + nums[1]) / 2) : nums[0];
+}
+
+// Parse a Google Keyword Planner paste (tab rows OR the 8-line-per-keyword web copy).
+function parseKeywordPlanner(text) {
+  const lines = String(text || '').split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  const rows = []; const skipped = [];
+  const isHeader = (k) => /^keyword$/i.test(k) || /keyword ideas/i.test(k) || /^avg\.? monthly searches$/i.test(k);
+  const tabbed = lines.length && lines.filter((l) => l.includes('\t')).length >= lines.length * 0.5;
+  if (tabbed) {
+    for (const line of lines) {
+      const cells = line.split('\t').map((c) => c.trim());
+      const kw = cells[0];
+      if (!kw || isHeader(kw)) { skipped.push({ value: kw, reason: 'header/marker' }); continue; }
+      const vol = cells.slice(1).find((c) => /\d/.test(c)) || '';
+      rows.push({ keyword: kw, avg_monthly_searches: vol });
+    }
+  } else {
+    const H = 8;
+    for (let i = 0; i < lines.length;) {
+      const kw = lines[i];
+      if (isHeader(kw)) { skipped.push({ value: kw, reason: 'marker' }); i += 1; continue; }
+      const cells = lines.slice(i, i + H);
+      if (cells.length >= 2 && /\d/.test(cells[1]) && !/^https?:/i.test(kw)) { rows.push({ keyword: kw, avg_monthly_searches: cells[1] }); i += H; }
+      else { skipped.push({ value: kw, reason: 'unrecognized row' }); i += 1; }
+    }
+  }
+  return { rows, skipped };
+}
+
 function latestHistoryRows(rootDir) {
   const historyDir = path.join(rootDir, 'inspection-history');
   const rows = listFilesRecursive(historyDir)
@@ -805,6 +847,10 @@ function dashboardPage() {
     .exp > summary::-webkit-details-marker { display: none; }
     .exp[open] > summary { border-bottom: 1px solid var(--line); }
     .exp-body { padding: 9px 11px; }
+    .dsrow > summary .cx { display:inline-block; transition: transform .12s; color: var(--muted); }
+    .dsrow[open] > summary .cx { transform: rotate(90deg); }
+    .dsrow > summary:hover { background: #f8fafc; }
+    .dshead { display:grid; gap:8px; align-items:center; padding: 4px 11px 6px; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .02em; }
     .sdot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: middle; margin-right: 3px; }
     .sdot.sev-severe, .sdot.sev-high { background: #dc2626; }
     .sdot.sev-medium { background: #d97706; }
@@ -1571,9 +1617,11 @@ function dashboardPage() {
           '<div id="wooSearchResults" class="muted" style="margin-top:8px">Type a query to see live results.</div></div>') +
         panel('Autocomplete', 'Type-ahead prefix search (WooCommerce has no native autocomplete endpoint)',
           '<div class="panel-body"><div class="field" style="max-width:420px"><input id="wooAutoInput" placeholder="Start typing (e.g. wh)"></div>' +
-          '<div id="wooAutoResults" class="muted" style="margin-top:8px">Start typing to see suggestions.</div></div>');
+          '<div id="wooAutoResults" class="muted" style="margin-top:8px">Start typing to see suggestions.</div></div>') +
+        '<div id="evalBoard"></div>';
       loadWooCatalog(targetId);
       wireWooSearch(targetId);
+      loadEvalBoard(targetId);
     }
     async function loadWooCatalog(targetId) {
       let data;
@@ -1588,65 +1636,28 @@ function dashboardPage() {
       }
       const s = data.summary;
       const facets = s.facets || null;
-      const metrics =
-        healthMetric('SKUs', jumpNum(escapeHtml(String(s.sku_count)), 'woo-experiments', 'See the product-count call'), 'products (' + escapeHtml(s.sku_count_source || '') + ')') +
-        healthMetric('Browse nodes', jumpNum(escapeHtml(String(s.browse_nodes)), 'woo-cats', 'See the categories'), s.browse_nodes_substantive + ' substantive · ' + s.browse_nodes_operational_heuristic + ' operational') +
-        healthMetric('Facets', jumpNum(escapeHtml(String(facets ? facets.attribute_count : 0)), 'woo-facets', 'See the facets'), (facets ? facets.filterable_count : 0) + ' filterable') +
-        healthMetric('Search signal', jumpNum(escapeHtml((s.search_signal && s.search_signal.literal_hits) || '—') + ' / ' + escapeHtml((s.search_signal && s.search_signal.intent_hits) || '—'), 'woo-experiments', 'See each query that hit or missed'), 'literal / intent hits');
-      const topCats = (s.top_categories || []).slice(0, 8).map((category) =>
-        '<tr><td>' + escapeHtml(category.name) + '</td><td>' + escapeHtml(String(category.count ?? '')) + '</td></tr>').join('');
-      const surfaces = (s.surfaces || []).map((surface) =>
-        '<tr><td><strong>' + escapeHtml(surface.surface) + '</strong></td>' +
-        '<td>' + pill(surface.status, surface.status === 'limited' ? 'LIMITED' : null) + (surface.nature === 'capture_limitation' ? ' <span class="muted" style="font-size:11px">capture limit</span>' : '') + '</td>' +
-        '<td class="muted" style="font-size:12px">' + escapeHtml(surface.detail) + '</td></tr>').join('');
-      const facetRows = facets && facets.top_facets ? facets.top_facets.slice(0, 8).map((facet) =>
-        '<tr><td>' + escapeHtml(facet.name) + '</td><td>' + escapeHtml(String(facet.term_count)) + '</td><td class="muted" style="font-size:12px">' + escapeHtml((facet.top_terms || []).slice(0, 5).join(', ')) + '</td></tr>').join('') : '';
-      const sevStatus = (severity) => ({ Critical: 'fail', High: 'fail', Medium: 'warn', Low: 'warn', Info: 'muted-status' }[severity] || 'warn');
-      const health = s.health;
-      const healthPanel = health ? panel('Health summary', s.findings ? s.findings.length + ' finding' + (s.findings.length === 1 ? '' : 's') + ' · ' + (s.fix_plan ? s.fix_plan.open_items : 0) + ' fix item' + ((s.fix_plan && s.fix_plan.open_items === 1) ? '' : 's') : '',
-        '<div class="panel-body"><div class="metric-row">' +
-          healthMetric('Readiness', pill(health.readiness), 'from surface coverage') +
-          healthMetric('Surface coverage', jumpNum(escapeHtml(String(health.coverage_percent)) + '%', 'woo-surfaces', 'See the surfaces that pass/warn'), health.surfaces_pass + '/' + (health.surfaces_pass + health.surfaces_warn + health.surfaces_fail) + ' inspectable pass') +
-          healthMetric('Status', jumpNum(pill(health.status), 'woo-surfaces'), health.surfaces_warn + ' warn · ' + health.surfaces_limited + ' not inspectable') +
-          healthMetric('Findings', jumpNum(escapeHtml(String((s.findings || []).length)), 'woo-findings', 'See the findings'), (s.fix_plan ? s.fix_plan.open_items : 0) + ' fixable') +
-        '</div></div>') : '';
-      const findingsPanel = (s.findings && s.findings.length) ? panel('Findings', 'Discovery gaps and capture limitations',
-        '<div class="table-wrap"><table><thead><tr><th>Severity</th><th>Surface</th><th>Finding</th></tr></thead><tbody>' +
-        s.findings.map((f) => '<tr><td>' + pill(sevStatus(f.severity), f.severity) + (f.nature === 'capture_limitation' ? ' <span class="muted" style="font-size:11px">capture limit</span>' : '') + '</td><td><strong>' + escapeHtml(f.surface) + '</strong></td><td class="muted" style="font-size:12px">' + escapeHtml(f.detail) + '</td></tr>').join('') +
-        '</tbody></table></div>') : '';
-      const fixPanel = (s.fix_plan && s.fix_plan.items && s.fix_plan.items.length) ? panel('Fix plan', s.fix_plan.open_items + ' recommended fix' + (s.fix_plan.open_items === 1 ? '' : 'es') + ' for the ecommerce team',
-        '<div class="panel-body">' + s.fix_plan.items.map((item) => '<div style="margin-bottom:10px"><strong>' + escapeHtml(item.surface) + '</strong> ' + pill(sevStatus(item.severity), item.severity) + '<div class="muted" style="font-size:12px;margin-top:2px">' + escapeHtml(item.recommendation) + '</div></div>').join('') +
-        (s.report_md_path ? '<p style="margin-top:8px"><a href="' + artifactHref(s.report_md_path) + '" target="_blank"><strong>Open executive report</strong></a></p>' : '') + '</div>') : '';
       const outcomePill = (o) => pill({ hit: 'pass', ok: 'pass', miss: 'fail', empty: 'warn' }[o] || 'muted-status', o);
-      const experiments = s.experiments || [];
       const bySurface = {};
-      for (const e of experiments) { (bySurface[e.surface] = bySurface[e.surface] || []).push(e); }
-      const expPanel = experiments.length ? panel('Experiments & evidence', 'Every claim above traces to the exact API call — expand one to see its URL, parameters, and fetched result, then Replay it to confirm it reproduces',
-        '<div class="panel-body">' + Object.entries(bySurface).map(([surface, exps]) =>
-          '<div class="data-group"><h3>' + escapeHtml(surface) + ' (' + exps.length + ' call' + (exps.length === 1 ? '' : 's') + ')</h3>' +
-          exps.map((e) =>
-            '<details class="exp"><summary>' + outcomePill(e.outcome) + ' <strong>' + escapeHtml(e.label) + '</strong> — ' + escapeHtml(String(e.result_count)) + ' result' + (e.result_count === 1 ? '' : 's') + ' <span class="muted">(HTTP ' + escapeHtml(String(e.status)) + (e.kind ? ' · ' + escapeHtml(e.kind) : '') + ')</span></summary>' +
-              '<div class="exp-body">' +
-                '<div class="muted" style="font-size:12px">GET <span class="mono">' + escapeHtml(e.url) + '</span></div>' +
-                (Object.keys(e.params || {}).length ? '<div class="muted" style="font-size:12px;margin-top:4px">Params: ' + Object.entries(e.params).map(([k, v]) => escapeHtml(k) + '=' + escapeHtml(String(v))).join(' · ') + '</div>' : '') +
-                (e.sample && e.sample.length ? '<div class="muted" style="font-size:12px;margin-top:4px">Fetched: ' + e.sample.map(escapeHtml).join(', ') + '</div>' : '') +
-                '<div style="margin-top:6px"><button class="woo-replay" data-url="' + escapeHtml(e.url) + '">Replay this call</button> <span class="replay-out muted" style="font-size:12px;margin-left:6px"></span></div>' +
-              '</div></details>').join('') +
-          '</div>').join('') + '</div>') : '';
-      el.innerHTML = healthPanel +
-        panel('Catalog summary', 'Captured ' + escapeHtml((s.captured_at || '').slice(0, 16).replace('T', ' ')),
+      for (const e of (s.experiments || [])) { (bySurface[e.surface] = bySurface[e.surface] || []).push(e); }
+      const callHtml = (e) => '<details class="exp"><summary>' + outcomePill(e.outcome) + ' <strong>' + escapeHtml(e.label) + '</strong> — ' + escapeHtml(String(e.result_count)) + ' result' + (e.result_count === 1 ? '' : 's') + ' <span class="muted">(HTTP ' + escapeHtml(String(e.status)) + ')</span></summary>' +
+        '<div class="exp-body">' +
+          '<div class="muted" style="font-size:12px">GET <span class="mono">' + escapeHtml(e.url) + '</span></div>' +
+          (Object.keys(e.params || {}).length ? '<div class="muted" style="font-size:12px;margin-top:4px">Params: ' + Object.entries(e.params).map(([k, v]) => escapeHtml(k) + '=' + escapeHtml(String(v))).join(' · ') + '</div>' : '') +
+          (e.sample && e.sample.length ? '<div class="muted" style="font-size:12px;margin-top:4px">Fetched: ' + e.sample.map(escapeHtml).join(', ') + '</div>' : '') +
+          '<div style="margin-top:6px"><button class="woo-replay" data-url="' + escapeHtml(e.url) + '">Replay this call</button> <span class="replay-out muted" style="font-size:12px;margin-left:6px"></span></div>' +
+        '</div></details>';
+      const catalogCalls = bySurface['Catalog'] || [];
+      const facetCalls = bySurface['Facets'] || [];
+      const metrics =
+        healthMetric('SKUs', (catalogCalls.length ? jumpNum(escapeHtml(String(s.sku_count)), 'cat-skus-ev', 'Expand the call behind this number') : escapeHtml(String(s.sku_count))), 'products (' + escapeHtml(s.sku_count_source || '') + ')') +
+        healthMetric('Browse nodes', escapeHtml(String(s.browse_nodes)), s.browse_nodes_substantive + ' substantive · ' + s.browse_nodes_operational_heuristic + ' operational') +
+        healthMetric('Facets', (facetCalls.length ? jumpNum(escapeHtml(String(facets ? facets.attribute_count : 0)), 'cat-facets-ev', 'Expand the calls behind this number') : escapeHtml(String(facets ? facets.attribute_count : 0))), (facets ? facets.filterable_count : 0) + ' filterable');
+      const skuEvidence = catalogCalls.length ? '<div id="cat-skus-ev"><details class="exp"><summary><strong>Product-count call</strong> <span class="muted">— the X-WP-Total call behind SKUs</span></summary><div style="margin-top:6px">' + catalogCalls.map(callHtml).join('') + '</div></details></div>' : '';
+      const facetEvidence = facetCalls.length ? '<div id="cat-facets-ev"><details class="exp"><summary><strong>Facet-term calls</strong> <span class="muted">— the ' + facetCalls.length + ' calls behind Facets</span></summary><div style="margin-top:6px">' + facetCalls.map(callHtml).join('') + '</div></details></div>' : '';
+      el.innerHTML = panel('Catalog', 'What the store holds · click a number to see and replay the call behind it',
         '<div class="panel-body"><div class="metric-row">' + metrics + '</div>' +
-        (s.discovery_signal ? '<p class="muted" style="margin-top:10px;font-size:12px">' + escapeHtml(s.discovery_signal) + '</p>' : '') +
-        (s.search_signal && s.search_signal.note ? '<p class="muted" style="margin-top:4px;font-size:12px">Search: ' + escapeHtml(s.search_signal.note) + '</p>' : '') +
-        (topCats ? '<div id="woo-cats" class="muted" style="margin-top:12px;font-size:12px">Top categories (of ' + escapeHtml(String(s.browse_nodes)) + ' browse nodes)</div><div class="table-wrap"><table><thead><tr><th>Category</th><th>Products</th></tr></thead><tbody>' + topCats + '</tbody></table></div>' : '') +
-        '</div>') +
-        (surfaces ? '<div id="woo-surfaces">' + panel('Discovery surfaces', 'The same discovery surfaces inspected for Shopify, for this WooCommerce store',
-          '<div class="table-wrap"><table><thead><tr><th>Surface</th><th>Status</th><th>Signal</th></tr></thead><tbody>' + surfaces + '</tbody></table></div>') + '</div>' : '') +
-        (facets ? '<div id="woo-facets">' + panel('Facets & attributes', facets.attribute_count + ' attributes · ' + facets.filterable_count + ' filterable · ' + facets.products_with_attributes + '/' + facets.sample_size + ' sampled products carry attributes',
-          facetRows ? '<div class="table-wrap"><table><thead><tr><th>Facet</th><th>Terms</th><th>Sample terms</th></tr></thead><tbody>' + facetRows + '</tbody></table></div>' : '<div class="panel-body"><div class="empty">No filterable attributes.</div></div>') + '</div>' : '') +
-        '<div id="woo-findings">' + findingsPanel + '</div>' +
-        '<div id="woo-fix">' + fixPanel + '</div>' +
-        '<div id="woo-experiments">' + expPanel + '</div>';
+        (skuEvidence || facetEvidence ? '<div style="margin-top:10px">' + skuEvidence + facetEvidence + '</div>' : '') +
+        '</div>');
       wireJumps(el);
       for (const btn of el.querySelectorAll('.woo-replay')) {
         btn.addEventListener('click', async () => {
@@ -1695,6 +1706,206 @@ function dashboardPage() {
         }, 250);
       });
     }
+    function evGradeColor(g) { return g >= 3 ? '#16a34a' : g >= 2 ? '#65a30d' : g >= 1 ? '#d97706' : '#dc2626'; }
+    function evBadges(grades) {
+      return (grades || []).map(function (g) { return '<span class="gbadge" style="background:' + evGradeColor(g) + '">' + g + '</span>'; }).join(' ');
+    }
+    // Shared per-dataset metric table used by BOTH the Industry West and Target boards, so every
+    // retailer's board has the same structure (coverage + NDCG + grade + not-relevant), differing
+    // only in how many stores it has and which metric the story emphasizes.
+    function evMetricTable(datasets, storeKeys, storeName, metricOf, dsOrderArr, jumpPrefix) {
+      var head = '<tr><th>Dataset</th><th>Store</th><th>Coverage</th><th>NDCG</th><th>Mean grade</th><th>Not-relevant</th></tr>';
+      var body = datasets.slice().sort(function (a, b) { return dsOrderArr.indexOf(a.id) - dsOrderArr.indexOf(b.id); }).map(function (d) {
+        return storeKeys.map(function (k, idx) {
+          var ps = metricOf(d, k);
+          var dcell = idx === 0 ? '<td>' + jumpNum('<strong>' + escapeHtml(d.name) + '</strong>', jumpPrefix + d.id, 'Jump to terms') + '</td>' : '<td></td>';
+          if (!ps || ps.na) return '<tr>' + dcell + '<td>' + escapeHtml(storeName(k)) + '</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>';
+          var total = (ps.answered || 0) + (ps.zero || 0);
+          var cov = total ? (ps.answered + '/' + total) : '—';
+          var nd = ps.mean_ndcg == null ? '—' : Math.round(ps.mean_ndcg * 100) + '%';
+          var gr = ps.mean_grade == null ? '—' : ps.mean_grade;
+          var jkc = (ps.pct_not_relevant != null && ps.pct_not_relevant > 20) ? '#b91c1c' : '#111';
+          var jk = ps.pct_not_relevant == null ? '—' : '<span style="color:' + jkc + '">' + ps.pct_not_relevant + '%</span>';
+          return '<tr>' + dcell + '<td>' + escapeHtml(storeName(k)) + '</td><td>' + cov + '</td><td>' + nd + '</td><td><strong>' + gr + '</strong></td><td>' + jk + '</td></tr>';
+        }).join('');
+      }).join('');
+      return '<div class="table-wrap"><table><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>';
+    }
+    async function loadEvalBoard(targetId) {
+      if (targetId !== 'industrywest') return;
+      var el = document.getElementById('evalBoard');
+      if (!el) return;
+      var data;
+      try { data = await api('/api/eval-board?eval=SE-20260713'); }
+      catch (error) { el.innerHTML = ''; return; }
+      if (state.selectedSite !== targetId) return;
+      if (!data || !data.captured || !data.macro) { el.innerHTML = ''; return; }
+      var m = data.macro;
+      var stores = [['IW', data.stores.IW.name], ['SB', data.stores.SB.name]];
+      var tIW = m.totals.IW, tSB = m.totals.SB;
+      var totalsLine = '<p class="muted" style="font-size:12px;margin:0 0 10px">' + m.totals.search_calls_all + ' search calls · ' + m.totals.query_ndcg_evals_all + ' query NDCG evals · ' + m.totals.product_judgments_all + ' product judgments · 2 Cortex jobs</p>';
+      var repro = data.reproducibility ? '<p class="muted" style="font-size:11px;margin:10px 0 0">Judge ' + escapeHtml(data.judge || '') + ' · rubric ' + escapeHtml(String(data.rubric_hash || '')) + ' · ' + escapeHtml(data.reproducibility.determinism || '') + '</p>' : '';
+      var colOf = function (k) { return k === 'IW' ? '#2563eb' : '#0d9488'; };
+      var worstFirst = function (a, b) {
+        var an = a.ndcg_pinned == null ? 1 : a.ndcg_pinned, bn = b.ndcg_pinned == null ? 1 : b.ndcg_pinned;
+        var aj = (a.grades_pinned || []).filter(function (g) { return g <= 1; }).length;
+        var bj = (b.grades_pinned || []).filter(function (g) { return g <= 1; }).length;
+        return (bj - aj) || (an - bn);
+      };
+      var termRowHtml = function (r) {
+        var grades = r.grades_pinned && r.grades_pinned.length ? r.grades_pinned : r.grades;
+        var junk = (grades || []).filter(function (g) { return g <= 1; }).length;
+        var nd = r.ndcg_pinned == null ? '—' : Math.round(r.ndcg_pinned * 100) + '%';
+        var flag = junk ? ' <span class="dvg" title="results graded not-relevant">' + junk + ' junk</span>' : '';
+        var prods = (r.items || []).map(function (t, i) {
+          var g = grades && grades[i] != null ? grades[i] : 0;
+          return '<div class="evrow"><span class="gbadge" style="background:' + evGradeColor(g) + '">' + escapeHtml(String(g)) + '</span> ' + escapeHtml(t) + '</div>';
+        }).join('');
+        var replayBtn = r.store === 'IW'
+          ? '<a class="relink" href="' + escapeHtml(r.search_call) + '" target="_blank" rel="noopener" title="Open the live Industry West storefront search">↗ open live search</a>'
+          : '<a class="relink" href="https://sevenbonde.com/" target="_blank" rel="noopener" title="Open the live Seven Bonde site search">↗ open live search</a>';
+        var rerunBtn = '<button class="woo-replay ev-rerun" data-store="' + escapeHtml(r.store) + '" data-q="' + escapeHtml(r.q) + '">Re-run NDCG</button>';
+        return '<details class="exp"><summary><span class="qc" style="color:' + colOf(r.store) + '">' + escapeHtml(data.stores[r.store].name) + '</span> <strong>' + escapeHtml(r.q) + '</strong> <b>' + nd + '</b> <span class="muted" style="font-size:11px">' + r.total + ' results</span> ' + evBadges(grades) + flag + '</summary>' +
+          '<div class="exp-body">' + prods +
+          '<div style="margin-top:6px">' + replayBtn + ' ' + rerunBtn + ' <span class="ev-out muted" style="font-size:12px;margin-left:6px"></span></div>' +
+          '</div></details>';
+      };
+      var verdictCard = function (key, sub, t, verdict) {
+        var pct = t.search_calls ? Math.round(100 * t.answered / t.search_calls) : 0;
+        var color = colOf(key);
+        var junkColor = t.pct_not_relevant > 20 ? '#dc2626' : '#16a34a';
+        return '<div style="flex:1 1 240px;border:1px solid #e5e7eb;border-radius:8px;padding:11px 13px">' +
+          '<div style="font-weight:700;font-size:14px;color:' + color + '">' + escapeHtml(data.stores[key].name) + ' <span class="muted" style="font-weight:400;font-size:11px">' + escapeHtml(sub) + '</span></div>' +
+          '<div style="display:flex;align-items:baseline;gap:6px;margin:6px 0 3px"><span style="font-size:25px;font-weight:700;color:' + color + '">' + pct + '%</span><span class="muted" style="font-size:12px">answered (' + t.answered + '/' + t.search_calls + ')</span></div>' +
+          '<div style="background:#eef0f3;border-radius:4px;height:8px;overflow:hidden;margin:2px 0 8px"><div style="height:100%;width:' + pct + '%;background:' + color + '"></div></div>' +
+          '<div style="font-size:12px">NDCG <b>' + Math.round(t.mean_ndcg * 100) + '%</b> · grade <b>' + t.mean_grade + '</b> · <b style="color:' + junkColor + '">' + t.pct_not_relevant + '%</b> not-relevant</div>' +
+          '<div class="muted" style="font-size:12px;margin-top:6px">' + escapeHtml(verdict) + '</div>' +
+        '</div>';
+      };
+      var verdictCards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">' +
+        verdictCard('IW', 'legacy WooCommerce storefront', tIW, tIW.verdict || '') +
+        verdictCard('SB', 'new Shopify (migrating to)', tSB, tSB.verdict || '') +
+        '</div>';
+      var covBar = function (ps, key) {
+        var color = colOf(key);
+        if (!ps || ps.na) return '<div style="display:flex;align-items:center;gap:8px;margin:3px 0"><span style="width:26px;font-size:11px;font-weight:600;color:' + color + '">' + key + '</span><span class="muted" style="font-size:11px">not run for this store</span></div>';
+        var total = ps.answered + ps.zero;
+        var pct = total ? Math.round(100 * ps.answered / total) : 0;
+        var nd = ps.mean_ndcg == null ? '—' : Math.round(ps.mean_ndcg * 100) + '%';
+        return '<div style="display:flex;align-items:center;gap:8px;margin:3px 0">' +
+          '<span style="width:26px;font-size:11px;font-weight:600;color:' + color + '">' + key + '</span>' +
+          '<div style="flex:1;background:#eef0f3;border-radius:4px;height:15px;position:relative;overflow:hidden">' +
+            '<div style="height:100%;width:' + pct + '%;background:' + color + ';opacity:.85"></div>' +
+            '<span style="position:absolute;left:6px;top:0;font-size:10px;line-height:15px;color:#111">' + ps.answered + ' / ' + total + '</span>' +
+          '</div>' +
+          '<span class="qc" style="min-width:64px;text-align:right">NDCG ' + nd + '</span>' +
+        '</div>';
+      };
+      var dsOrder = ['synonym', 'attribute', 'job_function', 'head', 'literal', 'intent'];
+      var datasetBlocks = m.datasets.slice().sort(function (a, b) { return dsOrder.indexOf(a.id) - dsOrder.indexOf(b.id); }).map(function (d) {
+        var allForDs = data.rows.filter(function (r) { return r.dataset === d.id; });
+        var withResults = allForDs.filter(function (r) { return r.total > 0; }).sort(worstFirst);
+        var zeros = allForDs.filter(function (r) { return r.total === 0; });
+        var zerosByStore = {};
+        zeros.forEach(function (r) { (zerosByStore[r.store] = zerosByStore[r.store] || []).push(r.q); });
+        var zeroBlock = Object.keys(zerosByStore).map(function (store) {
+          return '<div class="muted" style="font-size:11px;margin-top:6px;line-height:1.5"><span style="color:' + colOf(store) + ';font-weight:600">' + escapeHtml(data.stores[store].name) + '</span> returned nothing for: ' + zerosByStore[store].map(function (q) { return '<span style="color:#b91c1c">' + escapeHtml(q) + '</span>'; }).join(', ') + '</div>';
+        }).join('');
+        var terms = (withResults.length ? withResults.map(termRowHtml).join('') : '') + zeroBlock;
+        return '<div id="evds-' + d.id + '" style="border-top:1px solid #eef0f3;padding:9px 0">' +
+          '<div class="ds-head" data-ds="' + d.id + '" style="cursor:pointer"><span class="caret" data-ds="' + d.id + '" style="display:inline-block;width:12px;color:#888">▸</span> <strong>' + escapeHtml(d.name) + '</strong>' + (d.takeaway ? ' <span class="muted" style="font-size:12px">— ' + escapeHtml(d.takeaway) + '</span>' : '') + '</div>' +
+          '<div class="ds-terms" data-ds="' + d.id + '" style="display:none;padding:6px 0 2px 16px">' + terms + '</div>' +
+        '</div>';
+      }).join('');
+      var metricTable = evMetricTable(m.datasets, ['IW', 'SB'], function (k) { return data.stores[k].name; }, function (d, k) { return d.per_store[k]; }, dsOrder, 'evds-');
+      var kpKeep = { synonym: 1, attribute: 1, job_function: 1, head: 1 };
+      var kpTerms = [];
+      data.rows.forEach(function (r) { if (r.store === 'IW' && kpKeep[r.dataset] && kpTerms.indexOf(r.q) < 0) kpTerms.push(r.q); });
+      var kpLine = kpTerms.join(', ');
+      var copyLine = '<p style="font-size:12px;margin:0 0 8px"><button class="woo-replay" id="copyTermsBtn">Copy search terms</button> <span class="muted" style="font-size:11px">' + kpTerms.length + ' terms, comma-separated — paste into Google Keyword Planner</span> <span id="copyTermsOut" class="muted" style="font-size:12px;margin-left:6px"></span></p>';
+      var pasteLine = '<div style="margin:0 0 12px"><details class="exp"><summary style="font-size:12px">Paste Keyword Planner results here to add demand data</summary><div style="margin-top:6px"><textarea id="kpPaste" placeholder="Paste the Keyword Planner table (keyword + Avg. monthly searches ...)" style="width:100%;min-height:90px;font:inherit;font-size:12px;padding:6px;box-sizing:border-box;border:1px solid #d1d5db;border-radius:6px"></textarea><div style="margin-top:6px"><button class="woo-replay" id="kpImportBtn">Import &amp; validate</button> <span id="kpImportOut" class="muted" style="font-size:12px;margin-left:6px"></span></div><div id="kpResult" style="margin-top:8px"></div></div></details></div>';
+      var reportLine = '<p style="font-size:13px;margin:0 0 9px"><a class="relink" href="' + artifactHref('reports/industrywest-search-relevance-report.pdf') + '&t=' + Date.now() + '" target="_blank" rel="noopener"><strong>Download the search-relevance report (PDF)</strong></a> <span class="muted" style="font-size:11px">— 5 pages, demand-ranked</span></p>';
+      var boardPanel = panel('Search relevance — Industry West vs Seven Bonde', 'Seven Bonde is the store Industry West is migrating to · click a dataset to expand its terms · coverage + NDCG + grade quality',
+        '<div class="panel-body">' + totalsLine + reportLine + copyLine + pasteLine + verdictCards + metricTable + '<div style="margin-top:12px">' + datasetBlocks + '</div>' + repro + '</div>');
+      var cc = data.catalog_context;
+      var chip = function (x) { return '<span class="qc" style="margin:1px 3px 1px 0;display:inline-block">' + escapeHtml(x.name) + ' ' + x.count + '</span>'; };
+      var stockPanel = cc ? panel('Stock context (guardrail)', 'For reading zero-results — a zero on a stocked type or material is a recall bug; an absent one (e.g. no sofa) is out of assortment',
+        '<div class="panel-body"><div class="muted" style="font-size:11px;margin-bottom:3px">Types stocked</div><div>' + (cc.types || []).map(chip).join('') + '</div>' +
+        '<div class="muted" style="font-size:11px;margin:8px 0 3px">Materials stocked</div><div>' + (cc.materials || []).map(chip).join('') + '</div></div>') : '';
+      var fnd = data.findings || [];
+      var sevRank = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
+      var sevPill = function (sev) { return pill(({ Critical: 'fail', High: 'fail', Medium: 'warn', Low: 'warn', Info: 'muted-status' })[sev] || 'warn', sev); };
+      var findingsPanel = fnd.length ? panel('Findings', 'From the catalog calls and the search-relevance evaluation · severity-ranked · no fixes for now',
+        '<div class="table-wrap"><table><thead><tr><th>Severity</th><th>Area</th><th>Finding</th></tr></thead><tbody>' +
+        fnd.slice().sort(function (a, b) { return (sevRank[a.severity] == null ? 5 : sevRank[a.severity]) - (sevRank[b.severity] == null ? 5 : sevRank[b.severity]); }).map(function (f) {
+          return '<tr><td>' + sevPill(f.severity) + '</td><td><strong>' + escapeHtml(f.area) + '</strong></td><td><strong>' + escapeHtml(f.title) + '</strong><div class="muted" style="font-size:12px;margin-top:2px">' + escapeHtml(f.detail) + '</div></td></tr>';
+        }).join('') + '</tbody></table></div>') : '';
+      el.innerHTML = stockPanel + boardPanel + findingsPanel;
+      wireJumps(el);
+      var copyBtn = el.querySelector('#copyTermsBtn');
+      if (copyBtn) copyBtn.addEventListener('click', function () {
+        var out = el.querySelector('#copyTermsOut');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(kpLine).then(function () { out.textContent = 'Copied ' + kpTerms.length + ' terms to clipboard'; }, function () { out.textContent = 'Copy failed'; });
+        } else { out.textContent = 'Clipboard not available in this browser'; }
+      });
+      var importBtn = el.querySelector('#kpImportBtn');
+      if (importBtn) importBtn.addEventListener('click', async function () {
+        var out = el.querySelector('#kpImportOut'); var resDiv = el.querySelector('#kpResult');
+        var pasteEl = el.querySelector('#kpPaste'); var paste = pasteEl ? pasteEl.value : '';
+        if (!paste.trim()) { out.textContent = 'Paste the Keyword Planner output first.'; return; }
+        out.textContent = 'Parsing and validating…'; resDiv.innerHTML = '';
+        try {
+          var r = await api('/api/demand/import?retailer=industrywest&eval=SE-20260713', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ paste: paste }) });
+          if (!r.ok) { out.textContent = r.error || 'Could not parse the paste.'; return; }
+          out.innerHTML = 'Parsed <strong>' + r.parsed + '</strong> rows · matched <strong>' + r.matched + '</strong> of our terms' + (r.unmatched_kp_count ? ' · ' + r.unmatched_kp_count + ' KP terms not in our set' : '') + (r.terms_without_data_count ? ' · ' + r.terms_without_data_count + ' of our terms had no volume' : '');
+          if (r.top_opportunities && r.top_opportunities.length) {
+            resDiv.innerHTML = '<div class="muted" style="font-size:11px;margin-bottom:3px">Top opportunities — highest demand where search underperforms (returns nothing or shallow results):</div><div class="table-wrap"><table><thead><tr><th>Term</th><th>Monthly volume</th><th>Issue</th></tr></thead><tbody>' + r.top_opportunities.map(function (o) { return '<tr><td><strong>' + escapeHtml(o.term) + '</strong></td><td>' + escapeHtml(String(o.volume_display)) + '</td><td>' + escapeHtml(o.issue) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+          } else { resDiv.innerHTML = '<div class="muted" style="font-size:12px;margin-top:4px">No high-demand failing terms in this batch.</div>'; }
+        } catch (error) { out.textContent = 'Import failed: ' + error.message; }
+      });
+      var dsHeads = el.querySelectorAll('.ds-head');
+      for (var h = 0; h < dsHeads.length; h++) {
+        (function (head) {
+          head.addEventListener('click', function () {
+            var ds = head.getAttribute('data-ds');
+            var terms = el.querySelector('.ds-terms[data-ds="' + ds + '"]');
+            var caret = el.querySelector('.caret[data-ds="' + ds + '"]');
+            if (terms) { var isOpen = terms.style.display !== 'none'; terms.style.display = isOpen ? 'none' : 'block'; if (caret) caret.textContent = isOpen ? '▸' : '▾'; }
+          });
+        })(dsHeads[h]);
+      }
+      var replayBtns = el.querySelectorAll('.ev-replay');
+      for (var i = 0; i < replayBtns.length; i++) {
+        (function (btn) {
+          btn.addEventListener('click', async function () {
+            var out = btn.parentElement.querySelector('.ev-out');
+            out.textContent = 'Replaying search…';
+            try {
+              var rr = await api('/api/woo/replay?target=industrywest&url=' + encodeURIComponent(btn.dataset.url));
+              out.innerHTML = 'Live: <strong>' + escapeHtml(String(rr.result_count)) + '</strong> results (HTTP ' + escapeHtml(String(rr.status)) + ')' + (rr.sample && rr.sample.length ? ' — ' + rr.sample.map(escapeHtml).join(', ') : '');
+            } catch (error) { out.textContent = 'Replay failed: ' + error.message; }
+          });
+        })(replayBtns[i]);
+      }
+      var rerunBtns = el.querySelectorAll('.ev-rerun');
+      for (var j = 0; j < rerunBtns.length; j++) {
+        (function (btn) {
+          btn.addEventListener('click', async function () {
+            var out = btn.parentElement.querySelector('.ev-out');
+            out.textContent = 'Re-running NDCG via Cortex…';
+            try {
+              var rr = await api('/api/eval/rerun-ndcg?eval=SE-20260713&store=' + encodeURIComponent(btn.dataset.store) + '&q=' + encodeURIComponent(btn.dataset.q));
+              if (!rr.rerun) { out.textContent = rr.reason || 'not re-run'; return; }
+              var same = rr.matches ? 'matches stored' : 'CHANGED vs stored';
+              var color = rr.matches ? '#16a34a' : '#dc2626';
+              var extra = rr.matches ? '' : ' (was [' + escapeHtml((rr.stored_grades || []).join(',')) + '])';
+              out.innerHTML = 'NDCG <strong>' + Math.round(rr.ndcg * 100) + '%</strong> grades [' + escapeHtml((rr.grades || []).join(',')) + '] rubric ' + escapeHtml(String(rr.rubric_hash || '').slice(0, 10)) + ' — <span style="color:' + color + '">' + same + extra + '</span>';
+            } catch (error) { out.textContent = 'Re-run failed: ' + error.message; }
+          });
+        })(rerunBtns[j]);
+      }
+    }
     function renderBrowserEvalSite(site) {
       const targetId = site.target_id;
       document.getElementById('detail').innerHTML =
@@ -1703,7 +1914,175 @@ function dashboardPage() {
           '<div class="subline"><span>' + escapeHtml(site.url) + '</span><span>enterprise (Akamai)</span><span><a href="' + escapeHtml(site.url) + '" target="_blank" rel="noopener">Open store</a></span></div>' +
           '<p class="muted" style="margin:8px 0 0;font-size:12px">No API engine (bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.</p></div></section>' +
         '<div id="searchEval"><div class="empty">Loading search datasets…</div></div>';
-      loadSearchScoreboard(targetId);
+      // Retailers with a graded relevance eval-board render that; others use the HD/Lowe's scoreboard.
+      var evalBoards = { target: 'SE-20260808', catfootwear: 'SE-20260810' };
+      if (evalBoards[targetId]) loadRetailBoard(targetId, targetId, evalBoards[targetId]);
+      else loadSearchScoreboard(targetId);
+    }
+    async function loadRetailBoard(targetId, retailer, evalId) {
+      var el = document.getElementById('searchEval');
+      if (!el) return;
+      var data;
+      try { data = await api('/api/eval-board?retailer=' + encodeURIComponent(retailer) + '&eval=' + encodeURIComponent(evalId)); }
+      catch (error) { el.innerHTML = panel('Search relevance', '', '<div class="panel-body"><div class="empty">No eval board captured yet.</div></div>'); return; }
+      if (state.selectedSite !== targetId) return;
+      if (!data || !data.captured || !data.datasets) { el.innerHTML = panel('Search relevance', '', '<div class="panel-body"><div class="empty">No eval board.</div></div>'); return; }
+      var gcol = function (g) { return g >= 3 ? '#16a34a' : g >= 2 ? '#65a30d' : g >= 1 ? '#d97706' : '#dc2626'; };
+      var badges = function (gs) { return (gs || []).map(function (g) { return '<span class="gbadge" style="background:' + gcol(g) + '">' + g + '</span>'; }).join(' '); };
+      var ov = data.overall || {};
+      // Retailer-agnostic: store, brand, paths all come from the board data.
+      var storeKey = Object.keys(data.stores || {})[0] || 'ST';
+      var store = (data.stores && data.stores[storeKey]) || { name: retailer, platform: '' };
+      var brand = data.brand_color || '#cc0000';
+      var brandInk = data.brand_ink || brand;
+      var pdfLink = data.has_report === false ? '' : '<p style="font-size:13px;margin:0 0 9px"><a class="relink" href="' + artifactHref('reports/' + retailer + '-search-relevance-report.pdf') + '&t=' + Date.now() + '" target="_blank" rel="noopener"><strong>Download the search-relevance report (PDF)</strong></a></p>';
+      // Verdict card — same component as the Industry West board (single store here).
+      var jcol = (ov.pct_not_relevant != null && ov.pct_not_relevant > 20) ? '#dc2626' : '#16a34a';
+      var covLine = ov.coverage_pct != null ? ' · <b>' + ov.coverage_pct + '%</b> coverage' + (ov.zero_terms ? ' (' + ov.zero_terms + ' zero-result)' : '') : '';
+      var head = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px"><div style="flex:1 1 240px;border:1px solid #e5e7eb;border-radius:8px;padding:11px 13px">' +
+        '<div style="font-weight:700;font-size:14px;color:' + brandInk + '">' + escapeHtml(store.name) + ' <span class="muted" style="font-weight:400;font-size:11px">' + escapeHtml(store.platform || '') + '</span></div>' +
+        '<div style="display:flex;align-items:baseline;gap:6px;margin:6px 0 3px"><span style="font-size:25px;font-weight:700;color:' + brandInk + '">' + (ov.mean_grade != null ? ov.mean_grade : '—') + '<span style="font-size:14px">/3</span></span><span class="muted" style="font-size:12px">mean grade · <b style="color:' + jcol + '">' + (ov.pct_not_relevant != null ? ov.pct_not_relevant + '%</b> not-relevant' : '') + ' (' + (ov.product_judgments || 0) + ' judgments)' + covLine + '</span></div>' +
+        '<div style="background:#eef0f3;border-radius:4px;height:8px;overflow:hidden;margin:2px 0 8px"><div style="height:100%;width:' + Math.round((ov.mean_grade || 0) / 3 * 100) + '%;background:' + brand + '"></div></div>' +
+        '<div class="muted" style="font-size:12px">' + escapeHtml(data.verdict || data.headline || '') + '</div></div></div>';
+      var dsOrder = ['synonym', 'attribute', 'job_function', 'intent', 'literal', 'head'];
+      var tableCaption = '<p class="muted" style="font-size:11px;margin-top:8px">' + (ov.coverage_pct != null && ov.coverage_pct < 98 ? 'Coverage ' + ov.coverage_pct + '% — a recall-style engine that returns nothing on a miss; weight zero-result rate and assortment classification, not just grade. ' : 'Coverage ~100% (answers nearly every query), so NDCG looks strong while mean grade reveals shallow answers. ') + 'Judge ' + escapeHtml(String(data.judge || 'llama3.2:3b')) + ' @ temp 0 · rubric ' + escapeHtml(String(data.rubric_hash || '')) + '.</p>';
+      var worstFirst = function (a, b) { return (a.mean_grade == null ? 9 : a.mean_grade) - (b.mean_grade == null ? 9 : b.mean_grade); };
+      var DSCOLS = 'grid-template-columns:minmax(160px,2fr) 84px 64px 96px 104px 76px';
+      var groups = data.datasets.slice().sort(function (a, b) { return dsOrder.indexOf(a.id) - dsOrder.indexOf(b.id); }).map(function (d) {
+        var rs = (data.rows || []).filter(function (r) { return r.dataset === d.id; }).sort(worstFirst);
+        var clsColor = { search_bug: '#dc2626', assortment_gap: '#6b7280', shallow_answer: '#d97706', true_empty: '#6b7280', capture_artifact: '#7c3aed', brand_redirect: '#2563eb' };
+        // answer-key size by term (so a synonym's canonical category size is available to the story)
+        var keyByTerm = {}; (data.rows || []).forEach(function (rr) { if (rr.key_size) keyByTerm[String(rr.q).toLowerCase()] = rr.key_size; });
+        var terms = rs.map(function (r) {
+          var grades = (r.grades_pinned && r.grades_pinned.length) ? r.grades_pinned : (r.grades || []);
+          var g = r.mean_grade, tot = r.total, ks = r.key_size, rec = r.recall, ct = r.compared_to;
+          var canonKey = ct ? keyByTerm[String(ct).toLowerCase()] : null;
+          var hits = (rec != null && ks) ? Math.round(rec * ks) : null;
+          var qual = g == null ? '—' : (g >= 2.3 ? 'strong' : g >= 1.5 ? 'mixed' : g >= 0.8 ? 'poor' : 'irrelevant');
+          var prods = (r.items || []).map(function (t, i) { var gg = grades[i] != null ? grades[i] : 0; return '<div class="evrow"><span class="gbadge" style="background:' + gcol(gg) + '">' + gg + '</span> ' + escapeHtml(t) + '</div>'; }).join('');
+          var live = '<a class="relink" href="' + escapeHtml(r.search_call) + '" target="_blank" rel="noopener">↗ open live search</a>';
+          // the story — assembled from everything we now know about the term
+          var story;
+          if (r.classification === 'assortment_gap') {
+            story = (tot === 0)
+              ? 'Cat makes no <strong>' + escapeHtml(r.q) + '</strong> — correctly returns nothing. An <b>assortment gap</b> (merchandising), not a search bug.'
+              : 'Cat makes no <strong>' + escapeHtml(r.q) + '</strong>, yet search returns <b>' + tot + ' ' + qual + '</b> results (grade ' + (g != null ? g : '—') + '/3)' + (ct && canonKey ? ', instead of surfacing its nearest real category <b>' + escapeHtml(ct) + '</b> (' + canonKey + ' products)' : '') + '. The shopper gets ' + qual + ' matches rather than the ' + (ct ? escapeHtml(ct) : 'nearest category') + '.';
+          } else if (r.classification === 'search_bug') {
+            story = '<b style="color:#dc2626">Returns nothing</b>, but Cat stocks it' + (ks ? ' (' + ks + ' matching products exist)' : '') + ' — a search bug (broken recall).';
+          } else if (r.classification === 'shallow_answer') {
+            story = (rec != null && ks)
+              ? '<strong>' + escapeHtml(r.q) + '</strong>: ' + tot + ' results at grade ' + g + '/3; <b>recall ' + Math.round(rec * 100) + '%</b> — found ' + hits + ' of the ' + ks + ' matching products, <b>missing ' + (ks - hits) + '</b>.'
+              : '<strong>' + escapeHtml(r.q) + '</strong>: ' + tot + ' results, grade ' + g + '/3 — the right type but weak matches.';
+          } else {
+            story = (rec != null && ks)
+              ? '<strong>' + escapeHtml(r.q) + '</strong>: ' + tot + ' results, grade ' + (g != null ? g : '—') + '/3, <b>recall ' + Math.round(rec * 100) + '%</b> — returned ' + hits + ' of ' + ks + ' matching products.'
+              : '<strong>' + escapeHtml(r.q) + '</strong>: ' + tot + ' results, grade ' + (g != null ? g : '—') + '/3.';
+          }
+          // recall bar (returned vs answer key)
+          var recallBar = (rec != null && ks) ? '<div style="margin:6px 0"><div style="font-size:10px;color:#6b7280;margin-bottom:2px">recall — search returned <b>' + hits + '</b> of the <b>' + ks + '</b> matching products' + (r.key_confidence ? ' · ' + r.key_confidence + '-confidence key' : '') + '</div><div style="background:#eef0f3;border-radius:3px;height:8px;overflow:hidden;max-width:300px"><div style="height:100%;width:' + Math.round(rec * 100) + '%;background:' + (rec < 0.5 ? '#dc2626' : rec < 0.8 ? '#d97706' : '#16a34a') + '"></div></div></div>' : '';
+          // per-term selection source — how the term entered the dataset (category-recall skill §6).
+          // One chip on every term, with a tooltip for any label that is not self-explanatory.
+          var selMeta = {
+            catalog_node: { label: 'catalog', color: 'background:#dcfce7;color:#166534', title: 'Selected from the store’s own catalog — matches a real category node the store organizes products under.' },
+            catalog_facet: { label: 'facet', color: 'background:#ccfbf1;color:#115e59', title: 'Synthesized from a catalog filter value — a refinement (feature/size) the store exposes.' },
+            authored: { label: 'authored', color: 'background:#fef3c7;color:#92400e', title: 'Hand-authored shopper vocabulary the catalog has no category for — chosen to test whether search maps it.' },
+            use_case: { label: 'use-case', color: 'background:#ede9fe;color:#5b21b6', title: 'A job/task phrasing (e.g. “boots for standing all day”) — tests whether search understands the use case.' },
+            natural_language: { label: 'natural language', color: 'background:#e0e7ff;color:#3730a3', title: 'A conversational, full-sentence query — tests natural-language understanding.' },
+            mined: { label: 'mined', color: 'background:#dbeafe;color:#1e40af', title: 'Discovered from search-result gaps (recall misses), not hand-picked.' },
+          };
+          var sm = selMeta[r.source] || selMeta.authored;
+          var selTag = ' <span style="font-size:9px;font-weight:700;border-radius:3px;padding:1px 5px;white-space:nowrap;' + sm.color + '" title="' + sm.title + '">' + sm.label + '</span>';
+          var nodeRef = (r.node_name && r.node_size > 0)
+            ? ' <span class="muted" style="font-size:11px" title="the catalog category node this term maps to, and how many products it holds">= <b>' + escapeHtml(r.node_name) + '</b> node (' + r.node_size + ' products)</span>'
+            : '';
+          var cmp = ct ? (r.is_lead ? ' <span class="muted" style="font-size:11px">◆ canonical</span>' + nodeRef : ' <span class="muted" style="font-size:11px">↔ vs “' + escapeHtml(ct) + '”' + (canonKey ? ' (' + canonKey + ')' : '') + '</span>' + nodeRef) : nodeRef;
+          var cls = r.classification ? ' <span style="font-size:10px;font-weight:700;color:#fff;background:' + (clsColor[r.classification] || '#6b7280') + ';border-radius:3px;padding:1px 5px">' + escapeHtml(r.classification.replace(/_/g, ' ')) + '</span>' : '';
+          var ver = r.verified ? ' <span class="muted" style="font-size:11px" title="independently verified via live UI">✓ ' + escapeHtml(r.verified) + '</span>' : '';
+          var metric = (rec != null && ks) ? '<span class="muted" style="font-size:11px">recall <b style="color:' + (rec < 0.5 ? '#dc2626' : '#16a34a') + '">' + Math.round(rec * 100) + '%</b> · ' + tot + ' shown</span>' : '<span class="muted" style="font-size:11px">' + escapeHtml(String(tot)) + ' results</span>';
+          return '<details class="exp"><summary><strong>' + escapeHtml(r.q) + '</strong>' + selTag + cmp + cls + ver + ' <b>grade ' + (g != null ? g : '—') + '</b> ' + metric + ' ' + badges(grades) + '</summary><div class="exp-body"><div style="font-size:12px;line-height:1.5;margin-bottom:2px;padding:7px 9px;background:#f8fafc;border-left:3px solid ' + (clsColor[r.classification] || '#94a3b8') + ';border-radius:3px">' + story + '</div>' + recallBar + prods + '<div style="margin-top:6px">' + live + '</div></div></details>';
+        }).join('');
+        // one combined expandable row: the dataset's summary metrics ARE the header; expanding reveals its terms.
+        var cov = (d.terms - (d.zero || 0)) + '/' + d.terms;
+        var ndp = d.mean_ndcg == null ? '—' : Math.round(d.mean_ndcg * 100) + '%';
+        var grd = d.mean_grade == null ? '—' : d.mean_grade;
+        var nrCol = (d.pct_not_relevant != null && d.pct_not_relevant > 20) ? '#b91c1c' : 'inherit';
+        var nrp = d.pct_not_relevant == null ? '—' : '<span style="color:' + nrCol + '">' + d.pct_not_relevant + '%</span>';
+        var recp = d.mean_recall == null ? '<span class="muted" title="no answer key for this dataset — judged on relevance grade only">n/a</span>' : '<b style="color:' + (d.mean_recall < 0.5 ? '#dc2626' : '#16a34a') + '">' + Math.round(d.mean_recall * 100) + '%</b>';
+        return '<details class="exp dsrow" id="tds-' + d.id + '"><summary style="display:grid;' + DSCOLS + ';align-items:center;gap:8px;font-size:13px">' +
+          '<span><span class="cx">▸</span> <strong>' + escapeHtml(d.name) + '</strong> <span class="muted" style="font-size:11px">' + d.terms + ' terms</span></span>' +
+          '<span>' + cov + '</span><span>' + ndp + '</span><span><strong>' + grd + '</strong></span><span>' + nrp + '</span><span>' + recp + '</span>' +
+          '</summary><div style="margin-top:2px">' + terms + '</div></details>';
+      }).join('');
+      // shared grid template for the combined table header + each dataset row
+      var combinedHead = '<div class="dshead" style="' + DSCOLS + '"><span>Dataset</span><span>Coverage</span><span>NDCG</span><span>Mean grade</span><span>Not-relevant</span><span>Recall</span></div>';
+      var invalidBanner = data.invalidated ? '<div style="border:2px solid #dc2626;background:#fef2f2;border-radius:8px;padding:11px 13px;margin-bottom:12px"><div style="font-weight:700;color:#b91c1c;font-size:13px">⚠ INVALIDATED — contaminated capture, do not use these findings</div><div class="muted" style="font-size:12px;margin-top:4px">' + escapeHtml(data.invalidated.reason) + '</div></div>' : '';
+      // Demand overlay affordance — operator pastes Google Keyword Planner volumes to rank fixes by demand (same as Industry West).
+      var kpKeep = { synonym: 1, attribute: 1, job_function: 1, intent: 1 };
+      var kpTerms = [];
+      (data.rows || []).forEach(function (r) { if (kpKeep[r.dataset] && kpTerms.indexOf(r.q) < 0) kpTerms.push(r.q); });
+      var kpLine = kpTerms.join(', ');
+      var copyLine = '<p style="font-size:12px;margin:0 0 8px"><button class="woo-replay" id="copyTermsBtnT">Copy search terms</button> <span class="muted" style="font-size:11px">' + kpTerms.length + ' terms, comma-separated — paste into Google Keyword Planner</span> <span id="copyTermsOutT" class="muted" style="font-size:12px;margin-left:6px"></span></p>';
+      var pasteLine = '<div style="margin:0 0 12px"><details class="exp"><summary style="font-size:12px">Demand overlay — paste Keyword Planner results to rank fixes by search volume</summary><div style="margin-top:6px"><textarea id="kpPasteT" placeholder="Paste the Keyword Planner table (keyword + Avg. monthly searches ...)" style="width:100%;min-height:90px;font:inherit;font-size:12px;padding:6px;box-sizing:border-box;border:1px solid #d1d5db;border-radius:6px"></textarea><div style="margin-top:6px"><button class="woo-replay" id="kpImportBtnT">Import &amp; validate</button> <span id="kpImportOutT" class="muted" style="font-size:12px;margin-left:6px"></span></div><div id="kpResultT" style="margin-top:8px"></div></div></details></div>';
+      // Findings panel (severity-ranked) from the evaluation.
+      var fnd = data.findings || [];
+      var sevRank = { Critical: 0, High: 1, Medium: 2, Low: 3, Info: 4 };
+      var sevPill = function (sev) { return pill(({ Critical: 'fail', High: 'fail', Medium: 'warn', Low: 'warn', Info: 'muted-status' })[sev] || 'warn', sev); };
+      var findingsPanel = fnd.length ? panel('Findings', 'From the ' + (ov.terms || '') + '-term search-relevance evaluation · severity-ranked · fix candidates noted',
+        '<div class="table-wrap"><table><thead><tr><th>Severity</th><th>Area</th><th>Finding</th></tr></thead><tbody>' +
+        fnd.slice().sort(function (a, b) { return (sevRank[a.severity] == null ? 5 : sevRank[a.severity]) - (sevRank[b.severity] == null ? 5 : sevRank[b.severity]); }).map(function (f) {
+          return '<tr><td>' + sevPill(f.severity) + '</td><td><strong>' + escapeHtml(f.area) + '</strong></td><td><strong>' + escapeHtml(f.title) + '</strong><div class="muted" style="font-size:12px;margin-top:2px">' + escapeHtml(f.detail) + '</div></td></tr>';
+        }).join('') + '</tbody></table></div>') : '';
+      // Revenue-at-risk panel (modeled estimate from real Keyword Planner volumes × grades).
+      var rl = data.revenue_loss;
+      var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+      var moneyC = function (n) { return n >= 1e6 ? '$' + (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? '$' + Math.round(n / 1e3) + 'K' : '$' + Math.round(n); };
+      var revenuePanel = (rl && rl.annual_lost) ? panel('Revenue at risk — and the opportunity at 1,000 terms', 'Modeled estimate — this bounded sample × real Keyword Planner volumes · a range, not audited revenue',
+        '<div class="panel-body"><div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:10px">' +
+        (rl.extrapolation ? '<div style="border:2px solid #cc0000;border-radius:8px;padding:11px 14px;background:#fff5f5"><div class="muted" style="font-size:11px">Projected across the top 1,000 search terms</div><div style="font-size:28px;font-weight:800;color:#cc0000">' + moneyC(rl.extrapolation.projected_annual.base) + '/yr</div><div class="muted" style="font-size:11px">range ' + moneyC(rl.extrapolation.projected_annual.conservative) + ' – ' + moneyC(rl.extrapolation.projected_annual.aggressive) + ' · ' + money(rl.extrapolation.per_term_avg_annual.base) + '/term × 1,000</div></div>' : '') +
+        '<div style="border:1px solid #e5e7eb;border-radius:8px;padding:11px 14px"><div class="muted" style="font-size:11px">Measured (base) — ' + rl.coverage.demand_terms + ' demand terms</div><div style="font-size:26px;font-weight:700;color:#cc0000">' + moneyC(rl.annual_lost.base) + '</div><div class="muted" style="font-size:11px">range ' + moneyC(rl.annual_lost.conservative) + ' – ' + moneyC(rl.annual_lost.aggressive) + '</div></div>' +
+        '<div class="muted" style="font-size:11px;max-width:360px">Base assumptions: market share ' + (rl.base_scenario.market_share * 100).toFixed(1) + '%, search conversion ' + (rl.base_scenario.conversion_rate * 100).toFixed(1) + '%, AOV $' + rl.base_scenario.aov + '; a term grading ≥ ' + rl.accept_grade + '/3 counts as no loss. ' + rl.coverage.contributing_terms + ' of ' + rl.coverage.demand_terms + ' demand terms contribute.</div></div>' +
+        '<div class="table-wrap"><table><thead><tr><th>Term</th><th>Monthly volume</th><th>Grade</th><th>Annual $ lost (base)</th></tr></thead><tbody>' +
+        rl.top.map(function (t) { return '<tr><td><strong>' + escapeHtml(t.term) + '</strong></td><td>' + t.volume.toLocaleString('en-US') + '</td><td>' + t.grade + '</td><td>' + money(t.annual_base) + '</td></tr>'; }).join('') +
+        '</tbody></table></div><p class="muted" style="font-size:11px;margin-top:6px">Modeled estimate for the sampled terms only — not audited revenue, not extrapolated to the full query catalog. Tune market share / conversion / AOV to the retailer’s real figures to tighten the range.</p></div>') : '';
+      // Recall panel — answer-key coverage (present only when the catalog/recall pipeline has run).
+      var keyedDs = (data.datasets || []).filter(function (d) { return d.mean_recall != null; });
+      var worstRec = (data.rows || []).filter(function (r) { return r.recall != null; }).sort(function (a, b) { return a.recall - b.recall; }).slice(0, 8);
+      var recallPanel = keyedDs.length ? panel('Recall — answer-key coverage', 'recall = |search ∩ catalog answer-key products| / answer-key · keyed datasets only · denominator from category nodes × facets (the number a grade cannot give)',
+        '<div class="panel-body"><div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">' +
+        keyedDs.map(function (d) { var pct = Math.round(d.mean_recall * 100); return '<div style="border:1px solid #e5e7eb;border-radius:8px;padding:9px 12px"><div class="muted" style="font-size:11px">' + escapeHtml(d.name) + ' recall</div><div style="font-size:22px;font-weight:700;color:' + (pct < 50 ? '#dc2626' : '#16a34a') + '">' + pct + '%</div><div class="muted" style="font-size:11px">' + (d.key_coverage_pct || 0) + '% of terms keyed</div></div>'; }).join('') +
+        '</div>' + (worstRec.length ? '<div class="table-wrap"><table><thead><tr><th>Term</th><th>Recall</th><th>Answer key</th><th>Class</th></tr></thead><tbody>' + worstRec.map(function (r) { return '<tr><td><strong>' + escapeHtml(r.q) + '</strong></td><td><b style="color:' + (r.recall < 0.5 ? '#dc2626' : '#16a34a') + '">' + Math.round(r.recall * 100) + '%</b></td><td>' + (r.key_size || '') + ' products</td><td>' + escapeHtml((r.classification || '').replace(/_/g, ' ')) + '</td></tr>'; }).join('') + '</tbody></table></div>' : '') +
+        '<p class="muted" style="font-size:11px;margin-top:6px">Denominator = distinct catalog PLP products (node × facet). Key confidence is low where facet provenance is unverified (L05). Recall reveals missed inventory the grade cannot — a term can grade well on eight results while the catalog holds forty.</p></div>') : '';
+      // Verification panel — independent-path re-check of the worst findings (L08).
+      var vf = data.verification;
+      var verificationPanel = (vf && vf.ran) ? panel('Independent verification', 'The worst findings re-checked through a DIFFERENT capture path than the one that produced them (L08) — re-grading the same capture ratifies, it does not test',
+        '<div class="panel-body"><div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+        '<div style="border:1px solid #16a34a;border-radius:8px;padding:8px 12px"><div class="muted" style="font-size:11px">Confirmed</div><div style="font-size:20px;font-weight:700;color:#16a34a">' + vf.confirmed + '</div></div>' +
+        '<div style="border:1px solid #dc2626;border-radius:8px;padding:8px 12px"><div class="muted" style="font-size:11px">Refuted</div><div style="font-size:20px;font-weight:700;color:#dc2626">' + vf.refuted + '</div></div>' +
+        (vf.inconclusive ? '<div style="border:1px solid #d97706;border-radius:8px;padding:8px 12px"><div class="muted" style="font-size:11px">Inconclusive</div><div style="font-size:20px;font-weight:700;color:#d97706">' + vf.inconclusive + '</div></div>' : '') +
+        '<div class="muted" style="font-size:11px;max-width:360px">Original path <b>' + escapeHtml(vf.original_path || '') + '</b> → verified via <b>' + escapeHtml(vf.verification_path || '') + '</b>. ' + escapeHtml(vf.selection_rule || '') + '</div>' +
+        '</div></div>') : '';
+      el.innerHTML =
+        panel('Search relevance — ' + store.name, escapeHtml(store.platform || 'On-site search') + ' · graded 0–3 by a local LLM judge · click any dataset to expand its terms · ↗ opens the live ' + store.name + ' search',
+          '<div class="panel-body">' + invalidBanner + (data.invalidated ? '' : pdfLink + copyLine + pasteLine) + head + combinedHead + groups + tableCaption + '</div>') +
+        recallPanel + verificationPanel + findingsPanel + revenuePanel;
+      wireJumps(el);
+      var copyBtnT = el.querySelector('#copyTermsBtnT');
+      if (copyBtnT) copyBtnT.addEventListener('click', function () { var out = el.querySelector('#copyTermsOutT'); if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(kpLine).then(function () { out.textContent = 'Copied ' + kpTerms.length + ' terms'; }, function () { out.textContent = 'Copy failed'; }); } else { out.textContent = 'Clipboard not available'; } });
+      var importBtnT = el.querySelector('#kpImportBtnT');
+      if (importBtnT) importBtnT.addEventListener('click', async function () {
+        var out = el.querySelector('#kpImportOutT'); var resDiv = el.querySelector('#kpResultT');
+        var pasteEl = el.querySelector('#kpPasteT'); var paste = pasteEl ? pasteEl.value : '';
+        if (!paste.trim()) { out.textContent = 'Paste the Keyword Planner output first.'; return; }
+        out.textContent = 'Parsing and validating…'; resDiv.innerHTML = '';
+        try {
+          var r = await api('/api/demand/import?retailer=' + encodeURIComponent(retailer) + '&eval=' + encodeURIComponent(evalId), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ paste: paste }) });
+          if (!r.ok) { out.textContent = r.error || 'Could not parse the paste.'; return; }
+          out.innerHTML = 'Parsed <strong>' + r.parsed + '</strong> rows · matched <strong>' + r.matched + '</strong> of our terms' + (r.terms_without_data_count ? ' · ' + r.terms_without_data_count + ' had no volume' : '');
+          if (r.top_opportunities && r.top_opportunities.length) {
+            resDiv.innerHTML = '<div class="muted" style="font-size:11px;margin-bottom:3px">Top opportunities — highest demand where search underperforms (returns nothing or shallow results):</div><div class="table-wrap"><table><thead><tr><th>Term</th><th>Monthly volume</th><th>Issue</th></tr></thead><tbody>' + r.top_opportunities.map(function (o) { return '<tr><td><strong>' + escapeHtml(o.term) + '</strong></td><td>' + escapeHtml(String(o.volume_display)) + '</td><td>' + escapeHtml(o.issue) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+          } else { resDiv.innerHTML = '<div class="muted" style="font-size:12px;margin-top:4px">No high-demand failing terms in this batch.</div>'; }
+        } catch (error) { out.textContent = 'Import failed: ' + error.message; }
+      });
     }
     async function loadSearchScoreboard(targetId) {
       let data;
@@ -3009,6 +3388,97 @@ function routeRequest(rootDir, request, response, queue) {
         fetched_at: new Date().toISOString()
       }))
       .catch((error) => sendJson(response, 502, { error: error.message }));
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/eval-board') {
+    const evalId = url.searchParams.get('eval') || '';
+    const retailer = url.searchParams.get('retailer') || 'industrywest';
+    if (!/^SE-[0-9A-Za-z]+$/.test(evalId)) { sendJson(response, 400, { error: 'Invalid eval id.' }); return; }
+    if (!/^[a-z0-9-]+$/.test(retailer)) { sendJson(response, 400, { error: 'Invalid retailer.' }); return; }
+    // Industry West's board is eval-board.json; other retailers use <retailer>-eval-board.json.
+    const dir = path.join(rootDir, 'assessments', retailer, 'search-eval', evalId);
+    const boardPath = exists(path.join(dir, 'eval-board.json')) ? path.join(dir, 'eval-board.json') : path.join(dir, retailer + '-eval-board.json');
+    if (!exists(boardPath)) { sendJson(response, 404, { error: 'No eval board for ' + retailer + '/' + evalId }); return; }
+    sendJson(response, 200, { captured: true, ...readJson(boardPath) });
+    return;
+  }
+
+  if (request.method === 'GET' && url.pathname === '/api/eval/rerun-ndcg') {
+    const evalId = url.searchParams.get('eval') || '';
+    const store = url.searchParams.get('store') || '';
+    const q = url.searchParams.get('q') || '';
+    if (!/^SE-[0-9A-Za-z]+$/.test(evalId)) { sendJson(response, 400, { error: 'Invalid eval id.' }); return; }
+    const boardPath = path.join(rootDir, 'assessments', 'industrywest', 'search-eval', evalId, 'eval-board.json');
+    if (!exists(boardPath)) { sendJson(response, 404, { error: 'No eval board.' }); return; }
+    const board = readJson(boardPath);
+    const row = (board.rows || []).find((r) => r.store === store && r.q === q);
+    if (!row) { sendJson(response, 404, { error: 'No such query row.' }); return; }
+    if (!row.items || !row.items.length) { sendJson(response, 200, { rerun: false, reason: 'zero-result query (nothing to grade)' }); return; }
+    const CORTEX = 'http://127.0.0.1:7077';
+    const rid = store === 'IW' ? 'industrywest' : 'sevenbonde';
+    const products = row.items.map((t, i) => ({ id: rid + '|' + q + '#' + (i + 1), title: t }));
+    (async () => {
+      try {
+        const sub = await fetch(CORTEX + '/v1/relevance', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ client: 'eval-board-rerun', k: 10, queries: [{ query_id: rid + '|' + q, query: q, products }] }) }).then((r) => r.json());
+        let res;
+        for (let i = 0; i < 40; i++) { res = await fetch(CORTEX + '/v1/relevance/' + sub.job_id).then((r) => r.json()); if (res.status === 'complete') break; await new Promise((r) => setTimeout(r, 1500)); }
+        if (!res || res.status !== 'complete') { sendJson(response, 200, { rerun: false, reason: 'Cortex did not complete in time' }); return; }
+        const jr = res.queries[0];
+        const grades = (jr.judgments || []).map((j) => j.grade);
+        const storedGrades = (row.grades_pinned && row.grades_pinned.length) ? row.grades_pinned : row.grades;
+        sendJson(response, 200, { rerun: true, ndcg: jr.metrics && jr.metrics.ndcg, grades, rubric_hash: res.rubric_hash, stored_ndcg: row.ndcg_pinned != null ? row.ndcg_pinned : row.ndcg, stored_grades: storedGrades, matches: JSON.stringify(grades) === JSON.stringify(storedGrades) });
+      } catch (error) { sendJson(response, 502, { error: 'Cortex unreachable: ' + error.message }); }
+    })();
+    return;
+  }
+
+  if (request.method === 'POST' && url.pathname === '/api/demand/import') {
+    const evalId = url.searchParams.get('eval') || 'SE-20260713';
+    const retailer = url.searchParams.get('retailer') || 'industrywest';
+    if (!/^SE-[0-9A-Za-z]+$/.test(evalId) || !/^[a-z0-9-]+$/.test(retailer)) { sendJson(response, 400, { error: 'Invalid retailer/eval.' }); return; }
+    readBody(request).then((body) => {
+      const { rows, skipped } = parseKeywordPlanner((body && body.paste) || '');
+      if (!rows.length) { sendJson(response, 200, { ok: false, parsed: 0, error: 'No Keyword Planner rows recognized. Paste the table with keyword + avg. monthly searches.' }); return; }
+      const dir = path.join(rootDir, 'assessments', retailer, 'search-eval', evalId);
+      const boardPath = exists(path.join(dir, 'eval-board.json')) ? path.join(dir, 'eval-board.json') : path.join(dir, retailer + '-eval-board.json');
+      const board = exists(boardPath) ? readJson(boardPath) : { rows: [] };
+      // Per-term signal: worst result count across stores, and mean grade (works for both board shapes).
+      const mean = (a) => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
+      const info = {};
+      for (const r of (board.rows || [])) {
+        const it = info[r.q] || (info[r.q] = { minTotal: Infinity, grades: [] });
+        const tot = typeof r.total === 'number' ? r.total : (String(r.total).indexOf('0') === 0 && String(r.total).length === 1 ? 0 : 1);
+        it.minTotal = Math.min(it.minTotal, tot);
+        if (r.grades_pinned && r.grades_pinned.length) it.grades = it.grades.concat(r.grades_pinned);
+        if (r.mean_grade != null) it.mg = r.mean_grade;
+      }
+      const norm = (s) => String(s).toLowerCase().replace(/\s+/g, ' ').trim();
+      const ourNorm = new Map(Object.keys(info).map((t) => [norm(t), t]));
+      const matched = []; const unmatchedKp = [];
+      for (const row of rows) {
+        const t = ourNorm.get(norm(row.keyword));
+        if (t) matched.push({ term: t, volume: parseVolume(row.avg_monthly_searches), raw: row.avg_monthly_searches });
+        else unmatchedKp.push(row.keyword);
+      }
+      const matchedSet = new Set(matched.map((m) => m.term));
+      const termsNoData = Object.keys(info).filter((t) => !matchedSet.has(t));
+      // A term is a priority if it returns nothing (recall bug) OR its results are shallow (mean grade < 1.5).
+      const gradeOf = (t) => { const i = info[t]; return i ? (i.mg != null ? i.mg : (i.grades.length ? +mean(i.grades).toFixed(2) : null)) : null; };
+      const signalOf = (t) => {
+        const i = info[t]; if (!i) return null;
+        if (i.minTotal === 0) return { kind: 'zero-result', label: 'returns nothing' };
+        const g = gradeOf(t);
+        if (g != null && g < 1.5) return { kind: 'shallow', label: 'shallow (grade ' + g + ')' };
+        return null;
+      };
+      const opps = matched.map((m) => ({ ...m, sig: signalOf(m.term), grade: gradeOf(m.term) }))
+        .filter((m) => m.volume != null && m.sig).sort((a, b) => (b.volume || 0) - (a.volume || 0)).slice(0, 20)
+        .map((m) => ({ term: m.term, volume: m.volume, volume_display: m.raw, issue: m.sig.label, grade: m.grade }));
+      writeText(path.join(dir, 'demand-volume.json'),
+        JSON.stringify({ imported_at: new Date().toISOString(), retailer, eval: evalId, parsed_rows: rows.length, matched: matched.map((m) => ({ term: m.term, volume: m.volume, raw: m.raw })) }, null, 1));
+      sendJson(response, 200, { ok: true, parsed: rows.length, skipped: skipped.length, matched: matched.length, unmatched_kp_count: unmatchedKp.length, unmatched_kp: unmatchedKp.slice(0, 40), terms_without_data_count: termsNoData.length, terms_without_data: termsNoData, top_opportunities: opps });
+    }).catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 

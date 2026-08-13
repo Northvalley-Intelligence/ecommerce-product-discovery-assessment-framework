@@ -1,0 +1,28 @@
+{
+  "dataset": "general-retail-search-v1",
+  "sector": "general-retail",
+  "note": "Tests the same relevance DIMENSIONS as the furniture pack (synonym/category equivalence, attribute, natural-language intent, head terms) but spans multiple mass-merchant departments (home, kitchen, apparel, electronics, toys, grocery). Reuses several furniture terms so results are cross-comparable with furniture retailers. Adapt departments per retailer.",
+  "synonym": [
+    {"concept": "sofa", "variants": ["sofa", "couch", "settee"]},
+    {"concept": "coffee table", "variants": ["coffee table", "cocktail table"]},
+    {"concept": "sneakers", "variants": ["sneakers", "trainers", "tennis shoes"]},
+    {"concept": "cutlery", "variants": ["cutlery", "silverware", "flatware"]},
+    {"concept": "pram", "variants": ["stroller", "pram", "pushchair"]},
+    {"concept": "soda", "variants": ["soda", "pop", "soft drinks"]},
+    {"concept": "trash can", "variants": ["trash can", "garbage can", "rubbish bin"]},
+    {"concept": "sweater", "variants": ["sweater", "jumper", "pullover"]}
+  ],
+  "attribute": [
+    "walnut dining table", "stainless steel cookware set", "wireless noise cancelling headphones",
+    "organic cotton crib sheet", "cast iron skillet 12 inch", "high waisted black leggings",
+    "4k oled tv 55 inch", "reusable stainless steel water bottle"
+  ],
+  "job_function": [
+    "gift for a 5 year old boy", "everything for a college dorm", "host a backyard bbq",
+    "baby shower gifts", "small apartment storage", "back to school supplies",
+    "home office setup", "furnish a living room"
+  ],
+  "head_terms": [
+    "coffee table", "office chair", "tv", "backpack", "coffee maker", "sneakers"
+  ]
+}

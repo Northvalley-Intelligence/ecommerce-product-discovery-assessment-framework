@@ -1,0 +1,154 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "using_default_rubric": true,
+ "rows": [
+  {
+   "query_id": "sevenbonde|counter stool",
+   "ndcg": 0.8871713674085455,
+   "grades": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|armchair",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|side table",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|leather lounge chair",
+   "ndcg": null,
+   "grades": [
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|dining table",
+   "ndcg": 0.7611307717439334,
+   "grades": [
+    3,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|piccolo",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|bar stool",
+   "ndcg": null,
+   "grades": [
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|lounge chair",
+   "ndcg": null,
+   "grades": [
+    2,
+    3,
+    3,
+    1,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|ottoman",
+   "ndcg": null,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|pouf",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|dining chair",
+   "ndcg": 0.8163531678745487,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|side chair",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|bench",
+   "ndcg": null,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|leather dining chair",
+   "ndcg": 0.9715124125517425,
+   "grades": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|rattan chair",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  }
+ ]
+}

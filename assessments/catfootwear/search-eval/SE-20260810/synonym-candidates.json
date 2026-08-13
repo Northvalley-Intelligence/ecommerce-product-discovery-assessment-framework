@@ -1,0 +1,74 @@
+{
+ "candidates_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "generated_at": "2026-08-11T18:47:18.024Z",
+ "note": "Directional synonym candidates mined from recall misses. candidate -> maps_to_node (uni). Each carries miss products as evidence. Siblings excluded (L06). These are candidates for review, not confirmed equivalences; a low-confidence key must not drive a finding on its own.",
+ "candidates": [
+  {
+   "candidate": "outline",
+   "maps_to_node": "work-boots",
+   "maps_to_term": "gold work boots",
+   "relation": "node_attr",
+   "direction": "uni",
+   "lift": 1,
+   "miss_share": 1,
+   "evidence_products": [
+    "outline work boot",
+    "outline steel toe work boot"
+   ]
+  },
+  {
+   "candidate": "colorado",
+   "maps_to_node": "composite-toe",
+   "maps_to_term": "composite toe boots",
+   "relation": "node_attr",
+   "direction": "uni",
+   "lift": 0.52,
+   "miss_share": 0.67,
+   "evidence_products": [
+    "colorado equip 6 waterproof composite toe work boot",
+    "colorado equip 8 waterproof thinsulate composite toe work boot"
+   ]
+  },
+  {
+   "candidate": "equip",
+   "maps_to_node": "composite-toe",
+   "maps_to_term": "composite toe boots",
+   "relation": "node_attr",
+   "direction": "uni",
+   "lift": 0.52,
+   "miss_share": 0.67,
+   "evidence_products": [
+    "colorado equip 6 waterproof composite toe work boot",
+    "colorado equip 8 waterproof thinsulate composite toe work boot"
+   ]
+  },
+  {
+   "candidate": "colorado",
+   "maps_to_node": "work-boots",
+   "maps_to_term": "composite toe work boots",
+   "relation": "node_attr",
+   "direction": "uni",
+   "lift": 0.3,
+   "miss_share": 0.5,
+   "evidence_products": [
+    "colorado equip 6 waterproof composite toe work boot",
+    "colorado equip 8 waterproof thinsulate composite toe work boot"
+   ]
+  },
+  {
+   "candidate": "equip",
+   "maps_to_node": "work-boots",
+   "maps_to_term": "composite toe work boots",
+   "relation": "node_attr",
+   "direction": "uni",
+   "lift": 0.3,
+   "miss_share": 0.5,
+   "evidence_products": [
+    "colorado equip 6 waterproof composite toe work boot",
+    "colorado equip 8 waterproof thinsulate composite toe work boot"
+   ]
+  }
+ ]
+}

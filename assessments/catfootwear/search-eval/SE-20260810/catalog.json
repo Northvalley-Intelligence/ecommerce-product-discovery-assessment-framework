@@ -1,0 +1,2616 @@
+{
+ "catalog_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "captured_at": "2026-08-11T18:44:39.686Z",
+ "source": {
+  "method": "plp_json",
+  "base_url": "https://www.catfootwear.com/US/en/",
+  "notes": "SFCC/SFRA category PLPs via ?sz=300; facet values via ?prefn1/prefv1 filter URLs. Curated taxonomy nodes (promo/sale pages excluded)."
+ },
+ "facet_provenance": "unknown",
+ "nodes": [
+  {
+   "node_id": "footwear",
+   "node_name": "Footwear",
+   "parent_id": null,
+   "depth": 0,
+   "url": "https://www.catfootwear.com/US/en/footwear/",
+   "sku_count": 0,
+   "singular": "footwear"
+  },
+  {
+   "node_id": "work-boots",
+   "node_name": "Work Boots",
+   "parent_id": "footwear",
+   "depth": 1,
+   "url": "https://www.catfootwear.com/US/en/work-boots/",
+   "sku_count": 39,
+   "singular": "work boots"
+  },
+  {
+   "node_id": "work-shoes",
+   "node_name": "Work Shoes",
+   "parent_id": "footwear",
+   "depth": 1,
+   "url": "https://www.catfootwear.com/US/en/work-shoes/",
+   "sku_count": 4,
+   "singular": "work shoes"
+  },
+  {
+   "node_id": "casual-footwear",
+   "node_name": "Casual Footwear",
+   "parent_id": "footwear",
+   "depth": 1,
+   "url": "https://www.catfootwear.com/US/en/casual-footwear/",
+   "sku_count": 16,
+   "singular": "casual shoes"
+  },
+  {
+   "node_id": "steel-toe",
+   "node_name": "Steel Toe",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/steel-toe/",
+   "sku_count": 15,
+   "singular": "steel toe"
+  },
+  {
+   "node_id": "composite-toe",
+   "node_name": "Composite Toe",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/composite-toe/",
+   "sku_count": 10,
+   "singular": "composite toe"
+  },
+  {
+   "node_id": "alloy-toe",
+   "node_name": "Alloy Toe",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/alloy-toe/",
+   "sku_count": 2,
+   "singular": "alloy toe"
+  },
+  {
+   "node_id": "soft-toe",
+   "node_name": "Soft Toe",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/soft-toe/",
+   "sku_count": 13,
+   "singular": "soft toe"
+  },
+  {
+   "node_id": "carbon-composite-toe",
+   "node_name": "Carbon Composite Toe",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/carbon-composite-toe/",
+   "sku_count": 0,
+   "singular": "carbon composite toe"
+  },
+  {
+   "node_id": "chelsea-work-boots",
+   "node_name": "Chelsea Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/chelsea-work-boots/",
+   "sku_count": 11,
+   "singular": "chelsea boots"
+  },
+  {
+   "node_id": "chukka-work-boots",
+   "node_name": "Chukka Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/chukka-work-boots/",
+   "sku_count": 3,
+   "singular": "chukka boots"
+  },
+  {
+   "node_id": "sneaker-work-boots",
+   "node_name": "Sneaker Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/sneaker-work-boots/",
+   "sku_count": 8,
+   "singular": "work sneakers"
+  },
+  {
+   "node_id": "hiking-work-boots",
+   "node_name": "Hiking Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/hiking-work-boots/",
+   "sku_count": 13,
+   "singular": "hiking boots"
+  },
+  {
+   "node_id": "pull-ons",
+   "node_name": "Pull On Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/pull-ons/",
+   "sku_count": 11,
+   "singular": "pull on boots"
+  },
+  {
+   "node_id": "wellingtons",
+   "node_name": "Wellingtons",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/wellingtons/",
+   "sku_count": 3,
+   "singular": "wellington boots"
+  },
+  {
+   "node_id": "slip-on",
+   "node_name": "Slip On",
+   "parent_id": "casual-footwear",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/slip-on/",
+   "sku_count": 12,
+   "singular": "slip ons"
+  },
+  {
+   "node_id": "black-work-boots",
+   "node_name": "Black Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/black-work-boots/",
+   "sku_count": 16,
+   "singular": "black work boots"
+  },
+  {
+   "node_id": "brown-work-boots",
+   "node_name": "Brown Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/brown-work-boots/",
+   "sku_count": 34,
+   "singular": "brown work boots"
+  },
+  {
+   "node_id": "tan-work-boots",
+   "node_name": "Tan Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/tan-work-boots/",
+   "sku_count": 17,
+   "singular": "tan work boots"
+  },
+  {
+   "node_id": "waterproof",
+   "node_name": "Waterproof",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/waterproof/",
+   "sku_count": 36,
+   "singular": "waterproof boots"
+  },
+  {
+   "node_id": "insulated-work-boots",
+   "node_name": "Insulated Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/insulated-work-boots/",
+   "sku_count": 16,
+   "singular": "insulated boots"
+  },
+  {
+   "node_id": "slip-resistant",
+   "node_name": "Slip Resistant",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/slip-resistant/",
+   "sku_count": 33,
+   "singular": "slip resistant shoes"
+  },
+  {
+   "node_id": "lightweight-work-boots-shoes",
+   "node_name": "Lightweight",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/lightweight-work-boots-shoes/",
+   "sku_count": 15,
+   "singular": "lightweight work boots"
+  },
+  {
+   "node_id": "breathable-work-boots",
+   "node_name": "Breathable Work Boots",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/breathable-work-boots/",
+   "sku_count": 20,
+   "singular": "breathable work boots"
+  },
+  {
+   "node_id": "cold-weather",
+   "node_name": "Cold Weather",
+   "parent_id": "work-boots",
+   "depth": 2,
+   "url": "https://www.catfootwear.com/US/en/cold-weather/",
+   "sku_count": 16,
+   "singular": "cold weather boots"
+  }
+ ],
+ "facets": [
+  {
+   "node_id": "work-boots",
+   "facet": "size",
+   "cross_cutting": true,
+   "values": [
+    {
+     "value": "5",
+     "count": 7,
+     "skus": [
+      "striver steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "abbey steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "tess steel toe work boot"
+     ]
+    },
+    {
+     "value": "5.5",
+     "count": 7,
+     "skus": [
+      "striver steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "abbey steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "tess steel toe work boot"
+     ]
+    },
+    {
+     "value": "6",
+     "count": 12,
+     "skus": [
+      "striver waterproof steel toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "striver steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "abbey steel toe work boot",
+      "drawbar steel toe work boot",
+      "tess steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot"
+     ]
+    },
+    {
+     "value": "6.5",
+     "count": 11,
+     "skus": [
+      "striver waterproof steel toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "striver steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "abbey steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "tess steel toe work boot",
+      "resorption waterproof composite toe work boot"
+     ]
+    },
+    {
+     "value": "7",
+     "count": 35,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "outbase waterproof work boot",
+      "drawbar steel toe work boot",
+      "abbey steel toe work boot",
+      "revolver steel toe work boot",
+      "wheelbase steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "exposition chelsea alloy toe work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "tess steel toe work boot",
+      "drawbar pull on work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot"
+     ]
+    },
+    {
+     "value": "7.5",
+     "count": 35,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "outbase waterproof work boot",
+      "drawbar steel toe work boot",
+      "abbey steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "wheelbase steel toe work boot",
+      "exposition chelsea alloy toe work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "exposition chelsea work boot",
+      "revolver work boot",
+      "tess steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot"
+     ]
+    },
+    {
+     "value": "8",
+     "count": 37,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "drawbar steel toe work boot",
+      "outbase waterproof work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "exposition chelsea alloy toe work boot",
+      "exposition chelsea work boot",
+      "drawbar pull on work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "tess steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot"
+     ]
+    },
+    {
+     "value": "8.5",
+     "count": 36,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "outbase waterproof work boot",
+      "drawbar steel toe work boot",
+      "abbey steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "wheelbase steel toe work boot",
+      "exposition chelsea alloy toe work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "tess steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "drawbar pull on work boot",
+      "striver work boot"
+     ]
+    }
+   ]
+  },
+  {
+   "node_id": "work-boots",
+   "facet": "width",
+   "cross_cutting": true,
+   "values": [
+    {
+     "value": "Medium",
+     "count": 38,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "drawbar steel toe work boot",
+      "outbase waterproof work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "exposition chelsea alloy toe work boot",
+      "exposition chelsea work boot",
+      "drawbar pull on work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "tess steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Wide",
+     "count": 39,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift waterproof work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "drawbar steel toe work boot",
+      "outbase waterproof work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "exposition chelsea alloy toe work boot",
+      "exposition chelsea work boot",
+      "drawbar pull on work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "tess steel toe work boot",
+      "striver work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    }
+   ]
+  },
+  {
+   "node_id": "work-boots",
+   "facet": "refinementColor",
+   "cross_cutting": false,
+   "null_rate": 0,
+   "values": [
+    {
+     "value": "Black",
+     "count": 17,
+     "skus": [
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "outline steel toe work boot",
+      "resorption waterproof composite toe work boot"
+     ]
+    },
+    {
+     "value": "Brown",
+     "count": 35,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "drawbar steel toe work boot",
+      "abbey steel toe work boot",
+      "wheelbase work boot",
+      "outbase waterproof work boot",
+      "revolver steel toe work boot",
+      "exposition chelsea work boot",
+      "drawbar pull on work boot",
+      "exposition chelsea alloy toe work boot",
+      "mae steel toe waterproof work boot",
+      "revolver work boot",
+      "outline steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot",
+      "outline work boot",
+      "resorption waterproof composite toe work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Gold",
+     "count": 4,
+     "skus": [
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "outline work boot",
+      "outline steel toe work boot"
+     ]
+    },
+    {
+     "value": "Green",
+     "count": 1,
+     "skus": [
+      "mae steel toe waterproof work boot"
+     ]
+    },
+    {
+     "value": "Grey",
+     "count": 7,
+     "skus": [
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "invader mid vent composite toe work boot",
+      "echo waterproof steel toe work boot",
+      "wheelbase steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "outline steel toe work boot"
+     ]
+    },
+    {
+     "value": "Tan",
+     "count": 4,
+     "skus": [
+      "invader hi steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift waterproof work boot",
+      "tess steel toe work boot"
+     ]
+    }
+   ]
+  },
+  {
+   "node_id": "work-boots",
+   "facet": "itemStyle",
+   "cross_cutting": true,
+   "values": [
+    {
+     "value": "Boots",
+     "count": 36,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift waterproof work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "drawbar steel toe work boot",
+      "outbase waterproof work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "drawbar pull on work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "tess steel toe work boot",
+      "striver work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "6&quot; Boots",
+     "count": 0,
+     "skus": []
+    },
+    {
+     "value": "8&quot; Boots",
+     "count": 0,
+     "skus": []
+    },
+    {
+     "value": "11&quot; Boots",
+     "count": 0,
+     "skus": []
+    },
+    {
+     "value": "Winter Boots",
+     "count": 1,
+     "skus": [
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Pull-Ons",
+     "count": 11,
+     "skus": [
+      "colorado equip wellington waterproof composite toe work boot",
+      "drawbar steel toe work boot",
+      "wheelbase steel toe work boot",
+      "abbey steel toe work boot",
+      "wheelbase work boot",
+      "revolver steel toe work boot",
+      "exposition chelsea work boot",
+      "exposition chelsea alloy toe work boot",
+      "drawbar pull on work boot",
+      "revolver work boot",
+      "striver chelsea waterproof steel toe work boot"
+     ]
+    },
+    {
+     "value": "Chukkas",
+     "count": 2,
+     "skus": [
+      "mae steel toe waterproof work boot",
+      "tess steel toe work boot"
+     ]
+    },
+    {
+     "value": "Gift Card",
+     "count": 0,
+     "skus": []
+    }
+   ]
+  },
+  {
+   "node_id": "work-boots",
+   "facet": "toeFeatures",
+   "cross_cutting": false,
+   "null_rate": 0,
+   "values": [
+    {
+     "value": "Composite Toe",
+     "count": 9,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader mid vent composite toe work boot",
+      "resorption waterproof composite toe work boot"
+     ]
+    },
+    {
+     "value": "Steel Toe",
+     "count": 17,
+     "skus": [
+      "striver waterproof steel toe work boot",
+      "threshold waterproof steel toe work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hi steel toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift steel toe work boot",
+      "echo waterproof steel toe work boot",
+      "drawbar steel toe work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "outline steel toe work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "tess steel toe work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Soft Toe",
+     "count": 12,
+     "skus": [
+      "colorado equip 6 waterproof work boot",
+      "threshold waterproof work boot",
+      "invader hiker waterproof work boot",
+      "second shift waterproof work boot",
+      "second shift work boot",
+      "wheelbase work boot",
+      "outbase waterproof work boot",
+      "drawbar pull on work boot",
+      "exposition chelsea work boot",
+      "revolver work boot",
+      "outline work boot",
+      "striver work boot"
+     ]
+    },
+    {
+     "value": "Alloy Toe",
+     "count": 1,
+     "skus": [
+      "exposition chelsea alloy toe work boot"
+     ]
+    }
+   ]
+  },
+  {
+   "node_id": "work-boots",
+   "facet": "workFeatures",
+   "cross_cutting": true,
+   "values": [
+    {
+     "value": "Electrical Hazard",
+     "count": 37,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift waterproof work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "drawbar steel toe work boot",
+      "outbase waterproof work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "exposition chelsea alloy toe work boot",
+      "exposition chelsea work boot",
+      "drawbar pull on work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Insulated",
+     "count": 1,
+     "skus": [
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Slip Resistant",
+     "count": 37,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader hi steel toe work boot",
+      "invader mid vent composite toe work boot",
+      "striver steel toe work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift waterproof work boot",
+      "second shift steel toe work boot",
+      "second shift work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "wheelbase work boot",
+      "drawbar steel toe work boot",
+      "outbase waterproof work boot",
+      "abbey steel toe work boot",
+      "wheelbase steel toe work boot",
+      "revolver steel toe work boot",
+      "mae steel toe waterproof work boot",
+      "exposition chelsea alloy toe work boot",
+      "exposition chelsea work boot",
+      "drawbar pull on work boot",
+      "outline work boot",
+      "outline steel toe work boot",
+      "revolver work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "striver work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Waterproof",
+     "count": 21,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "invader max 6 waterproof composite toe work boot",
+      "invader mid vent waterproof composite toe work boot",
+      "striver waterproof steel toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "threshold waterproof steel toe work boot",
+      "threshold waterproof work boot",
+      "accomplice x waterproof steel toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "second shift waterproof steel toe work boot",
+      "second shift waterproof work boot",
+      "echo waterproof steel toe work boot",
+      "resorption waterproof composite toe work boot",
+      "outbase waterproof work boot",
+      "mae steel toe waterproof work boot",
+      "striver chelsea waterproof steel toe work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "Non-Metallic",
+     "count": 6,
+     "skus": [
+      "invader mid vent waterproof composite toe work boot",
+      "threshold rebound waterproof composite toe work boot",
+      "invader hiker waterproof composite toe work boot",
+      "invader hiker waterproof work boot",
+      "invader mid vent composite toe work boot",
+      "resorption waterproof composite toe work boot"
+     ]
+    },
+    {
+     "value": "Thinsulate",
+     "count": 2,
+     "skus": [
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    }
+   ]
+  },
+  {
+   "node_id": "work-boots",
+   "facet": "comfortFeatures",
+   "cross_cutting": true,
+   "values": [
+    {
+     "value": "ease",
+     "count": 1,
+     "skus": [
+      "invader hi steel toe work boot"
+     ]
+    },
+    {
+     "value": "ERGO",
+     "count": 2,
+     "skus": [
+      "echo waterproof steel toe work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    },
+    {
+     "value": "SRX",
+     "count": 8,
+     "skus": [
+      "colorado equip 6 waterproof composite toe work boot",
+      "colorado equip 6 waterproof work boot",
+      "colorado equip wellington waterproof composite toe work boot",
+      "colorado equip 8 waterproof thinsulate composite toe work boot",
+      "echo waterproof steel toe work boot",
+      "exposition chelsea work boot",
+      "exposition chelsea alloy toe work boot",
+      "diagnostic hi waterproof thinsulate steel toe work boot"
+     ]
+    }
+   ]
+  }
+ ],
+ "sibling_blocklist": [
+  [
+   "work-boots",
+   "work-shoes"
+  ],
+  [
+   "work-boots",
+   "casual-footwear"
+  ],
+  [
+   "work-shoes",
+   "casual-footwear"
+  ],
+  [
+   "steel-toe",
+   "composite-toe"
+  ],
+  [
+   "steel-toe",
+   "alloy-toe"
+  ],
+  [
+   "steel-toe",
+   "soft-toe"
+  ],
+  [
+   "steel-toe",
+   "carbon-composite-toe"
+  ],
+  [
+   "steel-toe",
+   "chelsea-work-boots"
+  ],
+  [
+   "steel-toe",
+   "chukka-work-boots"
+  ],
+  [
+   "steel-toe",
+   "sneaker-work-boots"
+  ],
+  [
+   "steel-toe",
+   "hiking-work-boots"
+  ],
+  [
+   "steel-toe",
+   "pull-ons"
+  ],
+  [
+   "steel-toe",
+   "wellingtons"
+  ],
+  [
+   "steel-toe",
+   "black-work-boots"
+  ],
+  [
+   "steel-toe",
+   "brown-work-boots"
+  ],
+  [
+   "steel-toe",
+   "tan-work-boots"
+  ],
+  [
+   "steel-toe",
+   "waterproof"
+  ],
+  [
+   "steel-toe",
+   "insulated-work-boots"
+  ],
+  [
+   "steel-toe",
+   "slip-resistant"
+  ],
+  [
+   "steel-toe",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "steel-toe",
+   "breathable-work-boots"
+  ],
+  [
+   "steel-toe",
+   "cold-weather"
+  ],
+  [
+   "composite-toe",
+   "alloy-toe"
+  ],
+  [
+   "composite-toe",
+   "soft-toe"
+  ],
+  [
+   "composite-toe",
+   "carbon-composite-toe"
+  ],
+  [
+   "composite-toe",
+   "chelsea-work-boots"
+  ],
+  [
+   "composite-toe",
+   "chukka-work-boots"
+  ],
+  [
+   "composite-toe",
+   "sneaker-work-boots"
+  ],
+  [
+   "composite-toe",
+   "hiking-work-boots"
+  ],
+  [
+   "composite-toe",
+   "pull-ons"
+  ],
+  [
+   "composite-toe",
+   "wellingtons"
+  ],
+  [
+   "composite-toe",
+   "black-work-boots"
+  ],
+  [
+   "composite-toe",
+   "brown-work-boots"
+  ],
+  [
+   "composite-toe",
+   "tan-work-boots"
+  ],
+  [
+   "composite-toe",
+   "waterproof"
+  ],
+  [
+   "composite-toe",
+   "insulated-work-boots"
+  ],
+  [
+   "composite-toe",
+   "slip-resistant"
+  ],
+  [
+   "composite-toe",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "composite-toe",
+   "breathable-work-boots"
+  ],
+  [
+   "composite-toe",
+   "cold-weather"
+  ],
+  [
+   "alloy-toe",
+   "soft-toe"
+  ],
+  [
+   "alloy-toe",
+   "carbon-composite-toe"
+  ],
+  [
+   "alloy-toe",
+   "chelsea-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "chukka-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "sneaker-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "hiking-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "pull-ons"
+  ],
+  [
+   "alloy-toe",
+   "wellingtons"
+  ],
+  [
+   "alloy-toe",
+   "black-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "brown-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "tan-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "waterproof"
+  ],
+  [
+   "alloy-toe",
+   "insulated-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "slip-resistant"
+  ],
+  [
+   "alloy-toe",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "alloy-toe",
+   "breathable-work-boots"
+  ],
+  [
+   "alloy-toe",
+   "cold-weather"
+  ],
+  [
+   "soft-toe",
+   "carbon-composite-toe"
+  ],
+  [
+   "soft-toe",
+   "chelsea-work-boots"
+  ],
+  [
+   "soft-toe",
+   "chukka-work-boots"
+  ],
+  [
+   "soft-toe",
+   "sneaker-work-boots"
+  ],
+  [
+   "soft-toe",
+   "hiking-work-boots"
+  ],
+  [
+   "soft-toe",
+   "pull-ons"
+  ],
+  [
+   "soft-toe",
+   "wellingtons"
+  ],
+  [
+   "soft-toe",
+   "black-work-boots"
+  ],
+  [
+   "soft-toe",
+   "brown-work-boots"
+  ],
+  [
+   "soft-toe",
+   "tan-work-boots"
+  ],
+  [
+   "soft-toe",
+   "waterproof"
+  ],
+  [
+   "soft-toe",
+   "insulated-work-boots"
+  ],
+  [
+   "soft-toe",
+   "slip-resistant"
+  ],
+  [
+   "soft-toe",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "soft-toe",
+   "breathable-work-boots"
+  ],
+  [
+   "soft-toe",
+   "cold-weather"
+  ],
+  [
+   "carbon-composite-toe",
+   "chelsea-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "chukka-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "sneaker-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "hiking-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "pull-ons"
+  ],
+  [
+   "carbon-composite-toe",
+   "wellingtons"
+  ],
+  [
+   "carbon-composite-toe",
+   "black-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "brown-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "tan-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "waterproof"
+  ],
+  [
+   "carbon-composite-toe",
+   "insulated-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "slip-resistant"
+  ],
+  [
+   "carbon-composite-toe",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "carbon-composite-toe",
+   "breathable-work-boots"
+  ],
+  [
+   "carbon-composite-toe",
+   "cold-weather"
+  ],
+  [
+   "chelsea-work-boots",
+   "chukka-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "sneaker-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "hiking-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "pull-ons"
+  ],
+  [
+   "chelsea-work-boots",
+   "wellingtons"
+  ],
+  [
+   "chelsea-work-boots",
+   "black-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "brown-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "tan-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "waterproof"
+  ],
+  [
+   "chelsea-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "chelsea-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "chelsea-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "chelsea-work-boots",
+   "cold-weather"
+  ],
+  [
+   "chukka-work-boots",
+   "sneaker-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "hiking-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "pull-ons"
+  ],
+  [
+   "chukka-work-boots",
+   "wellingtons"
+  ],
+  [
+   "chukka-work-boots",
+   "black-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "brown-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "tan-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "waterproof"
+  ],
+  [
+   "chukka-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "chukka-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "chukka-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "chukka-work-boots",
+   "cold-weather"
+  ],
+  [
+   "sneaker-work-boots",
+   "hiking-work-boots"
+  ],
+  [
+   "sneaker-work-boots",
+   "pull-ons"
+  ],
+  [
+   "sneaker-work-boots",
+   "wellingtons"
+  ],
+  [
+   "sneaker-work-boots",
+   "black-work-boots"
+  ],
+  [
+   "sneaker-work-boots",
+   "brown-work-boots"
+  ],
+  [
+   "sneaker-work-boots",
+   "tan-work-boots"
+  ],
+  [
+   "sneaker-work-boots",
+   "waterproof"
+  ],
+  [
+   "sneaker-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "sneaker-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "sneaker-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "sneaker-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "sneaker-work-boots",
+   "cold-weather"
+  ],
+  [
+   "hiking-work-boots",
+   "pull-ons"
+  ],
+  [
+   "hiking-work-boots",
+   "wellingtons"
+  ],
+  [
+   "hiking-work-boots",
+   "black-work-boots"
+  ],
+  [
+   "hiking-work-boots",
+   "brown-work-boots"
+  ],
+  [
+   "hiking-work-boots",
+   "tan-work-boots"
+  ],
+  [
+   "hiking-work-boots",
+   "waterproof"
+  ],
+  [
+   "hiking-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "hiking-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "hiking-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "hiking-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "hiking-work-boots",
+   "cold-weather"
+  ],
+  [
+   "pull-ons",
+   "wellingtons"
+  ],
+  [
+   "pull-ons",
+   "black-work-boots"
+  ],
+  [
+   "pull-ons",
+   "brown-work-boots"
+  ],
+  [
+   "pull-ons",
+   "tan-work-boots"
+  ],
+  [
+   "pull-ons",
+   "waterproof"
+  ],
+  [
+   "pull-ons",
+   "insulated-work-boots"
+  ],
+  [
+   "pull-ons",
+   "slip-resistant"
+  ],
+  [
+   "pull-ons",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "pull-ons",
+   "breathable-work-boots"
+  ],
+  [
+   "pull-ons",
+   "cold-weather"
+  ],
+  [
+   "wellingtons",
+   "black-work-boots"
+  ],
+  [
+   "wellingtons",
+   "brown-work-boots"
+  ],
+  [
+   "wellingtons",
+   "tan-work-boots"
+  ],
+  [
+   "wellingtons",
+   "waterproof"
+  ],
+  [
+   "wellingtons",
+   "insulated-work-boots"
+  ],
+  [
+   "wellingtons",
+   "slip-resistant"
+  ],
+  [
+   "wellingtons",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "wellingtons",
+   "breathable-work-boots"
+  ],
+  [
+   "wellingtons",
+   "cold-weather"
+  ],
+  [
+   "black-work-boots",
+   "brown-work-boots"
+  ],
+  [
+   "black-work-boots",
+   "tan-work-boots"
+  ],
+  [
+   "black-work-boots",
+   "waterproof"
+  ],
+  [
+   "black-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "black-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "black-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "black-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "black-work-boots",
+   "cold-weather"
+  ],
+  [
+   "brown-work-boots",
+   "tan-work-boots"
+  ],
+  [
+   "brown-work-boots",
+   "waterproof"
+  ],
+  [
+   "brown-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "brown-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "brown-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "brown-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "brown-work-boots",
+   "cold-weather"
+  ],
+  [
+   "tan-work-boots",
+   "waterproof"
+  ],
+  [
+   "tan-work-boots",
+   "insulated-work-boots"
+  ],
+  [
+   "tan-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "tan-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "tan-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "tan-work-boots",
+   "cold-weather"
+  ],
+  [
+   "waterproof",
+   "insulated-work-boots"
+  ],
+  [
+   "waterproof",
+   "slip-resistant"
+  ],
+  [
+   "waterproof",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "waterproof",
+   "breathable-work-boots"
+  ],
+  [
+   "waterproof",
+   "cold-weather"
+  ],
+  [
+   "insulated-work-boots",
+   "slip-resistant"
+  ],
+  [
+   "insulated-work-boots",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "insulated-work-boots",
+   "breathable-work-boots"
+  ],
+  [
+   "insulated-work-boots",
+   "cold-weather"
+  ],
+  [
+   "slip-resistant",
+   "lightweight-work-boots-shoes"
+  ],
+  [
+   "slip-resistant",
+   "breathable-work-boots"
+  ],
+  [
+   "slip-resistant",
+   "cold-weather"
+  ],
+  [
+   "lightweight-work-boots-shoes",
+   "breathable-work-boots"
+  ],
+  [
+   "lightweight-work-boots-shoes",
+   "cold-weather"
+  ],
+  [
+   "breathable-work-boots",
+   "cold-weather"
+  ]
+ ],
+ "skus": [
+  {
+   "sku": "colorado equip 6 waterproof composite toe work boot",
+   "title": "colorado equip 6 inch waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "colorado equip 6 waterproof work boot",
+   "title": "colorado equip 6 inch waterproof work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "colorado equip wellington waterproof composite toe work boot",
+   "title": "colorado equip wellington waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "wellingtons",
+    "slip-on",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "colorado equip 8 waterproof thinsulate composite toe work boot",
+   "title": "colorado equip 8 inch waterproof thinsulate composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "invader max 6 waterproof composite toe work boot",
+   "title": "invader max 6 inch waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "sneaker-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "invader mid vent waterproof composite toe work boot",
+   "title": "invader mid vent waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "hiking-work-boots",
+    "black-work-boots",
+    "waterproof",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "striver waterproof steel toe work boot",
+   "title": "striver waterproof steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "threshold rebound waterproof composite toe work boot",
+   "title": "threshold rebound waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "hiking-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "threshold waterproof steel toe work boot",
+   "title": "threshold waterproof steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "hiking-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "slip-resistant",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "threshold waterproof work boot",
+   "title": "threshold waterproof work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "hiking-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "slip-resistant",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "accomplice x waterproof steel toe work boot",
+   "title": "accomplice x waterproof steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "invader hiker waterproof composite toe work boot",
+   "title": "invader hiker waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "sneaker-work-boots",
+    "hiking-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "invader hiker waterproof work boot",
+   "title": "invader hiker waterproof work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "sneaker-work-boots",
+    "hiking-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "invader hi steel toe work boot",
+   "title": "invader hi steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "sneaker-work-boots",
+    "hiking-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "lightweight-work-boots-shoes",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "invader mid vent composite toe work boot",
+   "title": "invader mid vent composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "composite-toe",
+    "sneaker-work-boots",
+    "hiking-work-boots",
+    "black-work-boots",
+    "slip-resistant",
+    "lightweight-work-boots-shoes",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "striver steel toe work boot",
+   "title": "striver steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "brown-work-boots"
+   ]
+  },
+  {
+   "sku": "second shift waterproof steel toe work boot",
+   "title": "second shift waterproof steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "second shift waterproof work boot",
+   "title": "second shift waterproof work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "tan-work-boots",
+    "waterproof",
+    "slip-resistant",
+    "lightweight-work-boots-shoes",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "second shift steel toe work boot",
+   "title": "second shift steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "second shift work boot",
+   "title": "second shift work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "lightweight-work-boots-shoes",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "echo waterproof steel toe work boot",
+   "title": "echo waterproof steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "resorption waterproof composite toe work boot",
+   "title": "resorption waterproof composite toe work boot",
+   "node_ids": [
+    "work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "slip-resistant",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "wheelbase work boot",
+   "title": "wheelbase work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "slip-resistant",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "drawbar steel toe work boot",
+   "title": "drawbar steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "outbase waterproof work boot",
+   "title": "outbase waterproof work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "chukka-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "abbey steel toe work boot",
+   "title": "abbey steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "wheelbase steel toe work boot",
+   "title": "wheelbase steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "revolver steel toe work boot",
+   "title": "revolver steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "wellingtons",
+    "slip-on",
+    "brown-work-boots",
+    "insulated-work-boots",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "mae steel toe waterproof work boot",
+   "title": "mae steel toe waterproof work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "chukka-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "exposition chelsea alloy toe work boot",
+   "title": "exposition chelsea alloy toe work boot",
+   "node_ids": [
+    "work-boots",
+    "alloy-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "tan-work-boots",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "exposition chelsea work boot",
+   "title": "exposition chelsea work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "tan-work-boots",
+    "lightweight-work-boots-shoes",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "drawbar pull on work boot",
+   "title": "drawbar pull on work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "slip-resistant",
+    "breathable-work-boots"
+   ]
+  },
+  {
+   "sku": "outline work boot",
+   "title": "outline work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "hiking-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "lightweight-work-boots-shoes",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "outline steel toe work boot",
+   "title": "outline steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "hiking-work-boots",
+    "black-work-boots",
+    "brown-work-boots",
+    "tan-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "revolver work boot",
+   "title": "revolver work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "wellingtons",
+    "slip-on",
+    "brown-work-boots",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "striver chelsea waterproof steel toe work boot",
+   "title": "striver chelsea waterproof steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "chelsea-work-boots",
+    "pull-ons",
+    "slip-on",
+    "brown-work-boots",
+    "waterproof",
+    "slip-resistant"
+   ]
+  },
+  {
+   "sku": "tess steel toe work boot",
+   "title": "tess steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "chukka-work-boots",
+    "hiking-work-boots",
+    "tan-work-boots",
+    "insulated-work-boots",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "striver work boot",
+   "title": "striver work boot",
+   "node_ids": [
+    "work-boots",
+    "soft-toe",
+    "brown-work-boots",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "diagnostic hi waterproof thinsulate steel toe work boot",
+   "title": "diagnostic hi waterproof thinsulate steel toe work boot",
+   "node_ids": [
+    "work-boots",
+    "steel-toe",
+    "brown-work-boots",
+    "tan-work-boots",
+    "waterproof",
+    "insulated-work-boots",
+    "slip-resistant",
+    "breathable-work-boots",
+    "cold-weather"
+   ]
+  },
+  {
+   "sku": "invader steel toe work shoe",
+   "title": "invader steel toe work shoe",
+   "node_ids": [
+    "work-shoes",
+    "steel-toe",
+    "sneaker-work-boots",
+    "hiking-work-boots",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "invader mecha composite toe work shoe",
+   "title": "invader mecha composite toe work shoe",
+   "node_ids": [
+    "work-shoes",
+    "composite-toe",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "venward composite toe work shoe",
+   "title": "venward composite toe work shoe",
+   "node_ids": [
+    "work-shoes",
+    "composite-toe",
+    "sneaker-work-boots",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "prorush speed fx shoe",
+   "title": "prorush speed fx shoe",
+   "node_ids": [
+    "work-shoes",
+    "soft-toe",
+    "slip-resistant",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "threshold chukka boot",
+   "title": "threshold chukka boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "threshold hiker waterproof boot",
+   "title": "threshold hiker waterproof boot",
+   "node_ids": [
+    "casual-footwear",
+    "hiking-work-boots",
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "threshold chelsea boot",
+   "title": "threshold chelsea boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "intruder lightning mesh sneaker",
+   "title": "intruder lightning mesh sneaker",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "cat footwear x both gao pioneer boot",
+   "title": "cat footwear x both gao pioneer boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "intruder shoe",
+   "title": "intruder shoe",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "grapple leather mesh sneaker",
+   "title": "grapple leather mesh sneaker",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "grader chelsea boot",
+   "title": "grader chelsea boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "fused slip on shoe",
+   "title": "fused slip on shoe",
+   "node_ids": [
+    "casual-footwear",
+    "slip-on"
+   ]
+  },
+  {
+   "sku": "reclaimer wedge waterproof work boot",
+   "title": "reclaimer wedge waterproof work boot",
+   "node_ids": [
+    "casual-footwear",
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "grader chukka boot",
+   "title": "grader chukka boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "rewrite harness boot",
+   "title": "rewrite harness boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "rewrite frontier boot",
+   "title": "rewrite frontier boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "covert boot",
+   "title": "covert boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "colorado frontier work boot",
+   "title": "colorado frontier work boot",
+   "node_ids": [
+    "casual-footwear"
+   ]
+  },
+  {
+   "sku": "colorado waterproof boot",
+   "title": "colorado waterproof boot",
+   "node_ids": [
+    "casual-footwear",
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "elapse alloy toe work shoe",
+   "title": "elapse alloy toe work shoe",
+   "node_ids": [
+    "alloy-toe",
+    "sneaker-work-boots",
+    "lightweight-work-boots-shoes"
+   ]
+  },
+  {
+   "sku": "excavator ft power spring technology chelsea waterproof composite toe work boot",
+   "title": "excavator ft power spring technology chelsea waterproof composite toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "excavator ft power spring technology wellington waterproof composite toe work boot",
+   "title": "excavator ft power spring technology wellington waterproof composite toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "excavator ft power spring technology 8 waterproof composite toe work boot",
+   "title": "excavator ft power spring technology 8 inch waterproof composite toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "excavator ft power spring technology 6 waterproof work boot",
+   "title": "excavator ft power spring technology 6 inch waterproof work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "excavator ft power spring technology 6 waterproof composite toe work boot",
+   "title": "excavator ft power spring technology 6 inch waterproof composite toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "invader max 8 waterproof thinsulate composite toe work boot",
+   "title": "invader max 8 inch waterproof thinsulate composite toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "reclaimer wedge waterproof steel toe work boot",
+   "title": "reclaimer wedge waterproof steel toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "threshold rebound pull on waterproof steel toe work boot",
+   "title": "threshold rebound pull on waterproof steel toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "threshold rebound chelsea waterproof steel toe work boot",
+   "title": "threshold rebound chelsea waterproof steel toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "pursue waterproof work boot",
+   "title": "pursue waterproof work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "threshold rebound hiker waterproof work boot",
+   "title": "threshold rebound hiker waterproof work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  },
+  {
+   "sku": "threshold rebound hiker waterproof steel toe work boot",
+   "title": "threshold rebound hiker waterproof steel toe work boot",
+   "node_ids": [
+    "waterproof"
+   ]
+  }
+ ],
+ "limitations": [
+  "facet_provenance could not be verified with the merchandiser; facets appear to be structured product attributes (toe type, safety features) rather than title-derived, so circularity risk is low, but answer keys are marked low-confidence per L05.",
+  "Node x facet-value counts captured for the anchor node (work-boots) only; other nodes carry sku_count and SKU sets.",
+  "null_rate computed for single-value facets (toe, color); multi-value feature facets omit null_rate (cannot derive from counts alone).",
+  "Taxonomy is Cat Footwear's faceted category landing pages; absence of a node (loafers, moccasins, oxfords, sandals) is the assortment-gap signal."
+ ]
+}

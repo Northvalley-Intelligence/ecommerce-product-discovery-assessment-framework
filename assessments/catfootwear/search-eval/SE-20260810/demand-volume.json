@@ -1,0 +1,878 @@
+{
+ "imported_at": "2026-08-11T11:17:52.632Z",
+ "retailer": "catfootwear",
+ "eval": "SE-20260810",
+ "parsed_rows": 174,
+ "matched": [
+  {
+   "term": "work shoes for warehouse",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "work shoes for long shifts",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "work shoes",
+   "volume": 40500,
+   "raw": "40,500"
+  },
+  {
+   "term": "work boots that last",
+   "volume": 30,
+   "raw": "30"
+  },
+  {
+   "term": "work boots for women",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "work boots for men",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "work boots for flat feet",
+   "volume": 320,
+   "raw": "320"
+  },
+  {
+   "term": "work boots for concrete",
+   "volume": 590,
+   "raw": "590"
+  },
+  {
+   "term": "work boots",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "winter boots",
+   "volume": 74000,
+   "raw": "74,000"
+  },
+  {
+   "term": "wide work boots",
+   "volume": 880,
+   "raw": "880"
+  },
+  {
+   "term": "wide width boots",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "what to wear on a construction site",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "wellington boots",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "wedge sole boots",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "waterproof work boots",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "waterproof slip on shoes",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "waterproof leather boots",
+   "volume": 8100,
+   "raw": "8,100"
+  },
+  {
+   "term": "waterproof hiking boots",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "waterproof boots",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "warm waterproof winter boots",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "warm boots for winter",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "vented work boots",
+   "volume": 70,
+   "raw": "70"
+  },
+  {
+   "term": "trainers",
+   "volume": 22200,
+   "raw": "22,200"
+  },
+  {
+   "term": "trail shoes",
+   "volume": 8100,
+   "raw": "8,100"
+  },
+  {
+   "term": "thinsulate boots",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "tennis shoes",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "tan work boots",
+   "volume": 720,
+   "raw": "720"
+  },
+  {
+   "term": "tan boots",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "suede shoes",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "suede boots",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "stylish work boots",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "steel toe work shoes",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "steel toe waterproof boots",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "steel toe sneakers",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "steel toe boots",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "soft toe boots",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "snow boots",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "sneakers",
+   "volume": 301000,
+   "raw": "301,000"
+  },
+  {
+   "term": "slip resistant work shoes",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "slip resistant shoes for servers",
+   "volume": 70,
+   "raw": "70"
+  },
+  {
+   "term": "slip resistant shoes",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "slip resistant boots",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "slip ons",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "slip on shoes",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "slides",
+   "volume": 3350000,
+   "raw": "3,350,000"
+  },
+  {
+   "term": "side zip boots",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "shoes to wear with jeans",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "shoes that look good and are comfortable",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "shoes for warehouse work",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "shoes for walking all day at work",
+   "volume": 110,
+   "raw": "110"
+  },
+  {
+   "term": "shoes for standing on concrete",
+   "volume": 260,
+   "raw": "260"
+  },
+  {
+   "term": "shoes for standing all day at work",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "shoes for retail work",
+   "volume": 260,
+   "raw": "260"
+  },
+  {
+   "term": "shoes for restaurant work",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "shoes for nurses",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "shoes for kitchen work",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "shoes for being on your feet all day",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "shoes",
+   "volume": 1000000,
+   "raw": "1,000,000"
+  },
+  {
+   "term": "sandals",
+   "volume": 301000,
+   "raw": "301,000"
+  },
+  {
+   "term": "safety toe boots",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "safety shoes",
+   "volume": 14800,
+   "raw": "14,800"
+  },
+  {
+   "term": "safety footwear",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "safety boots",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "running shoes",
+   "volume": 368000,
+   "raw": "368,000"
+  },
+  {
+   "term": "rubber work boots",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "rubber boots",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "rain boots",
+   "volume": 74000,
+   "raw": "74,000"
+  },
+  {
+   "term": "puncture resistant boots",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "pull on work boots",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "pull on boots",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "oxfords",
+   "volume": 301000,
+   "raw": "301,000"
+  },
+  {
+   "term": "oil resistant boots",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "nubuck boots",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "non slip work shoes",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "non slip shoes",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "mules",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "most durable work boots",
+   "volume": 260,
+   "raw": "260"
+  },
+  {
+   "term": "most comfortable work boots",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "moccasins",
+   "volume": 74000,
+   "raw": "74,000"
+  },
+  {
+   "term": "moc toe boots",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "mid boots",
+   "volume": 590,
+   "raw": "590"
+  },
+  {
+   "term": "metatarsal boots",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "met guard boots",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "mesh work shoes",
+   "volume": 30,
+   "raw": "30"
+  },
+  {
+   "term": "memory foam work boots",
+   "volume": 140,
+   "raw": "140"
+  },
+  {
+   "term": "low tops",
+   "volume": 1900,
+   "raw": "1,900"
+  },
+  {
+   "term": "low top shoes",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "loafers",
+   "volume": 201000,
+   "raw": "201,000"
+  },
+  {
+   "term": "lightweight work boots",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "lightweight steel toe boots",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "lightweight boots for summer",
+   "volume": 170,
+   "raw": "170"
+  },
+  {
+   "term": "leather work boots",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "leather boots",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "lace up work boots",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "lace up boots",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "kids shoes",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "insulated work boots",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "insulated waterproof boots",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "insulated hunting boots",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "insulated boots",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "hiking boots",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "hikers",
+   "volume": 368000,
+   "raw": "368,000"
+  },
+  {
+   "term": "high tops",
+   "volume": 40500,
+   "raw": "40,500"
+  },
+  {
+   "term": "high top boots",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "gray shoes",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "gift for a construction worker",
+   "volume": 880,
+   "raw": "880"
+  },
+  {
+   "term": "full grain leather boots",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "footwear",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "flip flops",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "extra wide boots",
+   "volume": 1900,
+   "raw": "1,900"
+  },
+  {
+   "term": "everyday work shoes",
+   "volume": 170,
+   "raw": "170"
+  },
+  {
+   "term": "electrical hazard boots",
+   "volume": 720,
+   "raw": "720"
+  },
+  {
+   "term": "durable work boots",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "durable waterproof boots",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "dress shoes",
+   "volume": 74000,
+   "raw": "74,000"
+  },
+  {
+   "term": "deck shoes",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "cushioned work boots",
+   "volume": 70,
+   "raw": "70"
+  },
+  {
+   "term": "composite toe waterproof boots",
+   "volume": 720,
+   "raw": "720"
+  },
+  {
+   "term": "composite toe boots",
+   "volume": 14800,
+   "raw": "14,800"
+  },
+  {
+   "term": "comfortable work boots",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "comfortable waterproof work boots",
+   "volume": 110,
+   "raw": "110"
+  },
+  {
+   "term": "comfortable steel toe boots",
+   "volume": 1900,
+   "raw": "1,900"
+  },
+  {
+   "term": "comfortable shoes for long shifts",
+   "volume": 40,
+   "raw": "40"
+  },
+  {
+   "term": "comfortable boots for walking",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "clogs",
+   "volume": 201000,
+   "raw": "201,000"
+  },
+  {
+   "term": "chelsea work boots",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "chelsea boots",
+   "volume": 201000,
+   "raw": "201,000"
+  },
+  {
+   "term": "casual sneakers",
+   "volume": 8100,
+   "raw": "8,100"
+  },
+  {
+   "term": "casual shoes",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "canvas shoes",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "brown work boots",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "brown boots",
+   "volume": 74000,
+   "raw": "74,000"
+  },
+  {
+   "term": "breathable work shoes",
+   "volume": 590,
+   "raw": "590"
+  },
+  {
+   "term": "breathable boots for hot weather",
+   "volume": 20,
+   "raw": "20"
+  },
+  {
+   "term": "boots that keep your feet dry",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "boots that are good for your feet",
+   "volume": 90,
+   "raw": "90"
+  },
+  {
+   "term": "boots for wide feet",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "boots for wet conditions",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "boots for welding",
+   "volume": 3600,
+   "raw": "3,600"
+  },
+  {
+   "term": "boots for standing all day",
+   "volume": 110,
+   "raw": "110"
+  },
+  {
+   "term": "boots for roofing",
+   "volume": 8100,
+   "raw": "8,100"
+  },
+  {
+   "term": "boots for ranch work",
+   "volume": 260,
+   "raw": "260"
+  },
+  {
+   "term": "boots for plantar fasciitis",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "boots for outdoor work",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "boots for oil field work",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "boots for mechanics",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "boots for logging",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "boots for landscaping",
+   "volume": 140,
+   "raw": "140"
+  },
+  {
+   "term": "boots for hunting",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "boots for flat feet",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "boots for farm work",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "boots for factory work",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "boots for electricians",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "boots for delivery drivers",
+   "volume": 30,
+   "raw": "30"
+  },
+  {
+   "term": "boots for construction workers",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "boots for construction",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "boots for concrete floors",
+   "volume": 40,
+   "raw": "40"
+  },
+  {
+   "term": "boots for cold wet weather",
+   "volume": 20,
+   "raw": "20"
+  },
+  {
+   "term": "boots for cold weather",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "boots for backpacking",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "boots",
+   "volume": 550000,
+   "raw": "550,000"
+  },
+  {
+   "term": "booties",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "boat shoes",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "black work boots",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "black boots",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "best work boots",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "athletic shoes",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "ankle boots",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "alloy toe boots",
+   "volume": 210,
+   "raw": "210"
+  },
+  {
+   "term": "affordable work boots",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "8 inch work boots",
+   "volume": 590,
+   "raw": "590"
+  },
+  {
+   "term": "6 inch work boots",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "6 inch boots",
+   "volume": 590,
+   "raw": "590"
+  }
+ ]
+}

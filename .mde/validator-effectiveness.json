@@ -1,6 +1,6 @@
 {
-  "updated_on": "2026-07-07",
-  "current_generation": "GEN-013",
+  "updated_on": "2026-08-08",
+  "current_generation": "GEN-039",
   "validators": [
     {
       "validator": "src/evaluator/validation.mjs",
@@ -209,6 +209,38 @@
       "last_useful_finding_generation": "GEN-011",
       "recommendation": "keep",
       "notes": "Checks High Country owner-outreach artifact identity, GEN-011 expanded evidence, 175 target examples, seven concepts with 25 examples each, Spanish/bilingual discovery, two usable competitor benchmarks, 175 same-query competitor rows per usable competitor, blocked Public Lands limitation, executive competitor context JSON, customer-experience executive narrative text, final page 3 customer-effort visual labels, High Country-first consulting language, paid-placement wording, revenue-measurement framing, Northvalley PDF source, compiled PDF presence, handoff presence, and stale framing exclusions for article references, scorecard copy, demographic labeling, sponsored/promoted wording, old competitor-ranking phrases, and technical-first executive wording."
+    },
+    {
+      "validator": "Cortex relevance judge (llama3.2:3b) — furniture gold-set validation",
+      "category": "Functional Validation / relevance-grader trust",
+      "total_runs": 1,
+      "total_findings": 9,
+      "critical_findings_found": 0,
+      "high_findings_found": 2,
+      "findings_accepted_as_valid": 9,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "~60s per 30-query Cortex job",
+      "average_cost": "local_only (Ollama temp 0)",
+      "last_useful_finding_generation": "GEN-039",
+      "recommendation": "keep",
+      "notes": "Gold-set validation (GEN-039): 36 hand-labeled (query,product) furniture pairs vs model grades. Binary relevant(>=2)/not(<=1) agreement 34/36 (94%); within-1 grade 36/36 (100%); exact grade 23/36 (64%); mean-grade bias +0.03 (unbiased). Only systematic error is grading cross-category junk (lamp for dining table) as 1 not 0 — CONSERVATIVE for the SB-precision finding (understates junk, slightly inflates SB NDCG). Evidence: assessments/industrywest/search-eval/SE-20260713/gold-labels.json, judged-pairs.json. Judge trustworthy for the relevant/not distinction that drives coverage+precision findings. DETERMINISM VERIFIED (2026-08-06): identical grades across repeated runs (bench 3/3, armchair 4/4, restaurant chairs 4/4, probe 5/5). Reproducibility gap found+closed: original run was not rubric-pinned; re-pinned to rubric_hash 99a0e992a992 (38/49 queries reproduce exactly; aggregate stable IW 0.944->0.953, SB 0.936->0.935). See REPRO-SR-001."
+    },
+    {
+      "validator": "Real-shopper-engine capture check (storefront /?s= vs Store API; Shopify predictive AND-of-prefix vs loose query)",
+      "category": "Functional Validation / capture fidelity",
+      "total_runs": 1,
+      "total_findings": 1,
+      "critical_findings_found": 0,
+      "high_findings_found": 1,
+      "findings_accepted_as_valid": 1,
+      "findings_dismissed_as_false_positive": 0,
+      "findings_repeated_without_action": 0,
+      "average_execution_time": "minutes (live UI cross-check + re-capture)",
+      "average_cost": "local_only",
+      "last_useful_finding_generation": "GEN-039",
+      "recommendation": "keep",
+      "notes": "Caught that SE-20260713 measured convenience endpoints, not the shopper-facing search, for BOTH stores (CORR-SR-001). Standing rule now: always verify captured counts against the live search UI before trusting them; measure the storefront /?s= for Woo and replicate the actual AND-of-prefix predictive query for Shopify. Baked into the furniture-search-eval skill as lesson #1."
     }
   ],
   "note": "Effectiveness tracking started with Generation 1 Validation Gate. Generation 11 added High Country owner-outreach validation with expanded IR examples, Spanish/bilingual discovery, same-query competitor benchmarking, customer-experience executive narrative checks, final executive-page design visual checks, paid-placement caveats, and stale-framing rejection. Generation 13 mission update changes the primary deliverable to a canonical Inspection Report; existing validators remain useful for legacy reports but do not yet validate inspection dashboard completeness, endpoint discovery, browse graph generation, DS1-DS4 datasets, confidence/limitation coverage, or downstream artifact reuse from the Inspection Report."

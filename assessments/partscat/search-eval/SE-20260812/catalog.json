@@ -1,0 +1,4582 @@
+{
+ "catalog_version": "1",
+ "retailer": "partscat",
+ "eval_id": "SE-20260812",
+ "captured_at": "2026-08-12T04:40:22.988Z",
+ "source": {
+  "method": "nav_crawl",
+  "base_url": "https://parts.cat.com/en/catcorp",
+  "notes": "Browser-eval capture (Akamai blocks server-side). Category tree + PLP tiles read via same-origin fetch; tiles carry \"<PART#>: <title>\". WebSphere/HCL Commerce."
+ },
+ "facet_provenance": "unknown",
+ "nodes": [
+  {
+   "node_id": "electrical-electronics-batteries",
+   "node_name": "Batteries",
+   "parent_id": "electrical-electronics",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/electrical-electronics-batteries",
+   "sku_count": 1349,
+   "singular": "battery"
+  },
+  {
+   "node_id": "batteries-battery-components",
+   "node_name": "Battery Components",
+   "parent_id": "electrical-electronics-batteries",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/batteries-battery-components",
+   "sku_count": 1076,
+   "singular": "battery components"
+  },
+  {
+   "node_id": "batteries-gen-duty",
+   "node_name": "General Duty",
+   "parent_id": "electrical-electronics-batteries",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/batteries-gen-duty",
+   "sku_count": 146,
+   "singular": "general duty battery"
+  },
+  {
+   "node_id": "batteries-hvy-duty",
+   "node_name": "Heavy Duty",
+   "parent_id": "electrical-electronics-batteries",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/batteries-hvy-duty",
+   "sku_count": 26,
+   "singular": "heavy duty battery"
+  },
+  {
+   "node_id": "batteries-other",
+   "node_name": "Other Batteries",
+   "parent_id": "electrical-electronics-batteries",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/batteries-other",
+   "sku_count": 48,
+   "singular": "battery"
+  },
+  {
+   "node_id": "batteries-uninterruptible-power-supply",
+   "node_name": "Uninterruptible Power Supply",
+   "parent_id": "electrical-electronics-batteries",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/batteries-uninterruptible-power-supply",
+   "sku_count": 53,
+   "singular": "uninterruptible power supply"
+  },
+  {
+   "node_id": "filters-and-fluids-filters",
+   "node_name": "Filters",
+   "parent_id": "filters-and-fluids",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/filters-and-fluids-filters",
+   "sku_count": 4608,
+   "singular": "filter"
+  },
+  {
+   "node_id": "filters-air-filters",
+   "node_name": "Air Filters",
+   "parent_id": "filters-and-fluids-filters",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/filters-air-filters",
+   "sku_count": 1200,
+   "singular": "air filter"
+  },
+  {
+   "node_id": "filters-engine-oil-filters-components",
+   "node_name": "Engine Oil Filters & Components",
+   "parent_id": "filters-and-fluids-filters",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/filters-engine-oil-filters-components",
+   "sku_count": 914,
+   "singular": "engine oil filter"
+  },
+  {
+   "node_id": "filters-fuel-filters-fuel-water-separators",
+   "node_name": "Fuel Filters & Fuel Water Separators",
+   "parent_id": "filters-and-fluids-filters",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/filters-fuel-filters-fuel-water-separators",
+   "sku_count": 831,
+   "singular": "fuel filter"
+  },
+  {
+   "node_id": "filters-hydraulic-transmission-filters",
+   "node_name": "Hydraulic & Transmission Filters",
+   "parent_id": "filters-and-fluids-filters",
+   "depth": 2,
+   "url": "https://parts.cat.com/en/catcorp/category/filters-hydraulic-transmission-filters",
+   "sku_count": 663,
+   "singular": "hydraulic filter"
+  },
+  {
+   "node_id": "ground-engaging-tools-get",
+   "node_name": "Ground Engaging Tools",
+   "parent_id": null,
+   "depth": 0,
+   "url": "https://parts.cat.com/en/catcorp/category/ground-engaging-tools-get",
+   "sku_count": 23155,
+   "singular": "ground engaging tools"
+  },
+  {
+   "node_id": "get-blade-edges-end-bits",
+   "node_name": "Blade Cutting Edges & End Bits",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-blade-edges-end-bits",
+   "sku_count": 1221,
+   "singular": "cutting edge"
+  },
+  {
+   "node_id": "get-bucket-base-edges-lips",
+   "node_name": "Bucket Base Edges & Lips",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-bucket-base-edges-lips",
+   "sku_count": 3475,
+   "singular": "bucket base edge"
+  },
+  {
+   "node_id": "get-bucket-corners-guards",
+   "node_name": "Bucket Corners & Corner Guards",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-bucket-corners-guards",
+   "sku_count": 173,
+   "singular": "bucket corner"
+  },
+  {
+   "node_id": "get-bucket-cutting-edges-protection",
+   "node_name": "Bucket Cutting Edges & Edge Protection",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-bucket-cutting-edges-protection",
+   "sku_count": 3375,
+   "singular": "bucket cutting edge"
+  },
+  {
+   "node_id": "get-bucket-teeth-adapter-sys",
+   "node_name": "Bucket Teeth & Adapter Systems",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-bucket-teeth-adapter-sys",
+   "sku_count": 2426,
+   "singular": "bucket teeth"
+  },
+  {
+   "node_id": "get-compactor-wheel",
+   "node_name": "Compactor Wheel Ground Engaging Tools",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-compactor-wheel",
+   "sku_count": 38,
+   "singular": "compactor wheel"
+  },
+  {
+   "node_id": "get-grader-bit-systems",
+   "node_name": "Grader Bit Systems",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-grader-bit-systems",
+   "sku_count": 193,
+   "singular": "grader bit"
+  },
+  {
+   "node_id": "get-cutting-edges-end-bits",
+   "node_name": "Grader Cutting Edges & End Bits",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-cutting-edges-end-bits",
+   "sku_count": 652,
+   "singular": "grader cutting edge"
+  },
+  {
+   "node_id": "get-hardware-retention",
+   "node_name": "Ground Engaging Tool Hardware & Retention",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-hardware-retention",
+   "sku_count": 5443,
+   "singular": "get hardware"
+  },
+  {
+   "node_id": "get-paving",
+   "node_name": "Paving Ground Engaging Tools",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-paving",
+   "sku_count": 129,
+   "singular": "paving tool"
+  },
+  {
+   "node_id": "get-ripper-and-scarifier",
+   "node_name": "Ripper & Scarifier Ground Engaging Tools",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-ripper-and-scarifier",
+   "sku_count": 251,
+   "singular": "ripper tooth"
+  },
+  {
+   "node_id": "get-rock-drill",
+   "node_name": "Rock Drill Ground Engaging Tools",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-rock-drill",
+   "sku_count": 408,
+   "singular": "rock drill bit"
+  },
+  {
+   "node_id": "get-scraper",
+   "node_name": "Scraper Ground Engaging Tools",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-scraper",
+   "sku_count": 264,
+   "singular": "scraper edge"
+  },
+  {
+   "node_id": "get-side-cutters-sidebar",
+   "node_name": "Side Cutters & Sidebar Protection",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-side-cutters-sidebar",
+   "sku_count": 347,
+   "singular": "side cutter"
+  },
+  {
+   "node_id": "get-wear-plates",
+   "node_name": "Wear Plates",
+   "parent_id": "ground-engaging-tools-get",
+   "depth": 1,
+   "url": "https://parts.cat.com/en/catcorp/category/get-wear-plates",
+   "sku_count": 4201,
+   "singular": "wear plate"
+  }
+ ],
+ "facets": [],
+ "sibling_blocklist": [
+  [
+   "batteries-battery-components",
+   "batteries-gen-duty"
+  ],
+  [
+   "batteries-battery-components",
+   "batteries-hvy-duty"
+  ],
+  [
+   "batteries-battery-components",
+   "batteries-other"
+  ],
+  [
+   "batteries-battery-components",
+   "batteries-uninterruptible-power-supply"
+  ],
+  [
+   "batteries-gen-duty",
+   "batteries-hvy-duty"
+  ],
+  [
+   "batteries-gen-duty",
+   "batteries-other"
+  ],
+  [
+   "batteries-gen-duty",
+   "batteries-uninterruptible-power-supply"
+  ],
+  [
+   "batteries-hvy-duty",
+   "batteries-other"
+  ],
+  [
+   "batteries-hvy-duty",
+   "batteries-uninterruptible-power-supply"
+  ],
+  [
+   "batteries-other",
+   "batteries-uninterruptible-power-supply"
+  ],
+  [
+   "filters-air-filters",
+   "filters-engine-oil-filters-components"
+  ],
+  [
+   "filters-air-filters",
+   "filters-fuel-filters-fuel-water-separators"
+  ],
+  [
+   "filters-air-filters",
+   "filters-hydraulic-transmission-filters"
+  ],
+  [
+   "filters-engine-oil-filters-components",
+   "filters-fuel-filters-fuel-water-separators"
+  ],
+  [
+   "filters-engine-oil-filters-components",
+   "filters-hydraulic-transmission-filters"
+  ],
+  [
+   "filters-fuel-filters-fuel-water-separators",
+   "filters-hydraulic-transmission-filters"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-bucket-base-edges-lips"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-bucket-corners-guards"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-bucket-cutting-edges-protection"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-bucket-teeth-adapter-sys"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-compactor-wheel"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-grader-bit-systems"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-hardware-retention"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-paving"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-rock-drill"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-scraper"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-blade-edges-end-bits",
+   "get-wear-plates"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-bucket-corners-guards"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-bucket-cutting-edges-protection"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-bucket-teeth-adapter-sys"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-compactor-wheel"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-grader-bit-systems"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-hardware-retention"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-paving"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-rock-drill"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-scraper"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-bucket-base-edges-lips",
+   "get-wear-plates"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-bucket-cutting-edges-protection"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-bucket-teeth-adapter-sys"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-compactor-wheel"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-grader-bit-systems"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-hardware-retention"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-paving"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-rock-drill"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-scraper"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-bucket-corners-guards",
+   "get-wear-plates"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-bucket-teeth-adapter-sys"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-compactor-wheel"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-grader-bit-systems"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-hardware-retention"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-paving"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-rock-drill"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-scraper"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-bucket-cutting-edges-protection",
+   "get-wear-plates"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-compactor-wheel"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-grader-bit-systems"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-hardware-retention"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-paving"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-rock-drill"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-scraper"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-bucket-teeth-adapter-sys",
+   "get-wear-plates"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-grader-bit-systems"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-hardware-retention"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-paving"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-rock-drill"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-scraper"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-compactor-wheel",
+   "get-wear-plates"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-cutting-edges-end-bits"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-hardware-retention"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-paving"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-rock-drill"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-scraper"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-grader-bit-systems",
+   "get-wear-plates"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-hardware-retention"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-paving"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-rock-drill"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-scraper"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-cutting-edges-end-bits",
+   "get-wear-plates"
+  ],
+  [
+   "get-hardware-retention",
+   "get-paving"
+  ],
+  [
+   "get-hardware-retention",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-hardware-retention",
+   "get-rock-drill"
+  ],
+  [
+   "get-hardware-retention",
+   "get-scraper"
+  ],
+  [
+   "get-hardware-retention",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-hardware-retention",
+   "get-wear-plates"
+  ],
+  [
+   "get-paving",
+   "get-ripper-and-scarifier"
+  ],
+  [
+   "get-paving",
+   "get-rock-drill"
+  ],
+  [
+   "get-paving",
+   "get-scraper"
+  ],
+  [
+   "get-paving",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-paving",
+   "get-wear-plates"
+  ],
+  [
+   "get-ripper-and-scarifier",
+   "get-rock-drill"
+  ],
+  [
+   "get-ripper-and-scarifier",
+   "get-scraper"
+  ],
+  [
+   "get-ripper-and-scarifier",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-ripper-and-scarifier",
+   "get-wear-plates"
+  ],
+  [
+   "get-rock-drill",
+   "get-scraper"
+  ],
+  [
+   "get-rock-drill",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-rock-drill",
+   "get-wear-plates"
+  ],
+  [
+   "get-scraper",
+   "get-side-cutters-sidebar"
+  ],
+  [
+   "get-scraper",
+   "get-wear-plates"
+  ],
+  [
+   "get-side-cutters-sidebar",
+   "get-wear-plates"
+  ]
+ ],
+ "skus": [
+  {
+   "sku": "153-5710",
+   "title": "12V Heavy Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "153-5720",
+   "title": "Heavy Duty Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "115-2422",
+   "title": "12V Heavy Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "230-6368",
+   "title": "12V 65 BCI Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "9X-3404",
+   "title": "12V Heavy Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2194",
+   "title": "Cat® New with Core (NWC) Gp31 HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "3T-5760",
+   "title": "12V 31 BCI Wet Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2197",
+   "title": "Cat® New with Core (NWC) Gp4D HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "153-5700",
+   "title": "12V Heavy Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "175-4390",
+   "title": "12V 31 BCI Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2198",
+   "title": "Cat® New with Core (NWC) Gp8D HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "153-5656",
+   "title": "12V Heavy Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2201",
+   "title": "Cat® New with Core (NWC) Gp65 HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2196",
+   "title": "Cat® New with Core (NWC) Gp4D HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2202",
+   "title": "Cat® New with Core (NWC) Gp31 HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2200",
+   "title": "Cat® New with Core (NWC) Gp31 HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2195",
+   "title": "Cat® New with Core (NWC) Gp24 HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "102-0400",
+   "title": "12V 4D BCI Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "175-4370",
+   "title": "12V Heavy Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "11R-2199",
+   "title": "Cat® New with Core (NWC) Gp31 HD Battery USA Only",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "9X-9730",
+   "title": "12V Heavy Duty Low Maintenance Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "9X-9720",
+   "title": "12V Heavy Duty Low Maintenance Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "101-4000",
+   "title": "12V Heavy Duty Low Maintenance Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "115-2421",
+   "title": "12V HEAVY DUTY BATTERY",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "175-4360",
+   "title": "12V 31BCI Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "5S-7219",
+   "title": "Heavy Duty ,Dry Battery",
+   "node_ids": [
+    "batteries-hvy-duty"
+   ]
+  },
+  {
+   "sku": "593-3128",
+   "title": "General Duty Wet Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "369-9955",
+   "title": "12V DIN C11 Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "593-3129",
+   "title": "General Duty Wet Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "127-0826",
+   "title": "12V 34/78 BCI Wet Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "8C-3641",
+   "title": "6V GC2 BCI Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "430-5993",
+   "title": "12V 48 BCI Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "3T-5858",
+   "title": "12V 24F BCI Wet Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "430-6005",
+   "title": "12V Wet Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "369-9956",
+   "title": "12V Wet T4 Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "11R-2259",
+   "title": "Cat® New with Core (NWC) GD Gp GC2 Battery USA Only",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "563-6052",
+   "title": "12V General Duty Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "11R-2213",
+   "title": "Cat® New with Core (NWC) DIN C11 Battery USA Only",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "8C-3622",
+   "title": "12V 4DLT BCI Wet Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "11R-2203",
+   "title": "Cat® New with Core (NWC) Grp 34/78 Battery USA Only",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "3T-5857",
+   "title": "12V General Duty Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "8C-3612",
+   "title": "12V 58 BCI Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "8C-3639",
+   "title": "12V 27M BCI Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "11R-2235",
+   "title": "Cat® New with Core (NWC) GD Grp 51 Battery USA Only",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "8C-3638",
+   "title": "12V 24M BCI Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "8C-3601",
+   "title": "12V 27 BCI Battery",
+   "node_ids": [
+    "batteries-gen-duty"
+   ]
+  },
+  {
+   "sku": "634-6045",
+   "title": "Battery Assembly",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "483-8978",
+   "title": "12 Volt Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "483-8979",
+   "title": "12 Volt Wet Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "665-0284",
+   "title": "Electrical Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "665-0282",
+   "title": "Electrical Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "665-0283",
+   "title": "Electrical Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "078-3740",
+   "title": "BATTERY TYPE",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "081-3167",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "082-2632",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "082-6558",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "082-8593",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "084-5485",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "084-6950",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "089-8035",
+   "title": "LEAD BATT",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "089-8077",
+   "title": "LEAD BATT",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "089-8080",
+   "title": "LEAD BATT",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "091-9558",
+   "title": "BATTERY GRP",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "092-8458",
+   "title": "BATTERY GRP",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "093-4871",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "093-9640",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "093-9641",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "094-5312",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "096-6975",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "098-0189",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "130-1978",
+   "title": "BATTERY 12V",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "143-4084",
+   "title": "BATTERY-12 V",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "274-6355",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "304-4735",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "353-2795",
+   "title": "BATTERY AS",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "353-8604",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "353-8605",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "354-1693",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "354-1701",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "354-1702",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "394-6428",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "430-6002",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "430-6014",
+   "title": "12 Volts Maintenance-Free Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "431-5240",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "432-9149",
+   "title": "12 Volts Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "460-0681",
+   "title": "C-Cell Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "460-0682",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "467-7915",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "618-5999",
+   "title": "Auxiliary Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "631-4755",
+   "title": "Battery Pack Power Module",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "647-1641",
+   "title": "Battery Power Module",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "665-0280",
+   "title": "Electrical Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "665-0281",
+   "title": "Electrical Battery",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "7X-5278",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-other"
+   ]
+  },
+  {
+   "sku": "636-1825",
+   "title": "65 Amp Hour Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "560-6649",
+   "title": "30 Amp hours Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "430-6004",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0476",
+   "title": "12 Volt High-Rate UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "462-5516",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "459-9625",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "101-1785",
+   "title": "Lithium Carbon Monofluoride Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "136-6882",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "203-3216",
+   "title": "UPS",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0474",
+   "title": "Uninterruptible Power Supply, VRLA-AGM, UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0475",
+   "title": "Uninterruptible Power Supply, VRLA-AGM, UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0477",
+   "title": "12 Volt High-Rate UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0478",
+   "title": "12 Volt High-Rate UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0479",
+   "title": "12 Volt High-Rate UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "250-0483",
+   "title": "Uninterruptible Power Supply, VRLA-AGM, UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "369-9959",
+   "title": "12 Volt High-Rate UPS Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "369-9962",
+   "title": "BATTERY-UPS",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "431-5248",
+   "title": "24 Volts Uninterruptible Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8574",
+   "title": "BATERRY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8575",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8576",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8577",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8578",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8584",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "451-8585",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "456-0748",
+   "title": "12 Volts Maintenance Free Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "472-6835",
+   "title": "Skid Steer Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "486-9488",
+   "title": "24 Volts Direct Current Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "490-1462",
+   "title": "BATTERY-NIMH",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "514-3116",
+   "title": "BATTERY-PRIM",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "514-3147",
+   "title": "3.5 Volts Lithium Battery",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "522-1892",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "523-0667",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "525-7737",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "531-7226",
+   "title": "Power Management Controller Board",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "535-3544",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "542-7473",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "572-8968",
+   "title": "BRACKET",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "580-5668",
+   "title": "Power Supply Unit",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "581-2034",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "586-5072",
+   "title": "BATTERY-GD",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "591-8591",
+   "title": "BATTERY AS",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "611-3338",
+   "title": "24 VDC Electrical Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "611-6614",
+   "title": "Electrical Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "615-7896",
+   "title": "24 Volts Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "617-1210",
+   "title": "25 VDC Electrical Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "627-7487",
+   "title": "24 Volts Direct Current Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "646-7152",
+   "title": "24 Volts Electrical Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "649-2137",
+   "title": "230 Volts Hose Crimper Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "649-2138",
+   "title": "115 Volts Hose Crimper Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "649-2139",
+   "title": "24 Volts Direct Current Hose Crimper Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "656-1916",
+   "title": "48 Volts Direct Current Electrical Power Supply",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "9X-5402",
+   "title": "BATTERY",
+   "node_ids": [
+    "batteries-uninterruptible-power-supply"
+   ]
+  },
+  {
+   "sku": "1R-1808",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "7W-2326",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "377-6969",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "322-3155",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "462-1171",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "500-0483",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-1807",
+   "title": "Advanced Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "569-8036",
+   "title": "Lube Filter Element Kit (Engine Oil)",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "220-1523",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0716",
+   "title": "Engine Lube Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0739",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0726",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "422-7587",
+   "title": "Secondary Fuel Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "275-2604",
+   "title": "Advanced Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "7W-2327",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "558-0428",
+   "title": "Primary Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0734",
+   "title": "Advanced Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "485-4705",
+   "title": "Engine Oil Filter Lube Element",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "267-2528",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0714",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "521-6093",
+   "title": "Advanced Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "120-0664",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "244-4484",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "249-2347",
+   "title": "Advanced Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "376-9707",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0659",
+   "title": "Engine Oil Filters",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "324-2598",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0713",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "272-1788",
+   "title": "Standard Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "389-0434",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "7C-8390",
+   "title": "120mm Wide Centrifugal Oil Filter Rotor Liner",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "416-1225",
+   "title": "Engine Fuel Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1W-8845",
+   "title": "Advanced Efficiency Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1W-4191",
+   "title": "64mm Oil Drain Diameter Centrifugal Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "440-6232",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "2W-1969",
+   "title": "Oil Pump Bypass Valve",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "497-8158",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-0721",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "125-5835",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "7C-3954",
+   "title": "Spring Assembly",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "276-5403",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "130-9888",
+   "title": "Engine Oil Filler Cap",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "136-3742",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "554-3009",
+   "title": "97.5mm Long Check Valve",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "081-4661",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "524-8602",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "594-0849",
+   "title": "Air Receiver Tank Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "389-0435",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "4N-7082",
+   "title": "Oil Filter Shield",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "2P-4301",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "536-2815",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "567-7789",
+   "title": "Filter Element",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "194-9983",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "346-5574",
+   "title": "Oil Filter Group",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "2P-4303",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "465-6860",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "176-1363",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "249-0974",
+   "title": "Engine Oil Filter Head",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "354-8811",
+   "title": "Hydraulic Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1R-1801",
+   "title": "Engine Oil Filters",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "288-3803",
+   "title": "6.35mm Inner Diameter Oil Filter Spring",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "081-2684",
+   "title": "Engine Oil Filters",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "172-9662",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "9Y-7117",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "161-0083",
+   "title": "BASE-OILFLTR",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "482-3459",
+   "title": "FILTER-LUBE",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "393-6052",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "7W-9028",
+   "title": "Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "251-6668",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "562-0328",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "4P-3631",
+   "title": "111.3mm Outer Diameter Engine Oil Filter Element",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "473-1590",
+   "title": "Filter Group-Oil",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "094-7207",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "523-1435",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "392-5358",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "102-5828",
+   "title": "Engine Oil Filter Cover",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "166-1328",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "362-3515",
+   "title": "Oil Base Assembly",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "392-5357",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "336-5356",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "9Y-7149",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "340-6283",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "211-4359",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "346-5573",
+   "title": "Power Train Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "209-7291",
+   "title": "Base Assembly-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "102-5829",
+   "title": "Adapter-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "532-8902",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "115-8384",
+   "title": "48mm Length Steel Retainer",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "530-2298",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "7C-9542",
+   "title": "Cover-Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "275-6631",
+   "title": "Base-Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "659-6057",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "415-2436",
+   "title": "Spin On Type Fuel Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "264-1491",
+   "title": "Engine Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "336-5366",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "1W-1116",
+   "title": "Engine Filter Bypass Body",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "530-2299",
+   "title": "Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "507-6801",
+   "title": "Engine Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "286-7364",
+   "title": "ELEMENT",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "419-8637",
+   "title": "Oil Filter Base",
+   "node_ids": [
+    "filters-engine-oil-filters-components"
+   ]
+  },
+  {
+   "sku": "360-8960",
+   "title": "Engine Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0749",
+   "title": "Secondary Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "326-1643",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "326-1644",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "523-4987",
+   "title": "Element-Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "479-4131",
+   "title": "Water Separator Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "541-6956",
+   "title": "Engine Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0762",
+   "title": "Engine Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "509-5694",
+   "title": "Secondary Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0755",
+   "title": "High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "363-5819",
+   "title": "Standard Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "570-1623",
+   "title": "Fuel Filter Base Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "156-1200",
+   "title": "Fuel/Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0751",
+   "title": "Advanced Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-1804",
+   "title": "Standard Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "525-6205",
+   "title": "Standard Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "479-4133",
+   "title": "Ultra High Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0756",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "438-5386",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "436-7077",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0750",
+   "title": "Advanced Efficiency Secondary Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "423-8524",
+   "title": "Water Separator and Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "523-6602",
+   "title": "Ultra High Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "500-0480",
+   "title": "Fuel Filter Base Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "525-6206",
+   "title": "Standard Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "500-0481",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "299-8229",
+   "title": "High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "416-5884",
+   "title": "Ultra High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "513-4490",
+   "title": "Advanced Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "439-5037",
+   "title": "Fuel Water Separator Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "540-5119",
+   "title": "Element-Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "308-7298",
+   "title": "Advanced Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "438-5385",
+   "title": "Fuel Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "343-5527",
+   "title": "Bowl Assembly Fuel",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "423-8521",
+   "title": "Water Separator and Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "308-9679",
+   "title": "High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "441-5111",
+   "title": "Fuel Water Separator Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "311-3901",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "523-6604",
+   "title": "Advanced Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "117-4089",
+   "title": "Fuel/Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "361-9554",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "159-6102",
+   "title": "Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "423-8525",
+   "title": "Water Separator and Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "467-1181",
+   "title": "Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "326-1641",
+   "title": "Advanced Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "360-8958",
+   "title": "Ultra High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "233-9856",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "434-3928",
+   "title": "Ultra High Efficiency Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "495-1507",
+   "title": "Diesel Exhaust Fluid Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "067-6987",
+   "title": "Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "131-1812",
+   "title": "Fuel/Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "228-9130",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "590-2978",
+   "title": "Fuel Water Separator Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0753",
+   "title": "Advanced Efficiency Fuel Filter Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "361-9555",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "445-0939",
+   "title": "Ultra High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "326-1642",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "145-4501",
+   "title": "Fuel Separator Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "644-2830",
+   "title": "Fuel Water Separator Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "513-4493",
+   "title": "Water Separator and Fuel Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "151-2409",
+   "title": "Fuel/Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "138-3100",
+   "title": "Standard Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "558-4721",
+   "title": "Ultra High Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "256-8753",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "662-7704",
+   "title": "Water Separator And Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "5I-7951",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "276-1806",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "502-3341",
+   "title": "Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "319-0844",
+   "title": "High Efficiency Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "463-2166",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "435-6493",
+   "title": "Secondary Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "306-9199",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "9P-7121",
+   "title": "Fuel Tank Strainer",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "175-2949",
+   "title": "Fuel/Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0766",
+   "title": "High Efficiency Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "479-4135",
+   "title": "Fuel Water Separator Housing",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-1712",
+   "title": "Engine Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "513-4492",
+   "title": "Advanced Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "129-0375",
+   "title": "Fuel Water Separator Filter Bowl",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "541-6957",
+   "title": "125ml Capacity Fuel and Water Separator Bowl",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "466-4177",
+   "title": "Standard Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "243-6411",
+   "title": "Fuel Transfer Pump Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "349-1063",
+   "title": "Electric Priming Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "457-1527",
+   "title": "Advanced Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "616-4702",
+   "title": "Assembly-Filter (SLT)",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "8N-9803",
+   "title": "Water Separator Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "399-1442",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "081-4172",
+   "title": "Water Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "565-4266",
+   "title": "Ultra High Efficiency Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "146-6695",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "310-5912",
+   "title": "Fuel Filter And Water Separator Bowl",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "318-8064",
+   "title": "Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "1R-0724",
+   "title": "Fuel Filter Element",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "479-4137",
+   "title": "Housing Assembly",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "565-1155",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "571-2316",
+   "title": "Engine Fuel Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "425-0385",
+   "title": "Diesel Exhaust Fluid Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "438-7763",
+   "title": "Secondary Fuel Water Separator",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "183-8187",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "472-7939",
+   "title": "Filter Cartridge",
+   "node_ids": [
+    "filters-fuel-filters-fuel-water-separators"
+   ]
+  },
+  {
+   "sku": "110-6326",
+   "title": "Air Cleaner Primary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "571-5253",
+   "title": "Transmission Filter Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "110-6331",
+   "title": "Secondary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "528-0585",
+   "title": "Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "479-8989",
+   "title": "Primary Ultra High Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "500-0957",
+   "title": "Standard Efficiency Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "265-6619",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "580-5439",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "265-6618",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "346-6688",
+   "title": "Air Cleaner Secondary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "577-1436",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "577-1435",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "479-8991",
+   "title": "Secondary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "290-2288",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "496-9845",
+   "title": "Ultra High Efficiency Engine Air - Primary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "419-9172",
+   "title": "Primary Ultra High Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "327-6618",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "419-9162",
+   "title": "Primary Ultra High Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "577-1437",
+   "title": "Primary Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "211-2660",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "258-2829",
+   "title": "83mm Outer Diameter Cap Breather",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2505",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "222-9020",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "578-1844",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "526-3118",
+   "title": "Primary Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "331-8108",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "106-3969",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "142-1340",
+   "title": "Primary Ultra High Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "251-5885",
+   "title": "Filter Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "331-8111",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "222-9021",
+   "title": "Standard Efficiency Engine Air - Secondary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "105-9741",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "363-9402",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "577-1433",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "526-3122",
+   "title": "Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "245-6375",
+   "title": "Standard Efficiency Engine Air - Primary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "415-2592",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "496-9846",
+   "title": "Standard Efficiency Engine Air - Secondary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2506",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "245-6376",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "365-7606",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "353-5058",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "132-7168",
+   "title": "Primary Ultra High Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "106-3973",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "337-0790",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "142-1403",
+   "title": "Secondary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "107-0266",
+   "title": "Cab Air Duct Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "496-9842",
+   "title": "Standard Efficiency Engine Air - Secondary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2501",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "149-1912",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "417-8134",
+   "title": "Standard Efficiency Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "131-8822",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "290-2287",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "142-1339",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2509",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "546-0006",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "256-7902",
+   "title": "Filter Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2503",
+   "title": "Primary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "4W-3027",
+   "title": "Engine Crankcase Breather",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "226-2779",
+   "title": "Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "539-6920",
+   "title": "Primary Efficiency Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2502",
+   "title": "Standard Efficiency Engine Air - Secondary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2504",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "246-5009",
+   "title": "Primary Air Filter Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "131-8821",
+   "title": "Element-Secondary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "326-4689",
+   "title": "Open Crankcase Ventilation Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "538-6396",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "8N-6309",
+   "title": "Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "526-3119",
+   "title": "Air Filter Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-0273",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "256-7903",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "415-2593",
+   "title": "Secondary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-2510",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "293-4053",
+   "title": "Air Cleaner Primary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "208-9065",
+   "title": "Air Cleaner Primary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "527-6894",
+   "title": "Ultra High Efficiency Engine Air - Primary",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "526-3121",
+   "title": "Air Cleaner Filter Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "209-8217",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "142-1404",
+   "title": "Secondary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "9C-4937",
+   "title": "Power Train Breather",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "346-6694",
+   "title": "Air Cleaner Secondary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "227-7449",
+   "title": "Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "545-8339",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "443-4037",
+   "title": "Standard Efficiency Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "333-1189",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "526-3123",
+   "title": "Secondary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "528-7222",
+   "title": "Primary Standard Efficiency Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "6I-0274",
+   "title": "Secondary Air Filter Assembly",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "326-4690",
+   "title": "Open Crankcase Ventilation Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "522-1451",
+   "title": "Filter Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "134-8726",
+   "title": "Primary Air Cleaner Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "266-7765",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "180-7487",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "561-8550",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "4P-0710",
+   "title": "Engine Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "518-9395",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "268-6704",
+   "title": "Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "485-5433",
+   "title": "High Efficiency Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "485-5435",
+   "title": "Low Restriction Cabin Air Filter",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "9Y-7663",
+   "title": "Air Cleaner Secondary Element",
+   "node_ids": [
+    "filters-air-filters"
+   ]
+  },
+  {
+   "sku": "1G-8878",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "421-5479",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "590-9787",
+   "title": "Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "5I-8670",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "093-7521",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "471-7003",
+   "title": "Transmission Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "179-9806",
+   "title": "Ultra High Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "328-3655",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "362-1163",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "389-1079",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "132-8876",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "436-3443",
+   "title": "H Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "421-5481",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "465-6506",
+   "title": "Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "144-6691",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "376-1288",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "338-3540",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0719",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "389-1076",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "126-1813",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "343-4465",
+   "title": "Transmission Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0777",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "465-6505",
+   "title": "Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "4T-6788",
+   "title": "Advanced Efficiency Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "295-6257",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0722",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "341-6643",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0774",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0741",
+   "title": "Standard Efficiency Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "130-3212",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "585-5910",
+   "title": "Hydraulic Filter Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "225-4118",
+   "title": "Ultra-High Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "348-1862",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "139-1537",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "132-8875",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "340-0402",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "249-2337",
+   "title": "H Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "389-1088",
+   "title": "Hydraulic & Transmission Filters",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "389-1085",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "465-6504",
+   "title": "Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "277-5812",
+   "title": "Hydraulic Oil Filter Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "144-0832",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "519-9926",
+   "title": "Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "344-0004",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "465-6502",
+   "title": "Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "343-4464",
+   "title": "Transmission Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "348-1861",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "9T-8578",
+   "title": "Advanced Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0773",
+   "title": "Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "624-1845",
+   "title": "Transmission Filter Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "293-3645",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "417-6209",
+   "title": "Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "398-7171",
+   "title": "Hydraulic Return Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "340-0406",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "601-0863",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "126-2081",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "417-6210",
+   "title": "Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "134-0964",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0735",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "340-0403",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "216-6676",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "4I-3948",
+   "title": "Filter Assembly-Hydraulic",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "243-3758",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "167-2009",
+   "title": "H Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "520-0183",
+   "title": "O Element Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "139-1536",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "523-4919",
+   "title": "UHE Filter Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "289-7789",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "442-0106",
+   "title": "Hydraulic & Transmission Filters",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "442-0109",
+   "title": "Hydraulic & Transmission Filters",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "126-1814",
+   "title": "Ultra High Efficiency Hydraulic Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "575-2548",
+   "title": "Hydraulic Element Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0732",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "304-7195",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "399-7921",
+   "title": "Hydraulic & Transmission Filters",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "424-7616",
+   "title": "Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "379-9692",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "304-7196",
+   "title": "Filter Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "4T-3134",
+   "title": "Hydraulic & Transmission Filters",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "588-2592",
+   "title": "Oil Filter Housing Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "126-1815",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0778",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "532-3903",
+   "title": "Ultra High Efficiency Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "4T-6915",
+   "title": "Hydraulic Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "532-3902",
+   "title": "Advanced Efficiency Hydraulic/Tranmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "470-6370",
+   "title": "Engine Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "054-1719",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "108-1153",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "9T-0973",
+   "title": "Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "185-0337",
+   "title": "Hy Filter Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "481-6649",
+   "title": "Hydraulic Filter Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "389-1082",
+   "title": "Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "465-8903",
+   "title": "Hy Filter Assembly",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "417-6204",
+   "title": "Standard Efficiency Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "1R-0746",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "281-4256",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "379-2889",
+   "title": "Hydraulic Filter Element",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "518-5260",
+   "title": "Element-Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "494-7008",
+   "title": "Ultra High Efficiency Hydraulic/Transmission Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  },
+  {
+   "sku": "361-7480",
+   "title": "Hydraulic/Transmission Oil Filter",
+   "node_ids": [
+    "filters-hydraulic-transmission-filters"
+   ]
+  }
+ ],
+ "limitations": [
+  "Partial SKU capture on large nodes: batteries-gen-duty captured 20 of 146; filter leaves captured first-100 samples (engine-oil 914, fuel 831, air 1200, hydraulic 663). node.sku_count is the TRUE total; skus[] for these nodes is a sample - recall keys on them are lower bounds, not full keys.",
+  "GET subcategories captured at taxonomy level only (name + true sku_count, no SKUs): the part-number-heavy head of the catalog (hundreds-thousands each) that browser-eval cannot exhaustively read. Used for category vocabulary and to show part-number/serial demand is not answer-key-generable.",
+  "Facet values NOT captured: spec facets (Cold Cranking Amps, Voltage on batteries; dimensional specs elsewhere) render client-side behind Filter & Sort. facet_provenance=unknown pending a facet-rail read.",
+  "15 top-level category landing pages omitted as nodes; their names carry into the authored query seed list (stage 2).",
+  "Browser-only: parts.cat.com is behind Caterpillar Akamai; server-side/WebFetch reads time out. Pagination beyond ~100 SSR tiles is client-side AJAX, not URL params."
+ ]
+}

@@ -1,0 +1,20 @@
+[
+ ["work boots","synonym"],["safety boots","synonym"],["work shoes","synonym"],
+ ["sneakers","synonym"],["trainers","synonym"],["athletic shoes","synonym"],
+ ["boots","synonym"],["booties","synonym"],
+ ["moccasins","synonym"],["slip ons","synonym"],["loafers","synonym"],
+ ["steel toe boots","attribute"],["composite toe boots","attribute"],["waterproof boots","attribute"],
+ ["insulated boots","attribute"],["slip resistant shoes","attribute"],["leather boots","attribute"],
+ ["suede shoes","attribute"],["brown work boots","attribute"],["black boots","attribute"],
+ ["pull on boots","attribute"],["chelsea boots","attribute"],["hiking boots","attribute"],
+ ["boots for standing all day","job_function"],["work boots for concrete","job_function"],
+ ["shoes for warehouse work","job_function"],["boots for construction","job_function"],
+ ["comfortable work boots","job_function"],["boots for cold weather","job_function"],
+ ["shoes for being on your feet all day","job_function"],
+ ["something waterproof for winter","intent"],["casual shoes for everyday","intent"],
+ ["gift for a construction worker","intent"],["most comfortable work boots","intent"],
+ ["shoes to wear with jeans","intent"],
+ ["second shift","literal"],["threshold","literal"],["excavator","literal"],
+ ["diagnostic","literal"],["invader","literal"],["colorado","literal"],
+ ["holton","literal"],["wheelbase","literal"]
+]

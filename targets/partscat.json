@@ -1,0 +1,29 @@
+{
+  "target_id": "partscat",
+  "name": "Cat Parts Store",
+  "primary_url": "https://parts.cat.com/en/catcorp",
+  "sector": "heavy-duty",
+  "platform": {
+    "expected": "browser-eval",
+    "engine": "websphere-hcl-commerce",
+    "framework": "IBM WebSphere Commerce / HCL Commerce (storeId=21801, catalogId=10051, langId=-1; *View servlets, SearchDisplay)",
+    "rendering": "server-rendered category/search grids; edge-protected (Caterpillar Akamai)",
+    "bot_protection": "Akamai edge — server-side/WebFetch reads to category pages timed out (>60s) in discovery; capture will need the browser-eval path. Possible dealer/store-selection gate before browse/pricing."
+  },
+  "search": {
+    "url_pattern": "https://parts.cat.com/en/catcorp/search?q=<TERM>&p_page=<N>  (confirmed live; 16 results/page; e.g. ?q=heavy%20duty%20battery&p_page=1 → '1-16 of 132 results')",
+    "category_url_pattern": "https://parts.cat.com/en/catcorp/category/<slug>  e.g. batteries-hvy-duty (26 results), ground-engaging-tools, get-bucket-teeth-adapter-sys, filters-and-fluids-filters; paginates with ?beginIndex=&pageSize= (16/page)",
+    "product_url_pattern": "https://parts.cat.com/en/catcorp/product/<PART_NUMBER>  e.g. /product/1R-1808",
+    "typeahead": "Live autocomplete works as guest: 'Suggested Keywords' + 'Products' (part# + name). Note preview finding: 'heavy duty battery' typeahead surfaces dry-cell consumer batteries (1U-9539 9V, 1U-9538 AA-Cell) by name-match over the real Heavy Duty equipment battery line.",
+    "search_paradigms": [
+      "part-number (7-char alphanumeric NNC-NNNN, e.g. 1R-1808, 326-1644, 1U3202) — the core lookup",
+      "serial-number → SIS parts books / 2D diagrams (drill to part numbers)",
+      "cross-reference / interchange (competitor part number → Cat part, esp. filters)",
+      "machine model + system (C15, 320, D6) — model-qualified part queries",
+      "category / duty-class browse (Heavy Duty, General Duty, Severe Duty)"
+    ],
+    "capture": "GUEST-ACCESSIBLE — no dealer gate (probed 2026-08-12). Store selection is optional and only drives pricing/availability, not browse/search. Real browser passes Akamai (homepage/category/search all render); server-side/WebFetch times out, so capture MUST use the browser-eval path. Product tiles render server-side as '<PART#>: <Description>' (e.g. '9X-3404: 12V Heavy Duty Maintenance-Free Battery') — part number IS the identity, no slug derivation needed. Filter out injected non-product tiles ('Reference Parts Diagram', 'Add Equipment' promos) that appear inline in the grid. Facets: two groups — Category (refinement links) and Specifications (dimensional, US/Metric toggle: Belt Type, Blade Width, Bolt Length, etc.).",
+    "notes": "1.4M+ parts. Catcorp = generic corporate store (dealer-agnostic). Categories confirmed via web: Attachments, Cabs, Drivetrain, Electrical & Electronics, Engine, Filters & Fluids, Ground Engaging Tools, Hardware/Seals/Consumables, Hoses & Tubes, Hydraulics, Structures & Other Systems, Undercarriage, Upgrade & Repair Kits, Workshop Supplies, Planned Maintenance Kits, Cat Reman, Batteries."
+  },
+  "notes": "parts.cat.com (Cat Parts Store, catcorp) — Caterpillar genuine heavy-equipment replacement parts. WebSphere/HCL Commerce behind Akamai. Heavy Duty sector. Part-number-heavy B2B demand: the category-recall method covers the category/duty-class head but cannot synthesize part-number/serial/cross-reference queries — surfacing that blind spot is a primary goal of running the first two skills here. Never bypass bot protection; recover by waiting for cooldown, never by rotating identities."
+}

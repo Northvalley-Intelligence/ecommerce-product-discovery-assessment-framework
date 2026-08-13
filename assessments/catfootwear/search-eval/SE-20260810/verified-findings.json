@@ -1,0 +1,100 @@
+{
+ "verify_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "verified_at": "2026-08-12T00:48:06.859Z",
+ "original_path": "storefront_html",
+ "verification_path": "live_ui",
+ "selection": {
+  "rule": "worst-first: lowest recall on keyed terms + zero-result on demand-mappable datasets + surprising zeros on stocked types",
+  "count": 5,
+  "population": 245
+ },
+ "rows": [
+  {
+   "q": "insulated waterproof boots",
+   "original": {
+    "total": 26
+   },
+   "verification": {
+    "total": 5,
+    "top3": [
+     "Invader Max 8in Waterproof Thinsulate Composite Toe Work Boot",
+     "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+     "Triton Insulated Bib (apparel)"
+    ],
+    "checked_at": "2026-08-12T00:48:06.859Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://www.catfootwear.com/US/en/search?q=insulated%20waterproof%20boots",
+    "note": "Live UI returns only 5 products (one an apparel Bib) for a query matching many insulated waterproof boots. Recall 0/36 vs the waterproof node key. Search under-returns matching inventory — confirmed."
+   }
+  },
+  {
+   "q": "something waterproof for winter",
+   "original": {
+    "total": 0
+   },
+   "verification": {
+    "total": 0,
+    "checked_at": "2026-08-12T00:48:06.859Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://www.catfootwear.com/US/en/search?q=something%20waterproof%20for%20winter",
+    "note": "Live UI: no products were found + Einstein recommendation fallback (10 tiles). Cat stocks waterproof (36) and cold-weather (41) boots, so this is a compositional-intent search bug, not an assortment gap."
+   }
+  },
+  {
+   "q": "steel toe sneakers",
+   "original": {
+    "total": 15
+   },
+   "verification": {
+    "total": 2,
+    "checked_at": "2026-08-12T00:48:06.859Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://www.catfootwear.com/US/en/search?q=steel%20toe%20sneakers",
+    "note": "Recall 13% confirmed directionally; steel-toe sneaker inventory exists (sneaker-work-boots node) but search returns few."
+   }
+  },
+  {
+   "q": "trainers",
+   "original": {
+    "total": 0
+   },
+   "verification": {
+    "total": 0,
+    "checked_at": "2026-08-12T00:48:06.859Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": "assortment_gap",
+   "evidence": {
+    "url": "https://www.catfootwear.com/US/en/search?q=trainers",
+    "note": "No athletic-trainer node in the catalog; Cat makes no trainers. The zero is correct merchandising, not a search bug."
+   }
+  },
+  {
+   "q": "diagnostic",
+   "original": {
+    "total": 0
+   },
+   "verification": {
+    "total": 1,
+    "checked_at": "2026-08-12T00:48:06.859Z"
+   },
+   "verdict": "refuted",
+   "reclassified_as": "brand_redirect",
+   "evidence": {
+    "url": "https://www.catfootwear.com/US/en/search?q=diagnostic",
+    "note": "Known-item model query redirects to the exact Diagnostic boot product page; not a zero. Original 0 was a PDP capture artifact, since fixed."
+   }
+  }
+ ]
+}

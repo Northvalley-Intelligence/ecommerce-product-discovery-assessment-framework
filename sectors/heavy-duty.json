@@ -1,0 +1,11 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "heavy-duty",
+  "name": "Heavy Duty",
+  "description": "Heavy-equipment and industrial replacement parts evaluated on search relevance. Unlike consumer retail, demand here is part-number-heavy: shoppers search by Cat part number (e.g. 1R-1808), by machine serial number (→ SIS parts diagrams), by competitor cross-reference/interchange number, and by machine model + system (e.g. 'C15 oil filter', '320 bucket teeth'). Category browsing (Engine, Hydraulics, Undercarriage, Ground Engaging Tools, Filters & Fluids, Batteries) exists but is secondary. Duty-class is a real Cat taxonomy tier — Heavy Duty / General Duty / Severe Duty — spanning batteries, GET tips, and hoses. The category-recall answer-key method (node × facet) covers the category/duty-class head but structurally CANNOT generate part-number, serial-number, or cross-reference queries — that gap is itself a finding for this sector.",
+  "shared_query_packs": [],
+  "member_sites": [
+    "partscat"
+  ],
+  "domain": true
+}

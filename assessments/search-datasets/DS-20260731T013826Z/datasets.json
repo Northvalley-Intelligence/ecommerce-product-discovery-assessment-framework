@@ -37,7 +37,9 @@
               "verify": {
                 "status": "confirmed",
                 "rechecked": true,
-                "detail": "drywall: 2411->2410, sheetrock: 33->33"
+                "detail": "drywall: 2411->2410, sheetrock: 33->33",
+                "method": "live re-check",
+                "at": "2026-07-30"
               }
             },
             {
@@ -57,7 +59,9 @@
               "verify": {
                 "status": "confirmed",
                 "rechecked": true,
-                "detail": "liquid nails: 17->17"
+                "detail": "liquid nails: 17->17",
+                "method": "live re-check",
+                "at": "2026-07-30"
               }
             },
             {
@@ -77,7 +81,9 @@
               "verify": {
                 "status": "confirmed",
                 "rechecked": true,
-                "detail": "quikrete: 643->637"
+                "detail": "quikrete: 643->637",
+                "method": "live re-check",
+                "at": "2026-07-30"
               }
             },
             {
@@ -97,7 +103,9 @@
               "verify": {
                 "status": "confirmed",
                 "rechecked": true,
-                "detail": "roundup: 249->251"
+                "detail": "roundup: 249->251",
+                "method": "live re-check",
+                "at": "2026-07-30"
               }
             },
             {
@@ -115,7 +123,8 @@
               "divergence_pct": 91,
               "verdict": "severe",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -133,7 +142,8 @@
               "divergence_pct": 83,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -151,7 +161,8 @@
               "divergence_pct": 73,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -169,7 +180,8 @@
               "divergence_pct": 56,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -187,7 +199,8 @@
               "divergence_pct": 61,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -205,7 +218,8 @@
               "divergence_pct": 59,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -223,7 +237,8 @@
               "divergence_pct": 0,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -241,7 +256,8 @@
               "divergence_pct": 0,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -259,7 +275,8 @@
               "divergence_pct": 93,
               "verdict": "severe",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -277,7 +294,8 @@
               "divergence_pct": 64,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -295,7 +313,8 @@
               "divergence_pct": 59,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -313,7 +332,8 @@
               "divergence_pct": 56,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -331,7 +351,8 @@
               "divergence_pct": 47,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -349,7 +370,8 @@
               "divergence_pct": 54,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -367,7 +389,8 @@
               "divergence_pct": 33,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -385,7 +408,8 @@
               "divergence_pct": 30,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -403,7 +427,8 @@
               "divergence_pct": 23,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -421,7 +446,8 @@
               "divergence_pct": 34,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -439,7 +465,8 @@
               "divergence_pct": 22,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             }
           ],
@@ -470,7 +497,8 @@
               "divergence_pct": 0,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -488,7 +516,8 @@
               "divergence_pct": 82,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -506,7 +535,8 @@
               "divergence_pct": 5,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -524,7 +554,8 @@
               "divergence_pct": 89,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -542,7 +573,8 @@
               "divergence_pct": 81,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -560,7 +592,8 @@
               "divergence_pct": 2,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -578,7 +611,8 @@
               "divergence_pct": 1,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -596,7 +630,8 @@
               "divergence_pct": 0,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -614,7 +649,8 @@
               "divergence_pct": 6,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -632,7 +668,8 @@
               "divergence_pct": 51,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -650,7 +687,8 @@
               "divergence_pct": 36,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -668,7 +706,8 @@
               "divergence_pct": 0,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -686,7 +725,8 @@
               "divergence_pct": 5,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -704,7 +744,8 @@
               "divergence_pct": 74,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -722,7 +763,8 @@
               "divergence_pct": 59,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -740,7 +782,8 @@
               "divergence_pct": 61,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -758,7 +801,8 @@
               "divergence_pct": 34,
               "verdict": "minor",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -776,7 +820,8 @@
               "divergence_pct": 6,
               "verdict": "pass",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -794,7 +839,8 @@
               "divergence_pct": 40,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -812,7 +858,8 @@
               "divergence_pct": 91,
               "verdict": "severe",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -830,7 +877,8 @@
               "divergence_pct": 65,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -848,7 +896,8 @@
               "divergence_pct": 80,
               "verdict": "high",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             },
             {
@@ -866,7 +915,8 @@
               "divergence_pct": 67,
               "verdict": "medium",
               "verify": {
-                "status": "confirmed"
+                "status": "confirmed",
+                "method": "read at capture"
               }
             }
           ],

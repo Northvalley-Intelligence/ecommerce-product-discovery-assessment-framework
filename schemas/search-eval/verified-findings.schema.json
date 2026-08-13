@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/verified-findings.schema.json",
+  "title": "Search-Eval Verified Findings",
+  "description": "Independent re-check of the worst-scoring terms before any of them becomes a finding. A term scores badly for one of two reasons - search really failed, or the CAPTURE failed - and the bottom of the ranking is disproportionately the latter. Target's board once showed 'dyson v8 -> Clorox cleaning wipes, grade 0.60'; the capture had grabbed a Recommended-for-you carousel, and the live site returns Dyson. Re-grading the same capture would have ratified the artifact, so verification MUST run through a different path than the one that produced the finding.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verify_version", "verified_at", "original_path", "verification_path", "selection", "rows"],
+  "properties": {
+    "verify_version": { "const": "1" },
+    "retailer": { "type": "string" },
+    "eval_id": { "type": "string" },
+    "verified_at": { "type": "string", "format": "date-time" },
+
+    "original_path": {
+      "description": "How the finding was originally captured.",
+      "enum": ["storefront_html", "storefront_graphql", "json_api", "browser_dom", "live_ui"]
+    },
+    "verification_path": {
+      "description": "Must differ from original_path. Same-path re-capture confirms the artifact rather than testing it.",
+      "enum": ["storefront_html", "storefront_graphql", "json_api", "browser_dom", "live_ui"]
+    },
+
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule", "count"],
+      "properties": {
+        "rule": {
+          "type": "string",
+          "description": "How rows were chosen, e.g. 'bottom 20 by mean_grade' or 'every zero-result on a stocked term'. Recorded so the report can state coverage of the verification rather than implying all findings were checked."
+        },
+        "count": { "type": "integer", "minimum": 1 },
+        "population": { "type": "integer" }
+      }
+    },
+
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["q", "verdict", "evidence"],
+        "properties": {
+          "q": { "type": "string" },
+          "original": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "total": { "type": "integer" },
+              "mean_grade": { "type": ["number", "null"] },
+              "ndcg": { "type": ["number", "null"] },
+              "top3": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "total": { "type": "integer" },
+              "top3": { "type": "array", "items": { "type": "string" } },
+              "checked_at": { "type": "string", "format": "date-time" }
+            }
+          },
+
+          "verdict": {
+            "description": "confirmed - the failure is real and may ship as a finding. refuted - the original was a capture artifact and must NOT ship as a search finding. inconclusive - could not be re-checked; must not ship either.",
+            "enum": ["confirmed", "refuted", "inconclusive"]
+          },
+          "reclassified_as": {
+            "description": "Why a refuted row scored badly. Refuted rows are not discarded: a run with several capture_artifact reclassifications is telling you the capture method is degrading, which is its own finding.",
+            "enum": ["capture_artifact", "carousel_contamination", "brand_redirect", "sponsored_tiles", "rate_block", "true_empty", "assortment_gap", null]
+          },
+          "evidence": {
+            "type": "object",
+            "description": "Replayable proof. A live URL a human can open, not a screenshot.",
+            "additionalProperties": false,
+            "required": ["url"],
+            "properties": {
+              "url": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "confirmed": { "type": "integer" },
+        "refuted": { "type": "integer" },
+        "inconclusive": { "type": "integer" },
+        "capture_quality_flag": {
+          "type": "boolean",
+          "description": "Set when the refuted share is high enough that the capture method itself is suspect and the whole run should be re-examined before reporting."
+        }
+      }
+    }
+  }
+}

@@ -210,12 +210,12 @@ async function main() {
           assert(badReplay.status === 400, 'Replay must reject a foreign host.');
         }
       }
-      assert(page.includes('Discovery surfaces') && page.includes('Facets & attributes'), 'Woo site view missing the discovery-surfaces / facets panels.');
-    assert(page.includes('findingsPanel') && page.includes('fixPanel') && page.includes('healthPanel'), 'Woo site view missing health/findings/fix-plan panels.');
-    assert(page.includes('Experiments & evidence') && page.includes('class="woo-replay"') && page.includes("'/api/woo/replay?target='"), 'Woo site view missing the experiments/replay drill-down.');
-    // GEN-033: summary numbers are navigable to their backing (no dead numbers).
+      assert(page.includes("panel('Catalog'") && page.includes('Search relevance') && page.includes("panel('Findings'"), 'Woo site view missing the consolidated Catalog / Search-relevance / Findings panels.');
+    assert(page.includes('findingsPanel') && page.includes('stockPanel') && page.includes('catalogCalls'), 'Woo site view missing combined findings / stock-context / catalog-call evidence.');
+    assert(page.includes('class="woo-replay"') && page.includes("'/api/woo/replay?target='"), 'Woo site view missing the replay drill-down under the catalog numbers.');
+    // GEN-033/039: summary numbers are navigable to their backing (no dead numbers).
     assert(page.includes('function jumpNum') && page.includes('function wireJumps') && page.includes('class="jump"'), 'Woo summary numbers are not navigable.');
-    assert(page.includes("id=\"woo-findings\"") && page.includes("id=\"woo-surfaces\"") && page.includes("id=\"woo-experiments\""), 'Woo view missing jump targets for its summary numbers.');
+    assert(page.includes('cat-skus-ev') && page.includes('cat-facets-ev') && page.includes('ds-terms') && page.includes('verdictCard'), 'Woo view missing catalog call drills / dataset expanders / store verdict cards.');
     }
     const ridgeSite = sites.find((site) => site.target_id === 'ridge');
     assert(ridgeSite, 'Sites API does not include the Ridge target.');

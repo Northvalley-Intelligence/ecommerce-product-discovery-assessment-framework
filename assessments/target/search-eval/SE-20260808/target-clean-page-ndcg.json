@@ -1,0 +1,222 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|55 inch 4k oled tv",
+   "q": "55 inch 4k oled tv",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|cast iron skillet 12 inch",
+   "q": "cast iron skillet 12 inch",
+   "ndcg": 0.6568088783526536,
+   "grades": [
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|walnut dining table",
+   "q": "walnut dining table",
+   "ndcg": 0.9301351060305819,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|velvet accent chair",
+   "q": "velvet accent chair",
+   "ndcg": 0.9927436766230373,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|marble coffee table",
+   "q": "marble coffee table",
+   "ndcg": 0.9554771573476026,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|everything for a college dorm",
+   "q": "everything for a college dorm",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|host a backyard bbq",
+   "q": "host a backyard bbq",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|furnish a living room",
+   "q": "furnish a living room",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift for a new mom",
+   "q": "gift for a new mom",
+   "ndcg": 0.8058983371386534,
+   "grades": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|dyson v8",
+   "q": "dyson v8",
+   "ndcg": 0.6898256958973074,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    3
+   ]
+  },
+  {
+   "query_id": "target|stanley tumbler",
+   "q": "stanley tumbler",
+   "ndcg": 0.997293928323317,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "target|airpods pro",
+   "q": "airpods pro",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|back to school supplies",
+   "q": "back to school supplies",
+   "ndcg": 0.7852563338896201,
+   "grades": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|home gym equipment",
+   "q": "home gym equipment",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|something to organize my kitchen",
+   "q": "something to organize my kitchen",
+   "ndcg": 0.9402686858489288,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  }
+ ]
+}

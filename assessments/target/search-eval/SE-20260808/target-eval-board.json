@@ -1,0 +1,3028 @@
+{
+ "eval_id": "SE-20260808",
+ "retailer": "target",
+ "sector": "general-retail",
+ "captured_via": "Target organic search, paced in-session at a human rate (bot protection never bypassed). plp_search_v2 with include_sponsored=false for keyword queries; live brand-page reads for house-brand names that redirect. 667 product judgments across 110 terms.",
+ "rubric_hash": "99a0e992a992",
+ "judge": "llama3.2:3b @ temp 0",
+ "recapture_note": "Expanded 2026-08-09 from 36 to 110 terms via paced in-session organic captures (human rate; PerimeterX bot protection respected, never bypassed - capture paused and resumed on natural cooldown). VERIFY-THE-WORST applied: brand-name zeros (threshold, cat and jack, good and gather) were checked live and REDIRECT to curated brand pages (2,710 / 1,776 / 1,649 results) - recorded from the page, since the plp_search_v2 keyword endpoint returns 0 for pure brand names. Builds on the 2026-08-08 clean rebuild that replaced the earlier carousel-contaminated DOM read.",
+ "headline": "Target search (110 terms, mean grade 1.73/3, 38% not-relevant) is strong on product-type, attribute and brand queries and on most synonyms. Its clear weakness is compositional natural-language intent: job-function/task queries grade 1.33/3 (63% not-relevant) - move into a new house -> romance novels & toy food trucks; set up a home theater -> pajamas mixed with soundbars. Two narrower gaps: regional/substring synonyms (pop -> Pop-Tarts, popsicle -> Pop-Tarts, ice lolly -> mints, jumper -> baby activity jumpers) where the engine substring-matches instead of mapping the synonym; and intent works well only when the phrase maps to a real category (healthy snacks for kids, home gym equipment).",
+ "datasets": [
+  {
+   "id": "synonym",
+   "name": "Synonym / category",
+   "terms": 36,
+   "mean_ndcg": 0.88,
+   "mean_grade": 1.91,
+   "pct_not_relevant": 29,
+   "shallow": 5
+  },
+  {
+   "id": "attribute",
+   "name": "Attribute (type+material)",
+   "terms": 25,
+   "mean_ndcg": 0.95,
+   "mean_grade": 1.73,
+   "pct_not_relevant": 32,
+   "shallow": 6
+  },
+  {
+   "id": "job_function",
+   "name": "Job-function (task)",
+   "terms": 18,
+   "mean_ndcg": 0.9,
+   "mean_grade": 1.33,
+   "pct_not_relevant": 63,
+   "shallow": 11
+  },
+  {
+   "id": "intent",
+   "name": "Intent (natural language)",
+   "terms": 16,
+   "mean_ndcg": 0.87,
+   "mean_grade": 1.6,
+   "pct_not_relevant": 47,
+   "shallow": 6
+  },
+  {
+   "id": "literal",
+   "name": "Literal (brand/product)",
+   "terms": 15,
+   "mean_ndcg": 0.91,
+   "mean_grade": 2.07,
+   "pct_not_relevant": 34,
+   "shallow": 4
+  }
+ ],
+ "stores": {
+  "TGT": {
+   "id": "target",
+   "name": "Target",
+   "platform": "enterprise (custom)"
+  }
+ },
+ "rows": [
+  {
+   "dataset": "synonym",
+   "q": "couch",
+   "total": "2956",
+   "search_call": "https://www.target.com/s?searchTerm=couch",
+   "items": [
+    "Costway Floor Couch, Loveseat Foam Sofa with Removable Corduroy Cover, Back & Seat Cushions Pink",
+    "Upholstered Loveseat Sofa 3-Seat Sofa with Pillows&Soft Cushion, Comfy Cloud Sofa Couch, Light Coffee - ModernLuxe",
+    "105.5''W Modern Minimalist Curved Sofa, Point-Shaped Corduroy Cloud Sofa Couch with 2 Pillows, Gray - ModernLuxe",
+    "ModernLuxe Upholstered Sofa Couch, Sofa with Double-Layer Cushions & Side Storage Pockets, 3-Seater Sofa, Gray",
+    "TYBOATLE 65\" Convertible Pink Velvet Futon Sofa Bed, Modern Upholstered Couch with USB, Folding Loveseat for Bedroom, Apartment, Office",
+    "Modern Sofa, Oversized Corduroy Couch with Washable Cover, Deep Seat 3 Seater Couch with Wide Armrest, Comfy Cloud Sofa for Living Room, Green",
+    "Luck Live Farmhouse Sofa,leather couch 80.31\"furniture living room High-End Vintage Sofa, Sturdy Frame, Comfortable Seating Brown",
+    "82\" Modern Beige Velvet Chesterfield Sofa Couch for Living Room, Tufted Button Upholstered Sofa with Copper Nailhead Trim and Metal Legs-Panipeachy"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.8143640107046092,
+   "mean_grade": 2.5,
+   "compared_to": "sofa",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "sofa",
+   "total": "2956",
+   "search_call": "https://www.target.com/s?searchTerm=sofa",
+   "items": [
+    "Costway Floor Couch, Loveseat Foam Sofa with Removable Corduroy Cover, Back & Seat Cushions Pink",
+    "Upholstered Loveseat Sofa 3-Seat Sofa with Pillows&Soft Cushion, Comfy Cloud Sofa Couch, Light Coffee - ModernLuxe",
+    "105.5''W Modern Minimalist Curved Sofa, Point-Shaped Corduroy Cloud Sofa Couch with 2 Pillows, Gray - ModernLuxe",
+    "ModernLuxe Upholstered Sofa Couch, Sofa with Double-Layer Cushions & Side Storage Pockets, 3-Seater Sofa, Gray",
+    "TYBOATLE 65\" Convertible Pink Velvet Futon Sofa Bed, Modern Upholstered Couch with USB, Folding Loveseat for Bedroom, Apartment, Office",
+    "Modern Sofa, Oversized Corduroy Couch with Washable Cover, Deep Seat 3 Seater Couch with Wide Armrest, Comfy Cloud Sofa for Living Room, Green",
+    "Luck Live Farmhouse Sofa,leather couch 80.31\"furniture living room High-End Vintage Sofa, Sturdy Frame, Comfortable Seating Brown",
+    "82\" Modern Beige Velvet Chesterfield Sofa Couch for Living Room, Tufted Button Upholstered Sofa with Copper Nailhead Trim and Metal Legs-Panipeachy"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.8072750941820998,
+   "mean_grade": 2.38,
+   "compared_to": "sofa",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "settee",
+   "total": "258",
+   "search_call": "https://www.target.com/s?searchTerm=settee",
+   "items": [
+    "12pc Stoneware Westfield Dinnerware Set White - Threshold : Microwave Dishwasher Safe, Service for 4, Traditional Style",
+    "Jennifer Taylor Home Jared Roll Arm Tufted Bench Settee with Back, Burnt Orange Performance Velvet",
+    "12pc Glass Potomac Double Old-Fashioned Assorted Tumbler Set - Threshold : Recycled Glassware Set, Dishwasher-Safe",
+    "Set of 4 Coasters - Hearth Hand with Magnolia",
+    "41 x 18 x 3 Montlake Water-Resistant Patio Bench/Settee Contoured Back Cushion Heather Fern Green - Classic Accessories",
+    "21oz Glass Tumbler with Wooden Lid Tan - Hearth Hand with Magnolia",
+    "Melody Mid-Century Modern Fabric and Natural Wood Finishing 3 Seater Settee Bench Gray - Baxton Studio: Rubberwood Legs, Button-Tufted Back",
+    "vidaXL 2-Seater Sofa - Faux Suede loveseat Settee - Brown Faux Leather Couch for Living Room/Lounge - Modern 69.3\" x 30.1\" x 29.3\""
+   ],
+   "grades_pinned": [
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8027856390671769,
+   "mean_grade": 1.5,
+   "compared_to": "sofa",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "loveseat",
+   "total": "689",
+   "search_call": "https://www.target.com/s?searchTerm=loveseat",
+   "items": [
+    "Dyonery 65\" Folding Boneless Couch with Fixed-Shape Frame, Corduroy Floor Sofa Loveseat Sleeper for Living Room, Bedroom, Small Apartment,Green",
+    "Dyonery 48 Inch Loveseat Sofa,Black Chenille Couches for Small Spaces&Living Room,Love Seat with Deep Seat,Spring Cushion,Throw Pillow,Side Pocket",
+    "Dyonery 47.6” Chenille Loveseat Sofa, 2-Seater Compact Small Space Couch with Side Storage Pocket, Memory Foam Cushion, Solid Wood Legs",
+    "Dyonery 68\" Mid-Century Modern Corduroy Loveseat Sofa, Comfy Small Couch with 24\" Deep Seat, Spring Cushion, Solid Wood Frame for Living Room, Beige",
+    "Dyonery 50\" Loveseat Sofa, 2-Seater Black Chenille Love Seat for Office & Small Spaces, 24\" Deep Seat, FSC Solid Wood Frame, Tool-Free Assembly",
+    "TYBOATLE 51\" Modern Small Loveseat Sofa, 2-Seater Blue Fabric Couch with Iron Legs for Apartment, Office, Dorm, Bedroom",
+    "Dyonery 5-in-1 Convertible Sleeper Sofa Bed,79\" Black Corduroy Boneless Folding Futon Cloud Couch,Loveseat Pull Out Couch Bed for Living Room",
+    "Upholstered Sofa Oversized Cloud Sofa Double Cushion Sofa Couch Armchair Loveseat, Gray-ModernLuxe"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2.88,
+   "compared_to": "sofa",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "cocktail table",
+   "total": "398",
+   "search_call": "https://www.target.com/s?searchTerm=cocktail%20table",
+   "items": [
+    "Marble Drink Table - Threshold",
+    "Kate and Laurel Alezar Scallop Wood Drink Table, Walnut Brown, 9x9x22",
+    "ModernLuxe Oval Coffee Table, Mid-Century Modern Wood Coffee Table, Farmhouse Cocktail Center Table for Living Room & Office, Natural",
+    "Electroplated Drink Table Wood Finish - Distributed by Vendor",
+    "20 Turned Wood Drink Table Brown - Threshold",
+    "Vintage Coffee Table with Patchwork Craft Top&Cross Metal Legs, Farmhouse Cocktail Table Center Table, Antique Brown-ModernLuxe",
+    "39 Inch Lift Top Coffee Table, Solid Oak Rectangle Center Table with Hidden Compartment, Modern Cocktail Table for Home Living Room Office",
+    "Catalana Round Figural Metal Drink Table Brass - Threshold"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    3,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.7798517124811414,
+   "mean_grade": 2.13,
+   "compared_to": "coffee table",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "coffee table",
+   "total": "4068",
+   "search_call": "https://www.target.com/s?searchTerm=coffee%20table",
+   "items": [
+    "Wood and Metal Coffee Table Black - Room Essentials",
+    "Costway Coffee Table 2-Tier Modern Center Cocktail Table with Storage Shelf for Living Room Brown",
+    "Costway 2-Tier Boho Coffee Table for, Rectangular Center Table with Rubber Wood Frame Brown",
+    "33.5 Inch Round Coffee Table – Wood Center Table with Fluted Legs and Wave Shaped Base – Perfect for Small Spaces, Home Office – Easy Assembly",
+    "Yaheetech Industrial Wood Coffee Table with Storage Shelf for Living Room,Rustic Brown",
+    "39.37“”W Round Coffee Table Faux MARS Pattern Cocktail Table Center Table Accent Table Sofa Side Table End Table - ModernLuxe",
+    "Costway 2-Tier Rustic Coffee Table with Storage Tempered Glass Tabletop PE Rattan Shelf Brown",
+    "Lift-Top Coffee Table with Adjustable Height – Modern Wooden Center Table with 2 Storage Drawers & Hidden Compartment – Black"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    3,
+    2,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.7372337892385353,
+   "mean_grade": 2.25,
+   "compared_to": "coffee table",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "silverware",
+   "total": "422",
+   "search_call": "https://www.target.com/s?searchTerm=silverware",
+   "items": [
+    "20pc Teagan Flatware Silver - Room Essentials",
+    "20pc Flatware Set Silver - Room Essentials : Stainless Steel Silverware Set, Service for 4, Includes Forks, Spoons, Knives",
+    "3pc Flatware Pink - Room Essentials",
+    "Oneida 20pc Brynn Flatware Set Silver: Stainless Steel, Service for 4, Dishwasher-Safe, 18/0 Silverware",
+    "Oneida 20pc Ainsley Flatware Set: Stainless Steel Silverware, Service for 4, Dishwasher-Safe, Transitional Style",
+    "Megachef Cravat 20 Piece Flatware Utensil Set, Stainless Steel Silverware Metal Service for 4 in Matte Black",
+    "Gibson Home Stravida 20 Piece Flatware set in Gold Stainless Steel",
+    "20pc Squared Straight Flatware Set Stainless Steel - Room Essentials : Silverware Set, Service for 4, Dishwasher-Safe"
+   ],
+   "grades_pinned": [
+    2,
+    3,
+    1,
+    3,
+    3,
+    3,
+    1,
+    3
+   ],
+   "ndcg_pinned": 0.8352890664960951,
+   "mean_grade": 2.38,
+   "compared_to": "silverware",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "flatware",
+   "total": "422",
+   "search_call": "https://www.target.com/s?searchTerm=flatware",
+   "items": [
+    "20pc Teagan Flatware Silver - Room Essentials",
+    "20pc Flatware Set Silver - Room Essentials : Stainless Steel Silverware Set, Service for 4, Includes Forks, Spoons, Knives",
+    "3pc Flatware Pink - Room Essentials",
+    "Oneida 20pc Brynn Flatware Set Silver: Stainless Steel, Service for 4, Dishwasher-Safe, 18/0 Silverware",
+    "Oneida 20pc Ainsley Flatware Set: Stainless Steel Silverware, Service for 4, Dishwasher-Safe, Transitional Style",
+    "Megachef Cravat 20 Piece Flatware Utensil Set, Stainless Steel Silverware Metal Service for 4 in Matte Black",
+    "Gibson Home Stravida 20 Piece Flatware set in Gold Stainless Steel",
+    "20pc Squared Straight Flatware Set Stainless Steel - Room Essentials : Silverware Set, Service for 4, Dishwasher-Safe"
+   ],
+   "grades_pinned": [
+    2,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8630395422009609,
+   "mean_grade": 2.5,
+   "compared_to": "silverware",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "cutlery",
+   "total": "1541",
+   "search_call": "https://www.target.com/s?searchTerm=cutlery",
+   "items": [
+    "Hefty Ecosave Compostable Cutlery - 24ct",
+    "Stainless Steel Cutlery - All In Motion Black",
+    "Cutlery Combo Disposable Tableware - 24ct - Everspring : BPA-Free, Includes Forks, Spoons, Knives",
+    "Cutlery Set - Cat Jack Cars",
+    "Chinet Crystal Cutlery - 96ct: Heavy Duty, Disposable Flatware Set",
+    "Oneida 20pc Ainsley Flatware Set: Stainless Steel Silverware, Service for 4, Dishwasher-Safe, Transitional Style",
+    "30ct Plastic Cutlery Set Gold - Spritz",
+    "Stock Your Home 300-Pack Silver Plastic Cutlery Set- 100 Forks, 100 Knives, 100 Spoons"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    3,
+    1,
+    1,
+    1,
+    1,
+    3
+   ],
+   "ndcg_pinned": 0.776141398249429,
+   "mean_grade": 1.75,
+   "compared_to": "silverware",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "sneakers",
+   "total": "1231",
+   "search_call": "https://www.target.com/s?searchTerm=sneakers",
+   "items": [
+    "Kids Devyn Slip-On Performance Sneakers - All In Motion Multicolor 6",
+    "Kids Dillon Slip-On Machine Washable Performance Sneakers - All In Motion Black 2",
+    "Toddler Peyton Performance Hook and Loop Closure Sneakers - All In Motion White 10T",
+    "London Rag Womens Merida Glitter Patch Chunky Sneakers 8",
+    "Very G Womens Retro Lace Up Throwback Sneaker, Beige (8.5)",
+    "Women s Spencer Fashion Sneakers with Memory Foam Insole - Universal Thread 8 White: Lace Up, Low Top, Textured Outsole",
+    "Kids Thatcher Jogger Lace-Up Sneakers - Cat Jack Cream 3",
+    "Ellos Love Sneaker - 10 W, White (Wide Widths Available)"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9438147924866596,
+   "mean_grade": 1.88,
+   "compared_to": "sneakers",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "tennis shoes",
+   "total": "1507",
+   "search_call": "https://www.target.com/s?searchTerm=tennis%20shoes",
+   "items": [
+    "Kids Devyn Slip-On Performance Sneakers - All In Motion Multicolor 6",
+    "S Sport By Skechers Women s Rummie 2.0 Sneakers - Black 8",
+    "Refresh Women's Casual Platform Sneakers 172411 Nude 6",
+    "Kids Thatcher Jogger Lace-Up Sneakers - Cat Jack Cream 3",
+    "London Rag Womens Moomba Lace Up Sneakers 8",
+    "Women s Spencer Fashion Sneakers with Memory Foam Insole - Universal Thread 8 White: Lace Up, Low Top, Textured Outsole",
+    "Kids Dillon Slip-On Machine Washable Performance Sneakers - All In Motion Navy Multi 6",
+    "Hello Kitty Women's Sneakers (Adults) , White, Size: 7"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ],
+   "ndcg_pinned": 0.9395766788612658,
+   "mean_grade": 1.63,
+   "compared_to": "sneakers",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "trainers",
+   "total": "595",
+   "search_call": "https://www.target.com/s?searchTerm=trainers",
+   "items": [
+    "Munchkin Miracle 360 Trainer Cup 7oz - Blue: BPA-Free, Spoutless, Spillproof, Includes Lid",
+    "All Pro Passer Pickle Ball",
+    "Munchkin 7oz Plastic Any Angle Click Lock Weighted Straw Trainer Cup - Pink: BPA-Free, Portable Drinkware",
+    "Munchkin 7oz Plastic Any Angle Click Lock Weighted Straw Trainer Cup - Blue: BPA-Free, Portable Drinkware, Flip-Top Lid",
+    "Munchkin 7oz/2pk Plastic Any Angle Click Lock Weighted Straw Trainer Sippy Cups - Pink/Purple: BPA-Free, Leakproof Design",
+    "Munchkin Miracle 360 Trainer Cup 7oz/2pk - Blue/Mint",
+    "All Pro Passer Football Sports Trainer: Robotic Quarterback Plastic Tool for Football Training",
+    "GoSports Fungo Baseball Racket for Fly Balls, Grounders, and Line Drives - Baseball and Softball Training Equipment for Coaches and Parents"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 0.88,
+   "compared_to": "sneakers",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "stroller",
+   "total": "468",
+   "search_call": "https://www.target.com/s?searchTerm=stroller",
+   "items": [
+    "Jeep PowerGlyde Lightweight Stroller by Delta Children - Tan",
+    "Cosco Umbrella Stroller with Canopy - Teal: Maximum Weight Capacity 40 lbs, Ultra-Compact, Forward Facing Seat",
+    "Baby Jogger City Mini Air Lightweight Stroller - Frosted Ivory: Forward Facing Seat, Canopy, 50 lb Capacity",
+    "Cosco Umbrella Stroller - Black: Lightweight Baby Gear, Easy Fold Transport, Compact for Storage, up to 40 lbs Capacity",
+    "Baby Jogger City Tour 2 Ultra Compact Single Stroller - Jet: Folds for Easy Transport, Rubber Tires, 45 lb Capacity",
+    "Disney 3D Character Umbrella Stroller - Stitch",
+    "Baby Jogger City Mini GT2 Double Stroller - Jet Black: Hand-Operated Brakes, Adjustable Handle, Infant Car Seat Compatible",
+    "Kolcraft Cloud Premier Lightweight Stroller - Black: 5-Point Harness, Reclining Seat, Removable Cup Holders, Steel Frame"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    1,
+    3,
+    1,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.9651613850271338,
+   "mean_grade": 2.5,
+   "compared_to": "stroller",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "pram",
+   "total": "311",
+   "search_call": "https://www.target.com/s?searchTerm=pram",
+   "items": [
+    "Baby Disney Winnie The Pooh Cozy Plush Hooded Pram - Ivory 0-3M",
+    "Teamson Kids Olivia's Little World Baby Doll Bassinet Pram with Retractable Canopy, Storage & Cover, Hot Pink Glitter",
+    "LONDON FOG Newborn Baby Girl and Boy Puffer Carbag Pram Snowsuit, Gray, 0/6 Months",
+    "David Protein Triple Peanut Butter Frozen Dessert - 16oz",
+    "Bayer: Trendy Baby Doll Pram with Adjustable Handle, Foldable Pink/Grey Stroller for Dolls",
+    "Dr. Praeger s Frozen Gluten Free Broccoli Littles - 10oz",
+    "JonnyPops Organic Rainbow Fruit Stacks Pops - 14.8 fl oz/8ct",
+    "Oikos Pro Mango Pineapple Cultured Dairy Drink - 23g Protein 7 fl oz: Gluten-Free, No Added Sugar"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    0,
+    3,
+    1,
+    0,
+    0
+   ],
+   "ndcg_pinned": 0.981580407822618,
+   "mean_grade": 1.63,
+   "compared_to": "stroller",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "pushchair",
+   "total": "219",
+   "search_call": "https://www.target.com/s?searchTerm=pushchair",
+   "items": [
+    "hauck Sport T13 Lightweight Compact Foldable Stroller Pushchair, Charcoal Stone",
+    "Bayer Design: Doll Pram Xeo - Coral Pink Floral - 2-In-1 Pushchair & Stroller",
+    "hauck Sport T13 Lightweight Compact Foldable Stroller Pushchair, Charcoal Stone",
+    "Bayer: Pram Neo Vario - Blue, Grey, White - Includes Shoulder Bag, Fits Dolls Up to 20.5\", Convertible to A Pushchair, Adjustable & Rever",
+    "29.92 Sling Chair Caramel - Room Essentials",
+    "Bayer: Xeo Pram - Pink, White, Stars - Dolls Up to 18\", Shoulder Bag, Convertible to Pushchair, Adjustable Handle, Foldable, Kids Ages 3+",
+    "Double Stroller Track Tandem Stroller for Infant and Toddler, Foldable Pushchair Bassinet Pram, gray",
+    "Bright Starts Pop N Sit Portable Booster Seat - Gray"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3,
+    1,
+    2,
+    2,
+    1
+   ],
+   "ndcg_pinned": 0.9948561774257956,
+   "mean_grade": 2.25,
+   "compared_to": "stroller",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "trash can",
+   "total": "852",
+   "search_call": "https://www.target.com/s?searchTerm=trash%20can",
+   "items": [
+    "2.5gal Waste Basket White - Brightroom : Compact Plastic Trash Can for Bathroom or Kitchen",
+    "13gal Swing Top Waste Basket White - Brightroom : Kitchen Trash Can, 13 Gallon Capacity, Textured Plastic, Indoor Use",
+    "11gal Slim Step Trash Can - Brightroom : White Pedal-Operated Lid, Textured Indoor Kitchen Trashcan, 11 Gallon Capacity",
+    "10L Stainless Slim Step Trash Can Silver - Brightroom",
+    "45L Slim Step Trash Can - Brightroom : Stainless Steel Kitchen Garbage Can, Indoor, Smooth Finish, Silver, 11.8 Gallon Capacity",
+    "Hefty 12.3gal Slim Step Trash Can with Locking Lid Black: Large Kitchen Garbage Can, Pedal-Operated, Removable Lid",
+    "3gal Open Vanity Waste Basket Black - Brightroom : Compact Matte Plastic Indoor Trash Can, Small Size, Bathroom Use",
+    "11.9gal Step Trash Can White - Brightroom : Pedal-Operated Kitchen Garbage Can, Textured Plastic, Indoor Use"
+   ],
+   "grades_pinned": [
+    1,
+    3,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.7914287110248243,
+   "mean_grade": 2,
+   "compared_to": "trash can",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "garbage can",
+   "total": "852",
+   "search_call": "https://www.target.com/s?searchTerm=garbage%20can",
+   "items": [
+    "2.5gal Waste Basket White - Brightroom : Compact Plastic Trash Can for Bathroom or Kitchen",
+    "13gal Swing Top Waste Basket White - Brightroom : Kitchen Trash Can, 13 Gallon Capacity, Textured Plastic, Indoor Use",
+    "11gal Slim Step Trash Can - Brightroom : White Pedal-Operated Lid, Textured Indoor Kitchen Trashcan, 11 Gallon Capacity",
+    "10L Stainless Slim Step Trash Can Silver - Brightroom",
+    "45L Slim Step Trash Can - Brightroom : Stainless Steel Kitchen Garbage Can, Indoor, Smooth Finish, Silver, 11.8 Gallon Capacity",
+    "Hefty 12.3gal Slim Step Trash Can with Locking Lid Black: Large Kitchen Garbage Can, Pedal-Operated, Removable Lid",
+    "3gal Open Vanity Waste Basket Black - Brightroom : Compact Matte Plastic Indoor Trash Can, Small Size, Bathroom Use",
+    "11.9gal Step Trash Can White - Brightroom : Pedal-Operated Kitchen Garbage Can, Textured Plastic, Indoor Use"
+   ],
+   "grades_pinned": [
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    1,
+    3
+   ],
+   "ndcg_pinned": 0.6927052806516414,
+   "mean_grade": 1.75,
+   "compared_to": "trash can",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "rubbish bin",
+   "total": "336",
+   "search_call": "https://www.target.com/s?searchTerm=rubbish%20bin",
+   "items": [
+    "2.5gal Waste Basket White - Brightroom : Compact Plastic Trash Can for Bathroom or Kitchen",
+    "3gal Open Vanity Waste Basket Black - Brightroom : Compact Matte Plastic Indoor Trash Can, Small Size, Bathroom Use",
+    "7gal Wastebasket Black - Brightroom : Compact 7.7 Gallon Indoor Trash Can, Rectangle, Polypropylene, Open Top, Dorm Use",
+    "Wastebasket Frosted - Room Essentials",
+    "3gal Open Vanity Waste Basket Gray - Brightroom : Compact Plastic Indoor Trash Can, Matte Finish, Small Size, 3 Gallon Capacity",
+    "Wastebasket White - Room Essentials : Plastic, Compact Design, 7.5L Capacity, 10.5 Height",
+    "Wastebasket Mint - Room Essentials",
+    "Solid Bathroom Wastebasket Tan - Threshold : Bohemian Style, 13.19 Height, 568.1ml Capacity"
+   ],
+   "grades_pinned": [
+    1,
+    0,
+    0,
+    2,
+    1,
+    2,
+    2,
+    0
+   ],
+   "ndcg_pinned": 0.6584319347060295,
+   "mean_grade": 1,
+   "compared_to": "trash can",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "comforter",
+   "total": "3223",
+   "search_call": "https://www.target.com/s?searchTerm=comforter",
+   "items": [
+    "Waffle Textured Comforter Set All Season Down-Alternative Ultra Soft Bedding - Becky Cameron, Fog, King/California King",
+    "Twin/Twin XL Floral Scallop Comforter and Sham Set Blue for Dorm - Threshold",
+    "King Textured Chambray Comforter Sham Set Natural - Casaluna : OEKO-TEX Certified, 250 Thread Count, Zipper Closure",
+    "Twin/Twin XL Eyelet Comforter and Sham Set White for Dorm - Threshold",
+    "Bedsure King Size Comforter Set Khaki Soft Prewashed Bedding for All Seasons 3 Pieces GentleSoft™ Warm Down Alternative Bed Set Mother's Day Gift",
+    "King/California King Heavyweight Linen Blend Comforter Sham Set Natural - Casaluna : Rayon Cotton, Hidden Quilting, Zip Closure",
+    "Full/Queen Mini Gingham Comforter and Sham Set Camel - Threshold : Weave, Midweight Fabric, 3-Piece Set",
+    "3pc Full/Queen Washed Waffle Weave Comforter and Sham Set White - Threshold : Textile, Oeko-Tex Certified, Midweight"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2.13,
+   "compared_to": "comforter",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "duvet",
+   "total": "1930",
+   "search_call": "https://www.target.com/s?searchTerm=duvet",
+   "items": [
+    "King Heavyweight Linen Blend Duvet Cover Sham Set Natural - Casaluna : OEKO-TEX Certified, Zipper Closure",
+    "Bedsure 100% Washed Cotton Duvet Cover Oversized King, Minimalist Cotton Duvet Cover Linen Like for All Seasons, Plain Simple Bedding Set",
+    "Full/Queen Cotton Linen Chambray Duvet Cover Sham Set White - Threshold : OEKO-TEX Certified, Zipper Closure",
+    "Basel Full/Queen Duvet Cover Set - Levtex Home",
+    "King Mini Gingham Duvet and Sham Set Moss Green - Threshold",
+    "Quatrefoil & Farmhouse Vine Prints 3PC Duvet Cover & Shams Set, Ultra Soft - Becky Cameron, Urban Vibe / Navy, Full/Queen",
+    "Full/Queen Floral Print Duvet and Sham Set Light Sage Green/Light Pink/White - Threshold",
+    "King Rayon from Bamboo Duvet Set Natural - Casaluna"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2,
+   "compared_to": "comforter",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "quilt",
+   "total": "2011",
+   "search_call": "https://www.target.com/s?searchTerm=quilt",
+   "items": [
+    "King Heavyweight Linen Blend Quilt Natural - Casaluna : Rayon Cotton, Box Quilting, OEKO-TEX Certified",
+    "Stripes Floral and Diamonds Quilted Coverlet Set With Shams - Becky Cameron, Stripe Stitch / Light Gray, King/California King",
+    "King Printed Floral Gauze Reversible Quilt Brown - Threshold",
+    "Pom Pom Taupe King/Cal King Quilt - Levtex Home",
+    "King TENCEL Quilt White - Threshold : OEKO-TEX Certified, Cooling Lightweight Coverlet, 300 Thread Count",
+    "King Large Scale Printed Floral Gauze Reversible Quilt Blue - Threshold",
+    "King Printed Cotton Voile Tonal Floral Quilt Ivory/Camel - Threshold : Midweight, Machine Washable, OEKO-TEX Certified",
+    "Twin/Twin Extra Long Microfiber Quilt Dark Green - Room Essentials"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.9352492171216448,
+   "mean_grade": 2.25,
+   "compared_to": "comforter",
+   "is_lead": false
+  },
+  {
+   "dataset": "attribute",
+   "q": "55 inch 4k oled tv",
+   "total": "243",
+   "search_call": "https://www.target.com/s?searchTerm=55%20inch%204k%20oled%20tv",
+   "items": [
+    "Roku 55in Select 4K QLED HDR Smart Roku TV",
+    "Samsung 55in 4K Crystal SamsungVision AI Smart TV",
+    "Hiro 55in 4K HDR Smart TV Roku",
+    "Samsung 55in 4K UHD M70H Mini LED Smart TV",
+    "Samsung 55in 4K UHD The Frame Smart TV",
+    "Samsung 50in 4K Crystal Smart TV",
+    "Roku 50in Select 4K QLED Smart Roku TV",
+    "Samsung 75in 4K UHD M70H Mini LED Smart TV"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": null,
+   "mean_grade": 1.71
+  },
+  {
+   "dataset": "attribute",
+   "q": "cast iron skillet 12 inch",
+   "total": "251",
+   "search_call": "https://www.target.com/s?searchTerm=cast%20iron%20skillet%2012%20inch",
+   "items": [
+    "Sur La Table 9.5in Pre-Seasoned Cast Iron Skillet",
+    "Granitestone Charleston 4qt Deep Saute Nonstick Pan",
+    "T-Fal Simply Cook 5qt Ceramic Nonstick Saute",
+    "Lodge 12in Cast Iron Skillet Preseasoned",
+    "Lodge 10.5in Cast Iron Griddle",
+    "Lodge 10.25in Cast Iron Skillet Preseasoned",
+    "Best Choice 6-PC Cast Iron Cookware Set",
+    "Hamilton Beach Ceramic Nonstick Electric Skillet"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.6568088783526536,
+   "mean_grade": 1.25
+  },
+  {
+   "dataset": "attribute",
+   "q": "walnut dining table",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=walnut%20dining%20table",
+   "items": [
+    "47in Square Dining Table with Storage Shelf Farmhouse Wooden",
+    "Modern 31.5in Round Dining Table Mid-Century Pedestal",
+    "Farmhouse Dining Table for 4-6 63in Rectangular",
+    "Garvee Industrial Dining Table Metal Frame 78.7in",
+    "Best Choice Round Mid-Century Dining Table Wood Finish",
+    "45 Inch Walnut Colored Circular Dining Table",
+    "Alana Round Wood Dining Table Walnut - Baxton Studio",
+    "40in Astrid Mid-Century Round Dining Table - Threshold"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9301351060305819,
+   "mean_grade": 1.75
+  },
+  {
+   "dataset": "attribute",
+   "q": "velvet accent chair",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=velvet%20accent%20chair",
+   "items": [
+    "Wing Arm Accent Chair - Threshold Studio McGee",
+    "Barrel Living Room Accent Chair Upholstered Modern Armchair",
+    "Modern Accent Chair Thick Seat Cushion Ergonomic",
+    "Costway Modern Velvet Accent Chair Button Tufted Golden Legs",
+    "LINSY HOME Swivel Velvet Barrel Chair Ottoman Set",
+    "Modern Accent Chair Microfiber Upholstery Solid Wood",
+    "ModernLuxe Velvet Accent Chair Round Arms Single Sofa",
+    "Turned Leg Velvet Accent Chair Tan - Threshold Studio McGee"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9927436766230373,
+   "mean_grade": 1.88
+  },
+  {
+   "dataset": "attribute",
+   "q": "marble coffee table",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=marble%20coffee%20table",
+   "items": [
+    "Faux Marble Coffee Table 33in Sintered Stone Round Morden Fort",
+    "40in Round Coffee Table Cylindrical Pedestal Panipeachy",
+    "HOMCOM Acrylic Side Table Waterfall End Table",
+    "HOMCOM Coffee Tables Set of 2 Faux Marble Top Steel Frame",
+    "29.5in Round Coffee Table Marble Pattern",
+    "Modern 33in Round Coffee Table Faux Marble"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9554771573476026,
+   "mean_grade": 1.67
+  },
+  {
+   "dataset": "job_function",
+   "q": "everything for a college dorm",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=everything%20for%20a%20college%20dorm",
+   "items": [
+    "Post-it Flags Assorted Bright Colors 100 Flags",
+    "Not Dreaming Morehouse College King Collection (Paperback)",
+    "Mini Caddy up&up",
+    "Paper Tray up&up",
+    "Book Storage Bin up&up",
+    "Large Storage Bin up&up",
+    "6pk Mini Caddy Pastels up&up",
+    "Waffle Textured Comforter Set Becky Cameron"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "job_function",
+   "q": "host a backyard bbq",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=host%20a%20backyard%20bbq",
+   "items": [
+    "Drizzilicious Mini Rice Cakes Birthday Cake",
+    "Pringles Original Potato Crisps Chips",
+    "Pringles Snack Stacks 6 Flavors Chips",
+    "Popcorners Protein Cinnamon Delight Chips",
+    "Frito-Lay Baked Popped Mix Variety Pack",
+    "Lays Barbecue Potato Chips",
+    "Miss Vickies Applewood Smoked BBQ Chips",
+    "Boulder Canyon Hickory BBQ Potato Chips"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "job_function",
+   "q": "furnish a living room",
+   "total": "200",
+   "search_call": "https://www.target.com/s?searchTerm=furnish%20a%20living%20room",
+   "items": [
+    "White Vase with Pink Bow Room Essentials",
+    "Pink Vase with White Scattered Bows Room Essentials",
+    "Foundational Collection Hearth & Hand",
+    "3pc Vase Set Ceramic Room Essentials",
+    "Modern Textured Ceramics Threshold",
+    "Botanical Ceramic Taper Candle Holder Threshold Studio McGee",
+    "Dual-Purpose Must-Haves",
+    "Blooming in Bliss Collection Threshold"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "intent",
+   "q": "gift for a new mom",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=gift%20for%20a%20new%20mom",
+   "items": [
+    "Rifle Paper Co Garden Party Medium Gift Bag",
+    "Rifle Paper Co Strawberry Fields Medium Gift Bag",
+    "Roe Wellness Mom Care Belly Bundle Bath Body Gift Set",
+    "Earth Mama Belly Bundle Pregnancy Skincare Kit",
+    "Medium Chambray Striped Gift Bag Sugar Paper",
+    "Large Pink Birthday Gift Bag for Her",
+    "First Words with Little One (Board Book)",
+    "Rifle Paper Co Garden Party Wine Gift Bag"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.8058983371386534,
+   "mean_grade": 1.25
+  },
+  {
+   "dataset": "literal",
+   "q": "dyson v8",
+   "total": "34",
+   "search_call": "https://www.target.com/s?searchTerm=dyson%20v8",
+   "items": [
+    "Dyson Detect Cordless Stick Vacuum V15",
+    "Dyson Cord Free Toy Vacuum Playset",
+    "Dyson V15s Detect Submarine Cordless Stick Vacuum",
+    "Dyson Ball Animal 3 Total Clean Upright Vacuum",
+    "Dyson Piston Animal Cordless Stick Vacuum",
+    "Dyson Car+Boat Cordless Handheld Vacuum",
+    "Dyson V9 Submarine Cordless Wet Dry Vacuum",
+    "Dyson Digital Slim Cordless Stick Vacuum"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    3
+   ],
+   "ndcg_pinned": 0.6898256958973074,
+   "mean_grade": 1.63
+  },
+  {
+   "dataset": "literal",
+   "q": "stanley tumbler",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=stanley%20tumbler",
+   "items": [
+    "Stanley 30oz H2.0 Flowstate Quencher Tumbler Linen Blue",
+    "Stanley 30oz Ice Flow 2.0 Flip Straw Tumbler Rose Quartz",
+    "Stanley 30oz H2.0 Flowstate Quencher Tumbler Smokey Taupe",
+    "Stanley 30oz H2.0 Flowstate Quencher Tumbler Dark Blossom",
+    "Stanley 30oz Ice Flow Flip Straw Tumbler Dream Green",
+    "Stanley 14oz Ice Flow Flip Straw Tumbler Smokey Taupe",
+    "Stanley 14oz Ice Flow Flip Straw Tumbler Linen Blue",
+    "Stanley 40oz H2.0 FlowState Quencher Tumbler Blue Starry"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ],
+   "ndcg_pinned": 0.997293928323317,
+   "mean_grade": 2.88
+  },
+  {
+   "dataset": "literal",
+   "q": "airpods pro",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=airpods%20pro",
+   "items": [
+    "Apple AirPods Pro 3 Wireless Earbuds Active Noise Cancellation",
+    "Apple AirPods 4 Wireless Earbuds",
+    "AirPods Pro 3rd Gen Case with Clip heyday",
+    "AirPods Pro 3rd Gen Silicone Case heyday Pink",
+    "AirPods Pro 3rd Gen Silicone Case heyday Teal",
+    "AirPods Pro 3rd Gen Silicone Case heyday Black",
+    "Apple EarPods USB-C",
+    "Apple AirPods Max 2"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "job_function",
+   "q": "back to school supplies",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=back%20to%20school%20supplies",
+   "items": [
+    "Post-it 3x3 Sticky Notes 90 Sheets",
+    "Pastel 2 Pocket Folders with Prongs",
+    "Composition Book Quad Ruled Dealworthy",
+    "Ticonderoga 24ct Pencil Nonsharp Yellow",
+    "Clear Binder Ruler up&up",
+    "Pastel College Ruled Notebook",
+    "BiC Xtra Life Ballpoint Pens 10ct",
+    "Mesh Binder Pouch up&up"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.7852563338896201,
+   "mean_grade": 1.25
+  },
+  {
+   "dataset": "job_function",
+   "q": "home gym equipment",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=home%20gym%20equipment",
+   "items": [
+    "Sportsroyals Power Cage 1600lbs Multi-Function Power Rack",
+    "Sportsroyals Multifunctional Home Gym Pro Plus 150LBS",
+    "Sportsroyals Power Tower Pull Up Bar Station 360LBS"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "intent",
+   "q": "something to organize my kitchen",
+   "total": "1,000+",
+   "search_call": "https://www.target.com/s?searchTerm=something%20to%20organize%20my%20kitchen",
+   "items": [
+    "Bamboo Shelf Natural Brightroom",
+    "2pk Small Produce Fridge Bin with Lid Brightroom",
+    "3x9 Natural Kitchen Drawer Organizer Brightroom",
+    "10in Lazy Susan Turn Table Brightroom",
+    "Plastic Expandable Deep Pantry Bin Brightroom",
+    "Soda Fridge Pantry Organizer Brightroom",
+    "Fridge Drink Pusher Organizer Brightroom",
+    "5 Compartment Plastic Drawer Organizer Brightroom"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.9402686858489288,
+   "mean_grade": 1.75
+  },
+  {
+   "dataset": "job_function",
+   "q": "baby shower gifts",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=baby%20shower%20gifts",
+   "items": [
+    "Large Square 'Baby in Bloom' Floral ",
+    "Medium Woodland Animals Baby Shower ",
+    "Medium 'Congrats We Can Bearly Wait'",
+    "Medium Scallop Striped Baby Shower G",
+    "Jool Baby Bathtime Adventure Bath To",
+    "Small Quilt Patterned Baby Shower Gi"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8363307499782423,
+   "mean_grade": 2.17
+  },
+  {
+   "dataset": "job_function",
+   "q": "home office setup",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=home%20office%20setup",
+   "items": [
+    "Scandi Desk with Drawers Natural - R",
+    "Portable Desk Mat Pink Scallop - up&",
+    "Mini Caddy for Students Blush Pink -",
+    "6 Cup Caddy Blush Pink - up&up",
+    "Wavy Writing Desk with Drawer Natura",
+    "Desktop Caddy Desk Organization Set "
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    0,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8820844218513836,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "job_function",
+   "q": "first apartment essentials",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=first%20apartment%20essentials",
+   "items": [
+    "18pk Everyday Washcloths White - Roo",
+    "Swiffer Power Mop Multi-Surface Mop ",
+    "Eraser Pads Sponges - 3ct - up&up: M",
+    "Swiffer Dusters Heavy Duty Extendabl",
+    "Dr. Brown's All-in-One Sterilizer & ",
+    "Scrub Daddy Dye Free Scrub Mommy Spo"
+   ],
+   "grades_pinned": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.8608507208033159,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "job_function",
+   "q": "camping trip gear",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=camping%20trip%20gear",
+   "items": [
+    "Travel Container Set - up&up: Silico",
+    "Enthusiast Gear Roll Top Floating Co",
+    "Stansport Tent Set Up Essentials Kit",
+    "Puffer Expandable Weekender Bag - Op",
+    "Kids' Weekender Duffel Bag Daisy - C",
+    "Alvantor Camping Tent for 2 Person, "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "ndcg_pinned": null,
+   "mean_grade": 1.8
+  },
+  {
+   "dataset": "job_function",
+   "q": "organize my closet",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=organize%20my%20closet",
+   "items": [
+    "6 Shelf Hanging Fabric Storage Organ",
+    "8 Shelf Hanging Fabric Shoe Organize",
+    "Hanging Closet Organizer Bundle Ivor",
+    "4 Drawer Metal Storage Organizer Nar",
+    "Hanging Jewelry Organizer Off-White ",
+    "Kids Closet Organizer - Daily Activi"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "job_function",
+   "q": "holiday party hosting",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=holiday%20party%20hosting",
+   "items": [
+    "4ct Gold Plastic Champagne Flute - S",
+    "20ct Plastic Stemless Wine Glasses G",
+    "White Paper Plates 8.5 - 55ct - up&u",
+    "Botanical Leaf Paper Plates 8.5 - 15",
+    "White Paper Plate 10 - 54ct - up&up:",
+    "20ct Blue Dinner Paper Plates - Spri"
+   ],
+   "grades_pinned": [
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.8495152316962563,
+   "mean_grade": 1.5
+  },
+  {
+   "dataset": "job_function",
+   "q": "newborn baby essentials",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=newborn%20baby%20essentials",
+   "items": [
+    "Safety 1st Deluxe Nursery Healthcare",
+    "Frida Baby MediFrida Accu-Dose Pacif",
+    "Baby Girls' 4pk Floral Pindot Pointe",
+    "Safety 1st Large Nasal Aspirator: Ma",
+    "Carter's Just One You Baby Girls' 3p",
+    "Philips Avent Soothie Pacifiers 0-3m"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.9816762821832159,
+   "mean_grade": 1.5
+  },
+  {
+   "dataset": "job_function",
+   "q": "small space storage solutions",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=small%20space%20storage%20solutions",
+   "items": [
+    "1041.91 cu in Utility Storage Bin Cl",
+    "56qt Clear Non-Latching Storage Box ",
+    "16qt Clear Storage Box with Lid Whit",
+    "6qt Clear Storage Box White - Bright",
+    "1.9qt Clear Storage Bin with Latches",
+    "Rolling Storage Bag Green - Brightro"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "job_function",
+   "q": "thanksgiving dinner table",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=thanksgiving%20dinner%20table",
+   "items": [
+    "Big Dot of Happiness Holiday Pie Nap",
+    "Saro Lifestyle Embroidered Christmas",
+    "Saro Lifestyle Embroidered Candy Can",
+    "Saro Lifestyle Embroidered Christmas",
+    "47 Inch Square Dark Walnut Dining Ta",
+    "Round Dining Table for 4-6, 42\" Farm"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    0,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.6909124238317511,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "job_function",
+   "q": "kids birthday party supplies",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=kids%20birthday%20party%20supplies",
+   "items": [
+    "20ct Birthday Sprinkle Snack Paper P",
+    "Felt Happy Birthday Banner - Spritz",
+    "34 Number 1 Foil Balloon - Spritz: L",
+    "20ct Latex Party Balloons Happy Birt",
+    "3ct Books First Day of School Foil B",
+    "34 Number 3 Foil Balloon - Spritz: L"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.9601220623210976,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "job_function",
+   "q": "move into a new house",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=move%20into%20a%20new%20house",
+   "items": [
+    "The Love Hypothesis - by  Ali Hazelw",
+    "B. toys Good-to-Go Food Truck Pop-Up",
+    "In Your Dreams - by  Sarah Adams (Pa",
+    "Dozen Eggs Interactive Play Food - G",
+    "Little Tikes Sweet Spaces Playful Pl",
+    "Little Tikes Sweet Spaces Playful Pl"
+   ],
+   "grades_pinned": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "ndcg_pinned": 0.7606395682357036,
+   "mean_grade": 0.67
+  },
+  {
+   "dataset": "job_function",
+   "q": "set up a home theater",
+   "total": "23",
+   "search_call": "https://www.target.com/s?searchTerm=set%20up%20a%20home%20theater",
+   "items": [
+    "Small Wood Bluetooth Radio - Hearth ",
+    "Ekouaer Women's Pajama Set Long Slee",
+    "VEAT00L 2.1ch Sound Bar w/ built-in ",
+    "Bose TV Speaker Bluetooth Soundbar",
+    "Ekouaer Womens Pajama Sets Button Up",
+    "Spectrum Brown Bluetooth Radio - Hea"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "job_function",
+   "q": "start a garden",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=start%20a%20garden",
+   "items": [
+    "LEGO Botanicals Water Lilies Buildin",
+    "Lifelines FlowArt: Mini Single - Nat",
+    "Prairie & Plains States Getting Star",
+    "Pennsylvania Getting Started Garden ",
+    "Bob Books - Beginning Phonics Workbo",
+    "Lifelines FlowArt: Mini Single - Caf"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    2,
+    0,
+    1
+   ],
+   "ndcg_pinned": 0.7637057362930129,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "intent",
+   "q": "gift for a 5 year old boy",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=gift%20for%20a%205%20year%20old%20boy",
+   "items": [
+    "B. toys Flying Disc Launcher with Pe",
+    "TERRA by Battat Remote Control Bumpe",
+    "TERRA by Battat Remote Control Leopa",
+    "LEGO City Police Car Toy for Kids 5+",
+    "LEGO Classic Creative Suitcase 10713",
+    "Joyfy Large Friction Powered Garbage"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.7853499507465692,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "intent",
+   "q": "cozy fall decor",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=cozy%20fall%20decor",
+   "items": [
+    "Glade 3 Wick Fall Jar Candles Cozy G",
+    "2 Wick Glass Pumpkin Brulee Jar Cand",
+    "2 Wick Fall Day Glass Lidded Jar Can",
+    "Mini Glass Pumpkin Bourbon Jar Candl",
+    "Mini Glass Cinnamon Pumpkin Muffin J",
+    "Mini Glass Fall Day Jar Candle with "
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8974774503363707,
+   "mean_grade": 1.5
+  },
+  {
+   "dataset": "intent",
+   "q": "what to get a teenage girl",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=what%20to%20get%20a%20teenage%20girl",
+   "items": [
+    "Betting on You - by  Lynn Painter (P",
+    "The Inheritance Games - by Jennifer ",
+    "The Mistake - (Off-Campus) by  Elle ",
+    "If He Had Been with Me - by  Laura N",
+    "Lands' End Kids Long Sleeve Graphic ",
+    "The Iron Trail - (Harvey Girls Myste"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "intent",
+   "q": "healthy snacks for kids",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=healthy%20snacks%20for%20kids",
+   "items": [
+    "MadeGood Banana Chocolate Chip Organ",
+    "Annie's Homegrown Variety Snack Pack",
+    "MadeGood Chocolate Chip Organic Gran",
+    "That's It. Mango Blueberry Mini Frui",
+    "Organic Whole Grain Strawberry Fruit",
+    "Little Spoon Fruit Kids' Puzzlers Mi"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.67
+  },
+  {
+   "dataset": "intent",
+   "q": "something to help me sleep better",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=something%20to%20help%20me%20sleep%20better",
+   "items": [
+    "Lemme Sleep Gummies - Deep Sleep Sup",
+    "FocusFuel Energy Boost Dietary Suppl",
+    "OLLY Muscle Recovery Sleep Gummies w",
+    "Lemme Sleep Gummies - Deep Sleep Sup",
+    "Goli Nutrition Extra Strength Dreamy",
+    "OLLY Ultra Strength Sleep Aid Softge"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.7858788169506234,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "intent",
+   "q": "gift for someone who loves coffee",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=gift%20for%20someone%20who%20loves%20coffee",
+   "items": [
+    "16oz Stoneware Love Ya Mean It Color",
+    "15oz Stoneware You Are My Favorite M",
+    "15oz Stoneware Westfield Mug Gray - ",
+    "16oz Stoneware You're Awesome Mug Cr",
+    "16oz Stoneware Let the Adventure Beg",
+    "Cups of Joy Coffee Gift Set - 25.6oz"
+   ],
+   "grades_pinned": [
+    1,
+    3,
+    1,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.7490591779896082,
+   "mean_grade": 1.67
+  },
+  {
+   "dataset": "intent",
+   "q": "outfit for a job interview",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=outfit%20for%20a%20job%20interview",
+   "items": [
+    "Women's Drop Waist Mini Romper - Wil",
+    "Women's Off the Shoulder Poplin Butt",
+    "Women's Short Sleeve Oversized Butto",
+    "Women's Denim Chore Jumpsuit - Unive",
+    "Anna-Kaci Women's Printed Wide Leg J",
+    "INSPIRE CHIC Women's Collarless Blaz"
+   ],
+   "grades_pinned": [
+    2,
+    0,
+    1,
+    1,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.8672905934428387,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "intent",
+   "q": "decorate a nursery",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=decorate%20a%20nursery",
+   "items": [
+    "Llama Love Nursery Room - Cloud Isla",
+    "Safari Nursery Room - Cloud Island",
+    "Unicorn Dreams Nursery Room - Cloud ",
+    "Delicate Floral Nursery Collection -",
+    "In Bloom Nursery Room Collection - C",
+    "Boutique Nursery Room - Cloud Island"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.9515730533554545,
+   "mean_grade": 2.67
+  },
+  {
+   "dataset": "intent",
+   "q": "keep drinks cold at the beach",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=keep%20drinks%20cold%20at%20the%20beach",
+   "items": [
+    "16 oz Hydration BPA Free Plastic Por",
+    "24 fl oz Tritan Bottle Pink - All In",
+    "16 oz Hydration BPA Free Plastic Por",
+    "24 fl oz Tritan Bottle Blue - All In",
+    "16 oz Hydration BPA Free Plastic Por",
+    "16 fl oz Clear Water Bottle Blue - d"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "intent",
+   "q": "reduce clutter in my bathroom",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=reduce%20clutter%20in%20my%20bathroom",
+   "items": [
+    "Mr. Clean Fresh Freak Unstopables Mu",
+    "Mr. Clean Clean Freak Grapefruit Bat",
+    "Drano Max Gel Drain Cleaner and Clog",
+    "Scrubbing Bubbles Bathroom Cleaner D",
+    "Clorox Fresh Scent Foaming Toilet Bo",
+    "Clorox ToiletWand Disinfecting Refil"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1
+   ],
+   "ndcg_pinned": 0.7688272334591923,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "intent",
+   "q": "gift under 25 dollars",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=gift%20under%2025%20dollars",
+   "items": [
+    "Do You Really Know Your Family Game ",
+    "Exploding Kittens Horrible Therapist",
+    "Hasbro Classic Operation Game",
+    "Hasbro Connect 4 Frenzy Board Game",
+    "The Worst-Case Scenario Card Game - ",
+    "Yahtzee Game Board Games"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "intent",
+   "q": "something fun for a road trip",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=something%20fun%20for%20a%20road%20trip",
+   "items": [
+    "Hot Wheels: Pizza to Go, Go, Go! Lit",
+    "Gabbys Dollhouse: Fairy Fun (Scholas",
+    "Hot Wheels Dragon Launch Transporter",
+    "Goodnight, Goodnight, Construction S",
+    "Awesome Road Trip Activities for Kid",
+    "Crayola Stow and Go Color Wonder Set"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9244065274370025,
+   "mean_grade": 1.67
+  },
+  {
+   "dataset": "intent",
+   "q": "warm coat for winter",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=warm%20coat%20for%20winter",
+   "items": [
+    "Rokka&Rolla Women's Light Packable P",
+    "Women's Plus Size Notch Lapel Single",
+    "INSPIRE CHIC Women's Vintage Floral ",
+    "Allegra K Women's Lapel Button Down ",
+    "Rokka&Rolla Women's Insulated Long W",
+    "Womens Front-Button Jacket - A New D"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    3,
+    1
+   ],
+   "ndcg_pinned": 0.6046195494162488,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "intent",
+   "q": "gift for a dog lover",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=gift%20for%20a%20dog%20lover",
+   "items": [
+    "BARK Best of Barkbox Dog Toy Collect",
+    "BARK Howly Jowly Holidays Pet Collec",
+    "Bounce Pet Fresh Scent Dryer Sheets ",
+    "Pinky Up Penny the Puppy Coffee Mug,",
+    "Bounce Pet Mega Dryer Sheet - 50ct: ",
+    "BARK Fuzzy Farm Pet Collection"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    3,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.793618894415833,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "65 inch qled tv",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=65%20inch%20qled%20tv",
+   "items": [
+    "TCL 65 Class Q6-Series 4K UHD HDR QL",
+    "Hiro 65 4K HDR Smart TV Flat Screen ",
+    "Roku 75 Select Series 4K QLED HDR Sm",
+    "Hiro 55 4K HDR Smart TV Flat Screen ",
+    "TCL 40 1080p Q3 Series QLED Smart Ro",
+    "TCL 65 Class NXTVISION 4K QLED Smart"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    0,
+    0,
+    0,
+    3
+   ],
+   "ndcg_pinned": 0.8815261313700781,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "attribute",
+   "q": "stainless steel cookware set",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=stainless%20steel%20cookware%20set",
+   "items": [
+    "7pc Stainless Steel Cookware Set Sil",
+    "Cuisinart 10pc Classic Stainless Ste",
+    "T-Fal Simply Cook 12pc Stainless Ste",
+    "T-Fal Simply Cook 16pc Stainless Ste",
+    "12pc Stainless Steel Cookware Set wi",
+    "Cuisinart 13pc Classic Stainless Ste"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    2,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.9627752745280407,
+   "mean_grade": 2.67
+  },
+  {
+   "dataset": "attribute",
+   "q": "nonstick frying pan",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=nonstick%20frying%20pan",
+   "items": [
+    "GreenPan Rio Advanced 8 Ceramic Nons",
+    "GreenPan Rio Advanced 2pc (10 and 12",
+    "T-Fal Simply Cook 10.5 Nonstick Fry ",
+    "T-fal 2pc Frying Pan Set, Simply Coo",
+    "GreenPan Rio Advanced 12 Ceramic Non",
+    "T-fal 12 Frying Pan, Simply Cook Non"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9887181162657254,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "attribute",
+   "q": "high waisted black leggings",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=high%20waisted%20black%20leggings",
+   "items": [
+    "Womens Super Flex High-Rise 7/8 Pock",
+    "Womens High Waisted Seamless Legging",
+    "Womens 2pk Super Soft Leggings - A N",
+    "High Waisted Women Legging Super Sof",
+    "Womens High Waisted Flare Leggings w",
+    "Womens Everyday Soft Ultra High-Rise"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.968746075807192,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "organic cotton crib sheet",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=organic%20cotton%20crib%20sheet",
+   "items": [
+    "Cotton Fitted Crib Sheet - Farm Frie",
+    "KeaBabies 2pk Soothe Fitted Crib She",
+    "KeaBabies 2pk Soothe Fitted Crib She",
+    "2pk Fitted Cotton Blend Jersey Crib ",
+    "2pk Fitted Cotton Blend Jersey Crib ",
+    "2pk Fitted Jersey Crib Sheets - Safa"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "attribute",
+   "q": "queen size cooling sheets",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=queen%20size%20cooling%20sheets",
+   "items": [
+    "Queen 320 Thread Count Cool TENCEL L",
+    "Queen Printed Performance 400 Thread",
+    "LIVN CO. Solid Smart Cool Max Microf",
+    "Queen Bamboo Bed Sheets Set, Ultra B",
+    "Queen Solid Performance 400 Thread C",
+    "Queen Microfiber Sheet Set Sapphire "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "attribute",
+   "q": "wireless noise cancelling headphones",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=wireless%20noise%20cancelling%20headphones",
+   "items": [
+    "Sony WHCH720N Bluetooth Wireless Noi",
+    "Wireless Headphone - heyday Future D",
+    "Beats Studio Pro Bluetooth Wireless ",
+    "Active Noise Cancelling Bluetooth Wi",
+    "Beats Solo 4 Bluetooth Wireless On-E",
+    "Renewed Soundcore Q20i Hybrid Active"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "attribute",
+   "q": "bluetooth portable speaker",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=bluetooth%20portable%20speaker",
+   "items": [
+    "Bose SoundLink Flex Portable Bluetoo",
+    "Beats Pill Wireless Bluetooth Speake",
+    "JLab Go Party Portable Speaker - Pin",
+    "Anker Soundcore Select 4 Go Portable",
+    "JLab Pop Party Portable Speaker - Cy",
+    "JBL Clip 5 Portable Bluetooth Waterp"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "attribute",
+   "q": "stackable storage bins",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=stackable%20storage%20bins",
+   "items": [
+    "4L Stacking Clear Bin with Lid - Bri",
+    "12 x 12 x 8 All Purpose Storage Bin ",
+    "Sterilite Medium Nesting ShowOffs, S",
+    "Sterilite 12 Pack 45 Gallon Wheeled ",
+    "12 x 6 x 4 All Purpose Storage 1/2 S",
+    "5L Stacking Clear Bin with Lid - Bri"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2
+  },
+  {
+   "dataset": "attribute",
+   "q": "blackout curtains 84 inch",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=blackout%20curtains%2084%20inch",
+   "items": [
+    "50x84 Blackout Aruba Window Curtain ",
+    "50x84 Blackout Velvet Curtain Panel ",
+    "50x84 Blackout Slub Weave Raw Edge C",
+    "2pk 50x84 Blackout Aruba Curtain Pan",
+    "NICETOWN Burlap Vintage Open Linen W",
+    "Topfinel Dark Flax Blackout Curtains"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9838137941109318,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "reusable stainless steel water bottle",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=reusable%20stainless%20steel%20water%20bottle",
+   "items": [
+    "Ello Pop Fill 18oz Stainless Steel ",
+    "Owala 24 fl oz Stainless Steel FreeS",
+    "Owala 32oz FreeSip Stainless Steel W",
+    "Gatorade 22oz Stainless Steel Water ",
+    "Thermos 16oz Stainless Steel FUNtain",
+    "16 fl oz Stainless Steel Water Bottl"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9838137941109318,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "memory foam pillow",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=memory%20foam%20pillow",
+   "items": [
+    "King Medium Firm Cool Touch Memory F",
+    "Standard/Queen Medium Firm Shapeable",
+    "Standard/Queen Extra Firm Machine Wa",
+    "Standard/Queen Medium Performance Be",
+    "Standard/Queen Extra Firm Machine Wa",
+    "Standard/Queen Machine Washable Extr"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "attribute",
+   "q": "waterproof hiking boots",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=waterproof%20hiking%20boots",
+   "items": [
+    "Alpine Swiss Brent Men's Lightweight",
+    "Women's Salmon Sisters Ankle Deck Bo",
+    "London Rag Womens Overcloud Stylish ",
+    "Timberland Women's Mt. Maddsen Peak ",
+    "Women's Outscape Low, Brown, Size 6(",
+    "Women's Originals Leather Duck Boot,"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "attribute",
+   "q": "fleece lined leggings",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=fleece%20lined%20leggings",
+   "items": [
+    "MUK LUKS Women's Fleece Lined Leggin",
+    "Womens High Waisted Seamless Legging",
+    "Fleece Lined Legging Women Warm Ther",
+    "Girls Barrel Leg Fleece Star Appliqu",
+    "Felina Womens Velvety Super Soft Lig",
+    "Girls Solid Ribbed Leggings - Cat  J"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9838137941109318,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "rose gold desk lamp",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=rose%20gold%20desk%20lamp",
+   "items": [
+    "Task Lamp with Charging Pink - Room ",
+    "Silicone Desk Light - heyday Ghost",
+    "Desk Lamp with USB Ports (Includes L",
+    "Mini Lamp Stick Lamp Brass - Room Es",
+    "Task Table Lamp White - Room Essenti",
+    "Clip Light with Silicone Sleeve Pink"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1
+  },
+  {
+   "dataset": "attribute",
+   "q": "kids rolling backpack",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=kids%20rolling%20backpack",
+   "items": [
+    "JWorld Sunrise Kids 18 Rolling Backp",
+    "JWorld Sparkle Kids Rolling 15 Backp",
+    "Disney 16 Princesses Girls Rolling B",
+    "16 Backpack - dealworthy Checked",
+    "J World Sunrise 18\" Kids Rolling Bac",
+    "Kids 17 Backpack - Cat  Jack Cars"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9838137941109318,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "12 cup programmable coffee maker",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=12%20cup%20programmable%20coffee%20maker",
+   "items": [
+    "Mr. Coffee 12-Cup Programmable Coffe",
+    "Mr. Coffee 12-Cup Switch Coffee Make",
+    "Hamilton Beach 12 Cup Programmable C",
+    "Mr. Coffee 12-Cup Programable Coffee",
+    "Cuisinart Coffee Center 2-in-1 12 Cu",
+    "Cuisinart Personal Brew 12 Cup Coffe"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    3,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.8020648872024343,
+   "mean_grade": 2.33
+  },
+  {
+   "dataset": "attribute",
+   "q": "air fryer 8 quart",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=air%20fryer%208%20quart",
+   "items": [
+    "Gourmia 6qt Digital Window Air Fryer",
+    "PowerXL 8qt Air Max Air Fryer",
+    "Gourmia 8qt Digital Air Fryer with 1",
+    "bella 4qt Slim Air Fryer Oatmilk: Sm",
+    "Gourmia 7-Qt. Fry N Fold Digital Air",
+    "PowerXL Vortex Pro Air Fryer Black"
+   ],
+   "grades_pinned": [
+    1,
+    2,
+    2,
+    1,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.8298313311044833,
+   "mean_grade": 1.5
+  },
+  {
+   "dataset": "attribute",
+   "q": "gaming chair with lumbar support",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=gaming%20chair%20with%20lumbar%20support",
+   "items": [
+    "Costway Gaming Chair w/Headrest Lumb",
+    "Bestier RGB LED Gaming Chair with Po",
+    "JIONJOY Ergonomic Gaming Chair with ",
+    "JIONJOY Modern Mesh Lumbar Support E",
+    "Gaming Chair with Footrest, Ergonomi",
+    "MAYEERTY Computer Gaming Chair with "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.9933390559026385,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "attribute",
+   "q": "standing desk adjustable",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=standing%20desk%20adjustable",
+   "items": [
+    "Karl Home Adjustable Standing Desk C",
+    "VASAGLE Electric Standing Desk, Heig",
+    "HUANUO 32\" Small Electric Standing D",
+    "Costway Height Adjustable Computer D",
+    "Costway Sit-to-Stand Laptop Desk Car",
+    "Costway 63 x 24 Inch Sit Stand Desk "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.9933390559026385,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "synonym",
+   "q": "slow cooker",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=slow%20cooker",
+   "items": [
+    "Kitchen Collection By Hamilton Beach",
+    "Crock-Pot 4.5qt Slow Cooker Ponderos",
+    "NESCO 1.5-Qt. 120-Watt Metallic Slo",
+    "Crock-Pot 6qt Cook  Carry Programmab",
+    "Brentwood Scallop Pattern 4.5 Quart ",
+    "Ninja PossibleCooker PRO 8.5qt Multi"
+   ],
+   "grades_pinned": [
+    2,
+    3,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8938995903033765,
+   "mean_grade": 2.17,
+   "compared_to": "slow cooker",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "crockpot",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=crockpot",
+   "items": [
+    "Crock-Pot 4.5qt Slow Cooker Silver: ",
+    "Crock-Pot 6qt Cook  Carry Programmab",
+    "Kitchen Elite 6 Qt Slow Cooker, Stai",
+    "Crock-Pot 2qt Manual Slow Cooker - S",
+    "Crock-Pot 7qt Manual Slow Cooker Sta",
+    "Crock-Pot 6qt Cook  Carry One Touch "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8363307499782423,
+   "mean_grade": 2.17,
+   "compared_to": "slow cooker",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "crock pot",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=crock%20pot",
+   "items": [
+    "Crock-Pot 4.5qt Slow Cooker Silver: ",
+    "Crock-Pot 6qt Cook  Carry Programmab",
+    "Kitchen Elite 6 Qt Slow Cooker, Stai",
+    "Crock-Pot 2qt Manual Slow Cooker - S",
+    "Crock-Pot 7qt Manual Slow Cooker Sta",
+    "Crock-Pot 6qt Cook  Carry One Touch "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8363307499782423,
+   "mean_grade": 2.17,
+   "compared_to": "slow cooker",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "sweater",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=sweater",
+   "items": [
+    "Womens Short Sleeve Button-Front Car",
+    "Womens Short Sleeve Cozy Ribbed Crew",
+    "Womens Cap Sleeve Pointelle Crewneck",
+    "Girls Cable Knit Cardigan Sweater - ",
+    "Girls Crew Neck Cable Uniform Cardig",
+    "Lands' End Women's Drifter Classic C"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.7429246355196535,
+   "mean_grade": 1.33,
+   "compared_to": "sweater",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "jumper",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=jumper",
+   "items": [
+    "Baby Einstein Farm Explorers Jump an",
+    "Disney Baby Finding Nemo Sea of Acti",
+    "Bright Starts Disney Baby Winnie the",
+    "TODECARE 3-in-1 Baby Activity Jumper",
+    "Infantino Up and Away Music and Ligh",
+    "Bright Starts Purple Paradise Door J"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.9090610362306536,
+   "mean_grade": 1.5,
+   "compared_to": "sweater",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "pullover",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=pullover",
+   "items": [
+    "Womens Oversized Long Sleeve Roundne",
+    "Womens Crewneck Pooh Bat Fleece Grap",
+    "Womens Crewneck Woodsy Halloween Gra",
+    "Womens Crewneck Bronco Mountains Gra",
+    "Womens Crewneck Snoopy Wilderness Gr",
+    "Womens Soft Cotton Halter Top - Wild"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1
+   ],
+   "ndcg_pinned": null,
+   "mean_grade": 1.75,
+   "compared_to": "sweater",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "diapers",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=diapers",
+   "items": [
+    "Pampers Swaddlers Sensitive Disposab",
+    "Huggies Little Snugglers Gentle Prot",
+    "Pampers Cruisers 360 Diapers - Size ",
+    "Amore by Pampers Diapers Super Pack ",
+    "Curity Baby Diapers with Tabs, Super",
+    "bumbum Luxury Skincare Disposable Di"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    1
+   ],
+   "ndcg_pinned": 0.8274984521623037,
+   "mean_grade": 2,
+   "compared_to": "diapers",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "nappies",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=nappies",
+   "items": [
+    "The Honest Company Clean Conscious D",
+    "Mommy's Bliss Sleep and Soothe Baby ",
+    "Mommy's Bliss Teething Baby Collecti",
+    "Safari Nursery Room - Cloud Island",
+    "Unicorn Dreams Nursery Room - Cloud ",
+    "In Bloom Nursery Room Collection - C"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.17,
+   "compared_to": "diapers",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "soda",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=soda",
+   "items": [
+    "OLIPOP Crisp Apple Soda - 4ct/12 fl ",
+    "OLIPOP Shirley Temple Soda - 12 fl o",
+    "OLIPOP Crisp Apple Soda - 12 fl oz C",
+    "Stillers Soda Shirley Temple - 12 fl",
+    "Coca-Cola Zero Sugar Cherry Float So",
+    "BLOOM NUTRITION Bloom Pop Prebiotic "
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.67,
+   "compared_to": "soda",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "pop",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=pop",
+   "items": [
+    "Pop-Tarts Frosted Fruit Variety Pack",
+    "Pop Secret Microwave Popcorn Movie T",
+    "Pop-Tarts Frosted Chocolate Variety ",
+    "Pop-Tarts Frosted Strawberry Pastrie",
+    "Pop-Tarts Frosted Brown Sugar Cinnam",
+    "Pop-Tarts Frosted Cookies  Crme Past"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    3,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9565557524561507,
+   "mean_grade": 2.5,
+   "compared_to": "soda",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "soft drinks",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=soft%20drinks",
+   "items": [
+    "OLIPOP Shirley Temple Soda - 12 fl o",
+    "Stillers Soda Shirley Temple - 12 fl",
+    "IBC Cream Soda, Classic Vanilla Crea",
+    "Coca-Cola Cherry Float Soda - 12pk/1",
+    "OLIPOP Crisp Apple Soda - 4ct/12 fl ",
+    "Ramune Soda Strawberry Flavor Soft D"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.965876867928782,
+   "mean_grade": 1.67,
+   "compared_to": "soda",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "popsicle",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=popsicle",
+   "items": [
+    "Pop-Tarts Frosted Strawberry Pastrie",
+    "Pop-Tarts Protein Frosted Slammin St",
+    "Pop-Tarts Protein Frosted Bumpin Blu",
+    "Pop-Tarts Frosted Fruit Variety Pack",
+    "Rice Krispies Treats Crispy Marshmal",
+    "LesserEvil Spaceballs Snack Pack Puf"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.757273021239687,
+   "mean_grade": 1.17,
+   "compared_to": "popsicle",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "ice lolly",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=ice%20lolly",
+   "items": [
+    "Ice Cube Tray Soft Release with Lid ",
+    "Extra Polar Ice Sugar-Free Mint Chew",
+    "Ice Breakers Assorted Fruit Flavored",
+    "Extra Sugar-Free Polar Ice Mint Chew",
+    "Joyride Worms  Frosted Bears Party P",
+    "Ice Breakers Wintergreen Sugar Free "
+   ],
+   "grades_pinned": [
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.8495152316962563,
+   "mean_grade": 1.5,
+   "compared_to": "popsicle",
+   "is_lead": false
+  },
+  {
+   "dataset": "synonym",
+   "q": "remote control car",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=remote%20control%20car",
+   "items": [
+    "Sharper Image Toy RC Corvette ZR1 Re",
+    "Cars Lightning McQueen RC 1:24 Scale",
+    "Hot Wheels Report Control 1:64 Scale",
+    "Monster Jam Grave Digger RC Monster ",
+    "Marvel Spider-Man RC Buggy: Remote C",
+    "Hyper Monster Robo Truck Remote Cont"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.67,
+   "compared_to": "remote control car",
+   "is_lead": true
+  },
+  {
+   "dataset": "synonym",
+   "q": "rc car",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=rc%20car",
+   "items": [
+    "Sharper Image Toy RC Corvette ZR1 Re",
+    "Cars Lightning McQueen RC 1:24 Scale",
+    "Hot Wheels Report Control 1:64 Scale",
+    "Monster Jam Grave Digger RC Monster ",
+    "Marvel Spider-Man RC Buggy: Remote C",
+    "Hyper Monster Robo Truck Remote Cont"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.67,
+   "compared_to": "remote control car",
+   "is_lead": false
+  },
+  {
+   "dataset": "literal",
+   "q": "threshold",
+   "total": "2710",
+   "search_call": "https://www.target.com/s?searchTerm=threshold",
+   "items": [
+    "Knit Throw Blanket Ivory - Threshold",
+    "Square Woven Throw Pillow Fringe Khaki",
+    "Upholstered Bench Turned Wood Legs Cream",
+    "Oversized Yarn-Dyed Cotton Throw Pillow",
+    "Antique Brass Bow Vanity Tray - Threshold",
+    "Rattan Dog Pencil Holder - Threshold"
+   ],
+   "grades_pinned": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8974774503363707,
+   "mean_grade": 1.5
+  },
+  {
+   "dataset": "literal",
+   "q": "cat and jack",
+   "total": "1776",
+   "search_call": "https://www.target.com/s?searchTerm=cat%20and%20jack",
+   "items": [
+    "Kids 17in Backpack - Cat & Jack",
+    "Stainless Steel Bento Lunch Box - Cat & Jack",
+    "16 oz Portable Tritan Water Bottle",
+    "Toddler Dion Knit Ballet Flats - Cat & Jack",
+    "Girls Ditsy Floral Two Pocket Backpack - Cat & Jack",
+    "Toddler Girls Floral Umbrella - Cat & Jack"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    0,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.9512312000626861,
+   "mean_grade": 2.5
+  },
+  {
+   "dataset": "literal",
+   "q": "good and gather",
+   "total": "1649",
+   "search_call": "https://www.target.com/s?searchTerm=good%20and%20gather",
+   "items": [
+    "Frozen Cheese & Broccoli Ravioli Fun Shapes",
+    "Frozen Sunbutter No Crust Sandwich Strawberry",
+    "Frozen Sunbutter No Crust Sandwich Grape",
+    "Brown Butter Pumpkin Heavy Whipping Cream",
+    "Distilled Water 128 fl oz - Good & Gather",
+    "2% Reduced Fat Milk 1gal - Good & Gather"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.729577013935277,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "literal",
+   "q": "keurig k mini",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=keurig%20k%20mini",
+   "items": [
+    "Keurig K-Mini Mate Single-Serve K-Cu",
+    "Keurig K-Mini Go Single-Serve K-Cup ",
+    "Keurig K-Iced Plus Single-Serve Coff",
+    "Keurig Set of 10 Rinse Pods: Coffee ",
+    "Keurig SimpleCafe Frother, Rechargea",
+    "Keurig Descale and Cleanse Starter K"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.83
+  },
+  {
+   "dataset": "literal",
+   "q": "lego star wars",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=lego%20star%20wars",
+   "items": [
+    "LEGO Star Wars Clone Trooper  Battle",
+    "LEGO Star Wars Boba Fett Building Se",
+    "LEGO Star Wars Clone Shock Trooper M",
+    "LEGO Star Wars The Mandalorian  Grog",
+    "LEGO Star Wars The Mandalorians N-1 ",
+    "LEGO Star Wars Hutt Palace Sentry Dr"
+   ],
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.8813713479538642,
+   "mean_grade": 2.83
+  },
+  {
+   "dataset": "literal",
+   "q": "instant pot",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=instant%20pot",
+   "items": [
+    "Instant Pot 6qt 9-in-1 Pressure Cook",
+    "Instant Pot RIO WIDE 7.5qt 7-in-1 El",
+    "Instant Pot 4qt Rio Mini Pressure Co",
+    "Instant Pot RIO 6qt 7-in-1 Electric ",
+    "Instant Pot 5.3qt Air Fryer with Odo",
+    "Instant Pot 6qt Pro Pressure Cooker"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ],
+   "ndcg_pinned": 0.9943530767446811,
+   "mean_grade": 2.83
+  },
+  {
+   "dataset": "literal",
+   "q": "nintendo switch",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=nintendo%20switch",
+   "items": [
+    "Nintendo Switch with Neon Blue and N",
+    "Nintendo Switch 2 Console System",
+    "Nintendo Switch Lite - Turquoise",
+    "Nintendo Switch - OLED Model with Wh",
+    "Nintendo Switch Everybody 1-2-Switch",
+    "Mario Kart 8 Deluxe - Nintendo Switc"
+   ],
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 2.67
+  },
+  {
+   "dataset": "literal",
+   "q": "bullseye dog toy",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=bullseye%20dog%20toy",
+   "items": [
+    "BARK Eduardo The Shrimp Taco Dog Toy",
+    "BARK Snack Pack Jim Sock Dog Plush T",
+    "Skinny Crinkle Flying Squirrel Dog T",
+    "Bok Choy Dog Plush Toy - Boots  Bark",
+    "Thanksgiving Burrow Interactive Dog ",
+    "Tennis Ball Holder Dog Ball Launcher"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.8114867284165843,
+   "mean_grade": 1.17
+  },
+  {
+   "dataset": "literal",
+   "q": "room essentials",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=room%20essentials",
+   "items": [
+    "Queen Microfiber Sheet Set Gray - Ro",
+    "6pk Washcloth Set White - Room Essen",
+    "19 fl oz Polypro Translucent Plastic",
+    "10.75 Polypro Translucent Plastic Di",
+    "2pk Ribbed Faux Fur Toss Pillows Lig",
+    "2.99 fl oz Polypro Translucent Plast"
+   ],
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "literal",
+   "q": "figmint",
+   "total": "24",
+   "search_call": "https://www.target.com/s?searchTerm=figmint",
+   "items": [
+    "3pc Waffle Kitchen Towels Green - Fi",
+    "8pc Set of 4 Condiment Food Storage",
+    "Snack Cup with Topping Compartment G",
+    "4pc Stainless Steel Measuring Cups S",
+    "3pk Kitchen Towels Light Gray - Figm",
+    "3pk Silicone Mini Spatula Set - Figm"
+   ],
+   "grades_pinned": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.729577013935277,
+   "mean_grade": 1.33
+  },
+  {
+   "dataset": "literal",
+   "q": "hearth and hand",
+   "total": "738",
+   "search_call": "https://www.target.com/s?searchTerm=hearth%20and%20hand",
+   "items": [
+    "Set of 3 Refrigerator Frames - Hearth & Hand",
+    "Green Ceramic Table Lamp Pleated Shade - Hearth",
+    "Brass Horse 8.4in - Hearth & Hand with Magnolia",
+    "Neighborhood Nook - Hearth & Hand with Magnolia",
+    "Brass Mushroom Bookends - Hearth & Hand",
+    "Owala Stainless Steel FreeSip Water Bottle"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    1
+   ],
+   "ndcg_pinned": 0.9497990901961944,
+   "mean_grade": 2.5
+  },
+  {
+   "dataset": "literal",
+   "q": "all in motion",
+   "total": "707",
+   "search_call": "https://www.target.com/s?searchTerm=all%20in%20motion",
+   "items": [
+    "Boys' Short Sleeve Performance Uniform Tee - All In Motion",
+    "Bento Lunch Box - All In Motion",
+    "Boys' Performance Uniform Chino Shorts - All In Motion",
+    "Girls' Performance Uniform Skort - All In Motion",
+    "Faux Neoprene Lunch Bag - All In Motion",
+    "Silicone Bento Lunch Box and Bag - All In Motion"
+   ],
+   "grades_pinned": [
+    3,
+    2,
+    3,
+    3,
+    2,
+    3
+   ],
+   "ndcg_pinned": 0.9454927011016723,
+   "mean_grade": 2.67
+  }
+ ],
+ "overall": {
+  "terms": 110,
+  "mean_grade": 1.76,
+  "pct_not_relevant": 38,
+  "product_judgments": 721
+ },
+ "findings": [
+  {
+   "severity": "High",
+   "area": "Intent / job-function",
+   "title": "Compositional natural-language queries return a plausible aisle, not the ask",
+   "detail": "Job-function queries grade 1.33/3 (63% not-relevant). move-into-a-new-house -> romance novels & toy food trucks; set-up-a-home-theater -> pajamas mixed with soundbars; furnish-a-living-room -> vases. Works only when the phrase maps to a single category (healthy snacks for kids, home gym equipment, organize my kitchen). Fix candidate: query understanding / intent expansion for multi-word task queries."
+  },
+  {
+   "severity": "Medium",
+   "area": "Synonym equivalence",
+   "title": "Synonyms are substring-matched, not mapped — regional/UK variants fail",
+   "detail": "Variants underperform their US canonical: trainers 0.88 vs sneakers 1.88; rubbish bin 1.0 vs trash can 2.0; nappies 1.17 vs diapers 2.0; pram 1.63 vs stroller 2.5. Ambiguous tokens misfire: pop/popsicle -> Pop-Tarts, ice-lolly -> mints. crockpot=slow cooker and rc car=remote control car are handled perfectly. Fix candidate: a synonym dictionary (incl. en-GB) mapped to canonical categories."
+  },
+  {
+   "severity": "Medium",
+   "area": "Attribute exactness",
+   "title": "Attribute queries return the right product type but not always the exact attribute",
+   "detail": "A 65-inch QLED search surfaces mixed sizes/panel types; rose-gold-desk-lamp returns assorted desk lamps. The product type is right; the specific attribute (size/color/material) is loosely honored. Fix candidate: weight attribute facets in ranking."
+  },
+  {
+   "severity": "Low",
+   "area": "Brand navigation (strength)",
+   "title": "Brand-name queries correctly redirect to curated brand pages",
+   "detail": "threshold, cat & jack, good & gather, hearth & hand, all in motion redirect to curated brand pages (1,600-2,700 results). Caveat: the plp_search_v2 keyword API returns 0 for pure brand names, so they must be counted via the brand page (a measurement note, not a defect)."
+  },
+  {
+   "severity": "Info",
+   "area": "Measurement",
+   "title": "Coverage is ~100% — weight grade quality, not zero-result rate",
+   "detail": "Target answers nearly every query, so NDCG/coverage look strong; the mean grade (1.76/3) and not-relevant rate (38%) reveal the shallow answers. For big-box, rank fixes by grade-quality x demand, not by zero-result rate."
+  }
+ ],
+ "revenue_loss": {
+  "annual_lost": {
+   "conservative": 70812,
+   "base": 275384,
+   "aggressive": 688459
+  },
+  "base_scenario": {
+   "market_share": 0.035,
+   "conversion_rate": 0.025,
+   "aov": 60
+  },
+  "accept_grade": 2,
+  "coverage": {
+   "demand_terms": 83,
+   "graded_and_priced": 83,
+   "contributing_terms": 53
+  },
+  "top": [
+   {
+    "term": "popsicle",
+    "volume": 201000,
+    "grade": 1.17,
+    "annual_base": 52551
+   },
+   {
+    "term": "sweater",
+    "volume": 246000,
+    "grade": 1.33,
+    "annual_base": 51918
+   },
+   {
+    "term": "jumper",
+    "volume": 110000,
+    "grade": 1.5,
+    "annual_base": 17325
+   },
+   {
+    "term": "soda",
+    "volume": 165000,
+    "grade": 1.67,
+    "annual_base": 17152
+   },
+   {
+    "term": "tennis shoes",
+    "volume": 135000,
+    "grade": 1.63,
+    "annual_base": 15734
+   },
+   {
+    "term": "remote control car",
+    "volume": 135000,
+    "grade": 1.67,
+    "annual_base": 14033
+   },
+   {
+    "term": "rc car",
+    "volume": 135000,
+    "grade": 1.67,
+    "annual_base": 14033
+   },
+   {
+    "term": "memory foam pillow",
+    "volume": 49500,
+    "grade": 1.17,
+    "annual_base": 12942
+   }
+  ],
+  "extrapolation": {
+   "method": "Average annual loss per demand-priced term (annual_lost / priced_terms) scaled to project_to terms.",
+   "basis_terms": 83,
+   "per_term_avg_annual": {
+    "conservative": 853,
+    "base": 3318,
+    "aggressive": 8295
+   },
+   "project_to": 1000,
+   "projected_annual": {
+    "conservative": 853000,
+    "base": 3318000,
+    "aggressive": 8295000
+   },
+   "caveat": "Illustrative projection: assumes the next 1000 search terms share a similar average demand and failure profile as the measured sample. Real query catalogs follow a long-tail demand distribution, so validate against actual query logs."
+  }
+ },
+ "verdict": "Strong on product-type, attribute, brand and most synonyms; the gap is compositional intent (job-function 1.33/3, 63% not-relevant) plus a few regional-synonym misses (pop → Pop-Tarts).",
+ "captured": true
+}

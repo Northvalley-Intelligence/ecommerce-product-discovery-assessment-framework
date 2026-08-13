@@ -1,0 +1,9 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "general-retail",
+  "name": "General Retail",
+  "description": "Broad-line / mass-merchant retailers evaluated on shared search-relevance query packs. These are enterprise custom platforms (Next.js/React behind bot protection), so search is read from the browser-embedded response for a bounded query set — no crawling, no scraping, no server load.",
+  "shared_query_packs": [],
+  "member_sites": ["target"],
+  "domain": true
+}

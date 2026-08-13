@@ -1,0 +1,1296 @@
+[
+ {
+  "query_id": "sevenbonde|leather lounge chair",
+  "ndcg": 0.7131287753998546,
+  "k": 7,
+  "grades": [
+   1,
+   1,
+   3,
+   2,
+   2,
+   2,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|leather lounge chair#1",
+    "trace_id": "call_a011990c-7cbe-4a7f-8cac-6fdf21492af4",
+    "grade": 1,
+    "reason": "Same broad category (furniture) but not an ideal match for a specific type of chair."
+   },
+   {
+    "product_id": "sevenbonde|leather lounge chair#2",
+    "trace_id": "call_05cfd37c-2c4c-4d88-baa0-e7215a9cadd1",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|leather lounge chair#3",
+    "trace_id": "call_1ca8352d-09fd-447b-a679-c8544514910f",
+    "grade": 3,
+    "reason": "Exact match: leather lounge chair."
+   },
+   {
+    "product_id": "sevenbonde|leather lounge chair#4",
+    "trace_id": "call_e70f50ad-2504-4521-a3a7-f86b35bf667c",
+    "grade": 2,
+    "reason": "Correct type (lounge chair) but no mention of leather."
+   },
+   {
+    "product_id": "sevenbonde|leather lounge chair#5",
+    "trace_id": "call_e148e8b5-0c6b-4a49-8d9b-1f782407faf9",
+    "grade": 2,
+    "reason": "Correct material (leather) but a lounge chair with an oak frame and Sorensen bridle leather."
+   },
+   {
+    "product_id": "sevenbonde|leather lounge chair#6",
+    "trace_id": "call_09676f90-69f8-4539-bf63-a0318cc0d50c",
+    "grade": 2,
+    "reason": "Correct material (leather) but a lounge chair with a specific brand and style."
+   },
+   {
+    "product_id": "sevenbonde|leather lounge chair#7",
+    "trace_id": "call_d6f83eb5-75b5-469d-ab42-7f863a7c053a",
+    "grade": 2,
+    "reason": "Correct material (leather) but not a lounge chair"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|dining chair",
+  "ndcg": 0.7740098357799076,
+  "k": 8,
+  "grades": [
+   2,
+   2,
+   1,
+   2,
+   3,
+   2,
+   3,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|dining chair#1",
+    "trace_id": "call_afba012c-b833-4a6b-89fe-deff9de60706",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match due to 'stackable' feature."
+   },
+   {
+    "product_id": "sevenbonde|dining chair#2",
+    "trace_id": "call_d25f92f6-92d8-438e-93a0-2badd232964e",
+    "grade": 2,
+    "reason": "Correct type (chair) but no 'dining' specification."
+   },
+   {
+    "product_id": "sevenbonde|dining chair#3",
+    "trace_id": "call_9775fee0-5c56-4256-84f7-c459d3520476",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|dining chair#4",
+    "trace_id": "call_6c00b2a6-e5b2-453c-9842-cd4439683672",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|dining chair#5",
+    "trace_id": "call_ccee1ceb-81da-4d1b-ad77-22dd20ddf0fb",
+    "grade": 3,
+    "reason": "Exact match: dining chair."
+   },
+   {
+    "product_id": "sevenbonde|dining chair#6",
+    "trace_id": "call_88a8fcd1-7b42-4758-bae1-a7b29bd72e4c",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match; leather material differs from typical expectations."
+   },
+   {
+    "product_id": "sevenbonde|dining chair#7",
+    "trace_id": "call_ffa35bd9-6312-445e-a7e3-f088e8ae9aa7",
+    "grade": 3,
+    "reason": "Exact match: dining chair."
+   },
+   {
+    "product_id": "sevenbonde|dining chair#8",
+    "trace_id": "call_158fb01e-5fd9-4225-80dc-1f9bf1346aee",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match due to brand and style specifics."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|outdoor seating",
+  "ndcg": 0.8043623794052986,
+  "k": 8,
+  "grades": [
+   1,
+   1,
+   2,
+   2,
+   2,
+   2,
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|outdoor seating#1",
+    "trace_id": "call_75f412c0-9c08-4978-8dd5-e110b0f45486",
+    "grade": 1,
+    "reason": "Outdoor seating category match but not a specific outdoor seating item."
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#2",
+    "trace_id": "call_ffc19c23-bfe7-4eb9-99c8-5bf2c6f750cb",
+    "grade": 1,
+    "reason": "Outdoor table; matches broad category of outdoor seating."
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#3",
+    "trace_id": "call_6857dd43-8660-4143-8076-88f649ec8324",
+    "grade": 2,
+    "reason": "Relevant outdoor furniture, but not an ideal match for dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#4",
+    "trace_id": "call_017ae94a-ae22-4fd2-b2fb-d46bec2afd8a",
+    "grade": 2,
+    "reason": "Relevant outdoor furniture, but not an ideal match for specific 'seating' intent."
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#5",
+    "trace_id": "call_1e340720-81aa-4fb9-baf5-0a43dbae479e",
+    "grade": 2,
+    "reason": "Correctly matches 'outdoor' but not 'seating'"
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#6",
+    "trace_id": "call_b0ccc230-e343-4568-9c83-ba0f8d1e6161",
+    "grade": 2,
+    "reason": "Correctly matches 'outdoor' but not 'seating'"
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#7",
+    "trace_id": "call_7470e111-5fef-4db1-987e-da91c068981d",
+    "grade": 1,
+    "reason": "Outdoor seating category match but not a specific stool."
+   },
+   {
+    "product_id": "sevenbonde|outdoor seating#8",
+    "trace_id": "call_cf973e70-71d4-4387-a162-e64cfd7a5333",
+    "grade": 1,
+    "reason": "Matches broad category 'seating' but not ideal match for 'outdoor'"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|cocktail table",
+  "ndcg": 0.8213137146137828,
+  "k": 3,
+  "grades": [
+   1,
+   2,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|cocktail table#1",
+    "trace_id": "call_be15889d-3d1b-43b8-9134-6be4e77d0bd0",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|cocktail table#2",
+    "trace_id": "call_65e5502a-8e88-45c2-871d-45ae0ffc22f1",
+    "grade": 2,
+    "reason": "Correct type (bar table) but not a traditional cocktail table."
+   },
+   {
+    "product_id": "sevenbonde|cocktail table#3",
+    "trace_id": "call_7c40905b-aa71-48bd-ba74-df7c9af3d5df",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|black metal stool",
+  "ndcg": 0.8226321277096644,
+  "k": 7,
+  "grades": [
+   1,
+   1,
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|black metal stool#1",
+    "trace_id": "call_deab7e85-d877-45fd-9c3c-8ad6b2674124",
+    "grade": 1,
+    "reason": "Same broad category (furniture) but does not satisfy the intent of a specific type of stool."
+   },
+   {
+    "product_id": "sevenbonde|black metal stool#2",
+    "trace_id": "call_d942c19b-e36a-4fc4-b833-796b1384192d",
+    "grade": 1,
+    "reason": "Black metal table, not specifically a stool."
+   },
+   {
+    "product_id": "sevenbonde|black metal stool#3",
+    "trace_id": "call_14883a20-a64f-4023-958d-5f2ea990207c",
+    "grade": 2,
+    "reason": "Correct material (black) but a counter and bar stool, not a single metal stool."
+   },
+   {
+    "product_id": "sevenbonde|black metal stool#4",
+    "trace_id": "call_4c494a75-ab26-4e21-9759-2f959de6e7e1",
+    "grade": 1,
+    "reason": "Black metal stool; matches a similar category but not exact type."
+   },
+   {
+    "product_id": "sevenbonde|black metal stool#5",
+    "trace_id": "call_8366d4a4-a3e3-400b-99cf-4c5cb4997cd6",
+    "grade": 1,
+    "reason": "Black metal stool; matches a similar category but not exact type."
+   },
+   {
+    "product_id": "sevenbonde|black metal stool#6",
+    "trace_id": "call_3dd7aa64-5cd1-43bc-bc93-9710b71a5480",
+    "grade": 1,
+    "reason": "Black color but not specifically a metal stool."
+   },
+   {
+    "product_id": "sevenbonde|black metal stool#7",
+    "trace_id": "call_72c82a17-018d-4b50-8a45-ee1578d7523e",
+    "grade": 1,
+    "reason": "Same broad category (furniture) but does not satisfy the intent of a specific type of stool."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|lounge chair",
+  "ndcg": 0.8281162169823482,
+  "k": 8,
+  "grades": [
+   2,
+   3,
+   2,
+   3,
+   1,
+   1,
+   1,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|lounge chair#1",
+    "trace_id": "call_7c9fe2ab-1ead-4440-8858-aa8c4154b892",
+    "grade": 2,
+    "reason": "Satisfies intent for a lounge chair but is not an ideal match due to specific brand and style details."
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#2",
+    "trace_id": "call_5469310c-1052-424a-b279-8c12f9c05e4c",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#3",
+    "trace_id": "call_2e9416bd-b98c-443c-a1c6-20ec7f7af62f",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a lounge chair."
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#4",
+    "trace_id": "call_34a3365a-d491-4949-b039-67794827da78",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#5",
+    "trace_id": "call_336fea13-ebb6-4c2d-8996-d8dd8a3f54b6",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#6",
+    "trace_id": "call_5bea26b8-e4d7-4153-923a-86026b3b68e1",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#7",
+    "trace_id": "call_0b030b76-4f88-41e7-b020-459959666964",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|lounge chair#8",
+    "trace_id": "call_69344600-0ce8-4263-9957-8de34fa7941e",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|cane dining chair",
+  "ndcg": 0.8389776660073724,
+  "k": 5,
+  "grades": [
+   1,
+   2,
+   2,
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|cane dining chair#1",
+    "trace_id": "call_ad36da57-3edf-4ed3-b618-ad1c92802d1c",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|cane dining chair#2",
+    "trace_id": "call_66cfc742-ca77-4ce5-847a-9134dde41a08",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a cane dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|cane dining chair#3",
+    "trace_id": "call_f77d56b3-fc29-4132-8ad9-193f2665508f",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a cane dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|cane dining chair#4",
+    "trace_id": "call_bf0279db-40c7-4cea-b824-f0f17fece5f6",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|cane dining chair#5",
+    "trace_id": "call_b050cc52-e0a9-4ee0-abcb-3ed1e6f0e717",
+    "grade": 1,
+    "reason": "Same broad category (chair) but not an ideal match for cane material."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|side chair",
+  "ndcg": 0.8570683501021326,
+  "k": 8,
+  "grades": [
+   2,
+   2,
+   3,
+   2,
+   2,
+   1,
+   1,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|side chair#1",
+    "trace_id": "call_5d75d003-9d83-4d4f-8059-fdfe8a28a057",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a side chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|side chair#2",
+    "trace_id": "call_c7d172dc-7e33-46cc-8bca-c1296bd3e156",
+    "grade": 2,
+    "reason": "Correct type (chair) but incorrect 'side' specification."
+   },
+   {
+    "product_id": "sevenbonde|side chair#3",
+    "trace_id": "call_3d7f0a17-ecc0-42eb-ac06-e78d776639ff",
+    "grade": 3,
+    "reason": "Exact match: side chair."
+   },
+   {
+    "product_id": "sevenbonde|side chair#4",
+    "trace_id": "call_2b9c0ddd-d5e8-448f-9257-092663d88335",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a side chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|side chair#5",
+    "trace_id": "call_cc8044e6-4007-4ad4-af95-c01ed370a686",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a side chair."
+   },
+   {
+    "product_id": "sevenbonde|side chair#6",
+    "trace_id": "call_8cf57982-61ef-4d55-8407-c99b894868f9",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|side chair#7",
+    "trace_id": "call_48d834b9-23b6-4495-bc10-fe328bad28ea",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|side chair#8",
+    "trace_id": "call_4734d4fe-77a4-4758-af35-148780e20de2",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not a traditional side chair."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|counter stool",
+  "ndcg": 0.871650103442002,
+  "k": 8,
+  "grades": [
+   2,
+   3,
+   3,
+   2,
+   3,
+   3,
+   2,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|counter stool#1",
+    "trace_id": "call_bb246310-0374-4ab4-bb6c-0c723fa24371",
+    "grade": 2,
+    "reason": "Correct type (counter) but not exact match; 'stool' is a broader term."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#2",
+    "trace_id": "call_4d86c91a-ca12-4843-874c-216423e32328",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#3",
+    "trace_id": "call_a2890228-d95c-4fa7-b976-583db2eb05d6",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#4",
+    "trace_id": "call_8260085b-9265-4607-b480-30b733f842ea",
+    "grade": 2,
+    "reason": "Correct type (stool) but not a counter-specific design."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#5",
+    "trace_id": "call_1527aa9f-45f3-417d-b2bf-2b4ba27f8617",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#6",
+    "trace_id": "call_3d104cd1-3016-48a3-b2d4-e4af7d1521c7",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#7",
+    "trace_id": "call_b11387cd-27f2-40b5-8ef4-40e96564e93d",
+    "grade": 2,
+    "reason": "Correct type (stool) but not a counter-specific stool."
+   },
+   {
+    "product_id": "sevenbonde|counter stool#8",
+    "trace_id": "call_f18d3376-7939-47a4-801e-567f4c91e4b5",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|dining table",
+  "ndcg": 0.8956554681621287,
+  "k": 8,
+  "grades": [
+   2,
+   1,
+   1,
+   1,
+   2,
+   1,
+   1,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|dining table#1",
+    "trace_id": "call_497706e0-a4eb-4849-aeef-f4121191309e",
+    "grade": 2,
+    "reason": "Correct type (dining table) but no 'table' in title."
+   },
+   {
+    "product_id": "sevenbonde|dining table#2",
+    "trace_id": "call_4b601cd1-0a38-4e69-9fa5-878bdacca0e5",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|dining table#3",
+    "trace_id": "call_09b23490-2772-489a-af08-6bf405947abf",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|dining table#4",
+    "trace_id": "call_b7f4056a-4eab-45ee-90b7-1d3944398430",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|dining table#5",
+    "trace_id": "call_bb555826-3e77-4688-bdc0-af3232610545",
+    "grade": 2,
+    "reason": "Correct type (table) but no 'dining' specification."
+   },
+   {
+    "product_id": "sevenbonde|dining table#6",
+    "trace_id": "call_0cfda96f-5e5c-431f-8acd-d2aac762e73f",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|dining table#7",
+    "trace_id": "call_847f9936-fb76-4de3-aaac-c81c81ad7b53",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|dining table#8",
+    "trace_id": "call_7cb8d0f4-9005-4cc0-aae1-ad2841714e7e",
+    "grade": 2,
+    "reason": "Correct type (table) but no 'dining' specification."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|woven dining chair",
+  "ndcg": 0.9514426589871553,
+  "k": 3,
+  "grades": [
+   2,
+   1,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|woven dining chair#1",
+    "trace_id": "call_5f65ac98-e2a8-4be4-8c70-f4ac52e9e4f7",
+    "grade": 2,
+    "reason": "Correct type (dining chair) but no 'woven' material specified."
+   },
+   {
+    "product_id": "sevenbonde|woven dining chair#2",
+    "trace_id": "call_dd6155a4-f836-43a2-b0ca-3541c9e9b6c0",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|woven dining chair#3",
+    "trace_id": "call_8b7dbe5d-716d-43e5-ada1-595e20dbf6ae",
+    "grade": 2,
+    "reason": "Correct type (chair) but no 'woven' material specified."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|bench",
+  "ndcg": 0.9521901411157033,
+  "k": 5,
+  "grades": [
+   3,
+   1,
+   1,
+   1,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|bench#1",
+    "trace_id": "call_5b5b77c9-8569-4cca-9fae-ad0e917275ba",
+    "grade": 3,
+    "reason": "Exact match: bench."
+   },
+   {
+    "product_id": "sevenbonde|bench#2",
+    "trace_id": "call_a0822210-e0a4-42cc-8ca7-44a9ee03b477",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|bench#3",
+    "trace_id": "call_c87caf24-f07f-485a-b982-eebe55d5a05c",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|bench#4",
+    "trace_id": "call_85cf52d3-110d-42ed-af0c-2ddc0a9f1d7f",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|bench#5",
+    "trace_id": "call_82d2e6cb-db28-4e3a-9c03-903113a06792",
+    "grade": 2,
+    "reason": "Correct type (bench) but no 'seating' or 'furniture' context."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|accent chair",
+  "ndcg": 0.9550337350142764,
+  "k": 4,
+  "grades": [
+   2,
+   1,
+   2,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|accent chair#1",
+    "trace_id": "call_b9977b82-5a66-45f0-b8a8-258ac36f243e",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match for accent."
+   },
+   {
+    "product_id": "sevenbonde|accent chair#2",
+    "trace_id": "call_10c3fb2f-a423-44b6-8e69-a53220146e85",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|accent chair#3",
+    "trace_id": "call_33a870fc-9e50-4958-b06e-1c554af49d52",
+    "grade": 2,
+    "reason": "Satisfies intent but is not an ideal match; chair type matches, but perforation detail does not."
+   },
+   {
+    "product_id": "sevenbonde|accent chair#4",
+    "trace_id": "call_9eb3fc2d-27b0-4e34-bdd6-39f1c1880df5",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|armchair",
+  "ndcg": 0.9671337605094592,
+  "k": 8,
+  "grades": [
+   2,
+   2,
+   1,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|armchair#1",
+    "trace_id": "call_1c765759-e06a-44b8-bd68-ca12dfc21760",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not an ideal match due to 'lounge chair' in title."
+   },
+   {
+    "product_id": "sevenbonde|armchair#2",
+    "trace_id": "call_6c13bd0a-77df-4698-b95b-38a7293a4d26",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not an ideal match due to 'lounge chair' variation."
+   },
+   {
+    "product_id": "sevenbonde|armchair#3",
+    "trace_id": "call_1e46a5ca-b366-48ef-a437-b75c70872505",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|armchair#4",
+    "trace_id": "call_09027fb5-4114-407d-96fa-9d564b044caf",
+    "grade": 2,
+    "reason": "Correct type (armchair) but no 'chair' in title."
+   },
+   {
+    "product_id": "sevenbonde|armchair#5",
+    "trace_id": "call_ce7f21ab-542d-4d1a-83f3-252e0508096f",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not an ideal match due to 'lounge chair' variation."
+   },
+   {
+    "product_id": "sevenbonde|armchair#6",
+    "trace_id": "call_212b20f3-f104-44c6-9699-8b2fd1645e13",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not an ideal match due to material and style."
+   },
+   {
+    "product_id": "sevenbonde|armchair#7",
+    "trace_id": "call_c96cf848-8388-46d7-bacf-ba68e3dca567",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not exact match."
+   },
+   {
+    "product_id": "sevenbonde|armchair#8",
+    "trace_id": "call_b102e6f1-9abc-457a-a80d-79f831c72914",
+    "grade": 2,
+    "reason": "Correct type and size match; ideal but not exact match for 'armchair'."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|restaurant chairs",
+  "ndcg": 0.968051804244105,
+  "k": 8,
+  "grades": [
+   2,
+   2,
+   2,
+   1,
+   1,
+   2,
+   2,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|restaurant chairs#1",
+    "trace_id": "call_ae5e1753-a1dc-45e9-9e1b-6aaa45120e92",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#2",
+    "trace_id": "call_0fcc60f6-5b51-4345-9248-2bd2e9fa4df4",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a restaurant chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#3",
+    "trace_id": "call_f48800e8-5978-4d81-8d5d-e95223548053",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#4",
+    "trace_id": "call_76d65bb4-7f2f-4065-bd37-04bcee23c858",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#5",
+    "trace_id": "call_a9eeadbd-6d2a-4707-9ac3-946e6bc24469",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#6",
+    "trace_id": "call_af7d5721-4786-4f45-bc93-64a8825fd4ce",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a dining chair specifically."
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#7",
+    "trace_id": "call_3454acec-69b2-4f9b-86f8-3e0788d439d7",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a typical restaurant chair."
+   },
+   {
+    "product_id": "sevenbonde|restaurant chairs#8",
+    "trace_id": "call_ef361d6d-dddc-416a-8ac1-ad72a08063b1",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a dining chair specifically."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|bar stool",
+  "ndcg": 0.9891887216934553,
+  "k": 8,
+  "grades": [
+   3,
+   3,
+   3,
+   3,
+   2,
+   3,
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|bar stool#1",
+    "trace_id": "call_e0490f41-98f2-4dd4-8561-ab9a93d0d6cc",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#2",
+    "trace_id": "call_32ad483e-e364-4769-920d-32e58afe81b6",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#3",
+    "trace_id": "call_49f50315-1f0c-4c87-947a-bc2ed87ba49b",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#4",
+    "trace_id": "call_2857b985-f7f9-4fbb-bbb5-e27b44a5902b",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#5",
+    "trace_id": "call_6782e7b5-6d62-4841-8db0-d626ffa5b046",
+    "grade": 2,
+    "reason": "Correct type (stool) but incorrect brand and name."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#6",
+    "trace_id": "call_6c607804-9270-49ae-9a7e-ff2f3059b1b4",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#7",
+    "trace_id": "call_c16f0b69-7d36-4e71-80f3-3a3ba92f07a2",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "sevenbonde|bar stool#8",
+    "trace_id": "call_ccf72a0c-75cf-49a7-ad92-59ae98b5817f",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|kitchen stool",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|kitchen stool#1",
+    "trace_id": "call_eea0463a-14f7-4e65-bacc-28bc7042545c",
+    "grade": 3,
+    "reason": "Exact match: kitchen stool."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|sofa",
+  "ndcg": 1,
+  "k": 6,
+  "grades": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|sofa#1",
+    "trace_id": "call_6f79614c-d62a-412f-a36b-e8d2576daae4",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|sofa#2",
+    "trace_id": "call_0a4aa005-e9ac-492b-98f7-3d75926ac7ce",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|sofa#3",
+    "trace_id": "call_0277a296-5733-43e6-8837-eda3b561baca",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|sofa#4",
+    "trace_id": "call_c6524bb8-15b4-490b-9d9b-ca4f71e6a6e1",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|sofa#5",
+    "trace_id": "call_fd679987-2b2b-4ac0-aa06-4e51b864b17c",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|sofa#6",
+    "trace_id": "call_19c488d6-34fc-41d0-b850-45f92381663a",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|side table",
+  "ndcg": 1,
+  "k": 4,
+  "grades": [
+   2,
+   1,
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|side table#1",
+    "trace_id": "call_abdb3d8a-c3a4-4578-8ab9-848f124b45cd",
+    "grade": 2,
+    "reason": "Exact match: side table."
+   },
+   {
+    "product_id": "sevenbonde|side table#2",
+    "trace_id": "call_c5df4fef-fe71-422d-aec5-a6a321b51e08",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|side table#3",
+    "trace_id": "call_5a94f787-98a2-4d2c-8469-af68790dd9f2",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   },
+   {
+    "product_id": "sevenbonde|side table#4",
+    "trace_id": "call_10de4d38-46e2-4c1d-9a57-6c18aaab83d7",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|end table",
+  "ndcg": 1,
+  "k": 2,
+  "grades": [
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|end table#1",
+    "trace_id": "call_599d9754-28bf-44d6-955c-998946cc04d2",
+    "grade": 1,
+    "reason": "End table; lamp is a related but different type."
+   },
+   {
+    "product_id": "sevenbonde|end table#2",
+    "trace_id": "call_25feb75c-b1ca-4993-989a-d781fffd3f44",
+    "grade": 1,
+    "reason": "End table not found; related ottoman."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|accent table",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|accent table#1",
+    "trace_id": "call_f6b1c645-77bb-4567-83f8-6e4fad264408",
+    "grade": 1,
+    "reason": "Same broad category (furniture) but does not satisfy the intent for an accent table."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|coffee table",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|coffee table#1",
+    "trace_id": "call_f591ddd7-7849-497e-abfa-654ef61b80ff",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|ottoman",
+  "ndcg": 1,
+  "k": 2,
+  "grades": [
+   3,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|ottoman#1",
+    "trace_id": "call_a9e908e9-cb11-41c2-bfed-71a80f285387",
+    "grade": 3,
+    "reason": "Exact match: ottoman."
+   },
+   {
+    "product_id": "sevenbonde|ottoman#2",
+    "trace_id": "call_49e45a4b-c671-4811-a2b9-9d1e7235e469",
+    "grade": 2,
+    "reason": "Correct type (ottoman) but not a traditional footstool; pouf is a related term."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|pouf",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|pouf#1",
+    "trace_id": "call_0fe2857d-507e-4acc-9b97-a77d7690948a",
+    "grade": 3,
+    "reason": "Exact match: pouf."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|desk",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|desk#1",
+    "trace_id": "call_187f23e0-e690-4fe8-a83e-dbed6512c2ef",
+    "grade": 1,
+    "reason": "Desk is a broad category; chair is a related but different type."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|entryway bench",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|entryway bench#1",
+    "trace_id": "call_5aefd6f8-f548-4862-a41e-6da10c911baf",
+    "grade": 2,
+    "reason": "Correct type (bench) but no 'entryway' specification."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|walnut dining table",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|walnut dining table#1",
+    "trace_id": "call_8b31dcf6-f32f-4622-b8f5-ecf2730d1963",
+    "grade": 1,
+    "reason": "Broad category match but no specific details about walnut."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|leather dining chair",
+  "ndcg": 1,
+  "k": 8,
+  "grades": [
+   3,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|leather dining chair#1",
+    "trace_id": "call_bbd72d4d-b234-4051-9511-18a715dfd344",
+    "grade": 3,
+    "reason": "Exact match: leather dining chair."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#2",
+    "trace_id": "call_49c5a86b-d5c8-41b6-bcb7-6759e0ca9b41",
+    "grade": 2,
+    "reason": "Correct type (chair) but no mention of leather."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#3",
+    "trace_id": "call_4d2d1301-0ec7-4680-94d4-a2fa8da43d77",
+    "grade": 2,
+    "reason": "Correct type (chair) but no mention of leather."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#4",
+    "trace_id": "call_6f169cf3-57b5-4c4d-a585-5da1196d715b",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a dining chair."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#5",
+    "trace_id": "call_d28b872d-ec14-4f79-8538-30754e005455",
+    "grade": 2,
+    "reason": "Correct type (chair) but no mention of leather."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#6",
+    "trace_id": "call_ebbbf6fe-bc29-41fb-8974-2474172fb10e",
+    "grade": 2,
+    "reason": "Correct type (chair) but incorrect material (counter stool instead of dining chair)."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#7",
+    "trace_id": "call_150294a2-16f4-40ee-9d42-2dca5d23f7a9",
+    "grade": 2,
+    "reason": "Exact match: leather dining chair."
+   },
+   {
+    "product_id": "sevenbonde|leather dining chair#8",
+    "trace_id": "call_4e961cf1-fecf-4537-9b44-f33a0fb7f84f",
+    "grade": 1,
+    "reason": "Same broad category but does not satisfy the intent"
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|rattan chair",
+  "ndcg": 1,
+  "k": 7,
+  "grades": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   1,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|rattan chair#1",
+    "trace_id": "call_13196cef-896c-4b87-a315-ca4a3704bda2",
+    "grade": 2,
+    "reason": "Correct type (rattan) but not an exact match for a chair."
+   },
+   {
+    "product_id": "sevenbonde|rattan chair#2",
+    "trace_id": "call_db1fe072-4413-4e31-85ad-06e941a017c5",
+    "grade": 2,
+    "reason": "Correct material (rattan) but a different type of chair."
+   },
+   {
+    "product_id": "sevenbonde|rattan chair#3",
+    "trace_id": "call_719dee98-b9d2-48c7-a39a-dea0575ac36f",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a rattan one."
+   },
+   {
+    "product_id": "sevenbonde|rattan chair#4",
+    "trace_id": "call_adb645b1-e1fc-42db-a198-844531f69a94",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a rattan one."
+   },
+   {
+    "product_id": "sevenbonde|rattan chair#5",
+    "trace_id": "call_cd8aa4fa-7fba-4f0b-a1f9-69d858eae62d",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a rattan one."
+   },
+   {
+    "product_id": "sevenbonde|rattan chair#6",
+    "trace_id": "call_be861b44-258f-4ca4-8275-596b1e8e89da",
+    "grade": 1,
+    "reason": "Same broad category (chair) but does not satisfy the intent due to material and style."
+   },
+   {
+    "product_id": "sevenbonde|rattan chair#7",
+    "trace_id": "call_7a426229-2a8e-468e-8c8c-cef0905314c9",
+    "grade": 1,
+    "reason": "Same broad category (chair) but does not satisfy the intent due to material and style."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|entryway furniture",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|entryway furniture#1",
+    "trace_id": "call_68788e96-287d-4602-a0fe-d0a06d89adc9",
+    "grade": 2,
+    "reason": "Furniture type matches but no specific entryway-related features."
+   }
+  ]
+ },
+ {
+  "query_id": "sevenbonde|reading chair",
+  "ndcg": 1,
+  "k": 2,
+  "grades": [
+   2,
+   1
+  ],
+  "judgments": [
+   {
+    "product_id": "sevenbonde|reading chair#1",
+    "trace_id": "call_c968f5b7-c331-4f37-8e90-8cdee0ef9fcd",
+    "grade": 2,
+    "reason": "Correct type (chair) but not a 'reading' chair."
+   },
+   {
+    "product_id": "sevenbonde|reading chair#2",
+    "trace_id": "call_4ebe590d-8867-436b-a25b-9c186f09f783",
+    "grade": 1,
+    "reason": "Same broad category (furniture) but not an ideal match for a specific type of chair."
+   }
+  ]
+ }
+]

@@ -1,0 +1,3630 @@
+[
+ {
+  "q": "work boots",
+  "dataset": "synonym",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "safety boots",
+  "dataset": "synonym",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Abbey Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work shoes",
+  "dataset": "synonym",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Steel Toe Work Shoe",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Sport Slip On Composite Toe Work Shoe",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe",
+   "Invader Sport Lo Leather Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "safety shoes",
+  "dataset": "synonym",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Invader Sport Slip On Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe",
+   "Invader Sport Lo Leather Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "safety footwear",
+  "dataset": "synonym",
+  "total": 30,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "safety toe boots",
+  "dataset": "synonym",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "sneakers",
+  "dataset": "synonym",
+  "total": 20,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Lite Outdoor Sneaker",
+   "Grapple Leather Mesh Sneaker",
+   "Intruder Lightning Mesh Sneaker",
+   "Intruder Shoe",
+   "Colorado Low 2.0 Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Amperage Shoe"
+  ]
+ },
+ {
+  "q": "trainers",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "athletic shoes",
+  "dataset": "synonym",
+  "total": 10,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Steel Toe Work Shoe",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "ProRush Speed FX Shoe",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Invader Hiker Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "tennis shoes",
+  "dataset": "synonym",
+  "total": 11,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Shoe",
+   "Intruder Lightning Mesh Sneaker",
+   "Intruder Lite Outdoor Sneaker",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "running shoes",
+  "dataset": "synonym",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "ProRush Speed FX Shoe"
+  ]
+ },
+ {
+  "q": "boots",
+  "dataset": "synonym",
+  "total": 34,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Wheelbase Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Drawbar Steel Toe Work Boot",
+   "Threshold Chelsea Boot"
+  ]
+ },
+ {
+  "q": "booties",
+  "dataset": "synonym",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Rewrite Frontier Boot",
+   "Rewrite Harness Boot"
+  ]
+ },
+ {
+  "q": "ankle boots",
+  "dataset": "synonym",
+  "total": 9,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Chukka Boot",
+   "Grader Chukka Boot",
+   "Outbase Waterproof Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Tess Steel Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "moccasins",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "slip ons",
+  "dataset": "synonym",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Fused Slip On Shoe",
+   "Invader Sport Slip On Composite Toe Work Shoe",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Streamline Court Mid Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "loafers",
+  "dataset": "synonym",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Fused Slip On Shoe",
+   "Invader Sport Slip On Composite Toe Work Shoe",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Streamline Court Mid Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "slides",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "mules",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "clogs",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "shoes",
+  "dataset": "synonym",
+  "total": 21,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Amperage Shoe",
+   "Fused Slip On Shoe",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Colorado Low 2.0 Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline Court Mid Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "footwear",
+  "dataset": "synonym",
+  "total": 33,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Cat Footwear x both GAO Pioneer Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Intruder Shoe",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "sandals",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "flip flops",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "oxfords",
+  "dataset": "synonym",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Oxford Long Sleeve Shirt"
+  ]
+ },
+ {
+  "q": "dress shoes",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "hiking boots",
+  "dataset": "synonym",
+  "total": 13,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Invader Hiker Waterproof Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "hikers",
+  "dataset": "synonym",
+  "total": 18,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Hiker Waterproof Boot",
+   "Invader Hiker Waterproof Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Threshold Rebound Hiker Waterproof Work Boot",
+   "Pursue Hiker Waterproof Boot",
+   "Threshold Rebound Hiker Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "trail shoes",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "chelsea boots",
+  "dataset": "synonym",
+  "total": 18,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Exposition Chelsea Work Boot",
+   "Exposition Chelsea Alloy Toe Work Boot",
+   "Threshold Chelsea Boot",
+   "Striver Chelsea Waterproof Steel Toe Work Boot",
+   "Grader Chelsea Boot",
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+   "Striver XL Chelsea Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "pull on boots",
+  "dataset": "synonym",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Drawbar Pull-On Work Boot",
+   "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Revolver Work Boot",
+   "Drawbar Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "lace up boots",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "slip on shoes",
+  "dataset": "synonym",
+  "total": 28,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Fused Slip On Shoe",
+   "Invader Sport Slip On Composite Toe Work Shoe",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Amperage Shoe"
+  ]
+ },
+ {
+  "q": "casual shoes",
+  "dataset": "synonym",
+  "total": 18,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Shoe",
+   "Colorado Low 2.0 Shoe",
+   "Amperage Shoe",
+   "Fused Slip On Shoe",
+   "Threshold Hiker Waterproof Boot",
+   "Intruder Lite Outdoor Sneaker",
+   "Threshold Chelsea Boot",
+   "Threshold Chukka Boot"
+  ]
+ },
+ {
+  "q": "casual sneakers",
+  "dataset": "synonym",
+  "total": 7,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Lite Outdoor Sneaker",
+   "Grapple Leather Mesh Sneaker",
+   "Intruder Shoe",
+   "Intruder Lightning Mesh Sneaker",
+   "Colorado Low 2.0 Shoe",
+   "Amperage Shoe",
+   "Fused Slip On Shoe"
+  ]
+ },
+ {
+  "q": "wellington boots",
+  "dataset": "synonym",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Drawbar Pull-On Work Boot",
+   "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Revolver Work Boot",
+   "Drawbar Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "rubber boots",
+  "dataset": "synonym",
+  "total": 35,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Drawbar Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Exposition Chelsea Work Boot",
+   "Invader Hi Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Drawbar Pull-On Work Boot"
+  ]
+ },
+ {
+  "q": "rain boots",
+  "dataset": "synonym",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Essential Rain Jacket"
+  ]
+ },
+ {
+  "q": "winter boots",
+  "dataset": "synonym",
+  "total": 16,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Echo Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "snow boots",
+  "dataset": "synonym",
+  "total": 3,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boat shoes",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "deck shoes",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "high tops",
+  "dataset": "synonym",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "low tops",
+  "dataset": "synonym",
+  "total": 11,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Tess Steel Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "kids shoes",
+  "dataset": "synonym",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "steel toe boots",
+  "dataset": "attribute",
+  "total": 26,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Outline Steel Toe Work Boot",
+   "Brickline Waterproof Steel Toe Work Boot",
+   "Second Shift Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "composite toe boots",
+  "dataset": "attribute",
+  "total": 18,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Booster Vent Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "soft toe boots",
+  "dataset": "attribute",
+  "total": 30,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Hi Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Wheelbase Work Boot",
+   "Booster Vent Work Boot",
+   "Pursue Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "alloy toe boots",
+  "dataset": "attribute",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Exposition Chelsea Alloy Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof boots",
+  "dataset": "attribute",
+  "total": 29,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Outbase Waterproof Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof hiking boots",
+  "dataset": "attribute",
+  "total": 13,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Invader Hiker Waterproof Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof leather boots",
+  "dataset": "attribute",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Outbase Waterproof Work Boot",
+   "Pursue Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "insulated boots",
+  "dataset": "attribute",
+  "total": 16,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Echo Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "insulated work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "thinsulate boots",
+  "dataset": "attribute",
+  "total": 3,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "slip resistant shoes",
+  "dataset": "attribute",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Threshold Rebound Waterproof Composite Toe Work Boot",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "slip resistant boots",
+  "dataset": "attribute",
+  "total": 27,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Threshold Rebound Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Venward Composite Toe Work Shoe",
+   "Invader Hiker Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "non slip work shoes",
+  "dataset": "attribute",
+  "total": 28,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Threshold Rebound Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "non slip shoes",
+  "dataset": "attribute",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Threshold Rebound Waterproof Composite Toe Work Boot",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "oil resistant boots",
+  "dataset": "attribute",
+  "total": 13,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Wheelbase Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Exposition Chelsea Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Exposition Chelsea Alloy Toe Work Boot"
+  ]
+ },
+ {
+  "q": "electrical hazard boots",
+  "dataset": "attribute",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Second Shift Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "met guard boots",
+  "dataset": "attribute",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "metatarsal boots",
+  "dataset": "attribute",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "puncture resistant boots",
+  "dataset": "attribute",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "leather boots",
+  "dataset": "attribute",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Outline Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Second Shift Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "leather work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "full grain leather boots",
+  "dataset": "attribute",
+  "total": 28,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Threshold Chelsea Boot",
+   "Outline Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Second Shift Work Boot"
+  ]
+ },
+ {
+  "q": "suede boots",
+  "dataset": "attribute",
+  "total": 4,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Rewrite Frontier Boot",
+   "Rewrite Harness Boot",
+   "Covert Boot",
+   "Intruder Lightning Mesh Sneaker"
+  ]
+ },
+ {
+  "q": "suede shoes",
+  "dataset": "attribute",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Lightning Mesh Sneaker",
+   "Covert Boot"
+  ]
+ },
+ {
+  "q": "nubuck boots",
+  "dataset": "attribute",
+  "total": 6,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Cat Footwear x both GAO Pioneer Boot"
+  ]
+ },
+ {
+  "q": "canvas shoes",
+  "dataset": "attribute",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Triton Insulated Bib"
+  ]
+ },
+ {
+  "q": "mesh work shoes",
+  "dataset": "attribute",
+  "total": 24,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Sport Lo Mesh Composite Toe Work Shoe",
+   "Intruder Lightning Mesh Sneaker",
+   "Invader Steel Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Hi Steel Toe Work Boot",
+   "Drawbar Steel Toe Work Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "brown work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "black work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "tan work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "brown boots",
+  "dataset": "attribute",
+  "total": 43,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Drawbar Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Wheelbase Work Boot"
+  ]
+ },
+ {
+  "q": "black boots",
+  "dataset": "attribute",
+  "total": 40,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "tan boots",
+  "dataset": "attribute",
+  "total": 30,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Tess Steel Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Second Shift Waterproof Steel Toe Work Boot",
+   "Pursue Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Grader Chelsea Boot",
+   "Threshold Chukka Boot"
+  ]
+ },
+ {
+  "q": "gray shoes",
+  "dataset": "attribute",
+  "total": 13,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Sport Slip On Composite Toe Work Shoe",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Steel Toe Work Shoe",
+   "Threshold Hiker Waterproof Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "6 inch work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "8 inch work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "6 inch boots",
+  "dataset": "attribute",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "high top boots",
+  "dataset": "attribute",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "low top shoes",
+  "dataset": "attribute",
+  "total": 11,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Tess Steel Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "mid boots",
+  "dataset": "attribute",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "lightweight work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "comfortable work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "wide work boots",
+  "dataset": "attribute",
+  "total": 30,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Wheelbase Work Boot"
+  ]
+ },
+ {
+  "q": "wide width boots",
+  "dataset": "attribute",
+  "total": 30,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Wheelbase Work Boot"
+  ]
+ },
+ {
+  "q": "extra wide boots",
+  "dataset": "attribute",
+  "total": 30,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Wheelbase Work Boot"
+  ]
+ },
+ {
+  "q": "memory foam work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "cushioned work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "pull on work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "lace up work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "side zip boots",
+  "dataset": "attribute",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Soft Shell Jacket"
+  ]
+ },
+ {
+  "q": "wedge sole boots",
+  "dataset": "attribute",
+  "total": 6,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Reclaimer Wedge Waterproof Work Boot",
+   "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge 10 Welly Waterproof Work Boot",
+   "Reclaimer Wedge 10 Welly Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "moc toe boots",
+  "dataset": "attribute",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Second Shift Grader Moc Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Waterproof Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Drawbar Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof slip on shoes",
+  "dataset": "attribute",
+  "total": 28,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Striver Chelsea Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "insulated waterproof boots",
+  "dataset": "attribute",
+  "total": 3,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "steel toe waterproof boots",
+  "dataset": "attribute",
+  "total": 23,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Brickline Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+   "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "composite toe waterproof boots",
+  "dataset": "attribute",
+  "total": 14,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "breathable work shoes",
+  "dataset": "attribute",
+  "total": 23,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Steel Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe",
+   "Drawbar Steel Toe Work Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Wheelbase Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "vented work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "slip resistant work shoes",
+  "dataset": "attribute",
+  "total": 28,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Threshold Rebound Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof composite toe boots",
+  "dataset": "attribute",
+  "total": 15,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "steel toe sneakers",
+  "dataset": "attribute",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Steel Toe Work Shoe",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "steel toe work shoes",
+  "dataset": "attribute",
+  "total": 20,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Steel Toe Work Shoe",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Outline Steel Toe Work Boot",
+   "Drawbar Steel Toe Work Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "lightweight steel toe boots",
+  "dataset": "attribute",
+  "total": 12,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Steel Toe Work Shoe",
+   "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Tess Steel Toe Work Boot",
+   "Reclaimer Wedge 10 Welly Waterproof Steel Toe Work Boot",
+   "247 6 Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "comfortable steel toe boots",
+  "dataset": "attribute",
+  "total": 26,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Outline Steel Toe Work Boot",
+   "Threshold Rebound Hiker Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof steel toe boots",
+  "dataset": "attribute",
+  "total": 24,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Brickline Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Striver Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "insulated hunting boots",
+  "dataset": "attribute",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "rubber work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "chelsea work boots",
+  "dataset": "attribute",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for standing all day",
+  "dataset": "job_function",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Low 2.0 Shoe",
+   "Colorado Waterproof Boot"
+  ]
+ },
+ {
+  "q": "work boots for concrete",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for warehouse work",
+  "dataset": "job_function",
+  "total": 23,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "ProRush Speed FX Shoe",
+   "Invader Hi Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "boots for construction",
+  "dataset": "job_function",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Wheelbase Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for cold weather",
+  "dataset": "job_function",
+  "total": 16,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Outbase Waterproof Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for being on your feet all day",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for roofing",
+  "dataset": "job_function",
+  "total": 6,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for welding",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for electricians",
+  "dataset": "job_function",
+  "total": 10,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for landscaping",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for farm work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for logging",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for oil field work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for restaurant work",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "shoes for nurses",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for hunting",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for snow",
+  "dataset": "job_function",
+  "total": 3,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for rain",
+  "dataset": "job_function",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Essential Rain Jacket"
+  ]
+ },
+ {
+  "q": "work boots for men",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work boots for women",
+  "dataset": "job_function",
+  "total": 16,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Intruder Shoe",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Intruder Lite Outdoor Sneaker",
+   "Colorado Low 2.0 Shoe"
+  ]
+ },
+ {
+  "q": "boots for wide feet",
+  "dataset": "job_function",
+  "total": 30,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Wheelbase Work Boot"
+  ]
+ },
+ {
+  "q": "boots for flat feet",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for plantar fasciitis",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "comfortable boots for walking",
+  "dataset": "job_function",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Pursue Waterproof Work Boot",
+   "Pursue Hiker Waterproof Boot"
+  ]
+ },
+ {
+  "q": "boots for factory work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for mechanics",
+  "dataset": "job_function",
+  "total": 16,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Striver Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Striver Chelsea Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for kitchen work",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "slip resistant shoes for servers",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for concrete floors",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for backpacking",
+  "dataset": "job_function",
+  "total": 17,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Hi Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Hi Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Invader Steel Toe Work Shoe",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work shoes for warehouse",
+  "dataset": "job_function",
+  "total": 24,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for masonry",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for framing",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for utility work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for railroad work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for standing on concrete",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for cold storage",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for wet conditions",
+  "dataset": "job_function",
+  "total": 18,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Brickline Waterproof Steel Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for outdoor work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for heavy duty work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work shoes for long shifts",
+  "dataset": "job_function",
+  "total": 5,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Threshold Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "boots for delivery drivers",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": true,
+  "zero": true,
+  "no_results_msg": false,
+  "items": []
+ },
+ {
+  "q": "shoes for retail work",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for ranch work",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for construction workers",
+  "dataset": "job_function",
+  "total": 17,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Outbase Waterproof Work Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Second Shift Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for cold wet weather",
+  "dataset": "job_function",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work boots for flat feet",
+  "dataset": "job_function",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for standing all day at work",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for hunting in cold",
+  "dataset": "job_function",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for wet job sites",
+  "dataset": "job_function",
+  "total": 11,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Brickline Waterproof Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "something waterproof for winter",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "casual shoes for everyday",
+  "dataset": "intent",
+  "total": 6,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Hiker Waterproof Boot",
+   "Threshold Chelsea Boot",
+   "Threshold Chukka Boot",
+   "Covert Boot",
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "gift for a construction worker",
+  "dataset": "intent",
+  "total": 12,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Outbase Waterproof Work Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Second Shift Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "most comfortable work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes to wear with jeans",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": false,
+  "items": []
+ },
+ {
+  "q": "boots that keep your feet dry",
+  "dataset": "intent",
+  "total": 26,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "work boots that dont hurt",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "something for muddy conditions",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "everyday work shoes",
+  "dataset": "intent",
+  "total": 8,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Threshold Hiker Waterproof Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Threshold Chukka Boot",
+   "Threshold Chelsea Boot",
+   "Covert Boot"
+  ]
+ },
+ {
+  "q": "comfortable shoes for long shifts",
+  "dataset": "intent",
+  "total": 5,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Streamline 2.0 Leather Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "warm boots for winter",
+  "dataset": "intent",
+  "total": 15,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "durable work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "affordable work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "best work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "lightweight boots for summer",
+  "dataset": "intent",
+  "total": 25,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Second Shift Work Boot",
+   "Exposition Chelsea Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Striver Work Boot"
+  ]
+ },
+ {
+  "q": "boots for a new construction job",
+  "dataset": "intent",
+  "total": 24,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Drawbar Steel Toe Work Boot",
+   "Revolver Steel Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "shoes that look good and are comfortable",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "waterproof boots that are comfortable",
+  "dataset": "intent",
+  "total": 27,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Outbase Waterproof Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Pursue Waterproof Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work boots that last",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots for someone on their feet all day",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "what to wear on a construction site",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for a warehouse job",
+  "dataset": "intent",
+  "total": 17,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Second Shift Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "shoes for walking all day at work",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "something rugged for outdoor work",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for standing on hard floors",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "most durable work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "comfortable steel toe boots for work",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "waterproof boots for hiking in the rain",
+  "dataset": "intent",
+  "total": 13,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Invader Hiker Waterproof Work Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "warm waterproof winter boots",
+  "dataset": "intent",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work boots that are easy to slip on",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots that are good for your feet",
+  "dataset": "intent",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Reclaimer Wedge Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "breathable boots for hot weather",
+  "dataset": "intent",
+  "total": 4,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Steel Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Tess Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "stylish work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "gift for someone who works construction",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "comfortable boots for concrete floors",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "work shoes that dont slip",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "boots for cold weather work",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "something for wet job sites",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "shoes for a warehouse worker",
+  "dataset": "intent",
+  "total": 7,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Mae Steel Toe Waterproof Work Boot",
+   "Invader Hiker Waterproof Composite Toe Work Boot",
+   "Echo Waterproof Steel Toe Work Boot",
+   "Invader Hiker Waterproof Work Boot",
+   "Second Shift Waterproof Steel Toe Work Boot",
+   "Second Shift Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "good boots for the money",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "comfortable waterproof work boots",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "boots that wont give me blisters",
+  "dataset": "intent",
+  "total": 0,
+  "redirected": false,
+  "zero": true,
+  "no_results_msg": true,
+  "items": []
+ },
+ {
+  "q": "good work boots for standing",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "durable waterproof boots",
+  "dataset": "intent",
+  "total": 27,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot",
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Accomplice X Waterproof Steel Toe Work Boot",
+   "Pursue Waterproof Work Boot",
+   "Brickline Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "warm boots for outdoor work",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "work boots for a warehouse job",
+  "dataset": "intent",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "caterpillar",
+  "dataset": "literal",
+  "total": 10,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Shoe",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Hi Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Pursue Waterproof Work Boot",
+   "Invader Hi Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "cat boots",
+  "dataset": "literal",
+  "total": 32,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Cat Footwear x both GAO Pioneer Boot",
+   "Wheelbase Steel Toe Work Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Wheelbase Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "cat work boots",
+  "dataset": "literal",
+  "total": 21,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "cat footwear",
+  "dataset": "literal",
+  "total": 22,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Cat Footwear x both GAO Pioneer Boot",
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Threshold Waterproof Work Boot",
+   "Abbey Steel Toe Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Invader Mecha Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "cat shoes",
+  "dataset": "literal",
+  "total": 21,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Cat Footwear x both GAO Pioneer Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Steel Toe Work Shoe",
+   "Fused Slip On Shoe",
+   "Venward Composite Toe Work Shoe",
+   "Streamline Court Mid Composite Toe Work Shoe",
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "colorado",
+  "dataset": "literal",
+  "total": 14,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Colorado Low 2.0 Shoe",
+   "Colorado Equip 6 Waterproof Work Boot",
+   "Colorado Equip 6 Waterproof Composite Toe Work Boot",
+   "Colorado Frontier Steel Toe Boot",
+   "Colorado Equip Wellington Waterproof Composite Toe Work Boot",
+   "Colorado Frontier Work Boot",
+   "Colorado Waterproof Boot",
+   "Colorado Equip 8 Waterproof Thinsulate Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "invader",
+  "dataset": "literal",
+  "total": 11,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Invader Max 8 Waterproof Thinsulate Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe",
+   "Invader Sport Lo Leather Composite Toe Work Shoe",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Steel Toe Work Shoe",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "striver",
+  "dataset": "literal",
+  "total": 6,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Striver XL Chelsea Waterproof Steel Toe Work Boot",
+   "Striver XL Waterproof Steel Toe Work Boot",
+   "Striver Work Boot",
+   "Striver Waterproof Steel Toe Work Boot",
+   "Striver Chelsea Waterproof Steel Toe Work Boot",
+   "Striver Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "threshold",
+  "dataset": "literal",
+  "total": 15,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Threshold Waterproof Steel Toe Work Boot",
+   "Threshold Chelsea Boot",
+   "Threshold Hiker Waterproof Boot",
+   "Threshold Chukka Boot",
+   "Threshold Waterproof Work Boot",
+   "Threshold Rebound Pull-On Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Chelsea Waterproof Steel Toe Work Boot",
+   "Threshold Rebound Hiker Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "wheelbase",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Wheelbase Work Boot",
+   "Wheelbase Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "resorption",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "excavator",
+  "dataset": "literal",
+  "total": 7,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Work Boot",
+   "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology Chelsea Waterproof Composite Toe Work Boot",
+   "Booster Vent Composite Toe Work Boot",
+   "Booster Vent Work Boot"
+  ]
+ },
+ {
+  "q": "abbey",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Abbey Steel Toe Work Boot",
+   "Invader Sport Lo Mesh Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "venward",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Venward Composite Toe Work Shoe",
+   "Venward Composite Toe Static Dissipative Work Shoe"
+  ]
+ },
+ {
+  "q": "streamline",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Streamline 2.0 Leather Composite Toe Work Shoe",
+   "Streamline Court Mid Composite Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "intruder",
+  "dataset": "literal",
+  "total": 11,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Intruder Shoe",
+   "Intruder Lightning Mesh Sneaker",
+   "Intruder Lite Outdoor Sneaker",
+   "Invader Mid Vent Waterproof Composite Toe Work Boot",
+   "Invader Max 6 Waterproof Composite Toe Work Boot",
+   "Invader Mecha Composite Toe Work Shoe",
+   "Invader Hi Steel Toe Work Boot",
+   "Invader Mid Vent Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "grapple",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Grapple Leather Mesh Sneaker"
+  ]
+ },
+ {
+  "q": "amperage",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Amperage Shoe"
+  ]
+ },
+ {
+  "q": "prorush",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "ProRush Speed FX Shoe"
+  ]
+ },
+ {
+  "q": "drawbar",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Drawbar Steel Toe Work Boot",
+   "Drawbar Pull-On Work Boot"
+  ]
+ },
+ {
+  "q": "rewrite",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Rewrite Frontier Boot",
+   "Rewrite Harness Boot"
+  ]
+ },
+ {
+  "q": "fused",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Fused Slip On Shoe",
+   "Invader Steel Toe Work Shoe"
+  ]
+ },
+ {
+  "q": "revolver",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Revolver Steel Toe Work Boot",
+   "Revolver Work Boot"
+  ]
+ },
+ {
+  "q": "outline",
+  "dataset": "literal",
+  "total": 3,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Outline Work Boot",
+   "Outline Steel Toe Work Boot",
+   "Resorption Waterproof Composite Toe Work Boot"
+  ]
+ },
+ {
+  "q": "brickline",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Brickline Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "second",
+  "dataset": "literal",
+  "total": 6,
+  "redirected": true,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Second Shift USA 6 Waterproof Steel Toe Work Boot",
+   "Second Shift Steel Toe Work Boot",
+   "Second Shift Work Boot",
+   "Second Shift Waterproof Steel Toe Work Boot",
+   "Second Shift Grader Moc Steel Toe Work Boot",
+   "Second Shift Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "booster",
+  "dataset": "literal",
+  "total": 7,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Booster Vent Work Boot",
+   "Booster Vent Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 8 Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology Wellington Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology Chelsea Waterproof Composite Toe Work Boot",
+   "Excavator ft Power Spring Technology 6 Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "outbase",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Outbase Waterproof Work Boot"
+  ]
+ },
+ {
+  "q": "reclaimer",
+  "dataset": "literal",
+  "total": 6,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Reclaimer Wedge Chelsea Waterproof Work Boot",
+   "Reclaimer Wedge Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Chelsea Waterproof Steel Toe Work Boot",
+   "Reclaimer Wedge Waterproof Work Boot",
+   "Reclaimer Wedge 10 Welly Waterproof Work Boot",
+   "Reclaimer Wedge 10 Welly Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "diagnostic",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Diagnostic Hi Waterproof Thinsulate Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "echo",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Echo Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "covert",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": true,
+  "known_item": true,
+  "zero": false,
+  "items": [
+   "Covert Boot"
+  ]
+ },
+ {
+  "q": "accomplice",
+  "dataset": "literal",
+  "total": 1,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Accomplice X Waterproof Steel Toe Work Boot"
+  ]
+ },
+ {
+  "q": "exposition",
+  "dataset": "literal",
+  "total": 2,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Exposition Chelsea Work Boot",
+   "Exposition Chelsea Alloy Toe Work Boot"
+  ]
+ },
+ {
+  "q": "grader",
+  "dataset": "literal",
+  "total": 3,
+  "redirected": false,
+  "zero": false,
+  "no_results_msg": false,
+  "items": [
+   "Grader Chelsea Boot",
+   "Grader Chukka Boot",
+   "Second Shift Grader Moc Steel Toe Work Boot"
+  ]
+ }
+]

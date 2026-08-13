@@ -1,0 +1,2840 @@
+{
+ "eval_id": "SE-20260713",
+ "sector": "furniture",
+ "jobs": {
+  "IW": "job_766593dd-00c6-44e6-94ca-3af41e0eedbb",
+  "SB": "job_83d4b302-1d65-4e81-8cfe-c41e3bd945dd"
+ },
+ "rows": [
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "counter stool",
+   "total": 31,
+   "search_call": "https://www.industrywest.com/?s=counter%20stool&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|counter stool",
+   "ndcg": 0.9720532509927219,
+   "grades": [
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.9720532509927219,
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Enrique Counter Stool",
+    "Carbon Counter Stool Orange",
+    "Octane Counter Stool Wood Seat",
+    "Glide Counter Stool",
+    "Osso Counter Stool",
+    "Tate Counter Stool",
+    "Cadrea Counter Stool",
+    "Riley Counter Stool"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "bar stool",
+   "total": 41,
+   "search_call": "https://www.industrywest.com/?s=bar%20stool&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|bar stool",
+   "ndcg": 0.8963312190009367,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.8963312190009367,
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Jean Bar Stool Black Leather",
+    "Leroy Counter and Bar Stool",
+    "Marais Bar Stool Galvanized",
+    "Poise Counter and Bar Stool",
+    "Pinta Counter and Bar Stool",
+    "Inlay Counter and Bar Stool",
+    "Zurich Bar Stool Cognac Velvet",
+    "Jean Oak on Gunmetal Bar Stool"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "kitchen stool",
+   "total": 5,
+   "search_call": "https://www.industrywest.com/?s=kitchen%20stool&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|kitchen stool",
+   "ndcg": 0.862970438176485,
+   "grades": [
+    2,
+    3,
+    3,
+    2,
+    1
+   ],
+   "ndcg_pinned": 0.862970438176485,
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    2,
+    1
+   ],
+   "moved": 0,
+   "items": [
+    "Glide Counter Stool",
+    "Poise Counter and Bar Stool",
+    "Inlay Counter and Bar Stool",
+    "Glide Counter and Bar Chair",
+    "Poise Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "accent chair",
+   "total": 6,
+   "search_call": "https://www.industrywest.com/?s=accent%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|accent chair",
+   "ndcg": 0.9823278498444782,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.9823278498444782,
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Stena Lounge Chair",
+    "Stellar Perforated Chair",
+    "Jacque Chair",
+    "Tanaka Walnut Dining Chair",
+    "Checkmate Side Table",
+    "Supa Form 02"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "lounge chair",
+   "total": 16,
+   "search_call": "https://www.industrywest.com/?s=lounge%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|lounge chair",
+   "ndcg": 0.9619139380553317,
+   "grades": [
+    3,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.9619139380553317,
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Nolan Lounge Chair",
+    "Scribe Lounge Chair",
+    "Salon Lounge Chair",
+    "Eva Lounge Chair",
+    "Troubadour Lounge Chair",
+    "Stena Lounge Chair",
+    "Miles Lounge Chair",
+    "Outo Outdoor Lounge Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "armchair",
+   "total": 11,
+   "search_call": "https://www.industrywest.com/?s=armchair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|armchair",
+   "ndcg": 0.8890573630780485,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8890573630780485,
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Fla Armchair",
+    "Tate Armchair",
+    "Tivoli Armchair",
+    "Marais Armchair",
+    "Bayley Leather Armchair",
+    "Ida Outdoor Armchair",
+    "Aesop Dining Armchair",
+    "Nolan Lounge Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "sofa",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=sofa&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|sofa",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "couch",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=couch&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|couch",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "settee",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=settee&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|settee",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "loveseat",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=loveseat&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|loveseat",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "side table",
+   "total": 24,
+   "search_call": "https://www.industrywest.com/?s=side%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|side table",
+   "ndcg": 0.9698433920840522,
+   "grades": [
+    3,
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.9698433920840522,
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Checkmate Side Table",
+    "Tomo Side Table",
+    "EEX Side Table",
+    "Crosby Side Table",
+    "Boulder Side Table 1",
+    "In The Flesh Side Table 14",
+    "Mekar Side Table",
+    "Thick Top Side Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "end table",
+   "total": 21,
+   "search_call": "https://www.industrywest.com/?s=end%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|end table",
+   "ndcg": 0.8828038093726873,
+   "grades": [
+    2,
+    3,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.8828038093726873,
+   "grades_pinned": [
+    2,
+    3,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Cloch End Table",
+    "Ozark End Table",
+    "Checkmate Side Table",
+    "Eclipse Round Dining Table",
+    "Elements Round Coffee Table",
+    "Elements Rectangular Coffee Table",
+    "Grove Bar Table",
+    "Grove Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "accent table",
+   "total": 10,
+   "search_call": "https://www.industrywest.com/?s=accent%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|accent table",
+   "ndcg": 0.973854361986135,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.973854361986135,
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Checkmate Side Table",
+    "EEX Side Table",
+    "Crosby Side Table",
+    "Dune Dining Table",
+    "Mekar Side Table",
+    "Fitzroy Dining Table",
+    "Fallon Console Table",
+    "Chelsea Side Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "coffee table",
+   "total": 7,
+   "search_call": "https://www.industrywest.com/?s=coffee%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|coffee table",
+   "ndcg": 0.8825662322956437,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ],
+   "ndcg_pinned": 0.8825662322956437,
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Tubi Square Coffee Table",
+    "Elements Round Coffee Table",
+    "Elements Rectangular Coffee Table",
+    "Bok Oak Coffee Table",
+    "Caldera Coffee Table",
+    "Catch Coffee Table",
+    "Chelsea Coffee Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "cocktail table",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=cocktail%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|cocktail table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "sideboard",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=sideboard&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|sideboard",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "credenza",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=credenza&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|credenza",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "buffet",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=buffet&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|buffet",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "ottoman",
+   "total": 4,
+   "search_call": "https://www.industrywest.com/?s=ottoman&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|ottoman",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3,
+    3,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Victor Ottoman",
+    "Senna Ottoman",
+    "Puff Ottoman",
+    "Senna Ottoman Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "pouf",
+   "total": 3,
+   "search_call": "https://www.industrywest.com/?s=pouf&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|pouf",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3,
+    3,
+    1
+   ],
+   "moved": 0,
+   "items": [
+    "Barrow Pouf",
+    "Roller Max Pouf",
+    "Senna Ottoman Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "footstool",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=footstool&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|footstool",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "dining chair",
+   "total": 46,
+   "search_call": "https://www.industrywest.com/?s=dining%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|dining chair",
+   "ndcg": 0.9279988547869685,
+   "grades": [
+    3,
+    2,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ],
+   "ndcg_pinned": 0.9279988547869685,
+   "grades_pinned": [
+    3,
+    2,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Leroy Dining Chair",
+    "Caprice Dining Chair White Boucle",
+    "Surpil Dining Chair White/Aluminum",
+    "Trace Dining Chair",
+    "Scroll Stackable Dining Chair",
+    "Asher Leather Dining Chair",
+    "Nova Dining Chair",
+    "Stride Dining Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "side chair",
+   "total": 22,
+   "search_call": "https://www.industrywest.com/?s=side%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|side chair",
+   "ndcg": 0.9792110377953896,
+   "grades": [
+    3,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9792110377953896,
+   "grades_pinned": [
+    3,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Ace Side Chair",
+    "Monaco Side Chair Aluminum",
+    "Checkmate Side Table",
+    "Marais AC Chair Gunmetal",
+    "Stax Chair White",
+    "Scribe Lounge Chair",
+    "Troubadour Lounge Chair",
+    "Miles Lounge Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "desk",
+   "total": 3,
+   "search_call": "https://www.industrywest.com/?s=desk&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|desk",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    1,
+    1,
+    1
+   ],
+   "moved": 0,
+   "items": [
+    "Osso Dining Stool",
+    "Osso Counter Stool",
+    "Osso Bar Stool"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "writing desk",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=writing%20desk&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|writing desk",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "bench",
+   "total": 6,
+   "search_call": "https://www.industrywest.com/?s=bench&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|bench",
+   "ndcg": 0.8126613093419779,
+   "grades": [
+    2,
+    2,
+    3,
+    3,
+    1,
+    1
+   ],
+   "ndcg_pinned": 0.8126613093419779,
+   "grades_pinned": [
+    2,
+    2,
+    3,
+    3,
+    1,
+    1
+   ],
+   "moved": 0,
+   "items": [
+    "Puff Bench",
+    "Norm Bench",
+    "Aesop Bench",
+    "Marseille Bench",
+    "Noki Chair",
+    "Catamaran Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "synonym",
+   "q": "entryway bench",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=entryway%20bench&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|entryway bench",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "walnut dining table",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=walnut%20dining%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|walnut dining table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "oak dining table",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=oak%20dining%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|oak dining table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "leather lounge chair",
+   "total": 2,
+   "search_call": "https://www.industrywest.com/?s=leather%20lounge%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|leather lounge chair",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Oslo Leather Lounge Chair",
+    "Finland Leather Lounge Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "leather dining chair",
+   "total": 9,
+   "search_call": "https://www.industrywest.com/?s=leather%20dining%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|leather dining chair",
+   "ndcg": 0.873205271692715,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    1,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.873205271692715,
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    3,
+    1,
+    2,
+    1,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Asher Leather Dining Chair",
+    "Channel Leather Dining Chair",
+    "Ace Leather Dining Chair",
+    "Porter Leather Dining Chair",
+    "Ace Side Chair",
+    "Leroy Dining Chair",
+    "The Lair Task Chair",
+    "Trace Dining Chair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "marble coffee table",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=marble%20coffee%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|marble coffee table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "marble side table",
+   "total": 4,
+   "search_call": "https://www.industrywest.com/?s=marble%20side%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|marble side table",
+   "ndcg": 0.9871901582936081,
+   "grades": [
+    3,
+    2,
+    1,
+    2
+   ],
+   "ndcg_pinned": 0.9871901582936081,
+   "grades_pinned": [
+    3,
+    2,
+    1,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Fragments Marble Side Table",
+    "Erik Bar Table",
+    "Caldera Coffee Table",
+    "Atmos Side Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "cane dining chair",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=cane%20dining%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|cane dining chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "boucle chair",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=boucle%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|boucle chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "velvet chair",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=velvet%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|velvet chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "black metal stool",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=black%20metal%20stool&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|black metal stool",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "rattan chair",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=rattan%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|rattan chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "attribute",
+   "q": "woven dining chair",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=woven%20dining%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|woven dining chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "furnish a living room",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=furnish%20a%20living%20room&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|furnish a living room",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "bar stools for a kitchen island",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=bar%20stools%20for%20a%20kitchen%20island&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|bar stools for a kitchen island",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "home office",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=home%20office&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|home office",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "dining set for 6",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=dining%20set%20for%206&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|dining set for 6",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "small space seating",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=small%20space%20seating&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|small space seating",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "entryway furniture",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=entryway%20furniture&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|entryway furniture",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "reading chair",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=reading%20chair&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|reading chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "restaurant chairs",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=restaurant%20chairs&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|restaurant chairs",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "job_function",
+   "q": "outdoor seating",
+   "total": 10,
+   "search_call": "https://www.industrywest.com/?s=outdoor%20seating&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|outdoor seating",
+   "ndcg": 0.820951645830935,
+   "grades": [
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.820951645830935,
+   "grades_pinned": [
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Tate Bar Stool",
+    "Tate Lounge Chair",
+    "Tate Armchair",
+    "Tate Chair",
+    "Tate Counter Stool",
+    "Rimrow Dining Chair",
+    "Tivoli Chair",
+    "Tivoli Armchair"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "head",
+   "q": "dining table",
+   "total": 18,
+   "search_call": "https://www.industrywest.com/?s=dining%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|dining table",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Eclipse Round Dining Table",
+    "Maxim Organic Dining Table",
+    "Dune Dining Table",
+    "Fitzroy Dining Table",
+    "Sage Dining Table",
+    "Lark Dining Table",
+    "Berlin Dining Table",
+    "Alma Dining Table"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "head",
+   "q": "console table",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=console%20table&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|console table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "literal",
+   "q": "enrique",
+   "total": 2,
+   "search_call": "https://www.industrywest.com/?s=enrique&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|enrique",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Enrique Counter Stool",
+    "Enrique Bar Stool"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "literal",
+   "q": "monica",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=monica&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|monica",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "literal",
+   "q": "erik",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=erik&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|erik",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "literal",
+   "q": "piccolo",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=piccolo&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|piccolo",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "intent",
+   "q": "All Products",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=All%20Products&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|All Products",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "intent",
+   "q": "Home for the Holidays",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=Home%20for%20the%20Holidays&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|Home for the Holidays",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "IW",
+   "dataset": "intent",
+   "q": "Seating",
+   "total": 29,
+   "search_call": "https://www.industrywest.com/?s=Seating&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|Seating",
+   "ndcg": 0.9671337605094592,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9671337605094592,
+   "grades_pinned": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Ace Side Chair",
+    "Stax Chair White",
+    "Caprice Dining Chair White Boucle",
+    "Scribe Lounge Chair",
+    "Eva Lounge Chair",
+    "Pinta Chair",
+    "Pinta Counter and Bar Stool",
+    "Barrow Pouf"
+   ]
+  },
+  {
+   "store": "IW",
+   "dataset": "intent",
+   "q": "Under $500",
+   "total": 0,
+   "search_call": "https://www.industrywest.com/?s=Under%20%24500&post_type=product",
+   "engine": "storefront (/?s=)",
+   "query_id": "industrywest|Under $500",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "counter stool",
+   "total": 8,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|counter stool",
+   "ndcg": 0.8871713674085455,
+   "grades": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ],
+   "ndcg_pinned": 0.8871713674085455,
+   "grades_pinned": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Bell Counter and Bar Stool",
+    "Cadrea Counter Stool",
+    "Crane Counter Stool",
+    "Habitus Counter and Bar Stool",
+    "Helix Counter and Bar Stool",
+    "Holi Closed Counter and Bar Stool",
+    "Holi Perforated Counter and Bar Stool",
+    "Jean Leather Counter Stool"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "bar stool",
+   "total": 8,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|bar stool",
+   "ndcg": null,
+   "grades": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "ndcg_pinned": null,
+   "grades_pinned": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Agape Bar Stool",
+    "Bell Counter and Bar Stool",
+    "Circuit Bar Stool",
+    "Crane Bar Stool",
+    "Forge Bar Stool",
+    "Habitus Counter and Bar Stool",
+    "Helix Counter and Bar Stool",
+    "Holi Closed Counter and Bar Stool"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "kitchen stool",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|kitchen stool",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "accent chair",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|accent chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "lounge chair",
+   "total": 8,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|lounge chair",
+   "ndcg": null,
+   "grades": [
+    2,
+    3,
+    3,
+    1,
+    3
+   ],
+   "ndcg_pinned": null,
+   "grades_pinned": [
+    2,
+    3,
+    3,
+    1,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Bluff Upholstered Lounge Chair",
+    "Breeze Upholstered Lounge Chair",
+    "Cricket Lounge Chair",
+    "Finley Swiveling Task Chair",
+    "Fletcher Lounge Chair",
+    "Format Wood Lounge Chair",
+    "Hew Lounge Chair",
+    "Ingrid Lounge Chair"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "armchair",
+   "total": 8,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|armchair",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": null,
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Bluff Upholstered Lounge Chair",
+    "Breeze Upholstered Lounge Chair",
+    "Burton Leather Dining Chair",
+    "Fla Armchair",
+    "Fletcher Lounge Chair",
+    "Format Wood Lounge Chair",
+    "Hew Lounge Chair",
+    "Ida Outdoor Armchair"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "sofa",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|sofa",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "couch",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|couch",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "settee",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|settee",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "loveseat",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|loveseat",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "side table",
+   "total": 1,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|side table",
+   "ndcg": 1,
+   "grades": [
+    2
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "EEX Side Table"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "end table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|end table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "accent table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|accent table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "coffee table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|coffee table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "cocktail table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|cocktail table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "sideboard",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|sideboard",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "credenza",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|credenza",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "buffet",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|buffet",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "ottoman",
+   "total": 2,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|ottoman",
+   "ndcg": null,
+   "grades": [
+    3
+   ],
+   "ndcg_pinned": null,
+   "grades_pinned": [
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Hemlock Ottoman",
+    "Hemlock Pouf"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "pouf",
+   "total": 1,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|pouf",
+   "ndcg": 1,
+   "grades": [
+    3
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Hemlock Pouf"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "footstool",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|footstool",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "dining chair",
+   "total": 8,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|dining chair",
+   "ndcg": 0.8163531678745487,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.8163531678745487,
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Aero Stackable Dining Chair",
+    "Outo Dining Chair",
+    "Agape Side Chair",
+    "Bell Dining Chair",
+    "Burton Leather Dining Chair",
+    "Cadrea Dining Chair",
+    "Circuit Dining Chair",
+    "Collar Dining Chair"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "side chair",
+   "total": 2,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|side chair",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3,
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Agape Side Chair",
+    "TA Side Chair"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "desk",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|desk",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "writing desk",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|writing desk",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "bench",
+   "total": 2,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|bench",
+   "ndcg": null,
+   "grades": [
+    3
+   ],
+   "ndcg_pinned": null,
+   "grades_pinned": [
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Hemlock Bench",
+    "Stride Bench"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "synonym",
+   "q": "entryway bench",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|entryway bench",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "walnut dining table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|walnut dining table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "oak dining table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|oak dining table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "leather lounge chair",
+   "total": 6,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|leather lounge chair",
+   "ndcg": null,
+   "grades": [
+    3,
+    2,
+    2
+   ],
+   "ndcg_pinned": null,
+   "grades_pinned": [
+    3,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Format Wood Lounge Chair",
+    "Oslo Leather Lounge Chair",
+    "Penny Lounge Chair",
+    "Wren Lounge Chair Oak/Java/Sorensen Bridle Leather",
+    "Wren Lounge Chair Walnut/Earth/Sorensen Bridle Leather",
+    "Wren Lounge Chair Oak/Oatmeal/Sorensen Bridle Leather"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "leather dining chair",
+   "total": 8,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|leather dining chair",
+   "ndcg": 0.9715124125517425,
+   "grades": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 0.9715124125517425,
+   "grades_pinned": [
+    3,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Burton Leather Dining Chair",
+    "Jean Dining Chair",
+    "Jean Leather Dining Chair",
+    "Madewell Dining Chair",
+    "Perch Dining Chair",
+    "Rope Leather Dining Chair",
+    "Madewell Dining Chair Leather",
+    "Luk Dining Chair Black/Charcoal Leather"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "marble coffee table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|marble coffee table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "marble side table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|marble side table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "cane dining chair",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|cane dining chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "boucle chair",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|boucle chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "velvet chair",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|velvet chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "black metal stool",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|black metal stool",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "rattan chair",
+   "total": 5,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|rattan chair",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "moved": 0,
+   "items": [
+    "Ida Outdoor Armchair",
+    "Marcel Armchair",
+    "Marcel Dining Chair",
+    "Perch Dining Chair",
+    "Riley Outdoor Dining Chair"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "attribute",
+   "q": "woven dining chair",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|woven dining chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "furnish a living room",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|furnish a living room",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "bar stools for a kitchen island",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|bar stools for a kitchen island",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "home office",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|home office",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "dining set for 6",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|dining set for 6",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "small space seating",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|small space seating",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "entryway furniture",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|entryway furniture",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "reading chair",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|reading chair",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "restaurant chairs",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|restaurant chairs",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "job_function",
+   "q": "outdoor seating",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|outdoor seating",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "head",
+   "q": "dining table",
+   "total": 5,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|dining table",
+   "ndcg": 0.7611307717439334,
+   "grades": [
+    3,
+    2,
+    1,
+    2,
+    1
+   ],
+   "ndcg_pinned": 0.7611307717439334,
+   "grades_pinned": [
+    3,
+    2,
+    1,
+    2,
+    1
+   ],
+   "moved": 0,
+   "items": [
+    "Capsule Dining Table",
+    "EEX Round Table",
+    "Helix Table",
+    "Lark Dining Table",
+    "EEX Square Table"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "head",
+   "q": "console table",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|console table",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "literal",
+   "q": "enrique",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|enrique",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "literal",
+   "q": "monica",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|monica",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "literal",
+   "q": "erik",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|erik",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "literal",
+   "q": "piccolo",
+   "total": 1,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|piccolo",
+   "ndcg": 1,
+   "grades": [
+    3
+   ],
+   "ndcg_pinned": 1,
+   "grades_pinned": [
+    3
+   ],
+   "moved": 0,
+   "items": [
+    "Piccolo Stool"
+   ]
+  },
+  {
+   "store": "SB",
+   "dataset": "intent",
+   "q": "All Products",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|All Products",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "intent",
+   "q": "Home for the Holidays",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|Home for the Holidays",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "intent",
+   "q": "Seating",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|Seating",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  },
+  {
+   "store": "SB",
+   "dataset": "intent",
+   "q": "Under $500",
+   "total": 0,
+   "search_call": "sevenbonde predictive search (AND-of-prefix)",
+   "engine": "Shopify predictive search",
+   "query_id": "sevenbonde|Under $500",
+   "ndcg": null,
+   "grades": [],
+   "ndcg_pinned": null,
+   "grades_pinned": [],
+   "moved": 0,
+   "items": []
+  }
+ ],
+ "rubric_hash": "99a0e992a992",
+ "judge": "llama3.2:3b @ temp 0 via Cortex 127.0.0.1:7077",
+ "reproducibility": {
+  "determinism": "verified: identical grades across repeated runs (bench 3/3, armchair 4/4, restaurant chairs 4/4, probe 5/5)",
+  "note": "NDCG reproducible when rubric_hash pinned. Original SE-20260713 used an earlier unpinned rubric; re-run under pinned 99a0e992a992 reproduces aggregate within +-0.01 (IW 0.944->0.953, SB 0.936->0.935); a minority of borderline queries shifted with rubric evolution. [2026-08-07 correction: IW re-captured via the storefront /?s= engine (shopper-facing), replacing the Store-API capture; both stores graded under pinned rubric 99a0e992a992.]"
+ },
+ "macro": {
+  "datasets": [
+   {
+    "id": "synonym",
+    "name": "Synonym / category",
+    "terms": 27,
+    "per_store": {
+     "IW": {
+      "answered": 16,
+      "zero": 11,
+      "median_results": 4,
+      "mean_ndcg": 0.937,
+      "mean_grade": 2.29,
+      "pct_not_relevant": 13
+     },
+     "SB": {
+      "answered": 10,
+      "zero": 17,
+      "median_results": 0,
+      "mean_ndcg": 0.941,
+      "mean_grade": 2.53,
+      "pct_not_relevant": 3
+     }
+    },
+    "takeaway": "Legacy IW returns equivalents fuzzily (accent chair works, with off-type items); the new SB store is strict — misses accent chair, kitchen stool, sofa entirely."
+   },
+   {
+    "id": "attribute",
+    "name": "Attribute (material+type)",
+    "terms": 12,
+    "per_store": {
+     "IW": {
+      "answered": 3,
+      "zero": 9,
+      "median_results": 0,
+      "mean_ndcg": 0.953,
+      "mean_grade": 2.21,
+      "pct_not_relevant": 21
+     },
+     "SB": {
+      "answered": 3,
+      "zero": 9,
+      "median_results": 0,
+      "mean_ndcg": 0.986,
+      "mean_grade": 2.19,
+      "pct_not_relevant": 0
+     }
+    },
+    "takeaway": "Broken on both — walnut/marble/velvet return nothing; only leather combinations resolve."
+   },
+   {
+    "id": "job_function",
+    "name": "Job-function / intent",
+    "terms": 9,
+    "per_store": {
+     "IW": {
+      "answered": 1,
+      "zero": 8,
+      "median_results": 0,
+      "mean_ndcg": 0.821,
+      "mean_grade": 1.63,
+      "pct_not_relevant": 38
+     },
+     "SB": {
+      "answered": 0,
+      "zero": 9,
+      "median_results": 0,
+      "mean_ndcg": null,
+      "mean_grade": null,
+      "pct_not_relevant": null
+     }
+    },
+    "takeaway": "Natural-language intent is nearly dead on both — only outdoor seating returns anything, and only on the legacy storefront."
+   },
+   {
+    "id": "head",
+    "name": "Head terms",
+    "terms": 2,
+    "per_store": {
+     "IW": {
+      "answered": 1,
+      "zero": 1,
+      "median_results": 9,
+      "mean_ndcg": 1,
+      "mean_grade": 3,
+      "pct_not_relevant": 0
+     },
+     "SB": {
+      "answered": 1,
+      "zero": 1,
+      "median_results": 2.5,
+      "mean_ndcg": 0.761,
+      "mean_grade": 1.8,
+      "pct_not_relevant": 40
+     }
+    },
+    "takeaway": "dining table works on both; console table misses on both."
+   },
+   {
+    "id": "literal",
+    "name": "Literal (product-name queries)",
+    "terms": 4,
+    "per_store": {
+     "IW": {
+      "answered": 1,
+      "zero": 3,
+      "median_results": 0,
+      "mean_ndcg": 1,
+      "mean_grade": 3,
+      "pct_not_relevant": 0
+     },
+     "SB": {
+      "answered": 1,
+      "zero": 3,
+      "median_results": 0,
+      "mean_ndcg": 1,
+      "mean_grade": 3,
+      "pct_not_relevant": 0
+     }
+    },
+    "takeaway": "Product-name (SKU) search is weak — Industry West finds enrique only; Seven Bonde finds piccolo only."
+   },
+   {
+    "id": "intent",
+    "name": "Intent (category-name labels)",
+    "terms": 4,
+    "per_store": {
+     "IW": {
+      "answered": 1,
+      "zero": 3,
+      "median_results": 0,
+      "mean_ndcg": 0.967,
+      "mean_grade": 1.88,
+      "pct_not_relevant": 13
+     },
+     "SB": {
+      "answered": 0,
+      "zero": 4,
+      "median_results": 0,
+      "mean_ndcg": null,
+      "mean_grade": null,
+      "pct_not_relevant": null
+     }
+    },
+    "takeaway": "The category word Seating returns products on the legacy IW storefront but nothing on the new SB search; promo labels correctly return nothing."
+   }
+  ],
+  "totals": {
+   "IW": {
+    "search_calls": 58,
+    "answered": 23,
+    "zero_rate_pct": 60,
+    "query_ndcg_evals": 23,
+    "product_judgments": 146,
+    "mean_ndcg": 0.941,
+    "mean_grade": 2.27,
+    "pct_not_relevant": 14,
+    "verdict": "Broad but fuzzy — answers 40% of queries, but 14% of results are off-target."
+   },
+   "SB": {
+    "search_calls": 58,
+    "answered": 15,
+    "zero_rate_pct": 74,
+    "query_ndcg_evals": 15,
+    "product_judgments": 58,
+    "mean_ndcg": 0.937,
+    "mean_grade": 2.38,
+    "pct_not_relevant": 5,
+    "verdict": "Precise but narrow — clean results (95% on-target), but answers only 26%."
+   },
+   "search_calls_all": 116,
+   "query_ndcg_evals_all": 38,
+   "product_judgments_all": 204
+  }
+ },
+ "stores": {
+  "IW": {
+   "id": "industrywest",
+   "name": "Industry West",
+   "platform": "woocommerce",
+   "replayable": true
+  },
+  "SB": {
+   "id": "sevenbonde",
+   "name": "Seven Bonde",
+   "platform": "shopify",
+   "replayable": false,
+   "note": "search is in-session Storefront GraphQL; server-side replay not available"
+  }
+ },
+ "catalog_context": {
+  "skus": 246,
+  "categories": 148,
+  "top_categories": [
+   {
+    "name": "Seating",
+    "count": 135
+   },
+   {
+    "name": "Living",
+    "count": 132
+   },
+   {
+    "name": "Dining",
+    "count": 113
+   },
+   {
+    "name": "Chairs",
+    "count": 85
+   },
+   {
+    "name": "Art",
+    "count": 62
+   },
+   {
+    "name": "Dining Chairs",
+    "count": 58
+   },
+   {
+    "name": "Tables & Storage",
+    "count": 58
+   },
+   {
+    "name": "Office Chairs",
+    "count": 55
+   }
+  ],
+  "materials": [
+   {
+    "name": "leather",
+    "count": 16
+   },
+   {
+    "name": "marble",
+    "count": 6
+   },
+   {
+    "name": "oak",
+    "count": 3
+   },
+   {
+    "name": "metal",
+    "count": 3
+   },
+   {
+    "name": "cane",
+    "count": 2
+   },
+   {
+    "name": "walnut",
+    "count": 1
+   },
+   {
+    "name": "velvet",
+    "count": 1
+   },
+   {
+    "name": "boucle",
+    "count": 1
+   }
+  ],
+  "types": [
+   {
+    "name": "chair",
+    "count": 79
+   },
+   {
+    "name": "table",
+    "count": 54
+   },
+   {
+    "name": "stool",
+    "count": 50
+   },
+   {
+    "name": "bench",
+    "count": 4
+   },
+   {
+    "name": "ottoman",
+    "count": 4
+   },
+   {
+    "name": "pouf",
+    "count": 2
+   },
+   {
+    "name": "sideboard",
+    "count": 1
+   },
+   {
+    "name": "cabinet",
+    "count": 1
+   }
+  ]
+ },
+ "findings": [
+  {
+   "severity": "High",
+   "area": "Search",
+   "title": "Attribute search is broken on both stores",
+   "detail": "walnut/oak dining table, marble coffee/side table, velvet/boucle/cane/woven chair return 0 on both, despite the catalog stocking marble, oak and leather. A shopper who names a material plus a type hits a dead end."
+  },
+  {
+   "severity": "High",
+   "area": "Search",
+   "title": "Natural-language intent returns nothing on both",
+   "detail": "furnish a living room, dining set for 6, home office, small space seating, reading chair, restaurant chairs all return 0 on both stores. Only outdoor seating returns anything, and only on the legacy storefront."
+  },
+  {
+   "severity": "Medium",
+   "area": "Search",
+   "title": "The migration swaps one flaw for another",
+   "detail": "The legacy Industry West storefront casts a wide net (40% of queries answered) but is fuzzy — 14% of results are off-target (accent chair returns a side table). The new Seven Bonde store matches strictly (only 5% off-target) but answers just 26%, missing common words like kitchen stool, accent chair and sofa."
+  },
+  {
+   "severity": "Medium",
+   "area": "Search",
+   "title": "Product-name (SKU) search is unreliable",
+   "detail": "Industry West finds enrique but not monica/erik/piccolo; Seven Bonde finds only piccolo. Shoppers searching a known product name often get nothing."
+  },
+  {
+   "severity": "Low",
+   "area": "Search",
+   "title": "STRENGTH: core product-type and leather search works well",
+   "detail": "bar stool, counter stool, dining chair, lounge chair and leather dining chair return strong, relevant sets on both stores (NDCG ~0.94). Seven Bonde results in particular are clean when present."
+  },
+  {
+   "severity": "Info",
+   "area": "Catalog",
+   "title": "Recommendations — Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side)",
+   "detail": "Not exposed via the WooCommerce Store API (related/upsell products are rendered server-side). Needs rendered capture to inspect."
+  },
+  {
+   "severity": "Medium",
+   "area": "Catalog",
+   "title": "Browse — 148 category nodes, flat (no hierarchy)",
+   "detail": "148 category nodes, flat (no hierarchy)."
+  }
+ ],
+ "board_meta": {
+  "engine_note": "Industry West evaluated on its live STOREFRONT search (/?s=, the engine shoppers use); Seven Bonde on its in-session predictive search (the AND-of-prefix query its search box builds). Earlier Store-API / loose-query captures measured different engines and were replaced. Seven Bonde is the store Industry West is migrating to."
+ }
+}

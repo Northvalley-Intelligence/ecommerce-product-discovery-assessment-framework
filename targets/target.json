@@ -1,0 +1,7 @@
+{
+  "target_id": "target",
+  "name": "Target",
+  "primary_url": "https://www.target.com/",
+  "platform": { "expected": "browser-eval" },
+  "notes": "Enterprise custom (React/Next.js) with client-side Redsky search and bot protection. Search evaluated by reading the browser-rendered results for a bounded query set — no crawling, no server load. General Retail sector."
+}

@@ -1,0 +1,320 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|couch",
+   "q": "couch",
+   "ndcg": 0.8143640107046092,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|sofa",
+   "q": "sofa",
+   "ndcg": 0.8072750941820998,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|settee",
+   "q": "settee",
+   "ndcg": 0.8027856390671769,
+   "grades": [
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|loveseat",
+   "q": "loveseat",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "target|cocktail table",
+   "q": "cocktail table",
+   "ndcg": 0.7798517124811414,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "target|coffee table",
+   "q": "coffee table",
+   "ndcg": 0.7372337892385353,
+   "grades": [
+    2,
+    1,
+    1,
+    3,
+    2,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|silverware",
+   "q": "silverware",
+   "ndcg": 0.8352890664960951,
+   "grades": [
+    2,
+    3,
+    1,
+    3,
+    3,
+    3,
+    1,
+    3
+   ]
+  },
+  {
+   "query_id": "target|flatware",
+   "q": "flatware",
+   "ndcg": 0.8630395422009609,
+   "grades": [
+    2,
+    3,
+    2,
+    3,
+    3,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|cutlery",
+   "q": "cutlery",
+   "ndcg": 0.776141398249429,
+   "grades": [
+    2,
+    2,
+    3,
+    1,
+    1,
+    1,
+    1,
+    3
+   ]
+  },
+  {
+   "query_id": "target|sneakers",
+   "q": "sneakers",
+   "ndcg": 0.9438147924866596,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|tennis shoes",
+   "q": "tennis shoes",
+   "ndcg": 0.9395766788612658,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|trainers",
+   "q": "trainers",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "query_id": "target|stroller",
+   "q": "stroller",
+   "ndcg": 0.9651613850271338,
+   "grades": [
+    3,
+    3,
+    3,
+    1,
+    3,
+    1,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|pram",
+   "q": "pram",
+   "ndcg": 0.981580407822618,
+   "grades": [
+    3,
+    3,
+    3,
+    0,
+    3,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "query_id": "target|pushchair",
+   "q": "pushchair",
+   "ndcg": 0.9948561774257956,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    1,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|trash can",
+   "q": "trash can",
+   "ndcg": 0.7914287110248243,
+   "grades": [
+    1,
+    3,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|garbage can",
+   "q": "garbage can",
+   "ndcg": 0.6927052806516414,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    1,
+    3
+   ]
+  },
+  {
+   "query_id": "target|rubbish bin",
+   "q": "rubbish bin",
+   "ndcg": 0.6584319347060295,
+   "grades": [
+    1,
+    0,
+    0,
+    2,
+    1,
+    2,
+    2,
+    0
+   ]
+  },
+  {
+   "query_id": "target|comforter",
+   "q": "comforter",
+   "ndcg": 1,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|duvet",
+   "q": "duvet",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|quilt",
+   "q": "quilt",
+   "ndcg": 0.9352492171216448,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2
+   ]
+  }
+ ]
+}

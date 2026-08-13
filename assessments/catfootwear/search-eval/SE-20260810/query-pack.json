@@ -1,0 +1,3792 @@
+{
+ "pack_version": "1",
+ "retailer": "catfootwear",
+ "eval_id": "SE-20260810",
+ "generated_at": "2026-08-12T03:40:56.131Z",
+ "catalog_ref": "catalog.json",
+ "generator": [
+  "category-recall"
+ ],
+ "terms": [
+  {
+   "term": "work boots",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "safety boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "work shoes",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-shoes/"
+   }
+  },
+  {
+   "term": "safety shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "safety footwear",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "safety toe boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "sneakers",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "trainers",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "athletic shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "tennis shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "running shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "booties",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "ankle boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "moccasins",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "slip ons",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "slip-on",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 12,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip wellington waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "fused slip on shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/slip-on/"
+   }
+  },
+  {
+   "term": "loafers",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "slides",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "mules",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "clogs",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "footwear",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "footwear",
+   "query_template": "{node.singular}",
+   "key": null
+  },
+  {
+   "term": "sandals",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "flip flops",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "oxfords",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "dress shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "hiking boots",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "hiking-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 13,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader mid vent waterproof composite toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "tess steel toe work boot",
+     "invader steel toe work shoe",
+     "threshold hiker waterproof boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/hiking-work-boots/"
+   }
+  },
+  {
+   "term": "hikers",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "trail shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "chelsea boots",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "chelsea-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 11,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip wellington waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/chelsea-work-boots/"
+   }
+  },
+  {
+   "term": "pull on boots",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "pull-ons",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 11,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip wellington waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/pull-ons/"
+   }
+  },
+  {
+   "term": "lace up boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "slip on shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "casual shoes",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "casual-footwear",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 16,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "threshold chukka boot",
+     "threshold hiker waterproof boot",
+     "threshold chelsea boot",
+     "intruder lightning mesh sneaker",
+     "cat footwear x both gao pioneer boot",
+     "intruder shoe",
+     "grapple leather mesh sneaker",
+     "grader chelsea boot",
+     "fused slip on shoe",
+     "reclaimer wedge waterproof work boot",
+     "grader chukka boot",
+     "rewrite harness boot",
+     "rewrite frontier boot",
+     "covert boot",
+     "colorado frontier work boot",
+     "colorado waterproof boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/casual-footwear/"
+   }
+  },
+  {
+   "term": "casual sneakers",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "wellington boots",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "wellingtons",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 3,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip wellington waterproof composite toe work boot",
+     "revolver steel toe work boot",
+     "revolver work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/wellingtons/"
+   }
+  },
+  {
+   "term": "rubber boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "rain boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "winter boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "snow boots",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "boat shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "deck shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "high tops",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "low tops",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "kids shoes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "steel toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "steel-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "striver waterproof steel toe work boot",
+     "threshold waterproof steel toe work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "echo waterproof steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "invader steel toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/steel-toe/"
+   }
+  },
+  {
+   "term": "composite toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "composite-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 10,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader mid vent composite toe work boot",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/composite-toe/"
+   }
+  },
+  {
+   "term": "soft toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "soft-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 13,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof work boot",
+     "threshold waterproof work boot",
+     "invader hiker waterproof work boot",
+     "second shift waterproof work boot",
+     "second shift work boot",
+     "wheelbase work boot",
+     "outbase waterproof work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "revolver work boot",
+     "striver work boot",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/soft-toe/"
+   }
+  },
+  {
+   "term": "alloy toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "alloy-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 2,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "exposition chelsea alloy toe work boot",
+     "elapse alloy toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/alloy-toe/"
+   }
+  },
+  {
+   "term": "waterproof boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "waterproof",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 36,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "outbase waterproof work boot",
+     "mae steel toe waterproof work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "threshold hiker waterproof boot",
+     "reclaimer wedge waterproof work boot",
+     "colorado waterproof boot",
+     "excavator ft power spring technology chelsea waterproof composite toe work boot",
+     "excavator ft power spring technology wellington waterproof composite toe work boot",
+     "excavator ft power spring technology 8 waterproof composite toe work boot",
+     "excavator ft power spring technology 6 waterproof work boot",
+     "excavator ft power spring technology 6 waterproof composite toe work boot",
+     "invader max 8 waterproof thinsulate composite toe work boot",
+     "reclaimer wedge waterproof steel toe work boot",
+     "threshold rebound pull on waterproof steel toe work boot",
+     "threshold rebound chelsea waterproof steel toe work boot",
+     "pursue waterproof work boot",
+     "threshold rebound hiker waterproof work boot",
+     "threshold rebound hiker waterproof steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/waterproof/"
+   }
+  },
+  {
+   "term": "waterproof work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "waterproof hiking boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "hiking-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 13,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader mid vent waterproof composite toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "tess steel toe work boot",
+     "invader steel toe work shoe",
+     "threshold hiker waterproof boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/hiking-work-boots/"
+   }
+  },
+  {
+   "term": "waterproof leather boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "insulated boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "insulated-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 16,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/insulated-work-boots/"
+   }
+  },
+  {
+   "term": "insulated work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "thinsulate boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "slip resistant shoes",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "slip-resistant",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 33,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader mid vent composite toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/slip-resistant/"
+   }
+  },
+  {
+   "term": "slip resistant boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "non slip work shoes",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-shoes/"
+   }
+  },
+  {
+   "term": "non slip shoes",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "oil resistant boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "electrical hazard boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "met guard boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "metatarsal boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "puncture resistant boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "leather boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "leather work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "full grain leather boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "suede boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "suede shoes",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "nubuck boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "canvas shoes",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "mesh work shoes",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-shoes/"
+   }
+  },
+  {
+   "term": "brown work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "brown-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 34,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/brown-work-boots/"
+   }
+  },
+  {
+   "term": "black work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "black-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 16,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/black-work-boots/"
+   }
+  },
+  {
+   "term": "tan work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "tan-work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 17,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "invader hi steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/tan-work-boots/"
+   }
+  },
+  {
+   "term": "brown boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "black boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "tan boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "gray shoes",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "6 inch work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "8 inch work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "6 inch boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "high top boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "low top shoes",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "mid boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "lightweight work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "lightweight-work-boots-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader mid vent waterproof composite toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "second shift waterproof work boot",
+     "second shift work boot",
+     "exposition chelsea work boot",
+     "outline work boot",
+     "striver work boot",
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe",
+     "elapse alloy toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/lightweight-work-boots-shoes/"
+   }
+  },
+  {
+   "term": "comfortable work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "wide work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "wide width boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "extra wide boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "memory foam work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "cushioned work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "pull on work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "lace up work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "side zip boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "wedge sole boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "moc toe boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "waterproof slip on shoes",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "insulated waterproof boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "waterproof",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 36,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "outbase waterproof work boot",
+     "mae steel toe waterproof work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "threshold hiker waterproof boot",
+     "reclaimer wedge waterproof work boot",
+     "colorado waterproof boot",
+     "excavator ft power spring technology chelsea waterproof composite toe work boot",
+     "excavator ft power spring technology wellington waterproof composite toe work boot",
+     "excavator ft power spring technology 8 waterproof composite toe work boot",
+     "excavator ft power spring technology 6 waterproof work boot",
+     "excavator ft power spring technology 6 waterproof composite toe work boot",
+     "invader max 8 waterproof thinsulate composite toe work boot",
+     "reclaimer wedge waterproof steel toe work boot",
+     "threshold rebound pull on waterproof steel toe work boot",
+     "threshold rebound chelsea waterproof steel toe work boot",
+     "pursue waterproof work boot",
+     "threshold rebound hiker waterproof work boot",
+     "threshold rebound hiker waterproof steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/waterproof/"
+   }
+  },
+  {
+   "term": "steel toe waterproof boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "waterproof",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 36,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "outbase waterproof work boot",
+     "mae steel toe waterproof work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "threshold hiker waterproof boot",
+     "reclaimer wedge waterproof work boot",
+     "colorado waterproof boot",
+     "excavator ft power spring technology chelsea waterproof composite toe work boot",
+     "excavator ft power spring technology wellington waterproof composite toe work boot",
+     "excavator ft power spring technology 8 waterproof composite toe work boot",
+     "excavator ft power spring technology 6 waterproof work boot",
+     "excavator ft power spring technology 6 waterproof composite toe work boot",
+     "invader max 8 waterproof thinsulate composite toe work boot",
+     "reclaimer wedge waterproof steel toe work boot",
+     "threshold rebound pull on waterproof steel toe work boot",
+     "threshold rebound chelsea waterproof steel toe work boot",
+     "pursue waterproof work boot",
+     "threshold rebound hiker waterproof work boot",
+     "threshold rebound hiker waterproof steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/waterproof/"
+   }
+  },
+  {
+   "term": "composite toe waterproof boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "waterproof",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 36,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "outbase waterproof work boot",
+     "mae steel toe waterproof work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "threshold hiker waterproof boot",
+     "reclaimer wedge waterproof work boot",
+     "colorado waterproof boot",
+     "excavator ft power spring technology chelsea waterproof composite toe work boot",
+     "excavator ft power spring technology wellington waterproof composite toe work boot",
+     "excavator ft power spring technology 8 waterproof composite toe work boot",
+     "excavator ft power spring technology 6 waterproof work boot",
+     "excavator ft power spring technology 6 waterproof composite toe work boot",
+     "invader max 8 waterproof thinsulate composite toe work boot",
+     "reclaimer wedge waterproof steel toe work boot",
+     "threshold rebound pull on waterproof steel toe work boot",
+     "threshold rebound chelsea waterproof steel toe work boot",
+     "pursue waterproof work boot",
+     "threshold rebound hiker waterproof work boot",
+     "threshold rebound hiker waterproof steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/waterproof/"
+   }
+  },
+  {
+   "term": "breathable work shoes",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-shoes/"
+   }
+  },
+  {
+   "term": "vented work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "slip resistant work shoes",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-shoes/"
+   }
+  },
+  {
+   "term": "waterproof composite toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "composite-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 10,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader mid vent composite toe work boot",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/composite-toe/"
+   }
+  },
+  {
+   "term": "steel toe sneakers",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "steel-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "striver waterproof steel toe work boot",
+     "threshold waterproof steel toe work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "echo waterproof steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "invader steel toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/steel-toe/"
+   }
+  },
+  {
+   "term": "steel toe work shoes",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-shoes",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader steel toe work shoe",
+     "invader mecha composite toe work shoe",
+     "venward composite toe work shoe",
+     "prorush speed fx shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-shoes/"
+   }
+  },
+  {
+   "term": "lightweight steel toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "steel-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "striver waterproof steel toe work boot",
+     "threshold waterproof steel toe work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "echo waterproof steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "invader steel toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/steel-toe/"
+   }
+  },
+  {
+   "term": "comfortable steel toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "steel-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "striver waterproof steel toe work boot",
+     "threshold waterproof steel toe work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "echo waterproof steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "invader steel toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/steel-toe/"
+   }
+  },
+  {
+   "term": "waterproof steel toe boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "steel-toe",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "striver waterproof steel toe work boot",
+     "threshold waterproof steel toe work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "echo waterproof steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot",
+     "invader steel toe work shoe"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/steel-toe/"
+   }
+  },
+  {
+   "term": "insulated hunting boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "rubber work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "chelsea work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "work-boots",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 39,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip 6 waterproof work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "striver waterproof steel toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "threshold waterproof steel toe work boot",
+     "threshold waterproof work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader hiker waterproof work boot",
+     "invader hi steel toe work boot",
+     "invader mid vent composite toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift waterproof work boot",
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "echo waterproof steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "wheelbase work boot",
+     "drawbar steel toe work boot",
+     "outbase waterproof work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "exposition chelsea alloy toe work boot",
+     "exposition chelsea work boot",
+     "drawbar pull on work boot",
+     "outline work boot",
+     "outline steel toe work boot",
+     "revolver work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "striver work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "boots for standing all day",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "work boots for concrete",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for warehouse work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for construction",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for cold weather",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for being on your feet all day",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for roofing",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for welding",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for electricians",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for landscaping",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for farm work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for logging",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for oil field work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for restaurant work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for nurses",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for hunting",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for snow",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for rain",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "work boots for men",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "work boots for women",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for wide feet",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for flat feet",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for plantar fasciitis",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "comfortable boots for walking",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for factory work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for mechanics",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for kitchen work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "slip resistant shoes for servers",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for concrete floors",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for backpacking",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "work shoes for warehouse",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for masonry",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for framing",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for utility work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for railroad work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for standing on concrete",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for cold storage",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for wet conditions",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for outdoor work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for heavy duty work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "work shoes for long shifts",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for delivery drivers",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for retail work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for ranch work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for construction workers",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for cold wet weather",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "work boots for flat feet",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "shoes for standing all day at work",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for hunting in cold",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "boots for wet job sites",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "something waterproof for winter",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "casual shoes for everyday",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "gift for a construction worker",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "most comfortable work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "shoes to wear with jeans",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots that keep your feet dry",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "work boots that dont hurt",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "something for muddy conditions",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "everyday work shoes",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "comfortable shoes for long shifts",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "warm boots for winter",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "durable work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "affordable work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "best work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "lightweight boots for summer",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots for a new construction job",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "shoes that look good and are comfortable",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "waterproof boots that are comfortable",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "work boots that last",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots for someone on their feet all day",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what to wear on a construction site",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots for a warehouse job",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "shoes for walking all day at work",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "something rugged for outdoor work",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots for standing on hard floors",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "most durable work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "comfortable steel toe boots for work",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "waterproof boots for hiking in the rain",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "warm waterproof winter boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "work boots that are easy to slip on",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots that are good for your feet",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "breathable boots for hot weather",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "stylish work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "gift for someone who works construction",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "comfortable boots for concrete floors",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "work shoes that dont slip",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots for cold weather work",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "something for wet job sites",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "shoes for a warehouse worker",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "good boots for the money",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "comfortable waterproof work boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "boots that wont give me blisters",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "good work boots for standing",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "durable waterproof boots",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "warm boots for outdoor work",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "work boots for a warehouse job",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "caterpillar",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "cat boots",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "cat work boots",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "cat footwear",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "cat shoes",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "colorado",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "invader",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "striver",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "threshold",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "wheelbase",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "resorption",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "excavator",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "abbey",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "venward",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "streamline",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "intruder",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "grapple",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "amperage",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "prorush",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "drawbar",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "rewrite",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "fused",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "revolver",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "outline",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "brickline",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "second",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "booster",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "outbase",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "reclaimer",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "diagnostic",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "echo",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "covert",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "accomplice",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "exposition",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "grader",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "5 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "5",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "5 5 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "5.5",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "6 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "6",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "6 5 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "6.5",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "7 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "7",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "7 5 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "7.5",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "8 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "8",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "8 5 work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "size",
+   "facet_value": "8.5",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "medium work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "width",
+   "facet_value": "Medium",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "gold work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "refinementColor",
+   "facet_value": "Gold",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "second shift steel toe work boot",
+     "second shift work boot",
+     "outline work boot",
+     "outline steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "green work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "refinementColor",
+   "facet_value": "Green",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 1,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "mae steel toe waterproof work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "grey work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "refinementColor",
+   "facet_value": "Grey",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 7,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "invader mid vent composite toe work boot",
+     "echo waterproof steel toe work boot",
+     "wheelbase steel toe work boot",
+     "resorption waterproof composite toe work boot",
+     "outline steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "boots work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "itemStyle",
+   "facet_value": "Boots",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "winter boots work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "itemStyle",
+   "facet_value": "Winter Boots",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "pull ons work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "itemStyle",
+   "facet_value": "Pull-Ons",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "chukkas work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "itemStyle",
+   "facet_value": "Chukkas",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "composite toe work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "toeFeatures",
+   "facet_value": "Composite Toe",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 9,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof composite toe work boot",
+     "colorado equip wellington waterproof composite toe work boot",
+     "colorado equip 8 waterproof thinsulate composite toe work boot",
+     "invader max 6 waterproof composite toe work boot",
+     "invader mid vent waterproof composite toe work boot",
+     "threshold rebound waterproof composite toe work boot",
+     "invader hiker waterproof composite toe work boot",
+     "invader mid vent composite toe work boot",
+     "resorption waterproof composite toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "steel toe work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "toeFeatures",
+   "facet_value": "Steel Toe",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 17,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "striver waterproof steel toe work boot",
+     "threshold waterproof steel toe work boot",
+     "accomplice x waterproof steel toe work boot",
+     "invader hi steel toe work boot",
+     "striver steel toe work boot",
+     "second shift waterproof steel toe work boot",
+     "second shift steel toe work boot",
+     "echo waterproof steel toe work boot",
+     "drawbar steel toe work boot",
+     "abbey steel toe work boot",
+     "wheelbase steel toe work boot",
+     "revolver steel toe work boot",
+     "mae steel toe waterproof work boot",
+     "outline steel toe work boot",
+     "striver chelsea waterproof steel toe work boot",
+     "tess steel toe work boot",
+     "diagnostic hi waterproof thinsulate steel toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "soft toe work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "toeFeatures",
+   "facet_value": "Soft Toe",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 12,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "colorado equip 6 waterproof work boot",
+     "threshold waterproof work boot",
+     "invader hiker waterproof work boot",
+     "second shift waterproof work boot",
+     "second shift work boot",
+     "wheelbase work boot",
+     "outbase waterproof work boot",
+     "drawbar pull on work boot",
+     "exposition chelsea work boot",
+     "revolver work boot",
+     "outline work boot",
+     "striver work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "alloy toe work boots",
+   "dataset": "attribute",
+   "has_key": true,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "toeFeatures",
+   "facet_value": "Alloy Toe",
+   "query_template": "{facet_value} {node.singular}",
+   "key": {
+    "size": 1,
+    "null_rate": 0,
+    "confidence": "low",
+    "skus": [
+     "exposition chelsea alloy toe work boot"
+    ],
+    "source_url": "https://www.catfootwear.com/US/en/work-boots/"
+   }
+  },
+  {
+   "term": "electrical hazard work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "workFeatures",
+   "facet_value": "Electrical Hazard",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "slip resistant work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "workFeatures",
+   "facet_value": "Slip Resistant",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "non metallic work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "workFeatures",
+   "facet_value": "Non-Metallic",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "thinsulate work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "workFeatures",
+   "facet_value": "Thinsulate",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "ease work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "comfortFeatures",
+   "facet_value": "ease",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "ergo work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "comfortFeatures",
+   "facet_value": "ERGO",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  },
+  {
+   "term": "srx work boots",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": "node_attr",
+   "direction": "uni",
+   "source": "catalog_facet",
+   "node_id": "work-boots",
+   "facet": "comfortFeatures",
+   "facet_value": "SRX",
+   "query_template": "{facet_value} {node.singular}",
+   "key": null
+  }
+ ],
+ "orphans": [
+  "safety boots",
+  "safety shoes",
+  "safety footwear",
+  "safety toe boots",
+  "sneakers",
+  "trainers",
+  "athletic shoes",
+  "tennis shoes",
+  "running shoes",
+  "boots",
+  "booties",
+  "ankle boots",
+  "moccasins",
+  "loafers",
+  "slides",
+  "mules",
+  "clogs",
+  "shoes",
+  "sandals",
+  "flip flops",
+  "oxfords",
+  "dress shoes",
+  "hikers",
+  "trail shoes",
+  "lace up boots",
+  "slip on shoes",
+  "casual sneakers",
+  "rubber boots",
+  "rain boots",
+  "winter boots",
+  "snow boots",
+  "boat shoes",
+  "deck shoes",
+  "high tops",
+  "low tops",
+  "kids shoes",
+  "waterproof leather boots",
+  "thinsulate boots",
+  "slip resistant boots",
+  "non slip shoes",
+  "oil resistant boots",
+  "electrical hazard boots",
+  "met guard boots",
+  "metatarsal boots",
+  "puncture resistant boots",
+  "leather boots",
+  "full grain leather boots",
+  "suede boots",
+  "suede shoes",
+  "nubuck boots",
+  "canvas shoes",
+  "brown boots",
+  "black boots",
+  "tan boots",
+  "gray shoes",
+  "6 inch boots",
+  "high top boots",
+  "low top shoes",
+  "mid boots",
+  "wide width boots",
+  "extra wide boots",
+  "side zip boots",
+  "wedge sole boots",
+  "moc toe boots",
+  "waterproof slip on shoes",
+  "insulated hunting boots"
+ ]
+}

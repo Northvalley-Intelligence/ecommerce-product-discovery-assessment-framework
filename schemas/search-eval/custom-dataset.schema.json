@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/custom-dataset.schema.json",
+  "title": "Search-Eval Custom Dataset",
+  "description": "A single homogeneous relation-type dataset the operator brings to augment or replace the 5 default query families. One type per file. built_from is prose describing how it was constructed and drives the per-term source label. Demand (monthly_volume) is carried inline so impact-dollars need no full-set Keyword Planner pass. Type-specific record requirements (counterpart for relational, expected for one_to_one) are enforced by load-custom-dataset.mjs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["custom_dataset_version", "dataset_id", "type", "built_from", "records"],
+  "properties": {
+    "custom_dataset_version": { "const": "1" },
+    "dataset_id": { "type": "string" },
+    "name": { "type": "string" },
+    "type": {
+      "description": "The relation of each record's term to its counterpart/expected. synonym: term == counterpart (counts ~same). hyponym: term narrower than counterpart (term results subset; count <=). hypernym: term broader (superset; count >=). one_to_one: term maps to exactly one expected product (retrieval check).",
+      "enum": ["synonym", "hypernym", "hyponym", "one_to_one"]
+    },
+    "built_from": { "type": "string", "minLength": 10 },
+    "label": {
+      "type": "string",
+      "description": "Optional short chip label. If absent, load-custom-dataset derives one from type; built_from is always the tooltip."
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term"],
+        "properties": {
+          "term": { "type": "string" },
+          "counterpart": { "type": "string", "description": "Required for relational types (synonym/hypernym/hyponym)." },
+          "expected": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sku", "title"],
+            "description": "Required for one_to_one. The single product the term should retrieve.",
+            "properties": { "sku": { "type": "string" }, "title": { "type": "string" } }
+          },
+          "monthly_volume": { "type": ["integer", "null"], "minimum": 0 },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

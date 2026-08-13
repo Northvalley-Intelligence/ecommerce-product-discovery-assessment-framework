@@ -1,0 +1,229 @@
+{
+ "note": "Independent lexical-relevance baseline vs Cortex binary (grade>=2 relevant). AI/lexical labels, not human gold.",
+ "pairs": [
+  {
+   "query": "work boots",
+   "product": "Colorado Equip 6 Waterproof Composite Toe Wo",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "safety boots",
+   "product": "Threshold Waterproof Steel Toe Work Boot",
+   "grade": 3,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "work shoes",
+   "product": "Venward Composite Toe Work Shoe",
+   "grade": 3,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "safety shoes",
+   "product": "Streamline Court Mid Composite Toe Work Shoe",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "safety footwear",
+   "product": "Invader Max 6 Waterproof Composite Toe Work ",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "safety toe boots",
+   "product": "Excavator ft Power Spring Technology 6 Water",
+   "grade": 2,
+   "baseline_rel": 1,
+   "judge_rel": 1,
+   "agree": 1
+  },
+  {
+   "query": "sneakers",
+   "product": "Venward Composite Toe Work Shoe",
+   "grade": 0,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "athletic shoes",
+   "product": "Invader Hiker Waterproof Work Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "tennis shoes",
+   "product": "Intruder Shoe",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "running shoes",
+   "product": "ProRush Speed FX Shoe",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "boots",
+   "product": "Threshold Waterproof Work Boot",
+   "grade": 3,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "booties",
+   "product": "Rewrite Harness Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "ankle boots",
+   "product": "Tess Steel Toe Work Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "slip ons",
+   "product": "Revolver Steel Toe Work Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "loafers",
+   "product": "Invader Max 6 Waterproof Composite Toe Work ",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "shoes",
+   "product": "Streamline Court Mid Composite Toe Work Shoe",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "footwear",
+   "product": "Cat Footwear x both GAO Pioneer Boot",
+   "grade": 2,
+   "baseline_rel": 1,
+   "judge_rel": 1,
+   "agree": 1
+  },
+  {
+   "query": "oxfords",
+   "product": "Oxford Long Sleeve Shirt",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "hiking boots",
+   "product": "Invader Hiker Waterproof Composite Toe Work ",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "hikers",
+   "product": "Threshold Rebound Hiker Waterproof Work Boot",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "chelsea boots",
+   "product": "Grader Chelsea Boot",
+   "grade": 2,
+   "baseline_rel": 1,
+   "judge_rel": 1,
+   "agree": 1
+  },
+  {
+   "query": "pull on boots",
+   "product": "Revolver Steel Toe Work Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "slip on shoes",
+   "product": "Streamline 2.0 Leather Composite Toe Work Sh",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "casual shoes",
+   "product": "Threshold Chukka Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "casual sneakers",
+   "product": "Intruder Lightning Mesh Sneaker",
+   "grade": 2,
+   "baseline_rel": 0,
+   "judge_rel": 1,
+   "agree": 0
+  },
+  {
+   "query": "wellington boots",
+   "product": "Drawbar Pull-On Work Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "rubber boots",
+   "product": "Abbey Steel Toe Work Boot",
+   "grade": 1,
+   "baseline_rel": 0,
+   "judge_rel": 0,
+   "agree": 1
+  },
+  {
+   "query": "rain boots",
+   "product": "Essential Rain Jacket",
+   "grade": 1,
+   "baseline_rel": 1,
+   "judge_rel": 0,
+   "agree": 0
+  }
+ ]
+}

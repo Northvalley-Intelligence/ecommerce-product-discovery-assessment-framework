@@ -1,0 +1,30 @@
+{
+  "dataset": "furniture-search-v1",
+  "sector": "furniture",
+  "strategy_ref": "search: synonym-equivalence, attribute-material, job-function; guardrail: catalog-stocked",
+  "synonym": [
+    {"concept": "stool", "variants": ["counter stool", "bar stool", "kitchen stool"]},
+    {"concept": "accent chair", "variants": ["accent chair", "lounge chair", "armchair"]},
+    {"concept": "sofa", "variants": ["sofa", "couch", "settee", "loveseat"]},
+    {"concept": "side table", "variants": ["side table", "end table", "accent table"]},
+    {"concept": "coffee table", "variants": ["coffee table", "cocktail table"]},
+    {"concept": "sideboard", "variants": ["sideboard", "credenza", "buffet"]},
+    {"concept": "ottoman", "variants": ["ottoman", "pouf", "footstool"]},
+    {"concept": "dining chair", "variants": ["dining chair", "side chair"]},
+    {"concept": "desk", "variants": ["desk", "writing desk"]},
+    {"concept": "bench", "variants": ["bench", "entryway bench"]}
+  ],
+  "attribute": [
+    "walnut dining table", "oak dining table", "leather lounge chair", "leather dining chair",
+    "marble coffee table", "marble side table", "cane dining chair", "boucle chair",
+    "velvet chair", "black metal stool", "rattan chair", "woven dining chair"
+  ],
+  "job_function": [
+    "furnish a living room", "bar stools for a kitchen island", "home office", "dining set for 6",
+    "small space seating", "entryway furniture", "reading chair", "restaurant chairs", "outdoor seating"
+  ],
+  "head_terms": [
+    "dining chair", "counter stool", "bar stool", "accent chair", "lounge chair",
+    "dining table", "side table", "coffee table", "ottoman", "console table"
+  ]
+}

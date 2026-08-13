@@ -1,0 +1,1060 @@
+{
+ "generated_from": {
+  "board": "assessments/target/search-eval/SE-20260808/target-eval-board.json",
+  "demand": "assessments/target/search-eval/SE-20260808/demand-volume.json",
+  "eval_id": "SE-20260808",
+  "retailer": "target"
+ },
+ "disclaimer": "MODELED ESTIMATE from a bounded query sample using stated assumptions and REAL Keyword Planner volumes. Not audited revenue. A production figure needs Target's own query logs, traffic share, AOV and conversion. Reported as a range.",
+ "assumptions": {
+  "accept_grade": 2,
+  "months_per_year": 12,
+  "scenarios": {
+   "conservative": {
+    "market_share": 0.02,
+    "conversion_rate": 0.015,
+    "aov": 45
+   },
+   "base": {
+    "market_share": 0.035,
+    "conversion_rate": 0.025,
+    "aov": 60
+   },
+   "aggressive": {
+    "market_share": 0.05,
+    "conversion_rate": 0.035,
+    "aov": 75
+   }
+  },
+  "notes": {
+   "market_share": "Target's rough share of US general-merchandise online demand for a term; adjust per real traffic share.",
+   "conversion_rate": "Share of Target-bound shoppers who purchase when on-site search returns relevant results (site-search users convert above site average).",
+   "aov": "Target average order value in USD.",
+   "accept_grade": "A term grading >= 2.0/3 is treated as acceptable (no loss); below that, loss scales linearly to grade 0."
+  }
+ },
+ "coverage": {
+  "demand_terms": 83,
+  "graded_and_priced": 83,
+  "contributing_terms": 53
+ },
+ "annual_lost": {
+  "conservative": 70812,
+  "base": 275384,
+  "aggressive": 688459
+ },
+ "extrapolation": {
+  "method": "Average annual loss per demand-priced term (annual_lost / priced_terms) scaled to project_to terms.",
+  "basis_terms": 83,
+  "per_term_avg_annual": {
+   "conservative": 853,
+   "base": 3318,
+   "aggressive": 8295
+  },
+  "project_to": 1000,
+  "projected_annual": {
+   "conservative": 853000,
+   "base": 3318000,
+   "aggressive": 8295000
+  },
+  "caveat": "Illustrative projection: assumes the next 1000 search terms share a similar average demand and failure profile as the measured sample. Real query catalogs follow a long-tail demand distribution, so validate against actual query logs."
+ },
+ "per_term": [
+  {
+   "term": "popsicle",
+   "dataset": "synonym",
+   "volume": 201000,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 13513,
+    "base": 52551,
+    "aggressive": 131379
+   }
+  },
+  {
+   "term": "sweater",
+   "dataset": "synonym",
+   "volume": 246000,
+   "grade": 1.33,
+   "loss_fraction": 0.335,
+   "lost": {
+    "conservative": 13350,
+    "base": 51918,
+    "aggressive": 129796
+   }
+  },
+  {
+   "term": "jumper",
+   "dataset": "synonym",
+   "volume": 110000,
+   "grade": 1.5,
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 4455,
+    "base": 17325,
+    "aggressive": 43313
+   }
+  },
+  {
+   "term": "soda",
+   "dataset": "synonym",
+   "volume": 165000,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 4410,
+    "base": 17152,
+    "aggressive": 42879
+   }
+  },
+  {
+   "term": "tennis shoes",
+   "dataset": "synonym",
+   "volume": 135000,
+   "grade": 1.63,
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 4046,
+    "base": 15734,
+    "aggressive": 39336
+   }
+  },
+  {
+   "term": "remote control car",
+   "dataset": "synonym",
+   "volume": 135000,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 3609,
+    "base": 14033,
+    "aggressive": 35083
+   }
+  },
+  {
+   "term": "rc car",
+   "dataset": "synonym",
+   "volume": 135000,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 3609,
+    "base": 14033,
+    "aggressive": 35083
+   }
+  },
+  {
+   "term": "memory foam pillow",
+   "dataset": "attribute",
+   "volume": 49500,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 3328,
+    "base": 12942,
+    "aggressive": 32354
+   }
+  },
+  {
+   "term": "sneakers",
+   "dataset": "synonym",
+   "volume": 301000,
+   "grade": 1.88,
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 2926,
+    "base": 11378,
+    "aggressive": 28445
+   }
+  },
+  {
+   "term": "waterproof hiking boots",
+   "dataset": "attribute",
+   "volume": 33100,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 2225,
+    "base": 8654,
+    "aggressive": 21635
+   }
+  },
+  {
+   "term": "trainers",
+   "dataset": "synonym",
+   "volume": 22200,
+   "grade": 0.88,
+   "loss_fraction": 0.56,
+   "lost": {
+    "conservative": 2014,
+    "base": 7832,
+    "aggressive": 19580
+   }
+  },
+  {
+   "term": "soft drinks",
+   "dataset": "synonym",
+   "volume": 49500,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 1323,
+    "base": 5146,
+    "aggressive": 12864
+   }
+  },
+  {
+   "term": "settee",
+   "dataset": "synonym",
+   "volume": 27100,
+   "grade": 1.5,
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 1098,
+    "base": 4268,
+    "aggressive": 10671
+   }
+  },
+  {
+   "term": "healthy snacks for kids",
+   "dataset": "intent",
+   "volume": 40500,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 1083,
+    "base": 4210,
+    "aggressive": 10525
+   }
+  },
+  {
+   "term": "outfit for a job interview",
+   "dataset": "intent",
+   "volume": 14800,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 995,
+    "base": 3869,
+    "aggressive": 9674
+   }
+  },
+  {
+   "term": "gift for a new mom",
+   "dataset": "intent",
+   "volume": 14800,
+   "grade": 1.25,
+   "loss_fraction": 0.375,
+   "lost": {
+    "conservative": 899,
+    "base": 3497,
+    "aggressive": 8741
+   }
+  },
+  {
+   "term": "fleece lined leggings",
+   "dataset": "attribute",
+   "volume": 60500,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 833,
+    "base": 3240,
+    "aggressive": 8099
+   }
+  },
+  {
+   "term": "garbage can",
+   "dataset": "synonym",
+   "volume": 40500,
+   "grade": 1.75,
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 820,
+    "base": 3189,
+    "aggressive": 7973
+   }
+  },
+  {
+   "term": "nappies",
+   "dataset": "synonym",
+   "volume": 12100,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 813,
+    "base": 3164,
+    "aggressive": 7909
+   }
+  },
+  {
+   "term": "marble coffee table",
+   "dataset": "attribute",
+   "volume": 27100,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 724,
+    "base": 2817,
+    "aggressive": 7043
+   }
+  },
+  {
+   "term": "cutlery",
+   "dataset": "synonym",
+   "volume": 33100,
+   "grade": 1.75,
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 670,
+    "base": 2607,
+    "aggressive": 6517
+   }
+  },
+  {
+   "term": "pram",
+   "dataset": "synonym",
+   "volume": 22200,
+   "grade": 1.63,
+   "loss_fraction": 0.185,
+   "lost": {
+    "conservative": 665,
+    "base": 2587,
+    "aggressive": 6469
+   }
+  },
+  {
+   "term": "back to school supplies",
+   "dataset": "job_function",
+   "volume": 9900,
+   "grade": 1.25,
+   "loss_fraction": 0.375,
+   "lost": {
+    "conservative": 601,
+    "base": 2339,
+    "aggressive": 5847
+   }
+  },
+  {
+   "term": "pullover",
+   "dataset": "synonym",
+   "volume": 22200,
+   "grade": 1.75,
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 450,
+    "base": 1748,
+    "aggressive": 4371
+   }
+  },
+  {
+   "term": "organic cotton crib sheet",
+   "dataset": "attribute",
+   "volume": 5400,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 363,
+    "base": 1412,
+    "aggressive": 3530
+   }
+  },
+  {
+   "term": "cast iron skillet 12 inch",
+   "dataset": "attribute",
+   "volume": 4400,
+   "grade": 1.25,
+   "loss_fraction": 0.375,
+   "lost": {
+    "conservative": 267,
+    "base": 1040,
+    "aggressive": 2599
+   }
+  },
+  {
+   "term": "standing desk adjustable",
+   "dataset": "attribute",
+   "volume": 18100,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 249,
+    "base": 969,
+    "aggressive": 2423
+   }
+  },
+  {
+   "term": "warm coat for winter",
+   "dataset": "intent",
+   "volume": 2900,
+   "grade": 1.33,
+   "loss_fraction": 0.335,
+   "lost": {
+    "conservative": 157,
+    "base": 612,
+    "aggressive": 1530
+   }
+  },
+  {
+   "term": "home office setup",
+   "dataset": "job_function",
+   "volume": 2900,
+   "grade": 1.33,
+   "loss_fraction": 0.335,
+   "lost": {
+    "conservative": 157,
+    "base": 612,
+    "aggressive": 1530
+   }
+  },
+  {
+   "term": "walnut dining table",
+   "dataset": "attribute",
+   "volume": 6600,
+   "grade": 1.75,
+   "loss_fraction": 0.125,
+   "lost": {
+    "conservative": 134,
+    "base": 520,
+    "aggressive": 1299
+   }
+  },
+  {
+   "term": "start a garden",
+   "dataset": "job_function",
+   "volume": 1600,
+   "grade": 1,
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 130,
+    "base": 504,
+    "aggressive": 1260
+   }
+  },
+  {
+   "term": "first apartment essentials",
+   "dataset": "job_function",
+   "volume": 1900,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 128,
+    "base": 497,
+    "aggressive": 1242
+   }
+  },
+  {
+   "term": "ice lolly",
+   "dataset": "synonym",
+   "volume": 2900,
+   "grade": 1.5,
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 117,
+    "base": 457,
+    "aggressive": 1142
+   }
+  },
+  {
+   "term": "thanksgiving dinner table",
+   "dataset": "job_function",
+   "volume": 1600,
+   "grade": 1.17,
+   "loss_fraction": 0.415,
+   "lost": {
+    "conservative": 108,
+    "base": 418,
+    "aggressive": 1046
+   }
+  },
+  {
+   "term": "reusable stainless steel water bottle",
+   "dataset": "attribute",
+   "volume": 6600,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 91,
+    "base": 353,
+    "aggressive": 884
+   }
+  },
+  {
+   "term": "65 inch qled tv",
+   "dataset": "attribute",
+   "volume": 1600,
+   "grade": 1.33,
+   "loss_fraction": 0.335,
+   "lost": {
+    "conservative": 87,
+    "base": 338,
+    "aggressive": 844
+   }
+  },
+  {
+   "term": "gift for a dog lover",
+   "dataset": "intent",
+   "volume": 5400,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 74,
+    "base": 289,
+    "aggressive": 723
+   }
+  },
+  {
+   "term": "air fryer 8 quart",
+   "dataset": "attribute",
+   "volume": 1300,
+   "grade": 1.5,
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 53,
+    "base": 205,
+    "aggressive": 512
+   }
+  },
+  {
+   "term": "velvet accent chair",
+   "dataset": "attribute",
+   "volume": 4400,
+   "grade": 1.88,
+   "loss_fraction": 0.06,
+   "lost": {
+    "conservative": 43,
+    "base": 166,
+    "aggressive": 416
+   }
+  },
+  {
+   "term": "move into a new house",
+   "dataset": "job_function",
+   "volume": 390,
+   "grade": 0.67,
+   "loss_fraction": 0.665,
+   "lost": {
+    "conservative": 42,
+    "base": 163,
+    "aggressive": 408
+   }
+  },
+  {
+   "term": "rubbish bin",
+   "dataset": "synonym",
+   "volume": 480,
+   "grade": 1,
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 39,
+    "base": 151,
+    "aggressive": 378
+   }
+  },
+  {
+   "term": "set up a home theater",
+   "dataset": "job_function",
+   "volume": 390,
+   "grade": 1,
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 32,
+    "base": 123,
+    "aggressive": 307
+   }
+  },
+  {
+   "term": "cozy fall decor",
+   "dataset": "intent",
+   "volume": 480,
+   "grade": 1.5,
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 19,
+    "base": 76,
+    "aggressive": 189
+   }
+  },
+  {
+   "term": "high waisted black leggings",
+   "dataset": "attribute",
+   "volume": 1000,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 14,
+    "base": 54,
+    "aggressive": 134
+   }
+  },
+  {
+   "term": "gaming chair with lumbar support",
+   "dataset": "attribute",
+   "volume": 1000,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 14,
+    "base": 54,
+    "aggressive": 134
+   }
+  },
+  {
+   "term": "55 inch 4k oled tv",
+   "dataset": "attribute",
+   "volume": 390,
+   "grade": 1.71,
+   "loss_fraction": 0.145,
+   "lost": {
+    "conservative": 9,
+    "base": 36,
+    "aggressive": 89
+   }
+  },
+  {
+   "term": "gift for someone who loves coffee",
+   "dataset": "intent",
+   "volume": 320,
+   "grade": 1.67,
+   "loss_fraction": 0.165,
+   "lost": {
+    "conservative": 9,
+    "base": 33,
+    "aggressive": 83
+   }
+  },
+  {
+   "term": "blackout curtains 84 inch",
+   "dataset": "attribute",
+   "volume": 390,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 5,
+    "base": 21,
+    "aggressive": 52
+   }
+  },
+  {
+   "term": "rose gold desk lamp",
+   "dataset": "attribute",
+   "volume": 50,
+   "grade": 1,
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 4,
+    "base": 16,
+    "aggressive": 39
+   }
+  },
+  {
+   "term": "holiday party hosting",
+   "dataset": "job_function",
+   "volume": 90,
+   "grade": 1.5,
+   "loss_fraction": 0.25,
+   "lost": {
+    "conservative": 4,
+    "base": 14,
+    "aggressive": 35
+   }
+  },
+  {
+   "term": "organize my closet",
+   "dataset": "job_function",
+   "volume": 170,
+   "grade": 1.83,
+   "loss_fraction": 0.085,
+   "lost": {
+    "conservative": 2,
+    "base": 9,
+    "aggressive": 23
+   }
+  },
+  {
+   "term": "camping trip gear",
+   "dataset": "job_function",
+   "volume": 90,
+   "grade": 1.8,
+   "loss_fraction": 0.1,
+   "lost": {
+    "conservative": 1,
+    "base": 6,
+    "aggressive": 14
+   }
+  },
+  {
+   "term": "furnish a living room",
+   "dataset": "job_function",
+   "volume": 10,
+   "grade": 1,
+   "loss_fraction": 0.5,
+   "lost": {
+    "conservative": 1,
+    "base": 3,
+    "aggressive": 8
+   }
+  },
+  {
+   "term": "wireless noise cancelling headphones",
+   "dataset": "attribute",
+   "volume": 90500,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "trash can",
+   "dataset": "synonym",
+   "volume": 165000,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "stroller",
+   "dataset": "synonym",
+   "volume": 90500,
+   "grade": 2.5,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "stainless steel cookware set",
+   "dataset": "attribute",
+   "volume": 33100,
+   "grade": 2.67,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "stackable storage bins",
+   "dataset": "attribute",
+   "volume": 18100,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "something to help me sleep better",
+   "dataset": "intent",
+   "volume": 10,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "sofa",
+   "dataset": "synonym",
+   "volume": 201000,
+   "grade": 2.38,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "small space storage solutions",
+   "dataset": "job_function",
+   "volume": 1300,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "slow cooker",
+   "dataset": "synonym",
+   "volume": 90500,
+   "grade": 2.17,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "silverware",
+   "dataset": "synonym",
+   "volume": 27100,
+   "grade": 2.38,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "quilt",
+   "dataset": "synonym",
+   "volume": 135000,
+   "grade": 2.25,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "queen size cooling sheets",
+   "dataset": "attribute",
+   "volume": 260,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "pushchair",
+   "dataset": "synonym",
+   "volume": 1300,
+   "grade": 2.25,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "pop",
+   "dataset": "synonym",
+   "volume": 368000,
+   "grade": 2.5,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "nonstick frying pan",
+   "dataset": "attribute",
+   "volume": 14800,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "loveseat",
+   "dataset": "synonym",
+   "volume": 49500,
+   "grade": 2.88,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "home gym equipment",
+   "dataset": "job_function",
+   "volume": 90500,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "gift under 25 dollars",
+   "dataset": "intent",
+   "volume": 50,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "flatware",
+   "dataset": "synonym",
+   "volume": 14800,
+   "grade": 2.5,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "duvet",
+   "dataset": "synonym",
+   "volume": 110000,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "diapers",
+   "dataset": "synonym",
+   "volume": 165000,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "decorate a nursery",
+   "dataset": "intent",
+   "volume": 50,
+   "grade": 2.67,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "crockpot",
+   "dataset": "synonym",
+   "volume": 246000,
+   "grade": 2.17,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "couch",
+   "dataset": "synonym",
+   "volume": 550000,
+   "grade": 2.5,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "comforter",
+   "dataset": "synonym",
+   "volume": 110000,
+   "grade": 2.13,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "coffee table",
+   "dataset": "synonym",
+   "volume": 246000,
+   "grade": 2.25,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "cocktail table",
+   "dataset": "synonym",
+   "volume": 18100,
+   "grade": 2.13,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "bluetooth portable speaker",
+   "dataset": "attribute",
+   "volume": 1900,
+   "grade": 2,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "baby shower gifts",
+   "dataset": "job_function",
+   "volume": 33100,
+   "grade": 2.17,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  },
+  {
+   "term": "12 cup programmable coffee maker",
+   "dataset": "attribute",
+   "volume": 2900,
+   "grade": 2.33,
+   "loss_fraction": 0,
+   "lost": {
+    "conservative": 0,
+    "base": 0,
+    "aggressive": 0
+   }
+  }
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "grade_version": "1",
+ "retailer": "partscat",
+ "eval_id": "SE-20260812",
+ "captures_ref": "captures.json",
+ "graded_at": "2026-08-12T12:01:10.844Z",
+ "rubric_hash": "99a0e992a992",
+ "judge": {
+  "model": "llama3.2:3b",
+  "temperature": 0,
+  "endpoint": "http://127.0.0.1:7077"
+ },
+ "gold_validation": {
+  "pairs": 24,
+  "binary_agreement": 0.833,
+  "validated_at": "2026-08-12T12:01:10.844Z",
+  "known_bias": "Judge over-credits adjacent accessories as relevant to the base-product query: battery covers/cables and oil-filter covers/shields/bases were graded 2-3 when a shopper seeking the base product would reject them (grade 0). All disagreements are the judge being too lenient in this direction, so category-level scores are an OPTIMISTIC bound; the shallow-answer and use-case findings are conservative."
+ },
+ "partial": true,
+ "graded_count": 9,
+ "rows": [
+  {
+   "query_id": "partscat|heavy duty battery",
+   "q": "heavy duty battery",
+   "ndcg": null,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1
+   ],
+   "mean_grade": 2.67,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|oil filter",
+   "q": "oil filter",
+   "ndcg": 0.8387049725241668,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3
+   ],
+   "mean_grade": 2.1,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|bucket teeth",
+   "q": "bucket teeth",
+   "ndcg": 0.9226981151896108,
+   "grades": [
+    3,
+    1,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean_grade": 2,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|cutting edge",
+   "q": "cutting edge",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean_grade": 2,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|general duty battery",
+   "q": "general duty battery",
+   "ndcg": 0.9810450720877845,
+   "grades": [
+    3,
+    3,
+    2,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean_grade": 2.4,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|12 volt battery",
+   "q": "12 volt battery",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    3,
+    1,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "mean_grade": 2.56,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|oil filter for C15 engine",
+   "q": "oil filter for C15 engine",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    3,
+    2,
+    1,
+    2,
+    1
+   ],
+   "mean_grade": 1.78,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|bucket teeth for 336 excavator",
+   "q": "bucket teeth for 336 excavator",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean_grade": 2,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  },
+  {
+   "query_id": "partscat|battery for cold weather starting",
+   "q": "battery for cold weather starting",
+   "ndcg": 0.7849069177137045,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    0,
+    1
+   ],
+   "mean_grade": 1,
+   "job_id": "job_466e83ce-c4d1-462a-90d7-7a0af4f686a6"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+  "validation_run_id": "VAL-088",
+  "generation": "GEN-039",
+  "phase": "Furniture search relevance: Industry West (legacy WooCommerce) vs Seven Bonde (new Shopify) old-vs-new",
+  "started_at": "2026-08-06T00:00:00Z",
+  "completed_at": "2026-08-06T00:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_pass_1_of_2_second_pass_pending",
+  "validations_executed": [
+    {
+      "category": "Functional Validation - finding-to-evidence traceability review",
+      "tool": "findings.json review + live replay (curl Store API)",
+      "result": "pass",
+      "evidence": "All 9 GEN-039 findings (IW-SR-001..004, SB-SR-001..003, BOTH-SR-001, MIG-SR-001) embed a replayable evidence pointer: Industry West queries replay at https://www.industrywest.com/wp-json/wc/store/v1/products?search=<term> (verified live: Seating->0, piccolo->1); Seven Bonde queries replay via the site's own in-session Storefront search; per-(query,product) grades preserved in iw-ndcg-results.json / sb-ndcg-results.json. No claim without a link."
+    },
+    {
+      "category": "Relevance-judge trust (gold-set validation)",
+      "tool": "36-pair hand-labeled furniture gold set vs Cortex llama3.2:3b grades",
+      "result": "pass",
+      "evidence": "Binary relevant(>=2)/not(<=1) agreement 34/36 (94%); within-1 grade 36/36 (100%); exact 23/36 (64%); mean-grade bias +0.03. Only systematic error grades cross-category junk (lamp for 'dining table') as 1 not 0 - conservative for the SB-precision finding. gold-labels.json, judged-pairs.json; logged in validator-effectiveness.json."
+    },
+    {
+      "category": "Standing-claim correction",
+      "tool": "catalog-summary.json annotation",
+      "result": "pass",
+      "evidence": "WOO-20260730 'literal 4/4, intent 0/4' search-signal claim annotated at all 4 sites (search_signal, surfaces[1], findings[0], fix_plan.items[0]) as weakly grounded (intent queries were promo category labels like 'Under $500') and superseded by SE-20260713 IW-SR-001; raw EXP-001..008 calls retained unchanged; corrections log added."
+    },
+    {
+      "category": "Gate: validate + validate:gen13 + validate:dashboard + diff-check (pass 1)",
+      "tool": "npm run validate / validate:gen13 / validate:dashboard",
+      "result": "pass",
+      "evidence": "All three green (exit 0): validate 'Validation passed' (85 artifacts); GEN-013 validation passed (all); Dashboard validation passed. git diff --check clean. Pre-existing BDD-012 (independent evaluator calibration) warning is a known deferred item, not a regression."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Second independent gate pass",
+      "reason": "Pass 1 recorded here. Second clean pass with no implementation changes between is still required before any GEN-039 phase-exit claim; not yet performed."
+    },
+    {
+      "category": "Dashboard usability walkthrough of furniture evaluations",
+      "reason": "Evaluations not yet wired into the dashboard (sevenbonde not a target; Furniture sector lists only industrywest). Deferred to the UI-wiring slice."
+    },
+    {
+      "category": "Old-vs-new report PDF validation",
+      "reason": "Report deferred by operator until results validated; not produced this run."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    "IW-SR-001 (High): Industry West legacy search has no natural-language intent handling - 9/9 intent queries return zero; 64% of the 50-query pack zero-result.",
+    "IW-SR-002 (High): Industry West search is synonym-blind (guardrail-proven recall misses).",
+    "SB-SR-001 (High): Seven Bonde new search trades precision for recall - 39% of returned results not relevant (mean grade 1.78 vs IW 2.69); judge-validated."
+  ],
+  "notes": "Old-vs-new furniture search relevance focused on Industry West and the Seven Bonde Shopify store it is replatforming to (301 redirect confirmed; catalog re-hosted). Seven Bonde nearly doubles reach (38% zero-result vs 64%) but at a precision cost (39% junk); Industry West is precise-but-narrow (NDCG 0.944, 100% relevant when answered). Both fail natural-language intent and fine material attributes. MDE discipline restored after operator flagged an unlinked claim: evidence-backed findings recorded, judge gold-validated, standing weak claim corrected. Report and dashboard wiring deferred."
+}

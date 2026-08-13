@@ -1,0 +1,19 @@
+[
+ ["work boots","synonym"],["safety boots","synonym"],["sneakers","synonym"],["trainers","synonym"],
+ ["boots","synonym"],["booties","synonym"],["moccasins","synonym"],["slip ons","synonym"],
+ ["loafers","synonym"],["hiking boots","synonym"],["chelsea boots","synonym"],["winter boots","synonym"],
+ ["steel toe boots","attribute"],["composite toe boots","attribute"],["waterproof boots","attribute"],
+ ["insulated boots","attribute"],["slip resistant shoes","attribute"],["leather boots","attribute"],
+ ["suede boots","attribute"],["6 inch work boots","attribute"],["8 inch work boots","attribute"],
+ ["lightweight work boots","attribute"],["comfortable work boots","attribute"],["wide work boots","attribute"],
+ ["met guard boots","attribute"],["moc toe boots","attribute"],["waterproof work boots","attribute"],
+ ["boots for standing all day","job_function"],["work boots for concrete","job_function"],["boots for construction","job_function"],
+ ["boots for welding","job_function"],["boots for electricians","job_function"],["boots for logging","job_function"],
+ ["shoes for nurses","job_function"],["boots for hunting","job_function"],["boots for cold weather","job_function"],
+ ["boots for wide feet","job_function"],["boots for plantar fasciitis","job_function"],["boots for roofing","job_function"],
+ ["shoes for warehouse work","job_function"],
+ ["something waterproof for winter","intent"],["most comfortable work boots","intent"],["shoes to wear with jeans","intent"],
+ ["durable work boots","intent"],["best work boots","intent"],["boots that keep your feet dry","intent"],
+ ["comfortable steel toe boots for work","intent"],["warm waterproof winter boots","intent"],["work boots that last","intent"],
+ ["gift for a construction worker","intent"]
+]

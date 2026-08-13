@@ -1,0 +1,27 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "using_default_rubric": true,
+ "rows": [
+  {
+   "query_id": "sevenbonde|piccolo",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|Seating",
+   "ndcg": 0.9496822745711729,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2
+   ]
+  }
+ ]
+}

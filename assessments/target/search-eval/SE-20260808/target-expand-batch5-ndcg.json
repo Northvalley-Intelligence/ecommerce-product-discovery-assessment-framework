@@ -1,0 +1,122 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|keurig k mini",
+   "q": "keurig k mini",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|lego star wars",
+   "q": "lego star wars",
+   "ndcg": 0.8813713479538642,
+   "grades": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|instant pot",
+   "q": "instant pot",
+   "ndcg": 0.9943530767446811,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "target|nintendo switch",
+   "q": "nintendo switch",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    1
+   ]
+  },
+  {
+   "query_id": "target|bullseye dog toy",
+   "q": "bullseye dog toy",
+   "ndcg": 0.8114867284165843,
+   "grades": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|room essentials",
+   "q": "room essentials",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|figmint",
+   "q": "figmint",
+   "ndcg": 0.729577013935277,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|hearth and hand",
+   "q": "hearth and hand",
+   "ndcg": 0.9497990901961944,
+   "grades": [
+    3,
+    2,
+    3,
+    3,
+    3,
+    1
+   ]
+  },
+  {
+   "query_id": "target|all in motion",
+   "q": "all in motion",
+   "ndcg": 0.9454927011016723,
+   "grades": [
+    3,
+    2,
+    3,
+    3,
+    2,
+    3
+   ]
+  }
+ ]
+}

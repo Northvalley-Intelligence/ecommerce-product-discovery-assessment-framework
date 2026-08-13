@@ -1,0 +1,12 @@
+{
+  "schema_version": "sector-v0.1",
+  "sector_id": "footwear",
+  "name": "Footwear",
+  "description": "Footwear brands (work, outdoor, and lifestyle) evaluated on search relevance. Platforms vary — Shopify, Salesforce Commerce Cloud (Demandware), or custom. Search is read from the shopper-facing engine for a bounded query set: no crawling, no scraping, no server load. Query packs test product-type + attribute (waterproof, steel toe, leather), synonyms (sneakers/trainers), gender/size intent, and job/use-case intent (work boots for concrete, hiking).",
+  "shared_query_packs": [],
+  "member_sites": [
+    "catfootwear",
+    "timberlandpro"
+  ],
+  "domain": true
+}

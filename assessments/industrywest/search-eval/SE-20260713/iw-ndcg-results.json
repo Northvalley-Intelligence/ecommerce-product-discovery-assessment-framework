@@ -1,0 +1,766 @@
+[
+ {
+  "query_id": "industrywest|bench",
+  "ndcg": 0.8028641094528696,
+  "k": 4,
+  "grades": [
+   2,
+   2,
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|bench#9116",
+    "trace_id": "call_c4c468c0-478f-4b5c-837e-7fc9ea735d25",
+    "grade": 2,
+    "reason": "Correct type (bench) but not an ideal match due to 'puff' descriptor."
+   },
+   {
+    "product_id": "industrywest|bench#3452",
+    "trace_id": "call_07f7a2cd-d22d-4bea-a607-352e1f9cfbb8",
+    "grade": 2,
+    "reason": "Correct type (bench) but no 'seating' or 'furniture' context."
+   },
+   {
+    "product_id": "industrywest|bench#1738",
+    "trace_id": "call_466ee3a8-4ded-4b85-b4a9-52a1d6ccbbaa",
+    "grade": 3,
+    "reason": "Exact match: bench."
+   },
+   {
+    "product_id": "industrywest|bench#1289",
+    "trace_id": "call_6eb976c2-5075-4faf-8402-0a3b487f6c35",
+    "grade": 3,
+    "reason": "Exact match: bench."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|end table",
+  "ndcg": 0.8339912323981488,
+  "k": 2,
+  "grades": [
+   2,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|end table#15517",
+    "trace_id": "call_e1317269-bdff-45de-969a-affd6a5db143",
+    "grade": 2,
+    "reason": "Exact match: end table."
+   },
+   {
+    "product_id": "industrywest|end table#1586",
+    "trace_id": "call_3ee23cef-6208-434c-983a-c116a551441a",
+    "grade": 3,
+    "reason": "Exact match: end table."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|leather dining chair",
+  "ndcg": 0.8595003587096537,
+  "k": 4,
+  "grades": [
+   2,
+   3,
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|leather dining chair#8199",
+    "trace_id": "call_26bbcc6f-dac9-4a4c-bdd4-fb7fc50b31a4",
+    "grade": 2,
+    "reason": "Correct type (chair) but not exact match for leather."
+   },
+   {
+    "product_id": "industrywest|leather dining chair#4940",
+    "trace_id": "call_5b99cfc1-fc4b-4a66-9e9b-9717b8c6cadf",
+    "grade": 3,
+    "reason": "Exact match: leather dining chair."
+   },
+   {
+    "product_id": "industrywest|leather dining chair#3906",
+    "trace_id": "call_e00e68c9-2fab-4ccf-a091-f925ddf7b340",
+    "grade": 3,
+    "reason": "Exact match: leather dining chair."
+   },
+   {
+    "product_id": "industrywest|leather dining chair#3899",
+    "trace_id": "call_92537b76-4ea7-4598-92ed-077f27bb2332",
+    "grade": 3,
+    "reason": "Exact match: leather dining chair."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|coffee table",
+  "ndcg": 0.8825662322956437,
+  "k": 7,
+  "grades": [
+   2,
+   3,
+   3,
+   3,
+   3,
+   2,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|coffee table#16302",
+    "trace_id": "call_81365790-e3fd-4f69-80a2-5a5c67163b36",
+    "grade": 2,
+    "reason": "Correct type (coffee table) but no 'square' specified in query."
+   },
+   {
+    "product_id": "industrywest|coffee table#15111",
+    "trace_id": "call_3ecbe98e-6fe1-43a4-887d-43ed51ca24d7",
+    "grade": 3,
+    "reason": "Exact match: coffee table."
+   },
+   {
+    "product_id": "industrywest|coffee table#14923",
+    "trace_id": "call_e0d5996a-6a41-4ea4-b26c-4e77bc6bb3ac",
+    "grade": 3,
+    "reason": "Exact match: coffee table."
+   },
+   {
+    "product_id": "industrywest|coffee table#14915",
+    "trace_id": "call_5382b5fd-b6f4-4d36-a596-b5a433d3002d",
+    "grade": 3,
+    "reason": "Exact match: coffee table."
+   },
+   {
+    "product_id": "industrywest|coffee table#2838",
+    "trace_id": "call_5f55fed9-ee9a-4998-9cd0-40aeb0b33846",
+    "grade": 3,
+    "reason": "Exact match: coffee table."
+   },
+   {
+    "product_id": "industrywest|coffee table#1698",
+    "trace_id": "call_452f6aa5-e667-4c59-abf4-408da4089f32",
+    "grade": 2,
+    "reason": "Exact match: coffee table."
+   },
+   {
+    "product_id": "industrywest|coffee table#1565",
+    "trace_id": "call_7e30b70a-4366-49f8-9541-2a8d1072bd80",
+    "grade": 3,
+    "reason": "Exact match: coffee table."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|armchair",
+  "ndcg": 0.8840954816410714,
+  "k": 7,
+  "grades": [
+   2,
+   3,
+   3,
+   3,
+   3,
+   2,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|armchair#14701",
+    "trace_id": "call_639f15ba-c1b3-4095-961e-2d311a06a926",
+    "grade": 2,
+    "reason": "Correct type (armchair) but no 'chair' in title."
+   },
+   {
+    "product_id": "industrywest|armchair#14499",
+    "trace_id": "call_99c0dea5-9852-4f6b-9999-f6d780a3c85c",
+    "grade": 3,
+    "reason": "Exact match: armchair."
+   },
+   {
+    "product_id": "industrywest|armchair#12391",
+    "trace_id": "call_0aa610fb-db52-4fbd-94af-4fbca78f06df",
+    "grade": 3,
+    "reason": "Exact match: armchair."
+   },
+   {
+    "product_id": "industrywest|armchair#5229",
+    "trace_id": "call_3613394c-c2b2-465b-81d7-cc51ed05e763",
+    "grade": 3,
+    "reason": "Exact match: armchair."
+   },
+   {
+    "product_id": "industrywest|armchair#4833",
+    "trace_id": "call_fd21531c-eb16-44ad-83b8-00490d98c8f7",
+    "grade": 3,
+    "reason": "Exact match: armchair."
+   },
+   {
+    "product_id": "industrywest|armchair#4129",
+    "trace_id": "call_f368d652-a3c3-40f1-a4fc-7120e9364d7b",
+    "grade": 2,
+    "reason": "Correct type and size match; ideal but not exact match for 'armchair'."
+   },
+   {
+    "product_id": "industrywest|armchair#3942",
+    "trace_id": "call_d87817f7-59c9-43f0-a0eb-534a74e3be2d",
+    "grade": 2,
+    "reason": "Correct type (armchair) but not a perfect match for dining chair."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|bar stool",
+  "ndcg": 0.8963312190009367,
+  "k": 8,
+  "grades": [
+   2,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|bar stool#16357",
+    "trace_id": "call_f7229ba7-740f-45ee-b820-abbe9ee2b8de",
+    "grade": 2,
+    "reason": "Correct type (bar stool) but no 'stool' in title."
+   },
+   {
+    "product_id": "industrywest|bar stool#16308",
+    "trace_id": "call_2289b87f-fad8-4dd9-a09b-c2f71322ad00",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "industrywest|bar stool#16066",
+    "trace_id": "call_dc6d4908-c41a-4872-af59-2e5fd9aa8561",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "industrywest|bar stool#15542",
+    "trace_id": "call_1c271b81-d65a-4bc9-9831-748fe2caf710",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "industrywest|bar stool#15531",
+    "trace_id": "call_5b1f3e4f-0a0d-4080-b3c0-d12aa6fd8e1e",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "industrywest|bar stool#15501",
+    "trace_id": "call_dce4a8a7-d567-4cb5-8152-905511ee6adb",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "industrywest|bar stool#15382",
+    "trace_id": "call_27d25bd6-3394-4f5b-8002-5925cb31ed38",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   },
+   {
+    "product_id": "industrywest|bar stool#15181",
+    "trace_id": "call_96383b97-aa81-462d-9dca-f980be870f27",
+    "grade": 3,
+    "reason": "Exact match: bar stool."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|dining chair",
+  "ndcg": 0.9279988547869685,
+  "k": 8,
+  "grades": [
+   3,
+   2,
+   2,
+   3,
+   2,
+   2,
+   3,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|dining chair#16282",
+    "trace_id": "call_1645eb3c-3fea-41b1-aca3-a79d7b961b0c",
+    "grade": 3,
+    "reason": "Exact match: dining chair."
+   },
+   {
+    "product_id": "industrywest|dining chair#15876",
+    "trace_id": "call_f7f600e0-5aca-4624-abad-2fb637987074",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match due to specific style and material."
+   },
+   {
+    "product_id": "industrywest|dining chair#15341",
+    "trace_id": "call_a88deb5d-6ac8-4af2-92ab-27766d85baee",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match due to material and color variation."
+   },
+   {
+    "product_id": "industrywest|dining chair#14163",
+    "trace_id": "call_b10a0ff6-7d20-48c0-b507-152616794381",
+    "grade": 3,
+    "reason": "Exact match: dining chair."
+   },
+   {
+    "product_id": "industrywest|dining chair#9304",
+    "trace_id": "call_226435fc-b123-4de1-b9c1-ca2a4ff3aaa5",
+    "grade": 2,
+    "reason": "Correct type and size but not an ideal match for a generic dining chair."
+   },
+   {
+    "product_id": "industrywest|dining chair#8199",
+    "trace_id": "call_538aad7c-edd0-46f1-958b-eb73b428d358",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match due to specific details."
+   },
+   {
+    "product_id": "industrywest|dining chair#7737",
+    "trace_id": "call_6deda97c-ace8-4b44-ae41-32d81e25b4b9",
+    "grade": 3,
+    "reason": "Exact match: dining chair."
+   },
+   {
+    "product_id": "industrywest|dining chair#5454",
+    "trace_id": "call_651ad172-7ffe-4d69-8249-8a8def451045",
+    "grade": 2,
+    "reason": "Correct type (chair) but not an ideal match; 'dining' implies a specific setting or style."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|lounge chair",
+  "ndcg": 0.9619139380553317,
+  "k": 8,
+  "grades": [
+   3,
+   3,
+   2,
+   2,
+   3,
+   2,
+   3,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|lounge chair#15670",
+    "trace_id": "call_54e5736f-c5ae-4c7b-b916-ec2d2d191ff5",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15662",
+    "trace_id": "call_b09f06de-0995-4d46-9d9b-2a1a010edbb7",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15655",
+    "trace_id": "call_d8a2788d-a28e-47ed-a4ed-dcd4d45d03ec",
+    "grade": 2,
+    "reason": "Satisfies intent but is not an ideal match; exact word 'lounge' present."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15640",
+    "trace_id": "call_401f53f6-17d6-408f-bf92-5c80e18d2a58",
+    "grade": 2,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15571",
+    "trace_id": "call_676f3618-cde4-444f-8331-b02eebab35ce",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15565",
+    "trace_id": "call_075c298a-d611-433b-b053-b61fb65c1f1d",
+    "grade": 2,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15560",
+    "trace_id": "call_1896a45c-e96b-4313-9aea-2117bea6aa5b",
+    "grade": 3,
+    "reason": "Exact match: lounge chair."
+   },
+   {
+    "product_id": "industrywest|lounge chair#15262",
+    "trace_id": "call_aa6a66a9-96ec-4e47-a224-0efe262d96b2",
+    "grade": 2,
+    "reason": "Correct type (lounge chair) but no 'lounge' in description."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|side table",
+  "ndcg": 0.9698433920840522,
+  "k": 8,
+  "grades": [
+   3,
+   3,
+   2,
+   3,
+   2,
+   2,
+   3,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|side table#16300",
+    "trace_id": "call_4632ac93-a8a9-41b7-866b-d34c2127f6a9",
+    "grade": 3,
+    "reason": "Exact match: side table."
+   },
+   {
+    "product_id": "industrywest|side table#14723",
+    "trace_id": "call_71abb921-3bed-427c-b7f9-29d33da31053",
+    "grade": 3,
+    "reason": "Exact match: side table."
+   },
+   {
+    "product_id": "industrywest|side table#14659",
+    "trace_id": "call_a1fd6c84-b141-48fd-a4e9-8320de123a3c",
+    "grade": 2,
+    "reason": "Exact match: side table."
+   },
+   {
+    "product_id": "industrywest|side table#14369",
+    "trace_id": "call_97c2b4c6-a3cd-48dc-a252-a1e337a4546b",
+    "grade": 3,
+    "reason": "Exact match: side table."
+   },
+   {
+    "product_id": "industrywest|side table#14209",
+    "trace_id": "call_808d6308-befc-473b-86ba-ed0872848e45",
+    "grade": 2,
+    "reason": "Correct side table type but no specific size or material matches."
+   },
+   {
+    "product_id": "industrywest|side table#14202",
+    "trace_id": "call_c6688c35-d7f9-4f7e-80af-33b0e4a18653",
+    "grade": 2,
+    "reason": "Correct type (side table) but no size information."
+   },
+   {
+    "product_id": "industrywest|side table#9480",
+    "trace_id": "call_53c3d3ea-b488-4b24-ade1-a1e0c607844a",
+    "grade": 3,
+    "reason": "Exact match: side table."
+   },
+   {
+    "product_id": "industrywest|side table#3029",
+    "trace_id": "call_238d51ca-5395-46b7-9bd8-413ad575c55c",
+    "grade": 2,
+    "reason": "Correct side table type but no 'table' in title."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|counter stool",
+  "ndcg": 0.9720532509927219,
+  "k": 8,
+  "grades": [
+   3,
+   3,
+   2,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|counter stool#16474",
+    "trace_id": "call_2d644630-de0b-4b93-a622-bcf450fc935a",
+    "grade": 3,
+    "reason": "Exact match for counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#16315",
+    "trace_id": "call_24e3195b-4495-4066-8714-4e1326abedd6",
+    "grade": 3,
+    "reason": "Exact match for counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#16116",
+    "trace_id": "call_b0c727a4-06bc-4082-b3d5-a74e96facb35",
+    "grade": 2,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#15582",
+    "trace_id": "call_31a0ea54-162f-49c9-baf4-fc9e49d9520b",
+    "grade": 3,
+    "reason": "Exact match for counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#15029",
+    "trace_id": "call_02b12075-697d-401f-aa35-d445577435a8",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#14454",
+    "trace_id": "call_647ec19c-56fe-4b15-95f7-9ad72f42a757",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#728",
+    "trace_id": "call_8b2915a8-e4f3-4e8c-9686-0835d50b1005",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   },
+   {
+    "product_id": "industrywest|counter stool#383",
+    "trace_id": "call_a4029633-8552-41fb-9c05-e7be3e751133",
+    "grade": 3,
+    "reason": "Exact match: counter stool."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|sideboard",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|sideboard#1309",
+    "trace_id": "call_f1caa77c-52f5-41ce-ac47-bf3e952fed12",
+    "grade": 3,
+    "reason": "Exact match: sideboard."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|ottoman",
+  "ndcg": 1,
+  "k": 4,
+  "grades": [
+   3,
+   3,
+   2,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|ottoman#10231",
+    "trace_id": "call_1a067db6-fc42-4bec-b817-0815bcefdd65",
+    "grade": 3,
+    "reason": "Exact match: ottoman."
+   },
+   {
+    "product_id": "industrywest|ottoman#9173",
+    "trace_id": "call_573b1238-4b6c-4e08-953c-43c0eaae8c1b",
+    "grade": 3,
+    "reason": "Exact match: ottoman."
+   },
+   {
+    "product_id": "industrywest|ottoman#9067",
+    "trace_id": "call_833bb228-e69e-42c2-9a59-d5103b0a22ad",
+    "grade": 2,
+    "reason": "Exact match: ottoman."
+   },
+   {
+    "product_id": "industrywest|ottoman#8244",
+    "trace_id": "call_2b06341c-a2a7-4eb6-a37c-7f2d9c2cce85",
+    "grade": 2,
+    "reason": "Correct type (ottoman) but not a traditional footstool."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|pouf",
+  "ndcg": 1,
+  "k": 3,
+  "grades": [
+   3,
+   3,
+   2
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|pouf#15094",
+    "trace_id": "call_d0584de0-d23e-43a2-9d8a-4b229fad64c3",
+    "grade": 3,
+    "reason": "Exact match: pouf."
+   },
+   {
+    "product_id": "industrywest|pouf#14873",
+    "trace_id": "call_445f0875-40bc-45b6-8ad7-47935a554656",
+    "grade": 3,
+    "reason": "Exact match: pouf."
+   },
+   {
+    "product_id": "industrywest|pouf#10231",
+    "trace_id": "call_f8defe28-3717-46fb-9bb2-aaff383834f2",
+    "grade": 2,
+    "reason": "Correct type (ottoman) but not a pouf."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|side chair",
+  "ndcg": 1,
+  "k": 2,
+  "grades": [
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|side chair#16326",
+    "trace_id": "call_e7951a08-4c06-4f27-833c-1b9af4ac5d8e",
+    "grade": 3,
+    "reason": "Exact match: side chair."
+   },
+   {
+    "product_id": "industrywest|side chair#3948",
+    "trace_id": "call_88e5eccd-e47d-4fb6-b7d1-8e01d85fc9e5",
+    "grade": 3,
+    "reason": "Exact match: side chair."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|leather lounge chair",
+  "ndcg": 1,
+  "k": 2,
+  "grades": [
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|leather lounge chair#5276",
+    "trace_id": "call_946b9c3a-d161-4f19-ac3e-41b5d06cefc4",
+    "grade": 3,
+    "reason": "Exact match: leather lounge chair."
+   },
+   {
+    "product_id": "industrywest|leather lounge chair#2684",
+    "trace_id": "call_ffa97391-a6f2-46ee-94d0-99655e578cbf",
+    "grade": 3,
+    "reason": "Exact match: leather lounge chair."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|marble side table",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|marble side table#1658",
+    "trace_id": "call_f95b9144-2627-4f0d-8060-14ca914461f2",
+    "grade": 3,
+    "reason": "Exact match: marble side table."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|dining table",
+  "ndcg": 1,
+  "k": 8,
+  "grades": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|dining table#16298",
+    "trace_id": "call_70126f36-fd4e-4a1f-b3cd-d1a9cdbf352a",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#15204",
+    "trace_id": "call_e6e92244-ca67-4032-bd06-d400c320d118",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#14258",
+    "trace_id": "call_3e4fa0de-3d78-4d04-91e8-44470eadfae4",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#8926",
+    "trace_id": "call_9552249a-4695-406d-b281-e3f7386166ef",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#3864",
+    "trace_id": "call_888765c3-add9-4fbf-8324-ae9c18137dbc",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#3806",
+    "trace_id": "call_ce2936f3-07a1-4b3e-8a14-4b1d4539af9c",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#3664",
+    "trace_id": "call_8c58b806-957d-4552-8bd0-b72557c57e9b",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   },
+   {
+    "product_id": "industrywest|dining table#3648",
+    "trace_id": "call_678cec60-9bd7-44d0-9238-9df44ceedc8d",
+    "grade": 3,
+    "reason": "Exact match: dining table."
+   }
+  ]
+ },
+ {
+  "query_id": "industrywest|console table",
+  "ndcg": 1,
+  "k": 1,
+  "grades": [
+   3
+  ],
+  "judgments": [
+   {
+    "product_id": "industrywest|console table#8552",
+    "trace_id": "call_ee6e420e-723e-4cd0-907b-df9cf12a1aee",
+    "grade": 3,
+    "reason": "Exact match: console table."
+   }
+  ]
+ }
+]

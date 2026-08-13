@@ -1,0 +1,44 @@
+{
+ "profile_version": "1",
+ "retailer": "partscat",
+ "eval_id": "SE-20260812",
+ "profiled_at": "2026-08-12T08:00:00.000Z",
+ "platform": "enterprise_custom",
+ "engine": {
+  "kind": "browser_dom",
+  "url_template": "https://parts.cat.com/en/catcorp/search?q={q}&p_page=1",
+  "method": "GET",
+  "results_path": "a[href*='/product/']",
+  "title_path": "anchor text, format '<PART#>: <name>'",
+  "total_path": "body text /of (\\d+) results/ when server-rendered; otherwise the organic tile count",
+  "excludes_sponsored": true,
+  "carousel_exclusions": ["Reference Parts Diagram inline tile", "Add Equipment inline promo tile"]
+ },
+ "verified_against_live_ui": {
+  "control_terms": [
+   {
+    "term": "heavy duty battery",
+    "live_count": 132,
+    "profiled_count": 132,
+    "profiled_top3": ["153-5720: Heavy Duty Battery"]
+   }
+  ],
+  "matches": true,
+  "checked_at": "2026-08-12T08:00:00.000Z",
+  "notes": "Control verified on result COUNT parity: the profiled same-origin fetch returns 132 for 'heavy duty battery', identical to the live UI ('1-16 of 132 results'). The full-text search page server-renders its organic grid (16-132 tiles observed for category terms), so a 0-tile fetch is a genuine empty, not a client-render miss. Ordering spot-check pending."
+ },
+ "pacing": {
+  "min_interval_ms": 10000,
+  "chunk_size": 3,
+  "cooldown_ms": 2700000,
+  "identity": "single_session",
+  "user_agent": "Chrome (real browser, same-origin fetch)"
+ },
+ "known_redirects": [],
+ "catalog_available": true,
+ "limitations": [
+  "The /search results page is hardened by Akamai: full-page NAVIGATION to /search?q= is Access-Denied after light use, and cumulative same-origin fetches trip a durable rate-limit (>15 min). Capture done via same-origin fetch at >=10s spacing, single session, with explicit Access-Denied detection so a block is never mis-recorded as a zero-result.",
+  "Result count is client-rendered on the search page; the server-rendered organic tile count is used as total. Verified equal to the live UI count on the control term.",
+  "Batch limited to 15 representative terms (not the full 69-term pack) to respect the bot protection. Part-number rows all returned a genuine 0 (not blocked), corroborated by the typeahead returning 'no suggested results' for 1R-1808."
+ ]
+}

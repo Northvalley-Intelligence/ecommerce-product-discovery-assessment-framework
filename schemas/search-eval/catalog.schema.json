@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/catalog.schema.json",
+  "title": "Search-Eval Catalog Capture",
+  "description": "The retailer's own taxonomy: category nodes, the facet values each exposes, and the SKUs behind them. Produced by the catalog-capture stage; consumed by category-recall-dataset to build answer keys, and by every stage that needs the catalog guardrail (L04).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["catalog_version", "retailer", "captured_at", "source", "facet_provenance", "nodes"],
+  "properties": {
+    "catalog_version": { "const": "1" },
+    "retailer": { "type": "string" },
+    "eval_id": { "type": "string" },
+    "captured_at": { "type": "string", "format": "date-time" },
+
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "base_url"],
+      "properties": {
+        "method": { "enum": ["sitemap", "nav_crawl", "plp_json", "catalog_api", "manual"] },
+        "base_url": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+
+    "facet_provenance": {
+      "description": "L05 circularity guard. If facets were assigned by a text classifier over product titles and search indexes those same titles, recall measures the classifier agreeing with itself. Answer keys built on 'text_classifier' or 'unknown' provenance must be marked low confidence.",
+      "enum": ["merchandiser", "supplier_feed", "manual_review", "text_classifier", "unknown"]
+    },
+
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_id", "node_name", "depth", "sku_count"],
+        "properties": {
+          "node_id": { "type": "string" },
+          "node_name": { "type": "string" },
+          "parent_id": { "type": ["string", "null"] },
+          "depth": { "type": "integer", "minimum": 0 },
+          "url": { "type": "string" },
+          "sku_count": { "type": "integer", "minimum": 0 },
+          "singular": {
+            "type": "string",
+            "description": "Node name in the form a shopper types it ('chair' not 'Chairs'). Used to synthesize queries."
+          }
+        }
+      }
+    },
+
+    "facets": {
+      "type": "array",
+      "description": "Filter rails per node. A facet value plus its node is a query with a known answer.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_id", "facet", "values"],
+        "properties": {
+          "node_id": { "type": "string" },
+          "facet": { "type": "string" },
+          "cross_cutting": {
+            "type": "boolean",
+            "description": "True when the facet spans sibling nodes (closure: slip-on covers loafers, mules, slides). L07 - these produce node_attr relations, never node equivalences."
+          },
+          "null_rate": {
+            "type": "number", "minimum": 0, "maximum": 1,
+            "description": "Share of the node's SKUs with no value for this facet. L02 - a hollow key inverts the precision reading. Above 0.30 the facet must not produce answer keys."
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["value", "count"],
+              "properties": {
+                "value": { "type": "string" },
+                "count": { "type": "integer", "minimum": 0 },
+                "skus": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "sibling_blocklist": {
+      "type": "array",
+      "description": "L06. Node pairs sharing a parent, emitted so no downstream stage can propose them as synonyms (loafers/oxfords).",
+      "items": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+
+    "skus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sku", "title"],
+        "properties": {
+          "sku": { "type": "string" },
+          "title": { "type": "string" },
+          "node_ids": { "type": "array", "items": { "type": "string" } },
+          "attrs": { "type": "object" }
+        }
+      }
+    },
+
+    "limitations": {
+      "type": "array",
+      "description": "What could not be captured and why. Enterprise stores usually expose no catalog API; say so rather than implying full coverage.",
+      "items": { "type": "string" }
+    }
+  }
+}

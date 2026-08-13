@@ -1,0 +1,2528 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "catfootwear|work boots",
+   "q": "work boots",
+   "ndcg": 0.8152700088877877,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|safety boots",
+   "q": "safety boots",
+   "ndcg": 0.9920705459712793,
+   "grades": [
+    3,
+    3,
+    3,
+    2,
+    3,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work shoes",
+   "q": "work shoes",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|sneakers",
+   "q": "sneakers",
+   "ndcg": 0.9908183105074706,
+   "grades": [
+    3,
+    3,
+    3,
+    2,
+    3,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "query_id": "catfootwear|athletic shoes",
+   "q": "athletic shoes",
+   "ndcg": 0.794020039556244,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots",
+   "q": "boots",
+   "ndcg": 0.8163478217165869,
+   "grades": [
+    1,
+    3,
+    3,
+    3,
+    3,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|booties",
+   "q": "booties",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|slip ons",
+   "q": "slip ons",
+   "ndcg": 0.8954851406720049,
+   "grades": [
+    2,
+    3,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|loafers",
+   "q": "loafers",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|hiking boots",
+   "q": "hiking boots",
+   "ndcg": 0.9462188766685263,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|chelsea boots",
+   "q": "chelsea boots",
+   "ndcg": 0.8376350975325719,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|pull on boots",
+   "q": "pull on boots",
+   "ndcg": 0.8856840304232945,
+   "grades": [
+    2,
+    3,
+    2,
+    2,
+    1,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|steel toe boots",
+   "q": "steel toe boots",
+   "ndcg": 0.8377866979883029,
+   "grades": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|composite toe boots",
+   "q": "composite toe boots",
+   "ndcg": 0.9914638783875913,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof boots",
+   "q": "waterproof boots",
+   "ndcg": 0.8761270765748778,
+   "grades": [
+    2,
+    3,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|insulated boots",
+   "q": "insulated boots",
+   "ndcg": 0.9671337605094592,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|slip resistant shoes",
+   "q": "slip resistant shoes",
+   "ndcg": 0.9872856029898416,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|leather boots",
+   "q": "leather boots",
+   "ndcg": 0.7432757556704473,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|suede shoes",
+   "q": "suede shoes",
+   "ndcg": 0.7967075809905066,
+   "grades": [
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|brown work boots",
+   "q": "brown work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|black boots",
+   "q": "black boots",
+   "ndcg": 0.8780823135055782,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|comfortable work boots",
+   "q": "comfortable work boots",
+   "ndcg": 0.822571826840432,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for standing all day",
+   "q": "boots for standing all day",
+   "ndcg": 0.7967075809905066,
+   "grades": [
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots for concrete",
+   "q": "work boots for concrete",
+   "ndcg": 0.7912855055883606,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|shoes for warehouse work",
+   "q": "shoes for warehouse work",
+   "ndcg": 0.8076802113567356,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    3,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for construction",
+   "q": "boots for construction",
+   "ndcg": 0.9193992651400302,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    3,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for cold weather",
+   "q": "boots for cold weather",
+   "ndcg": 0.8043623794052986,
+   "grades": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|casual shoes for everyday",
+   "q": "casual shoes for everyday",
+   "ndcg": 0.7229919015646842,
+   "grades": [
+    0,
+    2,
+    2,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "query_id": "catfootwear|gift for a construction worker",
+   "q": "gift for a construction worker",
+   "ndcg": 1,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|most comfortable work boots",
+   "q": "most comfortable work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|colorado",
+   "q": "colorado",
+   "ndcg": 0.997293928323317,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|invader",
+   "q": "invader",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|threshold",
+   "q": "threshold",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|wheelbase",
+   "q": "wheelbase",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|excavator",
+   "q": "excavator",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|diagnostic",
+   "q": "diagnostic",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|safety shoes",
+   "q": "safety shoes",
+   "ndcg": 0.8376350975325719,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|safety footwear",
+   "q": "safety footwear",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|safety toe boots",
+   "q": "safety toe boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|tennis shoes",
+   "q": "tennis shoes",
+   "ndcg": 0.8614060856064432,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|running shoes",
+   "q": "running shoes",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|ankle boots",
+   "q": "ankle boots",
+   "ndcg": 0.9304889064707405,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|shoes",
+   "q": "shoes",
+   "ndcg": 0.8066746447756221,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|footwear",
+   "q": "footwear",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|oxfords",
+   "q": "oxfords",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|hikers",
+   "q": "hikers",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|slip on shoes",
+   "q": "slip on shoes",
+   "ndcg": 0.8826588581321799,
+   "grades": [
+    2,
+    3,
+    2,
+    1,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|casual shoes",
+   "q": "casual shoes",
+   "ndcg": 0.7660407195379345,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|casual sneakers",
+   "q": "casual sneakers",
+   "ndcg": 0.9824494486189317,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|wellington boots",
+   "q": "wellington boots",
+   "ndcg": 0.9512488625083206,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|rubber boots",
+   "q": "rubber boots",
+   "ndcg": 0.8300430609104288,
+   "grades": [
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|rain boots",
+   "q": "rain boots",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|winter boots",
+   "q": "winter boots",
+   "ndcg": 0.9333544597064833,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|snow boots",
+   "q": "snow boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|high tops",
+   "q": "high tops",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|low tops",
+   "q": "low tops",
+   "ndcg": null,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|soft toe boots",
+   "q": "soft toe boots",
+   "ndcg": 0.9927436766230373,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|alloy toe boots",
+   "q": "alloy toe boots",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof work boots",
+   "q": "waterproof work boots",
+   "ndcg": 1,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof hiking boots",
+   "q": "waterproof hiking boots",
+   "ndcg": 0.995668977923683,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof leather boots",
+   "q": "waterproof leather boots",
+   "ndcg": 0.8780823135055782,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|insulated work boots",
+   "q": "insulated work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|thinsulate boots",
+   "q": "thinsulate boots",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|slip resistant boots",
+   "q": "slip resistant boots",
+   "ndcg": 0.9438147924866596,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|non slip work shoes",
+   "q": "non slip work shoes",
+   "ndcg": 0.9927436766230373,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|non slip shoes",
+   "q": "non slip shoes",
+   "ndcg": 0.9835910499356318,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|oil resistant boots",
+   "q": "oil resistant boots",
+   "ndcg": 0.8120537680664075,
+   "grades": [
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|electrical hazard boots",
+   "q": "electrical hazard boots",
+   "ndcg": 0.8646414696109002,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|leather work boots",
+   "q": "leather work boots",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|full grain leather boots",
+   "q": "full grain leather boots",
+   "ndcg": null,
+   "grades": [
+    2,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|suede boots",
+   "q": "suede boots",
+   "ndcg": 0.9550337350142764,
+   "grades": [
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|nubuck boots",
+   "q": "nubuck boots",
+   "ndcg": 0.757273021239687,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|canvas shoes",
+   "q": "canvas shoes",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|mesh work shoes",
+   "q": "mesh work shoes",
+   "ndcg": 0.9903436576699108,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|black work boots",
+   "q": "black work boots",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|tan work boots",
+   "q": "tan work boots",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|brown boots",
+   "q": "brown boots",
+   "ndcg": null,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|tan boots",
+   "q": "tan boots",
+   "ndcg": null,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|gray shoes",
+   "q": "gray shoes",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|8 inch work boots",
+   "q": "8 inch work boots",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|high top boots",
+   "q": "high top boots",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|low top shoes",
+   "q": "low top shoes",
+   "ndcg": null,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|mid boots",
+   "q": "mid boots",
+   "ndcg": null,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|lightweight work boots",
+   "q": "lightweight work boots",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|wide work boots",
+   "q": "wide work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|wide width boots",
+   "q": "wide width boots",
+   "ndcg": 0.8646414696109002,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|extra wide boots",
+   "q": "extra wide boots",
+   "ndcg": 0.8660565059782684,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|memory foam work boots",
+   "q": "memory foam work boots",
+   "ndcg": 0.9968175761774197,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|cushioned work boots",
+   "q": "cushioned work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|pull on work boots",
+   "q": "pull on work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|lace up work boots",
+   "q": "lace up work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|side zip boots",
+   "q": "side zip boots",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|wedge sole boots",
+   "q": "wedge sole boots",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|moc toe boots",
+   "q": "moc toe boots",
+   "ndcg": 0.8737708092690093,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof slip on shoes",
+   "q": "waterproof slip on shoes",
+   "ndcg": 0.9872856029898416,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|insulated waterproof boots",
+   "q": "insulated waterproof boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|steel toe waterproof boots",
+   "q": "steel toe waterproof boots",
+   "ndcg": 0.8738997242466332,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|composite toe waterproof boots",
+   "q": "composite toe waterproof boots",
+   "ndcg": 0.9753351005266797,
+   "grades": [
+    3,
+    3,
+    3,
+    2,
+    2,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|breathable work shoes",
+   "q": "breathable work shoes",
+   "ndcg": 0.979480466139167,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|vented work boots",
+   "q": "vented work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|slip resistant work shoes",
+   "q": "slip resistant work shoes",
+   "ndcg": 0.973854361986135,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof composite toe boots",
+   "q": "waterproof composite toe boots",
+   "ndcg": 0.8738997242466332,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|steel toe sneakers",
+   "q": "steel toe sneakers",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|steel toe work shoes",
+   "q": "steel toe work shoes",
+   "ndcg": 0.9879280905991236,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|lightweight steel toe boots",
+   "q": "lightweight steel toe boots",
+   "ndcg": 0.8271738649857175,
+   "grades": [
+    1,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|comfortable steel toe boots",
+   "q": "comfortable steel toe boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof steel toe boots",
+   "q": "waterproof steel toe boots",
+   "ndcg": 0.8738997242466332,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|rubber work boots",
+   "q": "rubber work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|chelsea work boots",
+   "q": "chelsea work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for roofing",
+   "q": "boots for roofing",
+   "ndcg": 0.8477124695070238,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for electricians",
+   "q": "boots for electricians",
+   "ndcg": 0.849166140273265,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for farm work",
+   "q": "boots for farm work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for oil field work",
+   "q": "boots for oil field work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for snow",
+   "q": "boots for snow",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for rain",
+   "q": "boots for rain",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots for men",
+   "q": "work boots for men",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots for women",
+   "q": "work boots for women",
+   "ndcg": 0.8043623794052986,
+   "grades": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for wide feet",
+   "q": "boots for wide feet",
+   "ndcg": 0.8434470221659147,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|comfortable boots for walking",
+   "q": "comfortable boots for walking",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for factory work",
+   "q": "boots for factory work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for mechanics",
+   "q": "boots for mechanics",
+   "ndcg": 0.8614060856064432,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for backpacking",
+   "q": "boots for backpacking",
+   "ndcg": 0.7637009963065609,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work shoes for warehouse",
+   "q": "work shoes for warehouse",
+   "ndcg": 0.8564163139603979,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for utility work",
+   "q": "boots for utility work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for railroad work",
+   "q": "boots for railroad work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for wet conditions",
+   "q": "boots for wet conditions",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for outdoor work",
+   "q": "boots for outdoor work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for heavy duty work",
+   "q": "boots for heavy duty work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work shoes for long shifts",
+   "q": "work shoes for long shifts",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for ranch work",
+   "q": "boots for ranch work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for construction workers",
+   "q": "boots for construction workers",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for cold wet weather",
+   "q": "boots for cold wet weather",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots for flat feet",
+   "q": "work boots for flat feet",
+   "ndcg": 0.9968175761774197,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for wet job sites",
+   "q": "boots for wet job sites",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots that keep your feet dry",
+   "q": "boots that keep your feet dry",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots that dont hurt",
+   "q": "work boots that dont hurt",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|everyday work shoes",
+   "q": "everyday work shoes",
+   "ndcg": 0.9436519670633526,
+   "grades": [
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|comfortable shoes for long shifts",
+   "q": "comfortable shoes for long shifts",
+   "ndcg": 0.9807710461847231,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|warm boots for winter",
+   "q": "warm boots for winter",
+   "ndcg": 0.9968175761774197,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|durable work boots",
+   "q": "durable work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|affordable work boots",
+   "q": "affordable work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|best work boots",
+   "q": "best work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|lightweight boots for summer",
+   "q": "lightweight boots for summer",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for a new construction job",
+   "q": "boots for a new construction job",
+   "ndcg": 0.8078257773079451,
+   "grades": [
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof boots that are comfortable",
+   "q": "waterproof boots that are comfortable",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots that last",
+   "q": "work boots that last",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for a warehouse job",
+   "q": "boots for a warehouse job",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|most durable work boots",
+   "q": "most durable work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|comfortable steel toe boots for work",
+   "q": "comfortable steel toe boots for work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|waterproof boots for hiking in the rain",
+   "q": "waterproof boots for hiking in the rain",
+   "ndcg": 0.995668977923683,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|warm waterproof winter boots",
+   "q": "warm waterproof winter boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots that are easy to slip on",
+   "q": "work boots that are easy to slip on",
+   "ndcg": 0.9968175761774197,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots that are good for your feet",
+   "q": "boots that are good for your feet",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|breathable boots for hot weather",
+   "q": "breathable boots for hot weather",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|stylish work boots",
+   "q": "stylish work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|boots for cold weather work",
+   "q": "boots for cold weather work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|shoes for a warehouse worker",
+   "q": "shoes for a warehouse worker",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|comfortable waterproof work boots",
+   "q": "comfortable waterproof work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|good work boots for standing",
+   "q": "good work boots for standing",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|durable waterproof boots",
+   "q": "durable waterproof boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|warm boots for outdoor work",
+   "q": "warm boots for outdoor work",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|work boots for a warehouse job",
+   "q": "work boots for a warehouse job",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|caterpillar",
+   "q": "caterpillar",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|cat boots",
+   "q": "cat boots",
+   "ndcg": 0.9323448411878815,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|cat work boots",
+   "q": "cat work boots",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|cat footwear",
+   "q": "cat footwear",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|cat shoes",
+   "q": "cat shoes",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|striver",
+   "q": "striver",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|resorption",
+   "q": "resorption",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|abbey",
+   "q": "abbey",
+   "ndcg": 1,
+   "grades": [
+    3,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|venward",
+   "q": "venward",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|streamline",
+   "q": "streamline",
+   "ndcg": 1,
+   "grades": [
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|intruder",
+   "q": "intruder",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|grapple",
+   "q": "grapple",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|amperage",
+   "q": "amperage",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|prorush",
+   "q": "prorush",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|drawbar",
+   "q": "drawbar",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|rewrite",
+   "q": "rewrite",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|fused",
+   "q": "fused",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|revolver",
+   "q": "revolver",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|outline",
+   "q": "outline",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|brickline",
+   "q": "brickline",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|second",
+   "q": "second",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|booster",
+   "q": "booster",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "catfootwear|outbase",
+   "q": "outbase",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|reclaimer",
+   "q": "reclaimer",
+   "ndcg": 0.8562598709549916,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|echo",
+   "q": "echo",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "catfootwear|covert",
+   "q": "covert",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|accomplice",
+   "q": "accomplice",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|exposition",
+   "q": "exposition",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "catfootwear|grader",
+   "q": "grader",
+   "ndcg": 0.8075588805057204,
+   "grades": [
+    2,
+    2,
+    3
+   ]
+  }
+ ]
+}

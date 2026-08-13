@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northvalley-intelligence.local/schemas/search-eval/query-pack.schema.json",
+  "title": "Search-Eval Query Pack",
+  "description": "The terms to be evaluated, each carrying its answer key where one exists. Replaces the hand-authored [[term, dataset]] tuple list, which had no denominator: a grade scores what came back, never what was missed. Terms without a key (job_function, intent) are legitimate but must declare has_key=false so the board cannot imply recall coverage it does not have.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pack_version", "retailer", "generated_at", "generator", "terms"],
+  "properties": {
+    "pack_version": { "const": "1" },
+    "retailer": { "type": "string" },
+    "eval_id": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "catalog_ref": {
+      "type": "string",
+      "description": "Path to the catalog.json the keys were derived from. Required when any term has_key=true."
+    },
+    "generator": {
+      "type": "array",
+      "items": { "enum": ["category-recall", "authored", "demand-mined", "competitor-mined"] }
+    },
+
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "dataset", "has_key"],
+        "properties": {
+          "term": { "type": "string" },
+          "dataset": { "enum": ["synonym", "attribute", "job_function", "intent", "head", "brand", "part_number"] },
+          "source": {
+            "description": "How the term was selected into the dataset (category-recall SKILL §6). catalog_node = matches a real category node; catalog_facet = synthesized from a node x facet value; authored = hand-typed shopper vocabulary the taxonomy has no category for; use_case = job/task phrasing; natural_language = conversational query; part_number = exact known-item part-number lookup (the head of parts-catalog demand, not answer-key-generable); mined = discovered from recall misses. Rendered as a per-term source chip on the board.",
+            "enum": ["catalog_node", "catalog_facet", "authored", "use_case", "natural_language", "part_number", "mined"]
+          },
+
+          "relation": {
+            "description": "L06/L07. node_attr is a node crossed with a cross-cutting facet value (loafers x closure=slip-on) and is NOT a node equivalence. hyponym expands upward only.",
+            "enum": ["node_equivalence", "node_attr", "hyponym", "authored", null]
+          },
+          "direction": {
+            "description": "L06. Default uni. bi requires both directions proven, because bidirectional pairs chain transitively (shoe<->boot, boot<->trunk).",
+            "enum": ["uni", "bi", null]
+          },
+
+          "has_key": {
+            "type": "boolean",
+            "description": "Whether this term has a catalog-derived answer key. False for intent and job_function terms, which have no node and no filter."
+          },
+          "node_id": { "type": ["string", "null"] },
+          "facet": { "type": ["string", "null"] },
+          "facet_value": { "type": ["string", "null"] },
+          "query_template": {
+            "type": ["string", "null"],
+            "description": "How the term string was synthesized, e.g. '{facet_value} {node.singular}'. The synthesized string is a PROXY for shopper phrasing, not the real query - do not present it as one."
+          },
+
+          "key": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["size", "null_rate", "confidence"],
+            "properties": {
+              "size": { "type": "integer", "minimum": 1 },
+              "null_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+              "confidence": {
+                "description": "L02/L05. low when facet null_rate is high or facet_provenance is text_classifier/unknown. A low-confidence key must not drive a precision finding.",
+                "enum": ["high", "medium", "low"]
+              },
+              "skus": { "type": "array", "items": { "type": "string" } },
+              "source_url": { "type": "string" }
+            }
+          },
+
+          "compared_to": {
+            "type": ["string", "null"],
+            "description": "Canonical lead term for synonym rows. Renders as 'term vs canonical' in the drill-down."
+          },
+          "is_lead": { "type": ["boolean", "null"] }
+        }
+      }
+    },
+
+    "orphans": {
+      "type": "array",
+      "description": "Synonym-dataset terms with neither compared_to nor a variant pointing at them. The hand-authored pack produced these silently (oxfords had no partner because nobody typed one); surfacing them is a gate, not a note.",
+      "items": { "type": "string" }
+    }
+  }
+}

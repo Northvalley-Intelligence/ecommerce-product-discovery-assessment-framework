@@ -1,0 +1,423 @@
+{
+ "imported_at": "2026-08-10T01:05:52.931Z",
+ "retailer": "target",
+ "eval": "SE-20260808",
+ "parsed_rows": 83,
+ "matched": [
+  {
+   "term": "wireless noise cancelling headphones",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "waterproof hiking boots",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "warm coat for winter",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "walnut dining table",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "velvet accent chair",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "trash can",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "trainers",
+   "volume": 22200,
+   "raw": "22,200"
+  },
+  {
+   "term": "thanksgiving dinner table",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "tennis shoes",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "sweater",
+   "volume": 246000,
+   "raw": "246,000"
+  },
+  {
+   "term": "stroller",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "start a garden",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "standing desk adjustable",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "stainless steel cookware set",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "stackable storage bins",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "something to help me sleep better",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "soft drinks",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "sofa",
+   "volume": 201000,
+   "raw": "201,000"
+  },
+  {
+   "term": "soda",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "sneakers",
+   "volume": 301000,
+   "raw": "301,000"
+  },
+  {
+   "term": "small space storage solutions",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "slow cooker",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "silverware",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "settee",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "set up a home theater",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "rubbish bin",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "rose gold desk lamp",
+   "volume": 50,
+   "raw": "50"
+  },
+  {
+   "term": "reusable stainless steel water bottle",
+   "volume": 6600,
+   "raw": "6,600"
+  },
+  {
+   "term": "remote control car",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "rc car",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "quilt",
+   "volume": 135000,
+   "raw": "135,000"
+  },
+  {
+   "term": "queen size cooling sheets",
+   "volume": 260,
+   "raw": "260"
+  },
+  {
+   "term": "pushchair",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "pullover",
+   "volume": 22200,
+   "raw": "22,200"
+  },
+  {
+   "term": "pram",
+   "volume": 22200,
+   "raw": "22,200"
+  },
+  {
+   "term": "popsicle",
+   "volume": 201000,
+   "raw": "201,000"
+  },
+  {
+   "term": "pop",
+   "volume": 368000,
+   "raw": "368,000"
+  },
+  {
+   "term": "outfit for a job interview",
+   "volume": 14800,
+   "raw": "14,800"
+  },
+  {
+   "term": "organize my closet",
+   "volume": 170,
+   "raw": "170"
+  },
+  {
+   "term": "organic cotton crib sheet",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "nonstick frying pan",
+   "volume": 14800,
+   "raw": "14,800"
+  },
+  {
+   "term": "nappies",
+   "volume": 12100,
+   "raw": "12,100"
+  },
+  {
+   "term": "move into a new house",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "memory foam pillow",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "marble coffee table",
+   "volume": 27100,
+   "raw": "27,100"
+  },
+  {
+   "term": "loveseat",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "jumper",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "ice lolly",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "home office setup",
+   "volume": 2900,
+   "raw": "2,900"
+  },
+  {
+   "term": "home gym equipment",
+   "volume": 90500,
+   "raw": "90,500"
+  },
+  {
+   "term": "holiday party hosting",
+   "volume": 90,
+   "raw": "90"
+  },
+  {
+   "term": "high waisted black leggings",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "healthy snacks for kids",
+   "volume": 40500,
+   "raw": "40,500"
+  },
+  {
+   "term": "gift under 25 dollars",
+   "volume": 50,
+   "raw": "50"
+  },
+  {
+   "term": "gift for someone who loves coffee",
+   "volume": 320,
+   "raw": "320"
+  },
+  {
+   "term": "gift for a new mom",
+   "volume": 14800,
+   "raw": "14,800"
+  },
+  {
+   "term": "gift for a dog lover",
+   "volume": 5400,
+   "raw": "5,400"
+  },
+  {
+   "term": "garbage can",
+   "volume": 40500,
+   "raw": "40,500"
+  },
+  {
+   "term": "gaming chair with lumbar support",
+   "volume": 1000,
+   "raw": "1,000"
+  },
+  {
+   "term": "furnish a living room",
+   "volume": 10,
+   "raw": "10"
+  },
+  {
+   "term": "fleece lined leggings",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "flatware",
+   "volume": 14800,
+   "raw": "14,800"
+  },
+  {
+   "term": "first apartment essentials",
+   "volume": 1900,
+   "raw": "1,900"
+  },
+  {
+   "term": "duvet",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "diapers",
+   "volume": 165000,
+   "raw": "165,000"
+  },
+  {
+   "term": "decorate a nursery",
+   "volume": 50,
+   "raw": "50"
+  },
+  {
+   "term": "cutlery",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "crockpot",
+   "volume": 246000,
+   "raw": "246,000"
+  },
+  {
+   "term": "cozy fall decor",
+   "volume": 480,
+   "raw": "480"
+  },
+  {
+   "term": "couch",
+   "volume": 550000,
+   "raw": "550,000"
+  },
+  {
+   "term": "comforter",
+   "volume": 110000,
+   "raw": "110,000"
+  },
+  {
+   "term": "coffee table",
+   "volume": 246000,
+   "raw": "246,000"
+  },
+  {
+   "term": "cocktail table",
+   "volume": 18100,
+   "raw": "18,100"
+  },
+  {
+   "term": "cast iron skillet 12 inch",
+   "volume": 4400,
+   "raw": "4,400"
+  },
+  {
+   "term": "camping trip gear",
+   "volume": 90,
+   "raw": "90"
+  },
+  {
+   "term": "bluetooth portable speaker",
+   "volume": 1900,
+   "raw": "1,900"
+  },
+  {
+   "term": "blackout curtains 84 inch",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "back to school supplies",
+   "volume": 9900,
+   "raw": "9,900"
+  },
+  {
+   "term": "baby shower gifts",
+   "volume": 33100,
+   "raw": "33,100"
+  },
+  {
+   "term": "air fryer 8 quart",
+   "volume": 1300,
+   "raw": "1,300"
+  },
+  {
+   "term": "65 inch qled tv",
+   "volume": 1600,
+   "raw": "1,600"
+  },
+  {
+   "term": "55 inch 4k oled tv",
+   "volume": 390,
+   "raw": "390"
+  },
+  {
+   "term": "12 cup programmable coffee maker",
+   "volume": 2900,
+   "raw": "2,900"
+  }
+ ]
+}

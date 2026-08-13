@@ -1,0 +1,84 @@
+{
+ "generated_from": [
+  "scored-part-number-1to1.json"
+ ],
+ "retailer": "partscat",
+ "disclaimer": "MODELED ESTIMATE from operator-supplied monthly volumes x type-aware loss_fraction. Not audited revenue; a range.",
+ "assumptions": {
+  "conservative": {
+   "market_share": 0.02,
+   "conversion_rate": 0.02,
+   "aov": 70
+  },
+  "base": {
+   "market_share": 0.03,
+   "conversion_rate": 0.03,
+   "aov": 90
+  },
+  "aggressive": {
+   "market_share": 0.05,
+   "conversion_rate": 0.04,
+   "aov": 120
+  }
+ },
+ "annual_lost": {
+  "conservative": 3653,
+  "base": 10565,
+  "aggressive": 31305
+ },
+ "contributing_terms": 4,
+ "per_term": [
+  {
+   "dataset": "part-number-1to1",
+   "type": "one_to_one",
+   "term": "1R-1808",
+   "outcome": "not_found",
+   "volume": 8100,
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 2722,
+    "base": 7873,
+    "aggressive": 23328
+   }
+  },
+  {
+   "dataset": "part-number-1to1",
+   "type": "one_to_one",
+   "term": "326-1644",
+   "outcome": "not_found",
+   "volume": 1300,
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 437,
+    "base": 1264,
+    "aggressive": 3744
+   }
+  },
+  {
+   "dataset": "part-number-1to1",
+   "type": "one_to_one",
+   "term": "9X-3404",
+   "outcome": "not_found",
+   "volume": 880,
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 296,
+    "base": 855,
+    "aggressive": 2534
+   }
+  },
+  {
+   "dataset": "part-number-1to1",
+   "type": "one_to_one",
+   "term": "153-5710",
+   "outcome": "not_found",
+   "volume": 590,
+   "loss_fraction": 1,
+   "lost": {
+    "conservative": 198,
+    "base": 573,
+    "aggressive": 1699
+   }
+  }
+ ]
+}

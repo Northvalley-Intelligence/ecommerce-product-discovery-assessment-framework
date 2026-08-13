@@ -1,16 +1,17 @@
 {
   "state_version": 1,
-  "updated_on": "2026-07-31",
+  "updated_on": "2026-08-08",
   "project_id": "ecommmerce-eval",
   "project_name": "Ecommerce Evaluation Reports",
   "legacy_project_ids": [
     "ecommerce-product-discovery-assessment-framework"
   ],
   "identity_status": "canonicalized_to_control_center_registration_2026_07_01",
-  "current_generation": "GEN-038",
-  "current_phase": "Generation 38 - Three-dataset Cortex-judged relevance scoreboard (HD + Lowe's)",
-  "phase_goal": "Dataset x retailer scoreboard with THREE query datasets (synonym consistency, dimensions notation/hash, pro job-function), graded-relevance NDCG via Cortex, drillable to per-query NDCG and per-product grades; Cortex judge notation/No.-abbreviation defect fixed and re-judged.",
-  "status": "gen038_phase_exit_complete",
+  "current_generation": "GEN-039",
+  "current_phase": "Generation 39 - Furniture search relevance: Industry West (legacy WooCommerce) vs Seven Bonde (new Shopify)",
+  "phase_goal": "Old-vs-new on-site search relevance for the Furniture sector, focused on Industry West vs the Seven Bonde Shopify store it is replatforming to. One shared 50-query furniture pack captured per store, Cortex-judged (llama3.2:3b) NDCG, decomposed into coverage (zero-result) and precision (grade quality). Every finding traces to a replayable query + Cortex trace. Judge gold-validated (94% binary). artifact_profile: search_ir_evaluation.",
+  "status": "gen039_phase_exit_complete_correction_verified",
+  "prior_phase_exit": "GEN-038 exited clean (VAL-087, two passes) before GEN-039 began",
   "mission_version": "MISSION-2026-07-11-local-inspection-application-deliverable",
   "expected_deliverable": "Local application that runs inspections on different ecommerce websites, helps fix the issues it finds, and generates an executive-ready report showing platform issues, suitable for sending to executive leadership and potential monetization. The Inspection Report remains the canonical evidence artifact the application is built around.",
   "validation_strategy_id": "VALSTRAT-001",
@@ -19,8 +20,8 @@
     "required_passes_for_phase_exit": 2,
     "current_pass_count": 2,
     "latest_result": "pass",
-    "latest_run_id": "VAL-087",
-    "reason": "GEN-038 exited: three-dataset Cortex-judged relevance scoreboard (Synonym 30/48, Dimensions 90/88, Pro 83/78) with query- and product-level drill-down; Cortex judge defects fixed + re-judged; two clean passes."
+    "latest_run_id": "VAL-091",
+    "reason": "GEN-039 corrected artifacts gate-verified: two clean passes (VAL-091) over the real-shopper-engine board, the Northvalley demand-ranked report, and the CORR-SR-001 correction records. Corrected story final: IW broad-but-fuzzy (23/58, 14% off) vs SB precise-but-narrow (15/58, 5% off)."
   },
   "critical_bdds": 18,
   "high_bdds": 36,
@@ -34,7 +35,7 @@
     "record": "docs/operations/gen-013-clarification-decisions.md",
     "summary": "Ferosh decided 1A (retain all raw evidence per inspection by default), 2A (ratify timestamp-based inspection IDs), and 3A (Level 2 maturity gates broad Shopify inspections; Level 3 rendered capture gates non-Shopify or heavily rendered storefronts). Recorded in the validation strategy as operator_decisions_2026_07_14."
   },
-  "next_recommended_action": "Three-dataset relevance scoreboard live (Synonym 30/48, Dimensions 90/88, Pro 83/78). Next: complementary-recommendation eval (complement rubric via Cortex per-job rubric) on a fresh/logged-in browser once PDP rec carousels render; optional full-title re-capture of non-fastener dimension queries; land the Cortex prerequisites in rendered-evidence.mjs for the app's internal headless NDCG path.",
+  "next_recommended_action": "Target (general-retail) is live in the dashboard under General Retail with a unified board (shared verdict-card + metric-table + drill-down, matching Industry West) and a branded PDF. Findings: broad but shallow (mean grade 1.39/3, 59% not-relevant). Next: optional clean-API re-capture to 100+ terms + demand overlay; apply retail-search-eval skill to more general-retail stores.",
   "session_router_case": "Existing MDE project - consolidation and phase exit for GEN-017/018",
   "last_prompt_used": "Operator routing: 2 (fix-assist), 3 (refinements), 1 (non-Shopify)",
   "operator_directives": {

@@ -1,0 +1,52 @@
+{
+  "validation_run_id": "VAL-089",
+  "generation": "GEN-039",
+  "phase": "Furniture search relevance: Industry West vs Seven Bonde — evaluation + consolidated debuggable board (phase exit)",
+  "started_at": "2026-08-06T00:00:00Z",
+  "completed_at": "2026-08-06T00:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes_phase_exit",
+  "validations_executed": [
+    {
+      "category": "Functional Validation - finding-to-evidence traceability",
+      "tool": "findings.json + eval-board.json + live replay",
+      "result": "pass",
+      "evidence": "All GEN-039 findings embed replayable evidence pointers; the board carries 108 rows over 6 datasets (synonym, attribute, job-function, head, literal, intent), each with search_call + Cortex-graded grades_pinned under pinned rubric 99a0e992a992. literal graded IW 4/4 NDCG 1.00; intent IW 0/4 (zero-result). Combined severity-ranked Findings (7) drawn from catalog calls + search eval."
+    },
+    {
+      "category": "Relevance-judge reproducibility",
+      "tool": "in-UI Re-run NDCG + determinism probe",
+      "result": "pass",
+      "evidence": "Judge deterministic at pinned rubric (bench 3/3, armchair 4/4, restaurant chairs 4/4, probe 5/5). In-UI Re-run NDCG returns matches-stored. Results carry rubric_hash. REPRO-SR-001 recorded."
+    },
+    {
+      "category": "Debuggable board — macro to micro, no dead numbers",
+      "tool": "browser + /api/eval-board + /api/eval/rerun-ndcg + /api/woo/replay",
+      "result": "pass",
+      "evidence": "Unified Industry West view: Catalog (SKUs/Facets macros drill to their backing calls, replayable) -> live search -> Search-relevance board (macro table x 6 datasets, stock-context guardrail, collapsed drill-down with Replay search + Re-run NDCG) -> one combined Findings list. Removed Experiments/Fix/Discovery-surfaces/Health panels and the duplicate catalog rail; dropped old/new/approach framing; removed number-restatement repeats. Verified via served HTML (Experiments&evidence=0, Search-relevance title present, Catalog panel + cat-skus-ev/cat-facets-ev/evds- jump targets present)."
+    },
+    {
+      "category": "Gate: validate + validate:gen13 + validate:dashboard + diff-check, TWO clean passes",
+      "tool": "npm run validate / validate:gen13 / validate:dashboard",
+      "result": "pass",
+      "evidence": "Pass 1 and Pass 2 both green (exit 0) with NO implementation changes between them; git diff --check clean. validate-dashboard updated to gate the new navigable structure (Catalog/Search-relevance/Findings panels; cat-skus-ev/cat-facets-ev/evds- jump targets; woo-replay drill) so the no-dead-numbers invariant still holds. Pre-existing BDD-012 (independent evaluator calibration) warning is a known deferred item, not a regression."
+    }
+  ],
+  "validations_skipped": [
+    {
+      "category": "Fresh end-to-end browser screenshot of the consolidated view",
+      "reason": "Browser automation intermittently fails to select the Industry West site card; structure verified via served HTML + gate instead. Operator can view directly at localhost:4173."
+    },
+    {
+      "category": "Old-vs-new report PDF",
+      "reason": "Deferred by operator; results validated but report not requested yet."
+    }
+  ],
+  "critical_findings": [],
+  "high_findings": [
+    "IW-SR-001 (High): natural-language intent returns zero on Industry West (9/9 job-function + 4/4 intent labels).",
+    "IW-SR-002 (High): synonym-blind recall misses (guardrail-proven).",
+    "SB-SR-001 (High): Seven Bonde search broad but noisy (41% not-relevant)."
+  ],
+  "notes": "GEN-039 phase exit: furniture search-relevance evaluation (Industry West vs the Seven Bonde Shopify store it is migrating to), Cortex-graded NDCG over 6 datasets, judge gold-validated (94% binary) and reproducibility-pinned (rubric 99a0e992a992). Delivered a single debuggable board in the dashboard where every macro drills to its call/terms and any NDCG is re-runnable. Two clean gate passes. Work local; no push."
+}

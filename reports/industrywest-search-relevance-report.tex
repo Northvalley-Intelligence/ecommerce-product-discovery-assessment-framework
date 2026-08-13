@@ -1,0 +1,293 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+
+\input{northvalley-template-assets/northvalley-brand.sty}
+
+\usepackage[letterpaper,margin=0.7in,headheight=16pt,headsep=14pt,footskip=26pt]{geometry}
+
+\usepackage{booktabs}\usepackage{longtable}\usepackage{fancyhdr}\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}\renewcommand{\arraystretch}{1.18}\arrayrulecolor{NVIRule}
+
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\color{NVIInk}
+
+\renewcommand{\labelitemi}{\textcolor{NVIAccent}{\(\triangleright\)}}
+
+\newcommand{\qq}[1]{\textquotedblleft #1\textquotedblright}
+
+\newcommand{\ReportKicker}[1]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+
+\newcommand{\ReportBody}[1]{{\fontsize{9.6}{12}\selectfont\color{NVIInk}#1}}
+
+\newcommand{\ReportFine}[1]{{\fontsize{7.8}{9.3}\selectfont\color{NVIMuted}#1}}
+
+\newcommand{\ReportSection}[1]{\par\addvspace{9pt}{\fontsize{14}{17}\selectfont\bfseries\color{NVIInk}#1}\par\vspace{1pt}{\color{NVIAccent}\rule{\linewidth}{0.9pt}}\par\addvspace{3pt}}
+
+\newcommand{\ReportCard}[2]{\begin{tikzpicture}\node[draw=NVIRule,fill=white,rounded corners=2pt,inner xsep=11pt,inner ysep=9pt,text width=\dimexpr\linewidth-24pt\relax,align=left]{\ReportKicker{#1}\\[0.05in]\ReportBody{#2}};\end{tikzpicture}}
+
+\newcommand{\ReportDarkCard}[2]{\begin{tikzpicture}\node[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt,inner xsep=12pt,inner ysep=10pt,text width=\dimexpr\linewidth-26pt\relax,align=left]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.06in]{\fontsize{10.2}{12.4}\selectfont\color{white}#2}};\end{tikzpicture}}
+
+\newcommand{\MetricCard}[3]{\begin{tikzpicture}\node[draw=NVIRule,fill=NVIPanel,rounded corners=2pt,inner xsep=9pt,inner ysep=8pt,text width=\dimexpr\linewidth-20pt\relax,minimum height=0.8in,align=left]{\ReportKicker{#1}\\[0.04in]{\fontsize{18}{21}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]\ReportFine{#3}};\end{tikzpicture}}
+
+\fancypagestyle{nvi}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\fancyhead[L]{\footnotesize\color{NVIAccent}\bfseries INDUSTRY WEST \textperiodcentered\ SEARCH RELEVANCE}\fancyhead[R]{\footnotesize\color{NVIMuted}Complimentary read}\fancyfoot[L]{\footnotesize\color{NVIMuted}\NorthvalleyBusinessName}\fancyfoot[R]{\footnotesize\color{NVIMuted}\thepage}}
+
+\newcommand{\ReportTitle}{On-site search relevance}
+
+\newcommand{\ReportClient}{Industry West}
+
+\newcommand{\ReportSummary}{A complimentary, evidence-first read on Industry West\textquotesingle s storefront search --- and the new Seven Bonde store it is migrating to --- with the highest-demand searches to fix, ranked by real Google demand.}
+
+\begin{document}\color{NVIInk}
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+
+\fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+
+\fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.05in]current page.north east);
+
+\fill[NVIAccent] ([yshift=-1.05in]current page.north west) rectangle ([yshift=-1.10in]current page.north east);
+
+\fill[NVIAccentSoft] ([xshift=-1.60in,yshift=-1.10in]current page.north east) -- (current page.north east) -- ([yshift=-2.45in]current page.north east) -- cycle;
+
+\fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.45in]current page.south east);
+
+\node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries] at ([xshift=0.7in,yshift=-0.52in]current page.north west) {\NorthvalleyBusinessName};
+
+\node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont] at ([xshift=-0.7in,yshift=-0.52in]current page.north east) {\today};
+
+\node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont] at ([xshift=0.7in,yshift=0.22in]current page.south west) {\NorthvalleyContactLine};
+
+\end{tikzpicture}
+
+\vspace*{1.15in}\begin{minipage}[t]{0.58\linewidth}\raggedright
+
+\ReportKicker{Complimentary Findings Report}\\[0.12in]
+
+{\fontsize{30}{35}\selectfont\bfseries\color{NVIInk}\ReportTitle}\par
+
+\vspace{0.18in}{\fontsize{12}{15}\selectfont\color{NVIInk}\ReportSummary}\par
+
+\vspace{0.26in}{\color{NVIAccent}\rule{2.6in}{0.9pt}}\par
+
+\vspace{0.16in}{\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]{\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}\ReportClient}\par
+
+\vspace{0.06in}{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \NorthvalleyBusinessName}\par
+
+\vspace{0.14in}{\fontsize{7.6}{9.6}\selectfont\itshape\color{NVIMuted}A quick, browser-based research read --- not a formal audit. No crawling and no load on production. Demand figures are Google Keyword Planner national (US) averages (interest, not addressable revenue).}
+
+\end{minipage}\hfill\begin{minipage}[t]{0.31\linewidth}\centering\vspace{0.06in}
+
+\NorthvalleyLogo[0.9in]\par\vspace{0.22in}
+
+\ReportDarkCard{The verdict}{Two engines, opposite flaws: the legacy storefront is broad but fuzzy; the new store is precise but narrow. Both miss attributes and intent.}
+
+\vspace{0.1in}\MetricCard{Fixable now}{24}{high-demand searches the catalog can satisfy but search misses.}
+
+\end{minipage}\newpage
+
+\pagestyle{nvi}
+
+\ReportSection{Summary}
+
+\begin{minipage}[t]{0.62\linewidth}
+
+\ReportDarkCard{The headline}{The two stores fail in opposite ways. The legacy Industry West storefront casts a wide but fuzzy net; the new Seven Bonde store is precise but narrow. Both miss material-plus-type searches (walnut dining table) and natural-language intent (furnish a living room), and the new store returns nothing for high-demand terms the catalog carries.}
+
+\vspace{0.1in}\ReportBody{The single biggest signal: high-demand searches the catalog can satisfy but the engine misses --- e.g. \textbf{coffee table} (246{,}000/mo) and \textbf{accent chair} (110{,}000/mo) return solid results on the legacy storefront but \textbf{zero} on the new Seven Bonde store. Throughout, \textbf{IW} = Industry West, \textbf{SB} = Seven Bonde.}
+
+\end{minipage}\hfill\begin{minipage}[t]{0.34\linewidth}
+
+\MetricCard{Industry West}{40\%}{answered \textperiodcentered\ 14\% off-target --- broad but fuzzy}
+
+\vspace{0.09in}\MetricCard{Seven Bonde (new)}{26\%}{answered \textperiodcentered\ 5\% off-target --- precise but narrow}
+
+\end{minipage}
+
+\ReportSection{How this was measured}
+
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}\setlength{\topsep}{2pt}
+
+\item \textbf{Real shopper search, no production load.} Each store was evaluated on its live on-site search --- the engine shoppers actually use --- with bounded, paced reads (about one per second, a plain inspection user-agent, robots respected). \textbf{No crawling, no scraping, and no load on production.}
+
+\item \textbf{Graded relevance.} Every returned product was scored 0--3 for relevance by a local large language model (Meta Llama 3.2 3B, temperature 0, reproducible), summarized as NDCG (0--1).
+
+\item \textbf{Demand overlay.} Each term is joined to Google Keyword Planner monthly search volume, so failures are ranked by real demand.
+
+\item \textbf{Scope.} 50 shopper search terms across four query datasets. A quick read, not an exhaustive audit; reliability rises with search-API access and real query logs.
+
+\end{itemize}
+
+\ReportSection{How we can help}
+
+\ReportDarkCard{Complimentary now --- deeper on request}{This is a complimentary read on a bounded set of queries. We can run the same evidence-first analysis \textbf{at scale} against your full on-site query logs and catalog --- as a \textbf{one-time} deep audit, or on a \textbf{recurring schedule} that keeps tabs on search relevancy as your catalog and platform evolve (especially valuable while traffic shifts to the new Seven Bonde store). The deliverable is the same: a reproducible, demand-ranked list of the exact searches to fix.}
+
+\newpage
+
+\ReportSection{What works well}
+
+\ReportBody{Core product-type and material searches are strong on \textbf{both} stores --- clean, relevant results (relevance about 0.94): ottoman, bar stool, dining chair, lounge chair, counter stool, pouf, leather lounge chair. The engines handle the basics; the gaps are synonyms, attributes, and intent.}\par
+
+\ReportSection{Where the money is: high-demand searches that return nothing}
+
+Terms with real Google demand where the store search comes back empty or near-empty. \textbf{IW} / \textbf{SB} show how many products each store returns today.
+
+\vspace{2pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{\dimexpr\linewidth-2.05in\relax}>{\raggedleft\arraybackslash}p{1.15in}>{\centering\arraybackslash}p{0.35in}>{\centering\arraybackslash}p{0.35in}@{}}\toprule\bfseries Search term & \bfseries Monthly Google searches & \bfseries IW & \bfseries SB \\\midrule\endhead
+
+coffee table & 246,000 & 7 & 0 \\
+console table & 110,000 & 0 & 0 \\
+accent chair & 110,000 & 6 & 0 \\
+credenza & 90,500 & 0 & 0 \\
+end table & 60,500 & 21 & 0 \\
+sideboard & 49,500 & 0 & 0 \\
+entryway bench & 33,100 & 0 & 0 \\
+reading chair & 27,100 & 0 & 0 \\
+
+\bottomrule\end{longtable}}
+
+\ReportSection{The problems, by category}
+
+IW / SB show queries answered out of total, with the average NDCG of the returned results in parentheses (0.00 = nothing returned).
+
+\vspace{2pt}\begin{longtable}{@{}p{1.7in}>{\centering\arraybackslash}p{1.05in}>{\centering\arraybackslash}p{1.05in}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-3.9in\relax}@{}}\toprule\bfseries Dataset & \bfseries IW & \bfseries SB & \bfseries Takeaway \\\midrule\endhead
+
+Synonym / category & 16/27 \footnotesize(0.94) & 10/27 \footnotesize(0.94) & Legacy IW returns equivalents fuzzily (accent chair works, with off-type items); the new SB store is strict — misses accent chair, kitchen stool, sofa entirely \\\addlinespace
+Attribute (material+type) & 3/12 \footnotesize(0.95) & 3/12 \footnotesize(0.99) & Broken on both — walnut/marble/velvet return nothing; only leather combinations resolve \\\addlinespace
+Job-function / intent & 1/9 \footnotesize(0.82) & 0/9 \footnotesize(0.00) & Natural-language intent is nearly dead on both — only outdoor seating returns anything, and only on the legacy storefront \\\addlinespace
+Head terms & 1/2 \footnotesize(1.00) & 1/2 \footnotesize(0.76) & dining table works on both; console table misses on both \\
+
+\bottomrule\end{longtable}
+
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}\setlength{\topsep}{2pt}
+
+\item \textbf{Attributes are broken on both.} \qq{walnut dining table}, \qq{oak dining table}, \qq{marble coffee table}, \qq{velvet chair}, \qq{cane dining chair} all return \textbf{0} on both stores, despite the catalog stocking marble, oak, walnut, leather and cane.
+
+\item \textbf{Natural-language intent is dead on both.} \qq{furnish a living room}, \qq{dining set for 6}, \qq{home office}, \qq{small space seating}, \qq{reading chair} all return \textbf{0}. Shoppers who describe what they want, rather than name a product, hit a wall.
+
+\item \textbf{The migration swapped one flaw for another.} The legacy storefront is fuzzy (14\% off-target); the new store is so strict it returns nothing for common words like \qq{kitchen stool}, \qq{accent chair} and \qq{coffee table}.
+
+\end{itemize}
+
+\ReportSection{Complimentary quick-win list: fixable search bugs, ranked by demand}
+
+Searches the catalog can satisfy but the engine misses --- the highest-leverage fixes, workable with us or your current search vendor.
+
+\vspace{2pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{\dimexpr\linewidth-2.05in\relax}>{\raggedleft\arraybackslash}p{1.15in}>{\centering\arraybackslash}p{0.35in}>{\centering\arraybackslash}p{0.35in}@{}}\toprule\bfseries Search term & \bfseries Monthly searches & \bfseries IW & \bfseries SB \\\midrule\endhead
+
+buffet$^{\dagger}$ & 673,000 & 0 & 0 \\
+coffee table & 246,000 & 7 & 0 \\
+console table & 110,000 & 0 & 0 \\
+accent chair & 110,000 & 6 & 0 \\
+credenza & 90,500 & 0 & 0 \\
+end table & 60,500 & 21 & 0 \\
+sideboard & 49,500 & 0 & 0 \\
+entryway bench & 33,100 & 0 & 0 \\
+reading chair & 27,100 & 0 & 0 \\
+marble coffee table & 27,100 & 0 & 0 \\
+rattan chair & 18,100 & 0 & 5 \\
+footstool & 18,100 & 0 & 0 \\
+cocktail table & 18,100 & 0 & 0 \\
+kitchen stool & 12,100 & 5 & 0 \\
+accent table & 12,100 & 10 & 0 \\
+marble side table & 9,900 & 4 & 0 \\
+oak dining table & 8,100 & 0 & 0 \\
+walnut dining table & 6,600 & 0 & 0 \\
+boucle chair & 6,600 & 0 & 0 \\
+restaurant chairs & 5,400 & 0 & 0 \\
+velvet chair & 3,600 & 0 & 0 \\
+cane dining chair & 2,900 & 0 & 0 \\
+woven dining chair & 2,400 & 0 & 0 \\
+black metal stool & 320 & 0 & 0 \\
+
+\bottomrule\end{longtable}}
+
+{\ReportFine{$^{\dagger}$ Broad/ambiguous term --- national volume is dominated by a non-furniture meaning (e.g. \qq{buffet} = food); treat as indicative only.}}\par
+
+\ReportSection{Separate opportunity: assortment gaps (not a search problem)}
+
+High-demand searches that return nothing because the item is \textbf{not stocked} --- a merchandising / expansion signal, not a search fix.
+
+\vspace{2pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{\dimexpr\linewidth-1.6in\relax}>{\raggedleft\arraybackslash}p{1.5in}@{}}\toprule\bfseries Search term & \bfseries Monthly searches \\\midrule\endhead
+
+couch & 550,000 \\
+sofa & 201,000 \\
+loveseat & 49,500 \\
+settee & 27,100 \\
+writing desk & 22,200 \\
+home office & 18,100 \\
+entryway furniture & 12,100 \\
+dining set for 6 & 9,900 \\
+bar stools for a kitchen island & 9,900 \\
+small space seating & 390 \\
+
+\bottomrule\end{longtable}}
+
+\ReportSection{Appendix: all search terms tried}
+
+Monthly = Google Keyword Planner avg. monthly searches. \# = products returned by each store search; NDCG = average relevance of those results, 0--1 (0.00 = nothing returned).
+
+\vspace{2pt}\begin{longtable}{@{}p{\dimexpr\linewidth-3.5in\relax}>{\raggedleft\arraybackslash}p{0.9in}>{\centering\arraybackslash}p{0.35in}>{\centering\arraybackslash}p{0.55in}>{\centering\arraybackslash}p{0.35in}>{\centering\arraybackslash}p{0.55in}@{}}\toprule & & \multicolumn{2}{c}{\bfseries Industry West} & \multicolumn{2}{c}{\bfseries Seven Bonde} \\ \bfseries Search term & \bfseries Monthly & \# & \bfseries NDCG & \# & \bfseries NDCG \\\midrule\endhead
+
+\multicolumn{6}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Synonym / category}\\
+buffet & 673,000 & 0 & 0.00 & 0 & 0.00 \\
+couch & 550,000 & 0 & 0.00 & 0 & 0.00 \\
+desk & 246,000 & 3 & 1.00 & 0 & 0.00 \\
+coffee table & 246,000 & 7 & 0.88 & 0 & 0.00 \\
+sofa & 201,000 & 0 & 0.00 & 0 & 0.00 \\
+ottoman & 165,000 & 4 & 1.00 & 2 & 0.00 \\
+bar stool & 165,000 & 41 & 0.90 & 8 & 0.00 \\
+accent chair & 110,000 & 6 & 0.98 & 0 & 0.00 \\
+dining chair & 90,500 & 46 & 0.93 & 8 & 0.82 \\
+credenza & 90,500 & 0 & 0.00 & 0 & 0.00 \\
+bench & 90,500 & 6 & 0.81 & 2 & 0.00 \\
+side table & 60,500 & 24 & 0.97 & 1 & 1.00 \\
+lounge chair & 60,500 & 16 & 0.96 & 8 & 0.00 \\
+end table & 60,500 & 21 & 0.88 & 0 & 0.00 \\
+sideboard & 49,500 & 0 & 0.00 & 0 & 0.00 \\
+loveseat & 49,500 & 0 & 0.00 & 0 & 0.00 \\
+counter stool & 49,500 & 31 & 0.97 & 8 & 0.89 \\
+armchair & 40,500 & 11 & 0.89 & 8 & 0.00 \\
+entryway bench & 33,100 & 0 & 0.00 & 0 & 0.00 \\
+settee & 27,100 & 0 & 0.00 & 0 & 0.00 \\
+writing desk & 22,200 & 0 & 0.00 & 0 & 0.00 \\
+pouf & 18,100 & 3 & 1.00 & 1 & 1.00 \\
+footstool & 18,100 & 0 & 0.00 & 0 & 0.00 \\
+cocktail table & 18,100 & 0 & 0.00 & 0 & 0.00 \\
+kitchen stool & 12,100 & 5 & 0.86 & 0 & 0.00 \\
+accent table & 12,100 & 10 & 0.97 & 0 & 0.00 \\
+side chair & 5,400 & 22 & 0.98 & 2 & 1.00 \\
+\addlinespace
+\multicolumn{6}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Attribute (material + type)}\\
+marble coffee table & 27,100 & 0 & 0.00 & 0 & 0.00 \\
+rattan chair & 18,100 & 0 & 0.00 & 5 & 1.00 \\
+marble side table & 9,900 & 4 & 0.99 & 0 & 0.00 \\
+leather dining chair & 9,900 & 9 & 0.87 & 8 & 0.97 \\
+oak dining table & 8,100 & 0 & 0.00 & 0 & 0.00 \\
+walnut dining table & 6,600 & 0 & 0.00 & 0 & 0.00 \\
+boucle chair & 6,600 & 0 & 0.00 & 0 & 0.00 \\
+leather lounge chair & 4,400 & 2 & 1.00 & 6 & 0.00 \\
+velvet chair & 3,600 & 0 & 0.00 & 0 & 0.00 \\
+cane dining chair & 2,900 & 0 & 0.00 & 0 & 0.00 \\
+woven dining chair & 2,400 & 0 & 0.00 & 0 & 0.00 \\
+black metal stool & 320 & 0 & 0.00 & 0 & 0.00 \\
+\addlinespace
+\multicolumn{6}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Job-function / intent}\\
+reading chair & 27,100 & 0 & 0.00 & 0 & 0.00 \\
+outdoor seating & 22,200 & 10 & 0.82 & 0 & 0.00 \\
+home office & 18,100 & 0 & 0.00 & 0 & 0.00 \\
+entryway furniture & 12,100 & 0 & 0.00 & 0 & 0.00 \\
+dining set for 6 & 9,900 & 0 & 0.00 & 0 & 0.00 \\
+bar stools for a kitchen island & 9,900 & 0 & 0.00 & 0 & 0.00 \\
+restaurant chairs & 5,400 & 0 & 0.00 & 0 & 0.00 \\
+small space seating & 390 & 0 & 0.00 & 0 & 0.00 \\
+furnish a living room & 10 & 0 & 0.00 & 0 & 0.00 \\
+\addlinespace
+\multicolumn{6}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Head terms}\\
+dining table & 135,000 & 18 & 1.00 & 5 & 0.76 \\
+console table & 110,000 & 0 & 0.00 & 0 & 0.00 \\
+\addlinespace
+\bottomrule\end{longtable}
+
+\end{document}

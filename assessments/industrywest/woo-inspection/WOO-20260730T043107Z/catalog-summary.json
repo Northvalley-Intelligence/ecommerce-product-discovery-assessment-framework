@@ -60,7 +60,9 @@
   "search_signal": {
     "literal_hits": "4/4",
     "intent_hits": "0/4",
-    "note": "Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood)."
+    "note": "Native search returns products for literal product-name terms but misses category/intent queries — a search-relevance gap (e.g. synonyms/intent not understood).",
+    "evidence_caveat": "EVIDENCE CAVEAT (2026-08-06): the 4 intent queries used here were the store’s own promo/category LABELS (\"All Products\", \"Home for the Holidays\", \"Under $500\", \"Seating\") — not genuine shopper intent. \"Under $500 returns 0\" is not a meaningful relevance failure, so this 4/4-vs-0/4 signal is weakly grounded and OVERSTATES the gap. Superseded by a properly-grounded 50-query furniture evaluation with real intent queries (9/9 intent zero-result on IW), each replayable: assessments/industrywest/search-eval/SE-20260713/ (findings IW-SR-001..003). Raw EXP-001..008 calls below are retained unchanged.",
+    "superseded_by": "SE-20260713 (findings IW-SR-001..IW-SR-003)"
   },
   "facets": {
     "attribute_count": 52,
@@ -175,7 +177,8 @@
       "surface": "Search",
       "status": "warn",
       "nature": "store_finding",
-      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap.",
+      "evidence_caveat": "EVIDENCE CAVEAT (2026-08-06): the 4 intent queries used here were the store’s own promo/category LABELS (\"All Products\", \"Home for the Holidays\", \"Under $500\", \"Seating\") — not genuine shopper intent. \"Under $500 returns 0\" is not a meaningful relevance failure, so this 4/4-vs-0/4 signal is weakly grounded and OVERSTATES the gap. Superseded by a properly-grounded 50-query furniture evaluation with real intent queries (9/9 intent zero-result on IW), each replayable: assessments/industrywest/search-eval/SE-20260713/ (findings IW-SR-001..003). Raw EXP-001..008 calls below are retained unchanged."
     },
     {
       "surface": "Autocomplete",
@@ -470,7 +473,8 @@
       "severity": "High",
       "nature": "store_finding",
       "title": "Search: discovery gap",
-      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap."
+      "detail": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap.",
+      "evidence_caveat": "EVIDENCE CAVEAT (2026-08-06): the 4 intent queries used here were the store’s own promo/category LABELS (\"All Products\", \"Home for the Holidays\", \"Under $500\", \"Seating\") — not genuine shopper intent. \"Under $500 returns 0\" is not a meaningful relevance failure, so this 4/4-vs-0/4 signal is weakly grounded and OVERSTATES the gap. Superseded by a properly-grounded 50-query furniture evaluation with real intent queries (9/9 intent zero-result on IW), each replayable: assessments/industrywest/search-eval/SE-20260713/ (findings IW-SR-001..003). Raw EXP-001..008 calls below are retained unchanged."
     },
     {
       "id": "WOO-F002",
@@ -498,7 +502,8 @@
         "severity": "High",
         "issue": "Literal 4/4, intent 0/4. Intent/category queries return nothing — relevance gap.",
         "recommendation": "Add synonym/intent handling (or a search app) so category and concept queries (\"sofa\", \"seating\") return products, not just literal product names.",
-        "status": "open"
+        "status": "open",
+        "evidence_caveat": "EVIDENCE CAVEAT (2026-08-06): the 4 intent queries used here were the store’s own promo/category LABELS (\"All Products\", \"Home for the Holidays\", \"Under $500\", \"Seating\") — not genuine shopper intent. \"Under $500 returns 0\" is not a meaningful relevance failure, so this 4/4-vs-0/4 signal is weakly grounded and OVERSTATES the gap. Superseded by a properly-grounded 50-query furniture evaluation with real intent queries (9/9 intent zero-result on IW), each replayable: assessments/industrywest/search-eval/SE-20260713/ (findings IW-SR-001..003). Raw EXP-001..008 calls below are retained unchanged."
       },
       {
         "id": "WOO-FIX003",
@@ -510,5 +515,18 @@
       }
     ]
   },
-  "report_md_path": "assessments/industrywest/woo-inspection/WOO-20260730T043107Z/executive-report.md"
+  "report_md_path": "assessments/industrywest/woo-inspection/WOO-20260730T043107Z/executive-report.md",
+  "corrections": [
+    {
+      "at": "2026-08-06",
+      "by": "GEN-039",
+      "note": "Annotated the \"literal 4/4, intent 0/4\" search-signal claim as weakly grounded (promo-label queries) and superseded by SE-20260713. Raw evidence calls retained.",
+      "applies_to": [
+        "search_signal",
+        "surfaces[1]",
+        "findings[0]",
+        "fix_plan.items[0]"
+      ]
+    }
+  ]
 }

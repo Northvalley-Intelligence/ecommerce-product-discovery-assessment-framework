@@ -1,0 +1,264 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|baby shower gifts",
+   "q": "baby shower gifts",
+   "ndcg": 0.8363307499782423,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|home office setup",
+   "q": "home office setup",
+   "ndcg": 0.8820844218513836,
+   "grades": [
+    2,
+    1,
+    1,
+    0,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|first apartment essentials",
+   "q": "first apartment essentials",
+   "ndcg": 0.8608507208033159,
+   "grades": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|camping trip gear",
+   "q": "camping trip gear",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|organize my closet",
+   "q": "organize my closet",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|holiday party hosting",
+   "q": "holiday party hosting",
+   "ndcg": 0.8495152316962563,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|newborn baby essentials",
+   "q": "newborn baby essentials",
+   "ndcg": 0.9816762821832159,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|small space storage solutions",
+   "q": "small space storage solutions",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|thanksgiving dinner table",
+   "q": "thanksgiving dinner table",
+   "ndcg": 0.6909124238317511,
+   "grades": [
+    1,
+    1,
+    0,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|kids birthday party supplies",
+   "q": "kids birthday party supplies",
+   "ndcg": 0.9601220623210976,
+   "grades": [
+    2,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|move into a new house",
+   "q": "move into a new house",
+   "ndcg": 0.7606395682357036,
+   "grades": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "query_id": "target|set up a home theater",
+   "q": "set up a home theater",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|start a garden",
+   "q": "start a garden",
+   "ndcg": 0.7637057362930129,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "query_id": "target|gift for a 5 year old boy",
+   "q": "gift for a 5 year old boy",
+   "ndcg": 0.7853499507465692,
+   "grades": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|cozy fall decor",
+   "q": "cozy fall decor",
+   "ndcg": 0.8974774503363707,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|what to get a teenage girl",
+   "q": "what to get a teenage girl",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|healthy snacks for kids",
+   "q": "healthy snacks for kids",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|something to help me sleep better",
+   "q": "something to help me sleep better",
+   "ndcg": 0.7858788169506234,
+   "grades": [
+    2,
+    1,
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|gift for someone who loves coffee",
+   "q": "gift for someone who loves coffee",
+   "ndcg": 0.7490591779896082,
+   "grades": [
+    1,
+    3,
+    1,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|outfit for a job interview",
+   "q": "outfit for a job interview",
+   "ndcg": 0.8672905934428387,
+   "grades": [
+    2,
+    0,
+    1,
+    1,
+    1,
+    2
+   ]
+  }
+ ]
+}

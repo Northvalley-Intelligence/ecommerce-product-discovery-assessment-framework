@@ -1,0 +1,19 @@
+{
+  "target_id": "catfootwear",
+  "name": "Cat Footwear",
+  "primary_url": "https://www.catfootwear.com/US/en/home",
+  "sector": "footwear",
+  "platform": {
+    "expected": "browser-eval",
+    "engine": "salesforce-commerce-cloud",
+    "framework": "SFRA (Storefront Reference Architecture)",
+    "rendering": "server-rendered product tiles"
+  },
+  "search": {
+    "url_pattern": "https://www.catfootwear.com/US/en/search?q=<TERM>",
+    "engine": "SFCC search; category-matching queries 302-redirect to the category page (adds ?rst=<term>), other queries render a /US/en/search results page",
+    "capture": "Read server-rendered .product-tile elements; product name/link in .product-tile a[href], dedupe by href base (each product has ~2 links). Grid container class pt_product-search-result. Category pages show an 'N Products' count; pure search pages do not. Top ~10 tiles render immediately; more lazy-load on scroll (scroll to load the full set, or use SFRA Search-UpdateGrid ajax with a larger size).",
+    "notes": "No aggressive bot protection observed on paced navigations (unlike Target/PerimeterX). Server-rendered reads are gentle. Locale path /US/en/. Query 'work boots' redirects to /US/en/work-boots/ (category); 'trainers' stays on /search (true search)."
+  },
+  "notes": "Cat Footwear (Caterpillar-licensed, Wolverine Worldwide) — work, outdoor, and lifestyle footwear. Salesforce Commerce Cloud / SFRA. Footwear sector. Search evaluated by reading the shopper-facing rendered results for a bounded query set — no crawling, no server load."
+}

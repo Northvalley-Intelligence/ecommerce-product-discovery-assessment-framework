@@ -1,0 +1,16 @@
+{
+  "retailer": "catfootwear",
+  "accept_grade": 2.0,
+  "months_per_year": 12,
+  "scenarios": {
+    "conservative": { "market_share": 0.01, "conversion_rate": 0.015, "aov": 110 },
+    "base": { "market_share": 0.02, "conversion_rate": 0.025, "aov": 130 },
+    "aggressive": { "market_share": 0.035, "conversion_rate": 0.035, "aov": 160 }
+  },
+  "notes": {
+    "market_share": "Cat Footwear's share of a term's US demand (single niche work-footwear brand; lower than a broad retailer).",
+    "conversion_rate": "Footwear on-site search conversion when results are relevant.",
+    "aov": "Cat Footwear average order value (work boots run $100-200).",
+    "accept_grade": "Grade >= 2/3 is acceptable (no loss); zero-result search-bugs are full loss; assortment gaps excluded."
+  }
+}

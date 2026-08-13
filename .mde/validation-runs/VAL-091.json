@@ -1,0 +1,21 @@
+{
+  "validation_run_id": "VAL-091",
+  "generation": "GEN-039",
+  "phase": "Two-pass gate over the corrected board/report + validity-correction records",
+  "started_at": "2026-08-08T00:00:00Z",
+  "completed_at": "2026-08-08T00:00:00Z",
+  "strategy_version": "VALSTRAT-001",
+  "record_status": "recorded_two_clean_passes",
+  "validations_executed": [
+    {
+      "category": "Gate: validate + validate:gen13 + validate:dashboard + diff-check, TWO clean passes",
+      "tool": "npm run validate*",
+      "result": "pass",
+      "evidence": "Pass 1 and Pass 2 both green (exit 0) with no implementation changes between them; git diff --check clean. Confirms the corrected board (real shopper-engine data), the branded demand-ranked report, the furniture-search-eval skill, and the CORR-SR-001 records are gate-clean. Pre-existing BDD-012 warning is a known deferred item."
+    }
+  ],
+  "validations_skipped": [],
+  "critical_findings": [],
+  "high_findings": [],
+  "notes": "Closes the post-exit validity correction (VAL-090/CORR-SR-001) with a clean two-pass gate. GEN-039 corrected artifacts are now final. Work local; no push."
+}

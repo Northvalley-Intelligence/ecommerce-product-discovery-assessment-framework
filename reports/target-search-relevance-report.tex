@@ -1,0 +1,458 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+
+\input{northvalley-template-assets/northvalley-brand.sty}
+
+\usepackage[letterpaper,margin=0.7in,headheight=16pt,headsep=14pt,footskip=26pt]{geometry}
+
+\usepackage{booktabs}\usepackage{longtable}\usepackage{fancyhdr}\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}\renewcommand{\arraystretch}{1.18}\arrayrulecolor{NVIRule}
+
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\color{NVIInk}
+
+\renewcommand{\labelitemi}{\textcolor{NVIAccent}{\(\triangleright\)}}
+
+\newcommand{\qq}[1]{\textquotedblleft #1\textquotedblright}
+
+\newcommand{\ReportKicker}[1]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+
+\newcommand{\ReportBody}[1]{{\fontsize{9.6}{12}\selectfont\color{NVIInk}#1}}
+
+\newcommand{\ReportFine}[1]{{\fontsize{7.8}{9.3}\selectfont\color{NVIMuted}#1}}
+
+\newcommand{\ReportSection}[1]{\par\addvspace{8pt}{\fontsize{14}{17}\selectfont\bfseries\color{NVIInk}#1}\par\vspace{1pt}{\color{NVIAccent}\rule{\linewidth}{0.9pt}}\par\addvspace{3pt}}
+
+\newcommand{\ReportDarkCard}[2]{\begin{tikzpicture}\node[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt,inner xsep=12pt,inner ysep=10pt,text width=\dimexpr\linewidth-26pt\relax,align=left]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.06in]{\fontsize{10.2}{12.4}\selectfont\color{white}#2}};\end{tikzpicture}}
+
+\newcommand{\MetricCard}[3]{\begin{tikzpicture}\node[draw=NVIRule,fill=NVIPanel,rounded corners=2pt,inner xsep=9pt,inner ysep=8pt,text width=\dimexpr\linewidth-20pt\relax,minimum height=0.8in,align=left]{\ReportKicker{#1}\\[0.04in]{\fontsize{18}{21}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]\ReportFine{#3}};\end{tikzpicture}}
+
+\fancypagestyle{nvi}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyhead[L]{\footnotesize\color{NVIAccent}\bfseries TARGET \textperiodcentered\ SEARCH RELEVANCE}\fancyhead[R]{\footnotesize\color{NVIMuted}Complimentary read}\fancyfoot[L]{\footnotesize\color{NVIMuted}\NorthvalleyBusinessName}\fancyfoot[R]{\footnotesize\color{NVIMuted}\thepage}}
+
+\begin{document}\color{NVIInk}
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+
+\fill[NVIPanel] (current page.north west) rectangle (current page.south east);
+
+\fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.05in]current page.north east);
+
+\fill[NVIAccent] ([yshift=-1.05in]current page.north west) rectangle ([yshift=-1.10in]current page.north east);
+
+\fill[NVIAccentSoft] ([xshift=-1.60in,yshift=-1.10in]current page.north east) -- (current page.north east) -- ([yshift=-2.45in]current page.north east) -- cycle;
+
+\fill[NVIAccentDark] (current page.south west) rectangle ([yshift=0.45in]current page.south east);
+
+\node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries] at ([xshift=0.7in,yshift=-0.52in]current page.north west) {\NorthvalleyBusinessName};
+
+\node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont] at ([xshift=-0.7in,yshift=-0.52in]current page.north east) {\today};
+
+\node[anchor=west,text=white,font=\fontsize{7.2}{8.4}\selectfont] at ([xshift=0.7in,yshift=0.22in]current page.south west) {\NorthvalleyContactLine};
+
+\end{tikzpicture}
+
+\vspace*{1.15in}\begin{minipage}[t]{0.58\linewidth}\raggedright
+
+\ReportKicker{Complimentary Findings Report}\\[0.12in]
+
+{\fontsize{30}{35}\selectfont\bfseries\color{NVIInk}On-site search relevance}\par
+
+\vspace{0.18in}{\fontsize{12}{15}\selectfont\color{NVIInk}An evidence-first read on Target\textquotesingle s on-site search across 110 terms in five query types --- each graded 0--3 for relevance by a local LLM judge. The finding: a strong engine, with a clear gap in compositional natural-language intent and a narrower regional-synonym gap.}\par
+
+\vspace{0.26in}{\color{NVIAccent}\rule{2.6in}{0.9pt}}\par
+
+\vspace{0.16in}{\fontsize{9.2}{11}\selectfont\color{NVIMuted}Prepared for}\\[-0.01in]{\fontsize{15}{18}\selectfont\bfseries\color{NVIAccentDark}Target}\par
+
+\vspace{0.06in}{\fontsize{9}{10.8}\selectfont\color{NVIMuted}Prepared by \NorthvalleyBusinessName}\par
+
+\vspace{0.14in}{\fontsize{7.6}{9.6}\selectfont\itshape\color{NVIMuted}A quick, browser-based research read --- not a formal audit. No crawling and no load on production; each term run once on the shopper-facing organic search (sponsored excluded) at a human pace, with bot protection respected and never bypassed. Surprising zeros were re-checked live --- brand-name queries redirect to curated brand pages and are counted as answered.}
+
+\end{minipage}\hfill\begin{minipage}[t]{0.31\linewidth}\centering\vspace{0.06in}
+
+\NorthvalleyLogo[0.9in]\par\vspace{0.22in}
+
+\ReportDarkCard{The verdict}{Target search is strong on product-type, attribute and brand queries and most synonyms (overall grade 1.76/3 across 110 terms). Its weakness is compositional natural-language intent --- phrases like \qq{move into a new house} that do not map to a single category --- plus a narrower regional-synonym gap (\qq{pop}, \qq{popsicle}).}
+
+\vspace{0.1in}\MetricCard{Mean grade}{1.76/3}{38\% of 721 graded results not-relevant.}
+
+\end{minipage}\newpage
+
+\pagestyle{nvi}
+
+\ReportSection{Summary}
+
+\ReportDarkCard{The headline --- search fixes at scale}{Across 83 demand-weighted search terms, poor relevance puts an estimated \textbf{\$275K/year} at risk. Applied to the \textbf{top 1,000} search terms, that projects to \textbf{\$3.3M per year} (range \$853K--\$8.3M) --- the prize for fixing search. Modeled on real Google demand; assumptions and full math in the appendix.}
+
+\vspace{5pt}
+
+\ReportDarkCard{Strong, with focused gaps}{Target search handles the everyday well --- synonyms, brand and product-name queries, and product types all return relevant results (overall grade 1.76/3 across 110 terms). The clear weakness is compositional, natural-language intent (job-function queries grade just 1.33/3): when a phrase does not map to a single category, the engine keyword-matches a token and returns a plausible aisle rather than understanding the request.}
+
+\vspace{4pt}\ReportBody{The intent gap is specific: \qq{move into a new house} returns romance novels and toy food trucks; \qq{set up a home theater} mixes soundbars with women\textquotesingle s pajamas; \qq{furnish a living room} returns vases (not furniture). But it handles intent well when the phrase maps to a real category --- \qq{healthy snacks for kids}, \qq{home gym equipment}, \qq{organize my kitchen} all work. A second, narrower gap is regional/substring synonyms: the engine substring-matches rather than mapping the word, so \qq{pop} and \qq{popsicle} return Pop-Tarts, \qq{ice lolly} returns mints, and \qq{jumper} returns baby activity jumpers. It nails the everyday --- loveseat, stanley tumbler, lego star wars, instant pot, decorate a nursery, stainless steel cookware set, nintendo switch, all in motion --- and brand queries redirect to curated brand pages. Attribute queries return the right product type but do not always honor the exact attribute.}\par
+
+\ReportSection{How this was measured}
+
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}\setlength{\topsep}{2pt}
+
+\item \textbf{Real shopper search, no production load.} Each term was run on Target\textquotesingle s live search page and the top results read from what the browser rendered --- bounded and paced, no crawling or scraping. Reading the raw search API at volume triggers bot protection, which we did not bypass.
+
+\item \textbf{Graded relevance.} Every returned product was scored 0--3 for relevance by a local large language model (Meta Llama 3.2 3B, temperature 0, reproducible), summarized as NDCG (0--1) and mean grade. 721 product judgments across 110 terms and five query types.
+
+\item \textbf{Why grade, not coverage.} A big-box engine returns something for almost anything, so coverage and NDCG (internal ordering) stay high; mean grade is the honest signal of whether results match intent.
+
+\item \textbf{Caveat.} Results were read from Target\textquotesingle s organic search (sponsored and \qq{recommended} carousel tiles excluded); the lowest-scoring terms were re-verified against the live site to rule out capture artifacts. A production run would use the full organic search API at scale.
+
+\end{itemize}
+
+\ReportSection{Findings}
+
+From the 110-term evaluation, severity-ranked, with a fix candidate for each. Ranking these by demand is the next step (below).
+
+\vspace{2pt}\begin{longtable}{@{}p{0.62in}p{1.15in}p{\dimexpr\linewidth-1.87in\relax}@{}}\toprule\bfseries Severity & \bfseries Area & \bfseries Finding \\\midrule\endhead
+
+\textbf{\color{NVIAccentDark}High} & \textbf{Intent / job-function} & \textbf{Compositional natural-language queries return a plausible aisle, not the ask}\newline{\footnotesize\color{NVIMuted}Job-function queries grade 1.33/3 (63\% not-relevant). move-into-a-new-house -> romance novels \& toy food trucks; set-up-a-home-theater -> pajamas mixed with soundbars; furnish-a-living-room -> vases. Works only when the phrase maps to a single category (healthy snacks for kids, home gym equipment, organize my kitchen). Fix candidate: query understanding / intent expansion for multi-word task queries.} \\\addlinespace
+\textbf{\color{NVIAccentDark}Medium} & \textbf{Synonym equivalence} & \textbf{Synonyms are substring-matched, not mapped — regional/UK variants fail}\newline{\footnotesize\color{NVIMuted}Variants underperform their US canonical: trainers 0.88 vs sneakers 1.88; rubbish bin 1.0 vs trash can 2.0; nappies 1.17 vs diapers 2.0; pram 1.63 vs stroller 2.5. Ambiguous tokens misfire: pop/popsicle -> Pop-Tarts, ice-lolly -> mints. crockpot=slow cooker and rc car=remote control car are handled perfectly. Fix candidate: a synonym dictionary (incl. en-GB) mapped to canonical categories.} \\\addlinespace
+\textbf{\color{NVIAccentDark}Medium} & \textbf{Attribute exactness} & \textbf{Attribute queries return the right product type but not always the exact attribute}\newline{\footnotesize\color{NVIMuted}A 65-inch QLED search surfaces mixed sizes/panel types; rose-gold-desk-lamp returns assorted desk lamps. The product type is right; the specific attribute (size/color/material) is loosely honored. Fix candidate: weight attribute facets in ranking.} \\\addlinespace
+\textbf{\color{NVIAccentDark}Low} & \textbf{Brand navigation (strength)} & \textbf{Brand-name queries correctly redirect to curated brand pages}\newline{\footnotesize\color{NVIMuted}threshold, cat \& jack, good \& gather, hearth \& hand, all in motion redirect to curated brand pages (1,600-2,700 results). Caveat: the plp\_search\_v2 keyword API returns 0 for pure brand names, so they must be counted via the brand page (a measurement note, not a defect).} \\\addlinespace
+\textbf{\color{NVIAccentDark}Info} & \textbf{Measurement} & \textbf{Coverage is \textasciitilde{}100\% — weight grade quality, not zero-result rate}\newline{\footnotesize\color{NVIMuted}Target answers nearly every query, so NDCG/coverage look strong; the mean grade (1.76/3) and not-relevant rate (38\%) reveal the shallow answers. For big-box, rank fixes by grade-quality x demand, not by zero-result rate.} \\
+
+\bottomrule\end{longtable}
+
+\ReportSection{Demand-ranked quick wins}
+
+Failing terms (grade below 1.5 on demand-mappable query types) joined to Google Keyword Planner monthly search volume --- the highest-volume failures are the highest-value fixes.
+
+\vspace{2pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{2.3in}p{1.2in}>{\centering\arraybackslash}p{1.2in}>{\centering\arraybackslash}p{0.7in}@{}}\toprule\bfseries Fix candidate & \bfseries Query type & \bfseries Monthly volume & \bfseries Grade \\\midrule\endhead
+
+move into a new house & job-function & 390 & 0.67 \\
+trainers & synonym & 22,200 & 0.88 \\
+rubbish bin & synonym & 480 & 1.00 \\
+furnish a living room & job-function & 10 & 1.00 \\
+set up a home theater & job-function & 390 & 1.00 \\
+start a garden & job-function & 1,600 & 1.00 \\
+rose gold desk lamp & attribute & 50 & 1.00 \\
+first apartment essentials & job-function & 1,900 & 1.17 \\
+thanksgiving dinner table & job-function & 1,600 & 1.17 \\
+outfit for a job interview & intent & 14,800 & 1.17 \\
+organic cotton crib sheet & attribute & 5,400 & 1.17 \\
+memory foam pillow & attribute & 49,500 & 1.17 \\
+waterproof hiking boots & attribute & 33,100 & 1.17 \\
+nappies & synonym & 12,100 & 1.17 \\
+popsicle & synonym & 201,000 & 1.17 \\
+cast iron skillet 12 inch & attribute & 4,400 & 1.25 \\
+gift for a new mom & intent & 14,800 & 1.25 \\
+back to school supplies & job-function & 9,900 & 1.25 \\
+home office setup & job-function & 2,900 & 1.33 \\
+warm coat for winter & intent & 2,900 & 1.33 \\
+65 inch qled tv & attribute & 1,600 & 1.33 \\
+sweater & synonym & 246,000 & 1.33 \\
+
+\bottomrule\end{longtable}}
+
+\ReportSection{Revenue at risk --- and the opportunity at 1,000 terms}
+
+\ReportDarkCard{Projected across the top 1,000 search terms}{\textbf{\$3.3M per year} recoverable --- range \$853K to \$8.3M. Extrapolated from the measured sample at \$3,318 per term on average, across 83 demand-weighted terms.}
+
+\vspace{4pt}\ReportBody{\textbf{Measured basis:} across 83 search terms carrying real Google demand (of 110 evaluated), poor relevance puts \$275K per year at risk today (range \$71K--\$688K); 53 of those terms carry loss. The 1,000-term figure applies the same per-term average to a retailer\textquotesingle s highest-demand searches.}\par
+
+\vspace{4pt}\ReportBody{Model: for each searched term, monthly Google volume \(\times\) Target market share (3.5\%) \(\times\) search conversion (2.5\%) \(\times\) average order value (\$60) is the revenue at stake; the share forfeited scales with how poorly the term grades --- a term grading 2/3 or better counts as no loss. 53 of 83 demand terms contribute.}\par
+
+\vspace{4pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{2.3in}>{\centering\arraybackslash}p{1.2in}>{\centering\arraybackslash}p{0.6in}>{\raggedleft\arraybackslash}p{1.35in}@{}}\toprule\bfseries Term & \bfseries Monthly volume & \bfseries Grade & \bfseries Annual \$ lost (base) \\\midrule\endhead
+
+popsicle & 201,000 & 1.17 & \$52,551 \\
+sweater & 246,000 & 1.33 & \$51,918 \\
+jumper & 110,000 & 1.50 & \$17,325 \\
+soda & 165,000 & 1.67 & \$17,152 \\
+tennis shoes & 135,000 & 1.63 & \$15,734 \\
+remote control car & 135,000 & 1.67 & \$14,033 \\
+rc car & 135,000 & 1.67 & \$14,033 \\
+memory foam pillow & 49,500 & 1.17 & \$12,942 \\
+
+\bottomrule\end{longtable}}
+
+\ReportFine{Modeled estimate for the sampled terms only --- not audited revenue, and not extrapolated to Target\textquotesingle s full query catalog (which is far larger). Tune market share, conversion and AOV to Target\textquotesingle s real figures to tighten the range.}
+
+\ReportSection{How we can help}
+
+\ReportDarkCard{Complimentary now --- deeper on request}{This is a complimentary read on a bounded query set. We can run the same evidence-first analysis \textbf{at scale} against your real on-site query logs --- a \textbf{one-time} audit or a \textbf{recurring} check --- and overlay Google search demand so the fixes are ranked by revenue impact. The deliverable: a reproducible, prioritized list of the exact searches to fix.}
+
+\newpage
+
+\ReportSection{Relevance by query type}
+
+NDCG is the internal ordering (0--1); mean grade is the honest relevance (0--3); shallow = terms whose results average below grade 1.5.
+
+\vspace{2pt}\begin{longtable}{@{}p{2.2in}>{\centering\arraybackslash}p{0.7in}>{\centering\arraybackslash}p{0.7in}>{\centering\arraybackslash}p{0.85in}>{\centering\arraybackslash}p{0.9in}>{\centering\arraybackslash}p{0.7in}@{}}\toprule\bfseries Query type & \bfseries Terms & \bfseries NDCG & \bfseries Mean grade & \bfseries Not-relevant & \bfseries Shallow \\\midrule\endhead
+
+Synonym / category & 36 & 88\% & 1.91 & 29\% & 5/36 \\\addlinespace
+Attribute (type+material) & 25 & 95\% & 1.73 & 32\% & 6/25 \\\addlinespace
+Job-function (task) & 18 & 90\% & 1.33 & 63\% & 11/18 \\\addlinespace
+Intent (natural language) & 16 & 87\% & 1.60 & 47\% & 6/16 \\\addlinespace
+Literal (brand/product) & 15 & 91\% & 2.07 & 34\% & 4/15 \\
+
+\bottomrule\end{longtable}
+
+\ReportSection{Where it breaks: shallowest searches}
+
+The lowest-grade searches --- each returns results, but the wrong ones. \qq{Top result} is the first product Target returned.
+
+\vspace{2pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{1.9in}p{1.4in}>{\centering\arraybackslash}p{0.6in}p{\dimexpr\linewidth-4.2in\relax}@{}}\toprule\bfseries Search term & \bfseries Query type & \bfseries Grade & \bfseries Top result \\\midrule\endhead
+
+move into a new house & job\_function & 0.67 & The Love Hypothesis - by  Ali Hazelw \\
+trainers & synonym & 0.88 & Munchkin Miracle 360 Trainer Cup 7oz - Blu \\
+rubbish bin & synonym & 1.00 & 2.5gal Waste Basket White - Brightroom : C \\
+everything for a college dorm & job\_function & 1.00 & Post-it Flags Assorted Bright Colors 100 F \\
+host a backyard bbq & job\_function & 1.00 & Drizzilicious Mini Rice Cakes Birthday Cak \\
+furnish a living room & job\_function & 1.00 & White Vase with Pink Bow Room Essentials \\
+set up a home theater & job\_function & 1.00 & Small Wood Bluetooth Radio - Hearth  \\
+start a garden & job\_function & 1.00 & LEGO Botanicals Water Lilies Buildin \\
+what to get a teenage girl & intent & 1.00 & Betting on You - by  Lynn Painter (P \\
+rose gold desk lamp & attribute & 1.00 & Task Lamp with Charging Pink - Room  \\
+
+\bottomrule\end{longtable}}
+
+\ReportSection{Synonym equivalence: does each variant match its canonical?}
+
+Synonyms are grouped by the canonical term a shopper would expect them to match. Where a variant grades well below its canonical (a large negative \(\Delta\)), the engine substring-matched the word rather than mapping the synonym --- most misses are UK/regional variants (\qq{trainers}, \qq{rubbish bin}, \qq{nappies}) or ambiguous tokens (\qq{pop} returns Pop-Tarts, not soda). Groups where every variant matches (\qq{crockpot}={}\qq{slow cooker}, \qq{rc car}={}\qq{remote control car}) are handled well.
+
+\vspace{2pt}{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{1.5in}p{1.5in}>{\centering\arraybackslash}p{0.55in}>{\centering\arraybackslash}p{0.5in}p{\dimexpr\linewidth-4.05in\relax}@{}}\toprule\bfseries Canonical (grade) & \bfseries Variant & \bfseries Grade & \bfseries \(\Delta\) & \bfseries Variant top result \\\midrule\endhead
+
+\textbf{sneakers} \footnotesize(1.88) & tennis shoes & 1.63 & -0.25 & Kids Devyn Slip-On Performance \\
+ & trainers & 0.88 & -1.00 & Munchkin Miracle 360 Trainer C \\\addlinespace
+\textbf{trash can} \footnotesize(2.00) & garbage can & 1.75 & -0.25 & 2.5gal Waste Basket White - Br \\
+ & rubbish bin & 1.00 & -1.00 & 2.5gal Waste Basket White - Br \\\addlinespace
+\textbf{sofa} \footnotesize(2.38) & couch & 2.50 & +0.12 & Costway Floor Couch, Loveseat  \\
+ & settee & 1.50 & -0.88 & 12pc Stoneware Westfield Dinne \\
+ & loveseat & 2.88 & +0.50 & Dyonery 65" Folding Boneless C \\\addlinespace
+\textbf{stroller} \footnotesize(2.50) & pram & 1.63 & -0.87 & Baby Disney Winnie The Pooh Co \\
+ & pushchair & 2.25 & -0.25 & hauck Sport T13 Lightweight Co \\\addlinespace
+\textbf{diapers} \footnotesize(2.00) & nappies & 1.17 & -0.83 & The Honest Company Clean Consc \\\addlinespace
+\textbf{silverware} \footnotesize(2.38) & flatware & 2.50 & +0.12 & 20pc Teagan Flatware Silver -  \\
+ & cutlery & 1.75 & -0.63 & Hefty Ecosave Compostable Cutl \\\addlinespace
+\textbf{comforter} \footnotesize(2.13) & duvet & 2.00 & -0.13 & King Heavyweight Linen Blend D \\
+ & quilt & 2.25 & +0.12 & King Heavyweight Linen Blend Q \\\addlinespace
+\textbf{coffee table} \footnotesize(2.25) & cocktail table & 2.13 & -0.12 & Marble Drink Table - Threshold \\\addlinespace
+\textbf{slow cooker} \footnotesize(2.17) & crockpot & 2.17 & 0.00 & Crock-Pot 4.5qt Slow Cooker Si \\
+ & crock pot & 2.17 & 0.00 & Crock-Pot 4.5qt Slow Cooker Si \\\addlinespace
+\textbf{soda} \footnotesize(1.67) & pop & 2.50 & +0.83 & Pop-Tarts Frosted Fruit Variet \\
+ & soft drinks & 1.67 & 0.00 & OLIPOP Shirley Temple Soda - 1 \\\addlinespace
+\textbf{remote control car} \footnotesize(1.67) & rc car & 1.67 & 0.00 & Sharper Image Toy RC Corvette  \\\addlinespace
+\textbf{sweater} \footnotesize(1.33) & jumper & 1.50 & +0.17 & Baby Einstein Farm Explorers J \\
+ & pullover & 1.75 & +0.42 & Womens Oversized Long Sleeve R \\\addlinespace
+\textbf{popsicle} \footnotesize(1.17) & ice lolly & 1.50 & +0.33 & Ice Cube Tray Soft Release wit \\
+
+\bottomrule\end{longtable}}
+
+\ReportSection{Appendix: all terms tried (with grade)}
+
+NDCG = internal ordering; Grade = mean relevance 0--3.
+
+\vspace{2pt}\begin{longtable}{@{}p{\dimexpr\linewidth-2in\relax}>{\centering\arraybackslash}p{0.9in}>{\centering\arraybackslash}p{0.9in}@{}}\toprule\bfseries Search term & \bfseries NDCG & \bfseries Grade \\\midrule\endhead
+
+\multicolumn{3}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Synonym / category}\\
+trainers & 100\% & 0.88 \\
+rubbish bin & 66\% & 1.00 \\
+nappies & 100\% & 1.17 \\
+popsicle & 76\% & 1.17 \\
+sweater & 74\% & 1.33 \\
+settee & 80\% & 1.50 \\
+jumper & 91\% & 1.50 \\
+ice lolly & 85\% & 1.50 \\
+tennis shoes & 94\% & 1.63 \\
+pram & 98\% & 1.63 \\
+soda & 100\% & 1.67 \\
+soft drinks & 97\% & 1.67 \\
+remote control car & 100\% & 1.67 \\
+rc car & 100\% & 1.67 \\
+cutlery & 78\% & 1.75 \\
+garbage can & 69\% & 1.75 \\
+pullover & -- & 1.75 \\
+sneakers & 94\% & 1.88 \\
+trash can & 79\% & 2.00 \\
+duvet & 100\% & 2.00 \\
+diapers & 83\% & 2.00 \\
+cocktail table & 78\% & 2.13 \\
+comforter & 100\% & 2.13 \\
+slow cooker & 89\% & 2.17 \\
+crockpot & 84\% & 2.17 \\
+crock pot & 84\% & 2.17 \\
+coffee table & 74\% & 2.25 \\
+pushchair & 99\% & 2.25 \\
+quilt & 94\% & 2.25 \\
+sofa & 81\% & 2.38 \\
+silverware & 84\% & 2.38 \\
+couch & 81\% & 2.50 \\
+flatware & 86\% & 2.50 \\
+stroller & 97\% & 2.50 \\
+pop & 96\% & 2.50 \\
+loveseat & 100\% & 2.88 \\
+\addlinespace
+\multicolumn{3}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Attribute (type+material)}\\
+rose gold desk lamp & 100\% & 1.00 \\
+organic cotton crib sheet & 100\% & 1.17 \\
+memory foam pillow & 100\% & 1.17 \\
+waterproof hiking boots & 100\% & 1.17 \\
+cast iron skillet 12 inch & 66\% & 1.25 \\
+65 inch qled tv & 88\% & 1.33 \\
+air fryer 8 quart & 83\% & 1.50 \\
+marble coffee table & 96\% & 1.67 \\
+55 inch 4k oled tv & -- & 1.71 \\
+walnut dining table & 93\% & 1.75 \\
+high waisted black leggings & 97\% & 1.83 \\
+blackout curtains 84 inch & 98\% & 1.83 \\
+reusable stainless steel water bottle & 98\% & 1.83 \\
+fleece lined leggings & 98\% & 1.83 \\
+kids rolling backpack & 98\% & 1.83 \\
+gaming chair with lumbar support & 99\% & 1.83 \\
+standing desk adjustable & 99\% & 1.83 \\
+velvet accent chair & 99\% & 1.88 \\
+nonstick frying pan & 99\% & 2.00 \\
+queen size cooling sheets & 100\% & 2.00 \\
+wireless noise cancelling headphones & 100\% & 2.00 \\
+bluetooth portable speaker & 100\% & 2.00 \\
+stackable storage bins & 100\% & 2.00 \\
+12 cup programmable coffee maker & 80\% & 2.33 \\
+stainless steel cookware set & 96\% & 2.67 \\
+\addlinespace
+\multicolumn{3}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Job-function (task)}\\
+move into a new house & 76\% & 0.67 \\
+everything for a college dorm & 100\% & 1.00 \\
+host a backyard bbq & 100\% & 1.00 \\
+furnish a living room & 100\% & 1.00 \\
+set up a home theater & 100\% & 1.00 \\
+start a garden & 76\% & 1.00 \\
+first apartment essentials & 86\% & 1.17 \\
+thanksgiving dinner table & 69\% & 1.17 \\
+back to school supplies & 79\% & 1.25 \\
+home office setup & 88\% & 1.33 \\
+kids birthday party supplies & 96\% & 1.33 \\
+holiday party hosting & 85\% & 1.50 \\
+newborn baby essentials & 98\% & 1.50 \\
+camping trip gear & -- & 1.80 \\
+organize my closet & 100\% & 1.83 \\
+home gym equipment & 100\% & 2.00 \\
+small space storage solutions & 100\% & 2.00 \\
+baby shower gifts & 84\% & 2.17 \\
+\addlinespace
+\multicolumn{3}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Intent (natural language)}\\
+what to get a teenage girl & 100\% & 1.00 \\
+gift for a 5 year old boy & 79\% & 1.17 \\
+outfit for a job interview & 87\% & 1.17 \\
+reduce clutter in my bathroom & 77\% & 1.17 \\
+gift for a new mom & 81\% & 1.25 \\
+warm coat for winter & 60\% & 1.33 \\
+cozy fall decor & 90\% & 1.50 \\
+healthy snacks for kids & 100\% & 1.67 \\
+gift for someone who loves coffee & 75\% & 1.67 \\
+something fun for a road trip & 92\% & 1.67 \\
+something to organize my kitchen & 94\% & 1.75 \\
+keep drinks cold at the beach & 100\% & 1.83 \\
+gift for a dog lover & 79\% & 1.83 \\
+something to help me sleep better & 79\% & 2.00 \\
+gift under 25 dollars & 100\% & 2.00 \\
+decorate a nursery & 95\% & 2.67 \\
+\addlinespace
+\multicolumn{3}{@{}l}{\rule{0pt}{2.6ex}\bfseries\color{NVIAccentDark}Literal (brand/product)}\\
+bullseye dog toy & 81\% & 1.17 \\
+good and gather & 73\% & 1.33 \\
+room essentials & 100\% & 1.33 \\
+figmint & 73\% & 1.33 \\
+threshold & 90\% & 1.50 \\
+dyson v8 & 69\% & 1.63 \\
+keurig k mini & 100\% & 1.83 \\
+airpods pro & 100\% & 2.00 \\
+cat and jack & 95\% & 2.50 \\
+hearth and hand & 95\% & 2.50 \\
+nintendo switch & 100\% & 2.67 \\
+all in motion & 95\% & 2.67 \\
+lego star wars & 88\% & 2.83 \\
+instant pot & 99\% & 2.83 \\
+stanley tumbler & 100\% & 2.88 \\
+\addlinespace
+\bottomrule\end{longtable}
+
+\ReportSection{Appendix B: revenue-loss calculation}
+
+\ReportBody{Every dollar figure in this report is reproducible from the formula and parameters below, applied to real Google Keyword Planner volumes. It is a modeled estimate, not audited revenue.}\par\vspace{4pt}
+
+\textbf{Per term, per month:}\quad monthly\_lost = volume $\times$ market\_share $\times$ conversion\_rate $\times$ AOV $\times$ loss\_fraction,\newline where loss\_fraction = max$(0,\ ($accept\_grade $-$ grade$)\div$ accept\_grade$)$, with accept\_grade = 2. Annual = monthly $\times$ 12; total = sum over demand-weighted terms.\par\vspace{5pt}
+
+\textbf{Parameters (three scenarios):}\par\vspace{2pt}
+
+\begin{longtable}{@{}p{1.7in}>{\centering\arraybackslash}p{1.1in}>{\centering\arraybackslash}p{1.1in}>{\centering\arraybackslash}p{1.1in}@{}}\toprule\bfseries Parameter & \bfseries Conservative & \bfseries Base & \bfseries Aggressive \\\midrule\endhead
+
+Market share & 2.0\% & 3.5\% & 5.0\% \\
+
+Search conversion & 1.5\% & 2.5\% & 3.5\% \\
+
+Average order value & \$45 & \$60 & \$75 \\
+
+\bottomrule\end{longtable}
+
+\vspace{3pt}\textbf{Per-term detail (base scenario, terms contributing loss):}\par\vspace{2pt}
+
+{\rowcolors{2}{NVIPanel}{white}\begin{longtable}{@{}p{2.0in}>{\centering\arraybackslash}p{0.95in}>{\centering\arraybackslash}p{0.55in}>{\centering\arraybackslash}p{0.75in}>{\raggedleft\arraybackslash}p{1.15in}@{}}\toprule\bfseries Term & \bfseries Vol / mo & \bfseries Grade & \bfseries Loss frac. & \bfseries Annual \$ (base) \\\midrule\endhead
+
+popsicle & 201,000 & 1.17 & 0.415 & \$52,551 \\
+sweater & 246,000 & 1.33 & 0.335 & \$51,918 \\
+jumper & 110,000 & 1.50 & 0.25 & \$17,325 \\
+soda & 165,000 & 1.67 & 0.165 & \$17,152 \\
+tennis shoes & 135,000 & 1.63 & 0.185 & \$15,734 \\
+remote control car & 135,000 & 1.67 & 0.165 & \$14,033 \\
+rc car & 135,000 & 1.67 & 0.165 & \$14,033 \\
+memory foam pillow & 49,500 & 1.17 & 0.415 & \$12,942 \\
+sneakers & 301,000 & 1.88 & 0.06 & \$11,378 \\
+waterproof hiking boots & 33,100 & 1.17 & 0.415 & \$8,654 \\
+trainers & 22,200 & 0.88 & 0.56 & \$7,832 \\
+soft drinks & 49,500 & 1.67 & 0.165 & \$5,146 \\
+settee & 27,100 & 1.50 & 0.25 & \$4,268 \\
+healthy snacks for kids & 40,500 & 1.67 & 0.165 & \$4,210 \\
+outfit for a job interview & 14,800 & 1.17 & 0.415 & \$3,869 \\
+gift for a new mom & 14,800 & 1.25 & 0.375 & \$3,497 \\
+fleece lined leggings & 60,500 & 1.83 & 0.085 & \$3,240 \\
+garbage can & 40,500 & 1.75 & 0.125 & \$3,189 \\
+nappies & 12,100 & 1.17 & 0.415 & \$3,164 \\
+marble coffee table & 27,100 & 1.67 & 0.165 & \$2,817 \\
+cutlery & 33,100 & 1.75 & 0.125 & \$2,607 \\
+pram & 22,200 & 1.63 & 0.185 & \$2,587 \\
+back to school supplies & 9,900 & 1.25 & 0.375 & \$2,339 \\
+pullover & 22,200 & 1.75 & 0.125 & \$1,748 \\
+organic cotton crib sheet & 5,400 & 1.17 & 0.415 & \$1,412 \\
+cast iron skillet 12 inch & 4,400 & 1.25 & 0.375 & \$1,040 \\
+standing desk adjustable & 18,100 & 1.83 & 0.085 & \$969 \\
+warm coat for winter & 2,900 & 1.33 & 0.335 & \$612 \\
+home office setup & 2,900 & 1.33 & 0.335 & \$612 \\
+walnut dining table & 6,600 & 1.75 & 0.125 & \$520 \\
+start a garden & 1,600 & 1.00 & 0.5 & \$504 \\
+first apartment essentials & 1,900 & 1.17 & 0.415 & \$497 \\
+ice lolly & 2,900 & 1.50 & 0.25 & \$457 \\
+thanksgiving dinner table & 1,600 & 1.17 & 0.415 & \$418 \\
+reusable stainless steel water bottle & 6,600 & 1.83 & 0.085 & \$353 \\
+65 inch qled tv & 1,600 & 1.33 & 0.335 & \$338 \\
+gift for a dog lover & 5,400 & 1.83 & 0.085 & \$289 \\
+air fryer 8 quart & 1,300 & 1.50 & 0.25 & \$205 \\
+velvet accent chair & 4,400 & 1.88 & 0.06 & \$166 \\
+move into a new house & 390 & 0.67 & 0.665 & \$163 \\
+rubbish bin & 480 & 1.00 & 0.5 & \$151 \\
+set up a home theater & 390 & 1.00 & 0.5 & \$123 \\
+cozy fall decor & 480 & 1.50 & 0.25 & \$76 \\
+high waisted black leggings & 1,000 & 1.83 & 0.085 & \$54 \\
+gaming chair with lumbar support & 1,000 & 1.83 & 0.085 & \$54 \\
+55 inch 4k oled tv & 390 & 1.71 & 0.145 & \$36 \\
+gift for someone who loves coffee & 320 & 1.67 & 0.165 & \$33 \\
+blackout curtains 84 inch & 390 & 1.83 & 0.085 & \$21 \\
+rose gold desk lamp & 50 & 1.00 & 0.5 & \$16 \\
+holiday party hosting & 90 & 1.50 & 0.25 & \$14 \\
+organize my closet & 170 & 1.83 & 0.085 & \$9 \\
+camping trip gear & 90 & 1.80 & 0.1 & \$6 \\
+furnish a living room & 10 & 1.00 & 0.5 & \$3 \\
+
+\midrule \textbf{Total (base)} & & & & \textbf{\$275,384} \\
+
+\bottomrule\end{longtable}}
+
+\vspace{3pt}\textbf{Extrapolation to 1,000 terms:}\quad \$275,384 \(\div\) 83 terms \(=\) \$3,318 per term (base); \(\times\ 1{,}000 =\) \textbf{\$3.3M per year} (conservative \$853K, aggressive \$8.3M).\par\vspace{2pt}\ReportFine{Illustrative projection: assumes the next 1000 search terms share a similar average demand and failure profile as the measured sample. Real query catalogs follow a long-tail demand distribution, so validate against actual query logs.}
+
+\end{document}

@@ -1,0 +1,337 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "using_default_rubric": true,
+ "rows": [
+  {
+   "query_id": "sevenbonde|counter stool",
+   "ndcg": 0.9816242415899501,
+   "grades": [
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    2,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|bar stool",
+   "ndcg": 0.9891887216934553,
+   "grades": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|kitchen stool",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|accent chair",
+   "ndcg": 0.9550337350142764,
+   "grades": [
+    2,
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|lounge chair",
+   "ndcg": 0.8228574808260866,
+   "grades": [
+    2,
+    3,
+    2,
+    3,
+    1,
+    0,
+    1,
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|armchair",
+   "ndcg": 0.8262339337877677,
+   "grades": [
+    2,
+    2,
+    1,
+    3,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|sofa",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|side table",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|end table",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|accent table",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|coffee table",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|cocktail table",
+   "ndcg": 1,
+   "grades": [
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|ottoman",
+   "ndcg": 1,
+   "grades": [
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|pouf",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "sevenbonde|dining chair",
+   "ndcg": 0.7740098357799076,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    3,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|side chair",
+   "ndcg": 0.8555996584685103,
+   "grades": [
+    2,
+    2,
+    3,
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|desk",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|bench",
+   "ndcg": 0.9521901411157033,
+   "grades": [
+    3,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|entryway bench",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|walnut dining table",
+   "ndcg": 1,
+   "grades": [
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|leather lounge chair",
+   "ndcg": 0.7131287753998546,
+   "grades": [
+    1,
+    1,
+    3,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|leather dining chair",
+   "ndcg": 1,
+   "grades": [
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|cane dining chair",
+   "ndcg": 0.8389776660073724,
+   "grades": [
+    1,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|black metal stool",
+   "ndcg": 0.8226321277096644,
+   "grades": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|rattan chair",
+   "ndcg": 0.9741708819798081,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|woven dining chair",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|reading chair",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|restaurant chairs",
+   "ndcg": 0.7937120904299643,
+   "grades": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|outdoor seating",
+   "ndcg": 0.8043623794052986,
+   "grades": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "sevenbonde|dining table",
+   "ndcg": 0.8956554681621287,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "sevenbonde|entryway furniture",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  }
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "rows": [
+  {
+   "query_id": "target|pullover",
+   "q": "pullover",
+   "ndcg": null,
+   "grades": [
+    2,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|diapers",
+   "q": "diapers",
+   "ndcg": 0.8274984521623037,
+   "grades": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    1
+   ]
+  },
+  {
+   "query_id": "target|nappies",
+   "q": "nappies",
+   "ndcg": 1,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|soda",
+   "q": "soda",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|pop",
+   "q": "pop",
+   "ndcg": 0.9565557524561507,
+   "grades": [
+    3,
+    2,
+    3,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|soft drinks",
+   "q": "soft drinks",
+   "ndcg": 0.965876867928782,
+   "grades": [
+    2,
+    2,
+    1,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|popsicle",
+   "q": "popsicle",
+   "ndcg": 0.757273021239687,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "query_id": "target|ice lolly",
+   "q": "ice lolly",
+   "ndcg": 0.8495152316962563,
+   "grades": [
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|remote control car",
+   "q": "remote control car",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|rc car",
+   "q": "rc car",
+   "ndcg": 1,
+   "grades": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "query_id": "target|threshold",
+   "q": "threshold",
+   "ndcg": 0.8974774503363707,
+   "grades": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    2
+   ]
+  },
+  {
+   "query_id": "target|cat and jack",
+   "q": "cat and jack",
+   "ndcg": 0.9512312000626861,
+   "grades": [
+    3,
+    3,
+    0,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "target|good and gather",
+   "q": "good and gather",
+   "ndcg": 0.729577013935277,
+   "grades": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ]
+  }
+ ]
+}

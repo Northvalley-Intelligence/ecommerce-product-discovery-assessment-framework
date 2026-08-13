@@ -1,0 +1,35 @@
+{
+ "rubric_hash": "99a0e992a992",
+ "using_default_rubric": true,
+ "rows": [
+  {
+   "query_id": "industrywest|enrique",
+   "ndcg": 1,
+   "grades": [
+    3,
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|monica",
+   "ndcg": 1,
+   "grades": [
+    2
+   ]
+  },
+  {
+   "query_id": "industrywest|erik",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  },
+  {
+   "query_id": "industrywest|piccolo",
+   "ndcg": 1,
+   "grades": [
+    3
+   ]
+  }
+ ]
+}
