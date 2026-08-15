@@ -84,8 +84,8 @@
   {
    "term": "RS3542",
    "expected": {
-    "sku": "2310167",
-    "title": "Engine Air Filter"
+    "sku": "231-0167",
+    "title": "Cabin Air Filter"
    },
    "brand": "Baldwin",
    "monthly_volume": 110,
@@ -144,17 +144,17 @@
   {
    "term": "RS3543",
    "expected": {
-    "sku": "2310168",
+    "sku": "231-0168",
     "title": "Engine Air Filter"
    },
    "brand": "Baldwin",
    "monthly_volume": 40,
    "evidence": {
-    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
-    "page": 18
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
    },
-   "relation": "cross_reference",
-   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+   "relation": "cross_reference"
   },
   {
    "term": "2335184",
@@ -249,17 +249,17 @@
   {
    "term": "BF7925",
    "expected": {
-    "sku": "26560120",
+    "sku": "1R-1803",
     "title": "Fuel/Water Separator"
    },
    "brand": "Baldwin",
    "monthly_volume": 20,
    "evidence": {
-    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
-    "page": 19
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
    },
-   "relation": "cross_reference",
-   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+   "relation": "cross_reference"
   },
   {
    "term": "32925423",
@@ -382,17 +382,17 @@
   {
    "term": "PT8341",
    "expected": {
-    "sku": "997352",
+    "sku": "099-7352",
     "title": "Hydraulic Filter"
    },
    "brand": "Baldwin",
    "monthly_volume": null,
    "evidence": {
-    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
-    "page": 75
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
    },
-   "relation": "cross_reference",
-   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+   "relation": "cross_reference"
   },
   {
    "term": "1R-0751",
