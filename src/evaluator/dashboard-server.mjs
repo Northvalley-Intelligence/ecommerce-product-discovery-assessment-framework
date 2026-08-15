@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { spawn } from 'node:child_process';
+import { spawn, execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -14,6 +14,7 @@ import { curateQueryPack } from './curate-query-pack.mjs';
 import { generateFixPlan, readFixPlan, verifyFixPlan } from './fix-plan.mjs';
 import { generateExecutiveReport } from './generate-executive-report.mjs';
 import { onboardTarget } from './onboard-target.mjs';
+import { loadCustomDataset } from '../../framework/search-eval/scripts/load-custom-dataset.mjs';
 import { createWooCommerceAdapter } from '../adapters/woocommerce.mjs';
 import { latexmkAvailable, renderExecutivePdf } from './render-executive-pdf.mjs';
 
@@ -1915,7 +1916,7 @@ function dashboardPage() {
           '<p class="muted" style="margin:8px 0 0;font-size:12px">No API engine (bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.</p></div></section>' +
         '<div id="searchEval"><div class="empty">Loading search datasets…</div></div>';
       // Retailers with a graded relevance eval-board render that; others use the HD/Lowe's scoreboard.
-      var evalBoards = { target: 'SE-20260808', catfootwear: 'SE-20260810' };
+      var evalBoards = { target: 'SE-20260808', catfootwear: 'SE-20260810', partscat: 'SE-20260812' };
       if (evalBoards[targetId]) loadRetailBoard(targetId, targetId, evalBoards[targetId]);
       else loadSearchScoreboard(targetId);
     }
@@ -1927,6 +1928,21 @@ function dashboardPage() {
       catch (error) { el.innerHTML = panel('Search relevance', '', '<div class="panel-body"><div class="empty">No eval board captured yet.</div></div>'); return; }
       if (state.selectedSite !== targetId) return;
       if (!data || !data.captured || !data.datasets) { el.innerHTML = panel('Search relevance', '', '<div class="panel-body"><div class="empty">No eval board.</div></div>'); return; }
+      // 8-stage pipeline strip — where this assessment stands against its contracts.
+      var stageStatus = null;
+      try { stageStatus = await api('/api/pipeline-status?retailer=' + encodeURIComponent(retailer) + '&eval=' + encodeURIComponent(evalId)); } catch (e) { stageStatus = null; }
+      var stageStripHtml = (function () {
+        if (!stageStatus || !stageStatus.stages) return '';
+        var col = { ok: '#16a34a', missing: '#9ca3af', 'gate-failed': '#dc2626', invalid: '#dc2626', blocked: '#a855f7', unreadable: '#dc2626', legacy: '#d97706' };
+        var chips = stageStatus.stages.map(function (s) {
+          var c = col[s.state] || '#9ca3af';
+          return '<div title="' + escapeHtml(s.skill + ' — ' + s.label + (s.file ? ' (' + s.file + ')' : '')) + '" style="flex:1 1 0;min-width:0;border-top:3px solid ' + c + ';background:#f8fafc;border-radius:5px;padding:5px 7px">' +
+            '<div style="font-size:9px;color:#9ca3af">' + s.n + '</div>' +
+            '<div style="font-size:10px;font-weight:600;color:' + (s.state === 'ok' ? '#111' : '#6b7280') + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + escapeHtml(s.skill.replace(/-/g, ' ')) + '</div>' +
+            '<div style="font-size:9px;font-weight:700;color:' + c + '">' + escapeHtml(s.state === 'ok' ? '✓ ok' : s.label) + '</div></div>';
+        }).join('');
+        return panel('Pipeline — ' + stageStatus.done + '/' + stageStatus.total + ' stages meeting contract', 'catalog → dataset → engine profile → capture → grade → verify → board → report', '<div class="panel-body"><div style="display:flex;gap:6px;align-items:stretch">' + chips + '</div></div>');
+      })();
       var gcol = function (g) { return g >= 3 ? '#16a34a' : g >= 2 ? '#65a30d' : g >= 1 ? '#d97706' : '#dc2626'; };
       var badges = function (gs) { return (gs || []).map(function (g) { return '<span class="gbadge" style="background:' + gcol(g) + '">' + g + '</span>'; }).join(' '); };
       var ov = data.overall || {};
@@ -1988,6 +2004,7 @@ function dashboardPage() {
             authored: { label: 'authored', color: 'background:#fef3c7;color:#92400e', title: 'Hand-authored shopper vocabulary the catalog has no category for — chosen to test whether search maps it.' },
             use_case: { label: 'use-case', color: 'background:#ede9fe;color:#5b21b6', title: 'A job/task phrasing (e.g. “boots for standing all day”) — tests whether search understands the use case.' },
             natural_language: { label: 'natural language', color: 'background:#e0e7ff;color:#3730a3', title: 'A conversational, full-sentence query — tests natural-language understanding.' },
+            part_number: { label: 'part number', color: 'background:#fee2e2;color:#991b1b', title: 'An exact known-item part-number lookup — the head of parts-catalog demand, not answer-key-generable.' },
             mined: { label: 'mined', color: 'background:#dbeafe;color:#1e40af', title: 'Discovered from search-result gaps (recall misses), not hand-picked.' },
           };
           var sm = selMeta[r.source] || selMeta.authored;
@@ -2036,7 +2053,17 @@ function dashboardPage() {
       var rl = data.revenue_loss;
       var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
       var moneyC = function (n) { return n >= 1e6 ? '$' + (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? '$' + Math.round(n / 1e3) + 'K' : '$' + Math.round(n); };
-      var revenuePanel = (rl && rl.annual_lost) ? panel('Revenue at risk — and the opportunity at 1,000 terms', 'Modeled estimate — this bounded sample × real Keyword Planner volumes · a range, not audited revenue',
+      var revenuePanel = '';
+      if (rl && rl.model === 'online_sales_anchored') {
+        revenuePanel = panel('Revenue at risk — cross-reference coverage gap', 'Online-sales-anchored · competitor cross-reference searches return zero · a modeled range, not audited revenue',
+          '<div class="panel-body"><div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:10px">' +
+          '<div style="border:2px solid #cc0000;border-radius:8px;padding:11px 16px;background:#fff5f5"><div class="muted" style="font-size:11px">Recoverable / yr (base)</div><div style="font-size:30px;font-weight:800;color:#cc0000">' + moneyC(rl.annual_lost.base) + '</div><div class="muted" style="font-size:11px">range ' + moneyC(rl.annual_lost.conservative) + ' – ' + moneyC(rl.annual_lost.aggressive) + '</div></div>' +
+          '<div style="border:1px solid #e5e7eb;border-radius:8px;padding:11px 14px"><div class="muted" style="font-size:11px">Gross at-risk / yr (base)</div><div style="font-size:22px;font-weight:700">' + moneyC(rl.gross_at_risk.base) + '</div><div class="muted" style="font-size:11px">sales flowing through failing xref searches</div></div>' +
+          '<div class="muted" style="font-size:11px;max-width:380px">' + moneyC(rl.online_sales_annual) + '/yr online parts sales <b>(sourced: ' + escapeHtml(rl.online_sales_source) + ')</b> × ' + Math.round(rl.part_number_share * 100) + '% part-# search → ' + moneyC(rl.part_number_sales) + '/yr. Cross-ref fail rate <b>' + Math.round(rl.cross_ref_fail_rate * 100) + '% (measured, ' + escapeHtml(rl.fail_rate_measured) + ')</b>. ' + escapeHtml(rl.levers_note) + '</div></div>' +
+          '<div class="table-wrap"><table><thead><tr><th>Competitor #</th><th>Brand</th><th>Cat equiv</th><th>Product</th><th>Monthly volume</th><th>Result</th></tr></thead><tbody>' +
+          rl.top.map(function (t) { return '<tr><td><strong>' + escapeHtml(t.term) + '</strong></td><td>' + escapeHtml(t.brand) + '</td><td>' + escapeHtml(t.cat) + '</td><td>' + escapeHtml(t.product) + '</td><td>' + t.volume.toLocaleString('en-US') + '</td><td style="color:#b91c1c">0 results</td></tr>'; }).join('') +
+          '</tbody></table></div><p class="muted" style="font-size:11px;margin-top:6px">Modeled estimate. <b>Measured:</b> 100% cross-reference failure + 100% Cat-number success on the top-25 by demand. Adjustable levers: part-# share of online sales, cross-ref share of part-# demand, recoverable fraction — tune to Caterpillar’s real figures.</p></div>');
+      } else revenuePanel = (rl && rl.annual_lost) ? panel('Revenue at risk — and the opportunity at 1,000 terms', 'Modeled estimate — this bounded sample × real Keyword Planner volumes · a range, not audited revenue',
         '<div class="panel-body"><div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:10px">' +
         (rl.extrapolation ? '<div style="border:2px solid #cc0000;border-radius:8px;padding:11px 14px;background:#fff5f5"><div class="muted" style="font-size:11px">Projected across the top 1,000 search terms</div><div style="font-size:28px;font-weight:800;color:#cc0000">' + moneyC(rl.extrapolation.projected_annual.base) + '/yr</div><div class="muted" style="font-size:11px">range ' + moneyC(rl.extrapolation.projected_annual.conservative) + ' – ' + moneyC(rl.extrapolation.projected_annual.aggressive) + ' · ' + money(rl.extrapolation.per_term_avg_annual.base) + '/term × 1,000</div></div>' : '') +
         '<div style="border:1px solid #e5e7eb;border-radius:8px;padding:11px 14px"><div class="muted" style="font-size:11px">Measured (base) — ' + rl.coverage.demand_terms + ' demand terms</div><div style="font-size:26px;font-weight:700;color:#cc0000">' + moneyC(rl.annual_lost.base) + '</div><div class="muted" style="font-size:11px">range ' + moneyC(rl.annual_lost.conservative) + ' – ' + moneyC(rl.annual_lost.aggressive) + '</div></div>' +
@@ -2051,7 +2078,9 @@ function dashboardPage() {
         '<div class="panel-body"><div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">' +
         keyedDs.map(function (d) { var pct = Math.round(d.mean_recall * 100); return '<div style="border:1px solid #e5e7eb;border-radius:8px;padding:9px 12px"><div class="muted" style="font-size:11px">' + escapeHtml(d.name) + ' recall</div><div style="font-size:22px;font-weight:700;color:' + (pct < 50 ? '#dc2626' : '#16a34a') + '">' + pct + '%</div><div class="muted" style="font-size:11px">' + (d.key_coverage_pct || 0) + '% of terms keyed</div></div>'; }).join('') +
         '</div>' + (worstRec.length ? '<div class="table-wrap"><table><thead><tr><th>Term</th><th>Recall</th><th>Answer key</th><th>Class</th></tr></thead><tbody>' + worstRec.map(function (r) { return '<tr><td><strong>' + escapeHtml(r.q) + '</strong></td><td><b style="color:' + (r.recall < 0.5 ? '#dc2626' : '#16a34a') + '">' + Math.round(r.recall * 100) + '%</b></td><td>' + (r.key_size || '') + ' products</td><td>' + escapeHtml((r.classification || '').replace(/_/g, ' ')) + '</td></tr>'; }).join('') + '</tbody></table></div>' : '') +
-        '<p class="muted" style="font-size:11px;margin-top:6px">Denominator = distinct catalog PLP products (node × facet). Key confidence is low where facet provenance is unverified (L05). Recall reveals missed inventory the grade cannot — a term can grade well on eight results while the catalog holds forty.</p></div>') : '';
+        '<p class="muted" style="font-size:11px;margin-top:6px">Denominator = distinct catalog PLP products (node × facet). Key confidence is low where facet provenance is unverified (L05). Recall reveals missed inventory the grade cannot — a term can grade well on eight results while the catalog holds forty.</p></div>') :
+        panel('Recall — answer-key coverage', 'recall = |search ∩ catalog answer-key| / answer-key · the number a grade cannot give',
+          '<div class="panel-body"><div class="muted" style="font-size:12px">Not measured for this site. Recall needs full catalog answer keys (category node × facet); this enterprise catalog (browser-eval, too large to page through exhaustively) was captured partially, so no full-coverage keys were built — see the catalog limitations. For this site the real signal is retrieval + relational (part-number / cross-reference), not recall.</div></div>');
       // Verification panel — independent-path re-check of the worst findings (L08).
       var vf = data.verification;
       var verificationPanel = (vf && vf.ran) ? panel('Independent verification', 'The worst findings re-checked through a DIFFERENT capture path than the one that produced them (L08) — re-grading the same capture ratifies, it does not test',
@@ -2060,11 +2089,19 @@ function dashboardPage() {
         '<div style="border:1px solid #dc2626;border-radius:8px;padding:8px 12px"><div class="muted" style="font-size:11px">Refuted</div><div style="font-size:20px;font-weight:700;color:#dc2626">' + vf.refuted + '</div></div>' +
         (vf.inconclusive ? '<div style="border:1px solid #d97706;border-radius:8px;padding:8px 12px"><div class="muted" style="font-size:11px">Inconclusive</div><div style="font-size:20px;font-weight:700;color:#d97706">' + vf.inconclusive + '</div></div>' : '') +
         '<div class="muted" style="font-size:11px;max-width:360px">Original path <b>' + escapeHtml(vf.original_path || '') + '</b> → verified via <b>' + escapeHtml(vf.verification_path || '') + '</b>. ' + escapeHtml(vf.selection_rule || '') + '</div>' +
-        '</div></div>') : '';
+        '</div></div>') :
+        panel('Independent verification', 'Worst findings re-checked through a DIFFERENT capture path (L08) — re-grading the same capture ratifies, it does not test',
+          '<div class="panel-body"><div class="muted" style="font-size:12px">Not run yet — finding-verify (stage 6) is pending for this bounded browser-eval. The part-number-zero finding is already corroborated two ways on the same session (typeahead "no suggested results" for 1R-1808 + full-search zero), but has not been re-checked through a fully independent path.</div></div>');
+      // Custom-dataset upload: paste a spec-conforming dataset, validate, preview, add to the board's manifest.
+      var uploadPanel = panel('Custom dataset', 'Paste a dataset conforming to docs/custom-dataset-spec.md (synonym / hypernym / hyponym / 1-1). Validated here before it joins the board; demand travels inline.',
+        '<div class="panel-body"><textarea id="cdPaste" placeholder="Paste custom dataset JSON…" style="width:100%;min-height:110px;font:inherit;font-size:12px;padding:6px;box-sizing:border-box;border:1px solid #d1d5db;border-radius:6px"></textarea>' +
+        '<div style="margin-top:6px"><button class="woo-replay" id="cdValidateBtn">Validate</button> <button class="woo-replay" id="cdSaveBtn" style="display:none">Add to board</button> <span id="cdOut" class="muted" style="font-size:12px;margin-left:8px"></span></div>' +
+        '<div id="cdPreview" style="margin-top:8px"></div></div>');
       el.innerHTML =
+        stageStripHtml +
         panel('Search relevance — ' + store.name, escapeHtml(store.platform || 'On-site search') + ' · graded 0–3 by a local LLM judge · click any dataset to expand its terms · ↗ opens the live ' + store.name + ' search',
           '<div class="panel-body">' + invalidBanner + (data.invalidated ? '' : pdfLink + copyLine + pasteLine) + head + combinedHead + groups + tableCaption + '</div>') +
-        recallPanel + verificationPanel + findingsPanel + revenuePanel;
+        recallPanel + verificationPanel + findingsPanel + revenuePanel + uploadPanel;
       wireJumps(el);
       var copyBtnT = el.querySelector('#copyTermsBtnT');
       if (copyBtnT) copyBtnT.addEventListener('click', function () { var out = el.querySelector('#copyTermsOutT'); if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(kpLine).then(function () { out.textContent = 'Copied ' + kpTerms.length + ' terms'; }, function () { out.textContent = 'Copy failed'; }); } else { out.textContent = 'Clipboard not available'; } });
@@ -2082,6 +2119,39 @@ function dashboardPage() {
             resDiv.innerHTML = '<div class="muted" style="font-size:11px;margin-bottom:3px">Top opportunities — highest demand where search underperforms (returns nothing or shallow results):</div><div class="table-wrap"><table><thead><tr><th>Term</th><th>Monthly volume</th><th>Issue</th></tr></thead><tbody>' + r.top_opportunities.map(function (o) { return '<tr><td><strong>' + escapeHtml(o.term) + '</strong></td><td>' + escapeHtml(String(o.volume_display)) + '</td><td>' + escapeHtml(o.issue) + '</td></tr>'; }).join('') + '</tbody></table></div>';
           } else { resDiv.innerHTML = '<div class="muted" style="font-size:12px;margin-top:4px">No high-demand failing terms in this batch.</div>'; }
         } catch (error) { out.textContent = 'Import failed: ' + error.message; }
+      });
+      // Custom-dataset upload: validate -> preview -> add to board manifest.
+      var cdValidate = el.querySelector('#cdValidateBtn'), cdSave = el.querySelector('#cdSaveBtn');
+      var cdParsed = null;
+      var cdRenderPreview = function (v) {
+        var out = el.querySelector('#cdOut'), prev = el.querySelector('#cdPreview'), save = el.querySelector('#cdSaveBtn');
+        if (!v.ok) { out.innerHTML = '<span style="color:#b91c1c">✗ ' + escapeHtml((v.errors || []).join('; ') || 'invalid') + '</span>'; prev.innerHTML = ''; save.style.display = 'none'; return; }
+        var p = v.preview;
+        out.innerHTML = '<span style="color:#166534">✓ valid</span>';
+        prev.innerHTML = '<div style="border:1px solid #e5e7eb;border-radius:8px;padding:10px 12px">' +
+          '<div style="font-size:13px"><strong>' + escapeHtml(p.name) + '</strong> <span style="font-size:9px;font-weight:700;border-radius:3px;padding:1px 5px;background:#ede9fe;color:#5b21b6">' + escapeHtml(p.label) + '</span> <span class="muted" style="font-size:11px">' + escapeHtml(p.type) + ' · ' + escapeHtml(p.scoring) + ' scoring</span></div>' +
+          '<div class="muted" style="font-size:12px;margin:4px 0">' + escapeHtml(p.built_from) + '</div>' +
+          '<div class="muted" style="font-size:11px">' + p.records + ' records · ' + p.with_demand + ' with demand · total monthly volume ' + (p.total_monthly_volume || 0).toLocaleString() + '</div>' +
+          ((v.warnings && v.warnings.length) ? '<div style="font-size:11px;color:#92400e;margin-top:3px">⚠ ' + escapeHtml(v.warnings.join('; ')) + '</div>' : '') +
+          '<div class="table-wrap" style="margin-top:6px"><table><thead><tr><th>Term</th><th>' + (p.type === 'one_to_one' ? 'Expected' : 'Counterpart') + '</th><th>Vol</th></tr></thead><tbody>' +
+          (p.sample || []).map(function (s) { return '<tr><td>' + escapeHtml(s.term) + '</td><td>' + escapeHtml(s.expected ? (s.expected.sku + ' — ' + s.expected.title) : (s.counterpart || '')) + '</td><td>' + (s.monthly_volume || '') + '</td></tr>'; }).join('') +
+          '</tbody></table></div></div>';
+        save.style.display = '';
+      };
+      if (cdValidate) cdValidate.addEventListener('click', async function () {
+        var out = el.querySelector('#cdOut'); var txt = (el.querySelector('#cdPaste') || {}).value || '';
+        cdParsed = null; el.querySelector('#cdSaveBtn').style.display = 'none'; el.querySelector('#cdPreview').innerHTML = '';
+        if (!txt.trim()) { out.textContent = 'Paste a dataset first.'; return; }
+        var ds; try { ds = JSON.parse(txt); } catch (e) { out.innerHTML = '<span style="color:#b91c1c">Not valid JSON: ' + escapeHtml(e.message) + '</span>'; return; }
+        out.textContent = 'validating…';
+        try { var v = await api('/api/custom-dataset/validate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(ds) }); if (v.ok) cdParsed = ds; cdRenderPreview(v); }
+        catch (error) { out.textContent = 'Validate failed: ' + error.message; }
+      });
+      if (cdSave) cdSave.addEventListener('click', async function () {
+        var out = el.querySelector('#cdOut'); if (!cdParsed) { out.textContent = 'Validate first.'; return; }
+        out.textContent = 'saving…';
+        try { var r = await api('/api/custom-dataset/save?retailer=' + encodeURIComponent(retailer) + '&eval=' + encodeURIComponent(evalId), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cdParsed) }); if (!r.ok) { out.innerHTML = '<span style="color:#b91c1c">' + escapeHtml((r.errors || [r.error]).join('; ')) + '</span>'; return; } out.innerHTML = '<span style="color:#166534">✓ added ' + escapeHtml(r.file) + ' — capture + score to see it on the board</span>'; }
+        catch (error) { out.textContent = 'Save failed: ' + error.message; }
       });
     }
     async function loadSearchScoreboard(targetId) {
@@ -3401,6 +3471,56 @@ function routeRequest(rootDir, request, response, queue) {
     const boardPath = exists(path.join(dir, 'eval-board.json')) ? path.join(dir, 'eval-board.json') : path.join(dir, retailer + '-eval-board.json');
     if (!exists(boardPath)) { sendJson(response, 404, { error: 'No eval board for ' + retailer + '/' + evalId }); return; }
     sendJson(response, 200, { captured: true, ...readJson(boardPath) });
+    return;
+  }
+
+  // 8-stage pipeline status for the stage strip — reuses pipeline-status.mjs --json.
+  if (request.method === 'GET' && url.pathname === '/api/pipeline-status') {
+    const evalId = url.searchParams.get('eval') || '';
+    const retailer = url.searchParams.get('retailer') || '';
+    if (!/^SE-[0-9A-Za-z]+$/.test(evalId) || !/^[a-z0-9-]+$/.test(retailer)) { sendJson(response, 400, { error: 'Invalid retailer/eval.' }); return; }
+    const dir = path.join(rootDir, 'assessments', retailer, 'search-eval', evalId);
+    if (!exists(dir)) { sendJson(response, 404, { error: 'No such assessment.' }); return; }
+    try {
+      const script = path.join(rootDir, 'framework/search-eval/scripts/pipeline-status.mjs');
+      const out = execFileSync('node', [script, dir, '--json'], { encoding: 'utf8', timeout: 20000 });
+      sendJson(response, 200, JSON.parse(out.trim().split('\n').filter(Boolean).pop()));
+    } catch (error) { sendJson(response, 500, { error: 'pipeline-status failed: ' + error.message }); }
+    return;
+  }
+
+  // Validate an uploaded custom dataset (portable contract) and return the preview the operator confirms.
+  if (request.method === 'POST' && url.pathname === '/api/custom-dataset/validate') {
+    readBody(request).then((body) => {
+      const ds = body && body.dataset ? body.dataset : body;
+      if (!ds || typeof ds !== 'object') { sendJson(response, 200, { ok: false, errors: ['not a JSON object'], warnings: [] }); return; }
+      try { sendJson(response, 200, loadCustomDataset(ds)); }
+      catch (error) { sendJson(response, 200, { ok: false, errors: ['validate error: ' + error.message], warnings: [] }); }
+    }).catch((error) => sendJson(response, 400, { error: error.message }));
+    return;
+  }
+
+  // Save a validated custom dataset into the assessment dir + register it in the manifest.
+  if (request.method === 'POST' && url.pathname === '/api/custom-dataset/save') {
+    const evalId = url.searchParams.get('eval') || '';
+    const retailer = url.searchParams.get('retailer') || '';
+    if (!/^SE-[0-9A-Za-z]+$/.test(evalId) || !/^[a-z0-9-]+$/.test(retailer)) { sendJson(response, 400, { error: 'Invalid retailer/eval.' }); return; }
+    readBody(request).then((body) => {
+      const ds = body && body.dataset ? body.dataset : body;
+      const val = loadCustomDataset(ds || {});
+      if (!val.ok) { sendJson(response, 200, { ok: false, errors: val.errors }); return; }
+      if (!/^[a-z0-9-]+$/.test(ds.dataset_id || '')) { sendJson(response, 400, { error: 'dataset_id must match [a-z0-9-]+' }); return; }
+      const dir = path.join(rootDir, 'assessments', retailer, 'search-eval', evalId);
+      if (!exists(dir)) { sendJson(response, 404, { error: 'No such assessment.' }); return; }
+      const fname = 'custom-' + ds.dataset_id + '.json';
+      fs.writeFileSync(path.join(dir, fname), JSON.stringify(ds, null, 1));
+      const manPath = path.join(dir, 'dataset-manifest.json');
+      const man = exists(manPath) ? readJson(manPath) : { manifest_version: '1', retailer, eval_id: evalId, datasets: [] };
+      man.datasets = (man.datasets || []).filter((d) => d.id !== ds.dataset_id);
+      man.datasets.push({ id: ds.dataset_id, kind: 'custom', include: true, type: ds.type, scoring: val.preview.scoring, file: fname });
+      fs.writeFileSync(manPath, JSON.stringify(man, null, 1));
+      sendJson(response, 200, { ok: true, file: fname, preview: val.preview, datasets: man.datasets.length });
+    }).catch((error) => sendJson(response, 400, { error: error.message }));
     return;
   }
 

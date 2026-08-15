@@ -1,0 +1,62 @@
+\documentclass[10pt]{article}
+
+\newcommand{\NorthvalleyAssetPath}{northvalley-template-assets}
+\input{northvalley-template-assets/northvalley-brand.sty}
+
+\usepackage[letterpaper,margin=0.68in,top=1.2in,headheight=16pt,headsep=14pt,footskip=18pt]{geometry}
+\usepackage{booktabs}\usepackage{longtable}\usepackage{fancyhdr}\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}\renewcommand{\arraystretch}{1.15}\arrayrulecolor{NVIRule}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\color{NVIInk}
+\renewcommand{\labelitemi}{\textcolor{NVIAccent}{\(\triangleright\)}}
+\newcommand{\qq}[1]{\textquotedblleft #1\textquotedblright}
+
+\newcommand{\ReportKicker}[1]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccent}\MakeUppercase{#1}}}
+\newcommand{\ReportFine}[1]{{\fontsize{7.6}{9.1}\selectfont\color{NVIMuted}#1}}
+\newcommand{\ReportSection}[1]{\par\addvspace{3pt}{\fontsize{12}{14}\selectfont\bfseries\color{NVIInk}#1}\par\vspace{1pt}{\color{NVIAccent}\rule{\linewidth}{0.9pt}}\par\addvspace{1pt}}
+\newcommand{\ReportDarkCard}[2]{\begin{tikzpicture}\node[draw=NVIAccentDark,fill=NVIAccentDark,rounded corners=2pt,inner xsep=12pt,inner ysep=9pt,text width=\dimexpr\linewidth-26pt\relax,align=left]{{\fontsize{7.7}{9}\selectfont\bfseries\color{NVIAccentSoft}\MakeUppercase{#1}}\\[0.05in]{\fontsize{9.8}{12}\selectfont\color{white}#2}};\end{tikzpicture}}
+\newcommand{\MetricCard}[3]{\begin{tikzpicture}\node[draw=NVIRule,fill=NVIPanel,rounded corners=2pt,inner xsep=9pt,inner ysep=6pt,text width=\dimexpr\linewidth-20pt\relax,minimum height=0.64in,align=left]{\ReportKicker{#1}\\[0.03in]{\fontsize{17}{20}\selectfont\bfseries\color{NVIAccentDark}#2}\\[0.02in]\ReportFine{#3}};\end{tikzpicture}}
+
+\begin{document}\color{NVIInk}\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+\fill[NVIAccentDark] (current page.north west) rectangle ([yshift=-1.02in]current page.north east);
+\fill[NVIAccent] ([yshift=-1.02in]current page.north west) rectangle ([yshift=-1.07in]current page.north east);
+\node[anchor=west,text=white,font=\fontsize{9.3}{11}\selectfont\bfseries] at ([xshift=0.68in,yshift=-0.40in]current page.north west) {\NorthvalleyBusinessName};
+\node[anchor=west,text=NVIAccentSoft,font=\fontsize{7.4}{9}\selectfont] at ([xshift=0.68in,yshift=-0.63in]current page.north west) {CAT PARTS STORE (parts.cat.com) \textperiodcentered\ ON-SITE SEARCH};
+\node[anchor=east,text=white,font=\fontsize{7.6}{9}\selectfont] at ([xshift=-0.68in,yshift=-0.50in]current page.north east) {\today};
+\end{tikzpicture}
+
+\ReportKicker{An unsolicited findings note --- no pitch attached}\\[0.05in]
+{\fontsize{20}{24}\selectfont\bfseries\color{NVIInk}Your own cross-reference lists the part. Your own search returns zero.}\par
+
+\vspace{0.06in}\ReportDarkCard{Reproduce it in 30 seconds --- both steps are on cat.com}{Type \textbf{WIX 33626} into \textbf{parts.cat.com} --- you get \textbf{zero results}. Now paste \textbf{33626} into Caterpillar\textquotesingle s own filter cross-reference (\textbf{catfiltercrossreference.com}) --- it returns the Cat part the shopper wants, \textbf{1R-0751}. The data already lives on Caterpillar\textquotesingle s own domain; the search box just does not use it.}
+
+\vspace{6pt}
+\noindent\begin{minipage}[t]{0.325\linewidth}\MetricCard{parts.cat.com search}{0 / 19}{competitor numbers returned a result (measured, live).}\end{minipage}\hfill%
+\begin{minipage}[t]{0.325\linewidth}\MetricCard{Cat\textquotesingle s own cross-ref}{19 / 19}{are listed by Caterpillar\textquotesingle s own tool as Cat parts.}\end{minipage}\hfill%
+\begin{minipage}[t]{0.325\linewidth}\MetricCard{Cat part numbers}{6 / 6}{resolve instantly --- they redirect to the product page.}\end{minipage}
+
+\ReportSection{The evidence --- what a shopper types, and what Caterpillar returns}
+
+\vspace{1pt}\begin{longtable}{@{}p{0.62in}p{1.0in}p{\dimexpr\linewidth-4.04in\relax}>{\raggedleft\arraybackslash}p{0.62in}@{\hspace{12pt}}p{0.68in}@{}}\toprule
+\bfseries Cat part & \bfseries Product & \bfseries Competitor numbers that should find it & \bfseries Demand* & \bfseries Cat search \\\midrule\endhead
+\texttt{1R-0751} & Fuel Filter       & WIX 33626, Baldwin BF7632, Fleetguard FF5324 & 1{,}820 & \textbf{\color{NVIAccentDark}0 results} \\
+\texttt{1R-0714} & Engine Oil Filter & Baldwin B75, WIX 51798, Baldwin B605          & 1{,}010 & \textbf{\color{NVIAccentDark}0 results} \\
+\texttt{1R-0749} & Fuel Filter       & Baldwin BF7587, Fleetguard FF5319, WIX 33674  &  470    & \textbf{\color{NVIAccentDark}0 results} \\
+\texttt{1R-0739} & Engine Oil Filter & Fleetguard LF667, WIX 51791                   &  240    & \textbf{\color{NVIAccentDark}0 results} \\
+\texttt{1R-0716} & Engine Oil Filter & Fleetguard LF691A                             &  170    & \textbf{\color{NVIAccentDark}0 results} \\
+\texttt{1R-1808} & Engine Oil Filter & Baldwin B7299, Donaldson P551808              &  160    & \textbf{\color{NVIAccentDark}0 results} \\
+\bottomrule\end{longtable}
+\vspace{-3pt}\ReportFine{Each Cat part is unreachable by \emph{every} competitor number shown --- and others across WIX, Baldwin, Fleetguard, Donaldson and Fram. 6 Cat parts, from 19 numbers tested (0/19 resolved); full list on request. \textbf{Cat part} = what Caterpillar\textquotesingle s own cross-reference (catfiltercrossreference.com, \textcopyright\ Caterpillar) returns. *Demand = combined Google Keyword Planner (US) volume for those numbers --- external, an on-site proxy.}
+
+\ReportSection{The fix --- a data change, not an algorithm rewrite}
+\vspace{-2pt}Index the competitor interchange numbers Caterpillar \emph{already publishes} so the search box resolves them --- the same way Cat\textquotesingle s own numbers already redirect to the product. A shopper holding a competitor number is the highest-intent buyer on the site, and today gets nothing.
+
+\ReportSection{How this was measured, and what it covers}
+\vspace{-2pt}{\fontsize{9}{11.4}\selectfont\color{NVIInk}\textbf{Measured, live.} 25 demand-weighted numbers, each run once on the shopper-facing search --- Cat 6/6 resolve, competitor 0/19; bot protection respected, no crawling or load; every cross-reference is Caterpillar\textquotesingle s own. \textbf{Scope.} A deliberate filter-category sample: filters are the canonical cross-reference purchase --- a mechanic reads the number off the old part --- and Caterpillar publishes an official filter cross-reference, so every mapping here is Cat\textquotesingle s own. The same indexing gap applies wherever a buyer arrives with a competitor number (batteries, ground-engaging tools); sizing the dollar opportunity needs Caterpillar\textquotesingle s own filter-category sales and traffic mix, which we have not assumed.}
+
+\vspace{3pt}{\color{NVIAccent}\rule{\linewidth}{1pt}}\par\vspace{3pt}{\fontsize{9.4}{11.6}\selectfont\color{NVIInk}\textbf{If this is worth a look} --- most likely your \textbf{digital commerce / parts ecommerce} team. Happy to send the full 25-term list and the capture log so anyone can reproduce it. No pitch attached.}\par
+\vspace{4pt}{\fontsize{11}{13}\selectfont\bfseries\color{NVIAccentDark}\NorthvalleyBusinessName}\quad{\fontsize{9.6}{12}\selectfont\color{NVIInk}\NorthvalleyContactLine}
+
+\end{document}

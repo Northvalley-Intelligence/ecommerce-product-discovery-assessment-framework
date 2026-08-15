@@ -29,83 +29,14 @@ So the pipeline needs to stop assuming the 5 fixed datasets and instead take a *
 
 ---
 
-## 2. Core model
+## 2. The dataset contract is a PORTABLE SPEC — not this project's internals
 
-### 2.1 A custom dataset is ONE homogeneous relation type
+**A dataset producer needs nothing from this repo.** The format, the four relation types, the 1-1 nuance, `built_from → label`, demand inline, and the optional `interchange`/`evidence` extension are defined once, producer-agnostically, in:
 
-Each custom dataset holds exactly one `type`. No mixing.
+- **`docs/custom-dataset-spec.md`** — the human spec (anyone/any tool can author against it).
+- **`schemas/search-eval/custom-dataset.schema.json`** — the machine contract (validate with any JSON-Schema validator; extensible via `additionalProperties`).
 
-| `type` | Each record relates `term` → `counterpart`/`expected` | What "good" means |
-|---|---|---|
-| `synonym` | term ≡ counterpart | result **counts stay ~equal** and result sets overlap strongly |
-| `hyponym` | term is **narrower** than counterpart (e.g. `bucket tip` → `ground engaging tools`) | count(term) **≤** count(counterpart); term results ⊆ counterpart results (**decreasing/subset**) |
-| `hypernym` | term is **broader** than counterpart (e.g. `battery` → `heavy duty battery`) | count(term) **≥** count(counterpart); counterpart results ⊆ term results (**increasing/superset**) |
-| `one_to_one` | term maps to exactly one `expected` product (e.g. part# → its product) | expected product is **retrievable**; position + title-variation graded (see 2.3) |
-
-### 2.2 `built_from` drives the label
-
-Every custom dataset carries a prose `built_from` explaining how it was constructed. The board derives the **per-term source chip** (the existing `source`/label mechanism) from it — either an explicit `label` field or a short slug generated from `built_from`. This keeps provenance honest and visible, exactly like the `catalog_node` / `authored` chips today.
-
-### 2.3 1-1 does NOT mean results are 1-1
-
-A `one_to_one` record maps a query to ONE expected product, but the results page can legitimately look several ways. The scoring rubric must encode the gradations, not demand a single result:
-
-| Outcome | Score band | Note |
-|---|---|---|
-| Expected product is the **sole result, exact title** | best (3) | ideal |
-| Expected product **@ rank 1** among several | strong (2.5–3) | fine |
-| Expected product **present, not first** | partial (1.5–2), scaled by rank | findable but buried |
-| **Sole result but title variation** (Cortex confirms same product) | strong-partial (2.5) | wording differs, product right |
-| Expected product **present with title variation, not first** | partial | |
-| **Not found at all** | fail (0) | the parts.cat.com part-number case → full impact loss |
-
-Cortex's role for 1-1: judge **title-variation equivalence** ("is this result the same product as the expected one, despite different wording?") and rank relevance. The count-direction checks do not apply to 1-1.
-
----
-
-## 3. Proposed dataset file format (what Ferosh brings)
-
-One self-contained JSON per custom dataset, demand inline so we never re-run the whole set's Keyword Planner.
-
-**Relational (synonym / hyponym / hypernym):**
-```json
-{
-  "custom_dataset_version": "1",
-  "dataset_id": "get-hyponyms",
-  "name": "GET hyponyms",
-  "type": "hyponym",
-  "built_from": "Took each Ground Engaging Tools leaf category name as the broad counterpart and paired it with the shopper's narrower word for a specific tool (bucket tip -> ground engaging tools). Tests whether searching the specific term returns a subset of the broad term, i.e. the engine understands the is-a relation.",
-  "label": "hyponym",                     // optional; else derived from built_from
-  "records": [
-    { "term": "bucket tip", "counterpart": "ground engaging tools", "monthly_volume": 2400 },
-    { "term": "grouser bar", "counterpart": "undercarriage", "monthly_volume": 880 }
-  ]
-}
-```
-
-**1-1 (part number → product):**
-```json
-{
-  "custom_dataset_version": "1",
-  "dataset_id": "part-number-1to1",
-  "name": "Part number -> Product",
-  "type": "one_to_one",
-  "built_from": "Sampled high-velocity Cat part numbers from PLP capture; each pairs the EXACT part number (query) with the product page that IS that part (expected). Built to test whether the search box resolves a part number to its own product.",
-  "label": "part number",
-  "records": [
-    { "term": "1R-1808", "expected": { "sku": "1R-1808", "title": "Engine Oil Filter" }, "monthly_volume": 8100 },
-    { "term": "326-1644", "expected": { "sku": "326-1644", "title": "Fuel Water Separator" }, "monthly_volume": 1300 }
-  ]
-}
-```
-
-Field rules to enforce on upload:
-- `type` ∈ {synonym, hypernym, hyponym, one_to_one}; the whole file is that one type.
-- relational records require `term`, `counterpart`, `monthly_volume`.
-- one_to_one records require `term`, `expected.{sku,title}`, `monthly_volume`.
-- `built_from` required (non-empty) — it generates the label.
-
-A JSON Schema (`schemas/search-eval/custom-dataset.schema.json`) should be added and wired into `pipeline-status`.
+Conformance is the only requirement: produce a file that passes the schema and it drops into any host that accepts this contract. **Everything below this line is the CONSUMER side — how *this* project ingests a conforming dataset.** It is not needed to create one.
 
 ---
 
@@ -189,7 +120,7 @@ Honest constraint to bake in: steps 3–5 are Claude-in-the-loop for bot-protect
 
 ## 10. First concrete deliverable for Ferosh
 
-Build **one `one_to_one` part-number dataset for parts.cat.com** using the §3 template:
+Build **one `one_to_one` part-number dataset for parts.cat.com** following `docs/custom-dataset-spec.md`:
 - ~30–40 real Cat part numbers (sample from `assessments/partscat/search-eval/SE-20260812/catalog.json` skus + famous ones: 1R-1808, 1R-0749, 326-1644, 9X-3404, 153-5710 …),
 - each with its `expected.{sku,title}`,
 - each with a `monthly_volume` (bring the Google monthly counts for just these terms),

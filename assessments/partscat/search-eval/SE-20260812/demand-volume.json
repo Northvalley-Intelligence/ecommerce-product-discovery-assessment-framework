@@ -1,0 +1,28 @@
+{
+ "imported_at": "2026-08-14T20:34:34.782Z",
+ "retailer": "partscat",
+ "eval": "SE-20260812",
+ "parsed_rows": 7,
+ "matched": [
+  {
+   "term": "oil filter",
+   "volume": 60500,
+   "raw": "60,500"
+  },
+  {
+   "term": "heavy duty battery",
+   "volume": 2400,
+   "raw": "2,400"
+  },
+  {
+   "term": "cutting edge",
+   "volume": 49500,
+   "raw": "49,500"
+  },
+  {
+   "term": "bucket teeth",
+   "volume": 1000,
+   "raw": "1,000"
+  }
+ ]
+}
