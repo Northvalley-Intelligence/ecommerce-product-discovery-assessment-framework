@@ -1,0 +1,312 @@
+{
+ "note": "Hand-labelled by the worker agent (binary relevant vs not) from this store's own captures; judge relevant = grade>=2.",
+ "rubric_hash": "99a0e992a992",
+ "pairs": [
+  {
+   "query": "grill stand",
+   "product": "Nest for Large Egg",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 0
+  },
+  {
+   "query": "mitt",
+   "product": "EGGmitt High Heat BBQ Glove, extra-long",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "mitt",
+   "product": "Large Hell Hands\u2122",
+   "rank": 2,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "can cooler",
+   "product": "BGE Insulated Beverage Cooler - green w/white logo",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "can cooler",
+   "product": "Big Green Egg x YETI Hopper Flip 12 Cooler",
+   "rank": 2,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "replace worn gasket",
+   "product": "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 0
+  },
+  {
+   "query": "replace worn gasket",
+   "product": "Dome for Large EGG",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "rack",
+   "product": "Nest Utility Rack",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "rack",
+   "product": "2-Piece Multi-Level Rack for XL",
+   "rank": 2,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "egg",
+   "product": "5-Piece EGGspander Kit for L",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 0
+  },
+  {
+   "query": "can i cook on the egg in the winter",
+   "product": "XL Big Green Egg in 69-inch Modern Farmhouse Table Package",
+   "rank": 1,
+   "human_relevant": 0,
+   "judge_grade": 0,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "mens t-shirt",
+   "product": "Big Green Egg Mens Bone T-Shirt - Large",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "bge",
+   "product": "Fire Ring for Large EGG",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "wing sauce",
+   "product": "Big Green Egg Wing Sauce - Original Buffalo",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "wing sauce",
+   "product": "Big Green Egg BBQ Sauce, Kentucky Bourbon Grilling Glaze",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 0,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "smoky sauce",
+   "product": "Big Green Egg BBQ Sauce, Kansas City Style - Sweet & Smoky",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "apron",
+   "product": "Large Big Green Egg",
+   "rank": 1,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "apron",
+   "product": "Table - Solid Acacia Hardwood for Large EGG",
+   "rank": 2,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "apron",
+   "product": "WiFi Display",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "compact grill",
+   "product": "MiniMax Big Green Egg",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "compact grill",
+   "product": "Medium Big Green Egg",
+   "rank": 2,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "igniter",
+   "product": "EGGniter\u00ae Electric Charcoal Lighter with Fan (1500 Watt/120v)",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "igniter",
+   "product": "Twisters Firestarters",
+   "rank": 2,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "igniter",
+   "product": "Quick Light\u2122 Kit Large",
+   "rank": 3,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "hoodie",
+   "product": "Big Green Egg Mens Gray Olsen Hoodie - 2XL",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "minimax egg",
+   "product": "MiniMax Big Green Egg",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "minimax egg",
+   "product": "Portable Nest for MiniMax EGG",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 3,
+   "judge_relevant": 1,
+   "agree": 0
+  },
+  {
+   "query": "top vent",
+   "product": "rEGGulator Vent Cap (for 2XL, XL, L, M)",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 0
+  },
+  {
+   "query": "top vent",
+   "product": "rEGGulator Rain Cap (for S, MX)",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "gasket",
+   "product": "Quick Light\u2122 Kit Large",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "cutting board",
+   "product": "Bamboo Cutting Board",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 2,
+   "judge_relevant": 1,
+   "agree": 1
+  },
+  {
+   "query": "cutting board",
+   "product": "Carbon Steel Grill Wok w/ Bamboo Spatula",
+   "rank": 3,
+   "human_relevant": 0,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 1
+  },
+  {
+   "query": "barbecue",
+   "product": "Medium Big Green Egg",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 0
+  },
+  {
+   "query": "xl tshirt",
+   "product": "Atlanta Skyline T-shirt",
+   "rank": 1,
+   "human_relevant": 1,
+   "judge_grade": 1,
+   "judge_relevant": 0,
+   "agree": 0
+  }
+ ]
+}

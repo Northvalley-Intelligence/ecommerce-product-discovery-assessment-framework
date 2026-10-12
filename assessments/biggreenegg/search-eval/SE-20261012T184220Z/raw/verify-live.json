@@ -1,0 +1,98 @@
+[
+ {
+  "q": "kabob",
+  "url": "https://biggreenegg.com/search?q=kabob&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:11:56.374Z",
+  "total_text": 0,
+  "none_msg": true,
+  "shown": 0,
+  "top3": []
+ },
+ {
+  "q": "a gift for someone who just got an egg",
+  "url": "https://biggreenegg.com/search?q=a+gift+for+someone+who+just+got+an+egg&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:11:58.204Z",
+  "total_text": 0,
+  "none_msg": true,
+  "shown": 0,
+  "top3": []
+ },
+ {
+  "q": "where is my nearest dealer",
+  "url": "https://biggreenegg.com/search?q=where+is+my+nearest+dealer&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:11:59.779Z",
+  "total_text": 0,
+  "none_msg": true,
+  "shown": 0,
+  "top3": []
+ },
+ {
+  "q": "how long to smoke a pork butt",
+  "url": "https://biggreenegg.com/search?q=how+long+to+smoke+a+pork+butt&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:12:01.454Z",
+  "total_text": 1,
+  "none_msg": false,
+  "shown": 1,
+  "top3": [
+   "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)"
+  ]
+ },
+ {
+  "q": "what size egg do I need for a family of four",
+  "url": "https://biggreenegg.com/search?q=what+size+egg+do+I+need+for+a+family+of+four&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:12:03.121Z",
+  "total_text": 3,
+  "none_msg": false,
+  "shown": 3,
+  "top3": [
+   "XL Big Green Egg in 69-inch Modern Farmhouse Table Package",
+   "Medium Big Green Egg in Nest Package",
+   "Medium EGG Frame with stainless grid insert for Modular Nest System"
+  ]
+ },
+ {
+  "q": "skewers",
+  "url": "https://biggreenegg.com/search?q=skewers&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:12:04.765Z",
+  "total_text": 4,
+  "none_msg": false,
+  "shown": 4,
+  "top3": [
+   "Professional Grade Stainless Steel BBQ Tool Set",
+   "All-Natural Palmyra Grid Scrubber with Extra Pad",
+   "Cast Iron Grill Press"
+  ]
+ },
+ {
+  "q": "hold the grill at 225",
+  "url": "https://biggreenegg.com/search?q=hold+the+grill+at+225&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:12:06.592Z",
+  "total_text": 2,
+  "none_msg": false,
+  "shown": 2,
+  "top3": [
+   "David Roses \"EGGin\" Big Green Egg Cookbook hardcover",
+   "Big Green Egg x YETI M20 Backpack Cooler"
+  ]
+ },
+ {
+  "q": "smoke a ham",
+  "url": "https://biggreenegg.com/search?q=smoke+a+ham&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:12:08.290Z",
+  "total_text": 2,
+  "none_msg": false,
+  "shown": 2,
+  "top3": [
+   "convEGGtor® for Large EGG",
+   "3rd Annual Smokin' The Ville EGGfest by Builders Lumber & Hardware"
+  ]
+ }
+]

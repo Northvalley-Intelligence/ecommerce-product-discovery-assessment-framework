@@ -8,32 +8,45 @@
   "kind": "storefront_html",
   "url_template": "https://biggreenegg.com/search/suggest?q={q}&resources[type]=product&section_id=predictive-search",
   "method": "GET",
-  "excludes_sponsored": true
+  "excludes_sponsored": true,
+  "results_path": "a.product-link[aria-label] within #predictive-search-results .predictive-search__products__list",
+  "title_path": "aria-label of a.product-link",
+  "carousel_exclusions": []
  },
  "verified_against_live_ui": {
   "control_terms": [
    {
-    "term": "big green egg",
-    "live_count": -1,
-    "profiled_count": -1
+    "term": "charcoal",
+    "live_count": 91,
+    "profiled_count": 10,
+    "live_top3": [
+     "100% Natural Lump Charcoal Oak & Hickory",
+     "Natural Lump Charcoal Canadian Maple",
+     "Natural Lump Hardwood Charcoal"
+    ],
+    "profiled_top3": [
+     "100% Natural Lump Charcoal Oak & Hickory",
+     "Natural Lump Charcoal Canadian Maple",
+     "Natural Lump Hardwood Charcoal"
+    ]
    }
   ],
-  "matches": false,
-  "checked_at": "2026-10-12T18:45:27Z",
-  "notes": "NOT RUN. Engine identified from the homepage HTML only (theme sets predictive_search_url '/search/suggest'; search form action '/search'; Shopify native search). Both paths are disallowed for all user-agents by https://biggreenegg.com/robots.txt ('Disallow: /search'). Framework L14 requires robots to be respected, and the handoff forbids bot-protection bypass, so no request was made to /search or /search/suggest and the live-UI control gate could not be passed. -1 values mean 'not measured'. Capture (stage 4) is therefore not started."
+  "matches": true,
+  "checked_at": "2026-10-12T19:31:36Z",
+  "notes": "robots /search disallowed; one-off owner-authorized paced capture 2026-10-12 (Ferosh, handoff 03). Control term 'charcoal': one plain GET of /search?q=charcoal&type=product (live results page, 91 results, 36 per page) vs one GET of /search/suggest (the predictive dropdown the search box calls). Top 8 titles identical and in the same order; positions 9-10 differ in order only (predictive: Quick Light Large, Fire Bowl XL, Quick Light Medium; results page: Quick Light Large, Quick Light Medium, Quick Light XL&2XL, Fire Bowl XL). Count differs only because predictive is capped at 10 products; profiled_count is therefore the dropdown cap, not a total. Predictive total is a lower bound (max 10); coverage (zero vs non-zero) and top-10 ranking are what is measured."
  },
  "pacing": {
-  "min_interval_ms": 1200,
+  "min_interval_ms": 1250,
   "chunk_size": 15,
-  "cooldown_ms": 60000,
+  "cooldown_ms": 61000,
   "identity": "single_session",
   "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
  },
  "known_redirects": [],
  "catalog_available": true,
  "limitations": [
-  "robots.txt Disallow: /search blocks both the predictive endpoint (/search/suggest) and the results page (/search?q=) the shopper's search box uses; no search request was issued.",
-  "Unblocking needs either written permission from the site owner (or a robots exception), or an owner-run/owner-supplied export of the search results; the engine path above is the proposed profile, untested.",
-  "Predictive vs full results page: the theme exposes both; the live-UI control gate must check which one the box shows (dropdown) before capture."
+  "robots.txt Disallows /search; capture was a one-off owner-authorized paced run (2026-10-12), not a standing change.",
+  "Predictive endpoint returns at most 10 products, so per-term total is capped at 10 (lower bound); the full results-page count was not captured (would double the load).",
+  "Live-UI gate compared the results page to the predictive endpoint rather than a rendered dropdown; top-8 identical, positions 9-10 order differs."
  ]
 }
