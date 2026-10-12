@@ -1,0 +1,16 @@
+[
+ {
+  "q": "apron",
+  "url": "https://biggreenegg.com/search?q=apron&type=product",
+  "status": 200,
+  "checked_at": "2026-10-12T21:12:34.170Z",
+  "total_text": 43,
+  "none_msg": false,
+  "shown": 36,
+  "top3": [
+   "Large Big Green Egg",
+   "XL Hell Hands™",
+   "Medium Hell Hands™"
+  ]
+ }
+]

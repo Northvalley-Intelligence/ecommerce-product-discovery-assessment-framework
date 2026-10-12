@@ -1,0 +1,235 @@
+{
+ "verify_version": "1",
+ "retailer": "biggreenegg",
+ "eval_id": "SE-20261012T184220Z",
+ "verified_at": "2026-10-12T21:13:11.438Z",
+ "original_path": "storefront_html",
+ "verification_path": "live_ui",
+ "selection": {
+  "rule": "every zero-result term (3) + the 5 lowest-mean-grade multi-term informational terms + the lowest single-term product query with a stocked SKU (apron); 9 live results-page GETs, owner-authorized one-off",
+  "count": 9,
+  "population": 239
+ },
+ "rows": [
+  {
+   "q": "kabob",
+   "original": {
+    "total": 0,
+    "mean_grade": null,
+    "ndcg": null,
+    "top3": []
+   },
+   "verification": {
+    "total": 0,
+    "top3": [],
+    "checked_at": "2026-10-12T21:11:56.374Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=kabob&type=product",
+    "note": "Live results page also returns 0 results. Catalog holds no kabob/kebab/skewer product (0 of 520 SKUs), so search is behaving correctly; whether it is an assortment gap needs demand volumes (pending)."
+   }
+  },
+  {
+   "q": "a gift for someone who just got an egg",
+   "original": {
+    "total": 0,
+    "mean_grade": null,
+    "ndcg": null,
+    "top3": []
+   },
+   "verification": {
+    "total": 0,
+    "top3": [],
+    "checked_at": "2026-10-12T21:11:58.204Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=a+gift+for+someone+who+just+got+an+egg&type=product",
+    "note": "Live results page also returns 0 results for a conversational gift query although the catalog stocks EGG accessories and gift items: the engine does literal AND matching with no intent handling."
+   }
+  },
+  {
+   "q": "where is my nearest dealer",
+   "original": {
+    "total": 0,
+    "mean_grade": null,
+    "ndcg": null,
+    "top3": []
+   },
+   "verification": {
+    "total": 0,
+    "top3": [],
+    "checked_at": "2026-10-12T21:11:59.779Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=where+is+my+nearest+dealer&type=product",
+    "note": "Live results page returns 0; this is a store-locator question, not a product query. Search has no product answer to give; a locator link in the empty state would be the fix."
+   }
+  },
+  {
+   "q": "how long to smoke a pork butt",
+   "original": {
+    "total": 1,
+    "mean_grade": 0,
+    "ndcg": 0,
+    "top3": [
+     "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)"
+    ]
+   },
+   "verification": {
+    "total": 1,
+    "top3": [
+     "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)"
+    ],
+    "checked_at": "2026-10-12T21:12:01.454Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=how+long+to+smoke+a+pork+butt&type=product",
+    "note": "Live results page returns the same single product (smoking chunks) - a how-to question answered with one unrelated accessory."
+   }
+  },
+  {
+   "q": "what size egg do I need for a family of four",
+   "original": {
+    "total": 3,
+    "mean_grade": 0,
+    "ndcg": 0,
+    "top3": [
+     "XL Big Green Egg in 69-inch Modern Farmhouse Table Package",
+     "Medium Big Green Egg in Nest Package",
+     "Medium EGG Frame with stainless grid insert for Modular Nest System"
+    ]
+   },
+   "verification": {
+    "total": 3,
+    "top3": [
+     "XL Big Green Egg in 69-inch Modern Farmhouse Table Package",
+     "Medium Big Green Egg in Nest Package",
+     "Medium EGG Frame with stainless grid insert for Modular Nest System"
+    ],
+    "checked_at": "2026-10-12T21:12:03.121Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=what+size+egg+do+I+need+for+a+family+of+four&type=product",
+    "note": "Live results page returns the same 3 package/frame products, no size guide; the advice question is answered with random bundles."
+   }
+  },
+  {
+   "q": "skewers",
+   "original": {
+    "total": 4,
+    "mean_grade": 0.5,
+    "ndcg": 0.6509209298071326,
+    "top3": [
+     "All-Natural Palmyra Grid Scrubber with Extra Pad",
+     "Professional Grade Stainless Steel BBQ Tool Set",
+     "Cast Iron Grill Press"
+    ]
+   },
+   "verification": {
+    "total": 4,
+    "top3": [
+     "Professional Grade Stainless Steel BBQ Tool Set",
+     "All-Natural Palmyra Grid Scrubber with Extra Pad",
+     "Cast Iron Grill Press"
+    ],
+    "checked_at": "2026-10-12T21:12:04.765Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=skewers&type=product",
+    "note": "Live results page returns 4 products (tool set, grid scrubber, grill press) and no skewers; catalog has no skewer SKU."
+   }
+  },
+  {
+   "q": "hold the grill at 225",
+   "original": {
+    "total": 2,
+    "mean_grade": 0.5,
+    "ndcg": 0.6309297535714575,
+    "top3": [
+     "David Roses \"EGGin\" Big Green Egg Cookbook hardcover",
+     "Big Green Egg x YETI M20 Backpack Cooler"
+    ]
+   },
+   "verification": {
+    "total": 2,
+    "top3": [
+     "David Roses \"EGGin\" Big Green Egg Cookbook hardcover",
+     "Big Green Egg x YETI M20 Backpack Cooler"
+    ],
+    "checked_at": "2026-10-12T21:12:06.592Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=hold+the+grill+at+225&type=product",
+    "note": "Live results page returns 2 products: a cookbook and a cooler. A temperature-control query does not surface the EGG Genius controller or dome thermometer the catalog stocks."
+   }
+  },
+  {
+   "q": "smoke a ham",
+   "original": {
+    "total": 2,
+    "mean_grade": 0.5,
+    "ndcg": 0.6309297535714575,
+    "top3": [
+     "convEGGtor® for Large EGG",
+     "3rd Annual Smokin' The Ville EGGfest by Builders Lumber & Hardware"
+    ]
+   },
+   "verification": {
+    "total": 2,
+    "top3": [
+     "convEGGtor® for Large EGG",
+     "3rd Annual Smokin' The Ville EGGfest by Builders Lumber & Hardware"
+    ],
+    "checked_at": "2026-10-12T21:12:08.290Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=smoke+a+ham&type=product",
+    "note": "Live results page returns 2 products: a convEGGtor and an event listing; no smoking chunks or recipes."
+   }
+  },
+  {
+   "q": "apron",
+   "original": {
+    "total": 10,
+    "mean_grade": 0.7,
+    "ndcg": 0.9888009031441519,
+    "top3": [
+     "Large Big Green Egg",
+     "Table - Solid Acacia Hardwood for Large EGG",
+     "WiFi Display"
+    ]
+   },
+   "verification": {
+    "total": 43,
+    "top3": [
+     "Large Big Green Egg",
+     "XL Hell Hands™",
+     "Medium Hell Hands™"
+    ],
+    "checked_at": "2026-10-12T21:12:34.170Z"
+   },
+   "verdict": "confirmed",
+   "reclassified_as": null,
+   "evidence": {
+    "url": "https://biggreenegg.com/search?q=apron&type=product",
+    "note": "Catalog stocks \"Grilling Apron\"; predictive dropdown (top 10) does not contain it and the live results page (43 results) leads with Large Big Green Egg then Hell Hands gloves. Single-word product-type query ranked behind unrelated hardware."
+   }
+  }
+ ]
+}

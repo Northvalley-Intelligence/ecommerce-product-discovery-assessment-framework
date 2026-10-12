@@ -1,0 +1,2362 @@
+{
+ "pack_version": "1",
+ "retailer": "biggreenegg.com",
+ "eval_id": "SE-20261012T184220Z",
+ "generated_at": "2026-10-12T18:44:38.924Z",
+ "catalog_ref": "catalog.json",
+ "generator": [
+  "category-recall",
+  "authored"
+ ],
+ "terms": [
+  {
+   "term": "kamado grill",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "charcoal",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "charcoal",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "natural-lump-hardwood-charcoal",
+     "natural-lump-charcoal-canadian-maple",
+     "100-natural-lump-charcoal-oak-hickory",
+     "weather-proof-charcoal-storage-bag"
+    ],
+    "source_url": "https://biggreenegg.com/collections/charcoal"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "grill cover",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "covers",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 12,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "cover-k-l-and-xl-for-53-modern-table",
+     "cover-l-l-and-xl-for-72-modern-table",
+     "cover-j-fits-76-cooking-island-for-xl-and-l",
+     "cover-i-fits-nest-and-handler-or-nest-for-2xl",
+     "cover-h-for-nest-handler-and-portable-nest-for-m-s-mx",
+     "cover-g-fits-mx-and-mn-with-or-without-a-carrier",
+     "cover-f-fits-built-ins-modular-nests-or-cooking-islands-for-xl-and-l-egg-domes",
+     "cover-e-fits-acacia-table-for-l",
+     "cover-d-fits-49-cooking-island-for-xl-and-l",
+     "cover-c-fits-modular-nest-expansion-frame-for-xl-l-and-m-acacia-table-for-xl",
+     "cover-b-fits-nest-and-handler-for-xl-l-modular-nest-for-m",
+     "cover-a-fits-modular-nest-for-2xl-xl-and-l"
+    ],
+    "source_url": "https://biggreenegg.com/collections/covers"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "thermometer",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "thermometers",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 9,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "wifi-display-predictive-thermometer-bundle",
+     "wireless-predictive-thermometer",
+     "wifi-display",
+     "pro-chef-thermometer",
+     "external-temperature-gauge-large-dial-3-8cm-750-f-400-c-fits-all-except-mini",
+     "external-temperature-gauge-2-5cm-750-f-400-c",
+     "bluetooth-dome-thermometer",
+     "instant-read-digital-thermometer-with-bottle-opener",
+     "instant-read-digital-food-thermometer"
+    ],
+    "source_url": "https://biggreenegg.com/collections/thermometers"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "pizza stone",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "cutting board",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "cutting-boards",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 2,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "disposable-cutting-board",
+     "bamboo-cutting-board"
+    ],
+    "source_url": "https://biggreenegg.com/collections/cutting-boards"
+   }
+  },
+  {
+   "term": "cookbook",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "cookbooks",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 2,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "david-roses-eggin-big-green-egg-cookbook-hardcover",
+     "ray-lampes-dr-bbq-big-green-egg-cookbook-hardcover"
+    ],
+    "source_url": "https://biggreenegg.com/collections/cookbooks"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "spatula",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "spatulas",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 1,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "grill-spatula-with-green-handle"
+    ],
+    "source_url": "https://biggreenegg.com/collections/spatulas"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "tongs",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "tongs",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 1,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "silicone-tip-tongs-16-40-cm"
+    ],
+    "source_url": "https://biggreenegg.com/collections/tongs"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "knife",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "knives",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 1,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "brisket-knife-12-stainless-steel"
+    ],
+    "source_url": "https://biggreenegg.com/collections/knives"
+   }
+  },
+  {
+   "term": "rub",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "seasonings-rubs",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "big-green-egg-seasoning-classic-steakhouse",
+     "big-green-egg-seasoning-savory-pecan",
+     "big-green-egg-seasoning-sweet-smoky",
+     "big-green-egg-seasoning-ancho-chili-coffee"
+    ],
+    "source_url": "https://biggreenegg.com/collections/seasonings-rubs"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "barbecue sauce",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "barbecue-wing-sauce",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "big-green-egg-wing-sauce-original-buffalo",
+     "big-green-egg-wing-sauce-eds-famous",
+     "big-green-egg-bbq-sauce-kentucky-bourbon-grilling-glaze",
+     "big-green-egg-bbq-sauce-kansas-city-style-sweet-smoky"
+    ],
+    "source_url": "https://biggreenegg.com/collections/barbecue-wing-sauce"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "hat",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "hats",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 12,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "the-paracord",
+     "the-rustic-canvas",
+     "the-weekender",
+     "the-backyard-badge",
+     "the-pitmaster",
+     "the-cold-egg-green",
+     "the-cold-egg-white",
+     "embroidered-white-bge-74-hat",
+     "green-with-tan-leather-patch-baseball-hat",
+     "big-green-egg-silhouette-green-gray-hat",
+     "50th-anniversary-trucker-hat-1",
+     "big-green-egg-green-patch-baseball-hat"
+    ],
+    "source_url": "https://biggreenegg.com/collections/hats"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "cooler",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "bags-coolers",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "big-green-egg-x-yeti-hopper-m30-tote-soft-cooler",
+     "big-green-egg-x-yeti-hopper-flip-12-cooler",
+     "big-green-egg-x-yeti-m20-backpack-cooler",
+     "reusable-tote"
+    ],
+    "source_url": "https://biggreenegg.com/collections/bags-coolers"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "igniter",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "igniters",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 15,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "quick-light-kit",
+     "hell-hands",
+     "split-heat-deflector",
+     "twisters-fire-starters",
+     "speedilight-sticks",
+     "natural-lump-hardwood-charcoal",
+     "natural-lump-charcoal-canadian-maple",
+     "100-natural-lump-charcoal-oak-hickory",
+     "ash-tool-for-s-mx-or-mn-eggs",
+     "ash-tool-w-soft-grip-handle-for-l-or-m-eggs",
+     "ash-tool-w-soft-grip-handle-for-2xl-or-xl-eggs",
+     "ash-removal-pan",
+     "grid-gripper-for-lifting-stainless-cooking-grids-and-planks",
+     "weather-proof-charcoal-storage-bag",
+     "eggniter-electric-charcoal-lighter-with-fan-1500-watt-120v"
+    ],
+    "source_url": "https://biggreenegg.com/collections/igniters"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "fire starter",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "fire-starters",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 7,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "quick-light-kit-medium",
+     "quick-light-kit-large",
+     "quick-light-kit-xl-and-2xl",
+     "quick-light-kit",
+     "twisters-fire-starters",
+     "speedilight-sticks",
+     "speedilight-natural-charcoal-starters"
+    ],
+    "source_url": "https://biggreenegg.com/collections/fire-starters"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "wood chips",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "table",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "tables-stands",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 60,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "modern-farmhouse-table-50-inch-for-large-egg-2025",
+     "modern-farmhouse-table-69-inch-for-xl-egg-2025",
+     "modern-farmhouse-table-69-inch-for-large-egg-2025",
+     "modern-farmhouse-table-50-inch-for-xl-egg-2025",
+     "hardware-pack-for-nest-xl-l-m-s",
+     "4-in-locking-caster-kit-set-of-2-4-total",
+     "hardware-pack-for-wood-egg-mates-all-sizes",
+     "hardware-pack-for-composite-egg-mates-all-sizes",
+     "solid-acacia-egg-mates-13-5-for-minimax",
+     "solid-acacia-egg-mates-17-5-x-11-for-small",
+     "solid-acacia-egg-mates-17-5-x-11-for-medium",
+     "solid-acacia-egg-mates-17-5-x-11-for-large",
+     "solid-acacia-egg-mates-17-5-x-11-for-xl",
+     "solid-acacia-egg-mates-21-x-15-for-large",
+     "solid-acacia-egg-mates-21-x-15-for-xl",
+     "solid-acacia-egg-mates-21-x-15-for-2xl",
+     "silicone-feet-covers-for-minimax-mini-carrier",
+     "hardware-pack-for-minimax-carrier",
+     "hardware-pack-for-mini-carrier",
+     "replacement-carrier-for-minimax-egg-already-included-w-minimax-will-not-fit-mini",
+     "carrier-for-mini-egg-all-metal-with-integrated-handles",
+     "hardware-pack-for-portable-nest-for-minimax",
+     "portable-nest-for-minimax-egg",
+     "nest-utility-rack",
+     "silicone-tips-for-nest",
+     "hardware-pack-for-2xl-nest",
+     "nest-for-small-egg-heavy-duty-design-with-casters-2-locking",
+     "nest-for-medium-egg",
+     "nest-for-large-egg",
+     "nest-for-xl-egg",
+     "integgrated-nest-handler-for-medium-egg",
+     "integgrated-nest-handler-for-large-egg",
+     "integgrated-nest-handler-for-xl-egg",
+     "integgrated-nest-handler-for-2xl-egg",
+     "hardware-pack-for-nest-handler-all-sizes",
+     "xl-nest-handler",
+     "table-nest-for-medium-egg",
+     "table-nest-for-large-egg",
+     "table-nest-for-xlarge-egg",
+     "table-nest-for-2xl-egg",
+     "caster-kit-2-in-5cm-2-locking-2-non-locking-for-all-modular-nests-and-wood-tables",
+     "table-solid-acacia-hardwood-for-large-egg",
+     "table-solid-acacia-hardwood-for-xlarge-egg",
+     "caster-kit-4-in-10-cm-1-locking-1-non-locking-for-modular-nests-nests-and-wood-tables",
+     "connector-pack-for-modular-nest-system",
+     "3-piece-accessory-kit-for-modular-nest",
+     "hardware-pack-for-modular-nest-system",
+     "acacia-insert-for-modular-nest-system",
+     "solid-stainless-steel-insert-for-modular-nest-system",
+     "stainless-steel-grid-insert-for-modular-nest-system",
+     "tool-hook-for-modular-nest-system-works-with-acacia-tables",
+     "expansion-cabinet-for-modular-nest-system",
+     "expansion-frame-for-modular-nest-system",
+     "modular-egg-mate",
+     "large-corner-modular-nest",
+     "xl-corner-modular-nest",
+     "medium-egg-frame-with-stainless-grid-insert-for-modular-nest-system",
+     "large-egg-frame-with-stainless-grid-insert-for-modular-nest-system",
+     "xl-egg-frame-with-stainless-grid-insert-for-modular-nest-system",
+     "2xl-egg-frame-with-stainless-grid-insert-for-modular-nest-system"
+    ],
+    "source_url": "https://biggreenegg.com/collections/all-modular-system-tables-stands"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "nest",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "modular-nest",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 25,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "xl-big-green-egg-in-modular-nest-with-expansion-and-3-acacia-inserts-package",
+     "large-big-green-egg-in-a-corner-modular-package",
+     "large-big-green-egg-in-modular-nest-package",
+     "large-big-green-egg-in-modular-nest-with-expansion-and-3-acacia-inserts-package",
+     "medium-big-green-egg-in-a-modular-nest-package",
+     "xl-big-green-egg-in-a-corner-modular-package",
+     "modular-nest-insert",
+     "xlarge-big-green-egg-in-modular-nest-package",
+     "4-in-locking-caster-kit-set-of-2-4-total",
+     "caster-kit-4-in-10-cm-1-locking-1-non-locking-for-modular-nests-nests-and-wood-tables",
+     "3-piece-accessory-kit-for-modular-nest",
+     "hardware-pack-for-modular-nest-system",
+     "acacia-insert-for-modular-nest-system",
+     "solid-stainless-steel-insert-for-modular-nest-system",
+     "stainless-steel-grid-insert-for-modular-nest-system",
+     "tool-hook-for-modular-nest-system-works-with-acacia-tables",
+     "expansion-cabinet-for-modular-nest-system",
+     "expansion-frame-for-modular-nest-system",
+     "modular-egg-mate",
+     "large-corner-modular-nest",
+     "xl-corner-modular-nest",
+     "medium-egg-frame-with-stainless-grid-insert-for-modular-nest-system",
+     "large-egg-frame-with-stainless-grid-insert-for-modular-nest-system",
+     "xl-egg-frame-with-stainless-grid-insert-for-modular-nest-system",
+     "2xl-egg-frame-with-stainless-grid-insert-for-modular-nest-system"
+    ],
+    "source_url": "https://biggreenegg.com/collections/modular-nest"
+   }
+  },
+  {
+   "term": "rack",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "racks-grids",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 35,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "stainless-steel-grid-for-xl-egg",
+     "stainless-steel-half-grid-for-l",
+     "cast-iron-grid-for-l",
+     "large-pizza-wedge",
+     "pizza-wedge",
+     "1-piece-conveggtor-basket-for-l",
+     "xl-pizza-wedge",
+     "half-moon-cast-iron-plancha-griddles-large-xl-2xl",
+     "stainless-steel-grid-for-mini-egg",
+     "stainless-steel-grid-for-small-minimax-egg",
+     "stainless-steel-grid-for-medium-egg",
+     "stainless-steel-grid-for-large-egg",
+     "stainless-steel-grid-for-2xl-xxlarge-egg",
+     "pizza-oven-wedge-for-large-egg",
+     "ceramic-vertical-turkey-roaster-2xl-xl-l-m",
+     "ceramic-vertical-chicken-roaster-2xl-xl-l-m-s",
+     "stainless-vertical-turkey-roaster-2xl-xl-l-m",
+     "rib-roast-rack-stainless-2xl-xl-l-m-s",
+     "rib-roast-rack-stainless-2xl-xl-l",
+     "half-moon-cast-iron-plancha-griddles-2xl-xl",
+     "cast-iron-dual-side-plancha-griddle-10-5-in-27-cm-2xl-xl-l-m-s-mx",
+     "cast-iron-dual-side-plancha-griddle-14-in-36-cm-2xl-xl-l",
+     "cast-iron-half-grid-for-l",
+     "cast-iron-half-grid-for-xl",
+     "cast-iron-grid-for-s-mx",
+     "cast-iron-grid-for-m",
+     "stainless-steel-half-grid-for-xl",
+     "perforated-half-grid-for-l",
+     "1-piece-conveggtor-basket-for-m",
+     "1-piece-conveggtor-basket-for-xl",
+     "conveggtor-basket-for-2xl-egg-use-with-2-half-moon-conveggtor-for-2xl",
+     "stainless-steel-fire-bowl-for-mx",
+     "stainless-steel-fire-bowl-for-l",
+     "stainless-steel-fire-bowl-for-xl-with-divider",
+     "stainless-steel-fire-bowl-for-2xl-with-divider"
+    ],
+    "source_url": "https://biggreenegg.com/collections/racks-grids"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "rotisserie",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "rotisserie",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 3,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "rotisserie",
+     "xl-rotisserie",
+     "large-rotisserie"
+    ],
+    "source_url": "https://biggreenegg.com/collections/rotisserie"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "apron",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "gloves",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "sign",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "signs",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 2,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "glass-christmas-ornament-classic-santa",
+     "glass-christmas-ornament-classic-egg"
+    ],
+    "source_url": "https://biggreenegg.com/collections/signs"
+   }
+  },
+  {
+   "term": "grill brush",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "drip pan",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "gasket",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "replacement parts",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "cast iron",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "egg",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "eggs",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 28,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "medium-big-green-egg-in-nest-package",
+     "large-big-green-egg-in-nest-package",
+     "demo-large-big-green-egg-in-an-integgrated-nest-handler-package",
+     "large-big-green-egg-in-50-4-inch-modern-farmhouse-table-package",
+     "xl-big-green-egg-in-50-4-inch-modern-farmhouse-table-package",
+     "large-big-green-egg-in-69-inch-modern-farmhouse-table-package",
+     "xl-big-green-egg-in-69-inch-modern-farmhouse-table-package",
+     "xl-big-green-egg-in-acacia-table-package",
+     "xl-big-green-egg-in-an-integgrated-nest-handler-package",
+     "xl-big-green-egg-in-an-integgrated-nest-handler-with-mates-package",
+     "xl-big-green-egg-in-modular-nest-with-expansion-and-3-acacia-inserts-package",
+     "xl-big-green-egg-in-nest-package",
+     "large-big-green-egg-in-a-corner-modular-package",
+     "large-big-green-egg-built-in-package-for-contractors-and-custom-kitchens",
+     "large-big-green-egg-in-a-nest-with-acacia-mates-package",
+     "large-big-green-egg-in-acacia-table-package",
+     "large-big-green-egg-in-an-integgrated-nest-handler-package",
+     "large-big-green-egg-in-an-integgrated-nest-handler-with-mates-package",
+     "large-big-green-egg-in-modular-nest-package",
+     "large-big-green-egg-in-modular-nest-with-expansion-and-3-acacia-inserts-package",
+     "medium-big-green-egg-in-a-modular-nest-package",
+     "medium-big-green-egg-in-an-integgrated-nest-handler-package",
+     "minimax-big-green-egg-package",
+     "minimax-big-green-egg-with-nest-package",
+     "xlarge-big-green-egg-built-in-package-for-contractors-and-custom-kitchens",
+     "xl-big-green-egg-in-a-corner-modular-package",
+     "2xl-big-green-egg-in-an-integgrated-nest-handler-package",
+     "xlarge-big-green-egg-in-modular-nest-package"
+    ],
+    "source_url": "https://biggreenegg.com/collections/all-eggs-egg-packages"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "smoker",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "baking stone",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "oven mitt",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "firebox",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "wood chunks",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "lump charcoal",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "charcoal",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "natural-lump-hardwood-charcoal",
+     "natural-lump-charcoal-canadian-maple",
+     "100-natural-lump-charcoal-oak-hickory",
+     "weather-proof-charcoal-storage-bag"
+    ],
+    "source_url": "https://biggreenegg.com/collections/charcoal"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "bbq sauce",
+   "dataset": "head",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "barbecue-wing-sauce",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 4,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "big-green-egg-wing-sauce-original-buffalo",
+     "big-green-egg-wing-sauce-eds-famous",
+     "big-green-egg-bbq-sauce-kentucky-bourbon-grilling-glaze",
+     "big-green-egg-bbq-sauce-kansas-city-style-sweet-smoky"
+    ],
+    "source_url": "https://biggreenegg.com/collections/barbecue-wing-sauce"
+   }
+  },
+  {
+   "term": "t-shirt",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "hoodie",
+   "dataset": "head",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "is_lead": true
+  },
+  {
+   "term": "barbecue",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "smoker grill",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "smoker",
+   "direction": "uni"
+  },
+  {
+   "term": "big green egg",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "egg",
+   "direction": "uni"
+  },
+  {
+   "term": "green egg",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "egg",
+   "direction": "uni"
+  },
+  {
+   "term": "bge",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "egg",
+   "direction": "uni"
+  },
+  {
+   "term": "egghead",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "egg",
+   "direction": "uni"
+  },
+  {
+   "term": "grill jacket",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "egg cover",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "grill cover",
+   "direction": "uni"
+  },
+  {
+   "term": "pizza oven",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "pizza steel",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "pizza stone",
+   "direction": "uni"
+  },
+  {
+   "term": "plate setter",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "conveggtor",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "grill stand",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "table",
+   "direction": "uni"
+  },
+  {
+   "term": "egg cart",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "table",
+   "direction": "uni"
+  },
+  {
+   "term": "grill cart",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "table",
+   "direction": "uni"
+  },
+  {
+   "term": "side table",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "table",
+   "direction": "uni"
+  },
+  {
+   "term": "temp controller",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "temperature controller",
+   "direction": "uni"
+  },
+  {
+   "term": "temperature controller",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "temperature-control",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 14,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "wifi-display-predictive-thermometer-bundle",
+     "wireless-predictive-thermometer",
+     "wifi-display",
+     "pro-chef-thermometer",
+     "external-temperature-gauge-large-dial-3-8cm-750-f-400-c-fits-all-except-mini",
+     "external-temperature-gauge-2-5cm-750-f-400-c",
+     "bluetooth-dome-thermometer",
+     "instant-read-digital-thermometer-with-bottle-opener",
+     "instant-read-digital-food-thermometer",
+     "egg-genius-y-cable",
+     "egg-genius-additional-pit-probe",
+     "egg-genius-additional-meat-probe",
+     "egg-genius-temperature-controller",
+     "eggniter-electric-charcoal-lighter-with-fan-1500-watt-120v"
+    ],
+    "source_url": "https://biggreenegg.com/collections/temperature-control"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "thermostat",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "temperature controller",
+   "direction": "uni"
+  },
+  {
+   "term": "probe",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "thermometer",
+   "direction": "uni"
+  },
+  {
+   "term": "bluetooth thermometer",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "thermometer",
+   "direction": "uni"
+  },
+  {
+   "term": "lump",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "lump charcoal",
+   "direction": "uni"
+  },
+  {
+   "term": "natural charcoal",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "charcoal",
+   "direction": "uni"
+  },
+  {
+   "term": "briquettes",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "charcoal",
+   "direction": "uni"
+  },
+  {
+   "term": "wood pellets",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "chunks",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "wood chunks",
+   "direction": "uni"
+  },
+  {
+   "term": "lighter",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "fire starter",
+   "direction": "uni"
+  },
+  {
+   "term": "fire lighter",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "fire starter",
+   "direction": "uni"
+  },
+  {
+   "term": "electric starter",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "igniter",
+   "direction": "uni"
+  },
+  {
+   "term": "spice",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "rub",
+   "direction": "uni"
+  },
+  {
+   "term": "marinade",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "barbecue sauce",
+   "direction": "uni"
+  },
+  {
+   "term": "wing sauce",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "barbecue sauce",
+   "direction": "uni"
+  },
+  {
+   "term": "hot sauce",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "barbecue sauce",
+   "direction": "uni"
+  },
+  {
+   "term": "recipe book",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "cookbook",
+   "direction": "uni"
+  },
+  {
+   "term": "flipper",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "spatula",
+   "direction": "uni"
+  },
+  {
+   "term": "grill tongs",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "tongs",
+   "direction": "uni"
+  },
+  {
+   "term": "cleaner",
+   "dataset": "synonym",
+   "has_key": true,
+   "relation": null,
+   "source": "catalog_node",
+   "node_id": "cleaning",
+   "query_template": "{node.singular}",
+   "key": {
+    "size": 8,
+    "null_rate": 0,
+    "confidence": "medium",
+    "skus": [
+     "ash-tool-for-s-mx-or-mn-eggs",
+     "ash-tool-w-soft-grip-handle-for-l-or-m-eggs",
+     "ash-tool-w-soft-grip-handle-for-2xl-or-xl-eggs",
+     "ash-removal-pan",
+     "palmyra-grid-replacement-scrubber-pads-2",
+     "dual-brush-palmyra-grid-scrubber",
+     "all-natural-palmyra-grid-scrubber-with-extra-pad",
+     "diamond-coated-nylon-bristle-grid-scrubber"
+    ],
+    "source_url": "https://biggreenegg.com/collections/cleaning"
+   },
+   "is_lead": true
+  },
+  {
+   "term": "degreaser",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "cleaner",
+   "direction": "uni"
+  },
+  {
+   "term": "oven cleaner",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "cleaner",
+   "direction": "uni"
+  },
+  {
+   "term": "mitt",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "oven mitt",
+   "direction": "uni"
+  },
+  {
+   "term": "oven glove",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "oven mitt",
+   "direction": "uni"
+  },
+  {
+   "term": "bbq glove",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "gloves",
+   "direction": "uni"
+  },
+  {
+   "term": "heat resistant gloves",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "gloves",
+   "direction": "uni"
+  },
+  {
+   "term": "cap",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "hat",
+   "direction": "uni"
+  },
+  {
+   "term": "beanie",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "hat",
+   "direction": "uni"
+  },
+  {
+   "term": "sweatshirt",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "hoodie",
+   "direction": "uni"
+  },
+  {
+   "term": "jacket",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "can cooler",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "cooler",
+   "direction": "uni"
+  },
+  {
+   "term": "tumbler",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "tote",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "cooler",
+   "direction": "uni"
+  },
+  {
+   "term": "bag",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "wok",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "dutch oven",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "roasting pan",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "rib rack",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "rack",
+   "direction": "uni"
+  },
+  {
+   "term": "roast rack",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "key": null,
+   "compared_to": "rack",
+   "direction": "uni"
+  },
+  {
+   "term": "grid",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "rack",
+   "direction": "uni"
+  },
+  {
+   "term": "grate",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "replacement gasket",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "gasket",
+   "direction": "uni"
+  },
+  {
+   "term": "vent",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "top vent",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "rEGGulator",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "handle",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "spit",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "rotisserie",
+   "direction": "uni"
+  },
+  {
+   "term": "skewers",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored",
+   "compared_to": "rotisserie",
+   "direction": "uni"
+  },
+  {
+   "term": "kabob",
+   "dataset": "synonym",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "xl egg",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "medium egg",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "small egg",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "minimax egg",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "xl cover",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "medium cover",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "medium pizza stone",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "14 inch pizza stone",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "16 inch pizza stone",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "large grid",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "stainless steel grid",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "cast iron grid",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "non stick",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "wood handle",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "stainless steel thermometer",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "digital thermometer",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "large nest",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "medium nest",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "large table",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "xl table",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "portable grill",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "compact grill",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "tabletop grill",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "charcoal grill",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "ceramic grill",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "xl gasket",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "apple wood chips",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "hickory chips",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "oak chunks",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "mens t-shirt",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "youth hat",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "large hoodie",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "small tshirt",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "xl tshirt",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "black hat",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "leather gloves",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "silicone gloves",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored"
+  },
+  {
+   "term": "wooden spatula",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "chef knife",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "maple cutting board",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "spicy rub",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "smoky sauce",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "sugar free rub",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "gluten free rub",
+   "dataset": "attribute",
+   "has_key": false,
+   "relation": null,
+   "source": "authored",
+   "key": null
+  },
+  {
+   "term": "pizza on the grill",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "smoke a brisket",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "smoke ribs",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook a turkey",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "roast a chicken",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "sear a steak",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "low and slow cooking",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook fish on the grill",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "make pulled pork",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "keep my grill dry",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "protect my grill outside",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "monitor temperature from phone",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "start a fire without lighter fluid",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "clean my grill",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "replace worn gasket",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "stop smoke leaking",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook two things at once",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook at different heights",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "indirect cooking",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "reverse sear",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "grill for a crowd",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook for a party",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "take grill tailgating",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "put grill on a patio",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "use grill in a table",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "hold the grill at 225",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "maintain steady temperature",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "bake cookies on a grill",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "grill burgers",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook wings",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "smoke a ham",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "cook prime rib",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "bake in the egg",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "rack for ribs",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "flip food safely",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "carry hot grates",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "gift for a griller",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "gift for dad",
+   "dataset": "job_function",
+   "has_key": false,
+   "relation": null,
+   "source": "use_case"
+  },
+  {
+   "term": "what do I need to start grilling",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "i want to get into smoking meat",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "best grill for beginners",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what size egg do I need for a family of four",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "accessories for my first big green egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what do I need to make pizza",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what do I need to smoke a turkey",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "how do I keep my egg from rusting",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "a gift for someone who just got an egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what goes with a large egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "do you sell parts for my old egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "my egg lid is not sealing",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "how to replace the gasket on a large egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what table fits a large egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "something to cook for a big group",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "tools for flipping steaks",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what charcoal is best for the egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what wood to use for brisket",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "what temperature for pizza",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "where can I find a recipe for ribs",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "how long to smoke a pork butt",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "can i cook on the egg in the winter",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "accessories for a mini egg",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "something small to take camping",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "a grill for apartment balcony",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "how do i choose between large and xl",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "where is my nearest dealer",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "do you have class on cooking",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "show me cooking classes",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "events near me",
+   "dataset": "intent",
+   "has_key": false,
+   "relation": null,
+   "source": "natural_language"
+  },
+  {
+   "term": "EGGspander",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "EGGmitt",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "EGGcessories",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Egg Nest",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Mini Max",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "woo ring",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "ash tool",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "ash tool and pizza peel",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "pizza peel",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "dual probe",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "hell hands",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "nomex gasket",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Big Green Egg Large",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Big Green Egg XL",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Big Green Egg Mini",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Big Green Egg Medium",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Eggtoberfest",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Egg On the Go",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Combustion Inc",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "Richlite handle",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "cast iron plancha",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  },
+  {
+   "term": "half moon stone",
+   "dataset": "brand",
+   "has_key": false,
+   "relation": "authored",
+   "source": "authored"
+  }
+ ],
+ "orphans": [
+  "barbecue",
+  "grill jacket",
+  "pizza oven",
+  "plate setter",
+  "conveggtor",
+  "wood pellets",
+  "jacket",
+  "tumbler",
+  "bag",
+  "wok",
+  "dutch oven",
+  "roasting pan",
+  "grate",
+  "vent",
+  "top vent",
+  "rEGGulator",
+  "handle",
+  "kabob"
+ ]
+}

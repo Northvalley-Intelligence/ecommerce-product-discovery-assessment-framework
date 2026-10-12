@@ -1,0 +1,52 @@
+{
+ "profile_version": "1",
+ "retailer": "biggreenegg.com",
+ "eval_id": "SE-20261012T184220Z",
+ "profiled_at": "2026-10-12T18:45:27Z",
+ "platform": "shopify",
+ "engine": {
+  "kind": "storefront_html",
+  "url_template": "https://biggreenegg.com/search/suggest?q={q}&resources[type]=product&section_id=predictive-search",
+  "method": "GET",
+  "excludes_sponsored": true,
+  "results_path": "a.product-link[aria-label] within #predictive-search-results .predictive-search__products__list",
+  "title_path": "aria-label of a.product-link",
+  "carousel_exclusions": []
+ },
+ "verified_against_live_ui": {
+  "control_terms": [
+   {
+    "term": "charcoal",
+    "live_count": 91,
+    "profiled_count": 10,
+    "live_top3": [
+     "100% Natural Lump Charcoal Oak & Hickory",
+     "Natural Lump Charcoal Canadian Maple",
+     "Natural Lump Hardwood Charcoal"
+    ],
+    "profiled_top3": [
+     "100% Natural Lump Charcoal Oak & Hickory",
+     "Natural Lump Charcoal Canadian Maple",
+     "Natural Lump Hardwood Charcoal"
+    ]
+   }
+  ],
+  "matches": true,
+  "checked_at": "2026-10-12T19:31:36Z",
+  "notes": "robots /search disallowed; one-off owner-authorized paced capture 2026-10-12 (Ferosh, handoff 03). Control term 'charcoal': one plain GET of /search?q=charcoal&type=product (live results page, 91 results, 36 per page) vs one GET of /search/suggest (the predictive dropdown the search box calls). Top 8 titles identical and in the same order; positions 9-10 differ in order only (predictive: Quick Light Large, Fire Bowl XL, Quick Light Medium; results page: Quick Light Large, Quick Light Medium, Quick Light XL&2XL, Fire Bowl XL). Count differs only because predictive is capped at 10 products; profiled_count is therefore the dropdown cap, not a total. Predictive total is a lower bound (max 10); coverage (zero vs non-zero) and top-10 ranking are what is measured."
+ },
+ "pacing": {
+  "min_interval_ms": 1250,
+  "chunk_size": 15,
+  "cooldown_ms": 61000,
+  "identity": "single_session",
+  "user_agent": "Northvalley-Ecommerce-Inspection/0.1"
+ },
+ "known_redirects": [],
+ "catalog_available": true,
+ "limitations": [
+  "robots.txt Disallows /search; capture was a one-off owner-authorized paced run (2026-10-12), not a standing change.",
+  "Predictive endpoint returns at most 10 products, so per-term total is capped at 10 (lower bound); the full results-page count was not captured (would double the load).",
+  "Live-UI gate compared the results page to the predictive endpoint rather than a rendered dropdown; top-8 identical, positions 9-10 order differs."
+ ]
+}

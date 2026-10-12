@@ -1,0 +1,431 @@
+{"t":"2026-10-12T19:31:25Z","term":"charcoal","chunk_id":"gate-results-page","status":200}
+{"t":"2026-10-12T19:31:35Z","term":"charcoal","chunk_id":"gate-predictive","status":200}
+{"t":"2026-10-12T19:32:08.939Z","term":"kamado grill","chunk_id":"C01","status":302}
+{"t":"2026-10-12T19:32:10.190Z","term":"charcoal","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:11.441Z","term":"grill cover","chunk_id":"C01","status":302}
+{"t":"2026-10-12T19:32:12.691Z","term":"thermometer","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:13.942Z","term":"pizza stone","chunk_id":"C01","status":302}
+{"t":"2026-10-12T19:32:15.193Z","term":"cutting board","chunk_id":"C01","status":302}
+{"t":"2026-10-12T19:32:16.444Z","term":"cookbook","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:17.695Z","term":"spatula","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:18.946Z","term":"tongs","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:20.197Z","term":"knife","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:21.448Z","term":"rub","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:22.699Z","term":"barbecue sauce","chunk_id":"C01","status":302}
+{"t":"2026-10-12T19:32:23.950Z","term":"hat","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:25.201Z","term":"cooler","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:32:26.452Z","term":"igniter","chunk_id":"C01","status":200}
+{"t":"2026-10-12T19:33:27.664Z","term":"fire starter","chunk_id":"C02","status":302}
+{"t":"2026-10-12T19:33:28.915Z","term":"wood chips","chunk_id":"C02","status":302}
+{"t":"2026-10-12T19:33:30.166Z","term":"table","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:31.416Z","term":"nest","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:32.667Z","term":"rack","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:33.918Z","term":"rotisserie","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:35.169Z","term":"apron","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:36.420Z","term":"gloves","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:37.671Z","term":"sign","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:38.922Z","term":"grill brush","chunk_id":"C02","status":302}
+{"t":"2026-10-12T19:33:40.174Z","term":"drip pan","chunk_id":"C02","status":302}
+{"t":"2026-10-12T19:33:41.425Z","term":"gasket","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:33:42.676Z","term":"replacement parts","chunk_id":"C02","status":302}
+{"t":"2026-10-12T19:33:43.927Z","term":"cast iron","chunk_id":"C02","status":302}
+{"t":"2026-10-12T19:33:45.179Z","term":"egg","chunk_id":"C02","status":200}
+{"t":"2026-10-12T19:34:46.474Z","term":"smoker","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:34:47.725Z","term":"baking stone","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:34:48.978Z","term":"oven mitt","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:34:50.229Z","term":"firebox","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:34:51.480Z","term":"wood chunks","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:34:52.731Z","term":"lump charcoal","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:34:53.981Z","term":"bbq sauce","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:34:55.232Z","term":"t-shirt","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:34:56.483Z","term":"hoodie","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:34:57.734Z","term":"barbecue","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:34:58.985Z","term":"smoker grill","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:35:00.236Z","term":"big green egg","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:35:01.486Z","term":"green egg","chunk_id":"C03","status":302}
+{"t":"2026-10-12T19:35:02.736Z","term":"bge","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:35:03.987Z","term":"egghead","chunk_id":"C03","status":200}
+{"t":"2026-10-12T19:36:05.293Z","term":"grill jacket","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:06.544Z","term":"egg cover","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:07.795Z","term":"pizza oven","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:09.046Z","term":"pizza steel","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:10.297Z","term":"plate setter","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:11.548Z","term":"conveggtor","chunk_id":"C04","status":200}
+{"t":"2026-10-12T19:36:12.799Z","term":"grill stand","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:14.050Z","term":"egg cart","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:15.301Z","term":"grill cart","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:16.553Z","term":"side table","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:17.804Z","term":"temp controller","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:19.056Z","term":"temperature controller","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:36:20.307Z","term":"thermostat","chunk_id":"C04","status":200}
+{"t":"2026-10-12T19:36:21.558Z","term":"probe","chunk_id":"C04","status":200}
+{"t":"2026-10-12T19:36:22.809Z","term":"bluetooth thermometer","chunk_id":"C04","status":302}
+{"t":"2026-10-12T19:37:23.935Z","term":"lump","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:25.186Z","term":"natural charcoal","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:26.438Z","term":"briquettes","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:27.689Z","term":"wood pellets","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:28.940Z","term":"chunks","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:30.191Z","term":"lighter","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:31.442Z","term":"fire lighter","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:32.693Z","term":"electric starter","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:33.944Z","term":"spice","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:35.195Z","term":"marinade","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:36.446Z","term":"wing sauce","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:37.697Z","term":"hot sauce","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:38.948Z","term":"recipe book","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:37:40.199Z","term":"flipper","chunk_id":"C05","status":200}
+{"t":"2026-10-12T19:37:41.450Z","term":"grill tongs","chunk_id":"C05","status":302}
+{"t":"2026-10-12T19:38:42.578Z","term":"cleaner","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:43.829Z","term":"degreaser","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:45.080Z","term":"oven cleaner","chunk_id":"C06","status":302}
+{"t":"2026-10-12T19:38:46.331Z","term":"mitt","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:47.582Z","term":"oven glove","chunk_id":"C06","status":302}
+{"t":"2026-10-12T19:38:48.832Z","term":"bbq glove","chunk_id":"C06","status":302}
+{"t":"2026-10-12T19:38:50.083Z","term":"heat resistant gloves","chunk_id":"C06","status":302}
+{"t":"2026-10-12T19:38:51.334Z","term":"cap","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:52.585Z","term":"beanie","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:53.837Z","term":"sweatshirt","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:55.088Z","term":"jacket","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:56.339Z","term":"can cooler","chunk_id":"C06","status":302}
+{"t":"2026-10-12T19:38:57.590Z","term":"tumbler","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:38:58.841Z","term":"tote","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:39:00.092Z","term":"bag","chunk_id":"C06","status":200}
+{"t":"2026-10-12T19:40:01.362Z","term":"wok","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:02.613Z","term":"dutch oven","chunk_id":"C07","status":302}
+{"t":"2026-10-12T19:40:03.864Z","term":"roasting pan","chunk_id":"C07","status":302}
+{"t":"2026-10-12T19:40:05.115Z","term":"rib rack","chunk_id":"C07","status":302}
+{"t":"2026-10-12T19:40:06.366Z","term":"roast rack","chunk_id":"C07","status":302}
+{"t":"2026-10-12T19:40:07.617Z","term":"grid","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:08.868Z","term":"grate","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:10.119Z","term":"replacement gasket","chunk_id":"C07","status":302}
+{"t":"2026-10-12T19:40:11.370Z","term":"vent","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:12.622Z","term":"top vent","chunk_id":"C07","status":302}
+{"t":"2026-10-12T19:40:13.872Z","term":"rEGGulator","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:15.123Z","term":"handle","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:16.374Z","term":"spit","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:17.625Z","term":"skewers","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:40:18.875Z","term":"kabob","chunk_id":"C07","status":200}
+{"t":"2026-10-12T19:41:20.053Z","term":"xl egg","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:21.305Z","term":"medium egg","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:22.555Z","term":"small egg","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:23.806Z","term":"minimax egg","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:25.057Z","term":"xl cover","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:26.308Z","term":"medium cover","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:27.559Z","term":"medium pizza stone","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:28.811Z","term":"14 inch pizza stone","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:30.061Z","term":"16 inch pizza stone","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:31.312Z","term":"large grid","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:32.563Z","term":"stainless steel grid","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:33.814Z","term":"cast iron grid","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:35.065Z","term":"non stick","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:36.316Z","term":"wood handle","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:41:37.567Z","term":"stainless steel thermometer","chunk_id":"C08","status":302}
+{"t":"2026-10-12T19:42:38.670Z","term":"digital thermometer","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:39.921Z","term":"large nest","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:41.172Z","term":"medium nest","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:42.423Z","term":"large table","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:43.673Z","term":"xl table","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:44.924Z","term":"portable grill","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:46.175Z","term":"compact grill","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:47.426Z","term":"tabletop grill","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:48.677Z","term":"charcoal grill","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:49.928Z","term":"ceramic grill","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:51.179Z","term":"xl gasket","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:52.430Z","term":"apple wood chips","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:53.681Z","term":"hickory chips","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:54.932Z","term":"oak chunks","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:42:56.183Z","term":"mens t-shirt","chunk_id":"C09","status":302}
+{"t":"2026-10-12T19:43:57.392Z","term":"youth hat","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:43:58.644Z","term":"large hoodie","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:43:59.896Z","term":"small tshirt","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:01.148Z","term":"xl tshirt","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:02.400Z","term":"black hat","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:03.652Z","term":"leather gloves","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:04.903Z","term":"silicone gloves","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:06.156Z","term":"wooden spatula","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:07.408Z","term":"chef knife","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:08.661Z","term":"maple cutting board","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:09.913Z","term":"spicy rub","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:11.165Z","term":"smoky sauce","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:12.417Z","term":"sugar free rub","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:13.669Z","term":"gluten free rub","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:44:14.921Z","term":"pizza on the grill","chunk_id":"C10","status":302}
+{"t":"2026-10-12T19:45:16.039Z","term":"smoke a brisket","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:17.290Z","term":"smoke ribs","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:18.541Z","term":"cook a turkey","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:19.792Z","term":"roast a chicken","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:21.044Z","term":"sear a steak","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:22.294Z","term":"low and slow cooking","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:23.546Z","term":"cook fish on the grill","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:24.797Z","term":"make pulled pork","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:26.049Z","term":"keep my grill dry","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:27.299Z","term":"protect my grill outside","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:28.550Z","term":"monitor temperature from phone","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:29.801Z","term":"start a fire without lighter fluid","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:31.053Z","term":"clean my grill","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:32.304Z","term":"replace worn gasket","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:45:33.555Z","term":"stop smoke leaking","chunk_id":"C11","status":302}
+{"t":"2026-10-12T19:46:34.647Z","term":"cook two things at once","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:35.900Z","term":"cook at different heights","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:37.150Z","term":"indirect cooking","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:38.402Z","term":"reverse sear","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:39.654Z","term":"grill for a crowd","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:40.906Z","term":"cook for a party","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:42.158Z","term":"take grill tailgating","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:43.410Z","term":"put grill on a patio","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:44.662Z","term":"use grill in a table","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:45.915Z","term":"hold the grill at 225","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:47.167Z","term":"maintain steady temperature","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:48.419Z","term":"bake cookies on a grill","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:49.671Z","term":"grill burgers","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:50.924Z","term":"cook wings","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:46:52.176Z","term":"smoke a ham","chunk_id":"C12","status":302}
+{"t":"2026-10-12T19:47:53.273Z","term":"cook prime rib","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:47:54.524Z","term":"bake in the egg","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:47:55.774Z","term":"rack for ribs","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:47:57.025Z","term":"flip food safely","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:47:58.276Z","term":"carry hot grates","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:47:59.528Z","term":"gift for a griller","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:00.779Z","term":"gift for dad","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:02.030Z","term":"what do I need to start grilling","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:03.281Z","term":"i want to get into smoking meat","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:04.532Z","term":"best grill for beginners","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:05.782Z","term":"what size egg do I need for a family of four","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:07.032Z","term":"accessories for my first big green egg","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:08.284Z","term":"what do I need to make pizza","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:09.535Z","term":"what do I need to smoke a turkey","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:48:10.786Z","term":"how do I keep my egg from rusting","chunk_id":"C13","status":302}
+{"t":"2026-10-12T19:49:11.882Z","term":"a gift for someone who just got an egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:13.133Z","term":"what goes with a large egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:14.385Z","term":"do you sell parts for my old egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:15.636Z","term":"my egg lid is not sealing","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:16.887Z","term":"how to replace the gasket on a large egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:18.138Z","term":"what table fits a large egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:19.389Z","term":"something to cook for a big group","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:20.640Z","term":"tools for flipping steaks","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:21.891Z","term":"what charcoal is best for the egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:23.143Z","term":"what wood to use for brisket","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:24.394Z","term":"what temperature for pizza","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:25.644Z","term":"where can I find a recipe for ribs","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:26.895Z","term":"how long to smoke a pork butt","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:28.146Z","term":"can i cook on the egg in the winter","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:49:29.397Z","term":"accessories for a mini egg","chunk_id":"C14","status":302}
+{"t":"2026-10-12T19:50:30.714Z","term":"something small to take camping","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:31.966Z","term":"a grill for apartment balcony","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:33.217Z","term":"how do i choose between large and xl","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:34.468Z","term":"where is my nearest dealer","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:35.719Z","term":"do you have class on cooking","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:36.970Z","term":"show me cooking classes","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:38.221Z","term":"events near me","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:39.471Z","term":"EGGspander","chunk_id":"C15","status":200}
+{"t":"2026-10-12T19:50:40.722Z","term":"EGGmitt","chunk_id":"C15","status":200}
+{"t":"2026-10-12T19:50:41.973Z","term":"EGGcessories","chunk_id":"C15","status":200}
+{"t":"2026-10-12T19:50:43.224Z","term":"Egg Nest","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:44.476Z","term":"Mini Max","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:45.726Z","term":"woo ring","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:46.978Z","term":"ash tool","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:50:48.229Z","term":"ash tool and pizza peel","chunk_id":"C15","status":302}
+{"t":"2026-10-12T19:51:49.462Z","term":"pizza peel","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:50.714Z","term":"dual probe","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:51.964Z","term":"hell hands","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:53.239Z","term":"nomex gasket","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:54.490Z","term":"Big Green Egg Large","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:55.742Z","term":"Big Green Egg XL","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:56.992Z","term":"Big Green Egg Mini","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:58.243Z","term":"Big Green Egg Medium","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:51:59.494Z","term":"Eggtoberfest","chunk_id":"C16","status":200}
+{"t":"2026-10-12T19:52:00.746Z","term":"Egg On the Go","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:52:01.997Z","term":"Combustion Inc","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:52:03.248Z","term":"Richlite handle","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:52:04.499Z","term":"cast iron plancha","chunk_id":"C16","status":302}
+{"t":"2026-10-12T19:52:05.750Z","term":"half moon stone","chunk_id":"C16","status":302}
+{"note":"pass 2 begins: 180 retries of 302-canonicalised terms"}
+{"t":"2026-10-12T19:52:39.902Z","term":"kamado grill","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:41.154Z","term":"grill cover","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:42.405Z","term":"pizza stone","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:43.655Z","term":"cutting board","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:44.906Z","term":"barbecue sauce","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:46.157Z","term":"fire starter","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:47.408Z","term":"wood chips","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:48.659Z","term":"grill brush","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:49.910Z","term":"drip pan","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:51.162Z","term":"replacement parts","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:52.414Z","term":"cast iron","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:53.665Z","term":"baking stone","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:54.917Z","term":"oven mitt","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:56.168Z","term":"wood chunks","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:52:57.419Z","term":"lump charcoal","chunk_id":"R01","status":200}
+{"t":"2026-10-12T19:53:58.651Z","term":"bbq sauce","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:53:59.902Z","term":"smoker grill","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:01.154Z","term":"big green egg","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:02.404Z","term":"green egg","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:03.656Z","term":"grill jacket","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:04.907Z","term":"egg cover","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:06.158Z","term":"pizza oven","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:07.409Z","term":"pizza steel","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:08.660Z","term":"plate setter","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:09.912Z","term":"grill stand","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:11.162Z","term":"egg cart","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:12.414Z","term":"grill cart","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:13.664Z","term":"side table","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:14.914Z","term":"temp controller","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:54:16.165Z","term":"temperature controller","chunk_id":"R02","status":200}
+{"t":"2026-10-12T19:55:17.348Z","term":"bluetooth thermometer","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:18.599Z","term":"natural charcoal","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:19.849Z","term":"wood pellets","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:21.099Z","term":"fire lighter","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:22.349Z","term":"electric starter","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:23.600Z","term":"wing sauce","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:24.851Z","term":"hot sauce","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:26.102Z","term":"recipe book","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:27.353Z","term":"grill tongs","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:28.605Z","term":"oven cleaner","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:29.856Z","term":"oven glove","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:31.108Z","term":"bbq glove","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:32.359Z","term":"heat resistant gloves","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:33.610Z","term":"can cooler","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:55:34.862Z","term":"dutch oven","chunk_id":"R03","status":200}
+{"t":"2026-10-12T19:56:36.128Z","term":"roasting pan","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:37.378Z","term":"rib rack","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:38.629Z","term":"roast rack","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:39.880Z","term":"replacement gasket","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:41.130Z","term":"top vent","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:42.381Z","term":"xl egg","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:43.632Z","term":"medium egg","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:44.883Z","term":"small egg","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:46.133Z","term":"minimax egg","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:47.385Z","term":"xl cover","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:48.635Z","term":"medium cover","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:49.886Z","term":"medium pizza stone","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:51.137Z","term":"14 inch pizza stone","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:52.388Z","term":"16 inch pizza stone","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:56:53.640Z","term":"large grid","chunk_id":"R04","status":200}
+{"t":"2026-10-12T19:57:54.858Z","term":"stainless steel grid","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:57:56.108Z","term":"cast iron grid","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:57:57.358Z","term":"non stick","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:57:58.610Z","term":"wood handle","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:57:59.861Z","term":"stainless steel thermometer","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:01.111Z","term":"digital thermometer","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:02.362Z","term":"large nest","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:03.613Z","term":"medium nest","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:04.864Z","term":"large table","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:06.116Z","term":"xl table","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:07.367Z","term":"portable grill","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:08.619Z","term":"compact grill","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:09.870Z","term":"tabletop grill","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:11.120Z","term":"charcoal grill","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:58:12.371Z","term":"ceramic grill","chunk_id":"R05","status":200}
+{"t":"2026-10-12T19:59:13.619Z","term":"xl gasket","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:14.870Z","term":"apple wood chips","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:16.121Z","term":"hickory chips","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:17.372Z","term":"oak chunks","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:18.623Z","term":"mens t-shirt","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:19.874Z","term":"youth hat","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:21.126Z","term":"large hoodie","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:22.378Z","term":"small tshirt","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:23.629Z","term":"xl tshirt","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:24.880Z","term":"black hat","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:26.132Z","term":"leather gloves","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:27.382Z","term":"silicone gloves","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:28.633Z","term":"wooden spatula","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:29.883Z","term":"chef knife","chunk_id":"R06","status":200}
+{"t":"2026-10-12T19:59:31.134Z","term":"maple cutting board","chunk_id":"R06","status":200}
+{"t":"2026-10-12T20:00:32.431Z","term":"spicy rub","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:33.682Z","term":"smoky sauce","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:34.933Z","term":"sugar free rub","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:36.184Z","term":"gluten free rub","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:37.434Z","term":"pizza on the grill","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:38.684Z","term":"smoke a brisket","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:39.935Z","term":"smoke ribs","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:41.186Z","term":"cook a turkey","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:42.437Z","term":"roast a chicken","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:43.688Z","term":"sear a steak","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:44.939Z","term":"low and slow cooking","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:46.190Z","term":"cook fish on the grill","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:47.441Z","term":"make pulled pork","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:48.692Z","term":"keep my grill dry","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:00:49.943Z","term":"protect my grill outside","chunk_id":"R07","status":200}
+{"t":"2026-10-12T20:01:51.169Z","term":"monitor temperature from phone","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:52.421Z","term":"start a fire without lighter fluid","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:53.672Z","term":"clean my grill","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:54.924Z","term":"replace worn gasket","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:56.175Z","term":"stop smoke leaking","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:57.426Z","term":"cook two things at once","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:58.677Z","term":"cook at different heights","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:01:59.928Z","term":"indirect cooking","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:01.178Z","term":"reverse sear","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:02.428Z","term":"grill for a crowd","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:03.680Z","term":"cook for a party","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:04.931Z","term":"take grill tailgating","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:06.181Z","term":"put grill on a patio","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:07.432Z","term":"use grill in a table","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:02:08.683Z","term":"hold the grill at 225","chunk_id":"R08","status":200}
+{"t":"2026-10-12T20:03:09.902Z","term":"maintain steady temperature","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:11.153Z","term":"bake cookies on a grill","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:12.404Z","term":"grill burgers","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:13.655Z","term":"cook wings","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:14.905Z","term":"smoke a ham","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:16.156Z","term":"cook prime rib","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:17.408Z","term":"bake in the egg","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:18.658Z","term":"rack for ribs","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:19.909Z","term":"flip food safely","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:21.161Z","term":"carry hot grates","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:22.412Z","term":"gift for a griller","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:23.663Z","term":"gift for dad","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:24.914Z","term":"what do I need to start grilling","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:26.165Z","term":"i want to get into smoking meat","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:03:27.417Z","term":"best grill for beginners","chunk_id":"R09","status":200}
+{"t":"2026-10-12T20:04:28.725Z","term":"what size egg do I need for a family of four","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:29.975Z","term":"accessories for my first big green egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:31.226Z","term":"what do I need to make pizza","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:32.476Z","term":"what do I need to smoke a turkey","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:33.726Z","term":"how do I keep my egg from rusting","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:34.977Z","term":"a gift for someone who just got an egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:36.228Z","term":"what goes with a large egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:37.480Z","term":"do you sell parts for my old egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:38.731Z","term":"my egg lid is not sealing","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:39.983Z","term":"how to replace the gasket on a large egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:41.234Z","term":"what table fits a large egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:42.484Z","term":"something to cook for a big group","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:43.735Z","term":"tools for flipping steaks","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:44.985Z","term":"what charcoal is best for the egg","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:04:46.237Z","term":"what wood to use for brisket","chunk_id":"R10","status":200}
+{"t":"2026-10-12T20:05:47.511Z","term":"what temperature for pizza","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:48.762Z","term":"where can I find a recipe for ribs","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:50.013Z","term":"how long to smoke a pork butt","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:51.264Z","term":"can i cook on the egg in the winter","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:52.515Z","term":"accessories for a mini egg","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:53.766Z","term":"something small to take camping","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:55.017Z","term":"a grill for apartment balcony","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:56.268Z","term":"how do i choose between large and xl","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:57.519Z","term":"where is my nearest dealer","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:05:58.771Z","term":"do you have class on cooking","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:06:00.022Z","term":"show me cooking classes","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:06:01.273Z","term":"events near me","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:06:02.523Z","term":"Egg Nest","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:06:03.773Z","term":"Mini Max","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:06:05.024Z","term":"woo ring","chunk_id":"R11","status":200}
+{"t":"2026-10-12T20:07:06.301Z","term":"ash tool","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:07.552Z","term":"ash tool and pizza peel","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:08.802Z","term":"pizza peel","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:10.053Z","term":"dual probe","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:11.304Z","term":"hell hands","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:12.555Z","term":"nomex gasket","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:13.806Z","term":"Big Green Egg Large","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:15.057Z","term":"Big Green Egg XL","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:16.308Z","term":"Big Green Egg Mini","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:17.559Z","term":"Big Green Egg Medium","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:18.811Z","term":"Egg On the Go","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:20.061Z","term":"Combustion Inc","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:21.313Z","term":"Richlite handle","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:22.565Z","term":"cast iron plancha","chunk_id":"R12","status":200}
+{"t":"2026-10-12T20:07:23.816Z","term":"half moon stone","chunk_id":"R12","status":200}
+{"t":"2026-10-12T21:11:56.374Z","term":"kabob","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:11:58.204Z","term":"a gift for someone who just got an egg","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:11:59.779Z","term":"where is my nearest dealer","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:12:01.454Z","term":"how long to smoke a pork butt","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:12:03.121Z","term":"what size egg do I need for a family of four","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:12:04.765Z","term":"skewers","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:12:06.592Z","term":"hold the grill at 225","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:12:08.290Z","term":"smoke a ham","chunk_id":"verify-results-page","status":200}
+{"t":"2026-10-12T21:12:34.170Z","term":"apron","chunk_id":"verify-results-page","status":200}
