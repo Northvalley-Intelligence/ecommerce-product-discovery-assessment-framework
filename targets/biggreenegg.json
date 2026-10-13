@@ -1,0 +1,17 @@
+{
+  "target_id": "biggreenegg",
+  "name": "Big Green Egg",
+  "primary_url": "https://biggreenegg.com/",
+  "sector": "outdoor-cooking",
+  "platform": {
+    "expected": "browser-eval",
+    "engine": "shopify",
+    "rendering": "Shopify predictive search (search/suggest section)"
+  },
+  "search": {
+    "url_pattern": "https://biggreenegg.com/search/suggest?q={q}&resources[type]=product&section_id=predictive-search",
+    "engine": "storefront_html",
+    "capture": "a.product-link[aria-label] within #predictive-search-results .predictive-search__products__list"
+  },
+  "notes": "Big Green Egg. robots.txt disallows /search; the search evaluation ran under the owner's one-off authorization of 2026-10-12 and is not a standing permission."
+}
