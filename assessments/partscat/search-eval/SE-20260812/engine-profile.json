@@ -34,11 +34,18 @@
   "identity": "single_session",
   "user_agent": "Chrome (real browser, same-origin fetch)"
  },
- "known_redirects": [],
+ "known_redirects": [
+  {
+   "pattern": "exact Cat part number (e.g. 1R-1808)",
+   "redirects_to": "https://parts.cat.com/en/catcorp/product/<PART#>",
+   "count_as_answered": true
+  }
+ ],
  "catalog_available": true,
  "limitations": [
   "The /search results page is hardened by Akamai: full-page NAVIGATION to /search?q= is Access-Denied after light use, and cumulative same-origin fetches trip a durable rate-limit (>15 min). Capture done via same-origin fetch at >=10s spacing, single session, with explicit Access-Denied detection so a block is never mis-recorded as a zero-result.",
   "Result count is client-rendered on the search page; the server-rendered organic tile count is used as total. Verified equal to the live UI count on the control term.",
-  "Batch limited to 15 representative terms (not the full 69-term pack) to respect the bot protection. Part-number rows all returned a genuine 0 (not blocked), corroborated by the typeahead returning 'no suggested results' for 1R-1808."
+  "Batch limited to 15 representative terms (not the full 69-term pack) to respect the bot protection.",
+  "L10 / client-redirect (CORRECTION): exact part-number search does a CLIENT-SIDE (Next.js RSC) redirect to the product page. A raw server-side fetch of /search?q=<part#> returns the empty pre-redirect grid and MUST NOT be read as zero-result — the earlier part-number 'zero-result' reading was this artifact. Capture must follow the browser's final URL: landing on /product/<part#> = redirected=true, count as answered (known-item hit). Confirmed live 2026-08-14: searching 1R-1808 redirects to /product/1R-1808."
  ]
 }

@@ -138,6 +138,18 @@ if (!results[verifyIdx].gateOk) {
   rep.blockedBy = 6;
 }
 
+/* ------------------------------------------------- machine-readable (--json) */
+if (args.includes('--json')) {
+  const WORDS = { ok: 'ok', legacy: 'legacy shape', invalid: 'contract violated', 'gate-failed': 'gate failed', missing: 'not run', blocked: 'blocked', unreadable: 'unreadable' };
+  console.log(JSON.stringify({
+    dir,
+    done: results.filter((r) => r.state === 'ok').length,
+    total: results.length,
+    stages: results.map((r) => ({ n: r.n, skill: r.skill, artifact: r.artifact, file: r.file, state: r.state, label: WORDS[r.state] || r.state, blockedBy: r.blockedBy || null })),
+  }));
+  process.exit(0);
+}
+
 /* --------------------------------------------------- lesson enforcement ---- */
 const lessonsFile = join(ROOT, 'framework/search-eval/LESSONS.md');
 const declared = existsSync(lessonsFile)

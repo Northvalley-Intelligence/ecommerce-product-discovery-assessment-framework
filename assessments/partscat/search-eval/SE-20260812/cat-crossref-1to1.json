@@ -1,0 +1,1239 @@
+{
+ "custom_dataset_version": "1",
+ "dataset_id": "cat-crossref-1to1",
+ "name": "Caterpillar filter cross-references (1-1)",
+ "type": "one_to_one",
+ "label": "CAT xref",
+ "built_from": "Strict 1-1 Caterpillar filter cross-reference set. Each record is one search term -> the one Caterpillar product it should retrieve. Terms are the Cat part number itself plus each equivalent competitor number (Baldwin, Fleetguard, Donaldson, WIX, Fram), so searching any equivalent on the Cat site is expected to return the same Cat product. Every mapping in the evaluated sample is confirmed against Caterpillar’s OWN official filter cross-reference tool (catfiltercrossreference.com, © Caterpillar Inc.): each competitor number returns the Cat part shown.com for popular 1R-series filters (authoritative Cat titles). Interchanges capped at 25 per Cat part; duplicate terms deduped to preserve strict 1-1. monthly_volume is null pending a demand capture. The Baldwin term 'B99' is excluded: its search volume is contaminated by the unrelated TV show 'Brooklyn Nine-Nine' and does not reflect filter demand.",
+ "records": [
+  {
+   "term": "1167376",
+   "expected": {
+    "sku": "1167376",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 8
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "PA2230",
+   "expected": {
+    "sku": "1167376",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 8
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "1512409",
+   "expected": {
+    "sku": "1512409",
+    "title": "Fuel Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 11
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "BF7699-D",
+   "expected": {
+    "sku": "1512409",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 11
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "2310167",
+   "expected": {
+    "sku": "2310167",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "RS3542",
+   "expected": {
+    "sku": "231-0167",
+    "title": "Cabin Air Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 110,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "2335182",
+   "expected": {
+    "sku": "2335182",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "RS4678",
+   "expected": {
+    "sku": "2335182",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "2310168",
+   "expected": {
+    "sku": "2310168",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "RS3543",
+   "expected": {
+    "sku": "231-0168",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 40,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "2335184",
+   "expected": {
+    "sku": "2335184",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "RS4679",
+   "expected": {
+    "sku": "2335184",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "2418445",
+   "expected": {
+    "sku": "2418445",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "2418446",
+   "expected": {
+    "sku": "2418446",
+    "title": "Engine Air Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 18
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "26560120",
+   "expected": {
+    "sku": "26560120",
+    "title": "Fuel/Water Separator"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 19
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "FD7926",
+   "expected": {
+    "sku": "26560120",
+    "title": "Fuel/Water Separator"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 20,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 19
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "BF7925",
+   "expected": {
+    "sku": "1R-1803",
+    "title": "Fuel/Water Separator"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 20,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "32925423",
+   "expected": {
+    "sku": "32925423",
+    "title": "Fuel/Water Separator"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 19
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "9Y-4522",
+   "expected": {
+    "sku": "9Y-4522",
+    "title": "FILTER AS"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 26
+   },
+   "relation": "self"
+  },
+  {
+   "term": "9700EAL202N1",
+   "expected": {
+    "sku": "9Y-4522",
+    "title": "FILTER AS"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 26
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-0771",
+   "expected": {
+    "sku": "1R-0771",
+    "title": "Fuel Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 68
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "BF1382-SP",
+   "expected": {
+    "sku": "1R-0771",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 68
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "1R-0781",
+   "expected": {
+    "sku": "1R-0781",
+    "title": "Fuel Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 68
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "BF1374-SP",
+   "expected": {
+    "sku": "1R-0781",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 68
+   },
+   "relation": "cross_reference",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "997352",
+   "expected": {
+    "sku": "997352",
+    "title": "Hydraulic Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "http://avtparts.ru/Baldwin_Cross_Ref.pdf",
+    "page": 75
+   },
+   "relation": "self",
+   "note": "Title inferred from Baldwin prefix; verify exact CAT catalog title on parts.cat.com."
+  },
+  {
+   "term": "PT8341",
+   "expected": {
+    "sku": "099-7352",
+    "title": "Hydraulic Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-0751",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 320,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "BF7530MPG",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0751-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "BF7632",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 70,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "BF7634",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 50,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "FF5309",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0751-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "FF5321",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 20,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0751-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "FF5324",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 50,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "33377",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 50,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "33626",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 1600,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P8264",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0751-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P8451",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0751-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P8490",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0751-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-1808",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 720,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "B7299",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 90,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P551808",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Donaldson",
+   "monthly_volume": 70,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "57792",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 20,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-1808-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-0739",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 140,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "B7600",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 40,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0739-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference",
+   "note": "Source URL slug says 'fuel' but body + lube-type interchanges indicate an oil filter; verify type."
+  },
+  {
+   "term": "BT340",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0739-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference",
+   "note": "Source URL slug says 'fuel' but body + lube-type interchanges indicate an oil filter; verify type."
+  },
+  {
+   "term": "LF667",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 170,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "51788",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0739-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference",
+   "note": "Source URL slug says 'fuel' but body + lube-type interchanges indicate an oil filter; verify type."
+  },
+  {
+   "term": "51791",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 70,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "HPH49A",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0739-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference",
+   "note": "Source URL slug says 'fuel' but body + lube-type interchanges indicate an oil filter; verify type."
+  },
+  {
+   "term": "1R-0714",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 30,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "B605",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 70,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "B75",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 480,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "BT470",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0714-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "LF3328",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0714-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "LF3587",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0714-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P550243",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Donaldson",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0714-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P556007",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Donaldson",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0714-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "51351",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "WIX",
+   "monthly_volume": 70,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "51798",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "WIX",
+   "monthly_volume": 390,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "PH3545",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0714-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-0749",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 880,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "BF7587",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 210,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "FF5308",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0749-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "FF5319",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 170,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "FF5473",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0749-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "33674",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 90,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P8335",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0749-caterpillar-fuel-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-0716",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 390,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "BT523",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0716-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "LF3374",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0716-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "LF691A",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 170,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "PH3335",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0716-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-1807",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 720,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "B7225",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 30,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-1807-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "B7700",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 70,
+   "evidence": {
+    "source": "https://www.catfiltercrossreference.com/",
+    "tool": "Caterpillar official filter cross-reference (© Caterpillar Inc.)",
+    "verified_at": "2026-08-14"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "LF3973",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 50,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-1807-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "PH9376",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-1807-caterpillar-engine-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "1R-0713",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "Caterpillar",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "self"
+  },
+  {
+   "term": "BK6240",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": null,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "BT230",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "Baldwin",
+   "monthly_volume": 30,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "LF3342",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "Fleetguard",
+   "monthly_volume": 20,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "P555570",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "Donaldson",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "51268",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "WIX",
+   "monthly_volume": 20,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  },
+  {
+   "term": "PH3519A",
+   "expected": {
+    "sku": "1R-0713",
+    "title": "Oil Filter"
+   },
+   "brand": "Fram",
+   "monthly_volume": 10,
+   "evidence": {
+    "source": "https://www.industrialstop.com/blogs/news/1r-0713-caterpillar-oil-filter-cross-reference",
+    "title_source": "industrialstop.com CAT cross-reference page"
+   },
+   "relation": "cross_reference"
+  }
+ ]
+}

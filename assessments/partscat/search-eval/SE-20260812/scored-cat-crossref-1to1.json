@@ -1,0 +1,372 @@
+{
+ "scored_version": "1",
+ "dataset_id": "cat-crossref-1to1",
+ "type": "one_to_one",
+ "label": "CAT xref",
+ "scoring": "retrieval",
+ "built_from": "Strict 1-1 Caterpillar filter cross-reference set. Each record is one search term -> the one Caterpillar product it should retrieve. Terms are the Cat part number itself plus each equivalent competitor number (Baldwin, Fleetguard, Donaldson, WIX, Fram), so searching any equivalent on the Cat site is expected to return the same Cat product. Two evidenced sources: (1) Baldwin Filters interchange PDF (Cat-tagged rows; titles inferred from Baldwin prefixes and flagged for verification), (2) per-filter Caterpillar cross-reference pages on industrialstop.com for popular 1R-series filters (authoritative Cat titles). Interchanges capped at 25 per Cat part; duplicate terms deduped to preserve strict 1-1. monthly_volume is null pending a demand capture. The Baldwin term 'B99' is excluded: its search volume is contaminated by the unrelated TV show 'Brooklyn Nine-Nine' and does not reflect filter demand.",
+ "sample": "top-25 by demand (live redirect-aware capture)",
+ "rollup": {
+  "records": 25,
+  "scored": 25,
+  "not_found": 19,
+  "found_first": 6,
+  "found_any": 6,
+  "pct_not_found": 76,
+  "mean_score": 0.72,
+  "cross_ref_resolve": "0/19",
+  "cat_resolve": "6/6"
+ },
+ "records": [
+  {
+   "term": "33626",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "WIX",
+   "monthly_volume": 1600,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "1R-0749",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "relation": "self",
+   "brand": "Caterpillar",
+   "monthly_volume": 880,
+   "outcome": "redirect_to_product",
+   "rank": 1,
+   "score": 3,
+   "loss_fraction": 0
+  },
+  {
+   "term": "1R-1808",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "self",
+   "brand": "Caterpillar",
+   "monthly_volume": 720,
+   "outcome": "redirect_to_product",
+   "rank": 1,
+   "score": 3,
+   "loss_fraction": 0
+  },
+  {
+   "term": "1R-1807",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "self",
+   "brand": "Caterpillar",
+   "monthly_volume": 720,
+   "outcome": "redirect_to_product",
+   "rank": 1,
+   "score": 3,
+   "loss_fraction": 0
+  },
+  {
+   "term": "B75",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 480,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "51798",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "relation": "cross_reference",
+   "brand": "WIX",
+   "monthly_volume": 390,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "1R-0716",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "self",
+   "brand": "Caterpillar",
+   "monthly_volume": 390,
+   "outcome": "redirect_to_product",
+   "rank": 1,
+   "score": 3,
+   "loss_fraction": 0
+  },
+  {
+   "term": "1R-0751",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "relation": "self",
+   "brand": "Caterpillar",
+   "monthly_volume": 320,
+   "outcome": "redirect_to_product",
+   "rank": 1,
+   "score": 3,
+   "loss_fraction": 0
+  },
+  {
+   "term": "BF7587",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 210,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "LF667",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Fleetguard",
+   "monthly_volume": 170,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "FF5319",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Fleetguard",
+   "monthly_volume": 170,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "LF691A",
+   "expected": {
+    "sku": "1R-0716",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Fleetguard",
+   "monthly_volume": 170,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "1R-0739",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "self",
+   "brand": "Caterpillar",
+   "monthly_volume": 140,
+   "outcome": "redirect_to_product",
+   "rank": 1,
+   "score": 3,
+   "loss_fraction": 0
+  },
+  {
+   "term": "RS3542",
+   "expected": {
+    "sku": "2310167",
+    "title": "Engine Air Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 110,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "B7299",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 90,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "33674",
+   "expected": {
+    "sku": "1R-0749",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "WIX",
+   "monthly_volume": 90,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "BF7632",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 70,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "P551808",
+   "expected": {
+    "sku": "1R-1808",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Donaldson",
+   "monthly_volume": 70,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "51791",
+   "expected": {
+    "sku": "1R-0739",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "WIX",
+   "monthly_volume": 70,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "B605",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 70,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "51351",
+   "expected": {
+    "sku": "1R-0714",
+    "title": "Engine Oil Filter (Advanced High Efficiency)"
+   },
+   "relation": "cross_reference",
+   "brand": "WIX",
+   "monthly_volume": 70,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "B7700",
+   "expected": {
+    "sku": "1R-1807",
+    "title": "Engine Oil Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 70,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "BF7634",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Baldwin",
+   "monthly_volume": 50,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "FF5324",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "Fleetguard",
+   "monthly_volume": 50,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  },
+  {
+   "term": "33377",
+   "expected": {
+    "sku": "1R-0751",
+    "title": "Fuel Filter"
+   },
+   "relation": "cross_reference",
+   "brand": "WIX",
+   "monthly_volume": 50,
+   "outcome": "not_found",
+   "rank": null,
+   "score": 0,
+   "loss_fraction": 1
+  }
+ ]
+}
