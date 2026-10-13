@@ -1997,7 +1997,11 @@ function dashboardPageHtml() {
               : '<strong>' + escapeHtml(r.q) + '</strong>: ' + tot + ' results, grade ' + (g != null ? g : '—') + '/3.';
           }
           // recall bar (returned vs answer key)
-          var recallBar = (rec != null && ks) ? '<div style="margin:6px 0"><div style="font-size:10px;color:#6b7280;margin-bottom:2px">recall — search returned <b>' + hits + '</b> of the <b>' + ks + '</b> matching products' + (r.key_confidence ? ' · ' + r.key_confidence + '-confidence key' : '') + '</div><div style="background:#eef0f3;border-radius:3px;height:8px;overflow:hidden;max-width:300px"><div style="height:100%;width:' + Math.round(rec * 100) + '%;background:' + (rec < 0.5 ? '#dc2626' : rec < 0.8 ? '#d97706' : '#16a34a') + '"></div></div></div>' : '';
+          var recallBar = (rec != null && ks) ? '<div style="margin:6px 0"><div style="font-size:10px;color:#6b7280;margin-bottom:2px">recall — search returned <b>' + hits + '</b> of the <b>' + ks + '</b> matching products' + (r.key_confidence ? ' · ' + r.key_confidence + '-confidence key' : '') + '</div><div style="background:#eef0f3;border-radius:3px;height:8px;overflow:hidden;max-width:300px"><div style="height:100%;width:' + Math.round(rec * 100) + '%;background:' + (rec < 0.5 ? '#dc2626' : rec < 0.8 ? '#d97706' : '#16a34a') + '"></div></div>'
+            + '<div style="font-size:10px;color:#6b7280;margin-top:3px">Answer key: ' + (r.node_name ? 'the store’s <b>' + escapeHtml(r.node_name) + '</b> collection' : 'the catalog answer key') + ' (' + escapeHtml(String(ks)) + ' products)'
+            + (r.key_source_url ? ' · <a class="relink" href="' + escapeHtml(r.key_source_url) + '" target="_blank" rel="noopener">↗ open the collection</a>' : '')
+            + ((Array.isArray(r.missing_skus) && r.missing_skus.length) ? ' · <b>missing ' + r.missing_skus.length + ':</b> ' + r.missing_skus.slice(0, 12).map(function (m) { return escapeHtml(String(m)); }).join(', ') + (r.missing_skus.length > 12 ? ' … +' + (r.missing_skus.length - 12) + ' more' : '') : '')
+            + '</div></div>' : '';
           // per-term selection source — how the term entered the dataset (category-recall skill §6).
           // One chip on every term, with a tooltip for any label that is not self-explanatory.
           var selMeta = {
