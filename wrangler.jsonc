@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "search-eval-share",
+  "main": "share/worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "share-dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "pattern": "search-eval.demo.northvalleyintel.com",
+      "custom_domain": true
+    }
+  ]
+}

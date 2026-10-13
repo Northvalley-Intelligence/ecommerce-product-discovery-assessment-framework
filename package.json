@@ -32,6 +32,7 @@
     "cleanup": "node src/evaluator/cleanup.mjs"
   },
   "devDependencies": {
-    "playwright": "^1.61.1"
+    "playwright": "^1.61.1",
+    "wrangler": "^4.149.0"
   }
 }
