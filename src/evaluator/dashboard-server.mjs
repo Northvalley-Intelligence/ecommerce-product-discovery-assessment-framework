@@ -17,6 +17,7 @@ import { onboardTarget } from './onboard-target.mjs';
 import { loadCustomDataset } from '../../framework/search-eval/scripts/load-custom-dataset.mjs';
 import { createWooCommerceAdapter } from '../adapters/woocommerce.mjs';
 import { latexmkAvailable, renderExecutivePdf } from './render-executive-pdf.mjs';
+import { applyShareMode } from './share-transform.mjs';
 
 const DEFAULT_HOST = '127.0.0.1';
 const DEFAULT_PORT = 4173;
@@ -697,7 +698,7 @@ function compareRuns(rootDir, leftDir, rightDir) {
   };
 }
 
-function dashboardPage() {
+function dashboardPageHtml() {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -3290,6 +3291,13 @@ function dashboardPage() {
   </script>
 </body>
 </html>`;
+}
+
+// Default output is byte-identical to the operator dashboard; { share: true }
+// returns the read-only variant used by the share-site exporter.
+export function dashboardPage(options = {}) {
+  const html = dashboardPageHtml();
+  return options.share ? applyShareMode(html) : html;
 }
 
 function parseCleanupPolicy(raw) {

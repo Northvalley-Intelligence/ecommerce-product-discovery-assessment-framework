@@ -70,6 +70,12 @@ Hard-won failure modes are codified as **Lessons L01–L14** (`framework/search-
 
 Target, Cat Footwear, Timberland PRO (footwear), Industry West (furniture), Allbirds, Home Depot / Lowe's (home improvement), and **parts.cat.com** (Heavy Duty / industrial parts). The parts.cat.com run surfaced the current strategic thread: on a part-number-heavy B2B catalog the default datasets miss the real demand, and the live engine returns **zero results for exact part numbers** — motivating the custom-dataset work now in progress.
 
+## Share site
+
+A read-only copy of the search-relevance boards (Big Green Egg, Cat Footwear, Cat Parts Store, Target) is published at `https://search-eval.demo.northvalleyintel.com` for an outside advisor. It is a static snapshot, not a live dashboard: `scripts/export-share-site.mjs` starts the real dashboard on a free localhost port, drives it with Playwright (all non-localhost traffic blocked), records every `/api/*` and `/artifact*` GET the four boards make, and writes them with a share-mode `index.html` (`dashboardPage({ share: true })`, no operator controls) into `share-dist/`. `share/worker.mjs` (`wrangler.jsonc`, Worker `search-eval-share`) serves only those recorded URLs, `GET` only.
+
+Access is enforced by Cloudflare Access, configured outside this repo; the Worker itself has no login. `.github/workflows/deploy-share.yml` rebuilds the snapshot and deploys on every push to `main` (needs the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets). To build locally: `node scripts/export-share-site.mjs`, then `npx wrangler dev --local`.
+
 ## Getting started
 
 Read `MISSION.md`, then `.mde/state.json` and `.mde/validation-strategy.json`. Run `node framework/search-eval/scripts/pipeline-status.mjs <assessment-dir>` to see where any site's inspection stands against its contracts.
