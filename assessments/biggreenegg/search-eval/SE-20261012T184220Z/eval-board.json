@@ -1,4 +1,5 @@
 {
+ "has_report": false,
  "eval_id": "SE-20261012T184220Z",
  "retailer": "biggreenegg",
  "sector": "outdoor cooking / kamado grills",
@@ -110,7 +111,8 @@
    "dataset": "head",
    "q": "charcoal",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=charcoal&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=charcoal&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=charcoal&resources[type]=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Natural Lump Charcoal Canadian Maple",
@@ -151,7 +153,8 @@
    "dataset": "head",
    "q": "thermometer",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=thermometer&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=thermometer&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=thermometer&resources[type]=product&section_id=predictive-search",
    "items": [
     "Bluetooth Dome Thermometer",
     "Wireless Predictive Thermometer with WiFi Booster",
@@ -194,7 +197,8 @@
    "dataset": "head",
    "q": "cookbook",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cookbook&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cookbook&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cookbook&resources[type]=product&section_id=predictive-search",
    "items": [
     "David Roses \"EGGin\" Big Green Egg Cookbook hardcover",
     "Ray Lampes \"Dr.BBQ\" Big Green Egg Cookbook hardcover",
@@ -235,7 +239,8 @@
    "dataset": "head",
    "q": "spatula",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=spatula&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=spatula&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=spatula&resources[type]=product&section_id=predictive-search",
    "items": [
     "Grill Spatula with Green Handle",
     "Professional Grade Stainless Steel BBQ Tool Set",
@@ -276,7 +281,8 @@
    "dataset": "head",
    "q": "tongs",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=tongs&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=tongs&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=tongs&resources[type]=product&section_id=predictive-search",
    "items": [
     "Silicone-Tip Tongs 16\"/40 cm",
     "Professional Grade Stainless Steel BBQ Tool Set",
@@ -317,7 +323,8 @@
    "dataset": "head",
    "q": "knife",
    "total": 7,
-   "search_call": "https://biggreenegg.com/search/suggest?q=knife&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=knife&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=knife&resources[type]=product&section_id=predictive-search",
    "items": [
     "XL Hell Hands™",
     "Large Big Green Egg",
@@ -352,7 +359,8 @@
    "dataset": "head",
    "q": "rub",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=rub&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=rub&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=rub&resources[type]=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Seasoning, Sweet & Smoky",
     "Big Green Egg Seasoning, Savory Pecan",
@@ -393,7 +401,8 @@
    "dataset": "head",
    "q": "hat",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=hat&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=hat&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=hat&resources[type]=product&section_id=predictive-search",
    "items": [
     "The Backyard Badge",
     "The Rustic Canvas",
@@ -438,7 +447,8 @@
    "dataset": "head",
    "q": "cooler",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cooler&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cooler&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cooler&resources[type]=product&section_id=predictive-search",
    "items": [
     "Big Green Egg x YETI M20 Backpack Cooler",
     "Big Green Egg x YETI Hopper Flip 12 Cooler",
@@ -481,7 +491,8 @@
    "dataset": "head",
    "q": "igniter",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=igniter&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=igniter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=igniter&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGGniter® Electric Charcoal Lighter with Fan (1500 Watt/120v)",
     "Twisters Firestarters",
@@ -535,7 +546,8 @@
    "dataset": "head",
    "q": "table",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=table&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=table&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=table&resources[type]=product&section_id=predictive-search",
    "items": [
     "Table - Solid Acacia Hardwood for XL Egg",
     "Table - Solid Acacia Hardwood for Large EGG",
@@ -630,7 +642,8 @@
    "dataset": "head",
    "q": "nest",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=nest&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=nest&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=nest&resources[type]=product&section_id=predictive-search",
    "items": [
     "Nest for Large Egg",
     "IntEGGrated Nest+Handler for XL Egg",
@@ -689,7 +702,8 @@
    "dataset": "head",
    "q": "rack",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=rack&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=rack&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=rack&resources[type]=product&section_id=predictive-search",
    "items": [
     "Nest Utility Rack",
     "2-Piece Multi-Level Rack for XL",
@@ -763,7 +777,8 @@
    "dataset": "head",
    "q": "rotisserie",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=rotisserie&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=rotisserie&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=rotisserie&resources[type]=product&section_id=predictive-search",
    "items": [
     "Large Rotisserie",
     "XL Rotisserie",
@@ -806,7 +821,8 @@
    "dataset": "head",
    "q": "apron",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=apron&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=apron&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=apron&resources[type]=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg",
     "Table - Solid Acacia Hardwood for Large EGG",
@@ -847,7 +863,8 @@
    "dataset": "head",
    "q": "gloves",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=gloves&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=gloves&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=gloves&resources[type]=product&section_id=predictive-search",
    "items": [
     "Large Hell Hands™",
     "XL Hell Hands™",
@@ -888,7 +905,8 @@
    "dataset": "head",
    "q": "sign",
    "total": 9,
-   "search_call": "https://biggreenegg.com/search/suggest?q=sign&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=sign&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=sign&resources[type]=product&section_id=predictive-search",
    "items": [
     "Cast Iron Grid for M",
     "Cast Iron Grid for L",
@@ -930,7 +948,8 @@
    "dataset": "head",
    "q": "gasket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=gasket&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=gasket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=gasket&resources[type]=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "Ultra Performance Gasket Replacement Kit for Medium, Small, MiniMax, Mini",
@@ -971,7 +990,8 @@
    "dataset": "head",
    "q": "egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=egg&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=egg&resources[type]=product&section_id=predictive-search",
    "items": [
     "5-Piece EGGspander Kit for L",
     "5-Piece EGGspander Kit for XL",
@@ -1041,7 +1061,8 @@
    "dataset": "head",
    "q": "smoker",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=smoker&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=smoker&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=smoker&resources[type]=product&section_id=predictive-search",
    "items": [
     "Smoked Brisket and Pork class",
     "Premium Kiln Dried Hickory Wood Smoking Chips (2.9 L/180 cu in)",
@@ -1082,7 +1103,8 @@
    "dataset": "head",
    "q": "firebox",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=firebox&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=firebox&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=firebox&resources[type]=product&section_id=predictive-search",
    "items": [
     "Fire Box for Large EGG",
     "Fire Box for XL Egg",
@@ -1122,7 +1144,8 @@
    "dataset": "head",
    "q": "t-shirt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=t-shirt&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=t-shirt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=t-shirt&resources[type]=product&section_id=predictive-search",
    "items": [
     "Atlanta Skyline T-shirt",
     "Navy Wordmark T-Shirt",
@@ -1163,7 +1186,8 @@
    "dataset": "head",
    "q": "hoodie",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=hoodie&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=hoodie&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=hoodie&resources[type]=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Mens Gray Olsen Hoodie - 2XL",
     "Big Green Egg Mens Bone Olsen Hoodie - Large",
@@ -1204,7 +1228,8 @@
    "dataset": "synonym",
    "q": "barbecue",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=barbecue&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=barbecue&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=barbecue&resources[type]=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "MiniMax Big Green Egg",
@@ -1245,7 +1270,8 @@
    "dataset": "synonym",
    "q": "bge",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bge&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bge&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bge&resources[type]=product&section_id=predictive-search",
    "items": [
     "Fire Ring for Large EGG",
     "Fire Box for Large EGG",
@@ -1285,7 +1311,8 @@
    "dataset": "synonym",
    "q": "egghead",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=egghead&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=egghead&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=egghead&resources[type]=product&section_id=predictive-search",
    "items": [
     "High Visibility Mr. EGGhead Custom Inflatable",
     "White Winking Mr. EGGhead Short Sleeve T-Shirt",
@@ -1326,7 +1353,8 @@
    "dataset": "synonym",
    "q": "conveggtor",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=conveggtor&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=conveggtor&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=conveggtor&resources[type]=product&section_id=predictive-search",
    "items": [
     "convEGGtor® for XL EGG",
     "convEGGtor® for Large EGG",
@@ -1367,7 +1395,8 @@
    "dataset": "synonym",
    "q": "thermostat",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=thermostat&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=thermostat&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=thermostat&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "Bluetooth Dome Thermometer",
@@ -1408,7 +1437,8 @@
    "dataset": "synonym",
    "q": "probe",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=probe&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=probe&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=probe&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGG Genius Additional Meat Probe",
     "EGG Genius Additional Pit Probe",
@@ -1449,7 +1479,8 @@
    "dataset": "synonym",
    "q": "lump",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=lump&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=lump&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=lump&resources[type]=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Natural Lump Hardwood Charcoal",
@@ -1490,7 +1521,8 @@
    "dataset": "synonym",
    "q": "briquettes",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=briquettes&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=briquettes&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=briquettes&resources[type]=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Natural Lump Charcoal Canadian Maple",
@@ -1531,7 +1563,8 @@
    "dataset": "synonym",
    "q": "chunks",
    "total": 6,
-   "search_call": "https://biggreenegg.com/search/suggest?q=chunks&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=chunks&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=chunks&resources[type]=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
     "Premium Kiln Dried Mesquite Wood Smoking Chunks (9 L/549 cu in)",
@@ -1564,7 +1597,8 @@
    "dataset": "synonym",
    "q": "lighter",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=lighter&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=lighter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=lighter&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGGniter® Electric Charcoal Lighter with Fan (1500 Watt/120v)",
     "SpeediLight Sticks Charcoal Starters",
@@ -1605,7 +1639,8 @@
    "dataset": "synonym",
    "q": "spice",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=spice&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=spice&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=spice&resources[type]=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Seasoning, Classic Signature Steakhouse",
     "Big Green Egg Seasoning, Ancho Chili & Coffee",
@@ -1646,7 +1681,8 @@
    "dataset": "synonym",
    "q": "marinade",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=marinade&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=marinade&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=marinade&resources[type]=product&section_id=predictive-search",
    "items": [
     "Big Green Egg BBQ Sauce, Kentucky Bourbon Grilling Glaze",
     "Big Green Egg Wing Sauce - Eds Famous",
@@ -1687,7 +1723,8 @@
    "dataset": "synonym",
    "q": "flipper",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=flipper&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=flipper&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=flipper&resources[type]=product&section_id=predictive-search",
    "items": [
     "Grid Gripper for lifting stainless cooking grids and planks",
     "Big Green Egg x YETI Hopper Flip 12 Cooler",
@@ -1716,7 +1753,8 @@
    "dataset": "synonym",
    "q": "cleaner",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cleaner&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cleaner&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cleaner&resources[type]=product&section_id=predictive-search",
    "items": [
     "Ash Removal Pan",
     "Quick Light™ Kit Large",
@@ -1761,7 +1799,8 @@
    "dataset": "synonym",
    "q": "degreaser",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=degreaser&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=degreaser&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=degreaser&resources[type]=product&section_id=predictive-search",
    "items": [
     "Quick Light™ Kit Large",
     "Ash Removal Pan",
@@ -1802,7 +1841,8 @@
    "dataset": "synonym",
    "q": "mitt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=mitt&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=mitt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=mitt&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGGmitt High Heat BBQ Glove, extra-long",
     "Large Hell Hands™",
@@ -1843,7 +1883,8 @@
    "dataset": "synonym",
    "q": "cap",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cap&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cap&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cap&resources[type]=product&section_id=predictive-search",
    "items": [
     "The Weekender",
     "rEGGulator Vent Cap (for 2XL, XL, L, M)",
@@ -1884,7 +1925,8 @@
    "dataset": "synonym",
    "q": "beanie",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=beanie&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=beanie&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=beanie&resources[type]=product&section_id=predictive-search",
    "items": [
     "The Cold Egg - Green Beanie",
     "The Cold Egg - White Beanie",
@@ -1925,7 +1967,8 @@
    "dataset": "synonym",
    "q": "sweatshirt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=sweatshirt&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=sweatshirt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=sweatshirt&resources[type]=product&section_id=predictive-search",
    "items": [
     "Women's Stitched Crewneck Sweater",
     "Life Tastes Better Outside Olsen Hoodie",
@@ -1966,7 +2009,8 @@
    "dataset": "synonym",
    "q": "jacket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=jacket&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=jacket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=jacket&resources[type]=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg",
     "Large Big Green Egg in Acacia Table Package",
@@ -2007,7 +2051,8 @@
    "dataset": "synonym",
    "q": "tumbler",
    "total": 8,
-   "search_call": "https://biggreenegg.com/search/suggest?q=tumbler&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=tumbler&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=tumbler&resources[type]=product&section_id=predictive-search",
    "items": [
     "Big Green Egg x YETI 20 oz Tumbler",
     "One 8 oz Etched Rocks Glass",
@@ -2044,7 +2089,8 @@
    "dataset": "synonym",
    "q": "tote",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=tote&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=tote&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=tote&resources[type]=product&section_id=predictive-search",
    "items": [
     "BGE Reusable Tote",
     "Big Green Egg x YETI Hopper® M30 Tote Soft Cooler",
@@ -2085,7 +2131,8 @@
    "dataset": "synonym",
    "q": "bag",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bag&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bag&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bag&resources[type]=product&section_id=predictive-search",
    "items": [
     "BGE Reusable Tote",
     "Weather-Proof Charcoal Storage Bag",
@@ -2126,7 +2173,8 @@
    "dataset": "synonym",
    "q": "wok",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wok&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wok&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wok&resources[type]=product&section_id=predictive-search",
    "items": [
     "Carbon Steel Grill Wok w/ Bamboo Spatula",
     "Large Big Green Egg in Acacia Table Package",
@@ -2167,7 +2215,8 @@
    "dataset": "synonym",
    "q": "grid",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grid&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grid&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grid&resources[type]=product&section_id=predictive-search",
    "items": [
     "Grid Gripper for lifting stainless cooking grids and planks",
     "Grid Lifter-Heavy Duty Steel with Soft Grip Handle",
@@ -2208,7 +2257,8 @@
    "dataset": "synonym",
    "q": "grate",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grate&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grate&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grate&resources[type]=product&section_id=predictive-search",
    "items": [
     "Fire Grate for Large & MiniMax EGG",
     "Fire Grate for 2XL, XL Egg",
@@ -2249,7 +2299,8 @@
    "dataset": "synonym",
    "q": "vent",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=vent&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=vent&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=vent&resources[type]=product&section_id=predictive-search",
    "items": [
     "rEGGulator Vent Cap (for 2XL, XL, L, M)",
     "rEGGulator Vent Cap (for S, MX)",
@@ -2290,7 +2341,8 @@
    "dataset": "synonym",
    "q": "rEGGulator",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=rEGGulator&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=rEGGulator&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=rEGGulator&resources[type]=product&section_id=predictive-search",
    "items": [
     "rEGGulator Vent Cap (for 2XL, XL, L, M)",
     "rEGGulator Vent Cap (for S, MX)",
@@ -2331,7 +2383,8 @@
    "dataset": "synonym",
    "q": "handle",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=handle&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=handle&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=handle&resources[type]=product&section_id=predictive-search",
    "items": [
     "Handle - Soft Grip - Large EGG",
     "Replacement Acacia Wood Handle - Large",
@@ -2372,7 +2425,8 @@
    "dataset": "synonym",
    "q": "spit",
    "total": 8,
-   "search_call": "https://biggreenegg.com/search/suggest?q=spit&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=spit&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=spit&resources[type]=product&section_id=predictive-search",
    "items": [
     "XL Rotisserie",
     "Large Rotisserie",
@@ -2409,7 +2463,8 @@
    "dataset": "synonym",
    "q": "skewers",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=skewers&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=skewers&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=skewers&resources[type]=product&section_id=predictive-search",
    "items": [
     "All-Natural Palmyra Grid Scrubber with Extra Pad",
     "Professional Grade Stainless Steel BBQ Tool Set",
@@ -2438,7 +2493,8 @@
    "dataset": "synonym",
    "q": "kabob",
    "total": 0,
-   "search_call": "https://biggreenegg.com/search/suggest?q=kabob&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=kabob&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=kabob&resources[type]=product&section_id=predictive-search",
    "items": [],
    "grades": [],
    "ndcg": null,
@@ -2457,7 +2513,8 @@
    "dataset": "brand",
    "q": "EGGspander",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=EGGspander&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=EGGspander&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=EGGspander&resources[type]=product&section_id=predictive-search",
    "items": [
     "5-Piece EGGspander Kit for L",
     "5-Piece EGGspander Kit for XL",
@@ -2498,7 +2555,8 @@
    "dataset": "brand",
    "q": "EGGmitt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=EGGmitt&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=EGGmitt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=EGGmitt&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGGmitt High Heat BBQ Glove, extra-long",
     "EGGtoberfest Demo Large Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -2538,7 +2596,8 @@
    "dataset": "brand",
    "q": "EGGcessories",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=EGGcessories&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=EGGcessories&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=EGGcessories&resources[type]=product&section_id=predictive-search",
    "items": [
     "3 Piece Accessory Kit for Modular Nest",
     "Large Big Green Egg Built-in Package for contractors and custom kitchens",
@@ -2579,7 +2638,8 @@
    "dataset": "brand",
    "q": "Eggtoberfest",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Eggtoberfest&resources[type]=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Eggtoberfest&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Eggtoberfest&resources[type]=product&section_id=predictive-search",
    "items": [
     "EGGtoberfest Demo Large Big Green Egg in an intEGGrated Nest+Handler Package",
     "27th Annual EGGtoberfest T-shirt Charcoal Gray - Short Sleeve",
@@ -2620,7 +2680,8 @@
    "dataset": "head",
    "q": "kamado grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=kamado+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=kamado%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=kamado+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in a Nest with Acacia Mates Package",
     "Medium Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -2659,7 +2720,8 @@
    "dataset": "head",
    "q": "grill cover",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+cover&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20cover&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+cover&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover A - Fits Modular Nest for 2XL, XL and L",
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
@@ -2703,7 +2765,8 @@
    "dataset": "head",
    "q": "pizza stone",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=pizza%20stone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
     "Flat Pizza & Baking Stone (Diameter 18 in / 46cm) (for 2XL, XL)",
@@ -2744,7 +2807,8 @@
    "dataset": "head",
    "q": "cutting board",
    "total": 3,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cutting+board&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cutting%20board&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cutting+board&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Bamboo Cutting Board",
     "Disposable Cutting Board",
@@ -2771,7 +2835,8 @@
    "dataset": "head",
    "q": "barbecue sauce",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=barbecue+sauce&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=barbecue%20sauce&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=barbecue+sauce&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg BBQ Sauce, Kansas City Style - Sweet & Smoky",
     "Big Green Egg BBQ Sauce, Kentucky Bourbon Grilling Glaze",
@@ -2812,7 +2877,8 @@
    "dataset": "head",
    "q": "fire starter",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=fire+starter&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=fire%20starter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=fire+starter&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Twisters Firestarters",
     "SpeediLight Sticks Charcoal Starters",
@@ -2855,7 +2921,8 @@
    "dataset": "head",
    "q": "wood chips",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wood+chips&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wood%20chips&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wood+chips&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Cherry Wood Smoking Chips (2.9 L/180 cu in)",
     "Premium Kiln Dried Oak Wood Smoking Chips (2.9 L/180 cu in)",
@@ -2896,7 +2963,8 @@
    "dataset": "head",
    "q": "grill brush",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+brush&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20brush&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+brush&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "All-Natural Palmyra Grid Scrubber with Extra Pad",
     "Dual Brush Palmyra Grid Scrubber",
@@ -2937,7 +3005,8 @@
    "dataset": "head",
    "q": "drip pan",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=drip+pan&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=drip%20pan&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=drip+pan&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Disposable Aluminum Trays for L",
     "Large Durable Drip Tray Kit",
@@ -2978,7 +3047,8 @@
    "dataset": "head",
    "q": "replacement parts",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=replacement+parts&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=replacement%20parts&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=replacement+parts&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Hardware pack for Band - Large",
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
@@ -3019,7 +3089,8 @@
    "dataset": "head",
    "q": "cast iron",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cast+iron&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cast%20iron&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cast+iron&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Skillet - Cast Iron - Pre Seasoned 10.5\"/27 cm",
     "Skillet - Cast Iron - Pre Seasoned 14\"/36 cm",
@@ -3060,7 +3131,8 @@
    "dataset": "head",
    "q": "baking stone",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=baking+stone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=baking%20stone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=baking+stone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
     "Flat Pizza & Baking Stone (Diameter 18 in / 46cm) (for 2XL, XL)",
@@ -3101,7 +3173,8 @@
    "dataset": "head",
    "q": "oven mitt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=oven+mitt&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=oven%20mitt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=oven+mitt&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGGmitt High Heat BBQ Glove, extra-long",
     "Medium Hell Hands™",
@@ -3141,7 +3214,8 @@
    "dataset": "head",
    "q": "wood chunks",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wood+chunks&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wood%20chunks&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wood+chunks&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
     "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)",
@@ -3182,7 +3256,8 @@
    "dataset": "head",
    "q": "lump charcoal",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=lump+charcoal&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=lump%20charcoal&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=lump+charcoal&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Natural Lump Hardwood Charcoal",
@@ -3223,7 +3298,8 @@
    "dataset": "head",
    "q": "bbq sauce",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bbq+sauce&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bbq%20sauce&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bbq+sauce&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg BBQ Sauce, Kansas City Style - Sweet & Smoky",
     "Big Green Egg BBQ Sauce, Kentucky Bourbon Grilling Glaze",
@@ -3264,7 +3340,8 @@
    "dataset": "synonym",
    "q": "smoker grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=smoker+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=smoker%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=smoker+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg in an intEGGrated Nest+Handler Package",
     "MiniMax Big Green Egg Package",
@@ -3305,7 +3382,8 @@
    "dataset": "synonym",
    "q": "big green egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=big+green+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=big%20green%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=big+green+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
     "Cover A - Fits Modular Nest for 2XL, XL and L",
@@ -3346,7 +3424,8 @@
    "dataset": "synonym",
    "q": "green egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=green+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=green%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=green+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
     "Cover A - Fits Modular Nest for 2XL, XL and L",
@@ -3387,7 +3466,8 @@
    "dataset": "synonym",
    "q": "grill jacket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+jacket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20jacket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+jacket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Large Big Green Egg",
@@ -3428,7 +3508,8 @@
    "dataset": "synonym",
    "q": "egg cover",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=egg+cover&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=egg%20cover&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=egg+cover&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
     "Cover A - Fits Modular Nest for 2XL, XL and L",
@@ -3469,7 +3550,8 @@
    "dataset": "synonym",
    "q": "pizza oven",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=pizza+oven&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=pizza%20oven&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=pizza+oven&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Pizza Wedge",
     "XL Pizza Wedge",
@@ -3510,7 +3592,8 @@
    "dataset": "synonym",
    "q": "pizza steel",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=pizza+steel&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=pizza%20steel&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=pizza+steel&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Pizza Wedge",
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
@@ -3551,7 +3634,8 @@
    "dataset": "synonym",
    "q": "plate setter",
    "total": 3,
-   "search_call": "https://biggreenegg.com/search/suggest?q=plate+setter&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=plate%20setter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=plate+setter&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "convEGGtor® for Large EGG",
     "convEGGtor® for XL EGG",
@@ -3578,7 +3662,8 @@
    "dataset": "synonym",
    "q": "grill stand",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+stand&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20stand&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+stand&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Nest for Large Egg",
     "Nest for Small EGG (heavy-duty design, with casters - 2 locking)",
@@ -3619,7 +3704,8 @@
    "dataset": "synonym",
    "q": "egg cart",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=egg+cart&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=egg%20cart&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=egg+cart&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "IntEGGrated Nest+Handler for Large EGG",
     "Portable Nest for MiniMax EGG",
@@ -3660,7 +3746,8 @@
    "dataset": "synonym",
    "q": "grill cart",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+cart&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20cart&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+cart&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "IntEGGrated Nest+Handler for Large EGG",
     "Nest for Small EGG (heavy-duty design, with casters - 2 locking)",
@@ -3701,7 +3788,8 @@
    "dataset": "synonym",
    "q": "side table",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=side+table&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=side%20table&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=side+table&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Solid Acacia EGG Mates 21\" x 15\" for XL",
     "Solid Acacia EGG Mates 21\" x 15\" for Large",
@@ -3742,7 +3830,8 @@
    "dataset": "synonym",
    "q": "temp controller",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=temp+controller&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=temp%20controller&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=temp+controller&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "EGG Genius Additional Meat Probe",
@@ -3783,7 +3872,8 @@
    "dataset": "synonym",
    "q": "temperature controller",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=temperature+controller&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=temperature%20controller&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=temperature+controller&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "EGG Genius Additional Meat Probe",
@@ -3832,7 +3922,8 @@
    "dataset": "synonym",
    "q": "bluetooth thermometer",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bluetooth+thermometer&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bluetooth%20thermometer&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bluetooth+thermometer&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Bluetooth Dome Thermometer",
     "Wireless Predictive Thermometer with WiFi Booster",
@@ -3873,7 +3964,8 @@
    "dataset": "synonym",
    "q": "natural charcoal",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=natural+charcoal&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=natural%20charcoal&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=natural+charcoal&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Natural Lump Charcoal Canadian Maple",
@@ -3914,7 +4006,8 @@
    "dataset": "synonym",
    "q": "wood pellets",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wood+pellets&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wood%20pellets&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wood+pellets&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Oak Wood Smoking Chunks (9 L/549 cu in)",
     "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)",
@@ -3955,7 +4048,8 @@
    "dataset": "synonym",
    "q": "fire lighter",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=fire+lighter&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=fire%20lighter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=fire+lighter&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "SpeediLight Sticks Charcoal Starters",
     "Twisters Firestarters",
@@ -3996,7 +4090,8 @@
    "dataset": "synonym",
    "q": "electric starter",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=electric+starter&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=electric%20starter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=electric+starter&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGGniter® Electric Charcoal Lighter with Fan (1500 Watt/120v)",
     "Quick Light™ Kit Large",
@@ -4037,7 +4132,8 @@
    "dataset": "synonym",
    "q": "wing sauce",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wing+sauce&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wing%20sauce&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wing+sauce&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Wing Sauce - Original Buffalo",
     "Big Green Egg Wing Sauce - Eds Famous",
@@ -4066,7 +4162,8 @@
    "dataset": "synonym",
    "q": "hot sauce",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=hot+sauce&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=hot%20sauce&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=hot+sauce&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Wing Sauce - Original Buffalo",
     "Big Green Egg Wing Sauce - Eds Famous",
@@ -4095,7 +4192,8 @@
    "dataset": "synonym",
    "q": "recipe book",
    "total": 3,
-   "search_call": "https://biggreenegg.com/search/suggest?q=recipe+book&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=recipe%20book&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=recipe+book&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ray Lampes \"Dr.BBQ\" Big Green Egg Cookbook hardcover",
     "David Roses \"EGGin\" Big Green Egg Cookbook hardcover",
@@ -4122,7 +4220,8 @@
    "dataset": "synonym",
    "q": "grill tongs",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+tongs&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20tongs&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+tongs&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Silicone-Tip Tongs 16\"/40 cm",
     "Professional Grade Stainless Steel BBQ Tool Set",
@@ -4163,7 +4262,8 @@
    "dataset": "synonym",
    "q": "oven cleaner",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=oven+cleaner&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=oven%20cleaner&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=oven+cleaner&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ash Removal Pan",
     "Quick Light™ Kit Large",
@@ -4204,7 +4304,8 @@
    "dataset": "synonym",
    "q": "oven glove",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=oven+glove&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=oven%20glove&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=oven+glove&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Hell Hands™",
     "Large Hell Hands™",
@@ -4244,7 +4345,8 @@
    "dataset": "synonym",
    "q": "bbq glove",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bbq+glove&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bbq%20glove&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bbq+glove&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGGmitt High Heat BBQ Glove, extra-long",
     "Large Hell Hands™",
@@ -4285,7 +4387,8 @@
    "dataset": "synonym",
    "q": "heat resistant gloves",
    "total": 8,
-   "search_call": "https://biggreenegg.com/search/suggest?q=heat+resistant+gloves&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=heat%20resistant%20gloves&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=heat+resistant+gloves&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Hell Hands™",
     "XL Hell Hands™",
@@ -4322,7 +4425,8 @@
    "dataset": "synonym",
    "q": "can cooler",
    "total": 5,
-   "search_call": "https://biggreenegg.com/search/suggest?q=can+cooler&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=can%20cooler&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=can+cooler&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "BGE Insulated Beverage Cooler - green w/white logo",
     "Big Green Egg x YETI Hopper Flip 12 Cooler",
@@ -4353,7 +4457,8 @@
    "dataset": "synonym",
    "q": "dutch oven",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=dutch+oven&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=dutch%20oven&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=dutch+oven&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Enameled Cast Iron Dutch Oven",
     "Skillet - Cast Iron - Pre Seasoned 10.5\"/27 cm",
@@ -4394,7 +4499,8 @@
    "dataset": "synonym",
    "q": "roasting pan",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=roasting+pan&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=roasting%20pan&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=roasting+pan&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Stainless Vertical Turkey Roaster (2XL, XL, L, M)",
     "Ceramic Vertical Chicken Roaster (2XL, XL, L, M, S)",
@@ -4435,7 +4541,8 @@
    "dataset": "synonym",
    "q": "rib rack",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=rib+rack&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=rib%20rack&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=rib+rack&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Rib/Roast Rack - Stainless (2XL, XL, L)",
     "Rib/Roast Rack - Stainless (2XL, XL, L, M, S)",
@@ -4476,7 +4583,8 @@
    "dataset": "synonym",
    "q": "roast rack",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=roast+rack&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=roast%20rack&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=roast+rack&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Rib/Roast Rack - Stainless (2XL, XL, L)",
     "Rib/Roast Rack - Stainless (2XL, XL, L, M, S)",
@@ -4517,7 +4625,8 @@
    "dataset": "synonym",
    "q": "replacement gasket",
    "total": 5,
-   "search_call": "https://biggreenegg.com/search/suggest?q=replacement+gasket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=replacement%20gasket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=replacement+gasket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "Ultra Performance Gasket Replacement Kit for Medium, Small, MiniMax, Mini",
@@ -4548,7 +4657,8 @@
    "dataset": "synonym",
    "q": "top vent",
    "total": 8,
-   "search_call": "https://biggreenegg.com/search/suggest?q=top+vent&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=top%20vent&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=top+vent&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "rEGGulator Vent Cap (for 2XL, XL, L, M)",
     "rEGGulator Vent Cap (for S, MX)",
@@ -4585,7 +4695,8 @@
    "dataset": "attribute",
    "q": "xl egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=xl+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=xl%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=xl+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Big Green Egg",
     "XL Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
@@ -4626,7 +4737,8 @@
    "dataset": "attribute",
    "q": "medium egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=medium+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=medium%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=medium+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Medium Big Green Egg in Nest Package",
@@ -4667,7 +4779,8 @@
    "dataset": "attribute",
    "q": "small egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=small+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=small%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=small+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Mini Big Green Egg",
     "MiniMax Big Green Egg",
@@ -4708,7 +4821,8 @@
    "dataset": "attribute",
    "q": "minimax egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=minimax+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=minimax%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=minimax+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "MiniMax Big Green Egg",
     "MiniMax Big Green Egg with Nest and Acacia Mates Package",
@@ -4749,7 +4863,8 @@
    "dataset": "attribute",
    "q": "xl cover",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=xl+cover&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=xl%20cover&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=xl+cover&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover A - Fits Modular Nest for 2XL, XL and L",
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
@@ -4790,7 +4905,8 @@
    "dataset": "attribute",
    "q": "medium cover",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=medium+cover&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=medium%20cover&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=medium+cover&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover H - for Nest, Handler, and Portable Nest for M, S, MX",
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
@@ -4831,7 +4947,8 @@
    "dataset": "attribute",
    "q": "medium pizza stone",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=medium+pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=medium%20pizza%20stone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=medium+pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Flat Pizza & Baking Stone (Diameter 18 in / 46cm) (for 2XL, XL)",
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
@@ -4872,7 +4989,8 @@
    "dataset": "attribute",
    "q": "14 inch pizza stone",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=14+inch+pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=14%20inch%20pizza%20stone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=14+inch+pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
     "Flat Pizza & Baking Stone (Diameter 18 in / 46cm) (for 2XL, XL)",
@@ -4913,7 +5031,8 @@
    "dataset": "attribute",
    "q": "16 inch pizza stone",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=16+inch+pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=16%20inch%20pizza%20stone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=16+inch+pizza+stone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
     "Flat Pizza & Baking Stone (Diameter 18 in / 46cm) (for 2XL, XL)",
@@ -4954,7 +5073,8 @@
    "dataset": "attribute",
    "q": "large grid",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=large+grid&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=large%20grid&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=large+grid&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large EGG Frame with stainless grid insert for Modular Nest System",
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
@@ -4995,7 +5115,8 @@
    "dataset": "attribute",
    "q": "stainless steel grid",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=stainless+steel+grid&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=stainless%20steel%20grid&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=stainless+steel+grid&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Stainless Steel Grid for Medium EGG",
     "Stainless Steel Grid for XL Egg",
@@ -5036,7 +5157,8 @@
    "dataset": "attribute",
    "q": "cast iron grid",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cast+iron+grid&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cast%20iron%20grid&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cast+iron+grid&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cast Iron Grid for L",
     "Cast Iron Grid for M",
@@ -5077,7 +5199,8 @@
    "dataset": "attribute",
    "q": "non stick",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=non+stick&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=non%20stick&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=non+stick&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Perforated Half Grid for L",
     "SpeediLight Sticks Charcoal Starters",
@@ -5106,7 +5229,8 @@
    "dataset": "attribute",
    "q": "wood handle",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wood+handle&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wood%20handle&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wood+handle&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Replacement Acacia Wood Handle - Large",
     "Replacement Acacia Wood Handle - Medium",
@@ -5147,7 +5271,8 @@
    "dataset": "attribute",
    "q": "stainless steel thermometer",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=stainless+steel+thermometer&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=stainless%20steel%20thermometer&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=stainless+steel+thermometer&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "External Temperature Gauge 2\"/5cm (750°F / 400°C)",
     "Instant Read Digital Food Thermometer",
@@ -5188,7 +5313,8 @@
    "dataset": "attribute",
    "q": "digital thermometer",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=digital+thermometer&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=digital%20thermometer&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=digital+thermometer&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Instant Read Digital Food Thermometer",
     "Instant Read Digital Thermometer with Bottle Opener",
@@ -5229,7 +5355,8 @@
    "dataset": "attribute",
    "q": "large nest",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=large+nest&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=large%20nest&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=large+nest&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Nest for Large Egg",
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
@@ -5270,7 +5397,8 @@
    "dataset": "attribute",
    "q": "medium nest",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=medium+nest&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=medium%20nest&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=medium+nest&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Nest for Medium EGG",
     "Medium Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -5311,7 +5439,8 @@
    "dataset": "attribute",
    "q": "large table",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=large+table&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=large%20table&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=large+table&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Table Nest for Large EGG",
     "Large EGG Frame with stainless grid insert for Modular Nest System",
@@ -5352,7 +5481,8 @@
    "dataset": "attribute",
    "q": "xl table",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=xl+table&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=xl%20table&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=xl+table&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Table Nest for XL Egg",
     "Cover C - Fits Modular Nest + Expansion Frame for XL, L and M, Acacia Table for XL",
@@ -5393,7 +5523,8 @@
    "dataset": "attribute",
    "q": "portable grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=portable+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=portable%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=portable+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "MiniMax Big Green Egg Package",
     "MiniMax Big Green Egg",
@@ -5433,7 +5564,8 @@
    "dataset": "attribute",
    "q": "compact grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=compact+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=compact%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=compact+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "MiniMax Big Green Egg",
     "Medium Big Green Egg",
@@ -5474,7 +5606,8 @@
    "dataset": "attribute",
    "q": "tabletop grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=tabletop+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=tabletop%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=tabletop+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in Acacia Table Package",
     "MiniMax Big Green Egg",
@@ -5515,7 +5648,8 @@
    "dataset": "attribute",
    "q": "charcoal grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=charcoal+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=charcoal%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=charcoal+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Medium Big Green Egg in Nest Package",
@@ -5555,7 +5689,8 @@
    "dataset": "attribute",
    "q": "ceramic grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=ceramic+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=ceramic%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=ceramic+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in Acacia Table Package",
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
@@ -5596,7 +5731,8 @@
    "dataset": "attribute",
    "q": "xl gasket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=xl+gasket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=xl%20gasket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=xl+gasket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "Ultra Performance Gasket Replacement Kit for Medium, Small, MiniMax, Mini",
@@ -5637,7 +5773,8 @@
    "dataset": "attribute",
    "q": "apple wood chips",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=apple+wood+chips&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=apple%20wood%20chips&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=apple+wood+chips&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Apple Wood Smoking Chips (2.9 L/180 cu in)",
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
@@ -5678,7 +5815,8 @@
    "dataset": "attribute",
    "q": "hickory chips",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=hickory+chips&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=hickory%20chips&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=hickory+chips&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Hickory Wood Smoking Chips (2.9 L/180 cu in)",
     "Premium Kiln Dried Pecan Wood Smoking Chips (2.9 L/180 cu in)",
@@ -5719,7 +5857,8 @@
    "dataset": "attribute",
    "q": "oak chunks",
    "total": 6,
-   "search_call": "https://biggreenegg.com/search/suggest?q=oak+chunks&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=oak%20chunks&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=oak+chunks&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Oak Wood Smoking Chunks (9 L/549 cu in)",
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
@@ -5752,7 +5891,8 @@
    "dataset": "attribute",
    "q": "mens t-shirt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=mens+t-shirt&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=mens%20t-shirt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=mens+t-shirt&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Mens Bone T-Shirt - Large",
     "Big Green Egg Mens Gray T-Shirt - BGE Logo - Large",
@@ -5793,7 +5933,8 @@
    "dataset": "attribute",
    "q": "youth hat",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=youth+hat&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=youth%20hat&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=youth+hat&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "The Backyard Badge",
     "The Rustic Canvas",
@@ -5834,7 +5975,8 @@
    "dataset": "attribute",
    "q": "large hoodie",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=large+hoodie&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=large%20hoodie&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=large+hoodie&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Mens Bone Olsen Hoodie - Large",
     "Big Green Egg Mens Gray Olsen Hoodie - Large",
@@ -5875,7 +6017,8 @@
    "dataset": "attribute",
    "q": "small tshirt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=small+tshirt&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=small%20tshirt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=small+tshirt&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Mens Bone T-Shirt - Small",
     "Atlanta Skyline T-shirt",
@@ -5916,7 +6059,8 @@
    "dataset": "attribute",
    "q": "xl tshirt",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=xl+tshirt&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=xl%20tshirt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=xl+tshirt&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Atlanta Skyline T-shirt",
     "Navy Wordmark T-Shirt",
@@ -5957,7 +6101,8 @@
    "dataset": "attribute",
    "q": "black hat",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=black+hat&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=black%20hat&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=black+hat&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "rEGGulator Vent Cap (for 2XL, XL, L, M)",
     "The Pitmaster",
@@ -5998,7 +6143,8 @@
    "dataset": "attribute",
    "q": "leather gloves",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=leather+gloves&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=leather%20gloves&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=leather+gloves&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Hell Hands™",
     "Medium Hell Hands™",
@@ -6027,7 +6173,8 @@
    "dataset": "attribute",
    "q": "silicone gloves",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=silicone+gloves&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=silicone%20gloves&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=silicone+gloves&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGGmitt High Heat BBQ Glove, extra-long",
     "Large Hell Hands™",
@@ -6068,7 +6215,8 @@
    "dataset": "attribute",
    "q": "wooden spatula",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=wooden+spatula&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=wooden%20spatula&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=wooden+spatula&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Grill Spatula with Green Handle",
     "Professional Grade Stainless Steel BBQ Tool Set",
@@ -6109,7 +6257,8 @@
    "dataset": "attribute",
    "q": "chef knife",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=chef+knife&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=chef%20knife&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=chef+knife&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Carbon Steel Grill Wok w/ Bamboo Spatula",
     "Cast Iron Grid for L",
@@ -6138,7 +6287,8 @@
    "dataset": "attribute",
    "q": "maple cutting board",
    "total": 3,
-   "search_call": "https://biggreenegg.com/search/suggest?q=maple+cutting+board&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=maple%20cutting%20board&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=maple+cutting+board&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Disposable Cutting Board",
     "Bamboo Cutting Board",
@@ -6165,7 +6315,8 @@
    "dataset": "attribute",
    "q": "spicy rub",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=spicy+rub&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=spicy%20rub&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=spicy+rub&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Seasoning, Savory Pecan",
     "Big Green Egg Seasoning, Sweet & Smoky",
@@ -6206,7 +6357,8 @@
    "dataset": "attribute",
    "q": "smoky sauce",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=smoky+sauce&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=smoky%20sauce&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=smoky+sauce&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg BBQ Sauce, Kansas City Style - Sweet & Smoky",
     "Big Green Egg Wing Sauce - Eds Famous",
@@ -6247,7 +6399,8 @@
    "dataset": "attribute",
    "q": "sugar free rub",
    "total": 1,
-   "search_call": "https://biggreenegg.com/search/suggest?q=sugar+free+rub&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=sugar%20free%20rub&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=sugar+free+rub&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Seasoning, Savory Pecan"
    ],
@@ -6270,7 +6423,8 @@
    "dataset": "attribute",
    "q": "gluten free rub",
    "total": 7,
-   "search_call": "https://biggreenegg.com/search/suggest?q=gluten+free+rub&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=gluten%20free%20rub&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=gluten+free+rub&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Seasoning, Savory Pecan",
     "Big Green Egg Seasoning, Sweet & Smoky",
@@ -6305,7 +6459,8 @@
    "dataset": "job_function",
    "q": "pizza on the grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=pizza+on+the+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=pizza%20on%20the%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=pizza+on+the+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Pizza Wedge",
     "Medium Big Green Egg",
@@ -6346,7 +6501,8 @@
    "dataset": "job_function",
    "q": "smoke a brisket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=smoke+a+brisket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=smoke%20a%20brisket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=smoke+a+brisket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Smoked Brisket and Pork class",
     "Premium Kiln Dried Hickory Wood Smoking Chips (2.9 L/180 cu in)",
@@ -6387,7 +6543,8 @@
    "dataset": "job_function",
    "q": "smoke ribs",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=smoke+ribs&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=smoke%20ribs&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=smoke+ribs&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
     "Large Big Green Egg",
@@ -6428,7 +6585,8 @@
    "dataset": "job_function",
    "q": "cook a turkey",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+a+turkey&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20a%20turkey&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+a+turkey&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg",
     "Stainless Vertical Turkey Roaster (2XL, XL, L, M)",
@@ -6469,7 +6627,8 @@
    "dataset": "job_function",
    "q": "roast a chicken",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=roast+a+chicken&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=roast%20a%20chicken&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=roast+a+chicken&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Stainless Vertical Turkey Roaster (2XL, XL, L, M)",
     "Ceramic Vertical Chicken Roaster (2XL, XL, L, M, S)",
@@ -6510,7 +6669,8 @@
    "dataset": "job_function",
    "q": "sear a steak",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=sear+a+steak&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=sear%20a%20steak&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=sear+a+steak&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cast Iron Grill Press",
     "Bluetooth Dome Thermometer",
@@ -6551,7 +6711,8 @@
    "dataset": "job_function",
    "q": "low and slow cooking",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=low+and+slow+cooking&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=low%20and%20slow%20cooking&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=low+and+slow+cooking&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "convEGGtor® for XL EGG",
     "convEGGtor® for Large EGG",
@@ -6592,7 +6753,8 @@
    "dataset": "job_function",
    "q": "cook fish on the grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+fish+on+the+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20fish%20on%20the%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+fish+on+the+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Perforated Half Grid for L",
     "Half Moon Cast Iron Plancha Griddle (2XL, XL)",
@@ -6633,7 +6795,8 @@
    "dataset": "job_function",
    "q": "make pulled pork",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=make+pulled+pork&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=make%20pulled%20pork&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=make+pulled+pork&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Stainless Steel Meat Claws, Soft Grip Handles",
     "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)",
@@ -6662,7 +6825,8 @@
    "dataset": "job_function",
    "q": "keep my grill dry",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=keep+my+grill+dry&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=keep%20my%20grill%20dry&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=keep+my+grill+dry&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Weather-Proof Charcoal Storage Bag",
     "Cover A - Fits Modular Nest for 2XL, XL and L",
@@ -6703,7 +6867,8 @@
    "dataset": "job_function",
    "q": "protect my grill outside",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=protect+my+grill+outside&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=protect%20my%20grill%20outside&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=protect+my+grill+outside&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cover A - Fits Modular Nest for 2XL, XL and L",
     "Cover B - Fits Nest and Handler for XL, L & Modular Nest for M",
@@ -6744,7 +6909,8 @@
    "dataset": "job_function",
    "q": "monitor temperature from phone",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=monitor+temperature+from+phone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=monitor%20temperature%20from%20phone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=monitor+temperature+from+phone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "Bluetooth Dome Thermometer",
@@ -6785,7 +6951,8 @@
    "dataset": "job_function",
    "q": "start a fire without lighter fluid",
    "total": 8,
-   "search_call": "https://biggreenegg.com/search/suggest?q=start+a+fire+without+lighter+fluid&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=start%20a%20fire%20without%20lighter%20fluid&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=start+a+fire+without+lighter+fluid&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "SpeediLight Sticks Charcoal Starters",
     "EGGniter® Electric Charcoal Lighter with Fan (1500 Watt/120v)",
@@ -6822,7 +6989,8 @@
    "dataset": "job_function",
    "q": "clean my grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=clean+my+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=clean%20my%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=clean+my+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "All-Natural Palmyra Grid Scrubber with Extra Pad",
     "Diamond-Coated Nylon Bristle Grid Scrubber",
@@ -6863,7 +7031,8 @@
    "dataset": "job_function",
    "q": "replace worn gasket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=replace+worn+gasket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=replace%20worn%20gasket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=replace+worn+gasket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "Ultra Performance Gasket Replacement Kit for Medium, Small, MiniMax, Mini",
@@ -6904,7 +7073,8 @@
    "dataset": "job_function",
    "q": "stop smoke leaking",
    "total": 5,
-   "search_call": "https://biggreenegg.com/search/suggest?q=stop+smoke+leaking&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=stop%20smoke%20leaking&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=stop+smoke+leaking&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "Fire Box for Small EGG",
@@ -6935,7 +7105,8 @@
    "dataset": "job_function",
    "q": "cook two things at once",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+two+things+at+once&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20two%20things%20at%20once&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+two+things+at+once&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
     "2XL Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -6976,7 +7147,8 @@
    "dataset": "job_function",
    "q": "cook at different heights",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+at+different+heights&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20at%20different%20heights&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+at+different+heights&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
     "EGGtoberfest Demo Large Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -7017,7 +7189,8 @@
    "dataset": "job_function",
    "q": "indirect cooking",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=indirect+cooking&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=indirect%20cooking&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=indirect+cooking&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Big Green Egg in an intEGGrated Nest+Handler Package",
     "Medium Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -7058,7 +7231,8 @@
    "dataset": "job_function",
    "q": "reverse sear",
    "total": 3,
-   "search_call": "https://biggreenegg.com/search/suggest?q=reverse+sear&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=reverse%20sear&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=reverse+sear&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Black Short Sleeve ’74 Message Reverse T-shirt",
     "Black Reverse Word Cloud Shirt",
@@ -7085,7 +7259,8 @@
    "dataset": "job_function",
    "q": "grill for a crowd",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+for+a+crowd&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20for%20a%20crowd&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+for+a+crowd&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Large Big Green Egg",
@@ -7126,7 +7301,8 @@
    "dataset": "job_function",
    "q": "cook for a party",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+for+a+party&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20for%20a%20party&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+for+a+party&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "High Visibility Mr. EGGhead Custom Inflatable",
     "Large Big Green Egg in Acacia Table Package",
@@ -7167,7 +7343,8 @@
    "dataset": "job_function",
    "q": "take grill tailgating",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=take+grill+tailgating&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=take%20grill%20tailgating&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=take+grill+tailgating&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "MiniMax Big Green Egg Package",
     "Medium Big Green Egg",
@@ -7208,7 +7385,8 @@
    "dataset": "job_function",
    "q": "put grill on a patio",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=put+grill+on+a+patio&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=put%20grill%20on%20a%20patio&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=put+grill+on+a+patio&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Large Big Green Egg",
@@ -7249,7 +7427,8 @@
    "dataset": "job_function",
    "q": "use grill in a table",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=use+grill+in+a+table&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=use%20grill%20in%20a%20table&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=use+grill+in+a+table&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in Acacia Table Package",
     "XL Big Green Egg in Acacia Table Package",
@@ -7290,7 +7469,8 @@
    "dataset": "job_function",
    "q": "hold the grill at 225",
    "total": 2,
-   "search_call": "https://biggreenegg.com/search/suggest?q=hold+the+grill+at+225&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=hold%20the%20grill%20at%20225&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=hold+the+grill+at+225&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "David Roses \"EGGin\" Big Green Egg Cookbook hardcover",
     "Big Green Egg x YETI M20 Backpack Cooler"
@@ -7315,7 +7495,8 @@
    "dataset": "job_function",
    "q": "maintain steady temperature",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=maintain+steady+temperature&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=maintain%20steady%20temperature&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=maintain+steady+temperature&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "External Temperature Gauge LARGE DIAL 3\"/8cm (750°F / 400°C) (fits all except Mini)",
@@ -7356,7 +7537,8 @@
    "dataset": "job_function",
    "q": "bake cookies on a grill",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bake+cookies+on+a+grill&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bake%20cookies%20on%20a%20grill&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bake+cookies+on+a+grill&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in Acacia Table Package",
     "MiniMax Big Green Egg Package",
@@ -7397,7 +7579,8 @@
    "dataset": "job_function",
    "q": "grill burgers",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=grill+burgers&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=grill%20burgers&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=grill+burgers&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Large Big Green Egg",
@@ -7438,7 +7621,8 @@
    "dataset": "job_function",
    "q": "cook wings",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+wings&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20wings&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+wings&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Big Green Egg Wing Sauce - Eds Famous",
     "Big Green Egg Wing Sauce - Original Buffalo",
@@ -7479,7 +7663,8 @@
    "dataset": "job_function",
    "q": "smoke a ham",
    "total": 2,
-   "search_call": "https://biggreenegg.com/search/suggest?q=smoke+a+ham&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=smoke%20a%20ham&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=smoke+a+ham&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "convEGGtor® for Large EGG",
     "3rd Annual Smokin' The Ville EGGfest by Builders Lumber & Hardware"
@@ -7504,7 +7689,8 @@
    "dataset": "job_function",
    "q": "cook prime rib",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cook+prime+rib&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cook%20prime%20rib&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cook+prime+rib&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Rotisserie",
     "Rib/Roast Rack - Stainless (2XL, XL, L)",
@@ -7545,7 +7731,8 @@
    "dataset": "job_function",
    "q": "bake in the egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=bake+in+the+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=bake%20in%20the%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=bake+in+the+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in an intEGGrated Nest+Handler Package",
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
@@ -7586,7 +7773,8 @@
    "dataset": "job_function",
    "q": "rack for ribs",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=rack+for+ribs&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=rack%20for%20ribs&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=rack+for+ribs&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Rib/Roast Rack - Stainless (2XL, XL, L)",
     "Rib/Roast Rack - Stainless (2XL, XL, L, M, S)",
@@ -7627,7 +7815,8 @@
    "dataset": "job_function",
    "q": "flip food safely",
    "total": 9,
-   "search_call": "https://biggreenegg.com/search/suggest?q=flip+food+safely&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=flip%20food%20safely&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=flip+food+safely&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Durable Drip Tray Kit",
     "Aluminum Pizza Peel w/Soft Grip Handle",
@@ -7666,7 +7855,8 @@
    "dataset": "job_function",
    "q": "carry hot grates",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=carry+hot+grates&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=carry%20hot%20grates&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=carry+hot+grates&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Quick Light™ Kit Large",
     "Quick Light™ Kit XL & 2XL",
@@ -7707,7 +7897,8 @@
    "dataset": "job_function",
    "q": "gift for a griller",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=gift+for+a+griller&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=gift%20for%20a%20griller&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=gift+for+a+griller&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Professional Grade Stainless Steel BBQ Tool Set",
     "Cast Iron Grid for M",
@@ -7748,7 +7939,8 @@
    "dataset": "job_function",
    "q": "gift for dad",
    "total": 1,
-   "search_call": "https://biggreenegg.com/search/suggest?q=gift+for+dad&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=gift%20for%20dad&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=gift+for+dad&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Leather Flask Gift Set"
    ],
@@ -7771,7 +7963,8 @@
    "dataset": "intent",
    "q": "what do I need to start grilling",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+do+I+need+to+start+grilling&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20do%20I%20need%20to%20start%20grilling&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+do+I+need+to+start+grilling&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "MiniMax Big Green Egg",
@@ -7812,7 +8005,8 @@
    "dataset": "intent",
    "q": "i want to get into smoking meat",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=i+want+to+get+into+smoking+meat&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=i%20want%20to%20get%20into%20smoking%20meat&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=i+want+to+get+into+smoking+meat&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
     "Medium Big Green Egg in Nest Package",
@@ -7841,7 +8035,8 @@
    "dataset": "intent",
    "q": "best grill for beginners",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=best+grill+for+beginners&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=best%20grill%20for%20beginners&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=best+grill+for+beginners&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "MiniMax Big Green Egg Package",
@@ -7882,7 +8077,8 @@
    "dataset": "intent",
    "q": "what size egg do I need for a family of four",
    "total": 3,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+size+egg+do+I+need+for+a+family+of+four&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20size%20egg%20do%20I%20need%20for%20a%20family%20of%20four&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+size+egg+do+I+need+for+a+family+of+four&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Big Green Egg in 69-inch Modern Farmhouse Table Package",
     "Medium Big Green Egg in Nest Package",
@@ -7909,7 +8105,8 @@
    "dataset": "intent",
    "q": "accessories for my first big green egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=accessories+for+my+first+big+green+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=accessories%20for%20my%20first%20big%20green%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=accessories+for+my+first+big+green+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "3 Piece Accessory Kit for Modular Nest",
     "convEGGtor® for XL EGG",
@@ -7950,7 +8147,8 @@
    "dataset": "intent",
    "q": "what do I need to make pizza",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+do+I+need+to+make+pizza&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20do%20I%20need%20to%20make%20pizza&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+do+I+need+to+make+pizza&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Flat Pizza & Baking Stone (Diameter 14 in / 36cm) (for XXL, XL, L)",
     "Large Pizza Wedge",
@@ -7991,7 +8189,8 @@
    "dataset": "intent",
    "q": "what do I need to smoke a turkey",
    "total": 9,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+do+I+need+to+smoke+a+turkey&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20do%20I%20need%20to%20smoke%20a%20turkey&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+do+I+need+to+smoke+a+turkey&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Apple Wood Smoking Chunks (9 L/549 cu in)",
     "Premium Kiln Dried Mesquite Wood Smoking Chunks (9 L/549 cu in)",
@@ -8030,7 +8229,8 @@
    "dataset": "intent",
    "q": "how do I keep my egg from rusting",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=how+do+I+keep+my+egg+from+rusting&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=how%20do%20I%20keep%20my%20egg%20from%20rusting&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=how+do+I+keep+my+egg+from+rusting&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ash Removal Pan",
     "Cover I - Fits Nest and Handler or Nest for 2XL",
@@ -8071,7 +8271,8 @@
    "dataset": "intent",
    "q": "a gift for someone who just got an egg",
    "total": 0,
-   "search_call": "https://biggreenegg.com/search/suggest?q=a+gift+for+someone+who+just+got+an+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=a%20gift%20for%20someone%20who%20just%20got%20an%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=a+gift+for+someone+who+just+got+an+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [],
    "grades": [],
    "ndcg": null,
@@ -8090,7 +8291,8 @@
    "dataset": "intent",
    "q": "what goes with a large egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+goes+with+a+large+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20goes%20with%20a%20large%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+goes+with+a+large+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
     "IntEGGrated Nest+Handler for Large EGG",
@@ -8131,7 +8333,8 @@
    "dataset": "intent",
    "q": "do you sell parts for my old egg",
    "total": 8,
-   "search_call": "https://biggreenegg.com/search/suggest?q=do+you+sell+parts+for+my+old+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=do%20you%20sell%20parts%20for%20my%20old%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=do+you+sell+parts+for+my+old+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Band Assembly Kit",
     "Fire Box for Large EGG",
@@ -8168,7 +8371,8 @@
    "dataset": "intent",
    "q": "my egg lid is not sealing",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=my+egg+lid+is+not+sealing&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=my%20egg%20lid%20is%20not%20sealing&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=my+egg+lid+is+not+sealing&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Dome for Large EGG",
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
@@ -8209,7 +8413,8 @@
    "dataset": "intent",
    "q": "how to replace the gasket on a large egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=how+to+replace+the+gasket+on+a+large+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=how%20to%20replace%20the%20gasket%20on%20a%20large%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=how+to+replace+the+gasket+on+a+large+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "Ultra Performance Gasket Replacement Kit for Medium, Small, MiniMax, Mini",
@@ -8250,7 +8455,8 @@
    "dataset": "intent",
    "q": "what table fits a large egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+table+fits+a+large+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20table%20fits%20a%20large%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+table+fits+a+large+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Table - Solid Acacia Hardwood for Large EGG",
     "Modern Farmhouse Table - 50.4 inch - for Large EGG",
@@ -8291,7 +8497,8 @@
    "dataset": "intent",
    "q": "something to cook for a big group",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=something+to+cook+for+a+big+group&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=something%20to%20cook%20for%20a%20big%20group&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=something+to+cook+for+a+big+group&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg in Acacia Table Package",
     "XL Big Green Egg in Acacia Table Package",
@@ -8332,7 +8539,8 @@
    "dataset": "intent",
    "q": "tools for flipping steaks",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=tools+for+flipping+steaks&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=tools%20for%20flipping%20steaks&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=tools+for+flipping+steaks&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Grid Gripper for lifting stainless cooking grids and planks",
     "Grid Lifter-Heavy Duty Steel with Soft Grip Handle",
@@ -8373,7 +8581,8 @@
    "dataset": "intent",
    "q": "what charcoal is best for the egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+charcoal+is+best+for+the+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20charcoal%20is%20best%20for%20the%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+charcoal+is+best+for+the+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "100% Natural Lump Charcoal Oak & Hickory",
     "Natural Lump Charcoal Canadian Maple",
@@ -8414,7 +8623,8 @@
    "dataset": "intent",
    "q": "what wood to use for brisket",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+wood+to+use+for+brisket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20wood%20to%20use%20for%20brisket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+wood+to+use+for+brisket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Oak Wood Smoking Chips (2.9 L/180 cu in)",
     "Premium Kiln Dried Oak Wood Smoking Chunks (9 L/549 cu in)",
@@ -8455,7 +8665,8 @@
    "dataset": "intent",
    "q": "what temperature for pizza",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=what+temperature+for+pizza&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=what%20temperature%20for%20pizza&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=what+temperature+for+pizza&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Pizza Wedge",
     "XL Pizza Wedge",
@@ -8496,7 +8707,8 @@
    "dataset": "intent",
    "q": "where can I find a recipe for ribs",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=where+can+I+find+a+recipe+for+ribs&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=where%20can%20I%20find%20a%20recipe%20for%20ribs&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=where+can+I+find+a+recipe+for+ribs&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Rib/Roast Rack - Stainless (2XL, XL, L)",
     "Rib/Roast Rack - Stainless (2XL, XL, L, M, S)",
@@ -8525,7 +8737,8 @@
    "dataset": "intent",
    "q": "how long to smoke a pork butt",
    "total": 1,
-   "search_call": "https://biggreenegg.com/search/suggest?q=how+long+to+smoke+a+pork+butt&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=how%20long%20to%20smoke%20a%20pork%20butt&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=how+long+to+smoke+a+pork+butt&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Premium Kiln Dried Hickory Wood Smoking Chunks (9 L/549 cu in)"
    ],
@@ -8548,7 +8761,8 @@
    "dataset": "intent",
    "q": "can i cook on the egg in the winter",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=can+i+cook+on+the+egg+in+the+winter&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=can%20i%20cook%20on%20the%20egg%20in%20the%20winter&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=can+i+cook+on+the+egg+in+the+winter&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Big Green Egg in 69-inch Modern Farmhouse Table Package",
     "Large Big Green Egg in Nest Package",
@@ -8589,7 +8803,8 @@
    "dataset": "intent",
    "q": "accessories for a mini egg",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=accessories+for+a+mini+egg&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=accessories%20for%20a%20mini%20egg&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=accessories+for+a+mini+egg&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Carrier for Mini EGG - all metal with integrated handles",
     "Stainless Steel Grid for Mini Egg",
@@ -8630,7 +8845,8 @@
    "dataset": "intent",
    "q": "something small to take camping",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=something+small+to+take+camping&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=something%20small%20to%20take%20camping&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=something+small+to+take+camping&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Mini Big Green Egg",
     "MiniMax Big Green Egg",
@@ -8671,7 +8887,8 @@
    "dataset": "intent",
    "q": "a grill for apartment balcony",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=a+grill+for+apartment+balcony&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=a%20grill%20for%20apartment%20balcony&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=a+grill+for+apartment+balcony&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Large Big Green Egg",
@@ -8712,7 +8929,8 @@
    "dataset": "intent",
    "q": "how do i choose between large and xl",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=how+do+i+choose+between+large+and+xl&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=how%20do%20i%20choose%20between%20large%20and%20xl&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=how+do+i+choose+between+large+and+xl&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
     "XL Big Green Egg in Nest Package",
@@ -8753,7 +8971,8 @@
    "dataset": "intent",
    "q": "where is my nearest dealer",
    "total": 0,
-   "search_call": "https://biggreenegg.com/search/suggest?q=where+is+my+nearest+dealer&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=where%20is%20my%20nearest%20dealer&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=where+is+my+nearest+dealer&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [],
    "grades": [],
    "ndcg": null,
@@ -8772,7 +8991,8 @@
    "dataset": "intent",
    "q": "do you have class on cooking",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=do+you+have+class+on+cooking&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=do%20you%20have%20class%20on%20cooking&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=do+you+have+class+on+cooking&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "The Art of Southern BBQ with Tina Cannon",
     "Artisan Pizza Class",
@@ -8813,7 +9033,8 @@
    "dataset": "intent",
    "q": "show me cooking classes",
    "total": 7,
-   "search_call": "https://biggreenegg.com/search/suggest?q=show+me+cooking+classes&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=show%20me%20cooking%20classes&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=show+me+cooking+classes&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "The Art of Southern BBQ with Tina Cannon",
     "Holiday Cooking Class",
@@ -8848,7 +9069,8 @@
    "dataset": "intent",
    "q": "events near me",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=events+near+me&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=events%20near%20me&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=events+near+me&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Easton EGGfest 2026",
     "Meadow Creek BBQ Supply EGGfest",
@@ -8889,7 +9111,8 @@
    "dataset": "brand",
    "q": "Egg Nest",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Egg+Nest&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Egg%20Nest&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Egg+Nest&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "IntEGGrated Nest+Handler for Large EGG",
     "Nest for Large Egg",
@@ -8930,7 +9153,8 @@
    "dataset": "brand",
    "q": "Mini Max",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Mini+Max&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Mini%20Max&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Mini+Max&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "MiniMax Big Green Egg",
     "MiniMax Big Green Egg with Nest and Acacia Mates Package",
@@ -8971,7 +9195,8 @@
    "dataset": "brand",
    "q": "woo ring",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=woo+ring&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=woo%20ring&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=woo+ring&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Fire Ring for Large EGG",
     "Large Band Assembly Kit",
@@ -9012,7 +9237,8 @@
    "dataset": "brand",
    "q": "ash tool",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=ash+tool&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=ash%20tool&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=ash+tool&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ash Tool w/Soft Grip Handle for L or M EGGs",
     "Ash Tool w/Soft Grip Handle for 2XL or XL EGGs",
@@ -9053,7 +9279,8 @@
    "dataset": "brand",
    "q": "ash tool and pizza peel",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=ash+tool+and+pizza+peel&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=ash%20tool%20and%20pizza%20peel&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=ash+tool+and+pizza+peel&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Aluminum Pizza Peel w/Soft Grip Handle",
     "Ash Tool w/Soft Grip Handle for L or M EGGs",
@@ -9094,7 +9321,8 @@
    "dataset": "brand",
    "q": "pizza peel",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=pizza+peel&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=pizza%20peel&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=pizza+peel&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Aluminum Pizza Peel w/Soft Grip Handle",
     "Large Pizza Wedge",
@@ -9135,7 +9363,8 @@
    "dataset": "brand",
    "q": "dual probe",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=dual+probe&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=dual%20probe&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=dual+probe&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "WiFi Display & Predictive Thermometer Bundle",
@@ -9176,7 +9405,8 @@
    "dataset": "brand",
    "q": "hell hands",
    "total": 4,
-   "search_call": "https://biggreenegg.com/search/suggest?q=hell+hands&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=hell%20hands&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=hell+hands&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Hell Hands™",
     "XL Hell Hands™",
@@ -9205,7 +9435,8 @@
    "dataset": "brand",
    "q": "nomex gasket",
    "total": 5,
-   "search_call": "https://biggreenegg.com/search/suggest?q=nomex+gasket&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=nomex%20gasket&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=nomex+gasket&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Ultra Performance Gasket Replacement Kit for Medium, Small, MiniMax, Mini",
     "Ultra Performance Gasket Replacement Kit for 2XL, XL & Large",
@@ -9236,7 +9467,8 @@
    "dataset": "brand",
    "q": "Big Green Egg Large",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+Large&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Big%20Green%20Egg%20Large&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+Large&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Large Big Green Egg",
     "Large Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
@@ -9277,7 +9509,8 @@
    "dataset": "brand",
    "q": "Big Green Egg XL",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+XL&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Big%20Green%20Egg%20XL&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+XL&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "XL Big Green Egg",
     "XL Big Green Egg in an intEGGrated Nest+Handler with Mates Package",
@@ -9318,7 +9551,8 @@
    "dataset": "brand",
    "q": "Big Green Egg Mini",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+Mini&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Big%20Green%20Egg%20Mini&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+Mini&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "MiniMax Big Green Egg",
     "MiniMax Big Green Egg Package",
@@ -9359,7 +9593,8 @@
    "dataset": "brand",
    "q": "Big Green Egg Medium",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+Medium&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Big%20Green%20Egg%20Medium&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Big+Green+Egg+Medium&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Medium Big Green Egg",
     "Medium Big Green Egg in an intEGGrated Nest+Handler Package",
@@ -9400,7 +9635,8 @@
    "dataset": "brand",
    "q": "Egg On the Go",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Egg+On+the+Go&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Egg%20On%20the%20Go&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Egg+On+the+Go&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "EGG Genius Temperature Controller",
     "MiniMax Big Green Egg with Nest and Acacia Mates Package",
@@ -9441,7 +9677,8 @@
    "dataset": "brand",
    "q": "Combustion Inc",
    "total": 1,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Combustion+Inc&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Combustion%20Inc&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Combustion+Inc&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Wireless Predictive Thermometer with WiFi Booster"
    ],
@@ -9464,7 +9701,8 @@
    "dataset": "brand",
    "q": "Richlite handle",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=Richlite+handle&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=Richlite%20handle&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=Richlite+handle&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Personalized, Engraved Brown Handle for Large Egg",
     "Personalized, Engraved Black Handle for XL Egg",
@@ -9505,7 +9743,8 @@
    "dataset": "brand",
    "q": "cast iron plancha",
    "total": 10,
-   "search_call": "https://biggreenegg.com/search/suggest?q=cast+iron+plancha&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=cast%20iron%20plancha&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=cast+iron+plancha&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Cast Iron Dual Side Plancha Griddle 14 in / 36 cm (2XL, XL, L)",
     "Half Moon Cast Iron Plancha Griddle (Large, XL, 2XL)",
@@ -9546,7 +9785,8 @@
    "dataset": "brand",
    "q": "half moon stone",
    "total": 6,
-   "search_call": "https://biggreenegg.com/search/suggest?q=half+moon+stone&resources%5Btype%5D=product&section_id=predictive-search",
+   "search_call": "https://biggreenegg.com/search?q=half%20moon%20stone&type=product",
+   "capture_call": "https://biggreenegg.com/search/suggest?q=half+moon+stone&resources%5Btype%5D=product&section_id=predictive-search",
    "items": [
     "Half Moon convEGGtor for Medium",
     "Half Moon Cast Iron Plancha Griddle (Large, XL, 2XL)",

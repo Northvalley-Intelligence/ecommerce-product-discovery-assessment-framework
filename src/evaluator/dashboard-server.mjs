@@ -1914,7 +1914,7 @@ function dashboardPage() {
         '<div class="crumb-bar"><span class="crumb-current">Sites › ' + escapeHtml(site.name) + '</span><span class="muted">— browser-driven search evaluation</span></div>' +
         '<section class="hero"><div><p class="eyebrow">Browser-Evaluated Site</p><h1>' + escapeHtml(site.name) + '</h1>' +
           '<div class="subline"><span>' + escapeHtml(site.url) + '</span><span>' + escapeHtml(site.engine || 'enterprise (Akamai)') + '</span><span><a href="' + escapeHtml(site.url) + '" target="_blank" rel="noopener">Open store</a></span></div>' +
-          '<p class="muted" style="margin:8px 0 0;font-size:12px">No API engine (bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.</p></div></section>' +
+          '<p class="muted" style="margin:8px 0 0;font-size:12px">' + (site.engine ? 'Search evaluated by reading the store\'s own search responses for a bounded query set — no crawling.' : 'No API engine (bot wall). Search evaluated by reading the browser-embedded search response for a bounded query set — no crawling, no API calls, no token replay.') + '</p></div></section>' +
         '<div id="searchEval"><div class="empty">Loading search datasets…</div></div>';
       // Retailers with a graded relevance eval-board render that; others use the HD/Lowe's scoreboard.
       var evalBoards = { target: 'SE-20260808', catfootwear: 'SE-20260810', partscat: 'SE-20260812', biggreenegg: 'SE-20261012T184220Z' };
