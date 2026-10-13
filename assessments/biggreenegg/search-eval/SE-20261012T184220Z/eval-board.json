@@ -19,7 +19,7 @@
   }
  },
  "headline": "Big Green Egg search answers 99% of 239 terms (3 return nothing) but is shallow: 63% of terms grade below 1.5 of 3, and conversational or how-to queries get unrelated accessories. Demand volumes are pending.",
- "verdict": "shallow",
+ "verdict": "Big Green Egg search answers 99% of 239 terms (3 return nothing) but is shallow: 63% of terms grade below 1.5 of 3, and conversational or how-to queries get unrelated accessories. Demand volumes are pending.",
  "datasets": [
   {
    "id": "synonym",
